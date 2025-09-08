@@ -79,36 +79,72 @@
     },
     {
         "id": 14,
+        "title": "[PUB] Accesso non consentito (ma possibile)",
+        "link": "https://www.spreaker.com/episode/0xe-pub-accesso-non-consentito-ma-possibile--62386146",
+        "notes": "All'evento NTS Passion tenutosi a Verona, abbiamo parlato delle più comuni debolezze che rendono possibile effettuare attacchi con successo alle organizzazioni."
+    },
+    {
+        "id": 15,
+        "title": "La compliance normativa come vantaggio",
+        "link": "https://www.spreaker.com/episode/0xf-la-compliance-normativa-come-vantaggio--63071211",
+        "notes": "Torniamo a metterci i panni di un un CISO appena insediatorsi presso una unova  azienda (vedi 0xc) e affrontiamo il tema della compliance. In questa puntata vediamo come e perchè usare le certificazioni a nostro vantaggio."
+    },
+    {
+        "id": 16,
+        "title": "[EXT] Attacchi DDoS e strategie di sopravvivenza",
+        "link": "https://www.spreaker.com/episode/0x10-ext-attacchi-ddos-e-strategie-di-sopravvivenza--63286769",
+        "notes": "Con Alice Mini partiamo da due attacchi DDoS reali per riflettere su mitigazione, strategie di difesa, consapevolezza.\n\nIl podcast è stato registrato \"on the road\" per non perdere l'ispirazione del momento."
+    },
+    {
+        "id": 17,
+        "title": "Documentazione tecnica",
+        "link": "https://www.spreaker.com/episode/0x11-documentazione-tecnica--63302501",
+        "notes": "Sempre nei panni di un CISO discutiamo di documentazione, tecnica e non: approcci e strumenti per fare ordine tra le informazioni aziendali."
+    },
+    {
+        "id": 18,
+        "title": "Riflessioni sulla rete (design, sicurezza, approccio)",
+        "link": "https://www.spreaker.com/episode/0x12-riflessioni-sulla-rete-design-sicurezza-approccio--63459252",
+        "notes": "La rete vista dall'IT manager e dal CISO. Una prima riflessione sulle implementazioni, sulla sicurezza, sull'approccio Zero Trust... Argomento troppo ampio per esaurirlo in una sola puntata."
+    },
+    {
+        "id": 19,
+        "title": "Approfondimento sulle reti datacenter",
+        "link": "https://www.spreaker.com/episode/0x13-approfondimento-sulle-reti-datacenter--63459253",
+        "notes": "Continuano le riflessioni sulla rete e ci focalizziamo sul datacenter. In particolare riflettiamo sul design, su concetti di microsegmentazione, sulle reti storage e converged."
+    },
+    {
+        "id": 20,
         "title": "CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 1)",
         "link": "https://www.spreaker.com/episode/0x14-ciso-vciso-cisoaas-un-idea-nata-molti-anni-fa-parte-1--63934820",
         "notes": "Una decina scarsa di anni fa nasce da una chiacchierata l'idea del CISO as a Service (CISOaaS), poi ribbattezzato vCISO. Ripercorriamo in due puntate come è nata l'idea, come è diventata una linea di business, e facciamo alcune considerazioni su CISO e vCISO, due possibilità che non sono in contrapposizione."
     },
     {
-        "id": 15,
+        "id": 21,
         "title": "CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 2)",
         "link": "https://www.spreaker.com/episode/0x15-ciso-vciso-cisoaas-un-idea-nata-molti-anni-fa-parte-2--63934822",
         "notes": "(continua dall'episodio precedente)\n\nUna decina scarsa di anni fa nasce da una chiacchierata l'idea del CISO as a Service (CISOaaS), poi ribbattezzato vCISO. Ripercorriamo in due puntate come è nata l'idea, come è diventata una linea di business, e facciamo alcune considerazioni su CISO e vCISO, due possibilità che non sono in contrapposizione."
     },
     {
-        "id": 16,
+        "id": 22,
         "title": "Sicurezza ICS/OT (da un evento NTS)",
         "link": "https://www.spreaker.com/episode/0x16-sicurezza-ics-ot-da-un-evento-nts--66128035",
         "notes": "Rivediamo e riassumiamo quanto discusso in ambito sicurezza ICS/OT durante l'evento a porte chiuse [organizzato da NTS](https://www.nts.eu/it/event/sicurezza-ics-ot/?utm_campaign=personalbranding) per un ristretto numero di invitati."
     },
     {
-        "id": 17,
+        "id": 23,
         "title": "Threat Intelligence (parte 1)",
         "link": "https://www.spreaker.com/episode/0x17-threat-intelligence-parte-1--66128443",
         "notes": "Iniziamo a discurete di Threat Intelligence, ma partiamo dalla raccolta e dall'analisi del dato, parlando di EDR e SIEM."
     },
     {
-        "id": 18,
+        "id": 24,
         "title": "Threat Intelligence (parte 2)",
         "link": "https://www.spreaker.com/episode/0x18-threat-intelligence-parte-2--67368804",
         "notes": "Continuiamo la discussione sulla Threat Intelligence, analizzando attori in campo e complessità."
     },
     {
-        "id": 19,
+        "id": 25,
         "title": "Threat Intelligence (parte 3)",
         "link": "https://www.spreaker.com/episode/0x19-threat-intelligence-parte-3--67664347",
         "notes": "Completiamo la discussione sulla Threat Intelligence, prendendo come esempio reale una email di phishing. Analizziamo la storia dell'attacco e gestiamo in modo strutturato gli indicatori. Usando MISP, vediamo infine come costruire un ecosistema completo.\n\nLink aggiuntivi:\n\n- [Highlight e dettagli sugli indicatori discussi (video)](https://www.youtube.com/watch?v=3LJb2OtQf28?utm_source=spreaker)\n- [Blog post di approfondimento](https://roccosicilia.com/2025/09/08/info-sec-unplugged-18-threat-int-3a-parte/?utm_source=spreaker)"
