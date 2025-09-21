@@ -6,8 +6,13 @@
         "title": "Orchestrazione di sistemi di sicurezza (parte 1)",
         "length": 28,
         "url": "https://www.spreaker.com/episode/0x1-orchestrazione-di-sistemi-di-sicurezza-parte-1--57864841",
-        "summary": "Le organizzazioni si sono dotate di diverse soluzioni di sicurezza, e tali soluzioni hanno generalmente vita propria. Riflessioni su soluzioni silos, possibili integrazioni e rischi.\n\nLink:\n\n- [Confronto EDR](https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1)",
-        "highlight_links": [],
+        "summary": "Le organizzazioni si sono dotate di diverse soluzioni di sicurezza, e tali soluzioni hanno generalmente vita propria. Riflessioni su soluzioni silos, possibili integrazioni e rischi.",
+        "highlight_links": [
+            {
+                "title": "Confronto EDR",
+                "url": "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1"
+            }
+        ],
         "tags": []
     },
     {
@@ -17,8 +22,13 @@
         "title": "Orchestrazione di sistemi di sicurezza (parte 2)",
         "length": 23,
         "url": "https://www.spreaker.com/episode/0x2-orchestrazione-di-sistemi-di-sicurezza-parte-2--57864845",
-        "summary": "(continua dall'episodio precedente)\n\nLe organizzazioni si sono dotate di diverse soluzioni di sicurezza, e tali soluzioni hanno generalmente vita propria. Riflessioni su soluzioni silos, possibili integrazioni e rischi.\n\nLink:\n\n- [Confronto EDR](https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1)",
-        "highlight_links": [],
+        "summary": "(continua dall'episodio precedente)\n\nLe organizzazioni si sono dotate di diverse soluzioni di sicurezza, e tali soluzioni hanno generalmente vita propria. Riflessioni su soluzioni silos, possibili integrazioni e rischi.",
+        "highlight_links": [
+            {
+                "title": "Confronto EDR",
+                "url": "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1"
+            }
+        ],
         "tags": []
     },
     {
@@ -28,8 +38,13 @@
         "title": "EDR: scegliere, gestire, utilizzare (parte 1)",
         "length": 26,
         "url": "https://www.spreaker.com/episode/0x3-edr-scegliere-gestire-utilizzare-parte-1--58085880",
-        "summary": "Scegliere, gestire, utilizzare una soluzione di Endpoint Detection and Response o EDR.\n\n\n\n- [Confronto EDR](https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1)",
-        "highlight_links": [],
+        "summary": "Scegliere, gestire, utilizzare una soluzione di Endpoint Detection and Response o EDR.",
+        "highlight_links": [
+            {
+                "title": "Confronto EDR",
+                "url": "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1"
+            }
+        ],
         "tags": []
     },
     {
@@ -39,8 +54,13 @@
         "title": "EDR: scegliere, gestire, utilizzare (parte 2)",
         "length": 30,
         "url": "https://www.spreaker.com/episode/0x4-edr-scegliere-gestire-utilizzare-parte-2--58085883",
-        "summary": "(continua dall'episodio precedente)\n\nScegliere, gestire, utilizzare una soluzione di Endpoint Detection and Response o EDR.\n\n\n\n- [Confronto EDR](https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1)",
-        "highlight_links": [],
+        "summary": "(continua dall'episodio precedente)\n\nScegliere, gestire, utilizzare una soluzione di Endpoint Detection and Response o EDR.",
+        "highlight_links": [
+            {
+                "title": "Confronto EDR",
+                "url": "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1"
+            }
+        ],
         "tags": []
     },
     {
@@ -50,8 +70,21 @@
         "title": "Da EDR a XDR: scegliere, gestire, utilizzare (parte 1)",
         "length": 46,
         "url": "https://www.spreaker.com/episode/0x5-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-1--58197896",
-        "summary": "Continua la riflessione sul mondo EDR iniziata nelle due puntati precedenti che porta inevitabilmente a parlare di XDR.\n\nLink:\n\n- [EDR Evasion Primer](https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf)\n- [Cybersecurity Podcast](https://open.spotify.com/show/3GuETTlTQC1HVClDwo6GPk)\n- [TIBER](https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html)",
-        "highlight_links": [],
+        "summary": "Continua la riflessione sul mondo EDR iniziata nelle due puntati precedenti che porta inevitabilmente a parlare di XDR.",
+        "highlight_links": [
+            {
+                "title": "EDR Evasion Primer",
+                "url": "https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf"
+            },
+            {
+                "title": "Cybersecurity Podcast",
+                "url": "https://open.spotify.com/show/3GuETTlTQC1HVClDwo6GPk"
+            },
+            {
+                "title": "TIBER",
+                "url": "https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html"
+            }
+        ],
         "tags": []
     },
     {
@@ -61,8 +94,21 @@
         "title": "Da EDR a XDR: scegliere, gestire, utilizzare (parte 2)",
         "length": 33,
         "url": "https://www.spreaker.com/episode/0x6-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-2--58197897",
-        "summary": "(continua dall'episodio precedente)\n\nContinua la riflessione sul mondo EDR iniziata nelle due puntati precedenti che porta inevitabilmente a parlare di XDR.\n\nLink:\n\n- [EDR Evasion Primer](https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf)\n- [Cybersecurity Podcast](https://open.spotify.com/show/3GuETTlTQC1HVClDwo6GPk)\n- [TIBER](https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html)",
-        "highlight_links": [],
+        "summary": "(continua dall'episodio precedente)\n\nContinua la riflessione sul mondo EDR iniziata nelle due puntati precedenti che porta inevitabilmente a parlare di XDR.",
+        "highlight_links": [
+            {
+                "title": "EDR Evasion Primer",
+                "url": "https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf"
+            },
+            {
+                "title": "Cybersecurity Podcast",
+                "url": "https://open.spotify.com/show/3GuETTlTQC1HVClDwo6GPk"
+            },
+            {
+                "title": "TIBER",
+                "url": "https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html"
+            }
+        ],
         "tags": []
     },
     {
@@ -306,8 +352,8 @@
         "summary": "In questa puntata di Info Sec. Unplugged si esplora il tema (spesso sottovalutato) del disaster recovery in risposta agli attacchi informatici. Si analizzano i limiti delle strategie tradizionali, l'importanza della separazione tra ambienti, le implicazioni dei backup immutabili e delle golden image, e come una corretta automazione e gestione dei privilegi possano fare la differenza tra la resilienza e la perdita totale dei dati. Il racconto si arricchisce di esperienze reali e casi pratici tipici delle aziende italiane, con un occhio alle nuove sfide aperte dal GDPR e dalla digitalizzazione delle infrastrutture.",
         "highlight_links": [
             {
-                    "title": "Highlight (video)",
-                    "url": "https://youtu.be/1gieddeZxWw"
+                "title": "Highlight (video)",
+                "url": "https://youtu.be/1gieddeZxWw"
             },
             {
                 "title": "Blog post di approfondimento",
