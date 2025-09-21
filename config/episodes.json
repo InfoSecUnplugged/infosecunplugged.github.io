@@ -280,6 +280,10 @@
         "summary": "In questa puntata di Info Sec. Unplugged si esplora il tema (spesso sottovalutato) del disaster recovery in risposta agli attacchi informatici. Si analizzano i limiti delle strategie tradizionali, l'importanza della separazione tra ambienti, le implicazioni dei backup immutabili e delle golden image, e come una corretta automazione e gestione dei privilegi possano fare la differenza tra la resilienza e la perdita totale dei dati. Il racconto si arricchisce di esperienze reali e casi pratici tipici delle aziende italiane, con un occhio alle nuove sfide aperte dal GDPR e dalla digitalizzazione delle infrastrutture.",
         "highlight_links": [
             {
+                    "title": "Highlight (video)",
+                    "url": "https://youtu.be/1gieddeZxWw"
+            },
+            {
                 "title": "Blog post di approfondimento",
                 "url": "https://roccosicilia.com/2025/09/22/info-sec-unplugged-1a-dr-e-cyber-recovery-parte-1/?utm_source=website"
             }
