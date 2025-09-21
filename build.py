@@ -3,7 +3,7 @@
 import json
 from jinja2 import Template
 
-main_template_file = "templates/index.html.j2"
+main_template_file = "templates/index.j2.html"
 main_file = "index.html"
 episodes_data_file = "config/episodes.json"
 platforms_data_tile = "config/platforms.json"
