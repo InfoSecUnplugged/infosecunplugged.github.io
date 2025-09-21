@@ -57,6 +57,8 @@
 
     function renderEpisodes(episodes) {
       const container = document.getElementById('episodes-list');
+      // Filtro per 'published: true'
+      const publishedEpisodes = episodes.filter(ep => ep.published);
       episodes.forEach(ep => {
         const hexId = ep.id.toString(16);
 
@@ -77,6 +79,40 @@
         notes.className = 'card-text mb-3';
         notes.innerHTML = marked.parse(ep.notes || '');
 
+        // Highlights
+        if (ep.highlight_links && ep.highlight_links.length > 0) {
+          const highlightsTitle = document.createElement('h6');
+          highlightsTitle.textContent = 'Highlights';
+          highlightsTitle.className = 'mt-2';
+          cardBody.appendChild(highlightsTitle);
+
+          const highlightsList = document.createElement('ul');
+          highlightsList.className = 'list-unstyled mb-3';
+          ep.highlight_links.forEach(linkObj => {
+            const item = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = linkObj.link;
+            link.target = '_blank';
+            link.textContent = linkObj.title || linkObj.link;
+            item.appendChild(link);
+            highlightsList.appendChild(item);
+          });
+          cardBody.appendChild(highlightsList);
+        }
+
+        // Tags
+        if (ep.tags && ep.tags.length > 0) {
+          const tagsDiv = document.createElement('div');
+          tagsDiv.className = 'mb-2';
+          ep.tags.forEach(tag => {
+            const tagSpan = document.createElement('span');
+            tagSpan.className = 'badge bg-secondary me-1';
+            tagSpan.textContent = tag;
+            tagsDiv.appendChild(tagSpan);
+          });
+          cardBody.appendChild(tagsDiv);
+        }
+        
         const link = document.createElement('a');
         link.href = ep.link;
         link.target = '_blank';
