@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Info Sec. Unplugged</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background: #1a1a1a;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: normal;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .platform-links {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .platform-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #1a73e8;
+      font-weight: bold;
+    }
+    article.podcast-episode {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+    article.podcast-episode:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .episode-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    .episode-number-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .episode-date {
+      color: #777;
+      font-size: 0.9rem;
+    }
+    .summary {
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+    .highlight-links a {
+      margin-right: 10px;
+      color: #d14;
+      text-decoration: underline;
+    }
+    .tags {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .tags span {
+      background: #eee;
+      padding: 2px 8px;
+      margin-right: 6px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Info Sec. Unplugged</h1>
+    <p>Il podcast su Cybersecurity, Tecnologia e Cultura digitale</p>
+    <nav aria-label="Podcast Platforms">
+      {% for platform in platforms %}
+      <a href="{{ platform.url }}" target="_blank" rel="noopener noreferrer">{{ platform.name }}</a> |
+      {% endfor %}
+    </nav>
+  </header>
+  <main>
+    <section class="platform-links" aria-label="Podcast Platforms">
+      {% for platform in platforms %}
+      <a href="{{ platform.url }}" target="_blank" rel="noopener noreferrer">{{ platform.title }}</a>
+      {% endfor %}
+    </section>
+
+    <section aria-label="Podcast Episodes">
+      {% for episode in episodes %}
+      {% if episode.published %}
+      {% set d = episode.date %}
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x{{ "%0x" | format( episode.id | int) }} - {{ episode.title }}</div>
+          <time datetime="{{ episode.date }}" class="episode-date">{{ d[6:8] }}/{{ d[4:6] }}/{{ d[0:4] }}</time>
+        </div>
+        <p class="summary">{{ episode.summary }}</p>
+        <p>Ascolta <a href="{{ episode.link }}">la puntata su Spreaker</a>.</p>
+        {% if episode.highlight_links %}
+        <div class="highlight-links">
+          <ul>
+            {% for link in episode.highlight_links %}
+            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.title }}</a>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {% if episode.tags %}
+        <div class="tags">
+          {%for tag in episode.tags %}
+          <span>{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endif %}
+      {% endfor %}
+    </section>
+  </main>
+</body>
+</html>

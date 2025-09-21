@@ -1,142 +1,608 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Info Sec. Unplugged</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background: #1a1a1a;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: normal;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .platform-links {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .platform-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #1a73e8;
+      font-weight: bold;
+    }
+    article.podcast-episode {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+    article.podcast-episode:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .episode-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    .episode-number-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .episode-date {
+      color: #777;
+      font-size: 0.9rem;
+    }
+    .summary {
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+    .highlight-links a {
+      margin-right: 10px;
+      color: #d14;
+      text-decoration: underline;
+    }
+    .tags {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .tags span {
+      background: #eee;
+      padding: 2px 8px;
+      margin-right: 6px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
-  <header class="bg-dark text-white text-center py-5">
+  <header>
     <h1>Info Sec. Unplugged</h1>
-    <p class="lead">Podcast sulla sicurezza informatica</p>
-    <div id="subscribe-buttons" class="d-flex justify-content-center flex-wrap gap-2 mt-3"></div>
+    <p>Il podcast su Cybersecurity, Tecnologia e Cultura digitale</p>
+    <nav aria-label="Podcast Platforms">
+      
+      <a href="https://podcasts.apple.com/it/podcast/info-sec-unplugged/id1719133815" target="_blank" rel="noopener noreferrer">Apple Podcasts</a> |
+      
+      <a href="https://music.amazon.com/podcasts/e37fec14-9f41-48d5-ac92-e7e8d71d3fec" target="_blank" rel="noopener noreferrer">Audible</a> |
+      
+      <a href="https://iheart.com/podcast/131943309" target="_blank" rel="noopener noreferrer">iHeartRadio</a> |
+      
+      <a href="https://open.spotify.com/show/0TtlgpvszbluGVDjpFmy81" target="_blank" rel="noopener noreferrer">Spotify</a> |
+      
+    </nav>
   </header>
+  <main>
+    <section class="platform-links" aria-label="Podcast Platforms">
+      
+      <a href="https://podcasts.apple.com/it/podcast/info-sec-unplugged/id1719133815" target="_blank" rel="noopener noreferrer"></a>
+      
+      <a href="https://music.amazon.com/podcasts/e37fec14-9f41-48d5-ac92-e7e8d71d3fec" target="_blank" rel="noopener noreferrer"></a>
+      
+      <a href="https://iheart.com/podcast/131943309" target="_blank" rel="noopener noreferrer"></a>
+      
+      <a href="https://open.spotify.com/show/0TtlgpvszbluGVDjpFmy81" target="_blank" rel="noopener noreferrer"></a>
+      
+    </section>
 
-  <main class="container my-5">
-    <h2 class="mb-4">Episodi</h2>
-    <div id="episodes-list" class="row g-4"></div>
-  </main>
-
-  <footer class="bg-light text-center py-4">
-    <p class="mb-0">&copy; 2025 Info Sec. Unplugged</p>
-  </footer>
-
-  <script>
-    async function loadConfig() {
-      const response = await fetch('config.json');
-      return response.json();
-    }
-
-    async function loadEpisodes() {
-      const response = await fetch('episodes.json');
-      return response.json();
-    }
-
-    function renderSubscribeButtons(config) {
-      const container = document.getElementById('subscribe-buttons');
-      const platforms = {
-        apple: 'Apple Podcasts',
-        audible: 'Audible',
-        iheartradio: 'iHeartRadio',
-        spotify: 'Spotify'
-      };
-
-      Object.entries(config).forEach(([key, url]) => {
-        if (platforms[key]) {
-          const btn = document.createElement('a');
-          btn.href = url;
-          btn.target = '_blank';
-          btn.className = 'btn btn-outline-light';
-          btn.textContent = platforms[key];
-          container.appendChild(btn);
-        }
-      });
-    }
-
-    function renderEpisodes(episodes) {
-      const container = document.getElementById('episodes-list');
-      // Filtro per 'published: true'
-      const publishedEpisodes = episodes.filter(ep => ep.published);
-      publishedEpisodes.forEach(ep => {
-        const hexId = ep.id.toString(16);
-
-        const col = document.createElement('div');
-        col.className = 'col-md-6';
-
-        const card = document.createElement('div');
-        card.className = 'card h-100';
-
-        const cardBody = document.createElement('div');
-        cardBody.className = 'card-body d-flex flex-column';
-
-        const title = document.createElement('h5');
-        title.className = 'card-title';
-        title.textContent = `[0x${hexId}] ${ep.title}`;
-
-        const notes = document.createElement('div');
-        notes.className = 'card-text mb-3';
-        notes.innerHTML = marked.parse(ep.notes || '');
-
-        // Highlights
-        if (ep.highlight_links && ep.highlight_links.length > 0) {
-          const highlightsTitle = document.createElement('h6');
-          highlightsTitle.textContent = 'Highlights';
-          highlightsTitle.className = 'mt-2';
-          cardBody.appendChild(highlightsTitle);
-
-          const highlightsList = document.createElement('ul');
-          highlightsList.className = 'list-unstyled mb-3';
-          ep.highlight_links.forEach(linkObj => {
-            const item = document.createElement('li');
-            const link = document.createElement('a');
-            link.href = linkObj.link;
-            link.target = '_blank';
-            link.textContent = linkObj.title || linkObj.link;
-            item.appendChild(link);
-            highlightsList.appendChild(item);
-          });
-          cardBody.appendChild(highlightsList);
-        }
-
-        // Tags
-        if (ep.tags && ep.tags.length > 0) {
-          const tagsDiv = document.createElement('div');
-          tagsDiv.className = 'mb-2';
-          ep.tags.forEach(tag => {
-            const tagSpan = document.createElement('span');
-            tagSpan.className = 'badge bg-secondary me-1';
-            tagSpan.textContent = tag;
-            tagsDiv.appendChild(tagSpan);
-          });
-          cardBody.appendChild(tagsDiv);
-        }
+    <section aria-label="Podcast Episodes">
+      
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x1a - DR e Cyber recovery (parte 1)</div>
+          <time datetime="20250922" class="episode-date">22/09/2025</time>
+        </div>
+        <p class="summary">In questa puntata di Info Sec. Unplugged si esplora il tema (spesso sottovalutato) del disaster recovery in risposta agli attacchi informatici. Si analizzano i limiti delle strategie tradizionali, l'importanza della separazione tra ambienti, le implicazioni dei backup immutabili e delle golden image, e come una corretta automazione e gestione dei privilegi possano fare la differenza tra la resilienza e la perdita totale dei dati. Il racconto si arricchisce di esperienze reali e casi pratici tipici delle aziende italiane, con un occhio alle nuove sfide aperte dal GDPR e dalla digitalizzazione delle infrastrutture.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x1a-dr-e-cyber-recovery-parte-1--67835796">la puntata su Spreaker</a>.</p>
         
-        const link = document.createElement('a');
-        link.href = ep.link;
-        link.target = '_blank';
-        link.className = 'btn btn-primary mt-auto';
-        link.textContent = 'Ascolta episodio';
+        <div class="highlight-links">
+          <ul>
+            
+            <a href="https://roccosicilia.com/2025/09/22/info-sec-unplugged-1a-dr-e-cyber-recovery-parte-1/?utm_source=website" target="_blank" rel="noopener noreferrer">Blog post di approfondimento</a>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="tags">
+          
+          <span>disaster recovery</span>
+          
+          <span>ransomware</span>
+          
+          <span>backup</span>
+          
+          <span>golden image</span>
+          
+          <span>tabletop exercise</span>
+          
+          <span>business impact analysis</span>
+          
+          <span>gdpr</span>
+          
+          <span>automazione</span>
+          
+          <span>privilege escalation</span>
+          
+          <span>red teaming</span>
+          
+          <span>cloud</span>
+          
+          <span>hypervisor</span>
+          
+          <span>data retention</span>
+          
+        </div>
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x19 - Threat Intelligence (parte 3)</div>
+          <time datetime="20250908" class="episode-date">08/09/2025</time>
+        </div>
+        <p class="summary">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare sul lavoro del threat analyst, che studia il comportamento degli attori malevoli per supportare attività di detection e prevention. Viene inoltre approfondita la stretta relazione tra il mondo della threat intelligence e quello della offensive security, mostrando come entrambi si concentrino sul modus operandi degli attacchi e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato da un post descrittivo e un video highlight, per rendere più accessibili i dettagli tecnici trattati.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x19-threat-intelligence-parte-3--67664347">la puntata su Spreaker</a>.</p>
+        
+        <div class="highlight-links">
+          <ul>
+            
+            <a href="https://roccosicilia.com/2025/09/08/info-sec-unplugged-18-threat-int-3a-parte/?utm_source=website" target="_blank" rel="noopener noreferrer">Blog post di approfondimento</a>
+            
+            <a href="https://www.youtube.com/watch?v=3LJb2OtQf28?utm_source=website" target="_blank" rel="noopener noreferrer">Highlight e dettagli sugli indicatori discussi (video)</a>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="tags">
+          
+          <span>threat intelligence</span>
+          
+          <span>incident response</span>
+          
+          <span>security incident</span>
+          
+          <span>offensive security</span>
+          
+          <span>detection</span>
+          
+          <span>prevention</span>
+          
+          <span>cyber attack</span>
+          
+          <span>command and control</span>
+          
+          <span>ioc</span>
+          
+          <span>adversary simulation</span>
+          
+          <span>security analyst</span>
+          
+          <span>phishing</span>
+          
+        </div>
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x18 - Threat Intelligence (parte 2)</div>
+          <time datetime="20250825" class="episode-date">25/08/2025</time>
+        </div>
+        <p class="summary">Continuiamo la discussione sulla Threat Intelligence, analizzando attori in campo e complessità.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x18-threat-intelligence-parte-2--67368804">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x17 - Threat Intelligence (parte 1)</div>
+          <time datetime="20250602" class="episode-date">02/06/2025</time>
+        </div>
+        <p class="summary">Iniziamo a discurete di Threat Intelligence, ma partiamo dalla raccolta e dall'analisi del dato, parlando di EDR e SIEM.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x17-threat-intelligence-parte-1--66128443">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x16 - Sicurezza ICS/OT (da un evento NTS)</div>
+          <time datetime="20250517" class="episode-date">17/05/2025</time>
+        </div>
+        <p class="summary">Rivediamo e riassumiamo quanto discusso in ambito sicurezza ICS/OT durante l'evento a porte chiuse [organizzato da NTS](https://www.nts.eu/it/event/sicurezza-ics-ot/?utm_campaign=personalbranding) per un ristretto numero di invitati.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x16-sicurezza-ics-ot-da-un-evento-nts--66128035">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x15 - CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 2)</div>
+          <time datetime="20250210" class="episode-date">10/02/2025</time>
+        </div>
+        <p class="summary">(continua dall'episodio precedente)
 
-        cardBody.appendChild(title);
-        cardBody.appendChild(notes);
-        cardBody.appendChild(link);
+Una decina scarsa di anni fa nasce da una chiacchierata l'idea del CISO as a Service (CISOaaS), poi ribbattezzato vCISO. Ripercorriamo in due puntate come è nata l'idea, come è diventata una linea di business, e facciamo alcune considerazioni su CISO e vCISO, due possibilità che non sono in contrapposizione.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x15-ciso-vciso-cisoaas-un-idea-nata-molti-anni-fa-parte-2--63934822">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x14 - CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 1)</div>
+          <time datetime="20250128" class="episode-date">28/01/2025</time>
+        </div>
+        <p class="summary">Una decina scarsa di anni fa nasce da una chiacchierata l'idea del CISO as a Service (CISOaaS), poi ribbattezzato vCISO. Ripercorriamo in due puntate come è nata l'idea, come è diventata una linea di business, e facciamo alcune considerazioni su CISO e vCISO, due possibilità che non sono in contrapposizione.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x14-ciso-vciso-cisoaas-un-idea-nata-molti-anni-fa-parte-1--63934820">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x13 - Approfondimento sulle reti datacenter</div>
+          <time datetime="20250113" class="episode-date">13/01/2025</time>
+        </div>
+        <p class="summary">Continuano le riflessioni sulla rete e ci focalizziamo sul datacenter. In particolare riflettiamo sul design, su concetti di microsegmentazione, sulle reti storage e converged.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x13-approfondimento-sulle-reti-datacenter--63459253">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x12 - Riflessioni sulla rete (design, sicurezza, approccio)</div>
+          <time datetime="20241230" class="episode-date">30/12/2024</time>
+        </div>
+        <p class="summary">La rete vista dall'IT manager e dal CISO. Una prima riflessione sulle implementazioni, sulla sicurezza, sull'approccio Zero Trust... Argomento troppo ampio per esaurirlo in una sola puntata.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x12-riflessioni-sulla-rete-design-sicurezza-approccio--63459252">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x11 - Documentazione tecnica</div>
+          <time datetime="20241216" class="episode-date">16/12/2024</time>
+        </div>
+        <p class="summary">Sempre nei panni di un CISO discutiamo di documentazione, tecnica e non: approcci e strumenti per fare ordine tra le informazioni aziendali.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x11-documentazione-tecnica--63302501">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x10 - [EXT] Attacchi DDoS e strategie di sopravvivenza</div>
+          <time datetime="20241212" class="episode-date">12/12/2024</time>
+        </div>
+        <p class="summary">Con Alice Mini partiamo da due attacchi DDoS reali per riflettere su mitigazione, strategie di difesa, consapevolezza.
 
-        card.appendChild(cardBody);
-        col.appendChild(card);
-        container.appendChild(col);
-      });
-    }
+Il podcast è stato registrato "on the road" per non perdere l'ispirazione del momento.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x10-ext-attacchi-ddos-e-strategie-di-sopravvivenza--63286769">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0xf - La compliance normativa come vantaggio</div>
+          <time datetime="20241202" class="episode-date">02/12/2024</time>
+        </div>
+        <p class="summary">Torniamo a metterci i panni di un un CISO appena insediatorsi presso una unova  azienda (vedi 0xc) e affrontiamo il tema della compliance. In questa puntata vediamo come e perchè usare le certificazioni a nostro vantaggio.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0xf-la-compliance-normativa-come-vantaggio--63071211">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0xe - [PUB] Accesso non consentito (ma possibile)</div>
+          <time datetime="20241016" class="episode-date">16/10/2024</time>
+        </div>
+        <p class="summary">All'evento NTS Passion tenutosi a Verona, abbiamo parlato delle più comuni debolezze che rendono possibile effettuare attacchi con successo alle organizzazioni.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0xe-pub-accesso-non-consentito-ma-possibile--62386146">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0xd - [EXT] Account di posta compromesso</div>
+          <time datetime="20240929" class="episode-date">29/09/2024</time>
+        </div>
+        <p class="summary">Con Alice Mini prendiamo spunto da un account di posta compromesso per riflettere sugli impatti, sul processo di Awareness e su come migliorare i processi aziendali.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0xd-ext-account-di-posta-compromesso--62152485">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0xc - Ripartiamo dall'inizio</div>
+          <time datetime="20240916" class="episode-date">16/09/2024</time>
+        </div>
+        <p class="summary">Mettendoci nei panni di un CISO appena insediatosi presso una nuova azienda, riflettiamo sui temi da affrontare. In questa prima puntata facciamo un brainstorming per elencare i temi che approfondiremo nelle puntate seguenti.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0xc-ripartiamo-dall-inizio--61809624">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0xb - 802.1x bypass: riflessioni sugli impatti e sgli approcci per ridurre il rischio</div>
+          <time datetime="20240608" class="episode-date">08/06/2024</time>
+        </div>
+        <p class="summary">Nella puntata precedente abbiamo parlato di attacchi di prossimità e abbiamo volontariamente omesso le soluzioni basate su 802.1x. Affrontiamo l'argomento alla luce degli esperimenti fatti, mettendo in luce pregi e ombre delle soluzioni NAC. La riflessione parte dal rischio e dalla percezione che determinate soluzioni risolvano un problema. La discussione di sposta quindi su come possiamo disegnare le reti campus per far fronte agli scenari di attacco.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0xb-802-1x-bypass-riflessioni-sugli-impatti-e-sgli-approcci-per-ridurre-il-rischio--60187964">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0xa - Attacco di prossimità con rogue device e strategie di difesa (parte 2)</div>
+          <time datetime="20240222" class="episode-date">22/02/2024</time>
+        </div>
+        <p class="summary">(continua dall'episodio precedente)
 
-    document.addEventListener('DOMContentLoaded', async () => {
-      const config = await loadConfig();
-      renderSubscribeButtons(config);
+Attacco con prossimità fisica: cosa possiamo vedere con un rouge device opportunamente posizionato? Quanto rumore facciamo? E sopratutto: come possiamo individuare dispositivi malevoli?</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0xa-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-2--58766863">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x9 - Attacco di prossimità con rogue device e strategie di difesa (parte 1)</div>
+          <time datetime="20240221" class="episode-date">21/02/2024</time>
+        </div>
+        <p class="summary">Attacco con prossimità fisica: cosa possiamo vedere con un rouge device opportunamente posizionato? Quanto rumore facciamo? E sopratutto: come possiamo individuare dispositivi malevoli?</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x9-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-1--58766770">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x8 - Sicurezza negli impianti OT (parte 2)</div>
+          <time datetime="20240203" class="episode-date">03/02/2024</time>
+        </div>
+        <p class="summary">(continua dall'episodio precedente)
 
-      const episodes = await loadEpisodes();
-      renderEpisodes(episodes.reverse());
-    });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+Apriamo il tema della sicurezza negli ambienti ICS/OT. Spunti e riflessioni aperte su come approcciare un mondo che ricorda l'IT di 25 anni fa.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x8-sicurezza-negli-impianti-ot-parte-2--585429692">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x7 - Sicurezza negli impianti OT (parte 1)</div>
+          <time datetime="20240202" class="episode-date">02/02/2024</time>
+        </div>
+        <p class="summary">Apriamo il tema della sicurezza negli ambienti ICS/OT. Spunti e riflessioni aperte su come approcciare un mondo che ricorda l'IT di 25 anni fa.</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x7-sicurezza-negli-impianti-ot-parte-1--58542931">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x6 - Da EDR a XDR: scegliere, gestire, utilizzare (parte 2)</div>
+          <time datetime="20240105" class="episode-date">05/01/2024</time>
+        </div>
+        <p class="summary">(continua dall'episodio precedente)
+
+Continua la riflessione sul mondo EDR iniziata nelle due puntati precedenti che porta inevitabilmente a parlare di XDR.
+
+Link:
+
+- [EDR Evasion Primer](https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf)
+- [Cybersecurity Podcast](https://open.spotify.com/show/3GuETTlTQC1HVClDwo6GPk)
+- [TIBER](https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html)</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x6-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-2--58197897">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x5 - Da EDR a XDR: scegliere, gestire, utilizzare (parte 1)</div>
+          <time datetime="20240104" class="episode-date">04/01/2024</time>
+        </div>
+        <p class="summary">Continua la riflessione sul mondo EDR iniziata nelle due puntati precedenti che porta inevitabilmente a parlare di XDR.
+
+Link:
+
+- [EDR Evasion Primer](https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf)
+- [Cybersecurity Podcast](https://open.spotify.com/show/3GuETTlTQC1HVClDwo6GPk)
+- [TIBER](https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html)</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x5-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-1--58197896">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x4 - EDR: scegliere, gestire, utilizzare (parte 2)</div>
+          <time datetime="20231222" class="episode-date">22/12/2023</time>
+        </div>
+        <p class="summary">(continua dall'episodio precedente)
+
+Scegliere, gestire, utilizzare una soluzione di Endpoint Detection and Response o EDR.
+
+
+
+- [Confronto EDR](https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1)</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x4-edr-scegliere-gestire-utilizzare-parte-2--58085883">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x3 - EDR: scegliere, gestire, utilizzare (parte 1)</div>
+          <time datetime="20231221" class="episode-date">21/12/2023</time>
+        </div>
+        <p class="summary">Scegliere, gestire, utilizzare una soluzione di Endpoint Detection and Response o EDR.
+
+
+
+- [Confronto EDR](https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1)</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x3-edr-scegliere-gestire-utilizzare-parte-1--58085880">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x2 - Orchestrazione di sistemi di sicurezza (parte 2)</div>
+          <time datetime="20231201" class="episode-date">01/12/2023</time>
+        </div>
+        <p class="summary">(continua dall'episodio precedente)
+
+Le organizzazioni si sono dotate di diverse soluzioni di sicurezza, e tali soluzioni hanno generalmente vita propria. Riflessioni su soluzioni silos, possibili integrazioni e rischi.
+
+Link:
+
+- [Confronto EDR](https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1)</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x2-orchestrazione-di-sistemi-di-sicurezza-parte-2--57864845">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+      
+      
+      <article class="podcast-episode">
+        <div class="episode-header">
+          <div class="episode-number-title">0x1 - Orchestrazione di sistemi di sicurezza (parte 1)</div>
+          <time datetime="20231130" class="episode-date">30/11/2023</time>
+        </div>
+        <p class="summary">Le organizzazioni si sono dotate di diverse soluzioni di sicurezza, e tali soluzioni hanno generalmente vita propria. Riflessioni su soluzioni silos, possibili integrazioni e rischi.
+
+Link:
+
+- [Confronto EDR](https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1)</p>
+        <p>Ascolta <a href="https://www.spreaker.com/episode/0x1-orchestrazione-di-sistemi-di-sicurezza-parte-1--57864841">la puntata su Spreaker</a>.</p>
+        
+        
+      </article>
+      
+      
+    </section>
+  </main>
 </body>
 </html>
