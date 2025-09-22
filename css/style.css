@@ -949,3 +949,17 @@ a {
     background: #f23a2e;
     color: #fff;
     border: 1px solid transparent; }
+
+/* Custom */
+.tags span {
+  background: #eee;
+  padding: 2px 8px;
+  margin-right: 6px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.tags {
+  font-size: 0.9rem;
+  color: #555;
+}
