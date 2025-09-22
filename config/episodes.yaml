@@ -352,7 +352,7 @@
   published: true
   summary:
     Rivediamo e riassumiamo quanto discusso in ambito sicurezza ICS/OT durante
-    l'evento a porte chiuse [organizzato da NTS](https://www.nts.eu/it/event/sicurezza-ics-ot/?utm_campaign=personalbranding)
+    l'evento a porte chiuse organizzato da NTS
     per un ristretto numero di invitati.
   tags: []
   title: Sicurezza ICS/OT (da un evento NTS)
@@ -361,7 +361,9 @@
     - Andrea Dainese
     - Rocco Sicilia
   date: "20250602"
-  highlight_links: []
+  highlight_links:
+    - title: Evento NTS - Sicurezza ICS/OT
+      url: https://www.nts.eu/it/event/sicurezza-ics-ot/?utm_campaign=personalbranding
   id: 23
   length: 52
   published: true
@@ -398,16 +400,16 @@
   length: 58
   published: true
   summary:
-    "In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia\
-    \ esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare\
-    \ sul lavoro del threat analyst, che studia il comportamento degli attori malevoli\
-    \ per supportare attivit\xE0 di detection e prevention. Viene inoltre approfondita\
-    \ la stretta relazione tra il mondo della threat intelligence e quello della offensive\
-    \ security, mostrando come entrambi si concentrino sul modus operandi degli attacchi\
-    \ e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un\
-    \ esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato\
-    \ da un post descrittivo e un video highlight, per rendere pi\xF9 accessibili\
-    \ i dettagli tecnici trattati."
+    In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
+    esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare
+    sul lavoro del threat analyst, che studia il comportamento degli attori malevoli
+    per supportare attività di detection e prevention. Viene inoltre approfondita
+    la stretta relazione tra il mondo della threat intelligence e quello della offensive
+    security, mostrando come entrambi si concentrino sul modus operandi degli attacchi
+    e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un
+    esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato
+    da un post descrittivo e un video highlight, per rendere più accessibili
+    i dettagli tecnici trattati.
   tags:
     - threat intelligence
     - incident response
@@ -469,14 +471,14 @@
   length: 56
   published: false
   summary:
-    "Questa puntata di Info Sec. Unplugged \xE8 dedicata al tema del disaster\
-    \ recovery e alla sua evoluzione nell'era degli attacchi Cyber. Andrea Dainese\
-    \ e Rocco Sicilia accompagnano l'ascoltatore nella progettazione di processi e\
-    \ tecnologie per il DR, evidenziando le differenze tra esigenze di business e\
-    \ scelte tecniche, le sfide offerte dalle nuove normative e l'importanza della\
-    \ resilienza. Una chiacchierata pragmatica e divulgativa, ricca di aneddoti e\
-    \ consigli pratici per chi si occupa di sicurezza informatica e gestione delle\
-    \ infrastrutture IT."
+    Questa puntata di Info Sec. Unplugged è dedicata al tema del disaster
+    recovery e alla sua evoluzione nell'era degli attacchi Cyber. Andrea Dainese
+    e Rocco Sicilia accompagnano l'ascoltatore nella progettazione di processi e
+    tecnologie per il DR, evidenziando le differenze tra esigenze di business e
+    scelte tecniche, le sfide offerte dalle nuove normative e l'importanza della
+    resilienza. Una chiacchierata pragmatica e divulgativa, ricca di aneddoti e
+    consigli pratici per chi si occupa di sicurezza informatica e gestione delle
+    infrastrutture IT.
   tags:
     - disaster recovery
     - business impact analysis
