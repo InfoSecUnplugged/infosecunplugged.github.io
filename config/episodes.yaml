@@ -1,4 +1,7 @@
-- date: "20231130"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20231130"
   highlight_links:
     - title: Confronto EDR
       url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
@@ -12,7 +15,10 @@
   tags: []
   title: Orchestrazione di sistemi di sicurezza (parte 1)
   url: https://www.spreaker.com/episode/0x1-orchestrazione-di-sistemi-di-sicurezza-parte-1--57864841
-- date: "20231201"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20231201"
   highlight_links:
     - title: Confronto EDR
       url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
@@ -28,7 +34,10 @@
   tags: []
   title: Orchestrazione di sistemi di sicurezza (parte 2)
   url: https://www.spreaker.com/episode/0x2-orchestrazione-di-sistemi-di-sicurezza-parte-2--57864845
-- date: "20231221"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20231221"
   highlight_links:
     - title: Confronto EDR
       url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
@@ -41,7 +50,10 @@
   tags: []
   title: "EDR: scegliere, gestire, utilizzare (parte 1)"
   url: https://www.spreaker.com/episode/0x3-edr-scegliere-gestire-utilizzare-parte-1--58085880
-- date: "20231222"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20231222"
   highlight_links:
     - title: Confronto EDR
       url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
@@ -56,7 +68,10 @@
   tags: []
   title: "EDR: scegliere, gestire, utilizzare (parte 2)"
   url: https://www.spreaker.com/episode/0x4-edr-scegliere-gestire-utilizzare-parte-2--58085883
-- date: "20240104"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240104"
   highlight_links:
     - title: EDR Evasion Primer
       url: https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf
@@ -73,7 +88,10 @@
   tags: []
   title: "Da EDR a XDR: scegliere, gestire, utilizzare (parte 1)"
   url: https://www.spreaker.com/episode/0x5-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-1--58197896
-- date: "20240105"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240105"
   highlight_links:
     - title: EDR Evasion Primer
       url: https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf
@@ -92,7 +110,10 @@
   tags: []
   title: "Da EDR a XDR: scegliere, gestire, utilizzare (parte 2)"
   url: https://www.spreaker.com/episode/0x6-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-2--58197897
-- date: "20240202"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240202"
   highlight_links: []
   id: 7
   length: 30
@@ -103,7 +124,10 @@
   tags: []
   title: Sicurezza negli impianti OT (parte 1)
   url: https://www.spreaker.com/episode/0x7-sicurezza-negli-impianti-ot-parte-1--58542931
-- date: "20240203"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240203"
   highlight_links: []
   id: 8
   length: 42
@@ -116,7 +140,10 @@
   tags: []
   title: Sicurezza negli impianti OT (parte 2)
   url: https://www.spreaker.com/episode/0x8-sicurezza-negli-impianti-ot-parte-2--585429692
-- date: "20240221"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240221"
   highlight_links: []
   id: 9
   length: 43
@@ -128,7 +155,10 @@
   tags: []
   title: "Attacco di prossimit\xE0 con rogue device e strategie di difesa (parte 1)"
   url: https://www.spreaker.com/episode/0x9-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-1--58766770
-- date: "20240222"
+- authors:
+    - Alice Mini
+    - Andrea Dainese
+  date: "20240222"
   highlight_links: []
   id: 10
   length: 22
@@ -140,7 +170,10 @@
   tags: []
   title: "Attacco di prossimit\xE0 con rogue device e strategie di difesa (parte 2)"
   url: https://www.spreaker.com/episode/0xa-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-2--58766863
-- date: "20240608"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240608"
   highlight_links: []
   id: 11
   length: 50
@@ -157,7 +190,10 @@
     "802.1x bypass: riflessioni sugli impatti e sgli approcci per ridurre il
     rischio"
   url: https://www.spreaker.com/episode/0xb-802-1x-bypass-riflessioni-sugli-impatti-e-sgli-approcci-per-ridurre-il-rischio--60187964
-- date: "20240916"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240916"
   highlight_links: []
   id: 12
   length: 64
@@ -169,7 +205,10 @@
   tags: []
   title: Ripartiamo dall'inizio
   url: https://www.spreaker.com/episode/0xc-ripartiamo-dall-inizio--61809624
-- date: "20240929"
+- authors:
+    - Alice Mini
+    - Andrea Dainese
+  date: "20240929"
   highlight_links: []
   id: 13
   length: 27
@@ -181,7 +220,10 @@
   tags: []
   title: "[EXT] Account di posta compromesso"
   url: https://www.spreaker.com/episode/0xd-ext-account-di-posta-compromesso--62152485
-- date: "20241016"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20241016"
   highlight_links: []
   id: 14
   length: 33
@@ -193,7 +235,10 @@
   tags: []
   title: "[PUB] Accesso non consentito (ma possibile)"
   url: https://www.spreaker.com/episode/0xe-pub-accesso-non-consentito-ma-possibile--62386146
-- date: "20241202"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20241202"
   highlight_links: []
   id: 15
   length: 47
@@ -205,7 +250,10 @@
   tags: []
   title: La compliance normativa come vantaggio
   url: https://www.spreaker.com/episode/0xf-la-compliance-normativa-come-vantaggio--63071211
-- date: "20241212"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20241212"
   highlight_links: []
   id: 16
   length: 25
@@ -217,7 +265,10 @@
   tags: []
   title: "[EXT] Attacchi DDoS e strategie di sopravvivenza"
   url: https://www.spreaker.com/episode/0x10-ext-attacchi-ddos-e-strategie-di-sopravvivenza--63286769
-- date: "20241216"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20241216"
   highlight_links: []
   id: 17
   length: 59
@@ -228,7 +279,10 @@
   tags: []
   title: Documentazione tecnica
   url: https://www.spreaker.com/episode/0x11-documentazione-tecnica--63302501
-- date: "20241230"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20241230"
   highlight_links: []
   id: 18
   length: 39
@@ -240,7 +294,10 @@
   tags: []
   title: Riflessioni sulla rete (design, sicurezza, approccio)
   url: https://www.spreaker.com/episode/0x12-riflessioni-sulla-rete-design-sicurezza-approccio--63459252
-- date: "20250113"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250113"
   highlight_links: []
   id: 19
   length: 46
@@ -252,7 +309,10 @@
   tags: []
   title: Approfondimento sulle reti datacenter
   url: https://www.spreaker.com/episode/0x13-approfondimento-sulle-reti-datacenter--63459253
-- date: "20250128"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250128"
   highlight_links: []
   id: 20
   length: 37
@@ -265,7 +325,10 @@
   tags: []
   title: CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 1)
   url: https://www.spreaker.com/episode/0x14-ciso-vciso-cisoaas-un-idea-nata-molti-anni-fa-parte-1--63934820
-- date: "20250210"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250210"
   highlight_links: []
   id: 21
   length: 40
@@ -279,7 +342,10 @@
   tags: []
   title: CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 2)
   url: https://www.spreaker.com/episode/0x15-ciso-vciso-cisoaas-un-idea-nata-molti-anni-fa-parte-2--63934822
-- date: "20250517"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250517"
   highlight_links: []
   id: 22
   length: 33
@@ -291,7 +357,10 @@
   tags: []
   title: Sicurezza ICS/OT (da un evento NTS)
   url: https://www.spreaker.com/episode/0x16-sicurezza-ics-ot-da-un-evento-nts--66128035
-- date: "20250602"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250602"
   highlight_links: []
   id: 23
   length: 52
@@ -302,7 +371,10 @@
   tags: []
   title: Threat Intelligence (parte 1)
   url: https://www.spreaker.com/episode/0x17-threat-intelligence-parte-1--66128443
-- date: "20250825"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250825"
   highlight_links: []
   id: 24
   length: 46
@@ -313,7 +385,10 @@
   tags: []
   title: Threat Intelligence (parte 2)
   url: https://www.spreaker.com/episode/0x18-threat-intelligence-parte-2--67368804
-- date: "20250908"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250908"
   highlight_links:
     - title: Blog post di approfondimento
       url: https://roccosicilia.com/2025/09/08/info-sec-unplugged-18-threat-int-3a-parte/?utm_source=website
@@ -348,7 +423,10 @@
     - phishing
   title: Threat Intelligence (parte 3)
   url: https://www.spreaker.com/episode/0x19-threat-intelligence-parte-3--67664347
-- date: "20250922"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250922"
   highlight_links:
     - title: Highlight (video)
       url: https://youtu.be/1gieddeZxWw
@@ -382,7 +460,10 @@
     - data retention
   title: DR e Cyber recovery (parte 1)
   url: https://www.spreaker.com/episode/0x1a-dr-e-cyber-recovery-parte-1--67835796
-- date: "20251006"
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20251006"
   highlight_links: []
   id: 27
   length: 56

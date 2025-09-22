@@ -50,7 +50,7 @@
           {% set d = episode.date %}
           <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
             <h2 class="text-white font-weight-light mb-2 display-4">0x{{ "%0x" | format( episode.id | int) }} - {{ episode.title }}</h2>
-            <div class="text-white mb-4"><span class="text-white-opacity-05"><small>By Andrea Dainese, Rocco Sicilia | {{ d[6:8] }}/{{ d[4:6] }}/{{ d[0:4] }} | {{ episodes.0.length }} min.</small></span></div>
+            <div class="text-white mb-4"><span class="text-white-opacity-05"><small>By {% for author in episode.authors %}{{ author }}{% if not loop.last %}, {% endif %}{% endfor %} | {{ d[6:8] }}/{{ d[4:6] }}/{{ d[0:4] }} | {{ episodes.0.length }} min.</small></span></div>
             
             <div>
               {% for platform in platforms %}
@@ -87,7 +87,7 @@
           <div class="text">
 
             <h3 class="font-weight-light"><a href="{{ episode.url }}">0x{{ "%0x" | format( episode.id | int) }} - {{ episode.title }}</a></h3>
-            <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> {{ d[6:8] }}/{{ d[4:6] }}/{{ d[0:4] }} <span class="sep">/</span> {{ episode.length }} min.</small></span></div>
+            <div class="text-white mb-3"><span class="text-black-opacity-05"><small>By {% for author in episode.authors %}{{ author }}{% if not loop.last %}, {% endif %}{% endfor %} <span class="sep">/</span> {{ d[6:8] }}/{{ d[4:6] }}/{{ d[0:4] }} <span class="sep">/</span> {{ episode.length }} min.</small></span></div>
             <p class="mb-4">{{ episode.summary }}</p>
             {% if episode.highlight_links %}
             <div class="highlight-links">
