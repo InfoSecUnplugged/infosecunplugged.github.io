@@ -1,0 +1,19 @@
+# https://www.buzzsprout.com/help/64-podcast-subscribe-buttons
+- name: Apple Podcasts
+  img: images/platforms/apple.png
+  url: https://podcasts.apple.com/podcast/id1719133815
+- name: Audible
+  img: images/platforms/amazon.png
+  url: https://www.audible.com/pd/e37fec14-9f41-48d5-ac92-e7e8d71d3fec
+- name: Pocket https://www.buzzsprout.com/help/64-podcast-subscribe-buttons
+  img: images/platforms/pocketcasts.png
+  url: https://pca.st/df034260-71c4-013c-2888-0a5978b26ff7
+- name: iHeartRadio
+  img: images/platforms/iheartradio.png
+  url: https://www.iheart.com/podcast/131943309
+- name: Spotify
+  img: images/platforms/spotify.png
+  url: https://open.spotify.com/show/0TtlgpvszbluGVDjpFmy81
+- name: Youtube
+  img: images/platforms/youtube.png
+  url: https://www.youtube.com/playlist?list=PLd07cyWwjCpEQaAjuZ3iHI3SAvZlgrJz_
