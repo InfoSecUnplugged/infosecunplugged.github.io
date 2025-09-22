@@ -4,10 +4,10 @@
   url: https://podcasts.apple.com/podcast/id1719133815
 - name: Audible
   img: images/platforms/amazon.png
-  url: https://www.audible.com/pd/e37fec14-9f41-48d5-ac92-e7e8d71d3fec
-- name: Pocket https://www.buzzsprout.com/help/64-podcast-subscribe-buttons
+  url: https://music.amazon.com/podcasts/e37fec14-9f41-48d5-ac92-e7e8d71d3fec
+- name: Pocket Casts
   img: images/platforms/pocketcasts.png
-  url: https://pca.st/df034260-71c4-013c-2888-0a5978b26ff7
+  url: https://pocketcasts.com/podcast/info-sec-unplugged/df034260-71c4-013c-2888-0a5978b26ff7
 - name: iHeartRadio
   img: images/platforms/iheartradio.png
   url: https://www.iheart.com/podcast/131943309
