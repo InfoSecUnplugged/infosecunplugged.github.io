@@ -1,0 +1,410 @@
+- date: "20231130"
+  highlight_links:
+    - title: Confronto EDR
+      url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
+  id: 1
+  length: 28
+  published: true
+  summary:
+    Le organizzazioni si sono dotate di diverse soluzioni di sicurezza, e tali
+    soluzioni hanno generalmente vita propria. Riflessioni su soluzioni silos, possibili
+    integrazioni e rischi.
+  tags: []
+  title: Orchestrazione di sistemi di sicurezza (parte 1)
+  url: https://www.spreaker.com/episode/0x1-orchestrazione-di-sistemi-di-sicurezza-parte-1--57864841
+- date: "20231201"
+  highlight_links:
+    - title: Confronto EDR
+      url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
+  id: 2
+  length: 23
+  published: true
+  summary: "(continua dall'episodio precedente)
+
+
+    Le organizzazioni si sono dotate di diverse soluzioni di sicurezza, e tali soluzioni
+    hanno generalmente vita propria. Riflessioni su soluzioni silos, possibili integrazioni
+    e rischi."
+  tags: []
+  title: Orchestrazione di sistemi di sicurezza (parte 2)
+  url: https://www.spreaker.com/episode/0x2-orchestrazione-di-sistemi-di-sicurezza-parte-2--57864845
+- date: "20231221"
+  highlight_links:
+    - title: Confronto EDR
+      url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
+  id: 3
+  length: 26
+  published: true
+  summary:
+    Scegliere, gestire, utilizzare una soluzione di Endpoint Detection and
+    Response o EDR.
+  tags: []
+  title: "EDR: scegliere, gestire, utilizzare (parte 1)"
+  url: https://www.spreaker.com/episode/0x3-edr-scegliere-gestire-utilizzare-parte-1--58085880
+- date: "20231222"
+  highlight_links:
+    - title: Confronto EDR
+      url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
+  id: 4
+  length: 30
+  published: true
+  summary: "(continua dall'episodio precedente)
+
+
+    Scegliere, gestire, utilizzare una soluzione di Endpoint Detection and Response
+    o EDR."
+  tags: []
+  title: "EDR: scegliere, gestire, utilizzare (parte 2)"
+  url: https://www.spreaker.com/episode/0x4-edr-scegliere-gestire-utilizzare-parte-2--58085883
+- date: "20240104"
+  highlight_links:
+    - title: EDR Evasion Primer
+      url: https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf
+    - title: Cybersecurity Podcast
+      url: https://open.spotify.com/show/3GuETTlTQC1HVClDwo6GPk
+    - title: TIBER
+      url: https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html
+  id: 5
+  length: 46
+  published: true
+  summary:
+    Continua la riflessione sul mondo EDR iniziata nelle due puntati precedenti
+    che porta inevitabilmente a parlare di XDR.
+  tags: []
+  title: "Da EDR a XDR: scegliere, gestire, utilizzare (parte 1)"
+  url: https://www.spreaker.com/episode/0x5-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-1--58197896
+- date: "20240105"
+  highlight_links:
+    - title: EDR Evasion Primer
+      url: https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf
+    - title: Cybersecurity Podcast
+      url: https://open.spotify.com/show/3GuETTlTQC1HVClDwo6GPk
+    - title: TIBER
+      url: https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html
+  id: 6
+  length: 33
+  published: true
+  summary: "(continua dall'episodio precedente)
+
+
+    Continua la riflessione sul mondo EDR iniziata nelle due puntati precedenti che
+    porta inevitabilmente a parlare di XDR."
+  tags: []
+  title: "Da EDR a XDR: scegliere, gestire, utilizzare (parte 2)"
+  url: https://www.spreaker.com/episode/0x6-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-2--58197897
+- date: "20240202"
+  highlight_links: []
+  id: 7
+  length: 30
+  published: true
+  summary:
+    Apriamo il tema della sicurezza negli ambienti ICS/OT. Spunti e riflessioni
+    aperte su come approcciare un mondo che ricorda l'IT di 25 anni fa.
+  tags: []
+  title: Sicurezza negli impianti OT (parte 1)
+  url: https://www.spreaker.com/episode/0x7-sicurezza-negli-impianti-ot-parte-1--58542931
+- date: "20240203"
+  highlight_links: []
+  id: 8
+  length: 42
+  published: true
+  summary: "(continua dall'episodio precedente)
+
+
+    Apriamo il tema della sicurezza negli ambienti ICS/OT. Spunti e riflessioni aperte
+    su come approcciare un mondo che ricorda l'IT di 25 anni fa."
+  tags: []
+  title: Sicurezza negli impianti OT (parte 2)
+  url: https://www.spreaker.com/episode/0x8-sicurezza-negli-impianti-ot-parte-2--585429692
+- date: "20240221"
+  highlight_links: []
+  id: 9
+  length: 43
+  published: true
+  summary:
+    "Attacco con prossimit\xE0 fisica: cosa possiamo vedere con un rouge device\
+    \ opportunamente posizionato? Quanto rumore facciamo? E sopratutto: come possiamo\
+    \ individuare dispositivi malevoli?"
+  tags: []
+  title: "Attacco di prossimit\xE0 con rogue device e strategie di difesa (parte 1)"
+  url: https://www.spreaker.com/episode/0x9-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-1--58766770
+- date: "20240222"
+  highlight_links: []
+  id: 10
+  length: 22
+  published: true
+  summary:
+    "(continua dall'episodio precedente)\n\nAttacco con prossimit\xE0 fisica:\
+    \ cosa possiamo vedere con un rouge device opportunamente posizionato? Quanto\
+    \ rumore facciamo? E sopratutto: come possiamo individuare dispositivi malevoli?"
+  tags: []
+  title: "Attacco di prossimit\xE0 con rogue device e strategie di difesa (parte 2)"
+  url: https://www.spreaker.com/episode/0xa-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-2--58766863
+- date: "20240608"
+  highlight_links: []
+  id: 11
+  length: 50
+  published: true
+  summary:
+    "Nella puntata precedente abbiamo parlato di attacchi di prossimit\xE0\
+    \ e abbiamo volontariamente omesso le soluzioni basate su 802.1x. Affrontiamo\
+    \ l'argomento alla luce degli esperimenti fatti, mettendo in luce pregi e ombre\
+    \ delle soluzioni NAC. La riflessione parte dal rischio e dalla percezione che\
+    \ determinate soluzioni risolvano un problema. La discussione di sposta quindi\
+    \ su come possiamo disegnare le reti campus per far fronte agli scenari di attacco."
+  tags: []
+  title:
+    "802.1x bypass: riflessioni sugli impatti e sgli approcci per ridurre il
+    rischio"
+  url: https://www.spreaker.com/episode/0xb-802-1x-bypass-riflessioni-sugli-impatti-e-sgli-approcci-per-ridurre-il-rischio--60187964
+- date: "20240916"
+  highlight_links: []
+  id: 12
+  length: 64
+  published: true
+  summary:
+    Mettendoci nei panni di un CISO appena insediatosi presso una nuova azienda,
+    riflettiamo sui temi da affrontare. In questa prima puntata facciamo un brainstorming
+    per elencare i temi che approfondiremo nelle puntate seguenti.
+  tags: []
+  title: Ripartiamo dall'inizio
+  url: https://www.spreaker.com/episode/0xc-ripartiamo-dall-inizio--61809624
+- date: "20240929"
+  highlight_links: []
+  id: 13
+  length: 27
+  published: true
+  summary:
+    Con Alice Mini prendiamo spunto da un account di posta compromesso per
+    riflettere sugli impatti, sul processo di Awareness e su come migliorare i processi
+    aziendali.
+  tags: []
+  title: "[EXT] Account di posta compromesso"
+  url: https://www.spreaker.com/episode/0xd-ext-account-di-posta-compromesso--62152485
+- date: "20241016"
+  highlight_links: []
+  id: 14
+  length: 33
+  published: true
+  summary:
+    "All'evento NTS Passion tenutosi a Verona, abbiamo parlato delle pi\xF9\
+    \ comuni debolezze che rendono possibile effettuare attacchi con successo alle\
+    \ organizzazioni."
+  tags: []
+  title: "[PUB] Accesso non consentito (ma possibile)"
+  url: https://www.spreaker.com/episode/0xe-pub-accesso-non-consentito-ma-possibile--62386146
+- date: "20241202"
+  highlight_links: []
+  id: 15
+  length: 47
+  published: true
+  summary:
+    "Torniamo a metterci i panni di un un CISO appena insediatorsi presso una\
+    \ unova\_ azienda (vedi 0xc) e affrontiamo il tema della compliance. In questa\
+    \ puntata vediamo come e perch\xE8 usare le certificazioni a nostro vantaggio."
+  tags: []
+  title: La compliance normativa come vantaggio
+  url: https://www.spreaker.com/episode/0xf-la-compliance-normativa-come-vantaggio--63071211
+- date: "20241212"
+  highlight_links: []
+  id: 16
+  length: 25
+  published: true
+  summary:
+    "Con Alice Mini partiamo da due attacchi DDoS reali per riflettere su mitigazione,\
+    \ strategie di difesa, consapevolezza.\n\nIl podcast \xE8 stato registrato \"\
+    on the road\" per non perdere l'ispirazione del momento."
+  tags: []
+  title: "[EXT] Attacchi DDoS e strategie di sopravvivenza"
+  url: https://www.spreaker.com/episode/0x10-ext-attacchi-ddos-e-strategie-di-sopravvivenza--63286769
+- date: "20241216"
+  highlight_links: []
+  id: 17
+  length: 59
+  published: true
+  summary:
+    "Sempre nei panni di un CISO discutiamo di documentazione, tecnica e non:
+    approcci e strumenti per fare ordine tra le informazioni aziendali."
+  tags: []
+  title: Documentazione tecnica
+  url: https://www.spreaker.com/episode/0x11-documentazione-tecnica--63302501
+- date: "20241230"
+  highlight_links: []
+  id: 18
+  length: 39
+  published: true
+  summary:
+    La rete vista dall'IT manager e dal CISO. Una prima riflessione sulle implementazioni,
+    sulla sicurezza, sull'approccio Zero Trust... Argomento troppo ampio per esaurirlo
+    in una sola puntata.
+  tags: []
+  title: Riflessioni sulla rete (design, sicurezza, approccio)
+  url: https://www.spreaker.com/episode/0x12-riflessioni-sulla-rete-design-sicurezza-approccio--63459252
+- date: "20250113"
+  highlight_links: []
+  id: 19
+  length: 46
+  published: true
+  summary:
+    Continuano le riflessioni sulla rete e ci focalizziamo sul datacenter.
+    In particolare riflettiamo sul design, su concetti di microsegmentazione, sulle
+    reti storage e converged.
+  tags: []
+  title: Approfondimento sulle reti datacenter
+  url: https://www.spreaker.com/episode/0x13-approfondimento-sulle-reti-datacenter--63459253
+- date: "20250128"
+  highlight_links: []
+  id: 20
+  length: 37
+  published: true
+  summary:
+    "Una decina scarsa di anni fa nasce da una chiacchierata l'idea del CISO\
+    \ as a Service (CISOaaS), poi ribbattezzato vCISO. Ripercorriamo in due puntate\
+    \ come \xE8 nata l'idea, come \xE8 diventata una linea di business, e facciamo\
+    \ alcune considerazioni su CISO e vCISO, due possibilit\xE0 che non sono in contrapposizione."
+  tags: []
+  title: CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 1)
+  url: https://www.spreaker.com/episode/0x14-ciso-vciso-cisoaas-un-idea-nata-molti-anni-fa-parte-1--63934820
+- date: "20250210"
+  highlight_links: []
+  id: 21
+  length: 40
+  published: true
+  summary:
+    "(continua dall'episodio precedente)\n\nUna decina scarsa di anni fa nasce\
+    \ da una chiacchierata l'idea del CISO as a Service (CISOaaS), poi ribbattezzato\
+    \ vCISO. Ripercorriamo in due puntate come \xE8 nata l'idea, come \xE8 diventata\
+    \ una linea di business, e facciamo alcune considerazioni su CISO e vCISO, due\
+    \ possibilit\xE0 che non sono in contrapposizione."
+  tags: []
+  title: CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 2)
+  url: https://www.spreaker.com/episode/0x15-ciso-vciso-cisoaas-un-idea-nata-molti-anni-fa-parte-2--63934822
+- date: "20250517"
+  highlight_links: []
+  id: 22
+  length: 33
+  published: true
+  summary:
+    Rivediamo e riassumiamo quanto discusso in ambito sicurezza ICS/OT durante
+    l'evento a porte chiuse [organizzato da NTS](https://www.nts.eu/it/event/sicurezza-ics-ot/?utm_campaign=personalbranding)
+    per un ristretto numero di invitati.
+  tags: []
+  title: Sicurezza ICS/OT (da un evento NTS)
+  url: https://www.spreaker.com/episode/0x16-sicurezza-ics-ot-da-un-evento-nts--66128035
+- date: "20250602"
+  highlight_links: []
+  id: 23
+  length: 52
+  published: true
+  summary:
+    Iniziamo a discurete di Threat Intelligence, ma partiamo dalla raccolta
+    e dall'analisi del dato, parlando di EDR e SIEM.
+  tags: []
+  title: Threat Intelligence (parte 1)
+  url: https://www.spreaker.com/episode/0x17-threat-intelligence-parte-1--66128443
+- date: "20250825"
+  highlight_links: []
+  id: 24
+  length: 46
+  published: true
+  summary:
+    "Continuiamo la discussione sulla Threat Intelligence, analizzando attori\
+    \ in campo e complessit\xE0."
+  tags: []
+  title: Threat Intelligence (parte 2)
+  url: https://www.spreaker.com/episode/0x18-threat-intelligence-parte-2--67368804
+- date: "20250908"
+  highlight_links:
+    - title: Blog post di approfondimento
+      url: https://roccosicilia.com/2025/09/08/info-sec-unplugged-18-threat-int-3a-parte/?utm_source=website
+    - title: Highlight e dettagli sugli indicatori discussi (video)
+      url: https://www.youtube.com/watch?v=3LJb2OtQf28?utm_source=website
+  id: 25
+  length: 58
+  published: true
+  summary:
+    "In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia\
+    \ esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare\
+    \ sul lavoro del threat analyst, che studia il comportamento degli attori malevoli\
+    \ per supportare attivit\xE0 di detection e prevention. Viene inoltre approfondita\
+    \ la stretta relazione tra il mondo della threat intelligence e quello della offensive\
+    \ security, mostrando come entrambi si concentrino sul modus operandi degli attacchi\
+    \ e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un\
+    \ esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato\
+    \ da un post descrittivo e un video highlight, per rendere pi\xF9 accessibili\
+    \ i dettagli tecnici trattati."
+  tags:
+    - threat intelligence
+    - incident response
+    - security incident
+    - offensive security
+    - detection
+    - prevention
+    - cyber attack
+    - command and control
+    - ioc
+    - adversary simulation
+    - security analyst
+    - phishing
+  title: Threat Intelligence (parte 3)
+  url: https://www.spreaker.com/episode/0x19-threat-intelligence-parte-3--67664347
+- date: "20250922"
+  highlight_links:
+    - title: Highlight (video)
+      url: https://youtu.be/1gieddeZxWw
+    - title: Blog post di approfondimento
+      url: https://roccosicilia.com/2025/09/22/info-sec-unplugged-1a-dr-e-cyber-recovery-parte-1/?utm_source=website
+  id: 26
+  length: 42
+  published: true
+  summary:
+    In questa puntata di Info Sec. Unplugged si esplora il tema (spesso sottovalutato)
+    del disaster recovery in risposta agli attacchi informatici. Si analizzano i limiti
+    delle strategie tradizionali, l'importanza della separazione tra ambienti, le
+    implicazioni dei backup immutabili e delle golden image, e come una corretta automazione
+    e gestione dei privilegi possano fare la differenza tra la resilienza e la perdita
+    totale dei dati. Il racconto si arricchisce di esperienze reali e casi pratici
+    tipici delle aziende italiane, con un occhio alle nuove sfide aperte dal GDPR
+    e dalla digitalizzazione delle infrastrutture.
+  tags:
+    - disaster recovery
+    - ransomware
+    - backup
+    - golden image
+    - tabletop exercise
+    - business impact analysis
+    - gdpr
+    - automazione
+    - privilege escalation
+    - red teaming
+    - cloud
+    - hypervisor
+    - data retention
+  title: DR e Cyber recovery (parte 1)
+  url: https://www.spreaker.com/episode/0x1a-dr-e-cyber-recovery-parte-1--67835796
+- date: "20251006"
+  highlight_links: []
+  id: 27
+  length: 56
+  published: false
+  summary:
+    "Questa puntata di Info Sec. Unplugged \xE8 dedicata al tema del disaster\
+    \ recovery e alla sua evoluzione nell'era degli attacchi Cyber. Andrea Dainese\
+    \ e Rocco Sicilia accompagnano l'ascoltatore nella progettazione di processi e\
+    \ tecnologie per il DR, evidenziando le differenze tra esigenze di business e\
+    \ scelte tecniche, le sfide offerte dalle nuove normative e l'importanza della\
+    \ resilienza. Una chiacchierata pragmatica e divulgativa, ricca di aneddoti e\
+    \ consigli pratici per chi si occupa di sicurezza informatica e gestione delle\
+    \ infrastrutture IT."
+  tags:
+    - disaster recovery
+    - business impact analysis
+    - rto
+    - rpo
+    - cloud
+    - dora
+    - supply chain
+    - automazione
+    - ransomware
+  title: DR e Cyber recovery (parte 2)
+  url: https://www.spreaker.com/episode/0x1b-dr-e-cyber-recovery-parte-2--67835961
