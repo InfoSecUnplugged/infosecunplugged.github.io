@@ -958,6 +958,8 @@ a {
   border-radius: 12px;
   font-weight: 600;
   font-size: 0.85rem;
+  white-space: nowrap;
+  text-transform: uppercase;
 }
 .tags {
   font-size: 0.9rem;
