@@ -368,9 +368,17 @@
   length: 52
   published: true
   summary:
-    Iniziamo a discurete di Threat Intelligence, ma partiamo dalla raccolta
-    e dall'analisi del dato, parlando di EDR e SIEM.
-  tags: []
+    In questa puntata di Infosec Unplugged, Andrea Dainese e Rocco Sicilia introducono il
+    vasto tema della Threat Intelligence, ponendo le basi per comprenderne i principi e
+    le applicazioni pratiche. Partendo dalla raccolta e analisi del dato, discutono come
+    sistemi come EDR e XDR si siano evoluti, quali siano le loro funzionalità principali
+    e in che modo contribuiscano a migliorare la sicurezza informatica aziendale. Un
+    episodio che getta le fondamenta per affrontare con maggiore consapevolezza i
+    meccanismi della difesa cyber.
+  tags:
+    - threat intelligence
+    - edr
+    - xdr
   title: Threat Intelligence (parte 1)
   url: https://www.spreaker.com/episode/0x17-threat-intelligence-parte-1--66128443
 - authors:
