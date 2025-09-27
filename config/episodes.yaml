@@ -127,8 +127,8 @@
   title: "Attacco di prossimità con rogue device e strategie di difesa (parte 1)"
   url: https://www.spreaker.com/episode/0x9-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-1--58766770
 - authors:
-    - Alice Mini
     - Andrea Dainese
+    - Rocco Sicilia
   date: "20240222"
   highlight_links: []
   id: 10
@@ -242,8 +242,11 @@
   id: 19
   length: 46
   published: true
-  summary: Continuano le riflessioni sulla rete e ci focalizziamo sul datacenter. In particolare riflettiamo sul design, su concetti di microsegmentazione, sulle reti storage e converged.
-  tags: []
+  summary: "In questa puntata di Info Sec. Unplugged, Andra Dainese e Rocco Sicilia affrontano il tema del data center network design con un approccio tecnico e concreto. Dopo aver discusso in precedenza delle reti a livello campus, l'attenzione si sposta ora sulle esigenze delle aziende enterprise: dalla ridondanza alla sicurezza, fino alle scelte progettuali legate alla dimensione delle infrastrutture. Una conversazione ricca di spunti pratici per chi lavora nell'ambito delle reti e della sicurezza informatica."
+  tags:
+    - Datacenter
+    - Networking
+    - IT Architecture
   title: Approfondimento sulle reti datacenter
   url: https://www.spreaker.com/episode/0x13-approfondimento-sulle-reti-datacenter--63459253
 - authors:
@@ -376,6 +379,7 @@
     - Cloud
     - Hypervisor
     - Data Retention
+    - IT Architecture
   title: DR e Cyber recovery (parte 1)
   url: https://www.spreaker.com/episode/0x1a-dr-e-cyber-recovery-parte-1--67835796
 - authors:
@@ -397,5 +401,6 @@
     - Supply Chain
     - Automazione
     - Ransomware
+    - IT Architecture
   title: DR e Cyber recovery (parte 2)
   url: https://www.spreaker.com/episode/0x1b-dr-e-cyber-recovery-parte-2--67835961
