@@ -218,8 +218,15 @@
   id: 17
   length: 59
   published: true
-  summary: "Sempre nei panni di un CISO discutiamo di documentazione, tecnica e non: approcci e strumenti per fare ordine tra le informazioni aziendali."
-  tags: []
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema cruciale della documentazione in azienda, vista dal punto di vista di CIO, IT manager e CISO. La conversazione esplora l'importanza di avere procedure, manuali e documentazione di rete sempre aggiornati per supportare la sicurezza, la consulenza e la gestione dei progetti, evidenziando i rischi legati a informazioni incomplete o obsolete.
+  tags:
+    - IT Management
+    - CISO
+    - IT Governance
+    - Compliance
+    - Risk Management
+    - Incident Response
+    - Business Continuity
   title: Documentazione tecnica
   url: https://www.spreaker.com/episode/0x11-documentazione-tecnica--63302501
 - authors:
@@ -230,8 +237,22 @@
   id: 18
   length: 39
   published: true
-  summary: La rete vista dall'IT manager e dal CISO. Una prima riflessione sulle implementazioni, sulla sicurezza, sull'approccio Zero Trust... Argomento troppo ampio per esaurirlo in una sola puntata.
-  tags: []
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del networking visto con gli occhi dell'IT manager. Partendo dal caso tipico di chi eredita una rete già esistente in azienda, discutono di come valutare l'infrastruttura, identificare aree sensibili, gestire punti di accesso e servizi, e impostare strategie di sicurezza efficaci. Una chiacchierata utile e concreta per chi deve orientarsi nella complessità della rete aziendale e mantenere un equilibrio tra operatività e protezione.
+  tags:
+    - Infrastruttura IT
+    - IT Governance
+    - Incident Response
+    - Risk Management
+    - Networking
+    - Zero Trust
+    - Cloud
+    - Firewall
+    - Threat Detection
+    - Business Continuity
+    - Vulnerability Management
+    - Endpoint Security
+    - SOC
+    - CISO
   title: Riflessioni sulla rete (design, sicurezza, approccio)
   url: https://www.spreaker.com/episode/0x12-riflessioni-sulla-rete-design-sicurezza-approccio--63459252
 - authors:
