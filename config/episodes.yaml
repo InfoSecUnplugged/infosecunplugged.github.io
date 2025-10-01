@@ -206,8 +206,12 @@
   id: 16
   length: 25
   published: true
-  summary: "Con Alice Mini partiamo da due attacchi DDoS reali per riflettere su mitigazione, strategie di difesa, consapevolezza.\n\nIl podcast è stato registrato \"on the road\" per non perdere l'ispirazione del momento."
-  tags: []
+  summary: In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese e Alice Mini affrontano il tema degli attacchi DDoS (Distributed Denial of Service). Dopo una spiegazione introduttiva su come funzionano e sulle principali tipologie, i due raccontano episodi reali ed esperienze dirette legate a questo tipo di minaccia. La conversazione rimane accessibile e divulgativa, mettendo in luce non solo gli aspetti tecnici, ma anche le implicazioni pratiche e organizzative per chi subisce questi attacchi.
+  tags:
+    - DDoS
+    - Incident Response
+    - Threat Intelligence
+    - Botnet
   title: "[EXT] Attacchi DDoS e strategie di sopravvivenza"
   url: https://www.spreaker.com/episode/0x10-ext-attacchi-ddos-e-strategie-di-sopravvivenza--63286769
 - authors:
