@@ -170,8 +170,14 @@
   id: 13
   length: 27
   published: true
-  summary: Con Alice Mini prendiamo spunto da un account di posta compromesso per riflettere sugli impatti, sul processo di Awareness e su come migliorare i processi aziendali.
-  tags: []
+  summary: In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese e Alice Mini raccontano esperienze dirette legate al mondo della sicurezza informatica. Gli incidenti narrati sono stati romanzati per proteggere identità e dettagli sensibili, ma restano fedeli alla realtà degli attacchi e delle difficoltà che professionisti e aziende affrontano quotidianamente. Un mix di storytelling e cultura Cyber, pensato per rendere la sicurezza più vicina e comprensibile.
+  tags:
+    - Incident Response
+    - Phishing
+    - Malware
+    - Awareness
+    - Social Engineering
+    - Threat Hunting
   title: "[EXT] Account di posta compromesso"
   url: https://www.spreaker.com/episode/0xd-ext-account-di-posta-compromesso--62152485
 - authors:
