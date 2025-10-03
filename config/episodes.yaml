@@ -182,8 +182,15 @@
   id: 14
   length: 33
   published: true
-  summary: "All'evento NTS Passion tenutosi a Verona, abbiamo parlato delle più comuni debolezze che rendono possibile effettuare attacchi con successo alle organizzazioni."
-  tags: []
+  summary: In questa puntata si esplorano le attività di offensive security condotte sul campo, con esempi pratici di attacchi e difese aziendali. Viene discusso cosa significa testare la resilienza di un'organizzazione contro minacce Cyber, come individuare i punti d'ingresso più comuni e quali sono le strategie per gestire e contenere gli incidenti. Il racconto, basato su esperienze reali, mette in luce sia le sfide che le opportunità per migliorare la postura di sicurezza.
+  tags:
+    - NTS
+    - Incident Response
+    - Vulnerability Assessment
+    - Phishing
+    - Malware
+    - Threat Intelligence
+    - Zero Trust
   title: "[PUB] Accesso non consentito (ma possibile)"
   url: https://www.spreaker.com/episode/0xe-pub-accesso-non-consentito-ma-possibile--62386146
 - authors:
