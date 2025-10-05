@@ -158,13 +158,21 @@
   id: 12
   length: 64
   published: true
-  summary: Mettendoci nei panni di un CISO appena insediatosi presso una nuova azienda, riflettiamo sui temi da affrontare. In questa prima puntata facciamo un brainstorming per elencare i temi che approfondiremo nelle puntate seguenti.
-  tags: []
+  summary: "In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia introducono un nuovo percorso di riflessione e confronto dedicato al ruolo dell'IT manager, del CIO e del CISO. L'episodio apre una serie di conversazioni pensate per esplorare i passaggi chiave che un professionista IT affronta quando entra in una nuova azienda o in una nuova fase della propria carriera: dalla mappatura dell'infrastruttura tecnologica fino alle scelte strategiche di sicurezza e governance. Un dialogo pratico e autentico sul modo di pensare e agire nella gestione dell'IT moderno."
+  tags:
+    - CISO
+    - CIO
+    - IT Governance
+    - Incident Response
+    - Network Security
+    - Cloud Security
+    - Awareness
+    - Business Continuity
   title: Ripartiamo dall'inizio
   url: https://www.spreaker.com/episode/0xc-ripartiamo-dall-inizio--61809624
 - authors:
-    - Alice Mini
     - Andrea Dainese
+    - Rocco Sicilia
   date: "20240929"
   highlight_links: []
   id: 13
