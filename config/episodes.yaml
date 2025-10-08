@@ -134,8 +134,14 @@
   id: 10
   length: 22
   published: true
-  summary: "(continua dall'episodio precedente)\n\nAttacco con prossimità fisica: cosa possiamo vedere con un rouge device opportunamente posizionato? Quanto rumore facciamo? E sopratutto: come possiamo individuare dispositivi malevoli?"
-  tags: []
+  summary: "In questa puntata si discute di sicurezza informatica e threat modeling, affrontando il tema del disegno delle reti con una mentalità difensiva. Gli ospiti riflettono sull'importanza di progettare le infrastrutture IT assumendo che alcune macchine possano già essere compromesse, così da limitare l'impatto di eventuali attacchi. La conversazione esplora approcci pratici, la differenza tra vendor e soluzioni di protezione, e come cambiare prospettiva possa migliorare la resilienza complessiva dei sistemi."
+  tags:
+    - Threat Modeling
+    - IT Security
+    - Incident Response
+    - Network Security
+    - Zero Trust
+    - Defense In Depth
   title: "Attacco di prossimità con rogue device e strategie di difesa (parte 2)"
   url: https://www.spreaker.com/episode/0xa-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-2--58766863
 - authors:
