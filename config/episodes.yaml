@@ -110,8 +110,12 @@
   id: 8
   length: 42
   published: true
-  summary: "(continua dall'episodio precedente)\n\nApriamo il tema della sicurezza negli ambienti ICS/OT. Spunti e riflessioni aperte su come approcciare un mondo che ricorda l'IT di 25 anni fa."
-  tags: []
+  summary: "In questa puntata si parla dell'evoluzione delle tecnologie di storage, dal Fiber Channel all'iSCSI, con un approfondimento sulle scelte architetturali, i costi e i vantaggi che hanno guidato la transizione verso protocolli più flessibili e diffusi."
+  tags:
+    - Fiber Channel
+    - SCSI
+    - iSCSI
+    - Architettura
   title: Sicurezza negli impianti OT (parte 2)
   url: https://www.spreaker.com/episode/0x8-sicurezza-negli-impianti-ot-parte-2--585429692
 - authors:
