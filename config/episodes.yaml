@@ -100,7 +100,7 @@
   published: true
   summary: Apriamo il tema della sicurezza negli ambienti ICS/OT. Spunti e riflessioni aperte su come approcciare un mondo che ricorda l'IT di 25 anni fa.
   tags: []
-  title: Sicurezza negli impianti OT (parte 1)
+  title: Sicurezza negli impianti OT
   url: https://www.spreaker.com/episode/0x7-sicurezza-negli-impianti-ot-parte-1--58542931
 - authors:
     - Andrea Dainese
@@ -116,8 +116,8 @@
     - SCSI
     - iSCSI
     - Infrastruttura IT
-  title: Sicurezza negli impianti OT (parte 2)
-  url: https://www.spreaker.com/episode/0x8-sicurezza-negli-impianti-ot-parte-2--585429692
+  title: Il lato nascosto dello storage tra costi e innovazione IT
+  url: https://www.spreaker.com/episode/0x8-sicurezza-negli-impianti-ot-parte-2--58542969
 - authors:
     - Andrea Dainese
     - Rocco Sicilia
