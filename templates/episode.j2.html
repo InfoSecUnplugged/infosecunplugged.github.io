@@ -92,7 +92,7 @@
       {% if episode.tags %}
       <div class="tags mb-4">
         {% for tag in episode.tags %}
-        <span>{{ tag }}</span>
+        <span><a class="text-black" href="../tags/tag-{{ tag | slugify }}.html">{{ tag }}</a></span>
         {% endfor %}
       </div>
       {% endif %}

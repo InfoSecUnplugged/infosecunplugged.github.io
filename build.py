@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 
+import os
 import yaml
-from jinja2 import Template
+from jinja2 import Environment
+from slugify import slugify
 
 main_template_file = "templates/index.j2.html"
 episode_template_file = "templates/episode.j2.html"
+tag_template_file = "templates/tag.j2.html"
 config_data_file = "config/config.yaml"
 episodes_data_file = "config/episodes.yaml"
 platforms_data_tile = "config/platforms.yaml"
@@ -13,6 +16,8 @@ with open(main_template_file, "r", encoding="utf-8") as fh:
     main_template_html = fh.read()
 with open(episode_template_file, "r", encoding="utf-8") as fh:
     episode_template_html = fh.read()
+with open(tag_template_file, "r", encoding="utf-8") as fh:
+    tag_template_html = fh.read()
 with open(config_data_file, "r", encoding="utf-8") as fh:
     config = yaml.safe_load(fh)
 with open(episodes_data_file, "r", encoding="utf-8") as fh:
@@ -24,9 +29,12 @@ with open(episodes_data_file, "r", encoding="utf-8") as fh:
 with open(platforms_data_tile, "r", encoding="utf-8") as fh:
     platforms = yaml.safe_load(fh)
 
+# Jinja environment
+env = Environment()
+env.filters['slugify'] = slugify
 
 # Main page
-main_template = Template(main_template_html)
+main_template = env.from_string(main_template_html)
 main_html = main_template.render(config=config, episodes=episodes, platforms=platforms)
 
 with open("index.html", "w", encoding="utf-8") as fh:
@@ -45,7 +53,8 @@ for episode in episodes:
 
 
 # Per episode page
-episode_template = Template(episode_template_html)
+os.makedirs("episodes", exist_ok=True)
+episode_template = env.from_string(episode_template_html)
 for episode in episodes:
     if not episode["published"]:
         continue
@@ -67,3 +76,19 @@ for episode in episodes:
     episode_html = episode_template.render(config=config, episode=episode, platforms=platforms, related=related)
     with open(f"episodes/episode-{episode['id']}.html", "w", encoding="utf-8") as fh:
         fh.write(episode_html)
+
+# Tags
+os.makedirs("tags", exist_ok=True)
+tag_template = env.from_string(tag_template_html)
+for tag, related_ids in tags.items():
+    slug = slugify(tag)
+
+    # Find related episodes
+    related = []
+    for related_episode in episodes:
+        if related_episode["id"] in related_ids:
+            related.append(related_episode)
+
+    tag_html = tag_template.render(config=config, tag=tag, related=related)
+    with open(f"tags/tag-{slug}.html", "w", encoding="utf-8") as fh:
+        fh.write(tag_html)
