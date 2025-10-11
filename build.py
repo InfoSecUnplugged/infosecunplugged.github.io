@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import shutil
 import yaml
 from jinja2 import Environment
 from slugify import slugify
@@ -11,6 +12,9 @@ tag_template_file = "templates/tag.j2.html"
 config_data_file = "config/config.yaml"
 episodes_data_file = "config/episodes.yaml"
 platforms_data_tile = "config/platforms.yaml"
+
+shutil.rmtree("episodes")
+shutil.rmtree("tags")
 
 with open(main_template_file, "r", encoding="utf-8") as fh:
     main_template_html = fh.read()
