@@ -68,8 +68,16 @@
   id: 5
   length: 46
   published: true
-  summary: Continua la riflessione sul mondo EDR iniziata nelle due puntati precedenti che porta inevitabilmente a parlare di XDR.
-  tags: []
+  summary: "In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia approfondiscono il tema della selezione di una soluzione EDR (Endpoint Detection and Response). Partendo dalle differenze tra gestione interna e servizi MDR, discutono i criteri di scelta più importanti, le caratteristiche tecniche da considerare, l'integrazione con sistemi XDR e l'evoluzione delle piattaforme di sicurezza. Una conversazione pratica e realistica per chi deve orientarsi nel mondo delle soluzioni di cybersecurity aziendale."
+  tags:
+    - EndpointSecurity
+    - Incident Response
+    - SOC
+    - Threat Hunting
+    - SIEM
+    - SOAR
+    - Vulnerability Management
+    - Zero Trust
   title: "Da EDR a XDR: scegliere, gestire, utilizzare (parte 1)"
   url: https://www.spreaker.com/episode/0x5-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-1--58197896
 - authors:
