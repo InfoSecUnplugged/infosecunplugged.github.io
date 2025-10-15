@@ -50,8 +50,14 @@
   id: 4
   length: 30
   published: true
-  summary: "(continua dall'episodio precedente)\n\nScegliere, gestire, utilizzare una soluzione di Endpoint Detection and Response o EDR."
-  tags: []
+  summary: "In questa puntata si affrontano tre domande chiave sulla gestione della sicurezza informatica e delle tecnologie aziendali: cosa succede se non si presidiano correttamente le infrastrutture digitali, quali rischi si corrono nel definire policy troppo larghe o troppo restrittive, e come verificare se il proprio setup di sicurezza è adeguato al livello di minaccia attuale. Gli ospiti riflettono su pratiche di monitoraggio continuo, configurazioni di hunting e sull'importanza di mantenere un controllo costante per garantire resilienza e protezione."
+  tags:
+    - IT Security
+    - Incident Response
+    - Governance
+    - Threat hunting
+    - Vulnerability Management
+    - Awareness
   title: "EDR: scegliere, gestire, utilizzare (parte 2)"
   url: https://www.spreaker.com/episode/0x4-edr-scegliere-gestire-utilizzare-parte-2--58085883
 - authors:
