@@ -36,8 +36,21 @@
   id: 3
   length: 26
   published: true
-  summary: Scegliere, gestire, utilizzare una soluzione di Endpoint Detection and Response o EDR.
-  tags: []
+  summary: "In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema degli EDR, analizzando miti, confusione e realtà dietro le principali soluzioni di cybersecurity. Partendo dal quadrante Gartner, i due esplorano come scegliere una piattaforma di difesa efficace, evidenziando le differenze tra teoria e pratica nell'implementazione delle tecnologie di sicurezza."
+  tags:
+    - IT Security
+    - Incident Response
+    - Threat Intelligence
+    - Awareness
+    - SOC
+    - Red Team
+    - Zero Trust
+    - XDR
+    - EDR
+    - SIEM
+    - SOAR
+    - Endpoint  Security
+    - Threat Hunting
   title: "EDR: scegliere, gestire, utilizzare (parte 1)"
   url: https://www.spreaker.com/episode/0x3-edr-scegliere-gestire-utilizzare-parte-1--58085880
 - authors:
