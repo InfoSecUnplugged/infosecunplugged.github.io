@@ -22,8 +22,11 @@
   id: 2
   length: 23
   published: true
-  summary: "(continua dall'episodio precedente)\n\nLe organizzazioni si sono dotate di diverse soluzioni di sicurezza, e tali soluzioni hanno generalmente vita propria. Riflessioni su soluzioni silos, possibili integrazioni e rischi."
-  tags: []
+  summary: "In questa puntata si affronta il tema del rischio in modo approfondito e pragmatico. Gli ospiti riflettono su come il concetto di rischio, spesso percepito come qualcosa di astratto, debba invece essere calato in uno scenario concreto fatto di probabilità, impatti e modelli di gestione. Si parla di cybersecurity, infrastrutture IT, e dell'importanza di costruire e testare strategie di difesa solide, fino alla cosiddetta 'prova del nove': verificare se ciò che si è progettato regge davvero alle minacce reali. Un episodio utile per chi si occupa di sicurezza informatica, risk management e continuità operativa."
+  tags:
+    - Risk Management
+    - IT Security
+    - Disaster Recovery
   title: Orchestrazione di sistemi di sicurezza (parte 2)
   url: https://www.spreaker.com/episode/0x2-orchestrazione-di-sistemi-di-sicurezza-parte-2--57864845
 - authors:
