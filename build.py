@@ -14,8 +14,10 @@ config_data_file = "config/config.yaml"
 episodes_data_file = "config/episodes.yaml"
 platforms_data_tile = "config/platforms.yaml"
 
-shutil.rmtree("episodes")
-shutil.rmtree("tags")
+if os.path.exists("episodes"):
+    shutil.rmtree("episodes")
+if os.path.exists("tags"):
+    shutil.rmtree("tags")
 
 with open(main_template_file, "r", encoding="utf-8") as fh:
     main_template_html = fh.read()
@@ -36,7 +38,7 @@ with open(platforms_data_tile, "r", encoding="utf-8") as fh:
 
 # Jinja environment
 env = Environment()
-env.filters['slugify'] = slugify
+env.filters["slugify"] = slugify
 
 # Main page
 main_template = env.from_string(main_template_html)
@@ -69,12 +71,16 @@ for episode in episodes:
     transcript = None
     if os.path.exists(transcript_file):
         with open(transcript_file, "r") as fh:
-            transcript = markdown.markdown(fh.read())        
+            transcript = markdown.markdown(fh.read())
 
     # Find related episodes
-    related_ids =[]
+    related_ids = []
     related = []
     for tag in episode["tags"]:
+        if tag not in config["tags"]:
+            print(
+                f"WARNING: tag {tag} in episode {episode['id']} is not in the primary list"
+            )
         for related_id in tags[tag]:
             if related_id == episode["id"]:
                 # Skip same episode
@@ -85,7 +91,13 @@ for episode in episodes:
                     if related_episode["id"] == related_id:
                         related.append(related_episode)
 
-    episode_html = episode_template.render(config=config, episode=episode, platforms=platforms, related=related, transcript=transcript)
+    episode_html = episode_template.render(
+        config=config,
+        episode=episode,
+        platforms=platforms,
+        related=related,
+        transcript=transcript,
+    )
 
     with open(f"episodes/episode-{episode['id']}.html", "w", encoding="utf-8") as fh:
         fh.write(episode_html)
@@ -106,3 +118,22 @@ for tag, related_ids in tags.items():
     with open(f"tags/tag-{slug}.html", "w", encoding="utf-8") as fh:
         fh.write(tag_html)
 
+# Update config files
+with open("config/config.yaml", "w", encoding="utf-8") as fh:
+    yaml.dump(
+        config,
+        fh,
+        default_flow_style=False,
+        allow_unicode=True,
+        sort_keys=True,
+        indent=2,
+    )
+with open("config/episodes.yaml", "w", encoding="utf-8") as fh:
+    yaml.dump(
+        episodes,
+        fh,
+        default_flow_style=False,
+        allow_unicode=True,
+        sort_keys=True,
+        indent=2,
+    )
