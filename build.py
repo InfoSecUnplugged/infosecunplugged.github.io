@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import markdown
 import shutil
 import yaml
 from jinja2 import Environment
@@ -63,6 +64,13 @@ for episode in episodes:
     if not episode["published"]:
         continue
 
+    # Transcript
+    transcript_file = f"transcripts/episode-{episode['id']}.md"
+    transcript = None
+    if os.path.exists(transcript_file):
+        with open(transcript_file, "r") as fh:
+            transcript = markdown.markdown(fh.read())        
+
     # Find related episodes
     related_ids =[]
     related = []
@@ -77,7 +85,8 @@ for episode in episodes:
                     if related_episode["id"] == related_id:
                         related.append(related_episode)
 
-    episode_html = episode_template.render(config=config, episode=episode, platforms=platforms, related=related)
+    episode_html = episode_template.render(config=config, episode=episode, platforms=platforms, related=related, transcript=transcript)
+
     with open(f"episodes/episode-{episode['id']}.html", "w", encoding="utf-8") as fh:
         fh.write(episode_html)
 
@@ -96,3 +105,4 @@ for tag, related_ids in tags.items():
     tag_html = tag_template.render(config=config, tag=tag, related=related)
     with open(f"tags/tag-{slug}.html", "w", encoding="utf-8") as fh:
         fh.write(tag_html)
+

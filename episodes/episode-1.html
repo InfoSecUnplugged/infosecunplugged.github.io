@@ -111,23 +111,73 @@
       
       <div class="tags mb-4">
         
-        <span><a class="text-black" href="../tags/tag-soc.html">SOC</a></span>
+        <span><a class="text-black" href="../tags/tag-governance.html">Governance</a></span>
         
-        <span><a class="text-black" href="../tags/tag-siem.html">SIEM</a></span>
+        <span><a class="text-black" href="../tags/tag-it-architecture.html">IT Architecture</a></span>
+        
+        <span><a class="text-black" href="../tags/tag-edr.html">EDR</a></span>
+        
+        <span><a class="text-black" href="../tags/tag-vulnerability-management.html">Vulnerability Management</a></span>
+        
+        <span><a class="text-black" href="../tags/tag-risk-management.html">Risk Management</a></span>
         
         <span><a class="text-black" href="../tags/tag-soar.html">SOAR</a></span>
         
-        <span><a class="text-black" href="../tags/tag-incident-response.html">Incident Response</a></span>
+        <span><a class="text-black" href="../tags/tag-firewall.html">Firewall</a></span>
         
-        <span><a class="text-black" href="../tags/tag-it-security.html">IT Security</a></span>
+        <span><a class="text-black" href="../tags/tag-endpoint-security.html">Endpoint Security</a></span>
+        
+        <span><a class="text-black" href="../tags/tag-ot-security.html">OT Security</a></span>
+        
+        <span><a class="text-black" href="../tags/tag-security-analyst.html">Security Analyst</a></span>
         
       </div>
       
-
     </div>
 
     
     <div class="site-section bg-light">
+      <div class="container" data-aos="fade-up">
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="font-weight-bold text-black">Trascrizione testuale rileaborata da AI</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Partiamo con questa prima riflessione sul tema dell’orchestrazione delle soluzioni di sicurezza, un argomento che spesso viene dato per scontato ma che, a guardar bene, nasconde molte complessità. Ci capita di vedere aziende piene di strumenti, tecnologie e piattaforme che non dialogano tra loro. In teoria dovrebbero collaborare per garantire protezione e controllo, ma nella pratica vivono in silos separati, con tutti i pro e i contro che questo comporta.</p>
+<p>Quello che notiamo spesso è una tendenza diffusa: di fronte a una nuova esigenza, la prima reazione è acquistare una soluzione che risolva quel problema specifico. Si ragiona poco su come far lavorare insieme le soluzioni già presenti. Così, quando un’azienda ha la maturità e la capacità economica per dotarsi di più strumenti di sicurezza, finisce con l’avere tre o quattro soluzioni – talvolta persino con funzionalità sovrapposte – che non si integrano tra loro. Ogni sistema si comporta come un’entità autonoma, e il risultato è frammentazione, inefficienza e un governo complessivo difficile.</p>
+<p>Abbiamo cominciato a ragionare su questo tema diversi anni fa, osservando situazioni dove coesistevano molteplici soluzioni software pensate per la governance o la gestione delle configurazioni. Ognuna faceva bene il proprio lavoro, ma insieme creavano difficoltà evitabili. Per esempio, ogni sistema aveva un proprio database degli asset: non esisteva una fonte unica e centralizzata. L’integrazione a livello di utenza era incoerente, la gestione degli alert frammentata: ogni strumento inviava notifiche a modo suo, costringendo a consultare dashboard diverse per ottenere un quadro completo. Tutte piccole difficoltà che, sommate, portavano a un problema più grande: le soluzioni venivano trascurate, lasciate a se stesse, e finivano per non restituire il valore che dovevano.</p>
+<p>Pensiamo al caso classico dell’EDR: genera notifiche in continuazione, ma se nessuno le guarda, siamo punto e a capo. Oppure, peggio ancora, se non siamo sicuri che l’EDR sia installato su tutti gli asset che dovrebbe proteggere, il problema diventa strutturale: abbiamo uno strumento potente che non copre tutto il perimetro. E questo, nella realtà, capita più spesso di quanto si creda. Se avessimo un asset manager correttamente popolato, un EDR potrebbe attingere a quel database e garantire una copertura coerente. Ma spesso la base dati non è aggiornata o è distribuita su più sistemi scollegati.</p>
+<p>Dietro a queste difficoltà c’è una questione di metodo. Si tende ad affrontare la sicurezza come somma di strumenti, non come sistema integrato. Si comprano prodotti, si installano, si configurano, ma raramente si pianifica un disegno complessivo. E questo vale sia per la parte infrastrutturale sia per i dati: le informazioni restano frammentate, le piattaforme isolate.</p>
+<p>Quando analizziamo le realtà aziendali, vediamo che il problema è trasversale. Non riguarda solo aziende piccole o grandi, né un settore specifico: è sistemico. C’è una tendenza generalizzata a lavorare per compartimenti stagni, anche quando si riconosce l’importanza dell’integrazione.</p>
+<p>Ci vengono in mente diversi esempi. Uno di questi riguarda un progetto recente con un cliente che stava trasferendo il proprio datacenter presso un fornitore esterno. Non un cloud pubblico come AWS o Azure, ma un’infrastruttura più “tradizionale”, basata su VMware, Cisco, CI e NSX-T. Il cliente voleva portare con sé il proprio firewall, mantenendo la sua tecnologia – in questo caso Palo Alto – ma il fornitore proponeva di utilizzare il firewall nativo di VMware, quello integrato in NSX-T, per filtrare il traffico est-ovest.</p>
+<p>Il problema era evidente: avrebbe avuto due soluzioni parallele, due punti di controllo separati, due sistemi da gestire. Il firewall Palo Alto per il traffico nord-sud e quello NSX-T per l’est-ovest. E queste due soluzioni non si parlavano. Ogni troubleshooting, ogni verifica richiedeva di passare da una console all’altra. La centralizzazione degli alert diventava complicata: gli allarmi uscivano dalla piattaforma XDR di Palo Alto e si perdevano in un contesto esterno difficile da correlare. Ciò che in passato veniva visto come un vantaggio – il famoso “dual bastion” – si è rivelato un contro: disomogeneità, mancanza di integrazione, costi elevati di sviluppo e gestione.</p>
+<p>Un altro esempio ci è capitato in un contesto diverso, ma con problematiche simili. Stavamo lavorando con un cliente per implementare un processo di discovery automatica della rete e di messa in ordine dell’asset inventory. Siamo partiti con una mappatura di rete, una “cartina” che mostrava effettivamente tutti i dispositivi connessi. Abbiamo poi confrontato quella lista con l’IPAM del cliente – che al momento era solo un foglio Excel – e successivamente con l’asset inventory ufficiale.</p>
+<p>Il risultato è stato sorprendente: circa il 30% degli IP risultava censito nel DNS, ma i restanti due terzi erano completamente sconosciuti. E man mano che ci avvicinavamo alle “strutture dati ufficiali”, le informazioni si diradavano. Meno record, più incertezze. Questo si traduceva in problemi evidenti: EDR non installati dove servivano, vulnerabilità non tracciate, report incompleti. In sostanza, una parte significativa della rete aziendale era invisibile agli strumenti di sicurezza.</p>
+<p>Qui tocchiamo un punto importante: la difficoltà di base nel fare discovery. In teoria molte soluzioni di asset inventory hanno già funzioni di discovery integrate, ma nella pratica vengono usate poco o male. Spesso l’implementazione è ridotta, incompleta o non aggiornata. Un buon punto di partenza per capire la situazione reale è osservare la rete: contare i dispositivi effettivamente connessi, sia via cavo che wireless. Basta confrontare il numero di MAC address rilevati con quelli censiti. Se la differenza è ampia, significa che ci sfugge qualcosa. E capita spesso di scoprire il doppio, o addirittura il triplo, degli oggetti che pensavamo di avere.</p>
+<p>Dietro tutto questo c’è anche un problema metodologico di governance. Molte organizzazioni non definiscono in modo chiaro che cosa vogliono gestire. Dovremmo cominciare proprio da lì: sedersi a un tavolo e decidere che cosa intendiamo includere nella nostra gestione IT e, di conseguenza, nella nostra sicurezza informatica.</p>
+<p>Dovremmo identificare le classi di oggetti da governare – endpoint, server, switch, dispositivi IoT o OT – e partire da quelle. Invece, troppo spesso il processo è invertito: si parte da un censimento parziale, e solo dopo si decide cosa gestire. Questo approccio genera lacune. Perdiamo intere categorie di asset che sfuggono alla governance, come totem informativi, dispositivi embedded, stampanti di rete o macchine industriali. E poi c’è l’enorme capitolo dell’operational technology, un mondo dove questi problemi si amplificano.</p>
+<p>In sostanza, la prima difficoltà che incontriamo è che non si ha una visione chiara di ciò che si vuole gestire. Si pensa di avere tutto sotto controllo perché gli endpoint sono nel sistema di ticketing e i server nel cluster VMware. Ma poi una discovery completa rivela che la realtà è molto più ampia. Gestire bene significa sapere su quali asset stiamo esercitando la governance: senza questo, tutto il resto è costruito su fondamenta fragili.</p>
+<p>Il passo successivo è fermarsi e fare un’analisi dall’alto. Decidere da dove partire, cosa controllare, come classificare gli oggetti e quale priorità assegnare a ciascuno. Solo dopo possiamo passare alla verifica, confrontando i dati con la realtà. Per i dispositivi interni, la rete è la “verità” più affidabile; per i lavoratori mobili, la verità risiede invece nelle risorse umane, negli elenchi dipendenti, nei dispositivi assegnati. Se una persona riceve lo stipendio, probabilmente ha anche uno strumento aziendale assegnato: un laptop, uno smartphone, un account. Tutti elementi che dovrebbero essere tracciati.</p>
+<p>A quel punto si può cominciare un lavoro di correlazione tra fonti diverse: HR, asset inventory, EDR, vulnerability management, sistemi di ticketing. All’inizio le discrepanze saranno numerose, ma questo è un segno di progresso. È proprio da quelle differenze che nasce una comprensione più precisa dell’ambiente.</p>
+<p>Naturalmente, tutto questo richiede integrazioni tra sistemi. E qui arriviamo a un altro tema ricorrente: le API. Oggi diamo quasi per scontato che ogni soluzione ne disponga, ma non è sempre così. I prodotti legacy, sviluppati vent’anni fa, spesso non offrono set di API completi. Una piattaforma moderna dovrebbe consentire di fare tutto tramite API; altrimenti è da considerarsi obsoleta. La chimera della “soluzione unica che fa tutto” non esiste. Ogni vendor ha la propria visione, costruisce il proprio ecosistema, e spesso tende a chiuderlo. Le integrazioni tra vendor diversi sono inevitabili, ma vanno progettate e mantenute.</p>
+<p>Certo, oggi molti fornitori mettono a disposizione connector e interfacce, ma integrarli richiede sempre effort. E quell’effort deve avere un senso preciso. Non si integrano sistemi “perché il framework lo prevede”: lo si fa se porta un vantaggio tangibile. Ad esempio, integrare un asset management con un sistema di ticketing ha senso se vogliamo associare i case agli asset e misurare quanti incidenti riguardano un certo servizio. Da lì possiamo capire dove investiamo più tempo, quali asset generano più problemi e dove serve intervenire.</p>
+<p>Quando le integrazioni non sono pensate con un obiettivo chiaro, diventano solo costi di sviluppo senza ritorno. La chiave è partire da un’esigenza concreta e valutare se l’integrazione genera valore, visibilità o automazione reale.</p>
+<p>Se vogliamo capire come siamo arrivati a questa frammentazione, dobbiamo guardare a come le aziende scelgono le tecnologie. Spesso la spinta arriva dall’urgenza. Gli attacchi informatici, le notizie di data breach, i blocchi produttivi: tutto genera pressione. Si avverte la necessità di “fare qualcosa”, e nel tentativo di reagire si acquistano nuove tecnologie – firewall più performanti, EDR di ultima generazione, soluzioni di backup immutabile, piani di disaster recovery. Ogni strato aggiunge sicurezza, ma anche complessità.</p>
+<p>Due sono le debolezze principali di questo approccio. Primo: le tecnologie vengono introdotte senza un vero design architetturale, quindi con errori logici di fondo che minano l’efficacia complessiva. Secondo: queste tecnologie non sono presidiate. Si acquistano soluzioni eccellenti, ma nessuno le guarda davvero. Gli alert restano non letti, le dashboard non monitorate, e alla fine la sicurezza resta solo potenziale.</p>
+<p>Alla base di tutto c’è una confusione tra “esigenza” e “rischio”. Nel mondo IT tradizionale siamo abituati a ragionare per esigenze: ci serve una funzionalità, cerchiamo la soluzione che la offra. Nel mondo della sicurezza, invece, dovremmo ragionare in termini di rischio: dobbiamo mitigare un rischio specifico, e quindi scegliamo la tecnologia adatta. Ma per farlo bisogna conoscere i propri rischi, non solo quelli raccontati dal mercato.</p>
+<p>Molte organizzazioni acquistano strumenti sulla base dei rischi “mainstream”, influenzate da notizie, report e trend di settore. Tutti comprano EDR perché “serve a tutti”, ma magari trascurano il mondo server o OT, dove il rischio reale è più alto. Le decisioni vengono prese su presupposti incompleti, spesso emotivi, e raramente basati su un’analisi di contesto.</p>
+<p>Siamo tutti influenzabili, è naturale: leggiamo articoli, seguiamo discussioni su LinkedIn, assorbiamo opinioni e casi di studio. Ma se non guardiamo con attenzione alla nostra realtà, finiamo per applicare soluzioni generiche a problemi specifici. L’unico modo per uscire da questo circolo è costruire un approccio strutturato: capire i rischi reali, definire una governance basata su dati, progettare un’architettura coerente.</p>
+<p>Solo così possiamo davvero orchestrare le soluzioni di sicurezza, trasformandole da strumenti isolati a un ecosistema coordinato e capace di restituire valore all’organizzazione.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    
+    <div class="site-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-12 text-center">
@@ -135,6 +185,142 @@
           </div>
         </div>
         <div class="row">
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-15.html">0xf - La compliance normativa come vantaggio</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 02/12/2024 <span class="sep">/</span> 47 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema della compliance in ambito IT e sicurezza informatica. Si discute di come un CISO o un IT manager, entrando in azienda, debba gestire framework, certificazioni e processi già esistenti oppure costruirne di nuovi. La conversazione esplora il percorso di maturazione delle organizzazioni rispetto alla compliance, le sfide pratiche, e il valore di una corretta governance per dare direzione e solidità alle strategie di sicurezza.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-4.html">0x4 - EDR: scegliere, gestire, utilizzare (parte 2)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/12/2023 <span class="sep">/</span> 30 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata si affrontano tre domande chiave sulla gestione della sicurezza informatica e delle tecnologie aziendali: cosa succede se non si presidiano correttamente le infrastrutture digitali, quali rischi si corrono nel definire policy troppo larghe o troppo restrittive, e come verificare se il proprio setup di sicurezza è adeguato al livello di minaccia attuale. Gli ospiti riflettono su pratiche di monitoraggio continuo, configurazioni di hunting e sull'importanza di mantenere un controllo costante per garantire resilienza e protezione.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-27.html">0x1b - DR e Cyber recovery (parte 2)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 06/10/2025 <span class="sep">/</span> 56 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">Questa puntata di Info Sec. Unplugged è dedicata al tema del disaster recovery e alla sua evoluzione nell'era degli attacchi Cyber. Andrea Dainese e Rocco Sicilia accompagnano l'ascoltatore nella progettazione di processi e tecnologie per il DR, evidenziando le differenze tra esigenze di business e scelte tecniche, le sfide offerte dalle nuove normative e l'importanza della resilienza. Una chiacchierata pragmatica e divulgativa, ricca di aneddoti e consigli pratici per chi si occupa di sicurezza informatica e gestione delle infrastrutture IT.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-26.html">0x1a - DR e Cyber recovery (parte 1)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/09/2025 <span class="sep">/</span> 42 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged si esplora il tema (spesso sottovalutato) del disaster recovery in risposta agli attacchi informatici. Si analizzano i limiti delle strategie tradizionali, l'importanza della separazione tra ambienti, le implicazioni dei backup immutabili e delle golden image, e come una corretta automazione e gestione dei privilegi possano fare la differenza tra la resilienza e la perdita totale dei dati. Il racconto si arricchisce di esperienze reali e casi pratici tipici delle aziende italiane, con un occhio alle nuove sfide aperte dal GDPR e dalla digitalizzazione delle infrastrutture.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-19.html">0x13 - Approfondimento sulle reti datacenter</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 13/01/2025 <span class="sep">/</span> 46 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andra Dainese e Rocco Sicilia affrontano il tema del data center network design con un approccio tecnico e concreto. Dopo aver discusso in precedenza delle reti a livello campus, l'attenzione si sposta ora sulle esigenze delle aziende enterprise: dalla ridondanza alla sicurezza, fino alle scelte progettuali legate alla dimensione delle infrastrutture. Una conversazione ricca di spunti pratici per chi lavora nell'ambito delle reti e della sicurezza informatica.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-24.html">0x18 - Threat Intelligence (parte 2)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 25/08/2025 <span class="sep">/</span> 46 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia tornano dietro ai microfoni dopo la pausa estiva per approfondire i temi legati alla sicurezza informatica. Partendo dal confronto tra EDR e SIEM, i due discutono di come queste tecnologie si integrino e si completino a vicenda, sfatando l'idea che una possa sostituire l'altra. La conversazione si concentra su come le organizzazioni possano fare un passo evolutivo nell'uso di queste piattaforme, passando da strumenti puramente reattivi a soluzioni che abilitano una difesa proattiva e contributiva.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-23.html">0x17 - Threat Intelligence (parte 1)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 02/06/2025 <span class="sep">/</span> 52 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Infosec Unplugged, Andrea Dainese e Rocco Sicilia introducono il vasto tema della Threat Intelligence, ponendo le basi per comprenderne i principi e le applicazioni pratiche. Partendo dalla raccolta e analisi del dato, discutono come sistemi come EDR e XDR si siano evoluti, quali siano le loro funzionalità principali e in che modo contribuiscano a migliorare la sicurezza informatica aziendale. Un episodio che getta le fondamenta per affrontare con maggiore consapevolezza i meccanismi della difesa cyber.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-3.html">0x3 - EDR: scegliere, gestire, utilizzare (parte 1)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 21/12/2023 <span class="sep">/</span> 26 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema degli EDR, analizzando miti, confusione e realtà dietro le principali soluzioni di cybersecurity. Partendo dal quadrante Gartner, i due esplorano come scegliere una piattaforma di difesa efficace, evidenziando le differenze tra teoria e pratica nell'implementazione delle tecnologie di sicurezza.</p>
+              </div>
+            </div>
+          </div>
           
           
           <div class="col-md-6">
@@ -175,14 +361,14 @@
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-3.html">0x3 - EDR: scegliere, gestire, utilizzare (parte 1)</a>
+                  <a href="episode-17.html">0x11 - Documentazione tecnica</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 21/12/2023 <span class="sep">/</span> 26 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/12/2024 <span class="sep">/</span> 59 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema degli EDR, analizzando miti, confusione e realtà dietro le principali soluzioni di cybersecurity. Partendo dal quadrante Gartner, i due esplorano come scegliere una piattaforma di difesa efficace, evidenziando le differenze tra teoria e pratica nell'implementazione delle tecnologie di sicurezza.</p>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema cruciale della documentazione in azienda, vista dal punto di vista di CIO, IT manager e CISO. La conversazione esplora l'importanza di avere procedure, manuali e documentazione di rete sempre aggiornati per supportare la sicurezza, la consulenza e la gestione dei progetti, evidenziando i rischi legati a informazioni incomplete o obsolete.</p>
               </div>
             </div>
           </div>
@@ -192,14 +378,14 @@
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-24.html">0x18 - Threat Intelligence (parte 2)</a>
+                  <a href="episode-2.html">0x2 - Orchestrazione di sistemi di sicurezza (parte 2)</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 25/08/2025 <span class="sep">/</span> 46 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 01/12/2023 <span class="sep">/</span> 23 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia tornano dietro ai microfoni dopo la pausa estiva per approfondire i temi legati alla sicurezza informatica. Partendo dal confronto tra EDR e SIEM, i due discutono di come queste tecnologie si integrino e si completino a vicenda, sfatando l'idea che una possa sostituire l'altra. La conversazione si concentra su come le organizzazioni possano fare un passo evolutivo nell'uso di queste piattaforme, passando da strumenti puramente reattivi a soluzioni che abilitano una difesa proattiva e contributiva.</p>
+                <p class="mb-4">In questa puntata si affronta il tema del rischio in modo approfondito e pragmatico. Gli ospiti riflettono su come il concetto di rischio, spesso percepito come qualcosa di astratto, debba invece essere calato in uno scenario concreto fatto di probabilità, impatti e modelli di gestione. Si parla di cybersecurity, infrastrutture IT, e dell'importanza di costruire e testare strategie di difesa solide, fino alla cosiddetta 'prova del nove': verificare se ciò che si è progettato regge davvero alle minacce reali. Un episodio utile per chi si occupa di sicurezza informatica, risk management e continuità operativa.</p>
               </div>
             </div>
           </div>
@@ -226,133 +412,14 @@
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-25.html">0x19 - Threat Intelligence (parte 3)</a>
+                  <a href="episode-22.html">0x16 - Sicurezza ICS/OT (da un evento NTS)</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 08/09/2025 <span class="sep">/</span> 58 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 17/05/2025 <span class="sep">/</span> 33 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare sul lavoro del threat analyst, che studia il comportamento degli attori malevoli per supportare attività di detection e prevention. Viene inoltre approfondita la stretta relazione tra il mondo della threat intelligence e quello della offensive security, mostrando come entrambi si concentrino sul modus operandi degli attacchi e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato da un post descrittivo e un video highlight, per rendere più accessibili i dettagli tecnici trattati.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-17.html">0x11 - Documentazione tecnica</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/12/2024 <span class="sep">/</span> 59 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema cruciale della documentazione in azienda, vista dal punto di vista di CIO, IT manager e CISO. La conversazione esplora l'importanza di avere procedure, manuali e documentazione di rete sempre aggiornati per supportare la sicurezza, la consulenza e la gestione dei progetti, evidenziando i rischi legati a informazioni incomplete o obsolete.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-16.html">0x10 - [EXT] Attacchi DDoS e strategie di sopravvivenza</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 12/12/2024 <span class="sep">/</span> 25 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese e Alice Mini affrontano il tema degli attacchi DDoS (Distributed Denial of Service). Dopo una spiegazione introduttiva su come funzionano e sulle principali tipologie, i due raccontano episodi reali ed esperienze dirette legate a questo tipo di minaccia. La conversazione rimane accessibile e divulgativa, mettendo in luce non solo gli aspetti tecnici, ma anche le implicazioni pratiche e organizzative per chi subisce questi attacchi.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-14.html">0xe - [PUB] Accesso non consentito (ma possibile)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/10/2024 <span class="sep">/</span> 33 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata si esplorano le attività di offensive security condotte sul campo, con esempi pratici di attacchi e difese aziendali. Viene discusso cosa significa testare la resilienza di un'organizzazione contro minacce Cyber, come individuare i punti d'ingresso più comuni e quali sono le strategie per gestire e contenere gli incidenti. Il racconto, basato su esperienze reali, mette in luce sia le sfide che le opportunità per migliorare la postura di sicurezza.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-13.html">0xd - [EXT] Account di posta compromesso</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 29/09/2024 <span class="sep">/</span> 27 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese e Alice Mini raccontano esperienze dirette legate al mondo della sicurezza informatica. Gli incidenti narrati sono stati romanzati per proteggere identità e dettagli sensibili, ma restano fedeli alla realtà degli attacchi e delle difficoltà che professionisti e aziende affrontano quotidianamente. Un mix di storytelling e cultura Cyber, pensato per rendere la sicurezza più vicina e comprensibile.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-12.html">0xc - Ripartiamo dall'inizio</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/09/2024 <span class="sep">/</span> 64 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia introducono un nuovo percorso di riflessione e confronto dedicato al ruolo dell'IT manager, del CIO e del CISO. L'episodio apre una serie di conversazioni pensate per esplorare i passaggi chiave che un professionista IT affronta quando entra in una nuova azienda o in una nuova fase della propria carriera: dalla mappatura dell'infrastruttura tecnologica fino alle scelte strategiche di sicurezza e governance. Un dialogo pratico e autentico sul modo di pensare e agire nella gestione dell'IT moderno.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-10.html">0xa - Attacco di prossimità con rogue device e strategie di difesa (parte 2)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/02/2024 <span class="sep">/</span> 22 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata si discute di sicurezza informatica e threat modeling, affrontando il tema del disegno delle reti con una mentalità difensiva. Gli ospiti riflettono sull'importanza di progettare le infrastrutture IT assumendo che alcune macchine possano già essere compromesse, così da limitare l'impatto di eventuali attacchi. La conversazione esplora approcci pratici, la differenza tra vendor e soluzioni di protezione, e come cambiare prospettiva possa migliorare la resilienza complessiva dei sistemi.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-9.html">0x9 - Attacco di prossimità con rogue device e strategie di difesa (parte 1)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 21/02/2024 <span class="sep">/</span> 43 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano le tecniche e le strategie utilizzate da un attaccante durante le prime fasi di un'intrusione in rete. La conversazione si concentra sulla mappatura della rete, sull'uso di switch e dispositivi di rete e su come un attaccante possa raccogliere informazioni dopo aver collegato un dispositivo all'interno di un'infrastruttura target. L'episodio offre una prospettiva tecnica ma accessibile sul processo di ricognizione e analisi della rete, utile sia a chi lavora in ambito difensivo che offensivo.</p>
+                <p class="mb-4">In questa puntata di Infosec Unplugged, Andrea Dainese e Rocco Sicilia affrontano i temi della sicurezza industriale e delle tecnologie operative (OT). Partendo da un evento dedicato al settore, condividono esperienze e riflessioni sui principali problemi che le aziende si trovano ad affrontare quando approcciano la cybersecurity in contesti industriali, con particolare attenzione al ruolo di CIO e CISO nella gestione dei rischi.</p>
               </div>
             </div>
           </div>
@@ -379,31 +446,14 @@
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-4.html">0x4 - EDR: scegliere, gestire, utilizzare (parte 2)</a>
+                  <a href="episode-25.html">0x19 - Threat Intelligence (parte 3)</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/12/2023 <span class="sep">/</span> 30 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 08/09/2025 <span class="sep">/</span> 58 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questa puntata si affrontano tre domande chiave sulla gestione della sicurezza informatica e delle tecnologie aziendali: cosa succede se non si presidiano correttamente le infrastrutture digitali, quali rischi si corrono nel definire policy troppo larghe o troppo restrittive, e come verificare se il proprio setup di sicurezza è adeguato al livello di minaccia attuale. Gli ospiti riflettono su pratiche di monitoraggio continuo, configurazioni di hunting e sull'importanza di mantenere un controllo costante per garantire resilienza e protezione.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-2.html">0x2 - Orchestrazione di sistemi di sicurezza (parte 2)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 01/12/2023 <span class="sep">/</span> 23 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata si affronta il tema del rischio in modo approfondito e pragmatico. Gli ospiti riflettono su come il concetto di rischio, spesso percepito come qualcosa di astratto, debba invece essere calato in uno scenario concreto fatto di probabilità, impatti e modelli di gestione. Si parla di cybersecurity, infrastrutture IT, e dell'importanza di costruire e testare strategie di difesa solide, fino alla cosiddetta 'prova del nove': verificare se ciò che si è progettato regge davvero alle minacce reali. Un episodio utile per chi si occupa di sicurezza informatica, risk management e continuità operativa.</p>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare sul lavoro del threat analyst, che studia il comportamento degli attori malevoli per supportare attività di detection e prevention. Viene inoltre approfondita la stretta relazione tra il mondo della threat intelligence e quello della offensive security, mostrando come entrambi si concentrino sul modus operandi degli attacchi e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato da un post descrittivo e un video highlight, per rendere più accessibili i dettagli tecnici trattati.</p>
               </div>
             </div>
           </div>
