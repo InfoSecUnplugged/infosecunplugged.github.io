@@ -28,8 +28,10 @@ with open(tag_template_file, "r", encoding="utf-8") as fh:
 with open(config_data_file, "r", encoding="utf-8") as fh:
     config = yaml.safe_load(fh)
 with open(episodes_data_file, "r", encoding="utf-8") as fh:
+    all_episodes = yaml.safe_load(fh)
     episodes = []
-    for episode in yaml.safe_load(fh):
+    for episode in all_episodes:
+        episode["tags"].sort(key=str.lower)
         if episode["published"]:
             episodes.append(episode)
     episodes.reverse()
@@ -62,7 +64,9 @@ for episode in episodes:
 # Per episode page
 os.makedirs("episodes", exist_ok=True)
 episode_template = env.from_string(episode_template_html)
-for episode in episodes:
+reversed_episodes = list(episodes)
+reversed_episodes.reverse()
+for episode in reversed_episodes:
     if not episode["published"]:
         continue
 
@@ -130,7 +134,7 @@ with open("config/config.yaml", "w", encoding="utf-8") as fh:
     )
 with open("config/episodes.yaml", "w", encoding="utf-8") as fh:
     yaml.dump(
-        episodes,
+        all_episodes,
         fh,
         default_flow_style=False,
         allow_unicode=True,
