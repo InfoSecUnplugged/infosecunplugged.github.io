@@ -1,8 +1,0 @@
-# https://github.com/DavidAnson/markdownlint/tree/main/doc
-MD013:
-  line_length: -1
-  code_block_line_length: 0
-  code_blocks: true
-  tables: false
-  strict: true
-MD041: false
