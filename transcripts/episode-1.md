@@ -1,3 +1,5 @@
+Benvenuti a Info Sec. Unplugged!
+
 Partiamo con questa prima riflessione sul tema dell’orchestrazione delle soluzioni di sicurezza, un argomento che spesso viene dato per scontato ma che, a guardar bene, nasconde molte complessità. Ci capita di vedere aziende piene di strumenti, tecnologie e piattaforme che non dialogano tra loro. In teoria dovrebbero collaborare per garantire protezione e controllo, ma nella pratica vivono in silos separati, con tutti i pro e i contro che questo comporta.
 
 Quello che notiamo spesso è una tendenza diffusa: di fronte a una nuova esigenza, la prima reazione è acquistare una soluzione che risolva quel problema specifico. Si ragiona poco su come far lavorare insieme le soluzioni già presenti. Così, quando un’azienda ha la maturità e la capacità economica per dotarsi di più strumenti di sicurezza, finisce con l’avere tre o quattro soluzioni – talvolta persino con funzionalità sovrapposte – che non si integrano tra loro. Ogni sistema si comporta come un’entità autonoma, e il risultato è frammentazione, inefficienza e un governo complessivo difficile.

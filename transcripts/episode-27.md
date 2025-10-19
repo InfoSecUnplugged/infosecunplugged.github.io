@@ -1,4 +1,6 @@
-Bentornati a Info Sec. Unplugged. Prima di entrare nel vivo, vogliamo ringraziare chi ci segue. Ascoltando le puntate precedenti ci siamo accorti di quanto spesso divaghiamo: prendiamo tangenti, apriamo parentesi, ma alla fine restate con noi, quindi davvero grazie.
+Bentornati a Info Sec. Unplugged!
+
+Prima di entrare nel vivo, vogliamo ringraziare chi ci segue. Ascoltando le puntate precedenti ci siamo accorti di quanto spesso divaghiamo: prendiamo tangenti, apriamo parentesi, ma alla fine restate con noi, quindi davvero grazie.
 
 Oggi vogliamo raccontarvi il percorso con cui si costruisce una procedura di Disaster Recovery (DR), passando dai principi di design fino alle tecnologie e alle azioni pratiche. Il nostro obiettivo è immaginare il “DR mitologico”: quello che tutti vorremmo realizzare, ma che nessuno riesce mai a ottenere pienamente.
 

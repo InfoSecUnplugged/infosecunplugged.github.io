@@ -581,17 +581,11 @@
     descrittivo e un video highlight, per rendere più accessibili i dettagli tecnici
     trattati.
   tags:
-  - Adversary Simulation
-  - Command and Control
   - Detection
-  - Incident Response
-  - IOC
-  - Offensive Security
-  - Phishing
-  - Prevention
-  - Security Analyst
-  - Security Incident
+  - SOC
+  - Social Engineering
   - Threat Intelligence
+  - Vulnerability Management
   title: Threat Intelligence (parte 3)
   url: https://www.spreaker.com/episode/0x19-threat-intelligence-parte-3--67664347
 - authors:
@@ -616,16 +610,9 @@
     e dalla digitalizzazione delle infrastrutture.
   tags:
   - Automazione
-  - Backup
-  - Business Impact Analysis
-  - Cloud
-  - Data Retention
   - Disaster Recovery
-  - GDPR
-  - Golden Image
-  - IT Architecture
-  - Privilege Escalation
-  - Red Teaming
+  - Governance
+  - Risk Management
   - Tabletop Exercise
   title: DR e Cyber recovery (parte 1)
   url: https://www.spreaker.com/episode/0x1a-dr-e-cyber-recovery-parte-1--67835796
@@ -660,7 +647,11 @@
   - Andrea Dainese
   - Rocco Sicilia
   date: '20251020'
-  highlight_links: null
+  highlight_links:
+  - title: Highlight (video)
+    url: https://youtu.be/jI7aOzSQH4c
+  - title: Blog post di approfondimento
+    url: https://roccosicilia.com/2025/10/04/info-sec-unplugged-1b-dr-e-cyber-recovery-parte-2/?utm_source=podcast_website
   id: 28
   length: 33
   published: true
