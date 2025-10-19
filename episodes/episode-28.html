@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Info Sec. Unplugged: 0x1b - DR e Cyber recovery (parte 2)</title>
+  <title>Info Sec. Unplugged: 0x1c - DR e Cyber recovery (parte 3)</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900">
@@ -46,10 +46,10 @@
         <div class="row align-items-center justify-content-center text-center">
           
           <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-            <h2 class="text-white font-weight-light mb-2 display-4">0x1b - DR e Cyber recovery (parte 2)</h2>
+            <h2 class="text-white font-weight-light mb-2 display-4">0x1c - DR e Cyber recovery (parte 3)</h2>
             <div class="text-white mb-3">
               <span class="text-white-opacity-05">
-                <small>By Andrea Dainese, Rocco Sicilia | 06/10/2025 | 56 min.</small>
+                <small>By Andrea Dainese, Rocco Sicilia | 20/10/2025 | 33 min.</small>
               </span>
             </div>
 
@@ -89,22 +89,20 @@
 
       <div class="player mb-5">
         <audio id="player2" preload="none" controls style="max-width: 100%">
-          <source src="https://api.spreaker.com/v2/episodes/67835961/download.mp3"
+          <source src="https://api.spreaker.com/v2/episodes/68180691/download.mp3"
             type="audio/mp3">
         </audio>
       </div>
 
       <div class="row justify-content-center">
-        <div class="col-md-12"><p>Questa puntata di Info Sec. Unplugged è dedicata al tema del disaster recovery e alla sua evoluzione nell'era degli attacchi Cyber. Andrea Dainese e Rocco Sicilia accompagnano l'ascoltatore nella progettazione di processi e tecnologie per il DR, evidenziando le differenze tra esigenze di business e scelte tecniche, le sfide offerte dalle nuove normative e l'importanza della resilienza. Una chiacchierata pragmatica e divulgativa, ricca di aneddoti e consigli pratici per chi si occupa di sicurezza informatica e gestione delle infrastrutture IT.</p></div>
+        <div class="col-md-12"><p>In questa terza e ultima parte dedicata al Disaster Recovery, Andrea Dainese e Rocco Sicilia chiudono il cerchio sul tema della cyber e disaster recovery, passando dalla teoria alla pratica. Si parla di testing, automazione, rollback, cloud e normative come DORA, ma anche della necessità di esercitarsi concretamente con tabletop exercise per comprendere come reagire a scenari di crisi. La puntata introduce inoltre il tema della Cyber Recovery, sempre più centrale in un contesto dove gli incidenti informatici sono più probabili dei disastri fisici.</p></div>
       </div>
 
       
       <div class="highlight-links">
         <ul>
           
-          <a href="https://youtu.be/jI7aOzSQH4c" target="_blank" rel="noopener noreferrer">Highlight (video)</a> | 
-          
-          <a href="https://roccosicilia.com/2025/10/04/info-sec-unplugged-1b-dr-e-cyber-recovery-parte-2/?utm_source=podcast_website" target="_blank" rel="noopener noreferrer">Blog post di approfondimento</a>
+          <a href="https://youtu.be/-nOqqPeSPa8" target="_blank" rel="noopener noreferrer">Highlight (video)</a>
           
         </ul>
       </div>
@@ -115,13 +113,13 @@
         
         <span><a class="text-black" href="../tags/tag-automazione.html">Automazione</a></span>
         
-        <span><a class="text-black" href="../tags/tag-compliance.html">Compliance</a></span>
-        
         <span><a class="text-black" href="../tags/tag-disaster-recovery.html">Disaster Recovery</a></span>
+        
+        <span><a class="text-black" href="../tags/tag-dora.html">DORA</a></span>
         
         <span><a class="text-black" href="../tags/tag-governance.html">Governance</a></span>
         
-        <span><a class="text-black" href="../tags/tag-risk-management.html">Risk Management</a></span>
+        <span><a class="text-black" href="../tags/tag-tabletop-exercise.html">Tabletop Exercise</a></span>
         
       </div>
       
@@ -138,43 +136,56 @@
         <div class="row">
           <div class="col">
             <p>Bentornati a Info Sec. Unplugged!</p>
-<p>Prima di entrare nel vivo, vogliamo ringraziare chi ci segue. Ascoltando le puntate precedenti ci siamo accorti di quanto spesso divaghiamo: prendiamo tangenti, apriamo parentesi, ma alla fine restate con noi, quindi davvero grazie.</p>
-<p>Oggi vogliamo raccontarvi il percorso con cui si costruisce una procedura di Disaster Recovery (DR), passando dai principi di design fino alle tecnologie e alle azioni pratiche. Il nostro obiettivo è immaginare il “DR mitologico”: quello che tutti vorremmo realizzare, ma che nessuno riesce mai a ottenere pienamente.</p>
-<p>Il punto di partenza, come giustamente ci diciamo sempre, non è la tecnologia, ma il business: i requisiti, i processi e l’impatto reale sul lavoro.</p>
-<p>Spesso vediamo aziende in cui la progettazione del DR viene scaricata sull’IT da parte del management o della compliance, con la logica del “si deve fare”. Ma non funziona così. Né basta dire “abbiamo un backup”: non è questo un piano di disaster recovery, soprattutto oggi, dove il concetto di resilienza all’attacco – o “cyber recovery” – è diventato centrale. Non si tratta più solo di guasti tecnici, ma di veri e propri incidenti cyber, che cambiano completamente lo scenario rispetto a dieci anni fa.</p>
-<p>Noi non vogliamo fare una puntata ipertecnica. Il nostro obiettivo è divulgativo: essere chiari, comprensibili, anche per chi non vive di IT ogni giorno.</p>
-<p>Quando parliamo di DR con le aziende, partiamo da tre parametri fondamentali, che dovrebbero discendere da una Business Impact Analysis (BIA). E qui cominciano i problemi: quante aziende hanno davvero una BIA fatta e aggiornata? Pochissime. Solo in contesti particolarmente regolamentati – come le multi-utility o le acciaierie – la BIA è una prassi obbligatoria.</p>
-<p>Per la maggior parte, invece, ci si arriva quando serve rivedere il DR. Negli ultimi anni, normative come la NIS hanno dato una spinta importante, perché impongono di ragionare sull’impatto reale di un’interruzione e sulla capacità di continuità operativa.</p>
-<p>La BIA serve proprio a rispondere alla domanda: “Cosa succede se…?”</p>
-<p>Cosa succede se non ho più internet? Se la posta elettronica non funziona? Se la produzione si ferma? Capire il tempo che posso sopportare di fermo e la quantità di dati che posso permettermi di perdere è il punto di partenza.</p>
-<p>Non si tratta solo di tecnologia, ma di collegare in modo consapevole i servizi IT ai processi di business.</p>
-<p>I tre parametri di base sono RTO, RPO e la distinzione tra DR parziale o totale.</p>
-<p>L’RTO (Recovery Time Objective) indica il tempo massimo accettabile per riportare online i servizi dopo un disastro.</p>
-<p>L’RPO (Recovery Point Objective) rappresenta invece la quantità di dati che posso perdere.</p>
-<p>Ma attenzione: non basta definire numeri astratti. Bisogna tradurli in casi reali: “Per quanto tempo puoi permetterti di non spedire più merce?” oppure “Quante ore di ordini puoi perdere senza conseguenze gravi?”. È così che si ottengono risposte sensate dal management.</p>
-<p>Più l’RTO e l’RPO sono brevi, più i costi aumentano. Tecnologie e automazioni per abbatterli esistono, ma non sono gratuite.</p>
-<p>Oggi, poi, lo scenario è molto diverso rispetto al passato: non parliamo più solo di incendi o guasti allo storage, ma di attacchi informatici che possono essere avvenuti mesi prima e di cui ci accorgiamo tardi. E allora, da dove parte davvero il mio RPO?</p>
-<p>Molti piani DR prevedono ormai anche scenari “in caso di cifratura totale dei sistemi”, ma spesso mancano riferimenti a tutto ciò che precede l’attacco. La vera difficoltà è capire quando è sicuro ripristinare.</p>
-<p>Un’altra distinzione cruciale è quella tra DR parziale e totale. Può sembrare una scelta tecnica, ma cambia tutto: costi, tempi e complessità. In teoria, un DR totale è più lineare da gestire, ma richiede molte più risorse. In pratica, la maggior parte delle aziende copre solo una parte dei servizi, lasciandone altri scoperti – e spesso senza saperlo davvero.</p>
-<p>La trasparenza con il management è fondamentale: bisogna dichiarare cosa è coperto e cosa no.
-Meglio un piano dichiaratamente limitato che un DR “finto”.</p>
-<p>Poi ci sono i vincoli fisici. Abbiamo visto troppi siti di DR a 20 chilometri da quello principale: logisticamente comodi, ma inefficaci in caso di disastro regionale. Alcune normative lo accettano, se il business è legato al territorio, ma serve comunque un’analisi di rischio sismico e idrogeologico.</p>
-<p>Fare DR in un’area soggetta allo stesso evento distruttivo non ha senso.</p>
-<p>C’è anche un tema di performance: spesso il sito di DR ha meno risorse di quello principale, e quindi le prestazioni calano. È normale, ma va scritto nero su bianco, perché in caso di crisi il management non può scoprire solo allora che “va più lento”.</p>
-<p>Noi, se possiamo, preferiamo la simmetria: due siti degni, con repliche incrociate e pari dignità. È l’unico modo per dormire tranquilli.</p>
-<p>Un buon DR nasce da un’infrastruttura resiliente. Se un sito non è stabile di suo, fare DR su di esso è solo un’illusione. Meglio investire prima nella fault tolerance e nella ridondanza.</p>
-<p>E non dimentichiamo la responsabilità personale: con l’evoluzione normativa, come la NIS2 (entro il 2026), i manager IT rispondono in prima persona di certe scelte. È un motivo in più per documentare tutto e condividere le decisioni.</p>
-<p>Un altro tema è la gestione dei fornitori critici.</p>
-<p>La normativa DORA richiede di avere piani di uscita per i vendor essenziali: cloud provider, vendor di virtualizzazione, firewall, EDR, e persino criteri etici di fornitura. È un concetto spesso ignorato, ma fondamentale: se il tuo fornitore cambia proprietà o strategia e non rispetta più i tuoi requisiti di sicurezza o compliance, devi poter uscire in modo controllato.</p>
-<p>È difficile, certo, perché quasi tutti i vendor fanno lock-in tecnologico, ma non impossibile.</p>
-<p>E a proposito di cloud, molte aziende inseriscono il cloud storage nel piano DR, magari come backup freddo. Nulla di male, purché ci si renda conto di tempi e costi reali: se devo recuperare 50 terabyte con 300 megabit di banda, servono giorni e molto denaro. Il cloud può essere una “ultima spiaggia”, ma non va confuso con un DR operativo.</p>
-<p>Fondamentale è la prova del piano: testarlo periodicamente, in condizioni realistiche.
-Solo provando il recovery possiamo sapere se funziona davvero. E quando il test viene fatto collegandosi al sito primario (quello che in teoria non dovrebbe esistere più), beh… qualcosa non va.</p>
-<p>Bisogna simulare l’accesso al sito secondario, verificare le credenziali, controllare che i dati siano coerenti, che i backup siano restaurabili. Altrimenti, al momento del bisogno, non funzionerà.</p>
-<p>Infine, un punto spesso trascurato: i gruppi di consistenza.</p>
-<p>Quando facciamo le fotografie (snapshot) dell’infrastruttura, raramente abbiamo una copia coerente di tutto. Database, macchine virtuali, storage diversi e dati nel cloud possono essere asincroni. Questo crea problemi logici: se una transazione cade a metà, i dati possono risultare duplicati o mancanti. Bisogna progettare il DR tenendo conto di queste relazioni, creando gruppi coerenti o strategie di riconciliazione post-recovery.</p>
-<p>In sintesi, un piano di disaster recovery efficace non è una lista di tecnologie, ma un equilibrio tra analisi di business, automazione, gestione del rischio, test e consapevolezza organizzativa.</p>
-<p>Il DR perfetto forse non esiste, ma quello realistico sì — ed è quello che ti permette di dormire la notte.</p>
+<p>In questa puntata concludiamo il nostro viaggio dedicato al Disaster Recovery e, più in generale, alla Cyber Recovery. Nelle due parti precedenti abbiamo affrontato la fase di design e pianificazione; ora vogliamo chiudere il cerchio con la parte più operativa e concreta: il testing, l’automazione e tutto ciò che serve per rendere realmente funzionante un piano di DR.</p>
+<p>Prima di entrare nel merito, ci è venuta un’idea: vogliamo organizzare una tabletop exercise aperta a chi ci segue, per simulare insieme la gestione di un evento di disaster recovery. L’obiettivo è sperimentare in prima persona cosa significa affrontare una crisi informatica.</p>
+<p>Immaginiamo di formare un piccolo gruppo di partecipanti: noi proporremo uno scenario di disastro, assegneremo dei ruoli e costruiremo uno storytelling operativo. Ciascuno, nel proprio ruolo, dovrà prendere decisioni per gestire la situazione di emergenza. Sarà un modo concreto ma sostenibile per mettere in pratica ciò di cui abbiamo parlato, sfruttando gli strumenti di comunicazione remota.</p>
+<p>Vorremmo farla verso la fine di novembre, in un giorno feriale, probabilmente nel tardo pomeriggio. Stiamo ancora definendo i dettagli, ma chi è interessato può già contattarci via LinkedIn o email. Appena tutto sarà pronto, comunicheremo le modalità di partecipazione.</p>
+<p>Dopo questa anticipazione, possiamo entrare nel vivo della puntata.</p>
+<p>Questa volta vogliamo chiudere definitivamente il tema del Disaster Recovery, focalizzandoci sulla parte di testing e automazione, cioè la fase in cui il piano viene messo alla prova.</p>
+<p>Nella nostra esperienza, quando si passa dalla teoria alla pratica e si comincia a “mettere le mani” sul sistema, ci si accorge davvero di cosa serve, cosa manca e soprattutto di quali sono le dipendenze tra i vari componenti.</p>
+<p>Idealmente, ogni azienda dovrebbe avere un piano che descriva come funzionano tutte le applicazioni e le loro interconnessioni. Nella realtà, però, è rarissimo trovarne uno completo. Il bello – e a volte il dramma – del DR è che, nel momento in cui lo mettiamo in piedi, scopriamo le dipendenze nascoste. E da lì iniziano i test, da ripetere più volte, con pazienza e metodo.</p>
+<p>A questo punto entra in gioco l’automazione, che può semplificare enormemente la gestione.</p>
+<p>Automatizzare l’avvio dei servizi, delle applicazioni e delle macchine virtuali ci permette di testare il DR più rapidamente e in modo più affidabile. Noi siamo convinti che si debba lavorare di giorno, non di notte: si è più lucidi, si capisce meglio cosa succede e si riducono gli errori.</p>
+<p>Per questo crediamo molto nell’idea di costruire un DR che possa essere acceso senza disturbare la produzione, creando una sorta di “bolla” isolata dove far girare tutto.</p>
+<p>Certo, oggi con le dipendenze cloud è tutto più complesso, ma la logica resta valida: dobbiamo pensare fin dal design a come provare il sistema, non solo a come costruirlo.</p>
+<p>Una bolla di test ci permette di simulare in modo realistico l’accensione di tutto l’ambiente senza rischiare di intaccare la produzione. Inoltre, il testing non è solo una verifica, ma anche un processo di miglioramento continuo: ogni volta scopriamo qualcosa di nuovo. Magari partiamo con 150 servizi e ci accorgiamo che ne servono altri 20.</p>
+<p>Durante i test, spesso si danno per scontate alcune cose. Ad esempio, si assume che certi servizi di base – come i domain controller – non debbano mai essere toccati, perché attivi anche sul sito di recovery. Questo porta a trascurare test importanti.
+Avere una struttura che permette di accendere tutto in bolla ci costringe a testare davvero ogni componente, anche quelle che di solito vengono ignorate.</p>
+<p>Un altro punto cruciale è la sequenza di avvio dei servizi. In teoria, un’applicazione ben scritta dovrebbe essere in grado di partire e attendere che le sue dipendenze siano disponibili. In pratica, sappiamo che non è così: se il database non è attivo, l’applicazione spesso non si avvia. Ecco perché è fondamentale che il sistema automatico sappia accendere tutto nell’ordine giusto, verificando che ogni servizio sia realmente funzionante prima di passare al successivo.</p>
+<p>Un buon sistema di automazione ha anche un vantaggio collaterale: si autodocumenta. Invece di gestire manualmente centinaia di comandi e procedure scritte in documenti infiniti, basta premere un pulsante: dopo un’ora o due l’ambiente è pronto.
+Inoltre, automatizzare rende il DR più accessibile e ripetibile: chiunque può farlo seguendo la procedura, non serve più un “sacerdote” del sistema.</p>
+<p>Ci è capitato, di recente, di lavorare su un ambiente SAP: la parte di avvio era semplice e veloce, ma la riconfigurazione di SAP richiedeva giorni di lavoro e un documento di 70 pagine. Non ci eravamo mai resi conto di quanto potesse essere complesso riattivare un’infrastruttura di quel tipo. È un esempio chiaro di come il disaster recovery applicativo possa essere molto più impegnativo di quello infrastrutturale.</p>
+<p>Lo stesso vale per certe applicazioni basate su Oracle. In un progetto con oltre 3000 macchine virtuali, lo startup infrastrutturale richiedeva circa due ore. Poi subentrava il team applicativo, che impiegava dalle sei alle otto ore per fare tuning e configurazioni. A volte cambiava un dominio, altre volte un nome host, e tutto andava adattato. Ci siamo resi conto che, per quanto la parte infrastrutturale sia importante, quella applicativa è spesso il vero collo di bottiglia.</p>
+<p>Questo ci porta a una riflessione: così come disegniamo un DR sostenibile dal punto di vista operativo, dovremmo progettare anche le applicazioni in modo che siano sostenibili dal punto di vista del recovery. Il movimento DevOps va proprio in questa direzione: applicazioni più modulari, documentate e ripristinabili.</p>
+<p>Quando pensiamo alla nostra “bolla”, dobbiamo considerare anche la rete. L’ambiente di DR deve essere isolato, ma con i servizi minimi necessari: una copia dell’Active Directory, firewall, servizi ponte sicuri per accedervi. Da quella bolla non deve uscire nemmeno un bit: se dei dati di test finissero nella produzione, sarebbero guai seri.</p>
+<p>Questa esigenza di isolamento, però, rende il setup più difficile. Spesso le applicazioni dipendono da componenti esterne non replicabili nella bolla, e quindi si decide di non testarle. Ma questo è pericoloso: se un’applicazione non viene mai accesa e verificata, non possiamo sapere se funzionerà davvero in emergenza. È come non testare il ripristino di un backup.</p>
+<p>Oggi le tecnologie di backup sono molto affidabili: è raro che un backup non sia ripristinabile. Ma il rischio di costruire un DR su ipotesi sbagliate è ancora altissimo.</p>
+<p>Molte aziende, ad esempio, fanno una copia cifrata dei dati su cloud come ultimo paracadute. Ottimo, ma bisogna considerare anche i tempi e i costi di restore: scaricare 20 terabyte da un cloud può richiedere giorni e costare caro. Anche questo va testato.</p>
+<p>Spesso il sito di DR non ha la stessa capacità del sito principale: meno banda, meno storage, meno potenza. È comprensibile, ma può rivelarsi un errore.</p>
+<p>Se il disastro colpisce il sito primario, saremo costretti a lavorare dal secondario, e se lì la banda è insufficiente, il ripristino sarà lentissimo.</p>
+<p>Durante i test bisogna simulare queste condizioni reali: se scaricare i dati dal cloud richiede giorni, forse la nostra architettura va ripensata. Non basta dire “andrò più lento”, perché a volte “più lento” significa “inutilizzabile”.</p>
+<p>A questo punto entriamo in un tema spesso dimenticato: il rollback.</p>
+<p>Molti piani di DR, anche ben fatti, non prevedono come tornare indietro una volta attivato il sito di recovery. Abbiamo sentito dire: “se andiamo in DR, quello diventa il nuovo ambiente di produzione”. Ma non è sempre accettabile.</p>
+<p>Dobbiamo sapere come riportare tutto alla normalità, soprattutto nei casi – oggi più comuni – in cui il disastro è di tipo cyber e il sito primario non è stato distrutto. Dopo la bonifica, quel sito può tornare operativo, e bisogna avere un piano per rientrare.</p>
+<p>Il rollback non è semplice: spesso richiede un fermo servizio pianificato, sincronizzazioni, test, e può durare quanto il DR stesso. Ma è necessario.</p>
+<p>Inoltre, anche l’ambiente di DR deve avere un proprio sistema di backup e di monitoraggio. Non possiamo smettere di fare backup solo perché siamo “dall’altra parte”. Anzi, spesso i backup sono proprio ciò che ci serve per tornare indietro.</p>
+<p>Un sistema di monitoraggio efficace è anche un aiuto prezioso nel rollback: se lo portiamo in DR e aggiorniamo i suoi puntamenti, possiamo vedere subito cosa funziona e cosa no, senza dover controllare tutto manualmente.</p>
+<p>Purtroppo, nella maggior parte dei casi, i sistemi di monitoraggio sono eccellenti sul sito primario e assenti sul DR: se il principale va giù, restiamo ciechi.</p>
+<p>Infine, un ultimo punto normativo: la DORA.</p>
+<p>Questa normativa prevede che i fornitori critici siano sostituibili, e che esista un piano di uscita. Ciò vale per consulenti, fornitori di manutenzione e, naturalmente, per i servizi cloud.</p>
+<p>In pratica, se il nostro provider di posta o di infrastruttura IaaS non è più affidabile – per guasti, costi, problemi di sicurezza o motivi geopolitici – dobbiamo essere in grado di migrare altrove.</p>
+<p>Avere un piano di spostamento da un fornitore all’altro non è un DR in senso stretto, ma gli somiglia molto: implica comprendere come sono fatte le nostre applicazioni, dove risiedono i dati e come spostarli in sicurezza.</p>
+<p>Chiudiamo quindi questa terza parte avendo toccato tutti i punti che ci eravamo proposti: testing, automazione, rollback, cloud e normative.</p>
+<p>Ma non vogliamo fermarci qui.</p>
+<p>Nella prossima puntata inviteremo Mattia Parise, esperto di data protection e disaster recovery, per approfondire questi temi dal punto di vista di chi li vive ogni giorno sul campo.</p>
+<p>Gli chiederemo come cambia la progettazione del DR in presenza di incidenti cyber, quali sono le nuove sfide della cyber recovery, e come si può rendere davvero resiliente un’infrastruttura moderna.</p>
+<p>Ci piace molto il termine cyber recovery: sposta l’attenzione dal disastro fisico al problema informatico, che oggi è molto più probabile.</p>
+<p>Nelle nostre esperienze, i disastri fisici sono rari, mentre gli incidenti cyber si contano ogni anno. E spesso richiedono 5, 7 o anche 10 giorni solo per riattivare i servizi principali, con il rischio di non avere subito i dati più recenti.</p>
+<p>Questo dimostra che il tema della resilienza cyber non è più teorico: è quotidiano.</p>
+<p>Molti piani di DR, nati per eventi fisici, non sopravviverebbero a un incidente cyber, perché l’attacco compromette anche i sistemi su cui contiamo per ripartire. Lo abbiamo visto persino durante alcune tabletop exercise: nel giro di poche ore ci siamo accorti che l’intero impianto di DR non avrebbe retto.</p>
+<p>Per questo vogliamo confrontarci con Mattia e capire come ripensare l’architettura in questo nuovo scenario.</p>
+<p>Chi ci ascolta potrà anche inviarci domande o spunti da rivolgere direttamente a lui.</p>
+<p>E con questo chiudiamo la puntata: ci aggiorneremo alla prossima, con un ospite speciale e nuovi punti di vista sul mondo del Disaster e Cyber Recovery.</p>
           </div>
         </div>
       </div>
@@ -196,14 +207,14 @@ Solo provando il recovery possiamo sapere se funziona davvero. E quando il test 
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-28.html">0x1c - DR e Cyber recovery (parte 3)</a>
+                  <a href="episode-27.html">0x1b - DR e Cyber recovery (parte 2)</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 20/10/2025 <span class="sep">/</span> 33 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 06/10/2025 <span class="sep">/</span> 56 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questa terza e ultima parte dedicata al Disaster Recovery, Andrea Dainese e Rocco Sicilia chiudono il cerchio sul tema della cyber e disaster recovery, passando dalla teoria alla pratica. Si parla di testing, automazione, rollback, cloud e normative come DORA, ma anche della necessità di esercitarsi concretamente con tabletop exercise per comprendere come reagire a scenari di crisi. La puntata introduce inoltre il tema della Cyber Recovery, sempre più centrale in un contesto dove gli incidenti informatici sono più probabili dei disastri fisici.</p>
+                <p class="mb-4">Questa puntata di Info Sec. Unplugged è dedicata al tema del disaster recovery e alla sua evoluzione nell'era degli attacchi Cyber. Andrea Dainese e Rocco Sicilia accompagnano l'ascoltatore nella progettazione di processi e tecnologie per il DR, evidenziando le differenze tra esigenze di business e scelte tecniche, le sfide offerte dalle nuove normative e l'importanza della resilienza. Una chiacchierata pragmatica e divulgativa, ricca di aneddoti e consigli pratici per chi si occupa di sicurezza informatica e gestione delle infrastrutture IT.</p>
               </div>
             </div>
           </div>
@@ -221,23 +232,6 @@ Solo provando il recovery possiamo sapere se funziona davvero. E quando il test 
                   </span>
                 </div>
                 <p class="mb-4">In questa puntata di Info Sec. Unplugged si esplora il tema (spesso sottovalutato) del disaster recovery in risposta agli attacchi informatici. Si analizzano i limiti delle strategie tradizionali, l'importanza della separazione tra ambienti, le implicazioni dei backup immutabili e delle golden image, e come una corretta automazione e gestione dei privilegi possano fare la differenza tra la resilienza e la perdita totale dei dati. Il racconto si arricchisce di esperienze reali e casi pratici tipici delle aziende italiane, con un occhio alle nuove sfide aperte dal GDPR e dalla digitalizzazione delle infrastrutture.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-17.html">0x11 - Documentazione tecnica</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/12/2024 <span class="sep">/</span> 59 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema cruciale della documentazione in azienda, vista dal punto di vista di CIO, IT manager e CISO. La conversazione esplora l'importanza di avere procedure, manuali e documentazione di rete sempre aggiornati per supportare la sicurezza, la consulenza e la gestione dei progetti, evidenziando i rischi legati a informazioni incomplete o obsolete.</p>
               </div>
             </div>
           </div>
@@ -306,23 +300,6 @@ Solo provando il recovery possiamo sapere se funziona davvero. E quando il test 
                   </span>
                 </div>
                 <p class="mb-4">In questa prima puntata di Info Sec. Unplugged, gli autori avviano una conversazione informale sul tema dell'orchestrazione delle soluzioni di sicurezza informatica. Si discute di come, nelle aziende, gli strumenti di sicurezza vengano spesso gestiti come sistemi isolati ('silos') e non comunichino tra loro, con tutte le inefficienze che ne derivano. Il dialogo affronta le sfide della collaborazione tra strumenti di cybersecurity, la maturità organizzativa necessaria per integrarli, e il ruolo dei security manager e dell'IT management nel promuovere una visione unitaria della sicurezza aziendale.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-18.html">0x12 - Riflessioni sulla rete (design, sicurezza, approccio)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 30/12/2024 <span class="sep">/</span> 39 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del networking visto con gli occhi dell'IT manager. Partendo dal caso tipico di chi eredita una rete già esistente in azienda, discutono di come valutare l'infrastruttura, identificare aree sensibili, gestire punti di accesso e servizi, e impostare strategie di sicurezza efficaci. Una chiacchierata utile e concreta per chi deve orientarsi nella complessità della rete aziendale e mantenere un equilibrio tra operatività e protezione.</p>
               </div>
             </div>
           </div>
