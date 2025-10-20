@@ -552,10 +552,11 @@
     possano fare un passo evolutivo nell'uso di queste piattaforme, passando da strumenti
     puramente reattivi a soluzioni che abilitano una difesa proattiva e contributiva.
   tags:
+  - Detection
   - EDR
-  - Incident Response
   - SIEM
-  - Threat Detection
+  - SOC
+  - Threat Intelligence
   title: Threat Intelligence (parte 2)
   url: https://www.spreaker.com/episode/0x18-threat-intelligence-parte-2--67368804
 - authors:
