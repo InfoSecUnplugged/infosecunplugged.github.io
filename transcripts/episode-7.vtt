@@ -1,0 +1,469 @@
+WEBVTT
+
+00:00:08.280 --> 00:00:10.820
+<v SPEAKER_1>Benvenuti a una nuova puntata di Info Sec. Unplugged.
+
+00:00:10.820 --> 00:00:13.900
+<v SPEAKER_1>Io sono Andrea Dainese e con me c'è Rocco Sicilia.
+
+00:00:13.900 --> 00:00:14.820
+<v SPEAKER_2>Ciao Rocco.
+
+00:00:14.820 --> 00:00:16.520
+<v SPEAKER_2>Ciao, ciao.
+
+00:00:16.520 --> 00:00:19.900
+<v SPEAKER_1>L'argomento che volevamo portare oggi è OT Security.
+
+00:00:20.160 --> 00:00:28.900
+<v SPEAKER_1>Un altro argomento immenso che svilupperemo in più e più puntate sperando di non perderci in mille ramificazioni che possiamo trovare.
+
+00:00:30.420 --> 00:00:43.380
+<v SPEAKER_1>Allora, il mondo dell'OT Security lo si trova molto spesso nella nostra zona, ma in realtà è comune nel ambiente navale, industrie, aeroporti, infrastrutture critiche, acquedotti, via dicendo.
+
+00:00:43.380 --> 00:00:49.820
+<v SPEAKER_1>E porta oggi, anche con la normativa NIS 2, il fatto di dover proteggere.
+
+00:00:49.820 --> 00:00:56.480
+<v SPEAKER_1>Questo è un po l'idea, ma in realtà se partiamo molto prima dovremo partire anche da capire che cosa c'è e che cosa fa.
+
+00:00:56.480 --> 00:00:58.440
+<v SPEAKER_1>E già questo è un mondo immenso.
+
+00:00:59.600 --> 00:01:14.680
+<v SPEAKER_1>Il mio approccio, diciamo nel mondo industriale, è quindi un mondo più ICS che OT, quindi più limitato da un punto di vista fisico, quindi in qualche modo lo possiamo circondare da quattro mura fisiche, più o meno.
+
+00:01:14.680 --> 00:01:29.700
+<v SPEAKER_1>E che tipicamente questo mondo è intoccabile, non è permesso fare alcun tipo di modifica, non è permesso modificare la rete, non è permesso agganciare qualsiasi dispositivo di sicurezza o non attivo, non è possibile aggiornare i sistemi.
+
+00:01:30.760 --> 00:01:37.820
+<v SPEAKER_1>È come fare un salto indietro nel mondo di rete, diciamo di un trent'anni buoni, direi.
+
+00:01:37.820 --> 00:02:09.080
+<v SPEAKER_1>Ho conosciuto aziende che hanno speso un tempo lunghissimo per aggiornare il proprio parco di sistemi per l'interazione uomo-machina, i PLC, riparare bacchi di software, eccetera, eccetera, per poi trovarsi dopo lavori di 6-8 mesi al punto di partenza, perché chiaramente il mondo attorno dei bug non sta fermo ad aspettare e, a mio parere, vanificando questo lavoro quasi eroico.
+
+00:02:10.280 --> 00:02:25.780
+<v SPEAKER_1>Quindi, mi approccio, diciamo così, molto semplicemente, è costruire attorno al mondo, diciamo, industriale un muro sufficientemente sicuro, fatto di controlli di sicurezza, di...
+
+00:02:25.780 --> 00:02:36.300
+<v SPEAKER_1>fa il ruolo di perimetro, eccetera, eccetera, che possano abbassare il rischio di eventi malevoli su questo tipo.
+
+00:02:36.300 --> 00:02:44.700
+<v SPEAKER_1>Ci sono tantissime tecnologie sviluppate dai vendor, da un punto di vista IT, molto buone, molto belle, molto efficaci.
+
+00:02:44.700 --> 00:02:54.000
+<v SPEAKER_1>Da un punto di vista del responsabile operativo, nel mondo appunto industriale, sono prese paradossalmente come minacce.
+
+00:02:54.000 --> 00:02:57.760
+<v SPEAKER_2>Sì, quasi sempre fuono agli occhi proprio in molti casi.
+
+00:02:57.760 --> 00:03:13.900
+<v SPEAKER_1>Sì, fuono agli occhi, non si tocca niente e qualsiasi fermo macchina sarà imputato alla tecnologia tipicamente proposta nel mondo IT e quindi il risultato è che non si tocca niente.
+
+00:03:13.900 --> 00:03:30.120
+<v SPEAKER_1>Al massimo, proprio in estremo, e non è neanche così tanto comune, si può ascoltare il traffico, non quello di campo, ma quello che interconnette il mondo di campo dalla rete IT.
+
+00:03:30.120 --> 00:03:33.740
+<v SPEAKER_1>Il massimo che io vedo, Rocco, è questo, un sensore di network.
+
+00:03:34.460 --> 00:03:41.540
+<v SPEAKER_2>Sì, infatti, tra l'altro questi limiti, come dici tu, è pieno di costrain dall'ambito OT.
+
+00:03:42.580 --> 00:03:47.740
+<v SPEAKER_2>E tra l'altro ci sono spesso noto due due punti di vista diversi.
+
+00:03:47.740 --> 00:04:05.500
+<v SPEAKER_2>Uno, quello del produttore, che ovviamente ingegnerizza la macchina per funzionare, fa delle scelte tecnologiche che non sono necessariamente compatibili col fatto che qualcuno poi dovrà o vorrà controllare quello che fa la macchina al suo interno, quello che appunto chiama via la rete di campo.
+
+00:04:06.820 --> 00:04:18.220
+<v SPEAKER_2>E quindi i device che poi mette dentro i sistemi, non è detto che siano dei facilitatori per fare dei controlli.
+
+00:04:18.220 --> 00:05:16.780
+<v SPEAKER_2>E dall'altra parte invece, chi poi con queste macchine se le mette in casa, le deve tenere operative, quindi è molto difficile farci anche degli assessment, se non in momenti specifici, avendo a bordo hardware, parliamo ovviamente di macchine che hanno una durata che potrà guardare serenamente i 20-30 anni di operatività, quindi sono macchine su cui facciamo l'assessment nel 2024, per vedere che cosa c'è che potrebbe essere aggiornato, potrebbe essere migliorato, ma sono macchine prodotte se va bene nel 2004, ma anche molto prima in realtà, e quindi con i sistemi operativi di quell'epoca e anche con l'hardware di quell'epoca, quindi a livello di assessment quello che capita, ad esempio, è che chi l'ha già fatto sa benissimo che non può fare una scansione delle vulnerabilità come la farebbe su un server o su una distanza cloud.
+
+00:05:47.040 --> 00:06:12.400
+<v SPEAKER_2>Si fa l'utilizzo di tecnologie che non erano fatte per andare su una rete, per essere diciamo encapsulate nell'IP, ma che oggi vengono frequentemente encapsulate nell'IP e lì dentro non ci si può proprio guardare, quindi diventa limitante il fatto che ci sono dei dispositivi che in realtà non vengono mai verificati con un approccio a livello di assessment.
+
+00:06:12.540 --> 00:06:15.480
+<v SPEAKER_2>E quindi si cercano delle strade alternative.
+
+00:06:16.580 --> 00:06:40.280
+<v SPEAKER_2>E l'unica che effettivamente che sembrano in qualche modo portare un risultato è tutto ciò che consente di avere un punto d'ascolto passivo all'interno di una rete di campo o su quelle che viene chiamata rete industriale o rete macchina, insomma, a me gli dà il nome del caso in base ai vari vendor probabilmente.
+
+00:06:40.380 --> 00:06:43.160
+<v SPEAKER_2>E lì si può fare qualcosa.
+
+00:06:43.160 --> 00:06:58.900
+<v SPEAKER_2>Io anche su quello in realtà ti volevo chiedere un tuo punto di vista, perché una delle cose che una di quelle opzioni che sono state fatte e che ho trovato sensata effettivamente è nell'approccio di raccolta dati passivo.
+
+00:06:58.900 --> 00:07:01.600
+<v SPEAKER_2>Quindi spesso alcuni sistemi cosa fanno?
+
+00:07:01.660 --> 00:07:18.780
+<v SPEAKER_2>Analizzano, hanno una sonda dentro la rete di campo, quindi vedono il traffico e mandano fuori o il traffico, o porzioni di traffico, o delle analitiche sul traffico che hanno visto.
+
+00:07:18.780 --> 00:07:38.040
+<v SPEAKER_2>E una delle obiezioni che mi è stata fatta è che se questo traffico, questo travaso di informazioni dalla rete di campo verso poi il sistema che doveva gestire quel traffico, quindi tirare fuori i vari output, doveva transitare dal gateway della macchina, comunque c'era un problema di supporto, di quanto il trafico poteva supportare il gateway della macchina.
+
+00:07:38.040 --> 00:07:52.540
+<v SPEAKER_2>E quindi stavo ragionando su come poter separare quello che di fatto è, potremmo chiamarla la parte operativa della macchina, dal trafico che dobbiamo portarci fuori, ma senza passare dalla parte operativa della macchina.
+
+00:07:52.580 --> 00:08:03.020
+<v SPEAKER_2>Quindi le sonde dentro, se devono comunicare con l'esterno, in alcuni casi potrebbe essere vincolato dal fatto che non possono comunicare all'esterno della macchina tramite il gateway della macchina.
+
+00:08:03.140 --> 00:08:13.340
+<v SPEAKER_2>Avrò un altro oggetto che fa parlare solo i sistemi di controllo, come se avessimo una control plane separata dal resto del sistema.
+
+00:08:15.580 --> 00:08:20.260
+<v SPEAKER_1>Allora io se ti va, partirei con elencare alcune caratteristiche del mondo ICS.
+
+00:08:20.420 --> 00:08:27.240
+<v SPEAKER_1>Quindi restiamo sempre negli impianti industriali, diciamo, fisicamente circoscritti.
+
+00:08:27.320 --> 00:08:34.040
+<v SPEAKER_1>Perché se andiamo su scada o cose distribuite sul territorio, il mondo diventa molto molto più complicato.
+
+00:08:34.040 --> 00:08:37.100
+<v SPEAKER_1>Quindi partiamo da questo.
+
+00:08:37.100 --> 00:09:20.260
+<v SPEAKER_1>Quello che io ho visto, mi è capitato di lavorare anche con produttori di macchine industriali e integratori, cioè quelli che comprano i pezzi e in qualche modo poi si occupano solo della configurazione, è che hanno un mindset ancora, non voglio sminuire, però è più di elettricista, cioè sono più orientati al fatto che il segnale, diciamo di comunicazione tra i vari attuatori, sia affidabile e quindi non entrano nel merito di come fatto come hai detto tu il protocollo sottostante che ora è Ethernet anzi più IP, ma il fatto che se c'è un cavo che collega A con B, il segnale in qualche modo è garantito.
+
+00:09:23.020 --> 00:09:35.000
+<v SPEAKER_1>In questo mindset ho visto e in realtà ho scoperto che in qualche modo sono anche topologie consigliate dai produttori, proprio Rockwell, dicendo.
+
+00:09:35.000 --> 00:09:40.140
+<v SPEAKER_1>Topologie che nel mondo di chi viene, come me, dal mondo network fanno aprire.
+
+00:09:40.140 --> 00:09:54.520
+<v SPEAKER_1>Cioè, topologie di switch, anche loop, estesi, estesi centinaia di metri su cui ci stanno venti, trenta switch collegati, non dico trenta switch ad anello, ma poco manca.
+
+00:09:54.520 --> 00:10:05.620
+<v SPEAKER_1>E c'è un fattore che chi viene dal mondo network dovrebbe sapere che è il diametro del spanning tree, perché chiaramente sono switch classici.
+
+00:10:05.940 --> 00:10:09.080
+<v SPEAKER_1>Ok, quindi è internet quello spanning tree, via dicendo.
+
+00:10:09.080 --> 00:10:20.000
+<v SPEAKER_1>Nel diametro spanning tree vorrebbe che nel caso, diciamo, peggiore, da un punto all'altro non ci siano più di cinque op, quindi cinque switch a catena.
+
+00:10:20.000 --> 00:10:24.480
+<v SPEAKER_1>Sto semplificando per chi viene da quel mondo, però per farci capire.
+
+00:10:26.220 --> 00:10:36.920
+<v SPEAKER_1>Quando sono andato ad analizzare delle topologie vendute poi dai produttori, ho scoperto un diametro che andava tranquillamente a nove oltre, quindi totalmente fuori da best practice.
+
+00:10:36.920 --> 00:10:51.740
+<v SPEAKER_1>In realtà il produttore, o meglio l'integratore, mi faceva notare che questa topologia era supportata appunto dai produttori di switch in ambito industriale, il che mi ha fatto rabbrividire, però almeno in qualche modo c'era un timbro del produttore.
+
+00:10:54.660 --> 00:11:06.480
+<v SPEAKER_1>Questa è tipicamente la rete di campo, quindi quella che lato, diciamo cliente, comprano a scatola chiusa, si installa, nessuno sa niente e questa proprio non si può toccare.
+
+00:11:06.480 --> 00:11:16.480
+<v SPEAKER_1>Quella che in qualche modo, non dico che si possa toccare, ma almeno il cliente sa che esiste, è l'interconnessione tra la rete di campo e la rete del cliente.
+
+00:11:16.480 --> 00:11:26.800
+<v SPEAKER_1>Quindi sempre e solitamente l'interfaccia uomo macchina, lì c'è MAI, si risiede sulla rete del cliente, come anche la porta più esterna del PLC.
+
+00:11:26.840 --> 00:11:29.820
+<v SPEAKER_1>Non è sempre detto, però super giù.
+
+00:11:29.820 --> 00:11:33.720
+<v SPEAKER_1>E questi dispositivi si attaccano alla rete del cliente.
+
+00:11:33.720 --> 00:11:47.140
+<v SPEAKER_1>Sempre tipicamente, però questa è la mia esperienza, la comunicazione di rete è di solito con pacchetti molto piccoli, tantissimi, ma per un utilizzo della banda bassissima.
+
+00:11:47.140 --> 00:12:04.400
+<v SPEAKER_1>Quindi per rispondere alla tua domanda, però poi continuiamo con gli elenchi, perché con l'elenco delle caratteristiche, per rispondere alla tua domanda, da un punto di vista di rete, non è un problema riprendere il concetto fatto di un vendor, che a me era piaciuto molto, purtroppo il seguito non è stato altrettanto bello.
+
+00:12:04.400 --> 00:12:23.920
+<v SPEAKER_1>Cioè non è stato così efficace, ma l'idea era molto buona, forse un po troppo presto per i tempi, che era l'idea del network as sensor, cioè il fatto che i dispositivi connessi in rete funzionassero come sensori, quindi banalmente gli switch, banalmente anche tutti i vari componenti che sono collegati alla rete.
+
+00:12:25.640 --> 00:12:30.080
+<v SPEAKER_1>Quello che ho visto e sono ancora riuscito a proporre è proprio questo.
+
+00:12:30.080 --> 00:12:50.920
+<v SPEAKER_1>Se l'infrastruttura diretta del cliente è costruita da di switch di buona qualità, non è un problema prendere il traffico di tutte le porte che sono verso il mondo degli apparati industriali, monitorarle e raggruppare il flusso su un'unica porta dove poi c'è una sonda passiva.
+
+00:12:53.760 --> 00:13:05.980
+<v SPEAKER_1>Si può fare, se lo switch è buono, non ha un problema a copiare un numero molto alto di pacchetti e la banda come ci siamo detti è molto bassa, per cui da questo punto di vista non vedo un problema.
+
+00:13:05.980 --> 00:13:18.840
+<v SPEAKER_1>E ad oggi secondo me è l'unica possibilità per mettere becco su quello che c'è nel mondo industriale, anche perché, come dicevi tu, è lì da decine d'anni o ci starà per decine d'anni.
+
+00:13:18.840 --> 00:13:20.320
+<v SPEAKER_1>Non si tocca assolutamente.
+
+00:13:21.120 --> 00:13:25.000
+<v SPEAKER_1>Qualsiasi cosa verrà imputata a chi ci ha messo le mani.
+
+00:13:25.000 --> 00:13:32.540
+<v SPEAKER_1>Anche un semplice scan antivo, non dico un Nessus, ma dico anche un Ping, anche un Harp.
+
+00:13:32.540 --> 00:13:37.860
+<v SPEAKER_1>Anche un Harp Ping massiccio, si ha praticamente la certezza di rompere qualcosa.
+
+00:13:37.860 --> 00:13:43.540
+<v SPEAKER_1>E quando dico la certezza dico i pianti industriali fermi o malfunzionanti, alla peggio.
+
+00:13:43.540 --> 00:14:03.960
+<v SPEAKER_1>E quindi veramente come dici tu o si trova una finestra di manutenzione che tipicamente va dal 13 o il 14 agosto al 16, una volta l'anno e sono sempre casi reali o proprio non c'è, perché in molte aziende sabato e domenica o gli impianti sono spenti perché consumano corrente o sono accesi in produzione.
+
+00:14:06.940 --> 00:14:27.800
+<v SPEAKER_1>Ho visto delle sonde sviluppate proprio da chi sia da aziende che hanno deciso di lavorare nel mondo IT, quindi pensate per il mondo IT, o in alcuni casi erano sonde che esistevano già nel mondo IT, per i CICLAT o meglio ampliate, con l'analisi dei protocoli in ambito industriale che fanno questo di mestiere.
+
+00:14:30.060 --> 00:14:51.100
+<v SPEAKER_1>L'utilità che ne dà è oltre a sapere che cosa c'è collegato, che non è poco perché se andiamo a parlare con i responsabili di produzione generalmente non hanno un'idea di cosa c'è, ma danno proprio le comunicazioni, quindi si vede tutto quello che dal mondo industriale parla con il mondo IT e oltre.
+
+00:14:51.100 --> 00:14:54.100
+<v SPEAKER_1>Ed è una base di impartenza secondo me utilissima.
+
+00:14:56.080 --> 00:15:03.120
+<v SPEAKER_1>E anche l'unico punto su cui possiamo agire, dal mondo assessment, compliance, security, via dicendo.
+
+00:15:03.360 --> 00:15:47.920
+<v SPEAKER_2>Tra l'altro, un piccolo appalente, scusa se mi infilo, perché su questo punto forse si incastra uno degli elementi su cui ha senso veramente investire di più, almeno come punto iniziale, perché nel momento in cui possiamo censire tramite l'analisi del traffico, ma in quel caso è un'analisi anche molto semplice del traffico, quali sono gli elementi che dialogano all'interno di una rete, quindi semplicemente andando a beccare dal MAC Address, poi è relativamente semplice individuare una serie di elementi, e poi con delle richieste, diciamo, fatte ad hoc, si capisce che oggetto è, quello che stiamo censendo, e quindi che versioni firmware a bordo, che versioni software a bordo, tutta una serie di informazioni.
+
+00:15:47.920 --> 00:16:06.900
+<v SPEAKER_2>Già quella che nel mondo IT consideriamo un'informazione troppo riduttiva, cioè quando facciamo analisi di scassione o vulnerabilità, basandoci su questi dati, nel mondo IT di solito non ci accontentiamo, vorremmo di più, vorremmo usare le plugin per vedere se poi la versione software è veramente esploitabile, ci andiamo se molto più in invasivi.
+
+00:16:06.900 --> 00:16:27.600
+<v SPEAKER_2>Nel mondo IT in realtà quella parte di, visto che tanto le plugin per vedere se esploitabile non le useremo mai, perché è vietato, in buona sostanza, già avere quell'informazione probabilmente ti dà un livello di visibilità sufficiente per fare una serie di valutazioni, sia sul patching che sulla potenziale presenza di vulnerabilità.
+
+00:16:27.600 --> 00:16:33.940
+<v SPEAKER_2>Già quello sarebbe tanta roba e effettivamente non disturba più di tanto la produzione.
+
+00:16:33.940 --> 00:16:36.160
+<v SPEAKER_2>Cioè se è fatto bene in realtà non disturba.
+
+00:16:37.600 --> 00:16:39.120
+<v SPEAKER_1>Sono assolutamente d'accordo con te.
+
+00:16:39.120 --> 00:16:49.820
+<v SPEAKER_1>C'è un'idea che io trovo poco applicabile, che è l'idea di unificare i responsabili di sicurezza che abbia visibilità, sia nel mondo IT che nel mondo OT.
+
+00:16:51.200 --> 00:16:55.940
+<v SPEAKER_1>E bella come idea, perché correttamente deve essere una persona che poi ha il cerino.
+
+00:16:55.940 --> 00:17:08.640
+<v SPEAKER_1>Però i due mondi sono così diversi che o questa persona si mette in testa che deve mettere un approccio nel mondo IT e uno completamente diverso nel mondo IT, oppure non funzionerà mai.
+
+00:17:08.640 --> 00:17:31.760
+<v SPEAKER_1>Come hai detto tu, il tempo di vita degli impianti industriali, vent'anni più o meno, ma minimo 10, ma sappiamo che andiamo per i 20 e con alcuni casi anche verso i 30, implica che non c'è sistema operativo o hardware supportabile per un tempo così lungo.
+
+00:17:31.760 --> 00:17:55.220
+<v SPEAKER_1>Molto probabilmente gli integratori, magari non i produttori, ma in alcuni casi anche gli integratori, in quest'arco di vita scompaiono, cambiano forma, eccetera, per cui magari dopo 15 anni non è neanche più possibile rintracciare il vecchio integratore che ci fa un refit dell'impianto, ci dà gli nuovi ECM-I, il nuovo COG, una pulita, è così, non si tocca a niente.
+
+00:17:55.220 --> 00:18:15.120
+<v SPEAKER_1>Quindi in questo senso a me piace confrontarmi così con chi, con i clienti che si stanno ponendo questo problema, dove abbiamo la certezza che il mondo industriale sia altamente vulnerabile, sia da un punto di vista di ECM-I, quindi stazioni Windows tipicamente purtroppo, ma anche proprio nel mondo PLC.
+
+00:18:15.120 --> 00:18:19.100
+<v SPEAKER_1>Quindi la mia esperienza è che se li tocchi si rompono.
+
+00:18:19.100 --> 00:18:22.640
+<v SPEAKER_1>Quindi a che ci serve fare una scansione di vulnerabilità?
+
+00:18:22.640 --> 00:18:33.600
+<v SPEAKER_1>Lo sappiamo, c'è un PLC, è vulnerabile, è un default, è inutile, è sbagliato credere il contrario, perché se non lo è adesso lo sarà fra un anno o due, sicuramente fra 15.
+
+00:18:49.340 --> 00:19:06.120
+<v SPEAKER_2>Noi ci preoccupiamo giustamente della parte Windows, perché sappiamo che se qualcosa attecchisce lì, è un punto di appoggio fin troppo facile.
+
+00:19:06.120 --> 00:19:13.960
+<v SPEAKER_2>Però in realtà ho trovato dispositivi con dei meravigliosi Linux embedded con kernel 2.2.
+
+00:19:15.800 --> 00:19:16.720
+<v SPEAKER_2>Quindi parliamo di anni novanta.
+
+00:19:16.720 --> 00:19:18.020
+<v SPEAKER_1>Ti devo dare ragione.
+
+00:19:19.660 --> 00:19:23.480
+<v SPEAKER_2>È fatto che siano all'interno della macchina e rende meno visibile all'esterno.
+
+00:19:24.600 --> 00:19:44.880
+<v SPEAKER_2>Però nel momento in cui un interruttore intelligente, come vengono chiamati alcune volte, che espone un'interfaccia Ethernet, è esposto all'esterno della macchina, quindi poi viene per qualche ragione connesso, perché qualcuno vuole accendere o spegnere lo da remoto, cosa che nel mondo industriale capita abbastanza frequentemente, stiamo esponendo un kernel 2.2.
+
+00:19:44.880 --> 00:19:50.840
+<v SPEAKER_2>Per dire, c'è una roba parecchio croccante, come diceva un nostro amico.
+
+00:19:50.840 --> 00:19:51.560
+<v SPEAKER_1>Ti devo dare ragione.
+
+00:19:51.560 --> 00:20:11.000
+<v SPEAKER_1>In realtà non è solo, in questo caso mi viene in mente un caso specifico, come dire, il prodotto che è stato sviluppato tanti anni fa, e quindi è vecchio, perché chiaramente non è aggiornato, ma ho visto aziende e integratori cominciare a sviluppare prodotti su kernel già vecchi, perché avevamo sempre fatto così.
+
+00:20:11.000 --> 00:20:32.760
+<v SPEAKER_1>Cioè loro non hanno il mindset di chi approccia la sicurezza, e quindi abbiamo sempre lavorato su quello, è stabile perché per loro la priorità è la stabilità dell'impianto sotto condizioni diciamo sicure, non è il fatto che debba essere sicuro come lo intendiamo noi che veniamo dal mondo IT.
+
+00:20:32.760 --> 00:20:47.940
+<v SPEAKER_1>E quindi per loro era normalissimo iniziare, conosciuti 3-4 anni fa, a lavorare su un kernel 2.4, 2.6 non mi ricordo, quindi già storico, perché se avevano sempre fatto così, e non c'era motivo di cambiare dal loro punto di vista.
+
+00:20:47.940 --> 00:21:10.520
+<v SPEAKER_2>Trattato che questa cosa innesca una spirale, perché se sviluppi su un kernel così, io ho trovato anche io situazioni di questo tipo, penso siano diverse gli interlocutori, kernel vetusti, esigenza di innovare il nuovo device, nella nuova versione non avrà soltanto più i comandi da rimuoto, ma anche una bellissima interfaccia web.
+
+00:21:10.520 --> 00:21:12.320
+<v SPEAKER_2>Però su quel kernel, cosa monti?
+
+00:21:12.320 --> 00:21:16.640
+<v SPEAKER_2>Monti una Apache di 18.000 anni fa, monti un PHP di 18.000 anni fa.
+
+00:21:16.640 --> 00:21:25.520
+<v SPEAKER_2>Quindi, alla fine, tutto lo stack che mette in piedi purtroppo presenta vulnerabilità ben note, ben storiche.
+
+00:21:27.440 --> 00:21:32.500
+<v SPEAKER_1>Sì, non è neanche così complicato andare a attaccare un sistema del genere.
+
+00:21:32.520 --> 00:21:34.860
+<v SPEAKER_1>I danni sono enormi.
+
+00:21:34.860 --> 00:21:56.520
+<v SPEAKER_1>Anni fa, proprio parlando di sicurezza nel mondo industriale, ho chiesto a un cliente, quindi lui utilizzava impianti, cosa sarebbe successo se la comunicazione di rete, memoria appunto di quella catena di switch, fosse saltata in un momento specifico della lavorazione dell'impianto.
+
+00:21:58.000 --> 00:22:00.800
+<v SPEAKER_1>Lui mi ha detto, ah, ma è molto semplice.
+
+00:22:00.800 --> 00:22:04.680
+<v SPEAKER_1>L'impianto diventa ingovernabile per il tipo di cosa che viene prodotto.
+
+00:22:04.680 --> 00:22:11.180
+<v SPEAKER_1>Non c'è altra possibilità che uscire dallo stabilimento perché si incendierà e aspettare che si fermi.
+
+00:22:11.180 --> 00:22:20.600
+<v SPEAKER_1>Queste più o meno sono le parole testuali, leggermente, diciamo, adattate per non far rilevare nel tipo di azienda, nella persona.
+
+00:22:20.600 --> 00:22:23.420
+<v SPEAKER_1>Però questo è quello che mi è stato detto.
+
+00:22:24.620 --> 00:22:34.920
+<v SPEAKER_1>E su questo mi aggancio perché recentemente mi hanno chiesto una valutazione di sicurezza sull'utilizzo del bluetooth, del wifi all'interno dell'impianto.
+
+00:22:34.920 --> 00:22:36.820
+<v SPEAKER_1>Mi pare anche di averne scritto.
+
+00:22:38.680 --> 00:22:55.560
+<v SPEAKER_1>Dal loro punto di vista gli permette la possibilità di riconfigurare al volo quali sono le postazioni, cosa fanno, cosa si collegano, senza andare di fatto fisicamente dal cliente e ricablare proprio l'impianto.
+
+00:22:55.560 --> 00:22:57.540
+<v SPEAKER_1>Quindi per loro è un vantaggio enorme.
+
+00:22:57.540 --> 00:23:08.060
+<v SPEAKER_1>Da me, dal mio punto di vista, è una paura enorme invece perché avevo guardato per curiosità il ciclo di vita dei vari versioni bluetooth ed era di qualche anno lunghissimo.
+
+00:23:08.640 --> 00:23:16.640
+<v SPEAKER_1>Ricordiamo WEP, WPA, WPA2, WPA3, tutti man mano caduti, eccetera eccetera, per un motivo o per l'altro.
+
+00:23:16.640 --> 00:23:40.200
+<v SPEAKER_1>Quindi spostare il dominio dal fisico all'etere è ancora peggio perché è vero che l'industria è tipicamente alta, però un'interruzione del segnale eccetera eccetera comincia ad essere pericolosa se quel dispositivo in bluetooth, mi pare che non fosse ancora il caso, è il segnale, il fungo rosso per fermarlo.
+
+00:23:40.200 --> 00:24:00.740
+<v SPEAKER_1>Quelli erano ancora cablati per fortuna, però ecco io guardo più avanti e come dal cavo si passa una catena di 20 switch sicuramente qualcuno dirà, beh ma scusa, cosa c'è di meglio di portarsi un fungo rosso per fermare l'impianto a presso, così in caso di problemi clic dovunque sei ce l'hai da te e l'impianto si ferma.
+
+00:24:01.220 --> 00:24:16.160
+<v SPEAKER_2>Probabilmente lì forse si introducono anche problemi di, magari passa a livello tecnologico però poi voglio vedere responsabile la sicurezza fisica, quindi safety se te l'accetta è una cosa di questo tipo.
+
+00:24:16.160 --> 00:24:18.600
+<v SPEAKER_2>Poi immagino ci sono delle regolamentazioni no?
+
+00:24:18.600 --> 00:24:23.000
+<v SPEAKER_2>Tutto un tema di compliance non banalissimo su certi tipi di impianti.
+
+00:24:24.660 --> 00:24:49.880
+<v SPEAKER_1>L'anno scorso hanno rivisto la normativa macchine introducendo proprio nel modo specifico il rischio, mi pare fosse generalizzato come cyber, però il concetto è la normativa macchine esiste, deve garantire la sicurezza, anche qui io semplifico enormemente, deve garantire la sicurezza dell'impianto, di chi ci lavora, dell'impianto stesso eccetera eccetera e c'è una valutazione del rischio obbligatorio secondo determinati parametri.
+
+00:24:50.680 --> 00:25:03.980
+<v SPEAKER_1>Hanno introdotto il fatto che questa valutazione del rischio deve considerare anche il mondo cyber, quindi il mondo più, chiamiamolo tecnologico, quindi di rete, di attacchi di quel tipo là.
+
+00:25:03.980 --> 00:25:16.560
+<v SPEAKER_1>E la curiosità è che non ho visto un gran stravoggimento nelle persone che hanno fatto quel tipo di analisi, dire oh Dio, adesso devo integrarla con un mondo che non conosco.
+
+00:25:16.560 --> 00:25:23.500
+<v SPEAKER_1>Perché dal loro punto di vista, cavo era cavo rimane, prima era un cavo, era un bus, adesso è uno switch.
+
+00:25:23.500 --> 00:25:26.420
+<v SPEAKER_1>Va bene, il concetto è lo stesso, no?
+
+00:25:26.420 --> 00:25:32.660
+<v SPEAKER_1>E questa cosa qua l'ho vista anche sul mondo navale, dove questo lavoro è stato fatto anni fa, anche lì.
+
+00:25:32.660 --> 00:25:35.960
+<v SPEAKER_1>Ah va bene, dobbiamo riadattare le carte.
+
+00:25:36.020 --> 00:25:39.520
+<v SPEAKER_1>No, perché per noi è ovvio, non è la stessa cosa.
+
+00:25:39.920 --> 00:25:51.360
+<v SPEAKER_1>Cioè se c'è una catena di switch che governa il timone di una nave col motore, con il timone, non è la stessa cosa di avere un cavo elettrico che da una parte mi porta all'altra, come sull'aereo, no?
+
+00:25:51.360 --> 00:25:55.380
+<v SPEAKER_1>Un conto è un bus, un conto è una catena di dispositivi.
+
+00:25:57.140 --> 00:26:13.080
+<v SPEAKER_1>Però è una questione di consapevolezza, non è ancora stato fatto il salto, perché chi viene da quel mondo là, non lo comprende, almeno, felicissimo di sbagliarmi, però purtroppo la mia percezione è che non venga ancora ben compreso.
+
+00:26:13.080 --> 00:26:14.920
+<v SPEAKER_2>Sì, non è chiarissimo.
+
+00:26:14.920 --> 00:26:49.320
+<v SPEAKER_2>Poi ci sono i modi per, diciamo ci sono dei problemi di stabilità differenti nel mondo IT in generale, che vengono risolti con architetture ridondate, però dove in realtà nel mondo IT siamo molto abituati, probabilmente, ad accettare tutta una serie di debolezze, perché la meravigiosa magia del cluster e della ridondanza ci dà certezza che le cose ripartano con dei delay che riteniamo estremamente accettabili, che per noi sono imporcettibili.
+
+00:26:49.320 --> 00:26:55.580
+<v SPEAKER_2>Probabilmente nel mondo IT in realtà quei delay non sono assolutamente accettabili, perché c'è molto più time.
+
+00:26:55.580 --> 00:26:58.500
+<v SPEAKER_1>No, assolutamente.
+
+00:26:58.620 --> 00:27:05.800
+<v SPEAKER_2>E probabilmente semplicemente manca il pezzo, manca la consapevolezza del fatto che il mondo IT li è accettati di buon grado e non è un problema.
+
+00:27:05.800 --> 00:27:09.880
+<v SPEAKER_2>Li trasportati invece nel mondo IT potrebbero diventare un problema.
+
+00:27:09.880 --> 00:27:12.280
+<v SPEAKER_2>Eden per la tematica della sicurezza informatica.
+
+00:27:13.440 --> 00:27:28.020
+<v SPEAKER_2>Noi sappiamo che siamo ben consapevoli dell'esposizione dei sistemi IT a una serie di minacce, ma siccome la rete industriale è sempre stata da un'altra parte, anzi una volta anche c'era la rete industriale, era felice e sfelicemente separata in altri...
+
+00:27:28.040 --> 00:27:30.800
+<v SPEAKER_1>Esatto, in un basse elettrico fino al problema.
+
+00:27:30.800 --> 00:27:50.480
+<v SPEAKER_2>Esatto, una volta che si è diventata ibrida la situazione è nato il problema, quindi ci troviamo un po a discutere e a confrontarci su tematiche che ovviamente non sono state un problema per 40 anni e quindi deve ancora motore.
+
+00:27:50.540 --> 00:28:16.680
+<v SPEAKER_2>Ma infatti tra l'altro molto spesso, ma proprio anche in tempi recentissimi, parlando con persone iper competenti che vengono al mondo dell'OT e dell'automazione OT, quindi persone abituate a sviluppare software e integrazioni, poi c'è tutto un mondo di self-made, cioè c'è un'azienda che si fanno le integrazioni software, quindi il ciclo di vita delle software lì ha un altro giro, che è meglio lasciamolo lì per adesso.
+
+00:28:17.560 --> 00:28:28.980
+<v SPEAKER_2>Comunque persone veramente iper competenti, che faticano a capire, a razzionalizzare il rischio.
+
+00:28:28.980 --> 00:28:38.760
+<v SPEAKER_2>Cioè non riescono, semplicemente perché non è il loro lavoro, a capire perché una macchina con un software vulnerabile, in quella posizione, c'è che danno può fare.
+
+00:28:38.760 --> 00:28:48.040
+<v SPEAKER_2>Manca tutta la catena ovviamente, cioè manca tutto il path che porta quella macchina ad essere un oggetto esposto e i problemi che può causare quell'oggetto esposto.
+
+00:28:48.040 --> 00:28:54.320
+<v SPEAKER_2>Vi manca un pezzo di consapevolezza che anche nell'ET in realtà ci abbia messo vent'anni ad acquisire.
+
+00:28:54.320 --> 00:28:55.260
+<v SPEAKER_2>Se guardiamo la storia...
+
+00:28:56.120 --> 00:28:59.160
+<v SPEAKER_1>E anche noi abbiamo fatto grossi errori su questo.
+
+00:28:59.160 --> 00:29:15.500
+<v SPEAKER_2>Esatto, se guardiamo la storia, adesso è facile parlare di cybersecurity nel 2024, un tema che è esploso, forse abbiamo anche parlato, ha avuto una curva di interesse esponenziale, in realtà a metà dello scorso decennio.
+
+00:29:15.500 --> 00:29:25.580
+<v SPEAKER_2>Prima c'era il problema, ma interessava a molte meno aziende, era molto meno frequente un attacco informatico, era tutto nascosto sotto un enorme tappeto, probabilmente pronto a esplodere.
+
+00:29:25.580 --> 00:29:38.160
+<v SPEAKER_2>È un certo punto d'esploso e molti di noi facevano lo stesso lavoro prima, lo stesso lavoro che facevano prima lo fanno anche oggi, ma in un contesto completamente diverso, dove è diventato incredibilmente interessante fare questo lavoro.
+
+00:29:38.160 --> 00:29:43.520
+<v SPEAKER_2>Prima eravamo dei pazzi, però eravamo semplicemente delle persone pazze che dicevano cose strane.
+
+00:29:43.520 --> 00:29:50.480
+<v SPEAKER_2>E questa evoluzione, questa consapevolezza nel mondo IT, OT non si è ancora creata semplicemente, manca ancora questo passaggio.

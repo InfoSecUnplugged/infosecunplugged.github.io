@@ -125,6 +125,10 @@
         
         <span><a class="text-black" href="../tags/tag-edr.html">EDR</a></span>
         
+        <span><a class="text-black" href="../tags/tag-siem.html">SIEM</a></span>
+        
+        <span><a class="text-black" href="../tags/tag-soc.html">SOC</a></span>
+        
         <span><a class="text-black" href="../tags/tag-threat-intelligence.html">Threat Intelligence</a></span>
         
         <span><a class="text-black" href="../tags/tag-xdr.html">XDR</a></span>
@@ -133,6 +137,36 @@
       
     </div>
 
+    
+    <div class="site-section bg-light">
+      <div class="container" data-aos="fade-up">
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="font-weight-bold text-black">Trascrizione testuale rileaborata da IA</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Siamo tornati con Info Sec. Unplugged.</p>
+<p>Oggi vogliamo affrontare un argomento vastissimo: la Threat Intelligence. È un tema che apre un capitolo enorme, ma per poterlo affrontare, dobbiamo prima gettare le basi, ripartendo dal mondo dell’EDR e dell’XDR, e da come oggi raccogliamo e analizziamo i dati di sicurezza.</p>
+<p>Ricordiamo che ne avevamo già parlato circa un anno fa, in una delle prime puntate, quando ci eravamo concentrati sull’ottimizzazione e il tuning degli EDR. All’epoca avevamo accennato alle funzionalità principali di queste piattaforme, ma non avevamo approfondito davvero come funzionano nel profondo. Oggi possiamo dire che un buon EDR non si limita più all’analisi statica: sfrutta la telemetria dinamica, osserva i comportamenti e arricchisce i dati per individuare minacce reali.</p>
+<p>Un anno fa avevamo anche ipotizzato che gli XDR avrebbero “inghiottito” i SIEM, diventando piattaforme in grado di raccogliere eventi da fonti eterogenee — non solo dagli endpoint, ma anche da firewall, Active Directory e altri sistemi. In effetti, il mercato si è mosso proprio in quella direzione: oggi le piattaforme EDR di fascia alta integrano spesso una componente SIEM interna, offrendo tutto in un’unica console. È comodo, ma il risultato non è un vero superamento del SIEM: piuttosto una collaborazione tra i due mondi.</p>
+<p>Questo percorso è diventato evidente con le grandi acquisizioni: Palo Alto che compra QRadar, Cisco che compra Splunk, CrowdStrike che sviluppa un proprio SIEM. Tutto converge verso l’integrazione. Ma se da un lato guadagniamo efficienza, dall’altro perdiamo la semplicità originaria dell’EDR.</p>
+<p>Un aspetto interessante riguarda la retention dei dati: l’EDR conserva la telemetria per periodi brevi, mentre il SIEM può mantenerla e indicizzarla per mesi o anni, rendendo possibili analisi retroattive e attività di threat hunting. Ecco perché, alla fine, i due strumenti continuano a coesistere.</p>
+<p>Nel frattempo, gli approcci si sono diversificati. L’XDR tende a semplificare l’esperienza d’uso per gli analisti interni, mentre le piattaforme con SIEM integrato richiedono competenze più avanzate. Inoltre, molti vendor puntano sull’automazione e sull’intelligenza artificiale per gestire gli eventi in autonomia. Ma queste soluzioni non sono “magia pura”: vanno configurate, presidiate e migliorate continuamente.</p>
+<p>Abbiamo anche notato un forte spostamento verso il cloud: i SIEM moderni sono sempre più spesso offerti in modalità SaaS. È un’evoluzione naturale — un po’ come accadde con Exchange — perché mantenere e gestire un’infrastruttura così complessa on-premise è sempre più difficile.</p>
+<p>Un tema spesso frainteso riguarda la distinzione tra log management e SIEM. Gestire i log per la compliance o per il troubleshooting è un conto, fare correlazione e detection è un altro. Le due attività hanno obiettivi, retention e costi diversi. Confonderle porta facilmente a errori di configurazione e a spese sproporzionate.</p>
+<p>Nel progettare un SOC, un’altra grande sfida è stimare i volumi: quanti log, quanti incidenti, quanta ingestion di dati? Domande a cui le aziende spesso non sanno rispondere, ma fondamentali per dimensionare licenze e infrastrutture.</p>
+<p>Un punto chiave è che nessuna di queste piattaforme “fa tutto da sola”. L’EDR e il SIEM raccolgono una quantità enorme di dati, ma non trasformano automaticamente log grezzi in threat intelligenti. Servono regole, tuning e conoscenza del contesto. Ad esempio, un firewall deve essere configurato per registrare gli eventi utili alla sicurezza — non tutto, ma ciò che ha valore per la detection.</p>
+<p>Lo stesso vale per gli EDR: un evento isolato, come una chiamata HTTP, non significa nulla se non è correlato a un indicator of compromise (IOC). Solo allora il dato assume significato. E qui entra in gioco la Threat Intelligence: serve per arricchire ciò che osserviamo con informazioni esterne — reputazione di domini, URL malevoli, indicatori aggiornati — che i nostri sistemi da soli non possono conoscere.</p>
+<p>Abbiamo anche discusso della contestualizzazione: ogni azienda ha dinamiche proprie. Bloccare PowerShell o Python può avere senso in un contesto produttivo, ma non in un reparto IT. L’efficacia delle regole dipende sempre da dove e come vengono applicate.</p>
+<p>Oggi la complessità delle infrastrutture è enorme — tra cloud, Active Directory, Entra ID, NAC, firewall, endpoint, gateway email — e richiede competenze specialistiche che poche aziende hanno. Chi non può gestirle internamente deve affidarsi a provider esterni, ma dovrebbe comunque conservare la visione d’insieme per sapere cosa sta acquistando e come misurarlo.</p>
+<p>Siamo quindi arrivati al punto in cui abbiamo tutto: EDR, XDR, SIEM, log, telemetrie, regole, automazione. Eppure, la vera sfida è capire cosa guardare e come correlare. È qui che entra in gioco la Threat Intelligence: collegare i dati interni con informazioni esterne, aggiornate e contestuali, per dare senso al rumore.</p>
+<p>Ed è proprio da qui che ripartiremo nella prossima puntata, per capire come si costruisce e si integra un sistema di Threat Intelligence in un SOC moderno.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     
 
     
@@ -201,6 +235,40 @@
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
+                  <a href="episode-6.html">0x6 - Da EDR a XDR: scegliere, gestire, utilizzare (parte 2)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 05/01/2024 <span class="sep">/</span> 33 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata si approfondisce il tema dell'XDR (Extended Detection and Response), analizzando come questa tecnologia rappresenti un'evoluzione dei sistemi di sicurezza tradizionali come il SIEM. Il dialogo esplora i limiti e le potenzialità dell'ingestion e della correlazione dei dati, il ruolo delle regole per la gestione degli incidenti, e la direzione verso cui il mercato della cybersecurity si sta muovendo. Viene evidenziata anche la prospettiva aziendale: l'XDR come strumento più integrato, accattivante e strategico per aumentare la visibilità e l'efficacia delle difese informatiche.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-5.html">0x5 - Da EDR a XDR: scegliere, gestire, utilizzare (parte 1)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 04/01/2024 <span class="sep">/</span> 46 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia approfondiscono il tema della selezione di una soluzione EDR (Endpoint Detection and Response). Partendo dalle differenze tra gestione interna e servizi MDR, discutono i criteri di scelta più importanti, le caratteristiche tecniche da considerare, l'integrazione con sistemi XDR e l'evoluzione delle piattaforme di sicurezza. Una conversazione pratica e realistica per chi deve orientarsi nel mondo delle soluzioni di cybersecurity aziendale.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
                   <a href="episode-25.html">0x19 - Threat Intelligence (parte 3)</a>
                 </h3>
                 <div class="text-white mb-3">
@@ -209,6 +277,23 @@
                   </span>
                 </div>
                 <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare sul lavoro del threat analyst, che studia il comportamento degli attori malevoli per supportare attività di detection e prevention. Viene inoltre approfondita la stretta relazione tra il mondo della threat intelligence e quello della offensive security, mostrando come entrambi si concentrino sul modus operandi degli attacchi e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato da un post descrittivo e un video highlight, per rendere più accessibili i dettagli tecnici trattati.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-18.html">0x12 - Riflessioni sulla rete (design, sicurezza, approccio)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 30/12/2024 <span class="sep">/</span> 39 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del networking visto con gli occhi dell'IT manager. Partendo dal caso tipico di chi eredita una rete già esistente in azienda, discutono di come valutare l'infrastruttura, identificare aree sensibili, gestire punti di accesso e servizi, e impostare strategie di sicurezza efficaci. Una chiacchierata utile e concreta per chi deve orientarsi nella complessità della rete aziendale e mantenere un equilibrio tra operatività e protezione.</p>
               </div>
             </div>
           </div>
@@ -260,23 +345,6 @@
                   </span>
                 </div>
                 <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia introducono il tema dell'OT Security, analizzando le sfide e le peculiarità della sicurezza nei sistemi industriali (ICS) e nelle infrastrutture critiche. Si parla di contesti come impianti navali, aeroporti e acquedotti, approfondendo come la normativa NIS2 impatti la protezione dei sistemi operativi e dei dispositivi connessi. Un episodio introduttivo che getta le basi per una serie di conversazioni dedicate alla sicurezza operativa nel mondo industriale.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-6.html">0x6 - Da EDR a XDR: scegliere, gestire, utilizzare (parte 2)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 05/01/2024 <span class="sep">/</span> 33 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata si approfondisce il tema dell'XDR (Extended Detection and Response), analizzando come questa tecnologia rappresenti un'evoluzione dei sistemi di sicurezza tradizionali come il SIEM. Il dialogo esplora i limiti e le potenzialità dell'ingestion e della correlazione dei dati, il ruolo delle regole per la gestione degli incidenti, e la direzione verso cui il mercato della cybersecurity si sta muovendo. Viene evidenziata anche la prospettiva aziendale: l'XDR come strumento più integrato, accattivante e strategico per aumentare la visibilità e l'efficacia delle difese informatiche.</p>
               </div>
             </div>
           </div>

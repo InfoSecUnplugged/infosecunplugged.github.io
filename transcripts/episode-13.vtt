@@ -1,0 +1,460 @@
+WEBVTT
+
+00:00:07.926 --> 00:00:10.966
+<v SPEAKER_2>Bentornati a Info Sec. Unplugged in versione Extended.
+
+00:00:10.966 --> 00:00:25.766
+<v SPEAKER_2>Questa volta sono con Alice Mini, amica, io sono sempre Andrea Dainese e in questa versione cogliamo l'occasione per raccontare degli incidenti che abbiamo vissuto, se io che Alice, e discuteli assieme.
+
+00:00:25.766 --> 00:00:34.586
+<v SPEAKER_2>Quindi il primo turno va ad Alice e chiaramente gli incidenti sono reali, ma sufficientemente romanzati per renderli indistinguibili.
+
+00:00:34.626 --> 00:00:38.026
+<v SPEAKER_2>Insomma, non mostrare chi è stato.
+
+00:00:38.026 --> 00:00:43.406
+<v SPEAKER_2>Tra l'altro, il primo che Alice ci racconta è piuttosto comune e l'abbiamo vissuto entrambi numerose volte.
+
+00:00:43.406 --> 00:00:44.146
+<v SPEAKER_2>A te Alice.
+
+00:00:44.146 --> 00:00:50.066
+<v SPEAKER_1>Grazie Andrea e grazie anche per avermi invitata a far parte di questo episodio del tuo podcast.
+
+00:00:50.066 --> 00:00:58.286
+<v SPEAKER_1>E allora, come aveva anticipato Andrea, questo esempio che portiamo oggi è un esempio veramente molto comune.
+
+00:00:58.286 --> 00:01:05.106
+<v SPEAKER_1>Parliamo di una campagna di fishing che da inizio anno viene veicolata massicciamente a livello globale.
+
+00:01:05.106 --> 00:01:21.146
+<v SPEAKER_1>In questo caso in particolare ha visto la mail di un cliente compromessa e utilizzata come testa di ponte per poi mandare queste mail di fishing a tappetto su tutta la sua rubrica.
+
+00:01:21.146 --> 00:01:40.786
+<v SPEAKER_1>Queste mail di fishing invitavano i riceventi a cliccare su un collegamento o i transfer, OneDrive o Dropbox che li portava a scaricare un file che poi si dimostrava un file malevolo, quindi un malware sul proprio device.
+
+00:01:40.786 --> 00:01:51.386
+<v SPEAKER_1>È stato molto interessante perché abbiamo visto come proprio questa campagna ha raggiunto veramente migliaia di caselle di posta.
+
+00:01:51.386 --> 00:01:57.266
+<v SPEAKER_2>Questo attacco l'ho visto numerose volte e una premessa è d'obbligo, per chi ci ascolta.
+
+00:01:57.266 --> 00:02:16.966
+<v SPEAKER_2>Non vogliamo arrivare al tecnicismo, vogliamo raccontarlo in modo ad alto livello perché sia comprensibile, non tanto la parte tecnica, gli analisti che il lavoro lo sanno fare, e certo non glielo insegniamo noi, ma a chi magari sta sopra un livello o magari non lo fa di mestiere e vuole così comprendere come reagiamo.
+
+00:02:18.886 --> 00:02:21.346
+<v SPEAKER_2>Allora, secondo me ci sono vari punti.
+
+00:02:21.446 --> 00:02:31.046
+<v SPEAKER_2>Quindi intanto la capacità di accorgersi di questa cosa non è banale, è importante, magari la vediamo dopo, in un secondo momento.
+
+00:02:31.046 --> 00:03:00.826
+<v SPEAKER_2>Secondo me il primo punto che io ci tengo sempre a sottolineare, molte volte inutilmente, è che se c'è una breach di una casella di posta elettronica, ossia se è stato trovato, user name, password, insomma è stato trovato un eccesso valido a una casella di posta, possiamo dare per esfiltrato, per rubato tutto il contenuto della casella di posta, tutta la rubrica aziendale e tutte eventuali caselle pubbliche che esistano su questo.
+
+00:03:00.826 --> 00:03:09.566
+<v SPEAKER_2>Quindi tutti i dati che l'utente poteva accedere possiamo darli per usciti o rubati, non persi nel senso che sono stati cancellati.
+
+00:03:09.566 --> 00:03:22.326
+<v SPEAKER_2>Di solito questa cosa non accade, perché l'attacker vuole rimanere comunque nascosto, ma ciò che poteva portarsi via l'ha fatto, perché comunque il dato potrebbe sempre tornare utile in futuro.
+
+00:03:24.766 --> 00:03:28.386
+<v SPEAKER_2>Le aziende non si soffermano su questa cosa qua.
+
+00:03:28.386 --> 00:03:54.726
+<v SPEAKER_2>È un data breach, nel senso di GDPR del termine, anche se è data breach non è proprio la parola giusta, ma andrebbe analizzato, perché se si ruba l'accesso di un inside sales, piuttosto che di un sales manager, eccetera, eccetera, ci sono degli impatti sull'azienda in termini di dati rubati, fatture, clienti, proposte, eccetera, eccetera.
+
+00:03:54.726 --> 00:04:05.526
+<v SPEAKER_2>Se si ruba l'accesso alla casella di risorse umane, il problema è un po più grosso, perché lì molto probabilmente ci sono informazioni sanitari dei dipendenti, buste pague, eccetera, eccetera.
+
+00:04:05.526 --> 00:04:10.666
+<v SPEAKER_2>Quindi la prima riflessione importante secondo me è questa.
+
+00:04:10.666 --> 00:04:30.366
+<v SPEAKER_2>E la seconda riflessione che faccio è che con quei dati rubati, cosa che hai visto in questo caso, io l'ho visto in un caso qualche anno fa, l'Attacker arricchisce il suo bagaglio culturale sul Target, che è l'azienda, e questo gli permette di pianificare le proprie mosse in maniera molto precisa.
+
+00:04:31.746 --> 00:04:54.366
+<v SPEAKER_2>L'attacco che mi hai raccontato è un po per mettermi i temi nel rozzo, perché è andato con una pesca strascico, quindi ha inviato e-mail a un numero molto alto di contatti della rubrica, cosa che fa sicuramente rumore e cosa che probabilmente aiuta la capacità di identificare l'attacco.
+
+00:04:54.786 --> 00:04:56.946
+<v SPEAKER_2>Non hai detto come è stato identificato.
+
+00:04:59.826 --> 00:05:29.526
+<v SPEAKER_1>Il nostro team di security aveva da poco parlato internamente tramite le attività che facciamo di intelligence e di awareness, di queste campagne di phishing che in quel momento erano molto popolari e quindi diciamo che l'azienda sapeva già che c'era questa campagna in essere e c'era una soglia di attenzione verso questo tipo di mail molto alta.
+
+00:05:30.566 --> 00:05:53.526
+<v SPEAKER_1>Inoltre richieste di condivisione di file tramite, in quel caso era WeTransfer, non vengono ricevute molto spesso se non da un cliente specifico, e questo non era il caso e quindi questa è stata individuata come attività sospetta.
+
+00:05:53.526 --> 00:06:13.466
+<v SPEAKER_1>Diciamo che potrebbe aver aiutato anche il fatto che in azienda avevamo appena terminato un giro di corsi di awareness e quindi tutto il personale era molto più attento a questo tipo di attività rispetto magari a quanto sarebbe stato normalmente.
+
+00:06:13.466 --> 00:06:28.366
+<v SPEAKER_2>Ecco, sì, hai citato già la parte di mitigazione e sicuramente essendo poi il tuo campo, la parte di awareness merita un approfondimento, possiamo dire che è stato individuato perché l'attacca ha inviato le mail alle persone sbagliate.
+
+00:06:28.366 --> 00:06:28.826
+<v SPEAKER_1>Esatto.
+
+00:06:30.426 --> 00:06:44.006
+<v SPEAKER_2>In linea di massima, sto pensando adesso in linea generale, un attacco del genere può essere identificato se viene monitorato con accuratezza il sistema di posta.
+
+00:06:44.006 --> 00:06:56.086
+<v SPEAKER_2>Allora auspicabilmente c'è un sistema di anti-spam, molto spesso l'anti-spam controlla le mail in ingresso nell'organizzazione, molto più raramente vedo che controlla le mail in uscita dall'organizzazione.
+
+00:06:56.786 --> 00:07:16.106
+<v SPEAKER_2>Quindi il consiglio che do, che ho già dato in passato, era benissimo un anti-spam in ingresso, però se c'è uno spam in uscita, quindi una persona che sta inviando un certo numero, un alto numero di mail sospette, tipicamente questa cosa non viene evidenziata, perché l'uscita è libera in questo senso.
+
+00:07:17.526 --> 00:07:39.586
+<v SPEAKER_2>Quindi una configurazione corretta aiuta, un controllo comportamentale, nel senso non controlliamo cosa manda la persona, viene fatto anche questo dai sistemi tipicamente ma non dalle persone, però sapere che se l'invio normale di mail di una persona si altesta sulle 20-30 mail al giorno, se comincia a mandarne 500, c'è qualcosa di strano.
+
+00:07:39.826 --> 00:07:40.826
+<v SPEAKER_1>Assolutamente.
+
+00:07:40.826 --> 00:07:55.546
+<v SPEAKER_2>La parte comportamentale potrebbe anche controllare chi invia, perché se la persona invia più o meno agli stessi, e così di solito è, allo stesso gruppo di destinatari con una certa variabilità, se questa variabilità esagera, anche qui è un segnale d'allarme.
+
+00:07:55.546 --> 00:07:57.366
+<v SPEAKER_2>Poi c'è il contenuto, chiaramente.
+
+00:07:57.366 --> 00:08:11.726
+<v SPEAKER_2>Quindi l'antispam fatto bene dovrebbe controllare i link e verificare se i link portano a dei allegati puliti o dei allegati malevoli.
+
+00:08:13.086 --> 00:08:24.606
+<v SPEAKER_2>C'è anche da dire, magari entro un filino sul tecnico, che spesso ho visto delle mie edifici, infatti, con più salti, si chiamano redirect.
+
+00:08:24.606 --> 00:08:39.226
+<v SPEAKER_2>Cioè il link della mail non portava al file direttamente, ma passava due o tre salti, perché tipicamente i motori di antispam vanno a verificare un numero inferiore di salti, e so che lo facciano.
+
+00:08:39.226 --> 00:08:54.806
+<v SPEAKER_2>Quindi anche qui torna sempre la qualità della soluzione che le aziende hanno e soprattutto il presidio, ma anche il monitoraggio, la verifica se quella soluzione funziona correttamente o no, cosa non.
+
+00:08:57.146 --> 00:09:12.646
+<v SPEAKER_1>Sì, anche la corretta configurazione è un tema molto importante, perché a volte magari anche lo strumento è buono, però se non correttamente configurato e testato, può comunque rivelarsi utile quanto uno strumento meno valido, quindi sicuramente quello è un tema molto importante.
+
+00:09:13.086 --> 00:09:15.286
+<v SPEAKER_2>Ah, completamente d'accordo.
+
+00:09:15.286 --> 00:09:18.226
+<v SPEAKER_2>E qui siamo arrivati a identificare l'attacco.
+
+00:09:18.226 --> 00:09:35.766
+<v SPEAKER_2>A questo punto l'attacco è noto e appunto quello che racconti senza voler offendere l'attacca è un po rozzo, nel senso che poteva fare molto di più, ottenere molto più vantaggio e facendo molto meno rumore.
+
+00:09:35.766 --> 00:09:38.086
+<v SPEAKER_2>Magari ne racconteremo in seguito di questo tipo qua.
+
+00:09:38.666 --> 00:09:47.206
+<v SPEAKER_2>E chiaramente questa cosa l'ha fatto scoprire in maniera abbastanza rapida.
+
+00:09:47.206 --> 00:09:54.606
+<v SPEAKER_2>A quel punto c'è la domanda, ma chi è che ha cliccato su quell'allegato e l'ha installato?
+
+00:09:54.606 --> 00:10:24.686
+<v SPEAKER_2>Qui il passo successivo è sempre da parte dell'analista prendere l'allegato, poi verificare che cosa fa, però parlando in modo molto più semplice, se l'allegato è stato scaricato quel file ha un ash, e auspicabilmente nell'utopia della sicurezza della service security mondiale nel 2024, l'EDR mi permette di verificare nei vari computer della mia rete se c'è o no quel file in maniera abbastanza semplice.
+
+00:10:24.686 --> 00:10:29.846
+<v SPEAKER_2>Questa è la teoria, la pratica purtroppo non è detto che sia proprio così.
+
+00:10:29.966 --> 00:10:34.206
+<v SPEAKER_2>A quel punto lancio il batch, distruggo il file.
+
+00:10:34.206 --> 00:10:39.926
+<v SPEAKER_2>Anzi, prima vedo chi l'ha scaricato, distruggo il file e fine, cioè fine.
+
+00:10:41.086 --> 00:10:43.786
+<v SPEAKER_2>Bisogna vedersi chi l'ha eseguito quel file.
+
+00:10:45.026 --> 00:11:00.546
+<v SPEAKER_2>E direi che in questo momento ci fermiamo, perché andare poi a parlare dell'analisi del malware forse esce un momento dal seminato, da quello che ci abbiamo proposto di fare, a meno che non vi siate trovati a fare questo tipo di attività.
+
+00:11:00.546 --> 00:11:07.466
+<v SPEAKER_1>No, in realtà la cosa più interessante secondo me è la gestione della comunicazione col cliente, in questo caso.
+
+00:11:07.466 --> 00:11:07.966
+<v SPEAKER_2>Ok.
+
+00:11:07.966 --> 00:11:22.126
+<v SPEAKER_1>Nel senso, noi dal lato nostro, ovviamente abbiamo fatto le varie analisi su sandbox per capire insomma se il file dall'altra parte fosse malevolo o meno, il risultato malevolo.
+
+00:11:22.406 --> 00:11:30.766
+<v SPEAKER_1>Non c'erano tracce dell'hush corrispondente già utilizzato su diverse piattaforme online.
+
+00:11:30.766 --> 00:12:02.086
+<v SPEAKER_1>Abbiamo fatto una verifica, non risultava conosciuto, però il comportamento era effettivamente malevolo e lì è stato interessante gestire la comunicazione con il cliente, perché comunque è un tema molto delicato, insomma andare a dirgli che hai una casella di posta compromessa, soprattutto perché in questo caso era un utente di abbastanza di alto profilo all'interno dell'azienda.
+
+00:12:02.086 --> 00:12:11.326
+<v SPEAKER_1>E lo sai perfettamente, probabilmente meglio di me, come questo tipo di comunicazioni siano sempre un po scomode.
+
+00:12:12.186 --> 00:12:15.026
+<v SPEAKER_1>Quindi, tip, insomma...
+
+00:12:15.026 --> 00:12:16.146
+<v SPEAKER_2>Delicato, sì.
+
+00:12:16.666 --> 00:12:24.106
+<v SPEAKER_2>Viene utile la capacità innata in noi di essere un po psicologi, sì.
+
+00:12:25.566 --> 00:12:48.506
+<v SPEAKER_2>Mi vengono, capisco la situazione in cui ti sei trovata, in cui l'utente, soprattutto se nel top management, è difficile da trattare, perché psicologicamente, io l'ho visto, su altre persone si sentono, come dire, accusate, come se fosse...
+
+00:12:48.506 --> 00:12:56.446
+<v SPEAKER_2>se avessero sbagliato, che in parte è vero, però in parte non gli si vuole crocifiggere, è semplicemente è successa una cosa, può succedere.
+
+00:12:56.446 --> 00:13:02.446
+<v SPEAKER_2>Ci sono motivi molto banali per cui questo succede, una password semplicissima.
+
+00:13:03.226 --> 00:13:19.286
+<v SPEAKER_2>Ci sono motivi anche più complicati, cui ci sono delle truffe, delle manipolazioni, infatti, molto adarte, e qui è molto più difficile per un utente comune riuscire a identificare l'appaco.
+
+00:13:19.286 --> 00:13:30.566
+<v SPEAKER_2>Quindi non vuole mai essere un'accusa, però giustamente quello che hai fatto notare è che succede poi in azienda che questa cosa si sa e si mette la persona un po alla berlina.
+
+00:13:32.346 --> 00:13:35.786
+<v SPEAKER_2>È stato lui, c'è cascato, colpa sua.
+
+00:13:35.786 --> 00:13:39.526
+<v SPEAKER_2>E questa cosa rischia di diventare un problema nell'azienda.
+
+00:13:39.526 --> 00:13:50.646
+<v SPEAKER_2>Nel senso che viene poi fatto, usiamo questa parola, viene taggato, gli viene data l'etichetta della persona un po così che c'è cascata.
+
+00:13:50.646 --> 00:13:52.586
+<v SPEAKER_2>Secondo me questa è una cosa molto delicata.
+
+00:13:52.586 --> 00:14:09.846
+<v SPEAKER_2>Io l'ho visto in un'altra azienda succedere, una cosa molto simile, anzi in due aziende, in una è stata licenziata o si è licenziata da lì a poco, e invece nell'altra ha avuto qualche settimana difficile proprio perché era la persona che aveva causato il problema.
+
+00:14:09.846 --> 00:14:18.106
+<v SPEAKER_2>Delicato, delicato da gestire per le persone che si occupano di risorse umane, che ci ascoltano, un occhio veramente di riguardo.
+
+00:14:19.606 --> 00:14:36.866
+<v SPEAKER_2>Sicuramente la persona va meglio formata perché non cada in queste truffe nuovamente, ma è capitata lei come poterà capitare all'amministratore delegato o all'ultima della catena gerarchica.
+
+00:14:36.866 --> 00:14:57.106
+<v SPEAKER_1>Sì, è come sempre una questione culturale alla fine, perché alla fine c'è la persona che magari gli è stato compromesso l'account perché è cascata in una campagna di fishing, cioè, succede, è uno dei metodi di primo accesso più comuni per le compromessioni in azienda.
+
+00:14:57.106 --> 00:15:09.386
+<v SPEAKER_1>Quindi, sì, ovviamente a livello di prevenzione bisogna formare correttamente le persone, creare dei giusti training di awareness, come in realtà mi hai insegnato a fare tu, quindi...
+
+00:15:09.386 --> 00:15:40.066
+<v SPEAKER_1>Però è vero che nelle aziende questo tema è lasciato molto a se stesso, cioè il classico training, una tantum durante anno, one shot veloce che tocca semplicemente temi base, insomma, cosa è il phishing, come riconoscerlo, come capire quali sono gli elementi in una mail che te lo fanno riconoscere, ma non è solo questo, devi capire lo stile di comunicazione che cosa vuole un attaccante quando ti prende di mira.
+
+00:15:40.066 --> 00:15:57.306
+<v SPEAKER_1>Ci sono tantissime condizioni da prendere in considerazione, quando si crea un corso non può essere semplicemente il one shot, deve essere una cosa continuativa e poi bisogna creare una cultura di ascolto e di aiuto all'interno dell'azienda.
+
+00:15:57.306 --> 00:16:11.046
+<v SPEAKER_1>Il fatto che un utente sia stato compromesso e vabbè, o non essersene accorto, i nostri sistemi possono essere, non essersi accorti dell'intrusione, ma magari qualche attività sospetta l'ha notata, perché non l'ha segnalata.
+
+00:16:11.046 --> 00:16:23.646
+<v SPEAKER_1>È lì che bisogna porre l'attenzione, perché alla fine è facile puntare il dito verso l'utente che è caduto nella campagna di phishing, ma verso la cultura aziendale che non ha portato l'utente a segnalare.
+
+00:16:23.646 --> 00:16:28.386
+<v SPEAKER_1>Questo è un tema fondamentale che bisognerebbe che tutte le aziende iniziasse a toccare.
+
+00:16:28.406 --> 00:16:31.326
+<v SPEAKER_2>Allora, mi hai dato tutti gli spunti che mi sono segnato.
+
+00:16:31.326 --> 00:16:49.106
+<v SPEAKER_2>Allora, la prima cosa che ricordo è che quando facevi campagne di phishing da un punto di vista offensivo per addescare, chiamiamole così, poveri dipendenti e fargli fare cose che non dovrebbero, avevi un tasso di successo molto molto alto.
+
+00:16:49.106 --> 00:16:50.606
+<v SPEAKER_1>Sono un'ottimo giocatore sociale.
+
+00:16:50.606 --> 00:16:51.366
+<v SPEAKER_2>Sì, esatto.
+
+00:16:51.366 --> 00:16:56.526
+<v SPEAKER_2>Insomma, direi non era il 100%, ma era sicuramente sul 90%.
+
+00:16:58.266 --> 00:17:13.246
+<v SPEAKER_2>E questa cosa qua mi porta a legarmi, perché chiaramente le campagne offensive fatte in modo benevolo, cioè come test di tenuta, fanno parte del ecosistema verifica dell'awareness fatto.
+
+00:17:13.246 --> 00:17:20.446
+<v SPEAKER_2>Quindi faccio una campagna di training formativo per aumentare la consapevolezza su certi temi.
+
+00:17:20.446 --> 00:17:28.046
+<v SPEAKER_2>O di solito le piattaforme di training ormai hanno implicitamente dentro una serie di verifiche, però per me sono abbastanza semplicistiche.
+
+00:17:28.046 --> 00:17:36.746
+<v SPEAKER_2>Poi arrivano le campagne, diciamo, organizzate in modo benevolo per testare i finali più complicati.
+
+00:17:36.746 --> 00:17:48.686
+<v SPEAKER_2>E il risultato è, nel bene o nel male, una certa quantità di persone ha aperto la mail, una certa quantità di persone ha aperto il link, una certa quantità di persone ha inserito username e password, eccetera.
+
+00:17:48.686 --> 00:17:52.726
+<v SPEAKER_2>E una quantità di persone ha scaricato il malware e l'ha eseguito.
+
+00:17:52.726 --> 00:17:54.706
+<v SPEAKER_2>Tutte misurazioni che vengono fatte.
+
+00:17:54.886 --> 00:17:57.526
+<v SPEAKER_2>Perché vengono fatte a vari livelli?
+
+00:17:57.526 --> 00:18:05.506
+<v SPEAKER_2>Perché non c'è niente di male oggi, non siamo più negli anni 90, dove aprire una mail e succedere la catastrofe di solito.
+
+00:18:05.506 --> 00:18:23.706
+<v SPEAKER_2>Quindi aprire un email, tra l'altro di solito è implicito, specialmente col cellulare, non significa che l'utente c'è caduto, significa che ha voluto fare un approfondimento, non l'ha identificata dall'intestazione della mail, ma su questo tutto sommato non c'è niente di male.
+
+00:18:24.026 --> 00:19:03.926
+<v SPEAKER_2>Sapere quanto è andato avanti, allora là sì, quello è importante saperlo, ma quello che noto che manca è che di solito, e qua ti imballo tu nuovamente, di solito queste strutture, le piattaforme di training, eccetera eccetera, sono le e anche le campagne di fishing benevole, chiamiamole così, sono organizzate dal team IT, IT security, a seconda di questo, come è strutturata l'azienda, che alla fine ottiene un rapport, ottiene un risultato, ma non sa cosa farsene, perché il team IT, cioè non esiste un processo in azienda che lega questa tecnologia al risorse umane che deve occuparsene.
+
+00:19:03.926 --> 00:19:30.946
+<v SPEAKER_2>Quindi il team IT dice, oh queste trenta persone che hanno messo a rischio, possono mettere a rischio l'azienda perché hanno queste debolezze, il risorse umane non sa cosa farsene, perché da un punto di vista operativo non è stato pensato come reagire, manca la procedura di fatto, che cosa può fare il risorse umane nel rispetto della privacy della persona per migliorare la sicurezza dell'azienda, perché è un problema di sicurezza.
+
+00:19:30.946 --> 00:19:38.806
+<v SPEAKER_2>Quindi prima che mi racconti la tua storia, racconto un paio di esempi che ho visto, non li ho vissuti, ma sono state delle persone che conoscevo.
+
+00:19:38.806 --> 00:19:52.206
+<v SPEAKER_2>Uno lavorava per una azienda di consulenza di quelle worldwide piuttosto grandi, e uno invece è di un'azienda più piccola, chiaramente italiana, che fa tutto altro mestiere.
+
+00:19:52.206 --> 00:20:12.046
+<v SPEAKER_2>E entrambi avevano deciso che da un punto di vista processo automatico, se l'utente cadeva in queste trappole, automaticamente, quindi senza neanche che qualcuno andasse a vedere la persona, chi è stato, cosa, cosa è successo, automaticamente si trovava la county mail disabilitato per x tempo.
+
+00:20:12.046 --> 00:20:14.946
+<v SPEAKER_2>Forte, molto forte, però efficace.
+
+00:20:15.666 --> 00:20:28.766
+<v SPEAKER_2>Avevano scelto così, fino a che questa persona non dimostrava tramite i training, eccetera, eccetera, che questa cosa, diciamo, l'aveva sanata ed era tutto automatico, per cui non c'era un giudizio di una persona.
+
+00:20:28.766 --> 00:20:38.066
+<v SPEAKER_2>La persona riceveva non tramite mail, ma tramite altro canale l'avviso, tutto automatico, nessuno sa niente, e sapeva che da quel giorno non aveva accesso alla mail.
+
+00:20:38.066 --> 00:20:43.606
+<v SPEAKER_2>Se protestava avrebbe reso pubblico la sua debolezza, quindi aveva tutti gli strumenti per sanare.
+
+00:20:44.226 --> 00:20:55.806
+<v SPEAKER_2>Che cosa vedi tu, o meglio, che cosa vedi, che cosa proponi per questo, come dire, sconnessione, mancanza di relazione tra l'IT e i risultati umani?
+
+00:20:55.806 --> 00:20:57.106
+<v SPEAKER_2>Io so che è il tuo mestiere.
+
+00:20:57.106 --> 00:21:00.626
+<v SPEAKER_1>Sono rimasta molto colpita dall'approccio che hai appena raccontato.
+
+00:21:00.626 --> 00:21:04.546
+<v SPEAKER_2>A me piace un sacco da tecnico, devo dirtelo, proprio alla base.
+
+00:21:04.546 --> 00:21:33.646
+<v SPEAKER_1>Io capisco il tuo punto di vista nel dire non c'è un giudizio umano, ma la verità è che c'è, nel senso che magari non c'è un giudizio umano diretto tra il fallire il test e la persona che si vede disabilitato l'account in automatico, perché tu vedi l'automatismo, quindi lo vedi senza giudizio, però a monte per stabilire che c'è un automatismo c'è un giudizio, quindi comunque la persona si sentirà stigmatizzata.
+
+00:21:33.646 --> 00:21:45.306
+<v SPEAKER_1>Quindi vedo un problema anche in questo approccio, nel senso che la persona comunque, secondo me, percepisce dei sentimenti negativi, delle emozioni negative verso quanto gli succede.
+
+00:21:45.306 --> 00:21:51.026
+<v SPEAKER_1>Comunque, se ci pensi, parte del lavoro avviene anche attraverso l'utilizzo della casella di post.
+
+00:21:51.026 --> 00:22:00.686
+<v SPEAKER_1>Quindi, onestamente, se si vuole creare un ambiente positivo di collaborazione, secondo me questo non è un approccio molto produttivo.
+
+00:22:00.706 --> 00:22:02.886
+<v SPEAKER_2>L'ottronitastico, insomma, un po troppo.
+
+00:22:02.886 --> 00:22:05.146
+<v SPEAKER_1>Sì, ecco.
+
+00:22:05.146 --> 00:22:06.646
+<v SPEAKER_1>Assolutamente.
+
+00:22:06.646 --> 00:22:15.506
+<v SPEAKER_1>Io penso che ti debba lavorare molto di più nel rendere la consapevolezza digitale interessante per le persone.
+
+00:22:15.506 --> 00:22:17.506
+<v SPEAKER_1>Nel senso, renderla personale.
+
+00:22:17.506 --> 00:22:30.986
+<v SPEAKER_1>Ecco, se si danno alle persone degli elementi che possono portarsi anche a casa, possono anche utilizzare nella propria vita privata, poi questi buoni comportamenti, queste best practice le porteranno anche in azienda.
+
+00:22:30.986 --> 00:22:47.006
+<v SPEAKER_1>Quindi banalmente non cliccare sul link, puoi dirglielo un milione di volte, però se uno sta lavorando e vuole portare a termine i propri task in modo veloce, efficace e quant'altro, e è nella fretta, cliccherà sul link.
+
+00:22:47.006 --> 00:22:55.766
+<v SPEAKER_1>Però se tu insegni al dipendente a riconoscere la fretta, magari farà un passo in più e farà il controllo.
+
+00:22:55.866 --> 00:22:59.866
+<v SPEAKER_1>Cioè, quello che sto cercando di dire non è con un...
+
+00:22:59.866 --> 00:23:01.806
+<v SPEAKER_1>magari anche il terrore funziona, eh?
+
+00:23:01.806 --> 00:23:03.906
+<v SPEAKER_1>Non dico che...
+
+00:23:03.906 --> 00:23:06.326
+<v SPEAKER_1>Non dico che non escludo a priori.
+
+00:23:06.326 --> 00:23:10.626
+<v SPEAKER_1>Però vedo che sia necessario trovare, non so, dei champions.
+
+00:23:10.626 --> 00:23:13.386
+<v SPEAKER_2>Mi sono venuto in mente tre cose.
+
+00:23:13.386 --> 00:23:21.226
+<v SPEAKER_2>Una, lo volevo dirtelo prima, me l'avevo segnata, me l'ho scordata, era che un'altra cosa che manca spesso è la procedura per segnalare qualcosa che non va.
+
+00:23:21.226 --> 00:23:31.106
+<v SPEAKER_2>Quindi quando succede qualcosa, le persone, alcune persone lo capiscono e tra la scena più buffa ho visto qualcuno urlare nell'ufficio non aprite quella mail, eccetera.
+
+00:23:31.106 --> 00:23:33.326
+<v SPEAKER_2>Mi sa che l'abbiamo vissuta assieme.
+
+00:23:33.326 --> 00:23:35.126
+<v SPEAKER_1>No, mi sa che era colpa mia.
+
+00:23:35.126 --> 00:23:36.606
+<v SPEAKER_2>Sì, sì, sì, era proprio colpa tua.
+
+00:23:36.606 --> 00:23:41.666
+<v SPEAKER_2>L'abbiamo vissuta assieme nel senso che era una delle tue campagne con successo al 90 per cento, appunto.
+
+00:23:41.666 --> 00:23:49.846
+<v SPEAKER_2>E uno si è accorto e ha cominciato a urla, me l'ha raccontato il cliente, chiaramente ha cominciato a urlare nell'ufficio di non aprire quella mail.
+
+00:23:49.846 --> 00:23:58.406
+<v SPEAKER_2>Per carità ha funzionato, però ecco, se è un'azienda piccolina e con fine geografico di una sede, due sedi, questa cosa funziona.
+
+00:23:58.406 --> 00:24:08.466
+<v SPEAKER_2>Se comincia ad essere una azienda distribuita, probabilmente bisogna insegnare dipendenti come prima cosa, se vedi qualcosa di strano mandala questo indirizzo email.
+
+00:24:08.706 --> 00:24:11.606
+<v SPEAKER_2>E questa cosa banalissima, tantissimi non c'erano.
+
+00:24:11.606 --> 00:24:18.326
+<v SPEAKER_2>La seconda cosa che mi viene in mente è che le persone devono avere delle istruzioni per lavorare, delle procedure.
+
+00:24:18.426 --> 00:24:29.686
+<v SPEAKER_2>Non amo l'hyper proceduralizzazione, tutt'altro, però in qualche modo la persona che lavora deve potersi interfacciare con l'esterno, scambiare file, eccetera, eccetera.
+
+00:24:29.686 --> 00:24:31.186
+<v SPEAKER_2>E deve sapere come farlo.
+
+00:24:31.186 --> 00:24:39.946
+<v SPEAKER_2>E in questo quindi l'azienda decide se WeTransfer, piuttosto che Dropbox, sono strumenti aziendali o non lo sono.
+
+00:24:39.946 --> 00:24:43.346
+<v SPEAKER_2>Se sono aziendali vanno acquistati, ovviamente.
+
+00:24:43.346 --> 00:24:44.946
+<v SPEAKER_2>Se non lo sono vanno bloccati.
+
+00:24:45.206 --> 00:25:00.606
+<v SPEAKER_2>Se, come dire, questa cosa viene lasciata nel caos, vuoi perché mancano le procedure, vuoi perché le procedure non sono esaustive, cioè non coprono tutti gli scenari che la persona vive per lavorare, le persone si inventano il modo per lavorare.
+
+00:25:00.606 --> 00:25:38.166
+<v SPEAKER_2>Cioè, molto spesso, ma l'abbiamo anche visto assieme, mi pare, delle persone sono cadute in una trappola perché il loro modo di lavorare doveva, per funzionare, doveva bypassare delle regole aziendali, perché loro avevano bisogno di fare delle robe, tipo trasferire dei file molto grandi dall'ufficio marketing esterno ad interno, quindi la mail non andava perché era troppo grossi, non c'era un servizio di trasferimento, quindi l'ufficio marketing usava WeTransfer e quindi WeTransfer era non approvato, ma il dipendente lo usava perché non era bloccato.
+
+00:25:38.866 --> 00:25:45.046
+<v SPEAKER_2>E in questo chiaramente è stato facile usare WeTransfer come mezzo per fare altre cose.
+
+00:25:45.046 --> 00:26:07.586
+<v SPEAKER_2>Poi potremmo stare qui a parlare per ora di tutti i dettagli, perché abbiamo toccato in realtà con un caso tutto sommato molto semplice, il vaso di Pandora della gestione delle persone nel mondo cyber, quindi forse, anzi non forse, il tema più complicato in assoluto, però direi che per ora possiamo chiudere qui e lasciarci il resto per una prossima puntata.
+
+00:26:07.906 --> 00:26:10.726
+<v SPEAKER_1>Sì, mi sembra un'ottima idea perché sennò andiamo avanti fino a domani.
+
+00:26:10.726 --> 00:26:20.326
+<v SPEAKER_2>Esatto, non ho idea di quanto siamo arrivati, quindi ringrazio chi ha ascoltato questo primo esperimento, fateci sapere se vi piace e la nostra intenzione è di proseguire.
+
+00:26:20.326 --> 00:26:22.046
+<v SPEAKER_2>Quindi ciao a tutti e grazie.
+
+00:26:22.046 --> 00:26:22.746
+<v SPEAKER_1>Ciao, grazie.

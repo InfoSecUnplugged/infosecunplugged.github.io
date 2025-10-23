@@ -509,7 +509,6 @@
     la cybersecurity in contesti industriali, con particolare attenzione al ruolo
     di CIO e CISO nella gestione dei rischi.
   tags:
-  - NTS
   - OT Security
   title: Sicurezza ICS/OT (da un evento NTS)
   url: https://www.spreaker.com/episode/0x16-sicurezza-ics-ot-da-un-evento-nts--66128035
@@ -532,6 +531,8 @@
     i meccanismi della difesa cyber.
   tags:
   - EDR
+  - SIEM
+  - SOC
   - Threat Intelligence
   - XDR
   title: Threat Intelligence (parte 1)

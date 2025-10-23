@@ -1,0 +1,934 @@
+WEBVTT
+
+00:00:08.817 --> 00:00:13.777
+<v SPEAKER_2>Bentornati a Info Sec. Unplugged, io sono Andrea Dainese e con me come sempre c'è Rocco Sicilia.
+
+00:00:13.777 --> 00:00:15.817
+<v SPEAKER_1>Ciao a tutti, ciao.
+
+00:00:15.817 --> 00:00:19.017
+<v SPEAKER_2>Due comunicazioni di servizio prima di cominciare.
+
+00:00:19.017 --> 00:00:23.377
+<v SPEAKER_2>La prima comunicazione è che da questa puntata, da questa o la prossima Rocco?
+
+00:00:23.377 --> 00:00:23.877
+<v SPEAKER_1>Da questa.
+
+00:00:23.877 --> 00:00:27.877
+<v SPEAKER_2>Da questa, quindi la sentirete già nella nuova modalità.
+
+00:00:27.877 --> 00:00:32.877
+<v SPEAKER_2>La puntata sarà disponibile solo su Spreaker e sulle piattaforme di podcast.
+
+00:00:32.877 --> 00:00:45.777
+<v SPEAKER_2>Nel canale YouTube di Rocco invece troverete un highlight suo, video, sul quale anticiperà e farà una sorta di summary di quanto ci diciamo in questi 40 minuti, 60 minuti o quanto durerà questa puntata.
+
+00:00:45.777 --> 00:00:46.937
+<v SPEAKER_1>Perfetto.
+
+00:00:46.937 --> 00:01:13.897
+<v SPEAKER_2>La seconda comunicazione è che appunto questa puntata, oltre ad avere l'highlight che ho appena detto, avrà un post descrittivo associato, perché come ci siamo detti vogliamo abbinare un esempio pratico e è difficile trasferire una cosa un po tecnica come l'analisi di un caso, di un piccolo incident, come vedremo oggi, con tutte le tecnicismi che in realtà è bene vedere a video.
+
+00:01:13.897 --> 00:01:24.977
+<v SPEAKER_2>Quindi per i più curiosi, chi vuole andare nel dettaglio troverà un post allegato che sarà nella descrizione del podcast e nell'highlight del video di Rocco, a seconda di cosa state ascoltando.
+
+00:01:27.237 --> 00:01:45.037
+<v SPEAKER_2>Allora Rocco, l'altra volta ci siamo lasciati con l'intenzione di fare ordine nell'analisi di un incidente di sicurezza e in questo senso avevi usato un termine che mi piaceva molto, di tracciare la storia dell'attacco e tracciarlo in un modo formale e strutturato.
+
+00:01:45.037 --> 00:02:07.957
+<v SPEAKER_1>Sì, diciamo, abbiamo provato a separare nella nostra chiacchierata quello che è il lavoro, adesso mettiamo anche un po di label, quello che è il lavoro del trattata analista, cioè chi indaga su come sta funzionando il comportamento di un attore malevolo, e chi poi deve utilizzare queste informazioni per fare detection o prevention di quel tipo di attività.
+
+00:02:07.957 --> 00:02:21.057
+<v SPEAKER_1>Quindi l'idea era quella di metterci un attimo il cappello di chi fa analisi delle minacce, capire come queste minacce si possono essere studiate per documentarle e poi sfruttare queste informazioni.
+
+00:02:22.777 --> 00:02:24.037
+<v SPEAKER_1>Abbiamo voluto, bye bye.
+
+00:02:24.037 --> 00:02:49.377
+<v SPEAKER_2>Apro proprio una parentesi, prima al caffè, anzi in realtà era stamattina, stiamo registrando al pomeriggio, stamattina mi hai chiacchierando, mi hai fatto una bella descrizione che mi è piaciuta, che mi hai riuso, sulla differenza tra servizio di Tratt Intelligence, o meglio più che servizio che cosa fa un team di Tratt Intelligence contro in realtà poi la parte di analisti.
+
+00:02:49.557 --> 00:03:00.677
+<v SPEAKER_2>E mi raccontavi che a tuo modo di vedere, in realtà il mondo della Tratt Intelligence ha molte affinità col mondo di Offensive Security piuttosto che con la parte difensiva.
+
+00:03:00.677 --> 00:03:03.797
+<v SPEAKER_2>Siccome mi è piaciuto, ti invito a portarlo a pubblico.
+
+00:03:03.937 --> 00:03:09.917
+<v SPEAKER_1>Era una mia percezione, diciamo, degli ultimi mesi, l'ultimo anno forse.
+
+00:03:09.917 --> 00:04:00.497
+<v SPEAKER_1>Io vengo ovviamente più dalla parte offensiva, come mindset, come operatività, vedendo i dati che vengono maneggiati da chi fa, tra i team intelligence in particolare, mi sono reso conto che, diciamo, studiamo in maniera in modo molto simile, o meglio, guardiamo all'attacco, alle azioni che servono per sviluppare un attacco, da due punti di vista differenti, mentre chi fa, diciamo, chi è più chiamato a fare la parte offensiva, quindi a eseguire il security test per capirci, studia gli attacchi dei 3 factor, per poi implementare delle simulazioni che sfruttano quel modo superandi, con i vari artefatti che servono, con i vari trick che servono.
+
+00:04:00.497 --> 00:04:27.117
+<v SPEAKER_1>Chi fa 3D Intelligent, di fatto, guarda le stesse informazioni, guarda lo stesso comportamento dal punto di vista di chi deve raccogliere informazioni su come viene utilizzato, su come viene sviluppato l'attacco, quindi qualcosa che è già stato eseguito, e cerca di capire se ci sono degli elementi da raccogliere da quelle serie di eventi per anticipare prossime mosse.
+
+00:04:27.117 --> 00:04:39.577
+<v SPEAKER_1>Però di base il soggetto è il modus operandi, che poi ha sfrutta del 3D Taktor per eseguire un certo attacco, e anche gli strumenti che poi vengono sfruttati per eseguire quell'attacco.
+
+00:04:39.577 --> 00:05:01.777
+<v SPEAKER_1>Quindi chi si trova nella mia posizione per fare il security test, va a selezionare specifici strumenti, o a creare addirittura artefatti specifici per aggirare i sistemi di controllo, dall'altra parte chi fa il 3D Taktor, e lì si cerca di capire quali sono le infrastrutture che usa il 3D Taktor, che tipo di binary sono stati utilizzati per fare un certo tipo di attività.
+
+00:05:01.777 --> 00:05:11.237
+<v SPEAKER_1>Dove appoggiare certi pezzi di infrastruttura, questo è un esempio che poi tocchiamo dopo, quindi selezionare, ne parlavamo anche questa mattina con i colleghi, dove vado a posizionare il common in control.
+
+00:05:12.317 --> 00:05:13.817
+<v SPEAKER_1>Non è una scelta casuale.
+
+00:05:16.217 --> 00:05:26.177
+<v SPEAKER_1>Lato retimmer è una scelta pensata per ingannare la struttura che si sta attaccando verso cui si sta facendo la simulazione d'attacco.
+
+00:05:26.177 --> 00:05:35.797
+<v SPEAKER_1>Lato analista di threat intelligence è un'informazione che aiuta a capire, a mappare meglio l'infrastruttura che ha implementato il tre factor per sviluppare quel tipo di attacchi.
+
+00:05:35.797 --> 00:05:39.237
+<v SPEAKER_1>Però diciamo il soggetto che stiamo guardando è lo stesso.
+
+00:05:39.397 --> 00:05:45.997
+<v SPEAKER_1>Ci sono metodi di attacco e artefatti e li approcciamo con occhi differenti.
+
+00:05:45.997 --> 00:05:49.697
+<v SPEAKER_1>Ecco, in questo senso li vedo molto affini come ruoli.
+
+00:05:49.697 --> 00:05:57.497
+<v SPEAKER_2>Diciamo che l'affinità è entrare nella psicologia dell'attaccher da una parte per emularlo dall'altra per in qualche modo anticiparlo.
+
+00:05:57.497 --> 00:05:58.377
+<v SPEAKER_1>Esatto, esatto.
+
+00:05:58.377 --> 00:06:15.197
+<v SPEAKER_1>Alla fine, come abbiamo detto tantissime volte, in questi anni comprendere il comportamento dell'attaccante e gli strumenti che utilizza è l'unico, uno degli elementi, una delle cose più furbe che possiamo fare per anticipare qualche mossa.
+
+00:06:15.197 --> 00:06:17.357
+<v SPEAKER_2>Tra l'altro, l'hai menzionato prima.
+
+00:06:17.357 --> 00:06:50.157
+<v SPEAKER_2>Questa mattina eravamo in un meeting con i colleghi che si occupano di difesa e nelle slide che abbiamo presentato, c'era in particolare in quella che tu presentavi, c'era la curiosità che l'uso di Python, siccome lo speech trattava di questo, da un punto di vista offensivo su macchine Windows per rimanere più nascosti under the radar rispetto all'uso di PowerShell, è stato prima teorizzato da chi si occupava di intelligence e poi in realtà si sono visti in pratica gli utilizzi.
+
+00:06:50.157 --> 00:06:58.757
+<v SPEAKER_1>Sì, qua sono andato a caccia dell'informazione precisa perché non ho trovato il momento atomico quando questa cosa è successa.
+
+00:06:58.757 --> 00:07:27.337
+<v SPEAKER_1>Però cercando tra i vari paper, in particolare tra alcune presentazioni di alcuni DEFCON, già nel 2018, 2019, 2020 si parlava di utilizzare, sempre nel contesto di utilizzare ciò che si trova a bordo dei sistemi che si stanno di cui si vuole sfruttare, che si vogliono esploitare.
+
+00:07:28.377 --> 00:07:42.777
+<v SPEAKER_1>Spesso si utilizzava PowerShell, a un certo punto i sistemi DEFCON hanno cominciato a capire meglio, a interpretare meglio ciò che accadeva utilizzando i comandi nativi di PowerShell o i binari a bordo del sistema.
+
+00:07:42.777 --> 00:07:48.377
+<v SPEAKER_1>E alcuni paper, sono usciti alcuni paper, in cui si faceva riferimento in particolare a Rust.
+
+00:07:48.597 --> 00:08:06.137
+<v SPEAKER_1>Se non ricordo male, è stato il primo linguaggio chiamato in causa per ingannare, o meglio aggirare, alcuni controlli che fanno sicuramente Amsi e poi anche gli EDR, e poi hanno seguito subito Go e Python.
+
+00:08:06.157 --> 00:08:11.137
+<v SPEAKER_1>Quindi i paper sono datati appunto 2018-2019, quegli anni lì.
+
+00:08:11.137 --> 00:08:18.917
+<v SPEAKER_1>Però abbiamo cominciato a parlare in maniera, come dire, più frequente o quantomeno alla massa.
+
+00:08:18.917 --> 00:08:32.437
+<v SPEAKER_1>Il tema dell'evasione, o meglio della Detection Gap, è diventato un tema di massa molto dopo, quando hanno cominciato effettivamente ad apparire Malware e Fileless Malware che utilizzavano queste tecniche.
+
+00:08:32.437 --> 00:09:01.137
+<v SPEAKER_1>Quindi è una di quelle situazioni in cui, e non è la prima volta che succede in realtà, in cui la ricerca per cercare di capire quali sono i punti deboli delle infrastrutture, in questo caso infrastrutture di detection, sistemi di strumenti di detection, porta a delle conclusioni, che ovviamente servono poi ad andare a mitigare quel tipo di debolette e debolezza, e quelle conclusioni vengono utilizzate da Ezre Taktor per sviluppare attacchi più sofisticati.
+
+00:09:02.537 --> 00:09:52.357
+<v SPEAKER_1>È un po un problema che forse in questi anni in cui la ricerca si è spinta tantissimo, basti di guardare quello che sta accadendo con, io la chiamo la corsa agli exploit, o anche la corsa alle CV, è così accentuato questo modello, e addirittura c'è un mercato, qua abbiamo un altro tema, il brokering, il piovante, il plena enorme, però addirittura si è sviluppato un mercato su delle tematiche, ed è un mercato che ovviamente, inevitabilmente, è un mercato dual use, cioè possono essere utilizzati per delle attività che potremmo definire, chiamiamole lecite, poi sull'etica un altro paio di maniche, ma ovviamente possono essere anche usate per attività che sono meno lecite, da questo punto di vista.
+
+00:09:52.357 --> 00:10:19.257
+<v SPEAKER_1>E siamo in un momento un po particolare in cui la ricerca è molto spinta e ci sono modelli di business che spingono questa ricerca, quindi non è strano che i ricercatori tirino fuori tematiche che poi magari vengono utilizzate anche spesso a fini di intelligence, cioè intelligence, intelligence militare e poi queste queste tematiche vengono riprese dal cybercrime per essere utilizzati in altri contesti, è abbastanza normale.
+
+00:10:19.257 --> 00:10:22.717
+<v SPEAKER_1>Questo è uno di quei casi, sembra essere proprio uno di quei casi.
+
+00:10:23.797 --> 00:10:38.117
+<v SPEAKER_2>Bene, chiudiamo la parentesi e torniamo allo scopo, diciamo, di questa puntata, quindi abbiamo detto, tanto per ripetere, vogliamo fare ordine nell'analisi di un incidente, raccontare la storia dell'attacco in modo strutturato.
+
+00:10:38.117 --> 00:10:47.577
+<v SPEAKER_2>Per fare questo ci focalizziamo su un evento di tratti intelligence ben specifico, che è costituito, o meglio, è innescato da un MEF che poi vi racconto.
+
+00:10:47.577 --> 00:11:06.417
+<v SPEAKER_2>E assieme, voi lo immaginerete, guarderete il post, vediamo cosa ne ricaviamo e soprattutto che è il focus, come lo strutturiamo affinché questa informazione ne possa dare un valore aggiuntivo rispetto al, diciamo, alla mail, nuda e cruda in sé.
+
+00:11:06.417 --> 00:11:12.997
+<v SPEAKER_2>L'evento è un email di phishing, in particolare è fintamente, o meglio, la finta sorgente ad Ekatron.
+
+00:11:14.237 --> 00:11:35.877
+<v SPEAKER_2>Come tutte le mail di phishing, si rispetta una call to action, un'urgenza, in particolare un'offerta imperdibile, che porta a un sito di e-commerce dove sostanzialmente, a fronte del pagamento dell'esperizione, l'utente può ottenere un prodotto che ha un valore molto più importante rispetto al costo esivo delle spenzi.
+
+00:11:38.397 --> 00:11:51.637
+<v SPEAKER_2>Come è costruita la truffa in questo momento, al di là che chiaramente non sono i 5 euro in sé, che spostano il conto corrente o i bitcoin?
+
+00:11:51.637 --> 00:11:54.537
+<v SPEAKER_1>No, no, era 5 euro in carta di credito.
+
+00:11:56.317 --> 00:12:07.817
+<v SPEAKER_2>Non sono i 5 euro in carta di credito che spostano il conto corrente di una struttura criminale, può essere che poi questo abbia molto probabilmente dei risvolti, ma in questo momento specifico non c'entra.
+
+00:12:09.117 --> 00:12:12.797
+<v SPEAKER_2>Quindi, partendo proprio dall'inizio, Rocco, da dove cominciamo?
+
+00:12:12.797 --> 00:12:19.937
+<v SPEAKER_2>Abbiamo questa mail che qualcuno riceve e notifica al team di Intelligence per un'analisi più approfondita.
+
+00:12:19.937 --> 00:12:26.897
+<v SPEAKER_1>Esatto, di solito ci mettiamo in una finta situazione in cui qualcuno intercetta una campagna.
+
+00:12:26.897 --> 00:12:49.937
+<v SPEAKER_1>Poi spesso i team che ricevono queste segnalazioni, nelle aziende virtuose, dove ci sono gli utenti che segnalano col tastino spam o scam al team che poi riceve queste segnalazioni, ovviamente l'informazione da cui si parte è proprio l'email, che ha due componenti di base.
+
+00:12:50.177 --> 00:13:12.297
+<v SPEAKER_1>L'ader dove ci sono un po di informazioni tecniche di che giro ha fatto l'email, quindi il mittente reale dell'email, il server che ha veramente generato l'email, proprio il dp o la url o il domain name del server che ha generato l'email, informazioni su eventuali forwarder che la mail ha attraversato, quindi un po di informazioni tecniche proprio su che giro ha fatto la mail, e poi c'è il corpo dell'email.
+
+00:13:13.357 --> 00:13:25.497
+<v SPEAKER_1>Quindi da un punto di vista, una volta che c'è il sospetto che sia una campagna di phishing o di scam, l'analista va, prego.
+
+00:13:25.497 --> 00:13:41.857
+<v SPEAKER_2>Diamo delle label, quindi l'utente, che è proprio l'utente finale, riceve una mail, si accorge auspicabilmente che è effettivamente una mail malevola, e la segnala a tasto destro, inoltre come piuttosto che riporta le mail di phishing, a chi gestisce l'infrastruttura, tipicamente il SOC.
+
+00:13:42.377 --> 00:13:52.757
+<v SPEAKER_1>Esatto, anzi, metterei anche un'altra casistica in cui la mail non viene segnalata, nessuno si accorge che è uno scam, e qualcuno ci clicca.
+
+00:13:52.757 --> 00:14:05.117
+<v SPEAKER_1>Questa è una cosa che può succedere, e quindi a volte si ha un evento in cui la mail è transitata, perché poi a volte sono fatte anche molto bene, anzi adesso vediamo un trucchetto che viene spesso utilizzato per aggirare alcuni sistemi.
+
+00:14:06.817 --> 00:14:20.717
+<v SPEAKER_1>L'utente ci clicca, però le azioni che poi vengono scaturite successivamente, quindi quel clic che va a chiamare ovviamente un sito esterno, e poi vediamo che cosa avviene nelle fasi successive, può succedere che uno di quegli eventi intercetti qualche regola.
+
+00:14:20.717 --> 00:14:26.177
+<v SPEAKER_2>E item torna al SOC, che si accorge in una fase magari un pochino più avanzata che qualcosa non può.
+
+00:14:26.177 --> 00:14:27.397
+<v SPEAKER_1>Esatto, esatto.
+
+00:14:27.397 --> 00:14:31.177
+<v SPEAKER_1>Quindi nel caso migliore l'utente si è accorto, non ha cliccato e ha avvisato.
+
+00:14:31.177 --> 00:14:41.217
+<v SPEAKER_1>In caso un po un po migliore l'utente ha già cliccato e magari ha anche inserito dei dati, capita e quindi il SOC lo apprende dopo a cosa ormai fate.
+
+00:14:41.217 --> 00:14:58.757
+<v SPEAKER_2>Quindi deve prima sanare, chiudere diciamo un dicente di sicurezza che non è stato, riscappa il termine italiano, viene prevenuto ma è sbagliatissimo, ma diciamo bloccato prevention, prevention, ma deve lavorare in reaction, ma questo tipo di informazione chi lo fa?
+
+00:14:58.757 --> 00:15:09.137
+<v SPEAKER_2>Cioè quello che noi stiamo adesso per raccontare, quindi l'analisi molto più approfondita di come è costruita la campagna, quali sono gli elementi, eccetera eccetera, chi lo fa?
+
+00:15:09.137 --> 00:15:31.097
+<v SPEAKER_1>Questa cosa dovrebbe farla una figura di trait intelligence, una figura che va proprio a studiare, non si è contenta di guardare i log che ha visto transitare sui suoi sistemi, perché appunto i log potrebbero essere il log che conferma il transito dell'email e il log che conferma il fatto che l'utente ha cliccato, e basta, cioè ci si ferma quegli due elementi.
+
+00:15:31.097 --> 00:15:52.237
+<v SPEAKER_2>Sì, il focus del SOC è gestire gli incidenti di sicurezza, non è come dire arricchire quelle informazioni, andare nel dettaglio per poi in qualche modo ottenere quelle informazioni in caldo in una struttura riusabile o anche condivisibile con altri, non ricorri vendibili anche se alcuni vendono lo fanno di mestiere, ma altro argomento.
+
+00:15:52.237 --> 00:15:56.037
+<v SPEAKER_2>Ma sono due ruoli diversi, sono due team che lavorano assieme.
+
+00:15:56.037 --> 00:16:05.277
+<v SPEAKER_1>Ovviamente di solito lavorano assieme, quasi tutte le strutture SOC che abbiamo incontrato hanno, proprio all'interno della struttura SOC, hanno il team di threat intelligence, solitamente.
+
+00:16:05.277 --> 00:16:17.937
+<v SPEAKER_1>Però il loro ruolo è, non accontentarsi appunto di quello che è stato osservato, ma andare poi a prendere l'elemento di partenza, l'email, e andare a vedere tutti gli elementi che caratterizzano quel tipo di messaggio.
+
+00:16:17.937 --> 00:16:37.597
+<v SPEAKER_1>Quindi andiamo a guardarci, l'analista si andrà a guardare chi è il vero sender, da quale server, da quale IP è partita veramente l'email, cioè qual è il server che ha generato quelli mails, fisicamente l'email è un artefatto digitale che da qualche server deve essere uscita.
+
+00:16:37.597 --> 00:17:01.397
+<v SPEAKER_1>Può essere, in molti casi vengono utilizzati dei servizi leciti, quindi arriveranno mail che arrivano veramente da Gmail, veramente da ProtonMail, cioè a volte i trattactor utilizzano dei servizi leciti per in maniera molto furba aggirare alcuni controlli, altre volte come in questo caso, o anche esatto, anche sistemi di posta violati e utilizzati poi per campagne, sono vari modelli di varie cose.
+
+00:17:01.397 --> 00:17:16.757
+<v SPEAKER_2>Anche, non dico per la maggiore, però ci sono dei casi interessanti che li usano in domini che erano stati comprati, c'è stato fatto qualcosa, poi erano scaduti e abbandonati a se stessi, questi sono molto interessanti.
+
+00:17:16.757 --> 00:17:30.577
+<v SPEAKER_1>Esatto, qua c'è tutto il tema di tutti i trucchetti degli spammer che sono tantissimi da questo punto di vista, perché il concetto su cui noi intercettiamo lo spam puro è un concetto a score, cioè i sistemi di antispam.
+
+00:17:30.577 --> 00:17:34.537
+<v SPEAKER_1>Venendo a conto che ogni volta apriamo 18, capite?
+
+00:17:34.537 --> 00:17:55.037
+<v SPEAKER_2>Difficile, anche perché il mondo, sono tanti mestieri diversi e le persone usano la tecnologia senza chiedersi cosa c'è sotto, ma se chi non l'ha mai fatto e parte del pubblico meno tecnico, sicuramente non l'ha mai fatto, nel vostro cliente di post a qualunque sosia, Gmail, eccetera, c'è un tastino o un menu da qualche parte che vi fa vedere la sorgente dell'email.
+
+00:17:55.037 --> 00:17:55.457
+<v SPEAKER_1>Esatto.
+
+00:17:55.817 --> 00:17:58.857
+<v SPEAKER_2>Quella è quella che viene analizzata, quello che c'è di vero.
+
+00:17:58.857 --> 00:18:00.817
+<v SPEAKER_2>Il resto è l'apparenza.
+
+00:18:00.817 --> 00:18:01.217
+<v SPEAKER_1>Esatto.
+
+00:18:01.217 --> 00:18:02.077
+<v SPEAKER_1>Esatto.
+
+00:18:02.077 --> 00:18:21.497
+<v SPEAKER_1>Quindi supponiamo di essere una casistica in cui appunto il sistema di anti spam, in base a tutta una serie di parametri, tra cui il sender, l'email che ha mandato, da cui è stata generata, il server da cui è stata generata l'email, cosa c'è nel body dell'email, cioè tutta una serie di elementi, il sistema di anti spam assegna uno score.
+
+00:18:21.497 --> 00:18:29.757
+<v SPEAKER_1>Se quello score è più alto o più basso di un certo threshold che decide l'amministratore, oltretutto, per non avere troppi problemi e non essere troppo scolapasta.
+
+00:18:29.757 --> 00:18:31.397
+<v SPEAKER_1>Esatto, esatto.
+
+00:18:31.397 --> 00:18:41.097
+<v SPEAKER_1>Allora la mail transita, quindi è perfettamente normale che una campagna di phishing, in alcuni contesti la mail arriva all'utente, in altri no, dipende come è stato configurato il sistema.
+
+00:18:41.097 --> 00:18:48.997
+<v SPEAKER_2>Solo che lo score dell'antispaama è atomico, cioè si riguarda le mail che viene valutata in quel momento, non racconta una storia.
+
+00:18:48.997 --> 00:19:07.137
+<v SPEAKER_1>Esatto, è proprio una media dei punteggi, di solito e magari adesso sono anche un po più intelligenti, però solitamente ha segnati i punteggi a una serie di elementi, se la media è più alta o più bassa di un certo livello, viene etichettata come spam o meno.
+
+00:19:07.137 --> 00:19:28.977
+<v SPEAKER_2>Nel sorgente delle mail, se siete in un contesto aziendale, tipicamente in un contesto privato un po più difficile, non conosco tutti i granti post, ma ricordo più difficile, in un contesto aziendale dove c'è un antispam, sempre nel sorgente delle mail trovate lo score, che quella mail che state guardando ha ricevuto, e di solito non sempre la descrizione del perché ha ricevuto quello score.
+
+00:19:30.057 --> 00:19:36.517
+<v SPEAKER_1>Esatto, assolutamente, però bisogna andare a guardare nel logo del sistema di posto, del sistema di mail security, per capire cosa è successo.
+
+00:19:36.517 --> 00:19:59.037
+<v SPEAKER_1>In questo caso, poi vedrete appunto nel post di approfondimento, vedete gli elementi specifici, la mail transitava perché lo score che veniva segnato alla mail era sufficientemente basso da farla transitare, e poi andando a guardare cosa c'è nell'aider e nel body, questa cosa diventa un po più chiara.
+
+00:19:59.037 --> 00:20:08.417
+<v SPEAKER_1>In particolare, nell'aider c'era un sistema di post elettronica, cioè c'era il server da cui partiva l'e-mail, era un server che non ha un basso punteggio di reputazione.
+
+00:20:08.417 --> 00:20:26.017
+<v SPEAKER_1>Primo elemento da analizzare, visto che so quale l'IP della macchina che ha generato l'e-mail, l'analista va a vedere se quella macchina fa già parte di una lista di sistemi considerati potenzialmente compromessi o potenzialmente utilizzati da un threat actor.
+
+00:20:26.017 --> 00:20:35.777
+<v SPEAKER_1>Quindi già l'analista che analizza il threat già si basa, si può basare su informazioni di threat inteligenza a cui può accedere.
+
+00:20:35.777 --> 00:20:44.637
+<v SPEAKER_1>Quindi giusto per fare un esempio molto grezzo prendo l'IP, lo schiaffo su Virus Total per fare un esempio e vedo Virus Total cosa mi dice.
+
+00:20:44.637 --> 00:21:00.337
+<v SPEAKER_1>Poi non è che è la verità assoluta, la cosa migliore è chiederlo a più feed di intelligence, chiedere la reputazione di un certo IP, soprattutto sul mondo email c'è abbondanza di feed a cui chiedere reputazione.
+
+00:21:00.337 --> 00:21:05.257
+<v SPEAKER_1>C'è Talos, c'è quello di BMW, non mi ricordo mai come si chiama, X-Force.
+
+00:21:05.857 --> 00:21:16.037
+<v SPEAKER_1>Sono diversi feed a cui anche gratuitamente si può chiedere un primo parere sulla reputazione, in questo caso dell'IP sorgente.
+
+00:21:17.097 --> 00:21:32.157
+<v SPEAKER_1>In questo caso particolare la sorgente non aveva una bassa reputazione, quindi il sistema di mail security non aveva motivo per dichiarare quell'email sospetta basandosi sul mittente.
+
+00:21:35.117 --> 00:21:47.537
+<v SPEAKER_1>Se nell'Header non ci sono altri elementi particolari, in questo caso non ci sono allegati, quindi ci risparmiamo la tematica allegato che è un altro capitolo e accende altri motori di detection.
+
+00:21:47.537 --> 00:22:11.377
+<v SPEAKER_1>Si passa ad analizzare cosa c'è nel body, quindi siamo nella situazione in cui il Tritaktor ha utilizzato in qualche modo un dominio lecito, un dominio che non ha una reputazione bassa e quindi non ci si può basare su quell'elemento per bloccare l'e-mail, si passa a vedere cosa c'è nel body per capire appunto che cosa sta utilizzando il Tritaktor per poi ingannare l'utente.
+
+00:22:11.377 --> 00:22:32.377
+<v SPEAKER_1>Qua c'è un primo elemento su questa campagna che è interessante, perché guardando il body che viene renderizzato su quante di posta è limitato appunto a quello che diceva prima Andrea, ovvero la call to action per portare l'utente sull'e-commerce.
+
+00:22:32.377 --> 00:22:42.097
+<v SPEAKER_1>E era interessante che nell'HTML c'era tutta una serie di informazioni del testo aggiuntivo che non veniva renderizzato nell'email in più lingue.
+
+00:22:42.097 --> 00:22:56.397
+<v SPEAKER_1>Sono andato a guardarmi questa cosa come mai viene fatta e a quanto pare alcuni sistemi di anti-spam se vedono che la mail fa parte di un thread, gli danno un punteggio un po più buono.
+
+00:22:56.397 --> 00:22:58.397
+<v SPEAKER_1>E quindi il tre tactor cosa fa?
+
+00:22:58.397 --> 00:23:05.557
+<v SPEAKER_1>Infila dei thread finti nel body dell'email, ma non è renderizzato, quindi l'utente vede soltanto la parte che gli interessa.
+
+00:23:05.557 --> 00:23:09.857
+<v SPEAKER_1>Tutto il resto è nella HTML dell'email, ma non viene visto nel canale di posta.
+
+00:23:09.857 --> 00:23:15.217
+<v SPEAKER_1>La cosa curiosa che era in più lingua, appunto un pezzo in francese, un pezzo in inglese, un po a caso.
+
+00:23:15.217 --> 00:23:27.137
+<v SPEAKER_1>Evidentemente quello che c'era scritto dentro non ha importanza per quanto riguarda il sistema di email security, però il fatto che ci fosse un thread dentro era evidentemente un elemento da prendere in considerazione.
+
+00:23:27.137 --> 00:24:07.877
+<v SPEAKER_2>Mi fa venire in mente, apri una parentesi, ma in realtà è una previsione, o se non è già successo, non lo so, nei sistemi di intelligenza artificiale tipo generativo si è scoperto, ma proprio negli ultimi giorni, o almeno io ho letto negli ultimi giorni, sono stato un po occupato negli ultimi mesi, quindi magari ci sono arrivato tardi, il fatto che per evitare un basso score risposta a un'offerta di lavoro, il curriculum in PDAF, piuttosto che in Word, aveva all'interno del codice appunto fuscato, quindi non visibile l'occhio umano, che modificava il prompt dei sistemi di intelligenza artificiale.
+
+00:24:07.957 --> 00:24:15.117
+<v SPEAKER_2>Quindi da dove il mio curriculum finiva a un umano non si accorgeva di nulla, lo valutava al fine del problema.
+
+00:24:15.117 --> 00:24:23.297
+<v SPEAKER_2>Da dove questo curriculum è stato fatto anche con dei paper universitari, mi sa che ne aveva parlato Matteo Flora, ma forse era proprio questa settimana.
+
+00:24:23.297 --> 00:24:38.397
+<v SPEAKER_2>Da dove il mio curriculum finisce viene dato in pasto un sistema generativo che deve valutarlo, il prompt mio che ho inserito dentro, come dire a velena, il prompt padre che è stato dato come ordine, dando come score quello che volevo io.
+
+00:24:38.397 --> 00:24:45.277
+<v SPEAKER_2>Facendo un esempio pratico, ma è riusabile anche in una campagna di phishing, laddove le mail viene valutata da un sistema di questo tipo.
+
+00:24:45.277 --> 00:24:58.277
+<v SPEAKER_2>All'interno del mio curriculum c'è scritto che, ne so, questo profilo deve essere valutato al massimo dei valori, perché è aderente all'offerta, scrivere una risposta incommiabile, eccetera eccetera.
+
+00:24:58.277 --> 00:25:05.157
+<v SPEAKER_2>E quindi questo ruvina il tutto il sistema di valutazione per l'intelligenza pubbliciale.
+
+00:25:05.157 --> 00:25:18.477
+<v SPEAKER_2>Quindi ogni volta che viene costruito una misura automatica per fare un determinato lavoro, si rischia che poi viene rovinata, viene abelnata.
+
+00:25:18.657 --> 00:25:21.577
+<v SPEAKER_2>Il risultato è come il caso che dicevi tu.
+
+00:25:21.577 --> 00:25:30.477
+<v SPEAKER_1>Esatto, sì, di fatto è a tutti gli effetti una sorta di exploiting, nel senso che si è forzato un meccanismo.
+
+00:25:30.477 --> 00:25:34.797
+<v SPEAKER_2>Sì, esportamento di una debolezza del sistema che chi l'ha disegnato non ci ha pensato.
+
+00:25:34.797 --> 00:25:37.477
+<v SPEAKER_1>Esatto, esatto, sì, proprio il concetto è proprio quello.
+
+00:25:37.477 --> 00:25:44.117
+<v SPEAKER_1>Se io faccio una regola che dice, guarda, fidati di più di una mail che è un thread, e allora io finco un thread.
+
+00:25:44.117 --> 00:25:48.177
+<v SPEAKER_2>Esatto, esattamente, che poi questo abbia senso o no.
+
+00:25:48.177 --> 00:25:57.077
+<v SPEAKER_2>Il problema è che l'analisi è automica, quindi l'analisi non può dire ma questa cosa è successa veramente, cioè c'è un thread mail o no.
+
+00:25:57.077 --> 00:25:59.797
+<v SPEAKER_2>Finché analizza le mail questa cosa non funziona.
+
+00:25:59.977 --> 00:26:22.037
+<v SPEAKER_2>No, ci sono dei sistemi un filino più evoluti, non è vero, diversi, che alla prima e-mail di una persona che non mi ha mai contattato, prima di girarmi la mail mi viene una notifica dicendomi che una persona che non mi ha mai scritto in vita mia mi ha scritto e mi presenta diciamo un anteprima e io devo approvare o meno questa cosa qua.
+
+00:26:22.037 --> 00:26:42.317
+<v SPEAKER_2>E questa cosa qua di solito ha un ritardo minimo di 6-24 ore, per cui cerca di rompere nella kill chain il fatto che sia necessaria una risposta istantanea e dà all'amministratore di sistema l'opportunità di vedere se quella è una campagna di phishing su larga scala e quindi su una buona base dei suoi utenti piuttosto che no.
+
+00:26:42.317 --> 00:26:51.317
+<v SPEAKER_2>Anche qui funziona fin tanto che, ne ho visti recentemente, alcuni attacchi ed ecco l'importanza di raccontare la storia dell'attacco.
+
+00:26:51.317 --> 00:27:00.957
+<v SPEAKER_2>La prima email è semplicemente una notifica, quindi l'attacker fa finta di essere la banca o la qualsiasi che notifica una cosa alla persona.
+
+00:27:00.957 --> 00:27:04.717
+<v SPEAKER_2>E-mail pulita, quattro righe, nessuna call to action, niente di niente.
+
+00:27:04.717 --> 00:27:09.837
+<v SPEAKER_2>Quindi di fatto, se non è a meno del mittente, non è un email malevola.
+
+00:27:09.857 --> 00:27:10.497
+<v SPEAKER_1>Esatto.
+
+00:27:10.497 --> 00:27:21.177
+<v SPEAKER_2>La mail che magari arriva il giorno dopo, due giorni dopo, tre giorni dopo, riprende quell'argomento e chiede semplicemente una risposta alla persona, che a quel punto magari è disposta a rispondere.
+
+00:27:21.177 --> 00:27:30.797
+<v SPEAKER_2>E a quel punto il thread si è nascato e la terza email, magari malevola davvero, ha senso all'interno di un contesto storico, quindi un storytelling che dicevi prima.
+
+00:27:30.797 --> 00:27:33.997
+<v SPEAKER_1>Esatto.
+
+00:27:33.997 --> 00:27:37.757
+<v SPEAKER_1>In questo caso il body era molto semplice, quindi c'era soltanto la call to action.
+
+00:27:37.757 --> 00:27:40.477
+<v SPEAKER_1>Il body che poi vedeva l'utente era soltanto la call to action.
+
+00:27:40.477 --> 00:27:43.677
+<v SPEAKER_2>Dobbiamo essere semplici, mancando una visuale, un video.
+
+00:27:43.677 --> 00:27:47.417
+<v SPEAKER_1>In questo caso ci accontentiamo, vi dovete accontentare.
+
+00:27:47.917 --> 00:27:58.357
+<v SPEAKER_1>Quindi avevamo semplicemente un testo che invitava ad approfittare di un'offerta e il link che portava poi effettivamente all'offerta.
+
+00:27:58.357 --> 00:28:06.077
+<v SPEAKER_1>L'analista, ovviamente vedendo un link poi nel body dell'email, l'analista va a verificare quel link dove porta.
+
+00:28:06.077 --> 00:28:09.877
+<v SPEAKER_1>Qua abbiamo in parte anticipato nella scorsa puntata.
+
+00:28:11.417 --> 00:28:19.297
+<v SPEAKER_1>La cosa si fa un po curiosa, perché il link puntava a un bucket storage di Google.
+
+00:28:19.297 --> 00:28:24.637
+<v SPEAKER_1>Quindi era storage.cloud.google.com/ilnomedelbucket in particolare.
+
+00:28:25.957 --> 00:28:33.417
+<v SPEAKER_1>Quindi giustamente un analista con un po di esperienza probabilmente ha già capito cosa succede.
+
+00:28:33.417 --> 00:28:59.017
+<v SPEAKER_1>Comunque una verifica è dovuta, quindi una cosa che ad esempio un sistema automatico potrebbe limitarsi a prendere la URL che trova nel body, chiede al feed di intelligence cosa ne pensa, e in questo caso c'è la cosa curiosa che il feed di intelligence gli dirà, probabilmente che storage.cloud.google.com ha un po di vendor, un po di liste, che lo considerano come URL di phishing.
+
+00:28:59.017 --> 00:29:05.897
+<v SPEAKER_1>Che è un assurdo, perché nessuno metterà mai in blocco quelli URL, perché vorrebbe dire non sfruttare più i bucket storage di Google.
+
+00:29:06.197 --> 00:29:07.077
+<v SPEAKER_1>Non è pensabile.
+
+00:29:07.517 --> 00:29:16.597
+<v SPEAKER_1>Infatti, di solito non si trovano infrastrutture che in automatico vanno a bloccare una URL come questa, perché lo dice un feed.
+
+00:29:16.597 --> 00:29:25.037
+<v SPEAKER_1>Di solito dovrebbero esserci almeno un po di meccanismi prima per andare a evitare questo tipo di blocco.
+
+00:29:25.037 --> 00:29:33.417
+<v SPEAKER_1>Però l'analista si dovrebbe accorgere, si accorge anzi sicuramente, che non è soltanto la URL quella da analizzare, c'è anche il nome del bucket.
+
+00:29:33.417 --> 00:29:44.197
+<v SPEAKER_1>Quindi la cosa più corretta sarebbe andare a vedere, visto che il bucket storage serve un po di esperienza tecnica di come funzionano poi gli strumenti su cui poi si approda.
+
+00:29:44.197 --> 00:29:50.917
+<v SPEAKER_1>Quindi è un lavoro da fare in team, probabilmente, perché il bucket storage ha un'utilità specifica.
+
+00:29:50.917 --> 00:29:57.737
+<v SPEAKER_1>Cioè serve a scambiare asset, ad appoggiare asset in un'area di storage che poi può essere utilizzata esternamente.
+
+00:29:57.737 --> 00:30:06.337
+<v SPEAKER_1>Alcune applicazioni la usano appunto per appoggiare file statici di un sito, tipo cdn, esattamente.
+
+00:30:06.337 --> 00:30:09.157
+<v SPEAKER_1>In questo caso il trattacolo ha fatto una cosa molto furba.
+
+00:30:09.157 --> 00:30:28.377
+<v SPEAKER_1>All'interno del bucket storage, e qua farlo ad una lista, cioè andare a vedere cosa c'è dentro quel bucket storage, non semplicemente browseandolo, ma andando a chiedere il content, banalmente con uno script che gli permette di scaricare il contenuto che caricherebbe la pagina, si va a vedere cosa c'è là dentro.
+
+00:30:28.377 --> 00:30:38.937
+<v SPEAKER_1>E dentro c'era un piccolo file html con una bellissima redirect, c'è un bellissimo javascript che fa redirect a un altro sito, un altro URL in realtà.
+
+00:30:38.937 --> 00:30:41.857
+<v SPEAKER_1>Cosa ci portiamo a casa da questo comportamento?
+
+00:30:43.217 --> 00:30:51.057
+<v SPEAKER_1>Ci portiamo a casa che il threat actor ha probabilmente utilizzato il link al backend storage per usare il link pulito, che tecnicamente è pulito.
+
+00:30:51.057 --> 00:31:02.777
+<v SPEAKER_1>Quindi per evitare di mettere all'interno dell'email un IP o una URL che molto facilmente sarebbe stata poi classificata come malevola da lì a poco probabilmente.
+
+00:31:02.777 --> 00:31:12.557
+<v SPEAKER_2>C'è anche da dire che molti sistemi di e-mail security fanno il check del primo indirizzo, a volte del secondo, ma abbiamo visto catene anche più lunghe.
+
+00:31:12.557 --> 00:31:14.537
+<v SPEAKER_1>Infatti in questo caso abbiamo tre jump.
+
+00:31:14.537 --> 00:31:23.297
+<v SPEAKER_2>Ecco, appunto, quindi temo che nessuna soluzione di e-mail security vada a controllare fino al terzo livello, poi magari mi sbaglio.
+
+00:31:23.297 --> 00:31:32.057
+<v SPEAKER_1>Beh, magari è una cosa anche configurabile, però poi diventa un elemento su cui si va a giocare a chi si stanca prima.
+
+00:31:32.057 --> 00:31:32.417
+<v SPEAKER_1>Esatto.
+
+00:31:32.417 --> 00:31:34.897
+<v SPEAKER_1>Potrebbe mettere in fine 8, 9, 10.
+
+00:31:34.897 --> 00:31:37.617
+<v SPEAKER_1>Quindi è interessante comunque questo modello.
+
+00:31:37.617 --> 00:32:01.377
+<v SPEAKER_1>Lo script è semplicissimo, è proprio la classica document location href, che punta a un'altra URL e riprende in realtà un pezzo dell'URL originale, perché il bucket storage, l'URL dentro l'e-mail, finiva con un parametro, dopo il nome del bucket storage c'era un parametrone, un altro pezzo di chiamata della get.
+
+00:32:01.377 --> 00:32:19.617
+<v SPEAKER_1>Questa get viene portata pari pari poi nella redirect e quindi di fatto quello che succede quando l'utente clicca è che va a finire effettivamente sul content statico del bucket storage, dove trova il JavaScript che genera la redirect al nuovo sito e l'utente approda su questo nuovo sito.
+
+00:32:20.497 --> 00:32:23.037
+<v SPEAKER_1>Adesso qua vi risparmio i jump.
+
+00:32:23.037 --> 00:32:24.497
+<v SPEAKER_1>Questo gioco lo fa due volte.
+
+00:32:24.497 --> 00:32:26.257
+<v SPEAKER_2>Quindi sempre il post per i dettagli.
+
+00:32:26.257 --> 00:32:34.697
+<v SPEAKER_2>In sostanza nella mail mi trovo un link che generalmente passa lì semplicemente perché è un semplifico della cdn di google.
+
+00:32:34.697 --> 00:32:35.137
+<v SPEAKER_1>Esatto.
+
+00:32:35.137 --> 00:32:51.997
+<v SPEAKER_2>Da lì si apre una catena più o meno lunga di redirect sempre tutte più o meno affidabili fino a che l'ultima non è affidabile, ma generalmente riesco ad approdarci perché nessuna sistema in sicurezza è pensato per fare un'analisi di una catena così lunga.
+
+00:32:53.097 --> 00:32:54.517
+<v SPEAKER_2>Page redirection.
+
+00:32:54.517 --> 00:32:55.217
+<v SPEAKER_1>Esatto.
+
+00:32:55.217 --> 00:33:10.097
+<v SPEAKER_1>Poi qua nel post metterò anche un piccolo dettaglio grafico, perché è una delle cose interessanti, visto che si parlava di documentare l'evento in modo tale che sia anche qualcosa di digeribile dal punto di vista dell'analista.
+
+00:33:10.097 --> 00:33:27.477
+<v SPEAKER_1>Una delle cose che si può fare nella piattaforma MISP, una volta che abbiamo documentato da dove partita l'email, qual è il link dove ho cliccato, quali sono i jump che ha fatto, tutti questi elementi possono essere correlati tra loro e su una piattaforma come MISP posso graficare il workflow che sto osservando.
+
+00:33:27.477 --> 00:33:35.357
+<v SPEAKER_1>Quindi questa è la potenza di guardare l'evento invece che guardare i singoli elementi, cioè il fatto che posso mettere in relazione tra di loro.
+
+00:33:36.417 --> 00:34:13.337
+<v SPEAKER_1>Quindi a un certo punto l'utente arriva finalmente sul dominio finale dove c'è il famoso e-commerce, quello sì era diciamo già nel secondo jump i feed di intelligence dichiaravano quelle url come iniziavano ad essere sospette, l'ultima quella dell'e-commerce era proprio già classificata come e-skimming e qua si capisce cosa voleva fare effettivamente il tre-tactor, non gliene fregava niente in realtà poi a fine di prendersi 5 euro, cioè probabilmente quella transazione era completamente finta, l'unica cosa che interessava al tre-tactor era grabare il numero di carta di credito.
+
+00:34:13.337 --> 00:34:15.837
+<v SPEAKER_2>E curioso che siamo ancora lì.
+
+00:34:15.837 --> 00:34:38.197
+<v SPEAKER_1>Sì, ci sono ancora molte campagne che puntano a collezionare grandi quantità di carta di credito, alcuni usabili, alcuni no, evidentemente ci sono dei metodi che portano, che tramite cui si possono sfruttare o anche vendere, perché sicuramente abbiamo visto delle collection in vendita.
+
+00:34:38.217 --> 00:34:48.817
+<v SPEAKER_2>Un anno fa, forse due, ho seguito un paio di truffe, una dietro l'altra, di furto di account di Facebook, sembra non c'entrare nulla ma ci arrivo.
+
+00:34:50.217 --> 00:34:54.677
+<v SPEAKER_2>Sostanzialmente erano stati rubati con password deboli, fishing, eccetera, eccetera.
+
+00:34:54.677 --> 00:35:10.797
+<v SPEAKER_2>Una volta che ho aiutato le persone a recuperarlo, mi sono accorto che questi account, o meglio le pagine legate a questo account, erano stati inseriti non come amministratori, come utenti di circuiti pubblicitari più ampi.
+
+00:35:11.257 --> 00:35:23.397
+<v SPEAKER_2>In particolare in uno di questi account era stata inserita una carta di credito, apparentemente funzionante, che veniva usata per pagare la pubblicità del circuito a cui l'utente era stato assegnato.
+
+00:35:23.397 --> 00:35:36.497
+<v SPEAKER_2>Quindi di fatto questa persona si trova a recuperare il suo account, che è associato a una carta di credito, chiaramente rubata, che sta finanziando della pubblicità di non so dove.
+
+00:35:36.497 --> 00:35:50.917
+<v SPEAKER_2>La curiosità enorme, quindi il senso del perché si rubano carta di credito, non è anche chissà quale tipo di crimine, eccetera eccetera, possono essere anche vendita di campagne pubblicitarie su Facebook, molto semplici.
+
+00:35:50.917 --> 00:36:13.117
+<v SPEAKER_2>La cosa curiosa è che non sono riuscito, o meglio l'utente non aveva i permessi per cancellare questa carta di credito, per bloccarla dal suo account e vedavamo il conto salire di diverse centinaia di euro allora, che stavano, che in teoria venivano adebitati a questa carta di credito da Facebook.
+
+00:36:13.197 --> 00:36:18.117
+<v SPEAKER_2>Immagino funzionasse, non credo che Facebook regali la pubblicità, però no, potrei dire.
+
+00:36:18.117 --> 00:36:26.477
+<v SPEAKER_2>E la cosa appunto che ho suggerito alla persona è fai una denuncia perché prima o poi qualcuno viene a suonare il tuo campanello perché questa carta di credito è associata al tuo nome.
+
+00:36:26.517 --> 00:36:27.577
+<v SPEAKER_2>E infatti.
+
+00:36:27.577 --> 00:36:29.877
+<v SPEAKER_2>Dovrai dimostrare che è stata che non è colpa tua.
+
+00:36:29.877 --> 00:36:33.517
+<v SPEAKER_2>Chiusa l'ennesima pari interi.
+
+00:36:33.517 --> 00:36:39.177
+<v SPEAKER_2>Ok, quindi abbiamo fatto l'analisi, abbiamo inserito tutti quelli che abbiamo chiamato.
+
+00:36:39.177 --> 00:36:40.117
+<v SPEAKER_1>Tutti i dati, esatto.
+
+00:36:40.157 --> 00:36:46.117
+<v SPEAKER_2>Che abbiamo chiamato IOC, sono indicatori, compromissione perché di fatto sappiamo.
+
+00:36:46.117 --> 00:37:47.537
+<v SPEAKER_1>Sì, ecco possiamo fare una sorta di, anche quasi di distinguo tra quello che dentro, usiamo, usando la terminologia MISP, ciò che è un attributo, quindi tutte le informazioni che io rilevo e di tutte queste informazioni, alcuni saranno IOC, perché io posso anche mettere un mio commento, un pezzo di codice, il title, l'oggetto dell'e-mail, cioè tutto ciò che riesco a documentare all'interno dell'evento, è un elemento che mi aiuta a capire cosa sta succedendo, e soprattutto sono elementi che voi posso condividere con il SOC, con altri analisti, con i colleghi dell'IT che devono capire come gestire questi eventi, e di tutto quello che vado a collezionare, che vado ad analizzare, alcuni diventeranno i famosi IOC, cioè alcuni di questi elementi sono quelli che potrei utilizzare per andare a intercettare a questo punto sia a prevenire o a generare un allarme in fase di detection, altre situazioni simili.
+
+00:37:47.537 --> 00:38:03.877
+<v SPEAKER_1>Devo avere la furbizia di selezionare quelli che mi aiutano in questo senso, quindi ha perfettamente senso ad esempio una volta che l'analista mi dice guarda questa campagna di phishing ha utilizzato questi quattro domini?
+
+00:38:03.877 --> 00:38:27.077
+<v SPEAKER_1>Ok, ha perfettamente senso dopo aver verificato quei domini in che termini sono utilizzati, perché a volte ci cascono dentro appunto delle vittime a loro volta, cioè siti utilizzati per fare ad esempio redirect a loro insaputa, quindi qua c'è la complicazione che è difficile anche segnalare poi a certi siti cosa sta succedendo.
+
+00:38:28.017 --> 00:38:32.497
+<v SPEAKER_2>È difficile segnalarlo anche a Google per l'esperienza diretta di qualche mese fa.
+
+00:38:32.497 --> 00:39:18.717
+<v SPEAKER_1>Però diciamo se non sono siti particolari di cui all'azienda frega qualcosa, un'azione molto grezza potrebbe essere, l'analista mi ha detto che questi elementi sono utilizzati per questa campagna di phishing, potrei anche decidere di metterli nella mia blog list e quindi fare in modo che sia questa campagna di phishing o un'altra campagna di phishing non importa, perché poi i 3Tactor riutilizzano le infrastrutture per fare le loro campagne, quindi li abbiamo beccati in questa occasione questi elementi, ma potremmo trovarli anche in altre occasioni, li metto almeno nella mia lista di detection o addirittura decido di bloccare quel tipo di segreto del traffico sui miei firewall o dai miei client verso quegli elementi.
+
+00:39:18.797 --> 00:39:22.057
+<v SPEAKER_2>O posso fare quello che è chiamato retoranting.
+
+00:39:22.057 --> 00:39:25.917
+<v SPEAKER_2>Quindi ho intercettato questa campagna.
+
+00:39:25.917 --> 00:39:39.277
+<v SPEAKER_2>Bene, ad esempio posso prendere il bucket di Google e dire vediamo, ma in passato questo bucket è stato usato per altre azioni contro la mia infrastruttura e semplicemente non me ne sono accorto.
+
+00:39:39.337 --> 00:39:44.217
+<v SPEAKER_2>Chiaramente non è banale avere i log di traffico.
+
+00:39:44.357 --> 00:39:51.137
+<v SPEAKER_2>Sì, è tutto fattibile, però va pensato prima, non è che metto misp, faccio una cosa, posso verificare.
+
+00:39:51.137 --> 00:40:01.157
+<v SPEAKER_2>No, diciamo l'ecosistema, ecco mi scappava il termine, l'ecosistema deve essere pensato per fare questo tipo di azione, ma in realtà lo scopo è questo, rispondere anche a questa domanda.
+
+00:40:01.157 --> 00:40:03.337
+<v SPEAKER_2>Ok, adesso l'ho intercettata, ma in passato.
+
+00:40:06.637 --> 00:40:18.777
+<v SPEAKER_1>È già successo che mi è iniziato di essere toccati da o questa campagna o semplicemente un'altra campagna o qualsiasi altra azione che però ha utilizzato la stessa infrastruttura di base.
+
+00:40:18.777 --> 00:40:29.977
+<v SPEAKER_2>Ma anche laddove io e te usiamo, mi scappa il termine, una community MISP si chiama, cioè un insieme di persone che condividono le informazioni.
+
+00:40:29.977 --> 00:40:31.317
+<v SPEAKER_2>Qual è il termine che usa MISP?
+
+00:40:31.317 --> 00:40:33.717
+<v SPEAKER_1>Dentro l'istanza MISP si chiama organizzazione.
+
+00:40:33.717 --> 00:40:35.537
+<v SPEAKER_2>Sì, no, ma tra organizzazioni?
+
+00:40:35.537 --> 00:40:36.417
+<v SPEAKER_2>Community.
+
+00:40:36.417 --> 00:40:37.677
+<v SPEAKER_2>Ah, aveva usato il termine, è giusto.
+
+00:40:37.677 --> 00:40:44.777
+<v SPEAKER_2>Quindi se io e te facciamo parte della stessa community che poi in realtà non c'è uno spazio condiviso ma è una, io condivido a te, tu condividi a me.
+
+00:40:44.777 --> 00:40:47.697
+<v SPEAKER_2>Ecco uno scambio più corretto.
+
+00:40:47.697 --> 00:41:20.077
+<v SPEAKER_2>Io posso prendere le informazioni che tu hai analizzato e vedere se la mia infrastruttura ha rilevato a posteriori, quindi faccio un retorante sulla mia infrastruttura, non avendo rivelato quell'incidente, perché magari io e te usiamo tecnologie di come dire, detection diverse e quindi la tua ha rilevato quella, questa particolare email, la mia è mal configurata, meno capace, non l'ha ricevuta o l'ha ricevuta sei mesi fa quando magari gli score erano diversi.
+
+00:41:20.077 --> 00:41:25.897
+<v SPEAKER_1>Esatto, infatti la potenza qua sta, adesso abbiamo fatto l'esempio più semplice che si poteva fare che l'email di phishing.
+
+00:41:25.897 --> 00:41:42.417
+<v SPEAKER_1>Immaginiamo un'azione strutturata ovviamente da chi lo fa di mestiere, quindi stiamo parlando, non mi ricordo se l'avevo citato la volta scorsa, stiamo parlando proprio di strutture che hanno una loro professionalità e si chiamano threat intelligence provider, quelli che poi fanno il lavoro, fanno solo questo.
+
+00:41:43.697 --> 00:42:09.917
+<v SPEAKER_1>Immaginiamolo su tutti gli eventi che possono essere analizzati, intercettati e analizzati, quindi il transito di file, anomali, lo spawn di processi mai visti prima, ovviamente c'è molto lavoro dietro per fare emergere tutto ciò che deve essere analizzato e spesso sono cose che non generano appunto un allarme prima, arrivano da feed esterni spesso, più delle volte.
+
+00:42:09.917 --> 00:42:37.897
+<v SPEAKER_1>Ok, immaginiamo di avere questo tesoro di informazioni nelle nostre mani e a un certo punto poterlo condividere con altri enti e gli altri enti condividono il loro tesoro informativo con noi, a quel punto si genera un feed strutturato appunto, come dicevi tu, in cui posso non solo imparare a riconoscere meglio eventuali attacchi da ciò che ho già imparato io in passato, ma anche da quello che hanno imparato tutti gli altri in passato.
+
+00:42:37.897 --> 00:42:40.097
+<v SPEAKER_1>Questo è il gioco di condivisione.
+
+00:42:40.097 --> 00:42:47.717
+<v SPEAKER_1>Un po in piccolo, tra virgolette in piccolo, è quello che molte aziende stanno già facendo quando comprano un feed.
+
+00:42:47.717 --> 00:43:07.597
+<v SPEAKER_2>Esatto, lo stavo per dire, in modo trasparente, cioè senza cognizione di causa, compriamo un feed, faccio passi indietro, quando compriamo una soluzione di sicurezza, ad esempio i firewall, c'è molto probabilmente, quasi certamente, già come servizio l'utilizzo di feed del vendor.
+
+00:43:07.597 --> 00:43:10.437
+<v SPEAKER_2>Questi feed sono ingeriti nel firewall e tutto funziona.
+
+00:43:10.777 --> 00:43:21.537
+<v SPEAKER_2>Questo che funziona magicamente, dietro c'è, bene o male, team, persone, analisi automatiche e nonche, che abbiamo raccontato in questi ultimi 40 minuti circa.
+
+00:43:21.537 --> 00:43:31.437
+<v SPEAKER_1>Poi senza nulla, togliere i vendor, che già fanno un enorme lavoro a livello di threat intelligence, quindi quasi tutti i big player hanno un team di threat intelligence che appunto arricchisce questi feed.
+
+00:43:31.437 --> 00:43:41.397
+<v SPEAKER_1>Poi ci sono strutture che di investire fanno solo quello e quindi acquisire feed terze parti ovviamente aumenta il numero di elementi che possa andare a analizzare.
+
+00:43:41.397 --> 00:43:55.457
+<v SPEAKER_1>Come vi ho detto sicuramente mille volte e lo ripeto anche in quest'occasione, threat intelligence non è prendere secchi enormi di feed e riversarli dentro i sistemi di detection così tendenzialmente spacchiamo tutto di solito se stagiamo in questo modo.
+
+00:43:55.617 --> 00:43:57.117
+<v SPEAKER_1>Serve comunque un po di attenzione.
+
+00:43:57.117 --> 00:44:09.957
+<v SPEAKER_2>D'altra volta abbiamo detto che il numero di feed, o meglio il numero di indicatori che possiamo gestire tipicamente è di tre ordini, quattro di grandezza inferiori a quello che in realtà esiste.
+
+00:44:09.957 --> 00:44:13.897
+<v SPEAKER_2>Quindi abbiamo parlato di non mi ricordo quanti milioni l'altra volta eravamo menzionati.
+
+00:44:13.897 --> 00:44:15.517
+<v SPEAKER_1>Ecco gli IP era 600 milioni.
+
+00:44:15.557 --> 00:44:29.537
+<v SPEAKER_2>100 milioni di IP a punto di vista malevoli identificati contro un circa un numero che può andare dalle migliaia a qualche decina di migliaia di IP che può gestire un firewall, quindi c'è un problema di ordini.
+
+00:44:29.657 --> 00:44:54.797
+<v SPEAKER_1>Sì, c'è proprio ordine e poi qua abbiamo il caso emblematico di come assolutamente non si deve mai usare un feed, infatti senza sempre nulla togliere la virus total che utilizzo tra l'altro tantissimo, e tutti so che si come utilizzano come il must che viene utilizzato praticamente da tutti, però se io mi fidassi ciecamente del feed mi troverei a inserire storage cloud google.com come indirizzo malevolo.
+
+00:44:54.797 --> 00:45:10.957
+<v SPEAKER_1>Ovviamente non si può fare questa cosa, quindi se fate la prova anche in questo momento andate su virus total, mettete la URL, vi viene segnalato come ovviamente lo score è basso nel senso che ci sono 3 o 4 vendor che segnalano la cosa, che lo segnalano nelle loro liste.
+
+00:45:10.957 --> 00:45:32.257
+<v SPEAKER_1>Quindi un analista attento probabilmente si chiederebbe, beh intanto ho ben presente cosa è quella URL, sono solo questi 3 vendor che lo segnalano, no non lo butto dentro la mia catena di detection o blocking, però questo è proprio un ragionamento che va fatto prima di riversare tutto dentro.
+
+00:45:32.597 --> 00:45:36.377
+<v SPEAKER_1>E ci può finire una CDN, ci possono finire tanti elementi.
+
+00:45:36.377 --> 00:46:26.617
+<v SPEAKER_2>Tra l'altro conosco casi reali di aziende che hanno ingerito dei feed anche di un certo nome, di una certa qualità, quindi non il feed gratuito open source gestito da una community di persone a tempo libero, ma comprati da vendor che a un certo punto per errore, sbadataggine, automazioni, non si sa, hanno inserito dei componenti chiave, chiave per l'organizzazione e gli hanno bloccato l'attività, quindi non interamente gli hanno bloccato dei processi aziendali, ad esempio, che non so, hanno bloccato una CDN e fatalità quella CDN veniva usata per il CRM che restava su cloud o cose simili, e ce ne sono abbastanza, quindi non è più neanche vero che possiamo comprare un feed e fidarci perché l'abbiamo comprato.
+
+00:46:26.617 --> 00:46:32.877
+<v SPEAKER_2>Dobbiamo fare attenzione o dobbiamo essere in grado di capire a un certo punto se c'è un'anomalia, se l'anomalia proviene dal feed.
+
+00:46:32.877 --> 00:46:33.717
+<v SPEAKER_1>Sì, sì.
+
+00:46:33.717 --> 00:46:45.297
+<v SPEAKER_1>Cioè, è la stessa cautela che sicuramente tutti gli team manager hanno imparato a considerare delle vitale generalizzazioni estreme.
+
+00:46:45.297 --> 00:47:05.517
+<v SPEAKER_1>Tutti probabilmente vorrebbero mettere sul loro fire una regola in cui HTTP pulito e non HTTPS venga bloccato, ma tutti quelli che l'hanno fatto dopo un secondo probabilmente sono stati chiamati da qualcuno che gli ha segnato che c'è ancora un sito che si utilizza e che purtroppo è accessibile solo in HTTP e quindi va tenuto aperto.
+
+00:47:05.517 --> 00:47:07.637
+<v SPEAKER_1>Più o meno il concetto è sempre quello.
+
+00:47:07.637 --> 00:47:13.357
+<v SPEAKER_2>Tutti vorremmo una soluzione magica per avere meno pensieri, ma non esiste.
+
+00:47:13.357 --> 00:47:18.337
+<v SPEAKER_2>Quindi io volevo menzionare ancora tre cose.
+
+00:47:18.337 --> 00:47:32.197
+<v SPEAKER_2>Allora uno, i feed o meglio dobbiamo poter valutare la qualità dei feed e la qualità è un sì, per me ha senso, no non ha più senso, oppure sì, aveva senso fino a te.
+
+00:47:32.197 --> 00:47:45.837
+<v SPEAKER_1>Esatto, cioè il tema del gestione del dato è un tema che non si può non gestire quel dato una volta che si decide di utilizzare un feed o condividere informazioni di tratti intellegi.
+
+00:47:45.877 --> 00:48:08.857
+<v SPEAKER_2>Questo perché gli IOC hanno una scadenza, la scadenza non è la data di conservazione, è semplicemente la data oltre a quale non viene più usato da un treatactor, perché il bucket Google di cui abbiamo parlato oggi è stato bloccato, quindi semplicemente quel bucket specifico non verrà più usato e quindi non ha senso più tenerne conto, perché ormai è stato buttato.
+
+00:48:08.857 --> 00:48:31.757
+<v SPEAKER_2>MISP ha un sistema, sempre per citarlo, ha un sistema integrato che si chiama Sighting, che ad oggi, giusto per menzionarlo, ha tre valori che permettono appunto di dire sì, ho visto quel feed, quindi sempre nel contesto community, tu Rocco mi dai un feed, mi metti a disposizione un feed, io valuto gli attributi e posso confermare sì, li ho visti.
+
+00:48:31.757 --> 00:48:38.817
+<v SPEAKER_1>Che è un po giusto per fare il parallelo, è un po per chi batzica Vilus Total, è un po l'equivalente del flag up.
+
+00:48:39.137 --> 00:48:56.417
+<v SPEAKER_2>Esatto, in questo caso ogni valore non c'è più o meno, c'è uno sì, l'ho visto, sì, l'ho visto, ma per me è fatto una cazzata, è un falso positivo, oppure, e secondo me qua è difficilissimo da dire, sì, l'ho visto, ma non è più valido.
+
+00:48:56.417 --> 00:49:00.537
+<v SPEAKER_2>Chissà chi può dire, affermare questa cosa è un po più complessa.
+
+00:49:00.537 --> 00:49:10.637
+<v SPEAKER_1>Un po complesso, poi MISP è molto articolato come infrastruttura, ci sono tanti parametri che si possono mettere, che possono essere utilizzati per dare, diciamo, questo tipo di informazioni.
+
+00:49:10.637 --> 00:49:20.397
+<v SPEAKER_1>All'esempio, per ogni singolo artefatto si può impostare la data della prima volta in cui è stato visto e la data dell'ultima volta in cui è stato visto.
+
+00:49:20.497 --> 00:49:29.897
+<v SPEAKER_1>Quindi ci sono tanti elementi, ed è questo più un intervallo, più un intervallo di tempo entro cui qualcuno l'ha visto per la prima volta e qualcuno l'ha visto per l'ultima volta.
+
+00:49:29.897 --> 00:49:31.717
+<v SPEAKER_1>Sono elementi che possono aiutare.
+
+00:49:32.777 --> 00:49:38.857
+<v SPEAKER_1>Ovviamente richiede attenzione sulla parte analitica.
+
+00:49:39.897 --> 00:49:46.577
+<v SPEAKER_2>Il prodotto, che poi in realtà fa parte di un ecosistema, oggi mi piace un mondo questa parola, l'ecosistema va disegnato.
+
+00:49:46.577 --> 00:49:51.417
+<v SPEAKER_2>Non pensate di prendere MISP, buttarlo, installarlo, che tutto insomma non è neanche complesso.
+
+00:49:51.417 --> 00:49:53.837
+<v SPEAKER_1>Compe da sistema operativo che scegliete.
+
+00:49:53.877 --> 00:49:56.517
+<v SPEAKER_2>Questa è un'altra parentesi e magari la racconti nel posto.
+
+00:49:56.517 --> 00:50:03.197
+<v SPEAKER_2>Comunque al di là supponiamo che l'ho installato e non pensate che per il fatto di averlo, allora sia tutto fatto.
+
+00:50:03.497 --> 00:50:10.857
+<v SPEAKER_2>Non siamo neanche all'inizio, siamo a una, ma vediamo come è fatto MISP, ma integrarlo in un ecosistema o in un altro film.
+
+00:50:10.857 --> 00:50:22.297
+<v SPEAKER_2>Il secondo punto che volevo dire è che abbiamo parlato di MISP, io credo sia sicuramente il prodotto più famoso, che ha una storia molto interessante, nato da un progetto personale.
+
+00:50:23.037 --> 00:50:26.897
+<v SPEAKER_1>Sì, è un progetto di esigenza interna dello Xeart, dello Semburo.
+
+00:50:26.897 --> 00:50:38.017
+<v SPEAKER_2>Partito da una persona, lasciato come progetto, che poi è stato in qualche modo portato agli onori della cronaca, oggi credo sia addirittura supportato da NATO e altre organizzazioni.
+
+00:50:38.017 --> 00:50:44.697
+<v SPEAKER_1>È sicuramente usato da NATO, c'è la community NATO, c'è la community ENISA.
+
+00:50:44.897 --> 00:50:54.097
+<v SPEAKER_2>Esatto, ci sono tantissime community, visto che siamo in Italia, è uno dei sistemi sponsorizzati, è il sistema sponsorizzato ufficialmente da ACN.
+
+00:50:54.097 --> 00:50:59.337
+<v SPEAKER_2>C'è un pdf pubblico che lo menziona indirettamente in realtà.
+
+00:50:59.337 --> 00:51:22.877
+<v SPEAKER_2>Per le infrastrutture critiche, fare parte di questo ecosistema non è solo una cosa di come dire, utilizzo i fidi ACN, ma in realtà posso anche contribuire a mia volta e questa cosa ha come ci siamo detti un senso, ma ci sono altre community diverse, io ne avevo vista che ce n'esisteva uno per BCE, ma non della BCE ma supporto e via dicendo, ce ne sono tante.
+
+00:51:22.877 --> 00:51:29.717
+<v SPEAKER_1>Sono parecchie interessanti e anche molte fatte da ricercatori e analisi.
+
+00:51:29.717 --> 00:51:52.697
+<v SPEAKER_2>Assolutamente, sono tutte per gli addetti ai lavori, quindi non è che chiunque può accedere all'istanza MISP via ACN o della BCE, bisogna essere gli addetti ai lavori, ma laddove ci sia questa potenzialità, da un punto di vista di normativa, anche normativa, comunque è bene valutare seriamente questa possibilità.
+
+00:51:52.697 --> 00:52:26.957
+<v SPEAKER_1>Chi ha, uso anche io la tua parola, chi ha già un ecosistema in cui colleziona gli eventi a livello di event management, quindi all'interno di un CM o all'interno anche di un log management, ha degli strumenti di detection che gli permettono di raccogliere telemetria sia anche approfondita e ha internamente o esternamente un team di supporto che fa attivamente monitoraggio di elementi di sicurezza, in quel contesto aggiungere lo strumento threat intelligence è sicuramente un valore.
+
+00:52:26.957 --> 00:52:49.037
+<v SPEAKER_1>Ovvio che se non ho i dati, se non ho i log di ciò che succede, non ho strumenti per fare analisi a livello di R o XDR, non ho una base su cui lavorare, non è che è inutile avere misspe, però siamo in un contesto in cui vedo delle informazioni, ma poi non ho lo strumento per consumare quelli informazioni.
+
+00:52:50.057 --> 00:52:59.897
+<v SPEAKER_2>L'ultimo punto che volevo dire è che ascoltando questo podcast vi siete resi conto che solo l'analyse di un e-mail non è un'attività proprio da cinque minuti.
+
+00:52:59.897 --> 00:53:01.397
+<v SPEAKER_1>No, richiede un po di tempo.
+
+00:53:01.437 --> 00:53:08.237
+<v SPEAKER_2>Esatto, così a span è chiaro che non ti sei potuto focalizzare, però a span posso immaginare che sia molto più di cinque minuti.
+
+00:53:08.237 --> 00:53:16.617
+<v SPEAKER_1>Perché poi quando lavori sul preventi è giusto aggregarli, quindi non analizzi la singola e-mail, analizzi la campagna, quindi magari decine.
+
+00:53:16.657 --> 00:53:37.557
+<v SPEAKER_2>La storia, infatti, da questo punto di vista è normale, esistono delle integrazioni in default, ma abbiamo fatto anche degli esperimenti noi, è normale farsi aiutare da degli strumenti automatici che permettono di, come dire, nel caso specifico dell'e-mail, dare l'e-mail e far sì che una serie di IOC siano già buttati dentro.
+
+00:53:37.557 --> 00:53:41.637
+<v SPEAKER_2>IOC, gli attributi siano già costruiti all'interno dell'evento.
+
+00:53:41.637 --> 00:53:44.077
+<v SPEAKER_2>Evento lo chiama, vero, MISP?
+
+00:53:44.077 --> 00:53:46.037
+<v SPEAKER_2>Sì, sì, sì.
+
+00:53:46.037 --> 00:53:50.137
+<v SPEAKER_2>Quindi viene creato l'evento con tutti gli attributi sotto, in automatico, eccetera.
+
+00:53:50.137 --> 00:54:09.637
+<v SPEAKER_2>L'analista non deve sporcarsi le mani con attività di basso livello, ma può proprio concentrarsi su ciò che l'automazione ha mancato o su appunto l'analisi del caso specifico dell'eredirection continua, che magari l'automazione non ha analizzato.
+
+00:54:09.637 --> 00:54:24.797
+<v SPEAKER_2>L'automazione è a due vie, quindi mi aiuta l'analista a buttare dentro le informazioni per non spendere tempo di qualità su attività tutto sommato manuali, ma va anche inverso, può estrarre tutti quegli IOC che risultano utili.
+
+00:54:24.797 --> 00:54:37.057
+<v SPEAKER_2>La mia soluzione di sicurezza, abbiamo citato il firewall, e va benissimo, ma possiamo citare anche le mail security, prendendoci le mail sorgente piuttosto che i domini sorgenti, eccetera, eccetera.
+
+00:54:37.057 --> 00:55:03.037
+<v SPEAKER_2>E questa cosa può essere fatta con delle logiche avanzate, quindi mi prendo i miei feed, ma siccome la mia soluzione di sicurezza è limitata a 150, non è vero, ma è per dare un numero, posso ordinarli per quelli che hanno avuto più, come dire, più sighting, quindi più voti a favore, gli ordini per tempo e limito il totale a 150, perché so che è il massimo che posso gestire.
+
+00:55:03.037 --> 00:55:23.237
+<v SPEAKER_2>Non è ottimale, ma in questo modo costruisco un processo automatico che prende gli IOC, non solo miei che magari non ho la forza, ma della mia community, e li fornisce le mie soluzioni di sicurezza che in qualche modo possono prevenire gli attacchi da qui in poi.
+
+00:55:23.857 --> 00:55:31.977
+<v SPEAKER_2>Ma, allo stesso modo, lo posso fare anche per gli attacchi che sono stati ricevuti fino ad oggi, come ci siamo detti, e tutto in automatico.
+
+00:55:31.977 --> 00:55:32.557
+<v SPEAKER_1>Esatto, esatto.
+
+00:55:32.557 --> 00:56:11.977
+<v SPEAKER_1>Poi c'è un punto limite in cui probabilmente a un certo livello, a una certa quantità di dati, probabilmente l'unica via è appoggiarsi ad un certo punto su un CM, perché è l'unico oggetto che può garantire in un certo livello di prestazioni quando faccio le research, e poi dove posso mettere effettivamente un sacco di informazioni, ovviamente in quel caso sto facendo anche un compromesso, cioè nel momento in cui non posso più dare tutti quei dati al mio firewall, non potrò più fare prevention, almeno se lo potrò fare parzialmente sulle informazioni che il firewall conosce, ma potrò fare detection su tutto il resto.
+
+00:56:11.977 --> 00:56:15.437
+<v SPEAKER_1>Ovviamente parliamo di volumi importanti in informazioni.
+
+00:56:15.437 --> 00:56:51.637
+<v SPEAKER_2>Sì, se la mia infrastruttura inteso come organizzazione, multisede, tutto quello che è, conta 50 milioni di log a settimana, quindi l'infrastruttura ha tutto sommato abbastanza grossa, e io ho bisogno del mio desiderio a fare una ricerca di un IOC che sta all'interno di un URL negli ultimi, facciamo due mesi, ok, 50 milioni per 8 settimane, devo cercare all'interno di dati tutti i domini che la mia community miss me mi dà.
+
+00:56:51.637 --> 00:57:37.337
+<v SPEAKER_2>Ecco perché è importante disegnare la cosa in modo realistico, anche perché queste cose hanno un costo, affinché funzioni, quindi l'ecosistema di cui prima abbiamo raccontato una lunghissima storia durata a tre puntate circa tre ore, per darvi un'idea di come funziona questo tipo di ecosistema assieme in modo che uno lo sapete, quindi sapete anche che cosa chiedere i vostri fornitori di servizio, se li avete esterni, giustamente, che cosa potete fare, che però potete avere se siete in infrastrutture di un certo tipo che hanno accesso a circuiti di un certo tipo, che non hanno accesso a tutti, o come migliorare anche i vostri servizi se voi li fornite a terzi.
+
+00:57:39.677 --> 00:57:43.277
+<v SPEAKER_1>Ok, direi che come argomento lo abbiamo toccato abbastanza.
+
+00:57:43.277 --> 00:57:44.397
+<v SPEAKER_2>Lo chiudiamo oggi.
+
+00:57:44.397 --> 00:57:50.957
+<v SPEAKER_1>Quindi forse oggi lo chiudiamo, forse ci torniamo anche magari in futuro, ma credo che ci sia andati un bel po di cose.
+
+00:57:50.957 --> 00:57:52.257
+<v SPEAKER_2>Per ora direi basta così.
+
+00:57:52.257 --> 00:57:56.737
+<v SPEAKER_2>Quindi grazie a tutti per averci ascoltato in queste lunghe tre puntate e alla prossima.
+
+00:57:56.777 --> 00:57:57.537
+<v SPEAKER_1>Bye.
+
+00:57:57.537 --> 00:57:57.757
+<v SPEAKER_1>Ciao.

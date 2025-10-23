@@ -1,0 +1,799 @@
+WEBVTT
+
+00:00:09.023 --> 00:00:11.603
+<v SPEAKER_1>Ciao a tutti, bentornati ad Info Sec. Unplugged.
+
+00:00:11.603 --> 00:00:19.383
+<v SPEAKER_1>Io sono Andrea Dainese, con me c'è Rocco Sicilia e oggi volevamo parlare di come selezionare una soluzione di ADR.
+
+00:00:19.383 --> 00:00:20.043
+<v SPEAKER_1>Ciao Rocco.
+
+00:00:20.043 --> 00:00:23.183
+<v SPEAKER_2>Ciao.
+
+00:00:23.183 --> 00:00:25.703
+<v SPEAKER_1>Un tema immenso.
+
+00:00:26.223 --> 00:00:32.763
+<v SPEAKER_1>Non sopprei neanche esattamente da dove partire, quindi ti lascio campo libero e poi aggiungiamo via via.
+
+00:00:34.643 --> 00:00:37.023
+<v SPEAKER_2>Forse con oggi chiudiamo il tema ADR, forse.
+
+00:00:38.123 --> 00:00:41.163
+<v SPEAKER_2>Non so se ci lasciamo qualche.
+
+00:00:41.163 --> 00:00:43.743
+<v SPEAKER_1>Abbiamo almeno altri due temi che oggi non ci stanno.
+
+00:00:43.743 --> 00:00:45.523
+<v SPEAKER_1>XDR e LeVision.
+
+00:00:45.523 --> 00:00:47.383
+<v SPEAKER_2>Ok, ok.
+
+00:00:47.383 --> 00:01:07.743
+<v SPEAKER_2>E sulla parte di selezione io personalmente mi sono fatto un'idea, diciamo un po sull'utilizzo delle piattaforme, nel senso che al di là della bellezza tecnologica, dei vari sistemi, delle dashboard che a un certo livello di soluzioni sono molto accattivanti.
+
+00:01:09.523 --> 00:01:17.343
+<v SPEAKER_2>Proprio per come si usa l'EDR, almeno sull'idea che mi sono fatto nell'utilizzo dell'EDR, in due contesti principali.
+
+00:01:17.343 --> 00:01:24.563
+<v SPEAKER_2>Chi è l'azienda che acquisisce la soluzione e in qualche modo se la autogestisce, che è un contesto.
+
+00:01:24.563 --> 00:01:29.583
+<v SPEAKER_2>E un altro contesto in realtà nettamente diverso è l'azienda che fa presidio.
+
+00:01:31.103 --> 00:01:47.943
+<v SPEAKER_2>Il servizio MDR o il servizio SOC o il servizio DEFENSE, che comunque chi sta dalla parte blu e usa quella soluzione in un modo un po più profondo, tendenzialmente di chi poi, dell'azienda invece che la acquisisce per se stessa, anche se va da ingestione a terza parte.
+
+00:01:52.423 --> 00:01:58.123
+<v SPEAKER_2>E uno dei temi di base che mi hanno portato a casa è per come funzionano gli EDR.
+
+00:01:58.123 --> 00:02:00.663
+<v SPEAKER_2>Di base sono divise in tre macro componenti.
+
+00:02:00.663 --> 00:02:22.863
+<v SPEAKER_2>La parte ereditata dal mondo antivirus, adesso qua dirò delle imprecisioni per semplificare, quindi mi perdoneranno i puristi del mondo DEFENSE, però c'è una macro componente quella di analisi statica, quella che controlla se un certo file appartiene a qualcosa di già noto.
+
+00:02:22.863 --> 00:02:24.843
+<v SPEAKER_2>Per fare un esempio, la parte dinamica.
+
+00:02:24.843 --> 00:02:29.963
+<v SPEAKER_1>La modalità diciamo vecchia, con cui funzionavano i vecchi antivirus basati su firma.
+
+00:02:29.963 --> 00:02:34.503
+<v SPEAKER_2>Esatto, che gli EDR tendenzialmente conservano, cioè anche quella componente.
+
+00:02:36.463 --> 00:02:43.863
+<v SPEAKER_2>La parte che diventa più interessante è che quella analisi dinamica è tendenzialmente fatta tramite delle sandbox di solito.
+
+00:02:43.863 --> 00:02:52.863
+<v SPEAKER_2>Quindi l'EDR detona il malware, fa il sospetto o il processo sospetto.
+
+00:02:52.863 --> 00:03:01.963
+<v SPEAKER_2>Il file sospetto in una sandbox vede cosa succede e in base a quello che osserva, in base ad una serie di parametri, valuta se è qualcosa di sospetto o meno.
+
+00:03:01.963 --> 00:03:03.123
+<v SPEAKER_2>E poi c'è l'analisi di comportamento.
+
+00:03:03.123 --> 00:03:12.643
+<v SPEAKER_1>E una sandbox che non è detto che sia locale, anzi di solito non è mai locale, tranne rarissimi casi, ma è su sistemi basati su cloud.
+
+00:03:12.643 --> 00:03:25.843
+<v SPEAKER_1>Quindi questo va considerato, perché ci sono alcune aziende che ci sono date, per meglio dire delle policy molto strette, e questa cosa può essere una scelta, un vincolo piuttosto che no.
+
+00:03:26.163 --> 00:03:55.083
+<v SPEAKER_2>Sì, è vero, la valutare perché comunque nel momento in cui l'EDR decide di analizzare un file e la sandbox è in cloud, ovvero che quel file necessariamente deve essere spostato in cloud, e ovviamente non possiamo decidere salvo fare delle policy che escludono certe tipologie di file, cosa viene ammallato in cloud, solo che se escludessimo, inevitabilmente toglieremmo la possibilità di fare analisi dinamica su certi file, quindi sarebbe un po un controsenso.
+
+00:03:55.083 --> 00:04:01.463
+<v SPEAKER_2>Però hai ragione, chi ha dei vincoli stretti a livello di utilizzo della cloud dovrebbe pensare a questo elemento.
+
+00:04:01.463 --> 00:04:07.143
+<v SPEAKER_2>Quindi è uno degli elementi effettivamente di valutazione, se usare o meno una certa tecnologia.
+
+00:04:07.143 --> 00:04:14.443
+<v SPEAKER_2>Adesso mi vengono in mente chi non usa cloud, perché quelli che ho in mente io, i brazonati penso facciano usino tutti.
+
+00:04:14.923 --> 00:04:40.023
+<v SPEAKER_1>Allora io ho in mente un'azienda che è nel medicale, che si è data come policy per sé e per il proprio diciamo parco fornitori, non utilizzo di sistemi cloud, dove questa affermazione, ecco qua si apre un altro tema, è un po assurda in sé perché le ultime versioni di windows, dalla 10 in poi credo nativamente fanno telemetria su cloud e non è possibile disabilitarla.
+
+00:04:40.463 --> 00:04:47.723
+<v SPEAKER_1>Quindi l'idea è che un'azienda possa essere off cloud completamente oggi non è possibile.
+
+00:04:47.723 --> 00:05:05.183
+<v SPEAKER_1>Quindi già la policy andrebbe un attimo corretta e in particolare però avevano paura che determinati tipi di file interni sul funzionamento del loro prodotto o sulle informazioni medicali finissero nel cloud e quindi siano dati questo veto.
+
+00:05:06.243 --> 00:05:25.323
+<v SPEAKER_1>Però anche lì le mail molto probabilmente adesso non ricordo ma non sono basate su sistemi locali quindi posso capirla come policy, chi fa sviluppo magari abbreveti eccetera eccetera posso magari nel militare posso capire che abbia un livello di paranoia più alto.
+
+00:05:25.323 --> 00:05:32.483
+<v SPEAKER_1>Bisogna capire se questo livello è effettivamente applicabile e quali sono diciamo i throwback, l'altra faccia della medaglia.
+
+00:05:32.623 --> 00:05:37.543
+<v SPEAKER_1>Però l'isquisizione che magari apriremo in un altro momento.
+
+00:05:39.783 --> 00:06:17.003
+<v SPEAKER_2>E poi c'è il tema comportamentale, quindi la parte più intelligente di questi strumenti è il fatto di analizzare i comportamenti con delle tecniche che forse non è il caso di sviscerare, però suggerisco due, anzi metto il link poi nel video delle slide di uno speech di SAC Labs, se non ricordo male, dell'anno del 2022, del dittora, dove si parlava appunto di evasione e spiegava bene il comportamento, l'analisi comportamentale per poi passare quel tipo di analisi.
+
+00:06:20.523 --> 00:06:22.643
+<v SPEAKER_2>E penso siamo tutti...
+
+00:06:22.703 --> 00:06:37.723
+<v SPEAKER_1>Cyber Security Podcast, mi pare, si chiama di Nicholas, che credo abbia trattato il tema e lui lo fa sempre con un grado, un livello tecnico molto più, volutamente più avanzato rispetto a quello che ci siamo dati come obiettivo.
+
+00:06:37.863 --> 00:06:38.963
+<v SPEAKER_2>Esatto.
+
+00:06:38.963 --> 00:06:55.083
+<v SPEAKER_2>E poi c'è il libro di recente uscita, Evading di Herrick, dove lo spiegate molto bene, sempre partendo dall'evading, come funzionano le tecniche di analisi, perché alla fine l'evasione è l'aggiramento di una tecnica analitica.
+
+00:06:55.083 --> 00:07:00.343
+<v SPEAKER_2>Quindi vengono illustrate molto bene come funzionano queste tecniche di analisi.
+
+00:07:00.583 --> 00:07:04.863
+<v SPEAKER_2>E su questo un po si forma quello che poi le DR ci dice.
+
+00:07:04.863 --> 00:07:22.883
+<v SPEAKER_2>Su queste tre elementi di analisi abbiamo gli output delle DR Siccome poi con gli output dobbiamo capirli, cioè l'analista deve capirci qualcosa di quegli output, non dobbiamo prendere le DR come un oggetto che spara all'armi e basta, perché è limitante da quel punto di vista.
+
+00:07:22.883 --> 00:07:57.343
+<v SPEAKER_2>Il primo elemento di valutazione è come vengono visualizzate e presentate tutte le telemetrie che la soluzione ci dà a disposizione, perché se poi ci devo fare attivamente analisi, cioè il processo richiede necessariamente che le DR fanno dei controlli, mi dice che c'è qualcosa di sospetto, e una persona controlla e fa la verifica, quello che viene chiamato triage, se quel dato è effettivamente qualcosa di sospetto, quella informazione è sospetta o meno, e da quello decidere se attivare poi la parte di investigazione.
+
+00:07:57.343 --> 00:08:20.323
+<v SPEAKER_2>Se non capisco cosa mi sta dicendo, perché mi mancano degli elementi, perché non usa un linguaggio standard, ormai tutti usano la nomenclatura mitra per raccontare un po di informazioni, faccio ovviamente fatica, proprio già in fase di triage non mi faccio fatica a capire cosa sta succedendo, e quindi mi perdo dei pezzi.
+
+00:08:20.323 --> 00:08:52.883
+<v SPEAKER_2>Quindi so che è oneroso dal punto di vista di chi deve selezionare quella piattaforma, sicuramente chi fa MDR e SOC non ci andrà giù leggero su questo tema, perché sarà il principale lavoro che faranno la parte di triage e investigazione, ma anche internamente se non mi appoggio a terze parti, se non mi è utile, se non mi è comodo, diciamo come la dashboard mi consente di analizzare i dati, dovrei farmi delle domande a quel punto di vista.
+
+00:08:55.043 --> 00:09:00.583
+<v SPEAKER_1>Quindi un primo criterio possiamo chiamarlo usabilità, usabilità della piattaforma.
+
+00:09:00.583 --> 00:09:14.103
+<v SPEAKER_2>Anche io lo metterei sotto usabilità della piattaforma, ipotizzando che il livello di detection sia pari, diciamo, su tutte le soluzioni che stiamo osservando.
+
+00:09:14.103 --> 00:09:14.963
+<v SPEAKER_2>Quindi facendo un passo dietro...
+
+00:09:14.963 --> 00:09:17.143
+<v SPEAKER_2>E non è una affermazione così scontata.
+
+00:09:17.463 --> 00:09:24.363
+<v SPEAKER_1>Questo è un bel tema, di cui leggevo proprio ieri un posto su LinkedIn che faceva un sondaggio.
+
+00:09:24.363 --> 00:09:31.063
+<v SPEAKER_1>La soluzione di R, ti fidi, la testi saltuariamente o la testi regolarmente.
+
+00:09:31.063 --> 00:09:32.223
+<v SPEAKER_2>Forse l'ho visto anch'io quel sondaggio.
+
+00:09:32.223 --> 00:09:33.323
+<v SPEAKER_1>La aggiungiamo come tema?
+
+00:09:35.403 --> 00:09:37.623
+<v SPEAKER_2>Sì, sì, sì, sì, eh beh, sì.
+
+00:09:37.623 --> 00:09:44.883
+<v SPEAKER_2>Io sai che io sono pro testing, cioè secondo me tutte le soluzioni di sicurezza con le ho messa in campo o le provi a un certo punto.
+
+00:09:44.883 --> 00:09:56.883
+<v SPEAKER_2>Cioè vedi se fanno quello che fanno, sennò stai dimenticando una parte fondamentale della tua postura, come giustisci la tua postura.
+
+00:10:01.523 --> 00:10:12.963
+<v SPEAKER_2>Anche il tema detection è corretto che faccia parte delle cose da analizzare, è un po più difficile forse, nel senso che metto nei panni di chi fa la valutazione, il CIO, il CISO, l'IT man.
+
+00:10:12.963 --> 00:10:21.383
+<v SPEAKER_2>Il CISO magari non fa in prima persona la valutazione, però commissiona la valutazione ai suoi sistemi ingegnera.
+
+00:10:21.383 --> 00:10:32.003
+<v SPEAKER_2>Probabilmente è poco plausibile, non so, è anche una tua esperienza, che il team si metta lì e faccia una POC su due o tre vendor.
+
+00:10:32.003 --> 00:10:35.243
+<v SPEAKER_2>Cioè, plausibile, possibile, però un po oneroso, no?
+
+00:10:35.243 --> 00:10:40.423
+<v SPEAKER_2>Da quel punto di vista proprio del tempo che richiederebbe fare quel tipo di lavoro.
+
+00:10:40.423 --> 00:10:50.123
+<v SPEAKER_2>E onestamente non so neanche quante persone, parliamo di un contesto aziendale, quindi un team IT che non è detto che faccia security nel full time, no?
+
+00:10:50.723 --> 00:10:57.523
+<v SPEAKER_2>Quante persone hanno veramente la capacità di capire se i livelli di detection di una soluzione sono meglio rispetto a quelli di un'altra?
+
+00:10:57.603 --> 00:11:02.483
+<v SPEAKER_2>Un po complicatina come analisi.
+
+00:11:04.743 --> 00:11:19.323
+<v SPEAKER_2>Io sono tra quelli che ritiene che su una certa fascia, più che di detection, parlerai di capacità di rilevamento delle telemetrie e da quello che ho visto le telemetrie rilevate sono...
+
+00:11:21.123 --> 00:11:23.843
+<v SPEAKER_2>diciamo praticamente paritetiche.
+
+00:11:23.843 --> 00:11:30.743
+<v SPEAKER_2>Quindi quello che l'EDR osserva è di altissimo livello in tutte le soluzioni diciamo di fascia alta.
+
+00:11:30.743 --> 00:11:38.763
+<v SPEAKER_2>La differenza, forse lo c'è in abito anche a volta scorsa, sta nel rule set di base che la soluzione presenta.
+
+00:11:41.963 --> 00:11:54.203
+<v SPEAKER_1>Volevo aggiungere culturalmente, secondo me, qui siamo molto molto indietro, nel senso che mi è capitato abbastanza di rado di vedere POS, testing funzionali, di dispositivi.
+
+00:11:54.203 --> 00:12:11.863
+<v SPEAKER_1>Parliamo in generale, in particolare mi viene in mente un caso in cui ho visto un testing avanzato di bilanciatori, quindi un paragone tra vendor in cui il cliente, poi basandosi sui risultati di questi test, sulle evidenze, aveva scelto uno piuttosto che l'altro.
+
+00:12:11.863 --> 00:12:29.943
+<v SPEAKER_1>Nell'ambito security, test di sicurezza, quindi non test funzionario, non test di sicurezza, non li ho mai visti in campo, se non quelli che fanno poi, diciamo, i consulenti per verificare post se le soluzioni fanno quello che devono fare.
+
+00:12:29.943 --> 00:12:47.623
+<v SPEAKER_1>Quindi penso che prima di tutto sia un problema culturale, non c'è l'idea di compro una soluzione di sicurezza, un firewall, un hack, eccetera, eccetera, e verifico se fa quello che deve fare, tanto meno sulle DR Poi di fatto, effettivamente come dicevi tu, mancano le competenze.
+
+00:12:47.623 --> 00:12:51.803
+<v SPEAKER_1>Come fa chi viene dal mondo IT a testare un EDR?
+
+00:12:51.803 --> 00:12:53.283
+<v SPEAKER_1>Non ha le capacità.
+
+00:12:54.643 --> 00:12:57.983
+<v SPEAKER_1>Io ho visto due modalità per testare un EDR.
+
+00:12:57.983 --> 00:13:01.323
+<v SPEAKER_1>Stiamo un po uscendo però già che ci siamo.
+
+00:13:01.323 --> 00:13:22.623
+<v SPEAKER_1>Uno è tramite tool automatici, in cui fanno passare una serie di male, una serie di attacchi attraverso la rete, attraverso e fino all'end point, per verificare se questi attacchi vengono bloccati, che ha questo sistema la capacità, essendo automatico, di eseguire centinaia o migliaia di attacchi in tempi piuttosto brevi.
+
+00:13:22.623 --> 00:13:35.463
+<v SPEAKER_1>E poi c'è quello manuale, dove c'è un tentativo molto puntuale di utilizzare delle tecniche di evasion specifiche per bypassare le soluzioni di sicurezza.
+
+00:13:35.463 --> 00:13:45.023
+<v SPEAKER_1>Ecco, io, ripeto, mai visto farlo prima di acquisire, diciamo, nella valutazione della soluzione, e raramente l'ho visto anche dopo.
+
+00:13:46.703 --> 00:13:56.043
+<v SPEAKER_2>In effetti penso sia proprio complicato da proprio da inserire nell'effort di un'azienda che sta fissendo quella soluzione.
+
+00:13:56.043 --> 00:13:58.443
+<v SPEAKER_2>Ma per quanto grande sia.
+
+00:13:58.443 --> 00:14:19.843
+<v SPEAKER_2>Salvo casi particolari, che sicuramente esistono, in cui esistono i security team, vengono in mente i contesti bancari, per esempio, dove per forza di cose, visto l'introduzione di Tiber, stanno nascendo o sono anche già nati in passato security team dedicati, c'è persone che vanno solo quello in interno dell'esempio.
+
+00:14:19.843 --> 00:14:26.643
+<v SPEAKER_2>L'ambito è plausibile, che ci siano il tempo, le competenze e il commitment per fare quel tipo di attività.
+
+00:14:26.643 --> 00:14:28.843
+<v SPEAKER_2>Diversamente si fa fatica.
+
+00:14:28.943 --> 00:15:05.363
+<v SPEAKER_2>Io ho trovato molto utile anche, ci sono aziende di consulenza specializzate nella parte proprio di simulazione di attacco che pubblicano dei report, anche questi da prendere con le pinze, perché i report dovremmo usarli con delle scadenze naturali, cioè nel momento in cui viene pubblicato un report su un'analisi, in questo caso loro hanno fatto più report in cui mettono a comparazione, usando dei tool di mercato, diciamo, di evasion.
+
+00:15:05.363 --> 00:15:24.403
+<v SPEAKER_2>In realtà usano principalmente due tool, Cobalt e l'altro che stavo guardando oggi, Slider mi pare si chiami, che stavo guardando in questi ultimi giorni, e sottopongono a tecniche di evasione varie brand di R, e danno poi il loro output.
+
+00:15:25.583 --> 00:16:01.943
+<v SPEAKER_2>Interessantissimo, occhio però che quel report se esce, nel momento in cui esce a gennaio 2024, fra due mesi la validità è tutta da riconfermare, nel senso che l'evoluzione all'interno di queste soluzioni è costante, quindi non affidiamoci, affidiamoci al report ma occhio alla data di rilascio del report, non prendiamo un report del 2021 e basiamoci su quello, per selezionare la soluzione, perché sarebbe un errore proprio tecnico da quel punto di vista, però sono utili da quel punto di vista.
+
+00:16:03.063 --> 00:16:24.983
+<v SPEAKER_1>L'uscita del report modifica le condizioni, cioè il fatto che delle cose, delle tecniche, delle modalità, anche dei gruppi criminali, vengano in qualche modo resi noti al pubblico, non siano più a discussione nei salotti, e modifica il comportamento di tutto l'ecosistema.
+
+00:16:24.983 --> 00:16:40.123
+<v SPEAKER_2>E guardami dai, lo spunto proprio per l'altro punto secondo me è importantissimo, forse più difficile da indagare, ma è importantissimo secondo me verificare l'impegno del vendor lato threat intelligence.
+
+00:16:40.123 --> 00:17:00.923
+<v SPEAKER_2>Cioè, visto che buona parte dell'evoluzione, delle soluzioni si basa sugli indicatori di compromissione e gli indicatori di attacco che conoscono, che sono già stati inseriti nel database dove diciamo di raffronto, perché tutto quello che viene analizzato viene raffrontato.
+
+00:17:00.923 --> 00:17:19.103
+<v SPEAKER_2>Vedo una chiamata a una certa URL, vuol dire che l'EDR poi va a verificare se quella URL fa parte di un set di indicatori di compromissione noti essenzialmente, ed è una parte enorme della detection degli EDR.
+
+00:17:19.103 --> 00:17:39.223
+<v SPEAKER_2>Quindi più il vendor è attivo e attento alla tematica threat intelligence, perché dalla threat intelligence arrivano, diciamo, si scoprono nuovi indicatori di compromissione, più è probabile che diciamo quell'EDR sarà up to date, avrà quel database aggiornato.
+
+00:17:39.223 --> 00:17:44.943
+<v SPEAKER_2>E questo è un primo elemento che fa parte, potremmo inserirlo nella tematica del rule set di base.
+
+00:17:44.943 --> 00:17:55.763
+<v SPEAKER_2>Se di default la mia soluzione agli IOC molto bene aggiornati, già ho risolto un pezzo del problema.
+
+00:17:56.903 --> 00:18:00.923
+<v SPEAKER_1>Quella tra l'altro fa la differenza tra l'essere compromessi.
+
+00:18:00.923 --> 00:18:04.523
+<v SPEAKER_1>Allora fermo restando che il primo caso ci vuole.
+
+00:18:04.523 --> 00:18:09.843
+<v SPEAKER_1>E quello è il caso in cui tutti apprendono come funziona un determinato tipo di minaccia.
+
+00:18:10.403 --> 00:18:24.823
+<v SPEAKER_1>Ma da lì in poi la velocità di aggiornamento del vendor, come dici tu, che la velocità di aggiornamento della soluzione sugli IOC del vendor è quello che può salvare dal secondo in poi, dalla seconda target in poi.
+
+00:18:24.823 --> 00:18:25.583
+<v SPEAKER_2>Sì, sì, sì.
+
+00:18:25.583 --> 00:18:34.523
+<v SPEAKER_2>Tra l'altro, molti vendor, anche questa cosa, so che è noioso, però leggiamoci i report dei siti dei vendor, perché le spiegano, queste robe qua.
+
+00:18:35.343 --> 00:18:51.303
+<v SPEAKER_2>Posso capire che leggersi il data sheet di come funzionano il team di threat intelligence del vendor non sia particolarmente affascinante, però siamo anche qui a chiacchierare di queste cose, anche per renderle note.
+
+00:18:51.343 --> 00:19:05.663
+<v SPEAKER_2>Però lì è proprio spiegato, cioè se un vendor, fidandoci ovviamente di quello che viene detto, però se già un vendor ha un team di threat intelligence che lavora in un certo modo, potremmo ipotizzare che certe cose sono curate.
+
+00:19:05.663 --> 00:19:22.243
+<v SPEAKER_2>Se un vendor invece non ce l'ha proprio, perché li compra esternamente, non vuol dire che non la biave, io sì, li compra fuori, probabilmente il tempo di aggiornamento potrebbe essere inferiore rispetto a chi se lo auto crea, se ce l'ha già internamente.
+
+00:19:22.243 --> 00:19:26.103
+<v SPEAKER_2>Quindi è una cosa da valutare nel momento in cui...
+
+00:19:26.103 --> 00:19:27.243
+<v SPEAKER_2>E effettivamente una questione di tempo.
+
+00:19:27.243 --> 00:19:56.603
+<v SPEAKER_2>Nel momento in cui un threat actor introduce un nuovo comportamento, neanche parlare di tattiche, tecniche e processi, proprio semplicemente un nuovo set di host che fanno parte ad esempio di una botnet, quindi una serie di IP, nel momento in cui riesco a rilevarle e a inserire subito nel mio database di IOC, da quel momento la mia soluzione comincerà a identificare, quantomeno come sospetti, tutte le chiamate verso quel set di IP.
+
+00:19:56.623 --> 00:20:00.303
+<v SPEAKER_2>È molto pragmatica la cosa.
+
+00:20:02.803 --> 00:20:30.323
+<v SPEAKER_2>Ciò non toglie, e qua forse vi sto facendo l'idea che i team IT, che non hanno un commitment specifico, quindi che non sono dedicati alla gestione della sicurezza informatica, penso sia quasi impossibile per loro seguire la soluzione, ma la soluzione deve dare, tutte danno, in realtà la possibilità di arricchire che io sì.
+
+00:20:34.463 --> 00:20:47.703
+<v SPEAKER_2>L'idea che mi sto facendo è, allora, ottimo valutarla, cioè se sei su un'azienda che deve scegliere una nuova soluzione, anche questa è una cosa da valutare, come esempio la presenza di API, che avevamo discusso anche l'altra volta.
+
+00:20:49.843 --> 00:21:06.883
+<v SPEAKER_2>Purtroppo, mi vien da dire, non so quanti team-mate poi possono veramente apprezzare quella soluzione, nel senso che quanti hanno il tempo e hanno il commitment strutturato per fare quel tipo di attività, cioè raccogliere nuove EOS e inserirli nella piattaforma.
+
+00:21:06.883 --> 00:21:12.803
+<v SPEAKER_2>È un po più difficile forse per un'azienda che non lo fa di mestiere.
+
+00:21:12.803 --> 00:21:23.843
+<v SPEAKER_1>Esatto, la ultima volta avevamo parlato di aziende, diciamo quelle che veniamo più a contatto del territorio, quindi hanno una specificità, sono tipicamente produttive.
+
+00:21:23.963 --> 00:21:53.063
+<v SPEAKER_1>Le aziende, diciamo, IT, di cui l'IT è il cuore del processo di business, ci sono, ma sono al numero inferiore rispetto al territorio in cui siamo, e avevamo concluso che chiaramente la soluzione di R deve essere gestita, e qui potremmo aprire un altro tema di come selezioniamo una soluzione di MDR, quindi non solo le DR, ma anche la gestione sopra, quindi come andiamo a selezionarne una piuttosto che un'altra.
+
+00:21:53.623 --> 00:22:19.683
+<v SPEAKER_1>E avevamo detto, vi ricordo bene, che internamente non ci sono le competenze, non ci possono nemmeno essere, a mio parere, le competenze di seguire quel tipo di soluzione, perché da una parte il team, da una parte è troppo costoso per l'azienda avere un team dedicato a quel tipo di lavoro, quindi solo presidio di soluzioni di sicurezza, di R di cui stiamo parlando oggi.
+
+00:22:19.683 --> 00:22:49.303
+<v SPEAKER_1>Dall'altra parte, mio parere è probabile che chi si trova a fare questo mestiere, che personalmente trovo affascinante, in un contesto diciamo piccolo o ridotto, presto potrebbe voler andare a cercare contesti più interessanti, quindi lasciare l'azienda produttiva per cercare di fare lo stesso mestiere in ambienti più interessanti.
+
+00:22:49.303 --> 00:23:09.243
+<v SPEAKER_1>Questo secondo me, prima la scarsità e il costo, secondo la probabilità che le persone brave vogliono migrare in contesti più avvincenti, fa sì che la gestione dell'EDR internamente a un certo tipo di azienda non sia possibile da un punto di vista economico e poi effettivamente anche pratico.
+
+00:23:10.263 --> 00:23:11.843
+<v SPEAKER_2>Sì, diventa un po complicato.
+
+00:23:11.843 --> 00:23:17.503
+<v SPEAKER_2>Effettivamente c'è anche la questione carieristica della singola persona.
+
+00:23:17.503 --> 00:23:32.863
+<v SPEAKER_2>Nel momento in cui uno si prende una certa strada, è possibile che anche il contesto in cui sta lavorando, quindi un team IT che fa altro per mandato, potrebbe a un certo punto stargli stretto da considerare.
+
+00:23:36.983 --> 00:23:55.563
+<v SPEAKER_1>Nella totalità delle aziende che conosco che hanno una soluzione DEDR, però non hanno ancora scelto di farla gestire esternamente, il risultato è che anche con le migliori intenzioni di dedicarci un certo tempo settimanale, è che le soluzioni sono completamente ingestite.
+
+00:23:55.563 --> 00:24:10.203
+<v SPEAKER_1>Questo lo do come dato della mia esperienza chiaramente ridotta, ma è certo, cioè è il 100% delle aziende che conosco che il cui DEDR non è gestito fuori, non è gestito nemmeno dentro, cioè sono proprio cieco.
+
+00:24:10.203 --> 00:24:14.623
+<v SPEAKER_1>Questo è un dato, secondo me abbastanza rilevante.
+
+00:24:16.063 --> 00:24:31.743
+<v SPEAKER_1>Hai citato la Tyber prima, che effettivamente riflettevo che la Tyber forse è la prima certificazione che dà come mandato il testing del perimetro, non solo del perimetro, diciamo della postura di sicurezza.
+
+00:24:31.743 --> 00:24:34.263
+<v SPEAKER_1>Non ne ricordo altre.
+
+00:24:37.483 --> 00:24:50.523
+<v SPEAKER_2>Allora, diciamo che la grossa introduzione è stata proprio il cambio, perché che fossero obbligatori i pen test, ad esempio, lo erano già nell'ambito bancario, era già...
+
+00:24:50.523 --> 00:24:51.783
+<v SPEAKER_1>Sì, quello sì.
+
+00:24:52.563 --> 00:25:08.243
+<v SPEAKER_2>La differenza è stata proprio l'introduzione del termine red team, perché con red teaming, in realtà, si introduce tutto un universo di nuovi test che, nel contesto del penetration testing, non erano richiesti.
+
+00:25:08.243 --> 00:25:33.223
+<v SPEAKER_2>Anche se ci si poteva andare molto vicini, penso sia stato voluto il termine red team proprio per togliere il dubbio, diciamo evitare un'interpretazione troppo leggera dell'ambito penetration testing e obbligare a passare a un tipo di test molto più ampio, molto più complesso che prevedeva anche l'azione fisica.
+
+00:25:33.223 --> 00:25:43.043
+<v SPEAKER_2>Anche il penetration testing, in realtà, molte firme e seuropeche americane parlavano già di pentesting fisico.
+
+00:25:43.043 --> 00:25:46.203
+<v SPEAKER_2>Non era una cosa nuova, no?
+
+00:25:46.243 --> 00:25:49.643
+<v SPEAKER_2>Però, usando retteam non c'era più il video, diciamo.
+
+00:25:49.643 --> 00:25:50.203
+<v SPEAKER_1>Esatto.
+
+00:25:50.203 --> 00:26:02.843
+<v SPEAKER_1>E un fatto culturale che da noi PT ha spesso, purtroppo, accorpatto col VAPT in modo scorretto e veniva tradotto in web application per penetration test.
+
+00:26:02.843 --> 00:26:11.023
+<v SPEAKER_1>Quindi da noi c'è sempre stato questo difetto culturale in cui PT era applicazione web dove in realtà non è necessariamente così.
+
+00:26:11.023 --> 00:26:20.723
+<v SPEAKER_1>Quindi una serie di condizioni hanno portato a limitare lo scopo del PT, cosa che invece la Tiber ha messo nero su bianco.
+
+00:26:20.723 --> 00:26:24.863
+<v SPEAKER_1>Non parliamo solo di PT, ma parliamo di uno scopo molto più ampio.
+
+00:26:24.863 --> 00:26:36.783
+<v SPEAKER_2>Sì, poi probabilmente Tiber è pensato per l'ambito finanziario, quindi mal si sposa con chi non ha quella dimensione.
+
+00:26:36.823 --> 00:26:39.143
+<v SPEAKER_2>Quindi parliamo anche di assicurazioni.
+
+00:26:42.803 --> 00:26:54.423
+<v SPEAKER_2>E quindi è anche, penso, difficile per quegli enti applicarlo in maniera strutturata, anche perché si parla tantissimo di Intelligent Intelligence, all'interno della Stratocoddition.
+
+00:26:55.803 --> 00:27:00.923
+<v SPEAKER_2>Temi enormi che sono coerenti per il tipo di azienda.
+
+00:27:00.923 --> 00:27:20.543
+<v SPEAKER_2>Volendo però prendere spunto da quei concetti e portarli sulle aziende, anche di medie e dimensioni, non necessariamente di grandi dimensioni, e potremmo imparare qualcosa e portarci a casa degli elementi di, forse non necessariamente di reteaming, ma almeno di adversarial simulation.
+
+00:27:20.543 --> 00:27:45.663
+<v SPEAKER_2>Sì, nel senso che ci sono sicuramente delle cose che possiamo fare all'interno delle aziende, anche per testare le soluzioni EDR o i servizi MBR, che non necessariamente sfociano in tutto il contesto reteaming, che sarebbe enorme e forse troppo costoso, probabilmente in alcuni casi sicuramente fuori i budget.
+
+00:27:45.663 --> 00:27:48.603
+<v SPEAKER_2>Però ci sono dei compromessi che si possono fare.
+
+00:27:48.603 --> 00:28:00.143
+<v SPEAKER_2>Si possono comunque fare delle attività più chirurgiche che prendano spunto da alcune di queste tecniche che vengono usate anche in contesto reteaming e magari sono più focus sulle soluzioni di sicurezza, ad esempio.
+
+00:28:00.703 --> 00:28:10.243
+<v SPEAKER_2>I testing di evasione cominciano a diventare abbastanza frequenti, proprio in un certo senso anche vista la pervasività della soluzione.
+
+00:28:10.243 --> 00:28:14.983
+<v SPEAKER_2>Cioè se è implementata bene dovrebbe toccare tutti gli endpoint.
+
+00:28:14.983 --> 00:28:21.423
+<v SPEAKER_2>Anzi qua c'è un altro requisito da discutere, probabilmente è stata scorsa da analizzare sui quanti endpoint tocca.
+
+00:28:21.423 --> 00:28:24.903
+<v SPEAKER_2>Quindi il livello di pervasività è molto alto.
+
+00:28:24.903 --> 00:28:32.603
+<v SPEAKER_2>Quindi se è fatta bene, se è implementata bene, se vede bene quello che deve vedere, ho un livello di controllo molto molto elevato.
+
+00:28:32.603 --> 00:28:47.443
+<v SPEAKER_2>Rispetto ai log del firewall, ad esempio, che spesso per implementazione vedono solo il perimetro o ciò che passa da una rete all'altra, guardando gli endpoint potrei avere un livello di pervasività molto più alto.
+
+00:28:52.463 --> 00:28:55.643
+<v SPEAKER_1>Hai parlato di un certo senso di endpoint.
+
+00:28:55.643 --> 00:28:57.583
+<v SPEAKER_1>L'altra volta abbiamo parlato di scopo.
+
+00:28:57.583 --> 00:29:15.123
+<v SPEAKER_1>Nel senso, un cliente mi aveva fatto notare che per partire sarebbe andato su una soluzione, diciamo, più come la definita, non ricordo, più leggera, nel senso che non aveva bisogno di tutti gli allarmi, ma voleva qualcosa di meno intrusivo.
+
+00:29:18.103 --> 00:29:27.503
+<v SPEAKER_1>Chiaramente questa affermazione implica, voglio una soluzione che mi dà meno falsi positivi, perché non ho tempo né voglia di stargli dietro.
+
+00:29:27.503 --> 00:29:31.123
+<v SPEAKER_1>Bene, ok, però chiaramente c'è una scopertura.
+
+00:29:32.823 --> 00:29:50.763
+<v SPEAKER_1>Riflettevamo l'altra volta, probabilmente un'azienda non sceglie una soluzione che è più stringente per determinati endpoints, magari quelli esposti, è una soluzione più lasca per altri tipi di endpoints, che non so, magari PC su zone protette, perché è assurdo.
+
+00:29:50.763 --> 00:29:56.443
+<v SPEAKER_1>Anche da un punto di vista finanziario, comprarne due significa avere meno potere contrattuale, no?
+
+00:29:56.443 --> 00:30:04.023
+<v SPEAKER_1>Quindi possiamo dar per certo che ci sia una soluzione unica per tutta l'azienda, no?
+
+00:30:04.023 --> 00:30:10.603
+<v SPEAKER_1>Tu hai parlato di un certo senso di compatibilità endpoint, cioè dove dobbiamo andarlo installare.
+
+00:30:11.683 --> 00:30:21.643
+<v SPEAKER_1>Prima però volevo tornare un attimo alla parte di test, dove mi incuriosisce sempre questa cosa che le aziende non testano le soluzioni, che è un po come...
+
+00:30:21.643 --> 00:30:50.003
+<v SPEAKER_1>Secondo me è un problema finanziario, nel senso si compra una soluzione che tipicamente non costa proprio poco, perché cambiare i firewall, cambiare il sistema di NAC ha un certo peso, compreso le DR, e poi ci si fida che funzioni, ma se non funziona in realtà ci sono due impatti finanziari, quello che ho speso dei soldi ma non ho risultato, e quello che se non ho risultato è probabile che ci sia una scopertura che mi causerà danni ancora peggiori.
+
+00:30:50.043 --> 00:30:52.703
+<v SPEAKER_1>Però ok, apro e chiudo la parentesi.
+
+00:30:52.703 --> 00:30:53.163
+<v SPEAKER_2>Sì, tra l'altro...
+
+00:30:53.163 --> 00:30:54.563
+<v SPEAKER_1>E sulla compatibilità?
+
+00:30:54.563 --> 00:30:55.463
+<v SPEAKER_1>Vai.
+
+00:30:55.463 --> 00:30:57.783
+<v SPEAKER_2>No, no, era una...
+
+00:30:57.903 --> 00:31:01.603
+<v SPEAKER_2>Se parto con la compatibilità, allora faccio una parentesi anche io.
+
+00:31:01.983 --> 00:31:02.583
+<v SPEAKER_1>Vai.
+
+00:31:02.583 --> 00:31:11.123
+<v SPEAKER_2>È molto difficile che una soluzione di DR ben implementata non spari una tonnellata inizialmente di farsi positivi.
+
+00:31:11.303 --> 00:31:13.163
+<v SPEAKER_2>Molto, molto difficile.
+
+00:31:15.063 --> 00:31:21.763
+<v SPEAKER_2>Quasi tutti, ad esempio, hanno venuto in mente su un allarme che avevo visto qualche giorno fa.
+
+00:31:21.763 --> 00:31:24.823
+<v SPEAKER_2>Forse era quello di cui avevamo anche scritto.
+
+00:31:24.823 --> 00:31:43.163
+<v SPEAKER_2>È molto raro che una soluzione di DR, by default, non segnali un upload verso cloud, anche non in presenza di IOC, quindi semplicemente per comportamento e non dia un allarme sospetto di desfiltration.
+
+00:31:43.163 --> 00:31:58.223
+<v SPEAKER_2>Se non lo dà, sì, mi verrebbero dei grossi dubbi sulle regole di base che sono state implementate o sulle capacità più che di detection, di interpretazione, quindi sulla parte...
+
+00:31:58.263 --> 00:32:05.523
+<v SPEAKER_2>Sì, di fatto, detection, perché sarebbe la parte comportamentale, la componente comportamentale che si attiva in quel caso.
+
+00:32:05.743 --> 00:32:09.023
+<v SPEAKER_2>Mi farei delle domande, mi farei seriamente delle domande.
+
+00:32:09.023 --> 00:32:16.483
+<v SPEAKER_2>E questa cosa emerge di solito nelle prime fasi di implementazione, perché nelle prime fasi ovviamente manca tutto il tuning.
+
+00:32:16.483 --> 00:32:34.043
+<v SPEAKER_2>E quindi, se un'azienda ha banalmente un processo che per qualche ragione sincronizza un file con una cloud, quindi c'è una sessione dall'interno verso l'esterno, verso un set dp che viene interpretato come cloud.
+
+00:32:34.043 --> 00:32:38.943
+<v SPEAKER_2>Di solito il comportamento è proprio cloud upload, messa in maniera molto chiara.
+
+00:32:38.943 --> 00:32:41.623
+<v SPEAKER_2>E non c'è un suspicious.
+
+00:32:41.843 --> 00:32:48.363
+<v SPEAKER_2>Mi farei delle domande, ma sempre dal punto di vista, diciamo, di come ragione il tre-tactor.
+
+00:32:48.363 --> 00:32:54.683
+<v SPEAKER_2>Quell'attività è giustamente classificata come potenziale di sfiltrazione, perché è esattamente quello che farebbe un tre-tactor.
+
+00:32:54.843 --> 00:32:58.803
+<v SPEAKER_2>Cioè, dall'interno si sparerebbe un file verso l'esterno.
+
+00:32:58.803 --> 00:33:03.563
+<v SPEAKER_2>Questo non vuol dire che dobbiamo toglierli con gli allarmi, però dovremo farci le domande.
+
+00:33:03.563 --> 00:33:06.543
+<v SPEAKER_2>Quali sistemi sono autorizzati a mandare file all'esterno?
+
+00:33:06.543 --> 00:33:07.703
+<v SPEAKER_2>Con che utenza?
+
+00:33:07.703 --> 00:33:08.783
+<v SPEAKER_2>Con che frequenza?
+
+00:33:08.783 --> 00:33:11.703
+<v SPEAKER_2>E su quello costruire delle policy.
+
+00:33:11.703 --> 00:33:13.603
+<v SPEAKER_2>Quindi ancora una volta è usabilità.
+
+00:33:14.783 --> 00:33:21.723
+<v SPEAKER_1>Siamo in una situazione in cui un malware è scritto bene, quindi scritto bene per un target specifico, non quelli generalisti.
+
+00:33:22.563 --> 00:33:27.483
+<v SPEAKER_1>E in qualche modo indistinguibile da un processo lecito aziendale.
+
+00:33:27.483 --> 00:33:28.003
+<v SPEAKER_2>Sì, tra l'altro.
+
+00:33:28.003 --> 00:33:31.803
+<v SPEAKER_1>Quindi, che ne so, usiamo TeamViewer, ok?
+
+00:33:31.803 --> 00:33:35.863
+<v SPEAKER_1>Però anche un tretactor potrebbe usare il TeamViewer in realtà.
+
+00:33:35.863 --> 00:33:41.643
+<v SPEAKER_1>Oppure un upload su Dropbox piuttosto che OneDrive, eccetera.
+
+00:33:41.643 --> 00:33:45.523
+<v SPEAKER_1>Può essere uno strumento aziendale, ma è usato anche dai tretactors.
+
+00:33:45.523 --> 00:33:55.443
+<v SPEAKER_1>Quindi è veramente difficile distinguere, creare degli IOC assoluti in cui un comportamento è malevolo, un comportamento è benigno.
+
+00:33:55.443 --> 00:33:56.143
+<v SPEAKER_2>È complicato.
+
+00:33:56.143 --> 00:34:15.523
+<v SPEAKER_1>Ci sono degli IOC che dicono questo comportamento è sicuramente maligno, ma dire dei, come gli chiarificiamo, negative IOC in cui un comportamento è sicuramente benigno, in modo assoluto generalista, perché chiaramente il vendor deve dare delle indicazioni generaliste, è molto difficile.
+
+00:34:16.923 --> 00:34:32.783
+<v SPEAKER_1>E farei molta attenzione a prendere queste cose proprio alla grande, nel senso che sì, questo comportamento è sicuramente buono, perché sicuramente il genio del male che trova il modo per usare quel comportamento sicuramente buono, in modo malevolo, lo troviamo da qualche parte.
+
+00:34:32.783 --> 00:34:47.643
+<v SPEAKER_1>Prima di passare alla parte di XDR, direi di spendere due parole sulla compatibilità degli endpoint, che non è solo dove si può installare l'agent dell'IDR, ma in realtà è un tema più complesso.
+
+00:34:47.663 --> 00:34:59.103
+<v SPEAKER_1>Allora, generalmente le aziende hanno bisogno di Windows, chiaramente Linux, perché un piccolo o grande sottuinseme di servizi viene eseguito su sistemi Linux.
+
+00:34:59.103 --> 00:35:17.523
+<v SPEAKER_1>In alcuni casi, sempre più frequenti, vedo macOS, in ambito industriale vedo dei sistemi molto vecchi, Windows, basati ancora su Windows XP, in alcuni casi Windows 2000, sono senza spingerci così oltre, ma in realtà anche Linux altrettanto vecchi.
+
+00:35:17.523 --> 00:35:36.803
+<v SPEAKER_1>Ecco, quello che volevo precisare è che il fatto che sia installabile su queste piattaforme, più o meno recenti, non significa che abbiano le stesse caratteristiche, le stesse feature, le stesse, come possiamo chiamarle, capacità di detection, di response, chiamiamole così.
+
+00:35:37.963 --> 00:35:59.563
+<v SPEAKER_1>Quello che io ho visto è che se sugli ambienti Windows recenti c'è un'altissima copertura dei casi d'attacco, su sistemi Linux e Mac OS in realtà è molto molto ridotto, quindi questa cosa va assolutamente considerata e direi proprio se un'azienda volesse testarle, partire proprio da qui.
+
+00:35:59.643 --> 00:36:14.383
+<v SPEAKER_1>E la parte legacy, laddove, ha senso, perché molti ambienti che conosco sono intoccabili, però laddove ha senso direi che è una cosa da considerare, soprattutto in ambito industriale, medicale, mi vengono in mente.
+
+00:36:14.383 --> 00:36:43.603
+<v SPEAKER_2>Sì, tra l'altro, a fronte aggiungo a rinforzo, a fronte del fatto che i TreTactor in realtà si sono molto evoluti sul mondo Mac, ad esempio, che ha sempre avuto fama di essere meno toccato e parliamo di dati statistici, non voglio accendere il tema architetturale, proprio statisticamente ci sono sempre stati meno malware sul mondo Mac.
+
+00:36:43.603 --> 00:37:09.263
+<v SPEAKER_2>Ma quello che stiamo osservando gli ultimi anni è che ovviamente i TreTactor si sono adeguati anche alla tipologia di desktop che usano gli utenti, quindi avendo molto frequentemente device di quella tipologia in azienda, ovviamente i TreTactor si sono spostati anche su quella tipologia di architettura.
+
+00:37:09.263 --> 00:37:19.603
+<v SPEAKER_2>E tra l'altro i software che usiamo a livello di security test, che spesso sono gli stessi che usano i TreTactor, anche se a volte leggermente modificati.
+
+00:37:21.263 --> 00:37:25.183
+<v SPEAKER_2>Adesso mi mette sempre slider, che è quello con cui sto giocando.
+
+00:37:25.183 --> 00:37:31.883
+<v SPEAKER_2>Mettono ovviamente a disposizione agenti per tutte e tre le piattaforme, Windows, Linux e MacOS.
+
+00:37:31.883 --> 00:37:40.663
+<v SPEAKER_2>Quindi assolutamente indistintamente possono essere eseguite attività profonde di attacco, basandosi anche su desktop di quel tipo.
+
+00:37:40.703 --> 00:37:56.043
+<v SPEAKER_2>Quindi non entriamo nel mood o Mac, non mi serve un ADR evoluto, non mi serve un controllo su quel tipo di dispositivo, oppure ho un device, un server Linux.
+
+00:37:56.043 --> 00:37:59.963
+<v SPEAKER_2>Una volta c'era questa tendenza, Linux non serve l'Altivirus su Linux.
+
+00:37:59.963 --> 00:38:02.703
+<v SPEAKER_1>Si, Linux è più sicuro, Mac è più sicuro.
+
+00:38:02.703 --> 00:38:03.543
+<v SPEAKER_2>Esatto.
+
+00:38:03.543 --> 00:38:07.643
+<v SPEAKER_2>Questa cosa non è assolutamente più vera, ma da palicchio tempo diciamo.
+
+00:38:09.443 --> 00:38:19.643
+<v SPEAKER_1>Diciamo che implicitamente, cioè intendo di base, può essere configurato forse in maniera più ardenizzata.
+
+00:38:21.323 --> 00:38:23.063
+<v SPEAKER_1>Che questo venga fatto?
+
+00:38:23.063 --> 00:38:23.803
+<v SPEAKER_1>No.
+
+00:38:23.803 --> 00:38:26.523
+<v SPEAKER_1>Che questo implichi la sicurezza assoluta?
+
+00:38:26.523 --> 00:38:37.083
+<v SPEAKER_1>No, perché come sappiamo, se un applicativo lecito ha un buco, lecitamente viene eseguito codice malevolo, tra virgolette, passami gioco di parole.
+
+00:38:39.583 --> 00:38:53.143
+<v SPEAKER_2>L'ultimo pin, l'ultimo bit che aggiungo è sui device desktop, occhio anche a chi usa in varie modalità la virtualizzazione.
+
+00:38:53.143 --> 00:39:07.243
+<v SPEAKER_2>Possono essere le macchine virtuali, sempre sui utenti Mac, il Fusion di Tuono per usare software Microsoft, ma molto più frequentemente, soprattutto nelle utenze tecniche.
+
+00:39:08.783 --> 00:39:19.083
+<v SPEAKER_2>Il sottosistema Linux sulle macchine Windows, usatissimo, molti sistemisti hanno la virtual machine, di solito basata proprio sul sistema virtualizzazione di Windows.
+
+00:39:19.083 --> 00:39:22.083
+<v SPEAKER_2>Ecco, quella macchina lì è una virtual machine a tutti gli effetti.
+
+00:39:22.303 --> 00:39:32.883
+<v SPEAKER_2>I suoi processi, i suoi eventi, se l'EDR è installato sul desktop, non sono visti completamente, cioè non c'è visibilità all'interno della virtual machine.
+
+00:39:32.883 --> 00:39:42.903
+<v SPEAKER_2>Mi occhio perché poi il trittactolo, ci sono situazioni in cui il trittactolo sfrutta proprio quella macchina, quella macchina non controllata, da una posizione molto comoda.
+
+00:39:44.303 --> 00:39:51.363
+<v SPEAKER_1>Vero, e meriterebbe e manuolo affronterebbe qui adesso un discorso simile anche alla parte di container.
+
+00:39:51.563 --> 00:39:52.903
+<v SPEAKER_2>Esatto, assolutamente.
+
+00:39:55.023 --> 00:40:00.323
+<v SPEAKER_1>In realtà, prima di passare alla parte XDR, mi è venuto in mente una mancanza.
+
+00:40:00.323 --> 00:40:03.783
+<v SPEAKER_1>Non ho citato la parte mobile Android e iOS.
+
+00:40:05.723 --> 00:40:18.743
+<v SPEAKER_1>Allora, non ho un'opinione ancora fissa, cioè il senso è non sono così sicuro che l'installazione di EventPoint Protection sulla parte mobile abbassi notevolmente il rischio.
+
+00:40:20.543 --> 00:40:21.803
+<v SPEAKER_1>Hai esperienza e merito?
+
+00:40:22.083 --> 00:40:25.283
+<v SPEAKER_2>Allora, dal punto di vista difensivo, in realtà ho poco esperienza.
+
+00:40:26.883 --> 00:40:33.803
+<v SPEAKER_2>Da punto di vista offensivo, la tendenza, essenzialmente ci sono due macromodalità.
+
+00:40:33.803 --> 00:40:39.923
+<v SPEAKER_2>Una, quella forse più pericolosa, è l'installazione di app FASUL.
+
+00:40:39.923 --> 00:40:47.223
+<v SPEAKER_2>Cosa che si può prevenire in realtà, effettivamente, non necessariamente con un EDR, cioè qualcosa che può gestire a livello di politica o comunque...
+
+00:40:47.943 --> 00:40:51.083
+<v SPEAKER_2>MDM, stiamo parlando, gestione del device, mobile.
+
+00:40:53.063 --> 00:41:03.503
+<v SPEAKER_2>E una delle principali modalità con cui i 3DPACTOR cercano in qualche misura di governare un device.
+
+00:41:03.503 --> 00:41:10.763
+<v SPEAKER_2>Le altre modalità sono più profonde e richiedono l'accesso fisico al dispositivo, quindi per l'installazione e poi di componenti...
+
+00:41:10.763 --> 00:41:16.843
+<v SPEAKER_2>Comunque stiamo parlando di componenti malevoli installati sul dispositivo, ma richiedono appunto tendenzialmente un accesso fisico.
+
+00:41:16.843 --> 00:41:24.083
+<v SPEAKER_2>Quindi poi le vulnerabilità che vengono utilizzate sono quelle che per qualche ragione consentono di bypassare l'accesso.
+
+00:41:24.083 --> 00:41:35.463
+<v SPEAKER_2>E effettivamente, a meno quelle che ho affrontato io statisticamente nel mondo vero, hanno più a che fare con il comportamento dell'utente, più che con quello che si può fare sul dispositivo.
+
+00:41:35.463 --> 00:41:36.763
+<v SPEAKER_2>Poi il dispositivo di base...
+
+00:41:38.303 --> 00:41:41.163
+<v SPEAKER_2>ha gli stessi problemi degli altri sistemi operativi.
+
+00:41:42.683 --> 00:41:53.543
+<v SPEAKER_2>E forse è più facile, diciamo ci sono più contesti in cui si può accedere a quel dispositivo a livello fisico, ad esempio uno smartphone.
+
+00:41:53.543 --> 00:42:04.923
+<v SPEAKER_2>Classici casi famosi dei punti di ricarica camuffati, dove c'erano i dispositivi a cui lo smartphone veniva collegato.
+
+00:42:06.243 --> 00:42:21.243
+<v SPEAKER_2>Però ripeto, tutte cose in cui ci sono ampie soluzioni di prevenzione, dall'adattatore USB che fa passare soltanto la parte di tensione elettrica e non la parte dati.
+
+00:42:21.243 --> 00:42:31.383
+<v SPEAKER_2>Cioè c'è tutta una serie di elementi e anche di deccautele che l'utente può fare che riducono enormemente il rischio da quel punto di vista.
+
+00:42:31.523 --> 00:42:53.203
+<v SPEAKER_2>Poi di per sé, su un dispositivo critico, io probabilmente andrei a tappeto per visibilità, andrei a tappeto e installerei anche su quelle componenti, stenderei la visibilità anche alle piattaforme mobile a livello di telemetria.
+
+00:42:53.343 --> 00:43:05.003
+<v SPEAKER_2>Renevoci conto però il fatto che il TreTactor li usa diversamente da come utilizza un desktop o un server o un dispositivo intero dell'azienda, cioè le attività che va a fare sono diverse.
+
+00:43:05.003 --> 00:43:09.343
+<v SPEAKER_2>Quindi anche quello che dobbiamo cercare a livello di comportamenti è diverso.
+
+00:43:12.143 --> 00:43:17.783
+<v SPEAKER_1>Sì, concordo e chiarisco la mia affermazione o la mia perplessità.
+
+00:43:17.783 --> 00:43:27.203
+<v SPEAKER_1>In parte è quello che hai detto tu, una buona piattaforma di MDM è configurata in modo corretto, probabilmente riduce il rischio molto.
+
+00:43:27.203 --> 00:43:41.183
+<v SPEAKER_1>Poi se il conto economico è affrontabile e sostenibile per l'azienda, installare la gente anche sulla parte mobile aiuta ad avere anche quella parte di visibilità.
+
+00:43:41.263 --> 00:43:58.163
+<v SPEAKER_1>E che adesso qui sono veramente curioso di capire quanto la gente del endpoint protection su un Android e iOS è in grado di fare paragonato, diciamo, l'equivalente su un sistema operativo.
+
+00:43:58.383 --> 00:44:16.923
+<v SPEAKER_1>La mia sensazione è che per come sono costruiti sia iOS che Android, hanno un meccanismo abbastanza implicito di autoprotezione che limita notevolmente la capacità della gente.
+
+00:44:16.923 --> 00:44:19.743
+<v SPEAKER_1>Questo perché ricordo che qualche...
+
+00:44:19.743 --> 00:44:57.463
+<v SPEAKER_1>ormai saranno passati 1-2 anni, era venuto fuori un caso di spionaggio di persone, giornalisti, persone chiave, con un malware, purtroppo in questo momento non ricordo il nome, e avevo seguito la cosa perché mi incuriosiva a verificare come si poteva rilevare la presenza o meno sui cellulari, e tra l'altro tra Android e iOS era molto diversa la capacità di verifica se quel malware effettivamente era installato, e in alcuni casi non era possibile farlo, proprio per le difficoltà di apertura della piattaforma.
+
+00:44:57.503 --> 00:45:06.683
+<v SPEAKER_1>Quindi, ho esteso il ragionamento sull'Emporio Protection, e domanda aperta, se qualcuno poi ha esperienza e vuole raccontare credo possiamo invitarlo.
+
+00:45:06.683 --> 00:45:19.843
+<v SPEAKER_2>Eh sì, non ho mai fatto test di Avasion su un Android, su un iOS, quindi effettivamente non ho mai idea di come si comporti le diarre di torno.

@@ -1,0 +1,355 @@
+WEBVTT
+
+00:00:07.811 --> 00:00:10.671
+<v SPEAKER_2>Info Sec. Unplugged, io sono Andrea Dainese.
+
+00:00:10.671 --> 00:00:11.451
+<v SPEAKER_2>Ciao Rocco.
+
+00:00:11.451 --> 00:00:12.891
+<v SPEAKER_1>Ciao, ciao, buongiorno.
+
+00:00:14.411 --> 00:00:25.811
+<v SPEAKER_2>In questa puntata volevo portare conto il tema degli EDR, una tecnologia ormai che si è affermata, ma personalmente noto molta confusione.
+
+00:00:25.811 --> 00:00:49.031
+<v SPEAKER_2>C'è una proposizione molto ampia e quello che vedo è che spesso si cerca di consultare il solito quadrante Gardner dove lo guardavo proprio l'altro giorno, c'è, diciamo che tanti attributi delle varie soluzioni vengono mescolate assieme riassunte nel quadrante che tutti noi conosciamo.
+
+00:00:49.031 --> 00:01:11.611
+<v SPEAKER_2>In realtà ci sono dei dettagli nascosti che vanno a influenzare in modo molto potente la soluzione che noi cercheremo di scegliere, cercheremo di usare, su cui dovremmo operare, sto usando un sacco di verbi in modo che dobbiamo fare qualcosa, ma poi effettivamente farlo è un altro filo.
+
+00:01:12.971 --> 00:01:14.771
+<v SPEAKER_2>E partiamo proprio da questo.
+
+00:01:14.771 --> 00:01:16.391
+<v SPEAKER_2>Vai Rocco, cosa ne pensi?
+
+00:01:16.391 --> 00:01:43.371
+<v SPEAKER_1>Allora io, tra l'altro nelle ultime settimane, avevo lanciato un po il sasso con qualche posto su LinkedIn, anche per sentire un po l'opinione che hanno gli altri operatori del settore, sia chi per qualche ragione ci lavora attivamente, o implementa, o lo usa quotidianamente, sia chi.
+
+00:01:43.371 --> 00:01:54.271
+<v SPEAKER_1>Mi è avuto anche la botta di fortuna di parlare anche con qualcuno che lavora nell'ambito della realizzazione di questa tipologia di soluzioni.
+
+00:01:56.731 --> 00:02:18.671
+<v SPEAKER_1>Mi sono fatto un'idea di base oltre al fatto tecnico, cioè la differenza di funzionalità tecnica che si può avere da una soluzione all'altra, che ovviamente esiste, ma c'è proprio un malinteso di base, almeno a mia sensazione ci sia un malinteso di base su quello che dovrebbe fare l'EDR, e di conseguenza come viene implementato e poi come viene utilizzato.
+
+00:02:18.891 --> 00:02:23.371
+<v SPEAKER_1>Vado dritto al mio percepito di malinteso di base quale è.
+
+00:02:23.371 --> 00:02:33.211
+<v SPEAKER_1>Forse non ho anche parlato assieme l'altra volta, mi ricordo se era emerso il tema, ma moltissimi lo usano o lo valutano come se fosse il vecchio anti-malware, il vecchio anti-virus.
+
+00:02:33.211 --> 00:02:49.251
+<v SPEAKER_1>Quindi hanno l'aspettativa di avere qualcosa che in autonomia, in base alle sue configurazioni, in base alle sue funzionalità, sia in grado di intercettare tutto ciò che è possibile intercettare.
+
+00:02:51.551 --> 00:03:17.491
+<v SPEAKER_1>E in realtà è stato pensato ovviamente per fare detection di più cose possibili tramite una serie di meccanismi di analisi che vanno sia statici che dinamici, poi magari questa cosa la discutiamo in maniera più dettagliata, ma soprattutto l'altro elemento in quale sono stati fatti è dare la possibilità a chi li utilizza di cercare delle...
+
+00:03:19.431 --> 00:03:28.531
+<v SPEAKER_1>delle tracce, di potenziali minacce o potenziali attività sospette all'interno dell'infrastruttura.
+
+00:03:28.531 --> 00:03:56.191
+<v SPEAKER_1>Qua ci vedo proprio il grosso malinteso, nel senso che tutti li utilizzano configurandolo magari al meglio delle proprie capacità, ma veramente pochi li utilizzano per fare quello che tecnicamente chiameremo hunting, cioè andare sistematicamente alla ricerca di elementi che possano far pensare che ci sia delle minacce in corso, ci sono attività sospette in corso all'interno dell'infrastruttura.
+
+00:03:56.191 --> 00:04:19.511
+<v SPEAKER_1>E quindi questa cosa si traduce, almeno io l'ho visto a Dulcine, in situazioni di sorpresa quando l'EDR non ha segnalato, o meglio non ha generato un allarme specifico a fronte di una attività che poi si scopre per essere stata un'attività sospetta o preludio a qualcosa di quello che poteva essere poi un potenziale incidente.
+
+00:04:19.511 --> 00:04:23.831
+<v SPEAKER_1>Da qua io vedo un primo tema.
+
+00:04:23.831 --> 00:04:31.431
+<v SPEAKER_2>Ti fermo un secondo, quindi hai citato due chiamiamoli perché, per i quali andiamo in una soluzione di questo tipo.
+
+00:04:31.431 --> 00:04:47.931
+<v SPEAKER_2>Uno è la capacità intrinseca di rilevare e bloccare delle minacce, e l'altro è diciamo la capacità di permettere di fare hunting, cioè di cercare tutto ciò che non è stato trovato, quindi una sorta di falso negativo.
+
+00:04:49.411 --> 00:04:56.331
+<v SPEAKER_2>Allora, nel mio punto di vista il primo è proprio la motivazione, come dici anche tu, per cui andiamo a acquistare una soluzione del genere.
+
+00:04:56.331 --> 00:05:10.871
+<v SPEAKER_2>Solo che c'è un problema, sono tutte equivalenti, o meglio tendono a svolgere lo stesso compito, lo fanno con performance diverse, ma lo fanno anche con delle premesse diverse.
+
+00:05:11.471 --> 00:05:27.551
+<v SPEAKER_2>Quindi le soluzioni, ci sono soluzioni diciamo più complete, più pronte, diciamo, pronte forse il termine è corretto, una sorta di, lo forzo, non è corretto dire così, una sorta di click and forget, lo installiamo e ce ne dimentichiamo.
+
+00:05:27.551 --> 00:05:29.211
+<v SPEAKER_2>Purtroppo poi è quello che avviene veramente.
+
+00:05:29.771 --> 00:05:42.111
+<v SPEAKER_2>E delle soluzioni diverse, altrettanto potenti, ma che richiedono una costruzione, un tuning molto avanzato per avere lo stesso, diciamo, livello di copertura.
+
+00:05:42.111 --> 00:05:43.911
+<v SPEAKER_2>Possiamo dire così, no?
+
+00:05:43.911 --> 00:05:53.571
+<v SPEAKER_2>E in questo senso abbiamo quindi delle soluzioni che sono abbastanza pronte, quindi l'enterprise la prende, la installa, la fa e ha un buon livello di copertura.
+
+00:05:53.571 --> 00:06:12.231
+<v SPEAKER_2>E soluzioni che invece per avere lo stesso livello di copertura hanno bisogno che un team di security ne sviluppi le regole di detection, altrimenti si rischia di avere delle scoperture, cioè degli scenari di attacco, di fatto passano sottotono.
+
+00:06:13.611 --> 00:06:48.371
+<v SPEAKER_2>E questo secondo me è il primo problema enorme, perché il tipo di target a cui queste soluzioni fanno riferimento, quindi il tipo di aziende che sono clienti di questo tipo di prodotto, non hanno la forza per fare tuning, nel senso di crearsi le regole, che poi alla fine, coraggimi se sbaglio, parliamo di una parte di threat intelligence, quindi capisco come sono fatte le minacce e le modellizzo, le formalizzo inserendo nella mia piattaforma le regole apposta.
+
+00:06:48.371 --> 00:07:16.091
+<v SPEAKER_2>Prima di lasciarti la parola, scusa che finisco, c'è secondo me un terzo componente che magari parleremo più avanti, che inserisce queste piattaforme di EDR in un ecosistema più ampio che è quello detto degli XDR, che tendono, poi magari discutiamo perché è un tema enorme anche questo, a sostituire il vecchio concetto di SIEM, sì, di raccolta data di SIEM come base di un servizio di stock.
+
+00:07:16.091 --> 00:07:17.191
+<v SPEAKER_2>A te.
+
+00:07:17.251 --> 00:07:56.751
+<v SPEAKER_1>Allora, effettivamente c'è la differenza di, potremmo chiamare la differenza di base, cioè quello che i vendor poi propongono di targa in configurazione di default, di due volte la chiamo così, quindi così come nasce il tenant a livello di configurazione, poi come viene configurata eventualmente la struttura, evidentemente è anche normale pensare che alcuni vendor inseriscano delle regole di base, di detection, fatte in un certo modo, con un certo livello di profondità, altri fanno altre scelte, qua sta il singolo vendor.
+
+00:07:58.231 --> 00:08:44.931
+<v SPEAKER_1>Immagino che qualcuno abbia valutato quanto andare a inserire a livello di policy base sulle infrastrutture e sulla configurazione dei default, dell'EDR in sé, e tra l'altro questa cosa forse la citavamo anche la volta scorsa, ma E3 è andata a misurarsela e ha messo a disposizione quel famoso tool che poi rilincheremo, che serve appunto, per me utilissimo proprio per capire by default che cosa è in grado di intercettare l'EDR di turno in base ai vari scenari che possono essere utilizzati, quindi anche da prendere quelle pinze sullo scenario, cioè dipende anche il contesto in cui viene implementato l'EDR.
+
+00:08:44.931 --> 00:08:58.851
+<v SPEAKER_1>Quindi si crea quella codice V2 in cui se io lo installo e non faccio nient'altro, ovviamente sono limitato a, per quanto siano alte e evoluti, sono limitato a quello che nasce di default, nella configurazione default.
+
+00:08:58.851 --> 00:09:02.651
+<v SPEAKER_1>Tutto il resto, ovviamente me lo perdo.
+
+00:09:04.871 --> 00:09:27.771
+<v SPEAKER_1>E da considerare che, da quello che ho potuto vedere, quasi tutti i vendor che mi sono capitati sotto le mani, dal punto di vista della configurazione ADR, tutti in realtà sottolineano il fatto che la configurazione default è una configurazione di default, e non è ciò che non è suggerito di tenere quello in esercizio.
+
+00:09:27.771 --> 00:09:39.751
+<v SPEAKER_1>Andrebbe per sua natura l'ADR funziona a un momento in cui viene, tra virgolette, customizzato, allineato a quelle che sono le esigenze dello specifico ambiente dove sta operando.
+
+00:09:39.751 --> 00:09:56.911
+<v SPEAKER_1>Quindi è pensato finché qualcuno faccia delle rule, in buona sostanza, faccia delle rule aggiuntive, o ci faccia delle attività sistemi, cioè continuative, nell'utilizzo del ordinario del sistema.
+
+00:09:57.891 --> 00:10:05.551
+<v SPEAKER_1>Secondo me questa cosa, come dicevi, manca perché, è vero, tantissime aziende non hanno la forza, alcune forse neanche lo sanno, che si va usato così.
+
+00:10:05.551 --> 00:10:06.671
+<v SPEAKER_1>Cioè, alcune forse gli sfugge.
+
+00:10:06.671 --> 00:10:07.511
+<v SPEAKER_2>L'ho usato buono.
+
+00:10:07.511 --> 00:10:11.991
+<v SPEAKER_2>La maggior parte direi che non sono state informate correttamente, ma ci sta.
+
+00:10:11.991 --> 00:10:16.451
+<v SPEAKER_2>Non è neanche il mestiere di chi si occupa di t capire a fondo.
+
+00:10:18.331 --> 00:10:33.131
+<v SPEAKER_2>Facendo un attimo uno spezzato delle aziende del territorio dove sono tipicamente manufatturiere, i cui liti è un correlato importantissimo, ma quando loro parlano di importanza, stiamo parlando molto spesso di SAP, di CRM e via dicendo.
+
+00:10:33.131 --> 00:10:48.311
+<v SPEAKER_2>Il mondo della security è un qualcosa che si sono trovati sul gorpone e stanno cercando di gestire nel miglior dei modi, ma generalmente con una mancanza, diciamo un gap tecnico difficile da colmare.
+
+00:10:48.311 --> 00:11:11.211
+<v SPEAKER_2>E sì, quindi si fidano delle persone, tipicamente dei partner, con cui vengono in contatto e non hanno la capacità critica di comprendere se gliela stanno raccontando nel bene e nel male o se li stanno in realtà, diciamo, vendendo un pacchetto solo per, diciamo, fare un pezzettino di fatturato in più.
+
+00:11:12.671 --> 00:11:42.031
+<v SPEAKER_1>E quindi si crea il gap che dicevi tu, vengono adottate soluzioni anche bellissime che per quanto nella configurazione base possono anche brillare, cioè hanno degli elementi aggiuntivi rispetto magari ai altri vendor, competitor, a livello di rule, non di funzionalità base, poi le funzionalità base, magari spendiamo due parole e comunque poi non vengono opportunmente gestiti e quindi diventano delle di fatto...
+
+00:11:43.351 --> 00:12:10.111
+<v SPEAKER_1>Si perde un'enorme capacità che hanno, che loro metterebbero a disposizione, che è quella appunto di andare a individuare quello che non si conosce, come viene spiegato in molti molti corsi, cioè un conto è sul tema dell'analisi statica e dinamica, comunque c'è un tema di conoscenza di quello che stiamo cercando, ovvero le rule sono pensate in base al fatto che sappiamo che certe minacce hanno un certo comportamento e quindi le rule sono tra le due lezioni comportamentali.
+
+00:12:10.111 --> 00:12:27.351
+<v SPEAKER_1>Quindi il sistema è in grado di cercare, come si faceva una volta, le firme di qualcosa di specifico, ma è in grado anche di cercare dei comportamenti noti, li mette assieme, quindi rireva gli eventi, li mette assieme, incontra un comportamento che può essere diciamo messo in relazione a una minaccia e quindi dà dall'allarme.
+
+00:12:27.351 --> 00:12:29.211
+<v SPEAKER_1>Questa cosa si fa con delle rule.
+
+00:12:29.211 --> 00:12:39.971
+<v SPEAKER_1>Ovvio che come sappiamo le minacce evolvono, e quindi di conseguenza o faccio evolvere anche le rule di detection, o le vado a cercare in qualche modo, oppure quelle nuove me le perdo.
+
+00:12:39.971 --> 00:12:42.231
+<v SPEAKER_1>Questo è un po il tema.
+
+00:12:42.231 --> 00:12:46.291
+<v SPEAKER_1>E serve qualcuno che faccia continuamente questo tipo di attività.
+
+00:12:46.291 --> 00:12:53.151
+<v SPEAKER_1>Tu dicevi prima giustamente che sembra qualcosa che possa avere a che fare con la parte di threat intelligence.
+
+00:12:54.871 --> 00:12:58.591
+<v SPEAKER_1>E vero, ci sono più in realtà fonti da cui si può pescare.
+
+00:12:58.591 --> 00:13:11.451
+<v SPEAKER_1>Una sicuramente è proprio l'ambito threat intelligence, cioè nel momento in cui è inti a cui ci appoggiamo, perché vedo poco realistico che un'azienda, che un'organizzazione si faccia all'interno, il suo team.
+
+00:13:11.451 --> 00:13:27.111
+<v SPEAKER_1>Già è difficile avere security team, avrei anche un team intelligence, la vedo già troppo utopistica, però accedendo a servizi che danno questo tipo di informazioni e passandole a chi sa come utilizzarle.
+
+00:13:27.111 --> 00:13:49.931
+<v SPEAKER_1>Quindi nel momento in cui ho un feed che mi dice che c'è un certo tipo di minaccia che si comporta in un certo modo, che usa un certo tipo di file, che fa un certo tipo di connessioni, sarebbe importante che chi gestisce l'EDR vada a eseguire quelle query, vada a cercare quei comportamenti sulla sua piattaforma per trovare se ci sono comportamenti di questo tipo.
+
+00:13:49.931 --> 00:13:58.851
+<v SPEAKER_1>E se poi vuole renderla anche strutturale come detection si va a fare la regola che cerca sistematicamente quel tipo di comportamento.
+
+00:13:59.211 --> 00:14:08.651
+<v SPEAKER_1>L'ho generalizzata all'estremo, più o meno, però diciamo che per sommi capi questo sarebbe il modo di operare.
+
+00:14:08.651 --> 00:14:24.911
+<v SPEAKER_1>Tutto quello che ha a che fare con questo pezzo dell'utilizzo, quasi pochissimi lo fanno, proprio pochissimi e quindi si crea quel paradossi in cui transita no minacce nuove, relativamente nuove, e ci si interroga come mai l'EDR non l'ha intercettata.
+
+00:14:26.811 --> 00:14:36.951
+<v SPEAKER_1>Poi i case che ho affrontato io ci mettono in evidenza un'altra cosa interessante, che poi quando si va a cercare nello storico degli eventi intercettati dell'EDR, quegli eventi si trovano.
+
+00:14:37.471 --> 00:14:41.951
+<v SPEAKER_1>E qui si vede anche meglio qual è la potenzialità dell'EDR, che è in grado di osservare quegli eventi.
+
+00:14:41.951 --> 00:14:50.451
+<v SPEAKER_1>Gli manca soltanto l'elemento che gli dica che quegli eventi, in una certa sequenza, infatti in un certo modo, costituiscono una nuova minaccia.
+
+00:14:50.451 --> 00:14:50.771
+<v SPEAKER_1>Tutto là.
+
+00:14:51.531 --> 00:14:58.311
+<v SPEAKER_1>Quindi anche, se vogliamo, è anche un problema facile da risolvere, una volta che abbiamo capito come si deve usare.
+
+00:14:58.311 --> 00:15:01.071
+<v SPEAKER_1>Teoricamente è anche facile da affrontare.
+
+00:15:01.071 --> 00:15:14.131
+<v SPEAKER_1>È che non sapendo, o quanto meno dando per scontato, che sia capace di farlo da solo, o peggio ancora, se qualcuno ci ha raccontato che è capace di farlo da solo, ovviamente si resta poi il buco di presidio.
+
+00:15:16.751 --> 00:15:23.771
+<v SPEAKER_2>Quindi ci siamo detti alcune cose che in realtà valgono per tutte le soluzioni di sicurezza.
+
+00:15:23.771 --> 00:15:35.931
+<v SPEAKER_2>Uno, una soluzione di R mi serve oggi, perché le soluzioni precedenti, quindi gli classici antivirus basati su firma, sono diventati abbastanza inutili.
+
+00:15:35.931 --> 00:16:06.051
+<v SPEAKER_2>Quindi devo evolvere con una tecnologia diversa che vada non solo a guardare la firma del malware ma il comportamento, perché sappiamo che la firma ormai non fa più grande testo, dove comportamento è proprio il malware come si scartena, come si come evolve all'interno di un sistema nei termini di quale chiamate fa, quali eseguibili chiama, quali operazioni, quali urla chiama, eccetera eccetera.
+
+00:16:07.191 --> 00:16:15.751
+<v SPEAKER_2>Molto spesso questo comportamento potrebbe essere nascosto da operazioni apparentemente lecite, quindi passano il termine.
+
+00:16:15.751 --> 00:16:24.151
+<v SPEAKER_2>La complessità oggi di identificare un comportamento malevolo è ordini di grandezza superiori a quella che era una decina d'anni fa.
+
+00:16:25.291 --> 00:16:36.371
+<v SPEAKER_2>Il secondo punto è che non sono in grado come azienda, io metto il cappello dell'azienda in questo momento, come azienda diciamo tipicamente italiana, una manufatturiera, non sono in grado di presidiare questa tecnologia.
+
+00:16:36.371 --> 00:17:23.111
+<v SPEAKER_2>È troppo complesso per il mio team, che è tipicamente spostato nell'ambito applicativo o nell'ambito infrastrutturale base, quindi base datacenter, base storage, base rete, ma qua stiamo andando troppo nel complesso, il mio team non è in grado di capirlo e probabilmente non è neanche a senso che io abbia un team interno a fare questa cosa, perché sono personalità, sono competenze difficili da trovare, e comunque queste competenze, queste persone di fatto non troverebbero, passami il termine, un senso a lavorare per un'azienda manufatturiera, perché di mestiere hanno un piacere a lavorare in strutture più complesse, più anche interessanti.
+
+00:17:23.111 --> 00:18:01.351
+<v SPEAKER_2>Ne deriva che qualcuno questa cosa la deve gestire, quindi la devo comprare, non posso gestirla, qualcuno lo deve fare, la deve gestire, e la deve gestire in termini di quello che succede, quindi in termini di eventi, gli incidenti che la piattaforma solleva per sua natura, in termini di hunting, cioè di capire se tutto quello che è stato rilevato è stato effettivamente segnalato, e in termini di evoluzione, quindi di applicazione di nuove regole basate su threat intelligence, piuttosto che anche su best practice che i vendor rilasciano regolarmente, ottimizzano, aggiornano.
+
+00:18:01.351 --> 00:18:04.371
+<v SPEAKER_2>Il tutto contestualizzato in un cliente specifico.
+
+00:18:05.591 --> 00:18:12.031
+<v SPEAKER_2>Uno più due più tre mi sembra di avvicinarci a una soltato tipologia che non so.
+
+00:18:12.031 --> 00:18:16.411
+<v SPEAKER_2>Ricordo di aver visto un'azienda che effettivamente l'ha messa in pratica così.
+
+00:18:16.411 --> 00:18:20.951
+<v SPEAKER_2>Quindi o siamo troppo precursori noi, o il mondo è troppo sbagliato.
+
+00:18:21.371 --> 00:18:27.411
+<v SPEAKER_1>Ma non saprei dire dove sta esattamente il problema.
+
+00:18:27.411 --> 00:18:43.451
+<v SPEAKER_1>Diciamo da un punto di vista praticamente storico, l'evoluzione verso le tecnologie che poi ci hanno presentato il mondo, si concretizzano negli EDR e poi nell'estensione in quello che è l'XDR.
+
+00:18:43.451 --> 00:19:07.251
+<v SPEAKER_1>Era l'unica probabilmente l'idea furba per fare a fronte a un problema complessissimo che è quello di star dietro a un'evoluzione delle minacce che non è come dire, non è prevedibile e quindi il punto di partenza era proprio, devo avere qualcosa che mi consenta di intercettare qualcosa che non conosco.
+
+00:19:07.251 --> 00:19:51.631
+<v SPEAKER_1>Partendo da degli assunti di base che appunto come dicevi tu prima le nuove minacce tendono a confondersi nel rumore di fondo di un sistema o di una rete, partendo dal fatto che se mentre gli antivirus stavano diventando, gli anti-malware in generale, stavano diventando molto bravi a riconoscere le firme e i comportamenti dei malware tradizionali, ci sono affacciate delle minacce che non utilizzavano malware, cioè esistono intere metodologie di attacco che non richiedono l'utilizzo di malware e quindi restava fuori dalla detection un'enorme quantità di azioni potenzialmente offensive che poi si sono anche concretizzate, quindi serviva qualcosa di differente.
+
+00:19:53.031 --> 00:19:59.071
+<v SPEAKER_1>Ed era utopistico, secondo me oggi tuttora utopistico, pensare che questo qualcosa di differente lo possa fare in completa autonomia.
+
+00:19:59.071 --> 00:20:03.071
+<v SPEAKER_1>Adesso magari è vero sumentito domani, meglio, però che sia...
+
+00:20:03.071 --> 00:20:03.791
+<v SPEAKER_2>Un piacere.
+
+00:20:03.951 --> 00:20:06.511
+<v SPEAKER_1>Esatto, se mi farebbe piacere, effettivamente.
+
+00:20:06.511 --> 00:20:24.211
+<v SPEAKER_1>Però che sia completamente fatto in autonomia del software, effettivamente molto difficile, anche perché poi cose ancora più difficili da mettere a fatto al comune è proprio l'esigenza singola della realtà dove si va a attivare questo tipo di soluzione.
+
+00:20:24.211 --> 00:20:36.591
+<v SPEAKER_1>Quindi è anche sbagliato pensare, o meglio, che secondo me hanno fatto bene i vendor a non imporre un rule set generalizzato che vada bene per tutte le organizzazioni.
+
+00:20:37.011 --> 00:20:38.151
+<v SPEAKER_1>Non sarebbe stato vero.
+
+00:20:38.151 --> 00:20:44.111
+<v SPEAKER_1>Ci saremmo trovati probabilmente a disabilitare regole, perché le organizzazioni sono fatte in maniera diversa.
+
+00:20:44.111 --> 00:20:54.431
+<v SPEAKER_1>Non è vero che una regola magari molto aggressiva in un contesto vada bene, perché un certo comportamento va assolutamente evitato.
+
+00:20:54.431 --> 00:20:57.151
+<v SPEAKER_1>La stessa regola potrebbe non andare bene in un altro contesto.
+
+00:20:57.291 --> 00:21:03.711
+<v SPEAKER_1>Quindi avremmo avuto il problema del non devo creare regole, ma devo disabilitare regole che esistono.
+
+00:21:03.711 --> 00:21:12.431
+<v SPEAKER_1>Forse è anche peggio andare a disabilitare regole che esistono, perché poi bisogna sapere bene cosa si sta disabilitando, se no si fanno dei danni enormi.
+
+00:21:12.431 --> 00:21:17.991
+<v SPEAKER_1>E quindi ci troviamo con la situazione in cui devo fare delle regole custom per me, che a volte sono anche molto semplici.
+
+00:21:17.991 --> 00:21:22.171
+<v SPEAKER_1>Quando poi si va a riflettere sul contesto, a volte sono regole anche molto molto banali.
+
+00:21:23.511 --> 00:21:39.051
+<v SPEAKER_1>In un ambiente che mi era capitato di discutere con un IT manager, dovevamo provato il fatto, appunto, testando proprio l'efficacia della configurazione dell'EDR.
+
+00:21:39.051 --> 00:21:44.931
+<v SPEAKER_1>Voglio sottolineare, si testa l'efficacia della configurazione dell'EDR, più che dell'EDR.
+
+00:21:44.931 --> 00:21:51.171
+<v SPEAKER_1>L'EDR può avere altri problemi più tecnici a basso livello, però se facciamo un testo stiamo testando la configurazione.
+
+00:21:51.271 --> 00:22:08.231
+<v SPEAKER_1>Tant'è che, dovevo dopo aprire un'altra parentesi, facendo questa attività ci si è raccorti, ad esempio, che buona parte delle famiglie dei Files Malware non erano assolutamente intercettati come malevoli, ma l'EDR vedeva benissimo con gli eventi, cioè erano perfettamente identificati con gli eventi.
+
+00:22:08.231 --> 00:22:18.111
+<v SPEAKER_1>Semplicemente non scattava nessun allarme, perché non c'era una rule che mettesse insieme quello specifico set di eventi per riconoscerli come un allarme.
+
+00:22:20.091 --> 00:22:37.111
+<v SPEAKER_1>Poi, anche lì, altra tematica che mi ha portato l'attenzione un collega e amico che lavora nel campo degli EDR, è anche una tematica di analisi post lettura degli eventi.
+
+00:22:37.111 --> 00:22:53.971
+<v SPEAKER_1>Cioè molti EDR, per capire se una catena di eventi corrisponde a una minaccia, hanno bisogno di tempo e di altri pezzettini di informazioni da pescare dalla rete, quello che a volte viene chiamato anche arricchimento.
+
+00:22:55.191 --> 00:23:14.851
+<v SPEAKER_1>Se manca questo pezzo, magari la catena di eventi potrebbe essere, è sospetta effettivamente, sempre in base alla configurazione, l'EDR potrebbe non dire nulla, potrebbe sollevare un warning perché c'è una catena di eventi sospetti, oppure se tutte le informazioni potrebbe essere molto esplicito e dire ha osservato un comportamento che assomiglia a quello di un command in control.
+
+00:23:15.611 --> 00:23:40.851
+<v SPEAKER_1>Questa cosa, oltretutto, non è neanche real time, cioè gli serve un po di tempo per andare a digerire il fatto che, un po come succede anche nei CM, quando colleziona le informazioni, non è che il singolo evento fa scatenare l'allarme, gli serve nei CM correlazione, qua invece è più un'osservazione di un comportamento che forse si fa anche per correlazione, non saprei dirlo, dovremmo chiedere il dettaglio tecnico.
+
+00:23:41.951 --> 00:23:49.191
+<v SPEAKER_1>E quindi ci sono proprio delle meccaniche a basso livello da considerare su come funziona l'EDR.
+
+00:23:49.191 --> 00:24:03.051
+<v SPEAKER_1>Come si diceva prima, ovvio che se li abbandoniamo loro stessi è poi più difficile pretendere che si accorgano anche delle nuove minacce, anche perché, ripeto, l'evoluzione, la tua minaccia è costante.
+
+00:24:03.051 --> 00:24:14.751
+<v SPEAKER_1>E purtroppo il mondo della security, come sappiamo, strutturalmente, da sempre, si muove a seguito di una minaccia rilevata.
+
+00:24:14.751 --> 00:24:25.111
+<v SPEAKER_1>Per questo oggi è diventato molto importante, o comunque ha assunto una elevata importanza, la threat intelligence, perché prima sappiamo cosa cercare e prima riusciamo a fare detection.
+
+00:24:26.391 --> 00:24:33.451
+<v SPEAKER_1>Non mi vengono in mente situazioni in cui il mondo della security ha anticipato il fatto che sarebbero arrivate delle nuove minacce.
+
+00:24:33.511 --> 00:24:36.851
+<v SPEAKER_1>Non mi vengono in mente situazioni di questo tipo, non me le vengono in mente.
+
+00:24:36.851 --> 00:24:44.151
+<v SPEAKER_1>Di solito scopriamo che c'è un certo tipo di minaccia e quindi adeguiamo i prodotti e sistemi di sicurezza, di solito.
+
+00:24:46.551 --> 00:24:57.811
+<v SPEAKER_2>Hai detto una cosa interessante che volevo sottolineare, nel senso che l'EDR può avere necessità di un po di tempo per rilevare effettivamente una minaccia.
+
+00:24:57.811 --> 00:25:18.331
+<v SPEAKER_2>Questa cosa fa un po il paio con un messaggio che sto cercando di far passare ai miei clienti sempre appunto in un ambito manufatturiero tipicamente, dove non è necessario un presidio continuo e istantaneo della soluzione, perché molto spesso una minaccia dura un tempo abbastanza lungo.
+
+00:25:18.331 --> 00:25:34.291
+<v SPEAKER_2>Quindi essere lì pronti H24 con quei stock pieni di monitor a pareti che fa molto scena in realtà è una mentalità secondo me un po vecchia e soprattutto non così importante rispetto altre caratteristiche.

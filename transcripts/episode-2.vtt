@@ -1,0 +1,415 @@
+WEBVTT
+
+00:00:00.020 --> 00:00:18.800
+<v SPEAKER_1>La parte di rischio secondo me è sempre una cosa un po stratta, quindi nella diffusione di rischio magari la sto banalizzando, ma per il piacere di chi ascolta, intanto il rischio è applicato a uno scenario, quindi lo scenario in cui accade qualcosa e poi c'è la probabilità che questo accade e il danno che può procurare.
+
+00:00:18.840 --> 00:00:24.400
+<v SPEAKER_1>In base a questo posso fare tutti i miei ragionamenti in base al mio modello di gestione del rischio.
+
+00:00:25.440 --> 00:00:28.160
+<v SPEAKER_1>Però, per come lo percepisco io, è sempre una cosa stratta.
+
+00:00:28.860 --> 00:00:42.940
+<v SPEAKER_1>Quindi il classico, non mi hanno mai attaccato, ammesso che io lo sappia o no, perché poi anche qua c'è da dire, non è detto che sia reale e se non è mai successo accadrà in futuro nel prossimo periodo, eccetera.
+
+00:00:44.160 --> 00:01:01.520
+<v SPEAKER_1>Quello che io trovo utile in qualche modo, quella che chiamo un po per farmi capire la prova del nuovo è dire ok, ma ho fatto delle cose, ho costruito la mia infrastruttura, ho applicato degli strati di sicurezza, ho fatto il mio piano ddr, nella mia mente ho fatto le cose fatte per bene.
+
+00:01:01.520 --> 00:01:05.560
+<v SPEAKER_1>E qua sta l'errore secondo me, nella mia mente.
+
+00:01:05.560 --> 00:01:16.700
+<v SPEAKER_1>La mia mente a volte è figlia un po del mainstream e di quella mia bolla che io frequento, ma non è detto che sia una cartina di tornasole della realtà.
+
+00:01:16.700 --> 00:01:28.960
+<v SPEAKER_1>No, quindi la domanda che io faccio a chi, ai miei clienti eccetera eccetera è mai mai fatto in qualche modo una prova del nome della tua infrastruttura, no, tiene regge in caso di attacco.
+
+00:01:28.960 --> 00:01:48.440
+<v SPEAKER_1>E in questo mi viene in mente, ad esempio, l'esperimento, per meglio dire che abbiamo fatto alcuni mesi fa sugli edr, no, quindi hai scritto un semplice malware, l'abbiamo verificato contemporaneamente grazie alla platea che avevamo su diversi edr e abbiamo scoperto che le cose non stavano esattamente come ci era stato raccontato.
+
+00:01:48.440 --> 00:02:04.760
+<v SPEAKER_1>No, mesi e mesi di indagine ci hanno permesso di capire che non necessariamente è un errore, ma è semplicemente una scelta by design di implementare o meno determinate regole di detection.
+
+00:02:06.020 --> 00:02:27.640
+<v SPEAKER_1>Che in realtà è una cosa enorme, nel senso che cobrare una soluzione, credere che vi protegga e scoprire in realtà che mi manca un pezzettino, perché by design quella soluzione prevede un piccolo passo in più, piccolo non è, piuttosto che scegliere un'altra soluzione che quel passo ce l'ha imbedded, è un mondo completamente diverso.
+
+00:02:27.640 --> 00:02:48.580
+<v SPEAKER_1>Quindi io credo, perché questo viene molto dal mondo della compliance, adesso magari sarò fuori coro però spesso nella compliance, la compliance lo fanno persone che non hanno una base tecnica, non hanno capacità tecniche specifiche, non hanno un'esperienza tecnica, sanno di cosa sta parlando, non voglio sminuirle, ma qua stiamo scendendo tanto nel tecnico.
+
+00:02:48.920 --> 00:02:58.080
+<v SPEAKER_1>Ci stiamo chiedendo, ma un EDR in quali casi mi blocca la mia minaccia e in quali casi la fa passare?
+
+00:02:58.080 --> 00:03:00.660
+<v SPEAKER_1>Perché il rischio è completamente diverso.
+
+00:03:01.840 --> 00:03:11.860
+<v SPEAKER_1>Provo a semplificare, soluzione A ho embedded qualche migliaio di regole che mi riduce il rischio su un migliaio di scenari.
+
+00:03:11.860 --> 00:03:25.000
+<v SPEAKER_1>Soluzione B embedded ha un asset di regole che mi blocca 100 scenari e i rimanenti 2.000 scenari mi devo costruire delle regole a mano o il mio partner lo deve fare per me.
+
+00:03:25.000 --> 00:03:33.440
+<v SPEAKER_1>La soluzione B è più economica, io che non me ne intendo A e B stanno sul quadrante in alto a destra di Gartner, uno un po più su uno, un po meno.
+
+00:03:33.440 --> 00:03:39.620
+<v SPEAKER_1>Bene, i feature sulla carta sono uguali, a questo punto vado sul conto economico e scelgo quella più economica.
+
+00:03:39.620 --> 00:03:47.320
+<v SPEAKER_1>Il rischio è più o meno uguale, sono buone tutte e due, eh no, il rischio non è uguale, cioè la riduzione del rischio non è uguale, è completamente diversa, no?
+
+00:03:47.320 --> 00:03:51.200
+<v SPEAKER_1>Quindi chi viene dal mondo della compliance o l'antimalware?
+
+00:03:51.200 --> 00:03:52.440
+<v SPEAKER_1>Sì, è una bella soluzione.
+
+00:03:52.440 --> 00:03:54.580
+<v SPEAKER_1>Sì, a posto, rischio ridotto?
+
+00:03:54.580 --> 00:03:56.880
+<v SPEAKER_1>No, no, assolutamente no.
+
+00:03:57.280 --> 00:04:00.100
+<v SPEAKER_1>Come la vedi, quella che io chiamo prova del nove?
+
+00:04:00.100 --> 00:04:09.680
+<v SPEAKER_2>Allora, lì ci sono varie, varie, diciamo, varie aspetti che si potrebbero considerare in ambito, in ambito compliance, ad esempio.
+
+00:04:09.680 --> 00:04:22.440
+<v SPEAKER_2>E si potrebbe comunque fare un lavoro molto utile perché io lo considero comunque un elemento che potrebbe accendere, che porta comunque l'intervuto ad affarsi delle domande.
+
+00:04:22.440 --> 00:04:26.160
+<v SPEAKER_2>Quindi, di per sé, è già un buon punto di partenza il fatto che ci si faccia le domande.
+
+00:04:26.160 --> 00:04:34.900
+<v SPEAKER_2>Poi c'è il problema di dover rispondere sinceramente, questo è un piccolo dettaglio, cioè bisogna cercare di essere veramente obiettivi quando si fa questa risposta.
+
+00:04:36.400 --> 00:04:43.860
+<v SPEAKER_2>Però qua il suggerimento, lo sappiamo già, qual è se qualcuno affronta quel percorso che lo faccia con delle figure esterne.
+
+00:04:43.860 --> 00:04:49.320
+<v SPEAKER_2>Cioè non da solo, perché sennò rischia di essere troppo viziato.
+
+00:04:49.320 --> 00:05:07.800
+<v SPEAKER_2>Almeno io ho notato, io non faccio compliance, però ho assistito a più situazioni in cui un'azienda con cui stavo collaborando, più aziende con cui ho collaborato, hanno affrontato questo tipo di percorso per le classiche ISO 27000, potremmo citare 3 o 4.
+
+00:05:07.800 --> 00:05:13.740
+<v SPEAKER_2>Mi è capitata anche una PCI DSS per dire, c'era una anche bella tosta come percorso.
+
+00:05:14.760 --> 00:05:23.880
+<v SPEAKER_2>Il valore, cioè cambiava notevolmente il fatto di avere una figura esterna che in qualche modo forzava la mano sull'indagine.
+
+00:05:23.880 --> 00:05:34.720
+<v SPEAKER_2>Quindi essere anche una figura esterna, diciamo che sa fare bene quel pezzo di attività, cioè ha il ruolo di mettere in dubbio, non ha il ruolo di trascrivere la risposta.
+
+00:05:34.920 --> 00:05:41.360
+<v SPEAKER_2>Deve poter indagare su quello che viene messo sotto audit.
+
+00:05:41.360 --> 00:05:46.240
+<v SPEAKER_2>Quello può aiutare molto per accendere un pochino di sentimenti e anche un po di neuroni.
+
+00:05:47.460 --> 00:05:59.100
+<v SPEAKER_2>Poi c'è un tema tecnico che è quello che sicuramente andremo a trasferire in un'altra situazione, cioè sull'ambito EDR c'è il malinteso appunto di cosa gli EDR sono in grado di vedere.
+
+00:05:59.880 --> 00:06:12.440
+<v SPEAKER_2>Potremmo semplificarlo in vedono tutto, ma il concetto di Detection non è basato su quello che vedo, ma è basato appunto, come dicevi tu, su quello che ho deciso di mettere in evidenza.
+
+00:06:12.440 --> 00:06:15.380
+<v SPEAKER_2>E sono una serie di eventi, non è mai un singolo evento.
+
+00:06:16.400 --> 00:06:30.900
+<v SPEAKER_2>Per tornare al sperimento che abbiamo fatto assieme all'estate scorsa, ovviamente siamo colpevoli del fatto che abbiamo volutamente scelto una debolezza degli EDR.
+
+00:06:30.900 --> 00:06:45.440
+<v SPEAKER_2>Cioè il fatto che alcune cose appunto che sono ben visibili e quindi quasi tutti gli EDR in configurazione default le rilevano come potenzialmente malevole.
+
+00:06:45.440 --> 00:06:51.120
+<v SPEAKER_2>Altre attività in configurazione default non è detto che vengono viste immediatamente come malevole.
+
+00:06:51.620 --> 00:06:56.400
+<v SPEAKER_2>Potrebbero dover innescarsi altri meccanismi prima che l'EDR le veda come malevole.
+
+00:06:56.400 --> 00:06:59.880
+<v SPEAKER_2>Tra l'altro al talk di Akinbo c'è stato un altro esempio di questo tipo.
+
+00:06:59.880 --> 00:07:06.300
+<v SPEAKER_2>Quello, l'ultimo talk che è stato fatto riprendeva proprio un pezzo di questo tema.
+
+00:07:07.580 --> 00:07:09.680
+<v SPEAKER_2>E lì c'è tutto il tema della gestione dell'EDR.
+
+00:07:09.680 --> 00:07:16.800
+<v SPEAKER_2>Quindi questa cosa probabilmente la trasferiamo a quando parliamo di EDR, ma il nocciolo è proprio...
+
+00:07:16.800 --> 00:07:19.280
+<v SPEAKER_2>come interpretiamo l'utilizzo dell'EDR.
+
+00:07:23.420 --> 00:07:24.740
+<v SPEAKER_1>Hai detto...
+
+00:07:24.740 --> 00:07:28.280
+<v SPEAKER_1>scusami così, ti lascio un secondo.
+
+00:07:28.280 --> 00:07:30.040
+<v SPEAKER_1>Hai detto una cosa che volevo precisare.
+
+00:07:30.040 --> 00:07:50.000
+<v SPEAKER_1>Decido cosa vedere e scusami se lo sottolineo, ma mi piace perché questa domanda è la risposta per cui c'è un percepito, di solito tardivo dopo gli attacchi, che i SOC funzionano male, hanno avuto dei problemi eccetera, non hanno visto eccetera.
+
+00:07:50.000 --> 00:07:53.460
+<v SPEAKER_1>La domanda in realtà è prima, ma che cosa ho deciso di vedere?
+
+00:07:53.460 --> 00:07:55.880
+<v SPEAKER_1>Perché tutta là la domanda secondo me.
+
+00:07:56.100 --> 00:08:00.860
+<v SPEAKER_1>E la risposta poi è che cosa miglioro del mio servizio SOC?
+
+00:08:00.860 --> 00:08:04.220
+<v SPEAKER_1>Scusami, ma mi piaceva particolarmente, quindi ti ho...
+
+00:08:04.720 --> 00:08:10.460
+<v SPEAKER_2>Ma è un tema che poi torna, perché in realtà non è una cosa specifica dell'EDR.
+
+00:08:10.460 --> 00:08:22.040
+<v SPEAKER_2>Quasi tutte le soluzioni di security si portano dietro una serie di configurazioni, che inevitabilmente ci portano a dover prendere delle decisioni.
+
+00:08:22.040 --> 00:08:30.300
+<v SPEAKER_2>Quindi devo fare delle scelte nel momento in cui abilito o non abilito certe funzionalità o integro con delle regole esterne o meno.
+
+00:08:31.580 --> 00:08:41.360
+<v SPEAKER_2>Io devo, giusto per non colpevolizzare il mondo di EDR, magari sembra che siano degli elementi non validi, sono elementi validissimi.
+
+00:08:43.180 --> 00:08:55.980
+<v SPEAKER_2>Di solito se si segue un vendor EDR, a prescindere dal vendor, e si fa vedere bene quello che viene proposto nelle best practices, queste cose sono ben segnalate.
+
+00:08:56.280 --> 00:09:15.640
+<v SPEAKER_2>Cioè il fatto che l'EDR vada integrato, o arricchito di ogni un uso dei suoi termini, è una cosa ben definita negli step di configurazione di un EDR, idem per i firewall, idem per gli DS, per qualsiasi soluzione che in qualche modo va configurata, è una cosa ben chiara.
+
+00:09:15.640 --> 00:09:40.560
+<v SPEAKER_2>Quindi il problema che spesso notiamo, su cui abbiamo basato quel giochetto con il file Smallware, è un problema in realtà di come vengono implementati, o meglio, vengono magari implementati bene, ma se poi nessuno li gestisce, arrivi a questo rischio di arrivare a un problema di copertura effettivamente.
+
+00:09:40.600 --> 00:09:42.300
+<v SPEAKER_2>Anche perché gli EDR.
+
+00:09:42.300 --> 00:09:56.820
+<v SPEAKER_2>Poi magari nel podcast potresti mettere quel link del Maitre, che è agnostico, dove c'è la comparazione su degli scenari nel comportamento di vari EDR.
+
+00:09:56.820 --> 00:10:13.640
+<v SPEAKER_2>Giusto per farci anche un'idea di cosa vuol dire il comportamento degli EDR rispetto a uno scenario, che è un conto di vedere se gli EDR becca un malware, un comportamento anomalo, però dipende anche dallo scenario in cui viene implementato e come viene implementato.
+
+00:10:13.640 --> 00:10:16.280
+<v SPEAKER_2>Quindi sono diversi aspetti da considerare.
+
+00:10:17.640 --> 00:10:40.480
+<v SPEAKER_1>Hai detto una cosa interessante, che nella scelta della tecnologia, di fatto io devo conoscere in modo profondo il contesto in cui in quella tecnologia opera, altrimenti rischio di prendere degli abbagli, che è quello che cercavo di spiegare io, e dare per soluzione completa qualcosa che magari richiede degli step ulteriori.
+
+00:10:40.480 --> 00:11:02.320
+<v SPEAKER_1>A mio parere, però, chi fa quel tipo di scelta di tecnologia, parlo delle aziende della nostra zona, quindi tipicamente i manufatturieri industriali, con un reparto IT interessante, però che è tipicamente spostato nell'ambito sistemistico e applicativo.
+
+00:11:02.320 --> 00:11:15.840
+<v SPEAKER_1>Io non vedo questa capacità, diciamo, di analisi di una soluzione e non c'è, non di solito non hanno neanche il tempo, che gli permetta poi di sceglierla in modo corretto.
+
+00:11:15.840 --> 00:11:27.220
+<v SPEAKER_1>Quindi avere più vendor, sceglierla, valutare i vari vendor, non dico provarli sul campo, perché spesso sul campo non è possibile, un EDR è possibile provarlo sul campo.
+
+00:11:27.240 --> 00:11:36.020
+<v SPEAKER_1>Una soluzione di firewall non è possibile, uno non può tipicamente sostituirlo per prova o crearsi un ambiente parallelo di prova.
+
+00:11:37.440 --> 00:11:54.880
+<v SPEAKER_1>E quindi le aziende un po più illuminate che io vedo chiedono ad esterni, a persone fidate che nonostante il loro ruolo gli assicurano per prima cosa una posizione super partes, un aiuto per valutarle queste soluzioni, queste differenze.
+
+00:11:56.920 --> 00:12:10.180
+<v SPEAKER_2>Può essere una buona via, c'è nel mondo perfetto un'azienda strutturata a un ciso che è in grado di fare delle valutazioni sulle esigenze dell'organizzazione.
+
+00:12:12.420 --> 00:12:35.220
+<v SPEAKER_2>Questo è un tema che è stato toccato da alcuni ciso, quindi cito parole di persone terze con cui concordo, che è relativamente facile nel momento in cui questa figura ha una competenza anche tecnica, e quindi viene da un percorso che gli consente di fare una valutazione tecnica.
+
+00:12:35.220 --> 00:12:42.100
+<v SPEAKER_2>Altrimenti rischia di fare delle valutazioni su carta, proprio perché non puoi provarle, e quindi devi fare delle valutazioni su carta.
+
+00:12:42.100 --> 00:13:02.760
+<v SPEAKER_2>Che non sempre è un male, nel senso che credo profondamente che salvo situazioni in cui la tecnologia è per qualche ragione vetusta, una buona implementazione di una tecnologia, che appunto non è proprio da buttare via, porta dei risultati.
+
+00:13:02.760 --> 00:13:28.780
+<v SPEAKER_2>Quindi la scelta della tecnologia penso debba prendere in considerazione elementi come la qualità del prodotto, ma anche le skill che hai all'interno della struttura, il partner con cui vuoi fare quell'implementazione, la vision del vendor a cui ti stai affidando, cioè dal punto di vista della selezione, è bene far concorrere tanti elementi oltre all'aspetto prettamente tecnico.
+
+00:13:28.780 --> 00:13:39.540
+<v SPEAKER_2>Io posso prendere una bellissima tecnologia oggi di un'azienda che non ha una buona vision, è successo che un vendor nel giro di qualche anno diventasse un vendor di serie B.
+
+00:13:39.540 --> 00:13:42.700
+<v SPEAKER_2>Capitato per scelte sbagliate.
+
+00:13:42.700 --> 00:13:56.980
+<v SPEAKER_2>È difficile avere l'occhio così attento per vedere tutto, quindi bisogna anche confrontarsi con altre figure che possono essere dei consulenti, possono essere persone che fanno il nostro stesso mestiere, c'è anche altri CSO, altri security manager.
+
+00:13:56.980 --> 00:14:17.100
+<v SPEAKER_2>Ci sono diverse occasioni per fare questo tipo di confronto e farsi un'idea meno mainstream possibile di quelle che sono le tecnologie e i vendor con cui si potrebbe provare a fare un ragionamento e poi cercare di selezionare quello che è più coerente con la nostra esigenza.
+
+00:14:18.700 --> 00:14:34.860
+<v SPEAKER_1>Hai detto un'altra cosa secondo me interessantissima, che è in qualche modo l'affidabilità del vendor, che la vedo sia, come dici tu, nella capacità della vision del vendor, di essere adeguato, di guardare al futuro e non di sedersi sugli allori.
+
+00:14:34.860 --> 00:14:46.680
+<v SPEAKER_1>Ma una delle cose che mi affascina e mi spaventa sono le cosiddette startup, dei vendor che hanno anche un'idea geniale e magari implementata più o meno bene.
+
+00:14:46.840 --> 00:14:51.480
+<v SPEAKER_1>Sicuramente, essendo una startup, probabilmente qualche errore di gioventù ce l'ama.
+
+00:14:51.480 --> 00:14:53.460
+<v SPEAKER_1>Non è neanche quello che mi spaventa.
+
+00:14:53.460 --> 00:14:58.780
+<v SPEAKER_1>Quello che mi spaventa è che a un certo punto il vendor sparisca perché è comprato da qualcun altro.
+
+00:14:58.780 --> 00:15:11.680
+<v SPEAKER_1>E quindi magari un'azienda che ha basato una parte della sua infrastruttura su una specifica tecnologia si trova un po nell'oblio e non sa di che morte morire.
+
+00:15:11.680 --> 00:15:29.380
+<v SPEAKER_1>Questo è il mio personale dubbio su molte startup dalle idee veramente geniali, ma che mi chiedo se questa startup esisterà fra 2, 3, 4, 5 anni o verrà inglobata e sparirà a favore di e potremmo fare tantissimi nomi di esempio su questa cosa.
+
+00:15:29.380 --> 00:15:37.080
+<v SPEAKER_2>Ho parlato con alcuni ciso che si sono dati una politica per fare questo tipo di ragionamento.
+
+00:15:37.120 --> 00:15:45.780
+<v SPEAKER_2>Quindi, tengono molto sotto occhio le startup, ma non implementano nulla che non abbia un certo grado di maturità.
+
+00:15:45.780 --> 00:16:06.500
+<v SPEAKER_2>Però le osservano molto da vicino, quindi probabilmente sono anche pronti a implementare al momento in cui dal loro punto di vista la startup è diventata qualcosa di più maturo, magari ha già un posizionamento sul mercato, ha anche dei feedback quindi dal mercato e valutano se gli piaceva il modo in cui lavorava, valutano se implementare o meno quel tipo di soluzione.
+
+00:16:07.880 --> 00:16:11.700
+<v SPEAKER_2>Poi c'è da dire che le soluzioni hanno anche rischi diversi.
+
+00:16:11.700 --> 00:16:22.360
+<v SPEAKER_2>Un conto è selezionare il firewall su cui baserai l'SD1 o la soluzione Netro Security per le tue 40 sedi, è un certo tipo di impatto.
+
+00:16:22.360 --> 00:16:34.040
+<v SPEAKER_2>Un conto è valutare il software o comunque l'applicazione per iniziare a fare threat intelligence all'interno della tua organizzazione, cyber threat intelligence.
+
+00:16:36.160 --> 00:16:45.400
+<v SPEAKER_2>E spiacevole fare un errore di valutazione, ma se sbagli la soluzione per fare cyber threat intelligence non è che devi fare un refactoring dell'architettura dopo.
+
+00:16:45.400 --> 00:16:49.740
+<v SPEAKER_2>Cambi soluzione e magari riadegui dei processi, riadegui delle integrazioni.
+
+00:16:49.740 --> 00:16:55.700
+<v SPEAKER_2>Cioè l'impatto che hai se fai un errore su quel tipo di soluzione è diverso rispetto a un altro tipo di soluzione.
+
+00:16:55.700 --> 00:17:06.660
+<v SPEAKER_2>Quindi non voglio fare il lavoro dei CISO che è complicatissimo, però si possono permettere dei margini di manovra su alcune soluzioni rispetto invece in altre magari meno.
+
+00:17:08.380 --> 00:17:15.420
+<v SPEAKER_1>Mi dici in mente su questo discorso qua, su cui mi trovi completamente d'accordo che alcune soluzioni sono facili da sostituire.
+
+00:17:15.420 --> 00:17:21.520
+<v SPEAKER_1>Hai nominato una soluzione tra intelligence, ma è venuto in mente un antispam, per cui sto lavorando.
+
+00:17:21.520 --> 00:17:30.220
+<v SPEAKER_1>Un antispam è abbastanza facile da sostituire, non vai a dover ripensare completamente l'infrastruttura.
+
+00:17:30.300 --> 00:17:34.500
+<v SPEAKER_1>Un componente atomico si sposta relativamente facilmente.
+
+00:17:35.580 --> 00:17:45.400
+<v SPEAKER_1>Qualche anno fa ho visto, e credo anche di aver contiviso, delle linee guida sull'uso dei cloud da parte del settore bancario-finanziario.
+
+00:17:45.440 --> 00:17:56.720
+<v SPEAKER_1>Quindi in questo forum si consigliava di avere un exit strategy dal cloud pubblico, dove venivano intesi AWS, Azure, eccetera, eccetera.
+
+00:17:56.720 --> 00:18:09.400
+<v SPEAKER_1>Io credo che questa linea guida sia stata completamente inascoltata, ma in realtà, leggerla mi ha riportato alla mente due cose, che discuteremo ancora in un'altra nota più avanti.
+
+00:18:09.400 --> 00:18:12.840
+<v SPEAKER_1>Una, da una parte, è il avere sempre il piano B.
+
+00:18:12.880 --> 00:18:41.300
+<v SPEAKER_1>E quindi dire, se il mio cloud domani fallisce o semplicemente, ed è la seconda cosa, se il mio cloud decide, quello che sta succedendo impropriamente, di aumentare le tariffe continuamente, io ho fatto sì lock-in, perché nel momento che io vado in una soluzione cloud di quel tipo, in qualche modo faccio lock-in, perché non è che domani posso decidere di uscire da quell'infrastruttura e spostarmi completamente su un'altra.
+
+00:18:42.540 --> 00:18:56.000
+<v SPEAKER_1>Ma avere questo piano mi permette di almeno farmi la domanda, che è quello che dicevi prima, che mi è piaciuta, la compliance aiuta a farsi delle domande, per poi uscire.
+
+00:18:56.000 --> 00:19:04.080
+<v SPEAKER_1>Come esco da un'infrastruttura basata su cloud di terzi in tempi relativamente brevi?
+
+00:19:04.080 --> 00:19:23.360
+<v SPEAKER_1>Lo faccio, ci esco, se prima di andare in quell'infrastruttura il mio sistema di provisioni è basato in quello che viene detto infrastruttura saccode o in qualche modo posso ricostruirmi la mia infrastruttura per fini di DR, vuoi proprio per uscire da quello, in modo abbastanza semplice.
+
+00:19:23.360 --> 00:19:26.060
+<v SPEAKER_1>Però sarebbe un altro tema enorme.
+
+00:19:26.960 --> 00:19:33.520
+<v SPEAKER_1>E ti propongo invece di fare un po la chiusura di questo che ci siamo detti fino adesso.
+
+00:19:33.520 --> 00:19:37.240
+<v SPEAKER_1>Quindi l'argomento iniziale era l'orchestrazione delle soluzioni di sicurezza.
+
+00:19:38.180 --> 00:19:41.020
+<v SPEAKER_1>Adesso vado un po a ricordo di quello che ci siamo detti.
+
+00:19:41.020 --> 00:20:03.560
+<v SPEAKER_1>Quindi ci siamo finiti, ci siamo accorti di questa necessità, perché da un punto di vista delle aziende si è effettuato un accumulo di strati di livelli di sicurezza per ridurre dei rischi, rischi che in realtà sono più sentiti da un punto di vista emotivo, ma in realtà non sono poi così misurati.
+
+00:20:04.380 --> 00:20:20.180
+<v SPEAKER_1>Quindi abbiamo parlato della necessità anche grazie alla compliance di misurare in modo più deterministico questi rischi, di integrare prima di scegliere le soluzioni, chiedersi come possono essere integrate.
+
+00:20:21.240 --> 00:20:26.560
+<v SPEAKER_1>Maccava un perché, perché vogliamo fare questa cosa di cominciare a integrare queste soluzioni di sicurezza?
+
+00:20:26.560 --> 00:20:43.940
+<v SPEAKER_1>Allora a me viene in mente sicuramente per averle gestite, per ridurre il costo operativo, per presidiarle, perché se no una soluzione di sicurezza non presidiata secondo me è utile diciamo fin là.
+
+00:20:44.980 --> 00:20:56.220
+<v SPEAKER_1>Per avere auspicavilmente in un futuro quello che viene detto single pin of class, quindi una sorta di dashboard mitologica che mi permette di tenere sott'occhio quello che sta accadendo.
+
+00:20:56.220 --> 00:21:01.520
+<v SPEAKER_1>Non so se vuoi aggiungere qualcosa prima di passare ai prossimi argomenti.
+
+00:21:01.560 --> 00:21:09.900
+<v SPEAKER_2>No, ma in realtà anche su me sono questi gli elementi che danno una motivazione valida per intraprendere un certo percorso.
+
+00:21:09.900 --> 00:21:14.720
+<v SPEAKER_2>Non ultimo è, potremmo sintesizzare, una sorta di ritorno degli investimenti.
+
+00:21:14.720 --> 00:21:24.680
+<v SPEAKER_2>Nel momento in cui ho fatto una spesa, ho investito dei soldi in una soluzione che mi deve restituire qualcosa se non la utilizzo correttamente, non me lo restituisce, molto semplicemente.
+
+00:21:24.680 --> 00:21:29.000
+<v SPEAKER_2>Quindi non sto mitigando da un lato a un lato, ho speso male i miei soldi.
+
+00:21:29.680 --> 00:21:37.180
+<v SPEAKER_2>E dall'alto ho ancora il rischio, quindi non ho neanche il beneficio di averli spesi proprio pratico.
+
+00:21:38.880 --> 00:21:41.300
+<v SPEAKER_1>Assolutamente.
+
+00:21:41.300 --> 00:21:46.100
+<v SPEAKER_1>Bene, io chiuderei questa lunga sezione.
+
+00:21:46.100 --> 00:21:49.180
+<v SPEAKER_1>Ho perso il conto, ma credo che siamo vicini all'oretta.
+
+00:21:49.880 --> 00:21:58.620
+<v SPEAKER_1>E poi eventualmente ne apriamo altri, di argomenti ne abbiamo già spoilerati, tra la gestione e vulnerabilità, i miti dell'EDR, mi piaceva così.
+
+00:21:58.620 --> 00:22:00.260
+<v SPEAKER_1>Come coprire una tecnologia.
+
+00:22:02.080 --> 00:22:07.580
+<v SPEAKER_1>C'è un detto poi di conoscita e stesso.
+
+00:22:07.580 --> 00:22:12.160
+<v SPEAKER_2>Poteva essere una parentesi su come noi formiamo le nostre credenze.
+
+00:22:14.180 --> 00:22:16.920
+<v SPEAKER_1>Esatto.
+
+00:22:16.980 --> 00:22:29.840
+<v SPEAKER_1>Ebbene, e quindi possiamo dare il via a questa prima live pubblica, sperando la prossima volta dicano un po di gestione social, di avere qualche domanda al volo a cui rispondere.
+
+00:22:31.280 --> 00:22:32.300
+<v SPEAKER_2>Bene, ci vediamo.
+
+00:22:32.300 --> 00:22:34.920
+<v SPEAKER_1>Bene, grazie, alla prossima.
+
+00:22:34.920 --> 00:22:35.200
+<v SPEAKER_2>Bye bye.

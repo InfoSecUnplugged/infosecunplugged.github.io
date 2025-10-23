@@ -1,0 +1,736 @@
+WEBVTT
+
+00:00:08.378 --> 00:00:12.758
+<v SPEAKER_2>Ben tornati a Info Sec. Unplugged, io sono Andrea Dainese, come sempre c'è Rocco Sicilia.
+
+00:00:12.758 --> 00:00:13.398
+<v SPEAKER_2>Ciao Rocco.
+
+00:00:13.398 --> 00:00:15.138
+<v SPEAKER_1>Ciao a tutti.
+
+00:00:15.138 --> 00:00:24.858
+<v SPEAKER_2>E ben tornati in questa puntata di quasi Ferragosto, per noi che registriamo, per voi che ascoltate, e mi auguro sia già settembre inoltrato.
+
+00:00:24.858 --> 00:00:38.438
+<v SPEAKER_2>L'altra volta ci siamo lasciati, ormai sono passati i due mesi, e questo indice che sia io che Rocco siamo piuttosto occupati e le nostre agende sono un po troppo piene, sature, soprattutto in questa estate.
+
+00:00:38.438 --> 00:00:51.378
+<v SPEAKER_2>Ci eravamo lasciati, o meglio, avevamo parlato di EDR e SIEM, avevamo fatto una lunghissima introduzione sui dati, pro dell'una, pro dell'altra, le EDR sostituiranno in SIEM, poi alla fine questa cosa non è vera.
+
+00:00:51.378 --> 00:01:38.578
+<v SPEAKER_2>Insomma non c'è una soluzione valida per tutti, però ogni contesto dovrebbe un po riflettere su come approcciare questa sicurezza, e avevamo lasciato aperto la domanda, i compiti per casa, su come poi possiamo fare il salto in avanti evolutivo per usare questa piattaforma, ma in maniera contributiva, ossia da una parte ricevere i dati esterni, arricchire quello che abbiamo con delle informazioni esterne, e dall'altra, magari in una futura puntata, contribuire a noi con le nostre riflessioni, con le nostre analisi, a una community, e quindi aiutare gli altri.
+
+00:01:38.578 --> 00:01:39.218
+<v SPEAKER_1>Fatto.
+
+00:01:39.238 --> 00:01:43.058
+<v SPEAKER_2>Un tema piccolissimo, quindi, Fatta, dove partiamo?
+
+00:01:44.358 --> 00:01:56.938
+<v SPEAKER_1>Partirei dalle fondamenta, quindi come ci siamo detti l'altra volta, partiamo dal fatto che alcune informazioni, noi sappiamo che ce le abbiamo all'interno delle soluzioni che usiamo.
+
+00:01:57.638 --> 00:02:18.798
+<v SPEAKER_1>Nel caso degli EDR, degli XDR, oltre ai log che vengono, alle telemetrie che vengono raccolte, per generare detection sappiamo che queste telemetrie vengono osservate, analizzate e scatta un allarme quando si osserva qualcosa, diciamo di noto, comunque di riconoscibile in qualche misura.
+
+00:02:20.038 --> 00:02:35.758
+<v SPEAKER_1>A volte sono elementi molto statici, ad esempio l'EDR osserva un eseguibile di cui calcola l'ash e conoscendo gli ash di alcuni malware fa scattare l'allarme, questo è il caso più banale che facevano anche gli antivirus.
+
+00:02:35.758 --> 00:03:06.498
+<v SPEAKER_1>Casi più complessi, e resto sempre sull'EDR che è più interessante come ragionamento, ciò che viene riconosciuto non è il singolo elemento, il file, l'URL, l'IP, ma è un comportamento, quindi noto un processo che si avvia e apre una chiamata HTTP verso un IP sospetto, diciamo così, poi magari specificiamo meglio cosa vuol dire sospetto o malevolo, e riconosco quel comportamento come malevolo e quindi faccio partire un allarme.
+
+00:03:06.498 --> 00:03:14.278
+<v SPEAKER_1>Ok, questo è diciamo, ho sintetizzato in pochissimi secondi un'ora di chiacchera che mi ho fatto l'altra volta.
+
+00:03:14.278 --> 00:03:16.238
+<v SPEAKER_2>Mi scappa però una digressione.
+
+00:03:16.238 --> 00:03:20.418
+<v SPEAKER_2>Tu hai detto sappiamo che abbiamo i dati, e soccito più o meno quello che hai detto.
+
+00:03:20.418 --> 00:03:35.138
+<v SPEAKER_2>Volevo raccontare un fatto che è avvenuto con le persone che conosco, sul fatto che l'idea era buttiamo nel CM tutti i log che abbiamo così siamo sicuri di averli.
+
+00:03:35.138 --> 00:03:50.938
+<v SPEAKER_2>Ora, un po di spoiler, non è così, non è stato così, nel senso che poi quando c'è stato effettivamente l'incident da analizzare, che non era un incidente diciamo catastrofico, comunque meritava attenzione, si è scoperto che quei log non c'erano.
+
+00:03:50.938 --> 00:03:59.678
+<v SPEAKER_2>Ecco, nel buttare i log su un CM, invece di approcciare al buttiamo tutto quello che possiamo, che tra l'altro ha un costo che potrebbe essere anche importante.
+
+00:04:00.538 --> 00:04:01.938
+<v SPEAKER_1>Licensing?
+
+00:04:01.938 --> 00:04:03.058
+<v SPEAKER_2>Esatto.
+
+00:04:03.058 --> 00:04:14.718
+<v SPEAKER_2>Vorrei suggerire di riflettere a scenario, cioè quali scenari noi pensiamo di coprire con la nostra struttura di gestione CM, gestione log in generale.
+
+00:04:15.298 --> 00:04:40.838
+<v SPEAKER_2>Quindi nel caso specifico se noi vogliamo gestire banalmente una truffa che viene attraverso phishing e poi si riflette su Office 365, ecco magari quei log li dobbiamo portare in casa e verifichiamolo, perché non è detto che i log che ci servono in fase di analisi siano compresi in quelli generici di default che buttiamo tutti da qualche parte.
+
+00:04:40.838 --> 00:04:41.638
+<v SPEAKER_1>Sì, sì.
+
+00:04:41.638 --> 00:04:55.378
+<v SPEAKER_1>Allora questa cosa poi ritornerà in una chiacchiera più avanti perché a seguito di un'altra chiacchierata che mi è capitata di fare con un seguito di ingegner molto in gamba di un'azienda, non possiamo citare, è stata una chiacchiera così fugace al telefono.
+
+00:04:55.378 --> 00:04:59.178
+<v SPEAKER_1>Beh, ho fatto due ore di chiacchierate, di elucubrazioni sul mondo CM.
+
+00:04:59.178 --> 00:05:04.138
+<v SPEAKER_1>Lui proprio mi aveva raccontato del suo processo di qualifica dei log.
+
+00:05:04.138 --> 00:05:13.358
+<v SPEAKER_1>Per lui era molto importante e ha ragionissima secondo me andare a qualificare esattamente le sorgenti dei dati e il tipo di dati che poteva emettere sul CM.
+
+00:05:13.538 --> 00:05:22.998
+<v SPEAKER_1>Perché, e questa cosa la approfondiremo, le regole di detection si devono basare su un tipo di dato che tu sai che stai acquisendo.
+
+00:05:22.998 --> 00:05:25.518
+<v SPEAKER_1>Quindi l'erovacelenauglia qual è?
+
+00:05:25.518 --> 00:05:37.698
+<v SPEAKER_1>Che se butti dentro tutto ma non sai esattamente cosa stai acquisendo, diventa molto difficile fare delle detection rules che abbiano senso per dei dati che hai, ma che non sai di avere in una sostanza.
+
+00:05:37.778 --> 00:05:45.258
+<v SPEAKER_1>Io devo sapere che tipo di dato ho, perché poi le regole di detection di base sono delle condizioni che io vado a cercare, all'interno dei dati che ho.
+
+00:05:45.258 --> 00:05:48.638
+<v SPEAKER_1>Quindi devo sapere che tipi di dati ho banalmente.
+
+00:05:50.158 --> 00:05:55.958
+<v SPEAKER_2>Sia me non è una macchina magica che mette ordine dove c'è caos, tutt'altro.
+
+00:05:58.458 --> 00:06:03.658
+<v SPEAKER_1>Esatto, fa un sacco di cose, però va ovviamente configurato.
+
+00:06:03.698 --> 00:06:13.358
+<v SPEAKER_1>Si può pensare di mandargli i testi dell'email e lui magicamente sa come fare ricerca di threat all'interno di un testo di email.
+
+00:06:13.358 --> 00:06:15.998
+<v SPEAKER_1>Bisogna un attimo lavorarci.
+
+00:06:15.998 --> 00:06:34.178
+<v SPEAKER_2>Ho un mito che noto spesso, se io gli mando il traffic log di un firewall, quindi esattamente le singole connessioni permesse o bloccate, è altamente probabile che la configurazione del sistema di default con i log non se ne faccia niente, quindi stiamo spendendo e buttando soldi alla grande.
+
+00:06:34.178 --> 00:06:35.558
+<v SPEAKER_1>Esatto, sono anche tanti in quel caso.
+
+00:06:35.558 --> 00:06:46.558
+<v SPEAKER_2>Tutto si può usare, tuning, però c'è una differenza tra avere lo out of the box come credono molti, quindi una sorta di magia con cui sia funziona e poi effettivamente quei dati usarli.
+
+00:06:46.558 --> 00:06:56.798
+<v SPEAKER_2>E per la quantità di log che un firewall può generare di traffico, probabilmente ci sono dei metodi più efficienti da un punto di vista economico per fare la stessa identica cosa.
+
+00:06:57.278 --> 00:06:59.138
+<v SPEAKER_1>Esatto, esatto.
+
+00:06:59.138 --> 00:07:22.278
+<v SPEAKER_1>Di base col tema threat intelligence ci stiamo spostando verso, è in un certo senso un tema di efficienza ed efficacia nella detection, perché appunto quello che possiamo fare con gli strumenti è tanto, ma per avere degli elementi da correllare, per avere dei threat da identificare in quello che osserviamo, essenzialmente ci serve un termine di paragone.
+
+00:07:22.278 --> 00:07:44.818
+<v SPEAKER_1>Quindi per sapere che tipo di comportamento cercare nei log, o che tipo di artefatto cercare nei log, quindi dalla cosa più complessa, un comportamento alla cosa più semplice, il singolo elemento, l'artefatto, l'url, eccetera, da una parte mi servono i log, come si diceva prima, tutti i dati che posso raccogliere e che riesco a strutturare, dall'altra parte mi servono gli elementi da cercare.
+
+00:07:44.818 --> 00:07:47.338
+<v SPEAKER_1>Questi due elementi mi servono assieme.
+
+00:07:47.358 --> 00:07:58.198
+<v SPEAKER_1>Lo scopo della threat intelligence, la prendo molto larga, è andare a documentare tutti quelli che sono i comportamenti, quindi le tecniche, le tattiche degli attaccanti.
+
+00:07:58.198 --> 00:08:22.118
+<v SPEAKER_1>Gli strumenti che utilizzano in termini di infrastrutture, quindi IP di host che vengono utilizzati per appoggiare ad esempio i malware, i tipi di malware e i relativi file che utilizzano, quindi loro hash, eventuali componenti esterni, le DLL, pezzi di script, pezzi di codice che vengono inseriti in siti a loro volta vulnerabili.
+
+00:08:22.118 --> 00:08:48.398
+<v SPEAKER_1>C'è una quantità enorme di informazioni, sia di tipologie di informazioni che di informazioni che in buona sostanza chi fa l'analista va a raccogliere, va a studiare, deve andare a rappresentare in qualche struttura, deve andare a inserire in qualche struttura che di fatto potremmo vedere come un grosso database di dati destrutturati, di dati destrutturati semmeno il termine più corretto.
+
+00:08:51.338 --> 00:09:03.858
+<v SPEAKER_1>E una volta che abbiamo queste informazioni ci possono essere utili per capire cosa andare a cercare nei nostri log, per capire che tipo di azione potenzialmente il tratto sta facendo su di noi.
+
+00:09:03.858 --> 00:09:09.398
+<v SPEAKER_1>Quindi facciamo sempre il caso più semplice in assoluto e anche molto realistico.
+
+00:09:09.398 --> 00:09:16.398
+<v SPEAKER_1>Il nostro firewall sicuramente utilizza già, il vendor già ci manda delle informazioni di questo tipo.
+
+00:09:16.838 --> 00:09:37.738
+<v SPEAKER_1>Ad esempio di solito i meccanismi di detection, di URL filtering o web filtering di solito fanno anche un ragionamento sulla base di elenchi di URL che si sa appartenere a siti utilizzati per attività malevole, utilizzati ai tre tactor.
+
+00:09:37.738 --> 00:09:40.838
+<v SPEAKER_1>I firewall hanno questa informazione, viene passata questa informazione.
+
+00:09:40.838 --> 00:09:43.758
+<v SPEAKER_1>Queste informazioni sono di famosi IOC, indicatori di compromissione.
+
+00:09:44.698 --> 00:09:54.678
+<v SPEAKER_1>Nel momento in cui il sistema di detection del firewall, l'IDS del firewall vede del traffico verso una URL che conosce e sa essere malevola, ci avvisa.
+
+00:09:54.678 --> 00:10:12.298
+<v SPEAKER_1>La policy può essere di solito o solo in alerting, quindi nella Dash può compare l'allarme, poi sperando che qualcuno lo guardi anche, o anche in blocking, cioè il firewall interviene e blocca quella sessione, fa in modo che l'utente non faccia traffico verso l'utente o il processo, non faccia traffico verso quella URL.
+
+00:10:12.698 --> 00:10:25.138
+<v SPEAKER_1>Questo è diciamo l'impianto minimo per consumare un IOC, per utilizzare la threat intelligence al fine di intercettare un potenziale attacco.
+
+00:10:25.138 --> 00:10:26.438
+<v SPEAKER_1>Perché è interessante?
+
+00:10:28.558 --> 00:10:38.818
+<v SPEAKER_2>Da una parte abbiamo in questo scenario che tu hai descritto, che è quello più semplice, che bene o male moltissimi, purtroppo non tutti, ma moltissimi usano senza sapere di usare automatico.
+
+00:10:39.278 --> 00:10:53.618
+<v SPEAKER_2>Quindi l'idea anche di, perché quando si parla di intelligence, quindi la parola sembra un po pomposa e quasi molto complessa l'attività.
+
+00:10:53.618 --> 00:11:24.418
+<v SPEAKER_2>In realtà abbiamo il vendor che fa delle analisi, semplicemente perché, raccogliendo la telemetria dei dispositivi che vende, è in grado di vedere degli attacchi in modo globale, fa intelligence nel senso proprio letterale del termine, cioè dà valore alle informazioni e ridistribuisce con le informazioni, a volte in un speso diciamo a pagamento, ai suoi clienti, i quali la usano in maniera molto semplificata, senza dover fare grandi elaborazioni.
+
+00:11:24.418 --> 00:11:34.058
+<v SPEAKER_2>Perché nel firewall c'è questa configurazione di default in cui raccoglie gli IOC che il vendor gli manda e fa una detection real time.
+
+00:11:34.598 --> 00:11:42.618
+<v SPEAKER_2>Ma nulla è dato sapere di quello che è successo prima di ingerire quello specifico IOC.
+
+00:11:43.558 --> 00:11:57.418
+<v SPEAKER_1>I limiti di quello che esiste già in una configurazione standard sono, come dicevi tu, limitato alla real time detection.
+
+00:11:57.418 --> 00:12:08.438
+<v SPEAKER_1>Cioè quello che è successo prima di avere quella rules, o quello che è successo prima di avere quella IOC, di conoscere quella IOC, non possiamo sapere se era già transitato qualcosa.
+
+00:12:08.438 --> 00:12:11.018
+<v SPEAKER_1>Lo sapevamo in quel momento perché abbiamo avuto in quel momento informazioni.
+
+00:12:11.018 --> 00:12:19.338
+<v SPEAKER_1>Quindi un primo limite dell'utilizzo dell'attrezzo intelligence soltanto nel real time detection è che non va a scavare nel passato.
+
+00:12:19.338 --> 00:12:24.938
+<v SPEAKER_1>Quindi qua si apre i due filoni, ciò che è threat detection e ciò che è threat hunting.
+
+00:12:25.498 --> 00:12:29.518
+<v SPEAKER_1>Questo bivio magari ci arriviamo a discutere le due temate.
+
+00:12:29.618 --> 00:12:31.678
+<v SPEAKER_2>Ci andiamo per la prossima volta.
+
+00:12:31.678 --> 00:12:33.158
+<v SPEAKER_2>Ecco, o tra due.
+
+00:12:33.158 --> 00:12:33.698
+<v SPEAKER_1>Esatto.
+
+00:12:33.698 --> 00:12:42.898
+<v SPEAKER_1>E poi c'è il tema della quantità di IOC che stiamo utilizzando, diciamo, by design.
+
+00:12:42.898 --> 00:12:55.058
+<v SPEAKER_1>Di solito i prodotti quando vengono implementati, possiamo parlare di firewall e anche di ADR sono le due principale, o DDS in generale, insomma tutti gli strumenti che sono capaci di fare detection.
+
+00:12:55.058 --> 00:13:05.518
+<v SPEAKER_1>By design di solito hanno un tot di informazioni, attingono un tot di sorgenti, non sono tutte quelle che sono a disposizione del cliente e anche del vendoro stesso.
+
+00:13:05.518 --> 00:13:16.318
+<v SPEAKER_1>Cioè il vendoro stesso ha una serie di fonti da cui attinge e le mette a disposizione, a volte con delle sascrivioni aggiuntive anche ai suoi clienti.
+
+00:13:16.318 --> 00:13:24.898
+<v SPEAKER_1>La quantità globale di informazioni è enorme, per ovvi ragioni non si può pretendere di accedere a tutto.
+
+00:13:25.438 --> 00:13:37.258
+<v SPEAKER_1>Va fatto un lavoro di adattamento, di personalizzazione delle informazioni che vogliamo portare all'interno della nostra infrastruttura a livello di threat intelligence.
+
+00:13:39.198 --> 00:13:46.358
+<v SPEAKER_2>Questo perché i file non hanno risorse infinite, quindi non possono ingerire un numero enorme di IOC.
+
+00:13:46.358 --> 00:13:54.478
+<v SPEAKER_2>Tu tra l'altro, diverso tempo fa mi avevi mandato una stima degli IOC, anzi erano solo gli individuali.
+
+00:13:55.298 --> 00:13:57.658
+<v SPEAKER_1>Sì, erano 600 milioni, se non ricordo male.
+
+00:13:57.658 --> 00:13:59.938
+<v SPEAKER_1>Esatto, 600 milioni.
+
+00:14:02.198 --> 00:14:20.778
+<v SPEAKER_2>Il limite che non andrei a sfiorare neanche lontanamente di un IDL che un Fiverr può ingerire, quindi il numero di IOC che può ingerire, è di mille volte più basso, quindi nell'ordine delle centinaia, miniaia, massimo forse qualche decina di miniaia.
+
+00:14:20.778 --> 00:14:37.998
+<v SPEAKER_1>Sì, partiamo allora dall'errore tipico che si fa, perché una volta che uno scopre il magico mondo della threat intelligence, scopre che ci sono carriole e carriole di IOC che ci aiutano teoricamente a migliorare il nostro livello di detection.
+
+00:14:39.558 --> 00:14:51.178
+<v SPEAKER_1>Il primo impulso, la prima pulsione anzi, potrebbe essere quella di prendere il più possibile, buttarlo, fraccarlo dentro forte, il nostro sistema di detection e qualcosa sarà.
+
+00:14:51.178 --> 00:14:52.498
+<v SPEAKER_1>Cioè, visto che butto dentro...
+
+00:14:52.498 --> 00:14:57.758
+<v SPEAKER_2>Sono più sicuro, più ne butto, più riduco la probabilità che qualcosa scappe.
+
+00:14:57.758 --> 00:14:59.498
+<v SPEAKER_2>Ci sta, è comprensibile.
+
+00:14:59.498 --> 00:15:01.498
+<v SPEAKER_1>Sì, come pulsione assolutamente è comprensibile.
+
+00:15:01.498 --> 00:15:03.338
+<v SPEAKER_1>Primo limite, banalmente, non si può fare.
+
+00:15:03.338 --> 00:15:11.998
+<v SPEAKER_1>Cioè, sono così tanti dati che semplicemente non si può fare, quindi anche se volessimo non c'è proprio la possibilità di farlo.
+
+00:15:11.998 --> 00:15:16.918
+<v SPEAKER_1>Secondo tema, non è detto che tutti i dati siano interessanti per noi, quindi c'è proprio un tema di tipo di dato.
+
+00:15:17.378 --> 00:15:32.958
+<v SPEAKER_1>Ad esempio, il mondo finanziario potrebbe essere interessato come tipologia di dato di intelligence a tutti i dati che riguardano le truffe finanziarie, perché ovviamente è loro pane, quindi è un tipo di dato che transita sui loro sistemi, i dati finanziari.
+
+00:15:32.958 --> 00:15:38.298
+<v SPEAKER_1>Tutto ciò che ha a che fare con le truffe finanziarie a loro interessa particolarmente.
+
+00:15:38.898 --> 00:15:52.178
+<v SPEAKER_1>Un altro tipo di azienda potrebbe non avere nessun interesse a sapere quali sono gli elenchi delle carte di credo utilizzate in certe truffe, perché non è un dato che transita sui loro sistemi, quindi avere con le informazioni è del tutto inutile.
+
+00:15:52.178 --> 00:15:57.598
+<v SPEAKER_1>Quindi c'è un tema anche di qualifica dei dati che mi servono da considerare.
+
+00:15:58.658 --> 00:16:15.458
+<v SPEAKER_1>E come se non bastasse devo anche decidere, per questo prima si parlava di qualifica del dato, in base al tipo di dato che io raccolgo dai miei sistemi, cioè in base alla mia telemetria, ci saranno degli IOC che posso ragionevolmente utilizzare e altri che non posso utilizzare.
+
+00:16:15.638 --> 00:16:17.018
+<v SPEAKER_1>Molto semplicemente.
+
+00:16:17.018 --> 00:16:30.298
+<v SPEAKER_1>Quindi, tutte le aziende hanno un'uscita in internet e navigano, quindi ci sono degli IOC che ovviamente, quelli che usiamo di solito come esempio, interesseranno più o meno a tutti.
+
+00:16:30.298 --> 00:16:49.398
+<v SPEAKER_1>L'elenco degli P malevoli, l'elenco degli URL malevoli, l'elenco dei file riconosciuti come potenziali malware o file sospetti, ci sono quella tipologia di IOC, quello più semplice, come spesso li chiamiamo, interessano più o meno a tutti, ma sono tantissimi, quindi non posso usarli tutti.
+
+00:16:49.398 --> 00:16:58.038
+<v SPEAKER_1>Devo usarli con un criterio, che è quello della scadenza di solito, questo magari poi ci arriva, cioè dentro dopo magari in questi temi più tecnici.
+
+00:16:59.878 --> 00:17:26.238
+<v SPEAKER_1>In ogni caso, anche quando ho qualificato gli IOC che mi servono, devo anche considerare un'altra cosa, che nelle informazioni che arrivano da altri intelligenti, ci sono dei livelli che vengono, si chiama, non ricordo più il termine tecnico come viene chiamato, sono dei livelli diciamo di complessità, diciamo così di variabilità anzi dell'IOC, che li rendono più o meno interessanti.
+
+00:17:26.298 --> 00:18:01.958
+<v SPEAKER_1>Ad esempio, un tre-tactor nel momento in cui ha utilizzato una serie di server per mandare delle e-mail di scam, nel momento in cui quei server vengono, come dicevi tu prima, identificati da qualche analista, da qualche socca ad esempio, classificati come server che mandano spam, quindi la loro reputation si abbassa, a un certo punto finiscono anche nelle liste degli IOC dei vendor, a quel punto il tre-tactor, avendosi tagliato le gambe, a un certo punto perché i suoi sistemi smetteranno di poter mandare mail che vengono accettate, cosa farà?
+
+00:18:01.958 --> 00:18:06.658
+<v SPEAKER_1>Semplicemente cambierà sistemi, quindi utilizzerà dei nuovi IP.
+
+00:18:06.658 --> 00:18:23.138
+<v SPEAKER_1>Stessa cosa vale per le URL, stessa cosa vale per eventuali file che vengono utilizzati come veicolo per distribuire malware, tutte firme molto statiche, nel momento in cui sono riconosciuti come malevoli, il tre-tactor li cambia.
+
+00:18:23.678 --> 00:18:43.238
+<v SPEAKER_1>Molto semplicemente, non è difficile farlo, lo fa e continua nella sua opera, in un certo senso invalidando il nostro meccanismo di detection basato sulla IOC, perché a quel punto ci saranno dei nuovi artefatti che devo riconoscere, prima dovrò analizzarli, quindi il ciclo si ripete, si reitera.
+
+00:18:44.918 --> 00:18:45.998
+<v SPEAKER_1>Quindi, ci sono gli IOC?
+
+00:18:45.998 --> 00:18:47.918
+<v SPEAKER_1>Questi IOC sono facili da raccogliere?
+
+00:18:47.918 --> 00:18:48.338
+<v SPEAKER_1>Sì.
+
+00:18:49.238 --> 00:18:51.518
+<v SPEAKER_1>È facile fare detection rules su questo tipo di IOC?
+
+00:18:52.018 --> 00:18:58.538
+<v SPEAKER_1>Sì, però il detector si adegua molto rapidamente, quindi hanno una validità temporanea, diciamo così.
+
+00:18:58.538 --> 00:19:08.298
+<v SPEAKER_1>Poi c'è un altro tipo di IOC, diciamo quello più complesso, che non è così statico, è più una storia, è più un racconto di una catena di eventi.
+
+00:19:09.358 --> 00:19:20.538
+<v SPEAKER_1>L'ho chiamata storia perché nei sistemi di detection di solito viene chiamata story, cioè quello che l'EDR osserva come comportamento è una catena di eventi, una sequenza di eventi.
+
+00:19:21.438 --> 00:19:34.278
+<v SPEAKER_1>Anche il lato threat intelligence, questa cosa viene analizzata quando si parla di tattiche e tecniche in particolare.
+
+00:19:34.278 --> 00:19:43.358
+<v SPEAKER_1>Quindi chi fa threat intelligence di solito oltre a raccogliere i singoli IOC, cerca di capire, cerca di documentare anche come vengono utilizzati questi IOC.
+
+00:19:43.358 --> 00:19:57.858
+<v SPEAKER_1>Quindi un IP è malevolo per una motivazione, perché ad esempio è un server da cui partono e-mail di spam o di scam, oppure perché è un server da cui partono scansioni verso reti esterne.
+
+00:19:58.378 --> 00:20:03.938
+<v SPEAKER_1>C'è una motivazione che porta un certo artefatto a essere malevolo.
+
+00:20:03.938 --> 00:20:05.958
+<v SPEAKER_1>Come viene utilizzata questa motivazione?
+
+00:20:05.958 --> 00:20:12.658
+<v SPEAKER_1>Anche questo è un dato di intelligence, è anche questo è un dato che dovremmo imparare a utilizzare sui sistemi di detection.
+
+00:20:12.658 --> 00:20:25.898
+<v SPEAKER_1>Cioè noi dovremmo poi costruire una detection rules, se la vogliamo fare diciamo duratura nel tempo, che non si basi soltanto sul fatto che un certo IP è noto e quindi lo blocco.
+
+00:20:25.898 --> 00:20:40.418
+<v SPEAKER_1>Dovrei anche costruire delle detection rules che si basano sul fatto che un certo comportamento da un certo IP è riconoscibile come un'azione potenzialmente malevola, e quindi blocco quel comportamento o genero la messa quel comportamento.
+
+00:20:40.418 --> 00:20:51.718
+<v SPEAKER_1>Quindi, man mano che si sale la catena di complessità dell'analisi, diventa anche molto più complessa l'implementazione della regola che vado a fare sul mio sistema di detection.
+
+00:20:52.758 --> 00:21:04.878
+<v SPEAKER_2>Tu hai parlato di complessità, perché credo, immagino che chi ci ascolta, o meglio il pubblico che ci ascolta, che non è praticamente tecnico, o non lavora in un SOC, si stia spaventando ed è giustamente comprensibile.
+
+00:21:04.878 --> 00:21:26.958
+<v SPEAKER_2>Perché comunque la parte di intelligence non è un'azione per tutti, cioè è un'azienda, faccio sempre l'esempio, è un'azienda produttiva per il contesto nostro, che ha come scopo proprio la produzione, quindi è anche abbastanza lontana tutto sommato dall'IT, non potrà implementare questo tipo di processo all'interno.
+
+00:21:27.338 --> 00:21:35.418
+<v SPEAKER_1>Cioè è molto raro che ci siano figure di analimi di questo tipo dentro un'azienda enterprise.
+
+00:21:35.418 --> 00:21:40.938
+<v SPEAKER_2>Sì, non dovrebbero nemmeno esserci nell'ambito produttivo, non ci devono essere, semplicemente perché il contesto sbagliato.
+
+00:21:40.938 --> 00:21:52.838
+<v SPEAKER_2>Quindi quel tipo di figure in un'azienda di quello tipo, almeno che non sia una multinazionale enorme, dove in qualche modo queste figure si sentono appagate nel lavoro che fanno, tenderanno ad annoiarsi e a cercare altrove.
+
+00:21:52.978 --> 00:22:01.358
+<v SPEAKER_2>Quindi è difficile per questo tipo di aziende creare e mantenere un team di persone che fa questo mestiere.
+
+00:22:01.358 --> 00:22:12.758
+<v SPEAKER_2>Tuttavia, appunto chi ci ascolta e non è del ramo più tecnologico, può prendere uno spunto su che cosa il suo SOC, che mi auguro abbia, dovrebbe fare.
+
+00:22:12.758 --> 00:22:32.158
+<v SPEAKER_2>Quindi come ha esternalizzato il SOC, cioè la serie di persone che mantiene, fa detection, rileva e gestisce gli incidenti di sicurezza, dovrebbe anche implementare quel ciclo di miglioramento continuo basandosi su queste attività che hai appena descritto.
+
+00:22:32.158 --> 00:22:57.378
+<v SPEAKER_2>Quindi nonostante appunto chi ci ascolta potrebbe sentirsi un po in difficoltà, perché non è che tutte le aziende devono implementare un team che fa appunto analisi di questo tipo, ma è un qualcosa che a livello contrattuale può essere chiesto al soccorco, che è esattamente quello che hai raccontato e stringendo, stringendo, stringendo, fanno parte del processo di miglioramento continuo.
+
+00:22:57.378 --> 00:23:30.838
+<v SPEAKER_2>Altrimenti, come tu ben descritto, la IOC ha un'età, una data di scadenza, perché il TreTactor modifica i propri strumenti, le proprie armi in base a come si modifica la capacità di annullare le sue azioni, così allo stesso modo chi sta dalla parte difensiva deve migliorarsi continuamente per rilevare che i vecchi attacchi, i vecchi sistemi, i vecchi IOC non sono più validi e quindi liberare risorse e integrare con quelli nuovi.
+
+00:23:30.838 --> 00:23:36.238
+<v SPEAKER_1>Diciamo che gli attori che giocano questa partita potremmo definire, sono tre i principali attori.
+
+00:23:36.998 --> 00:23:56.998
+<v SPEAKER_1>Da una parte c'è appunto l'utente finale che non può avere capacità di analisi a livello di threat intelligence, deve preoccuparsi di avere degli strumenti ben configurati e delle informazioni che arrivano da una terza parte che aiutano gli strumenti a fare detection.
+
+00:23:58.218 --> 00:24:01.618
+<v SPEAKER_1>La preoccupazione dell'utente finale è questa.
+
+00:24:01.618 --> 00:24:09.578
+<v SPEAKER_1>Dove l'unico messaggio che ci tengo a dare è non è comprando un feed di threat intelligence che si risolve la cosa.
+
+00:24:09.578 --> 00:24:18.678
+<v SPEAKER_1>Perché appunto comprare un feed di threat intelligence equivale a, come dire, disporre di una frazione delle informazioni e basta.
+
+00:24:18.678 --> 00:24:23.838
+<v SPEAKER_1>Cioè non sto facendo niente, dispongo di una frazione di informazioni, ma non sto facendo null'altro più di questo.
+
+00:24:23.838 --> 00:24:40.418
+<v SPEAKER_1>Quindi è un pezzo, ovviamente servono i feed, ovviamente, cioè servono le informazioni, ma non basta comprare un feed threat intelligence e mettere a disposizione di uno strumento per risolvere la questione o come dire, per migliorare il nostro livello di detection.
+
+00:24:40.418 --> 00:25:03.138
+<v SPEAKER_1>L'altro attore, invece, è il SOC, il provider che configura la tecnologia di detection o addirittura la eroga a servizio e mette a disposizione anche le skill per raccogliere e integrare i feed e anche analizzarli, quindi anche mettere a disposizione nuove informazioni per fare detection.
+
+00:25:03.138 --> 00:25:12.358
+<v SPEAKER_1>Quel lavoro complesso di cui parlavo prima lo fa di solito il partner esterno, cioè chi ha il team poi per fare quel lavoro lì.
+
+00:25:12.358 --> 00:25:54.638
+<v SPEAKER_1>Di solito sono team che lavorano a quattro mani con il mondo del SOC e dell'MDR, però sono qualifiche proprio dedicate, cioè chi fa threat intelligence di solito fa solo threat intelligence e ovviamente collabora con chi fa poi la parte di detection pura, gli analisti e poi ci sono le tecnologie, quindi i partner che implementano le tecnologie, perché mentre il ruolo di chi eroga il servizio è quello di monitorare, controllare, le tecnologie spesso sono implementate da chi conosce molto bene le tecnologie, quindi faccio un esempio, per fare un esempio molto grezzo.
+
+00:25:56.518 --> 00:26:08.138
+<v SPEAKER_1>Chi sta davanti ai sistemi di mutilaggio come il SIEM è un analista che sa come interpretare gli allarmi, sa capire cosa sta succedendo in base a quello che osserva.
+
+00:26:09.358 --> 00:26:25.218
+<v SPEAKER_1>Le skill invece di chi ha implementato il SIEM sono diverse, sono skill differenti e sono figure che sono capaci di fare ad esempio delle regole di detection molto strutturate e molte volute che danno informazioni ben definite all'analista.
+
+00:26:25.218 --> 00:26:29.458
+<v SPEAKER_1>Sono proprio due figure diverse, quelle che operano.
+
+00:26:29.458 --> 00:26:45.258
+<v SPEAKER_2>Quindi aggiungerai un'altra che è lo specialista della tecnologia, non del SIEM ma dalla tecnologia di sicurezza, quindi il firewall che deve spingare ma l'antispam, eccetera, che deve avere la capacità di configurarlo in modo che sia il primo bastione di rilevare la minaccia.
+
+00:26:45.418 --> 00:26:54.758
+<v SPEAKER_2>Quando all'inizio ho detto che il SIEM non è una scatola magica, ma si basa su delle informazioni precedentemente valutate dai sistemi di sicurezza.
+
+00:26:54.758 --> 00:27:16.018
+<v SPEAKER_2>Se il firewall trova una minaccia, la firma, un port scan, semplicissimo, lo rileva, ma che lo blocchi o no è relativamente importante, ma non porta questa informazione al SIEM, non la porta in un modo giusto, e analizza i dati del SIEM, non c'è verso che la vedrà.
+
+00:27:16.278 --> 00:27:19.718
+<v SPEAKER_2>Ho semplificato, ma in realtà il succo è proprio questo.
+
+00:27:19.718 --> 00:27:41.378
+<v SPEAKER_2>Quindi non è passando ancora una volta il traffic log del firewall, cioè quello che passa regolarmente al SIEM, ma è nel momento in cui il firewall rileva la minaccia, quindi è il modulo IPS all'interno del firewall che rileva la minaccia, e passa l'informazione di minaccia al SIEM, che a questo punto è la valutata come tale.
+
+00:27:41.378 --> 00:28:08.518
+<v SPEAKER_1>Sì, ma qua si ha per tra l'altro un tema di design, tutto da discutere, perché non penso ci sia un'unica via maestra da seguire, quando conviene fare detection sullo strumento, diciamo, a monte, quindi il firewall che vede il traffico, ad esempio, e quando invece conviene fare detection non sullo strumento ma sul SIEM.
+
+00:28:11.998 --> 00:28:31.338
+<v SPEAKER_2>L'intelligenza dello strumento, se lo strumento è capace di identificare una minaccia e tipicamente i firewall lo sono, quindi il SIEM da per assodato che gli deve rivare quel valore, quando in realtà poi, che ne so, una sistema di correlazione all'aposta, magari lì effettivamente la correlazione va fatta.
+
+00:28:31.338 --> 00:28:49.018
+<v SPEAKER_2>Però il punto su cui magari torno è che in molti casi appunto le simulazioni dell'attacco che portiamo avanti vanno a buon fine anche nelle tecniche più elementari, quando in altri contesti queste tecniche elementari vengono bloccate alla fonte.
+
+00:28:49.018 --> 00:29:09.178
+<v SPEAKER_2>E non c'è una magia dietro, c'è la magia che da una parte chi ha configurato i dispositivi di sicurezza l'ha fatto con un po di sala in testa, con gli altri in altri casi invece l'ha fatto senza neanche preoccuparsi della best practice, perché poi tutti i vendor ti dicono cosa devi fare.
+
+00:29:09.178 --> 00:29:12.918
+<v SPEAKER_1>Sì, infatti ci sono diverse...
+
+00:29:12.918 --> 00:29:19.938
+<v SPEAKER_1>gli strumenti, questa cosa forse l'abbiamo detta già in altre chiacchierate, sicuramente io mi sono tornato a scriverlo più volte.
+
+00:29:21.998 --> 00:29:47.298
+<v SPEAKER_1>Nella moltissimi casi che affrontiamo quando facciamo assessment, ci portano a osservare poi tecnologie che sono praticamente nella configurazione di default, con poche configurazioni aggiuntive, e sembra quasi poi quando si portano i risultati degli assessment, delle azioni offensive che vanno a buon fine, sembra quasi che le tecnologie siano di per sé inefficaci.
+
+00:29:47.298 --> 00:29:50.858
+<v SPEAKER_1>Invece nella maggior parte dei casi è proprio una mancanza di configurazione.
+
+00:29:50.858 --> 00:30:06.878
+<v SPEAKER_1>Può essere una mancanza di configurazione, è proprio diciamo un errore come non seguire una best practice, che è ovviamente un errore grosso, a volte invece è un mancato utilizzo delle funzionalità della tecnologia.
+
+00:30:06.878 --> 00:30:26.978
+<v SPEAKER_1>Ad esempio, riprendo il tema del quello che dicevi tu adesso, gli EDR, giusto per stare su qualcosa di molto diffuso, sono perfettamente in grado di intercettare alcune delle azioni che anche a noi capita di simulare, ad esempio come il comportamento di un command in control.
+
+00:30:27.158 --> 00:30:49.578
+<v SPEAKER_1>Cioè hanno lo strumento per intercettarlo, ma by design quella regola non c'è, cioè il vendor non implementa di default, attiva una regola generica, perché questa è la cosa difficile, cioè che abbia valenza generale per tutte le tipologie di malware che usano un comportamento in stile command in control.
+
+00:30:50.058 --> 00:30:53.378
+<v SPEAKER_1>È poco vero, è simile che un vendor possa fare una regola di questo tipo.
+
+00:30:54.598 --> 00:31:09.778
+<v SPEAKER_1>Ogni azienda deve valutare all'interno del suo contesto, il partner che configurò la tecnologia in realtà, deve valutare all'interno del contesto aziendale che tipo di regole fare per intercettare quel tipo di comportamento malevole.
+
+00:31:09.778 --> 00:31:12.998
+<v SPEAKER_1>Questo è un po il gioco.
+
+00:31:13.998 --> 00:31:31.418
+<v SPEAKER_2>I data sheets spesso raccontano una security by default, ecco questa cosa non è vera, cioè non è che tutte le policy sono attive by default e quindi io sgancio quelle che non vanno bene per me o mi blocchiano dei servizi critici e quindi devo permetterle.
+
+00:31:31.418 --> 00:31:32.298
+<v SPEAKER_2>Questo è un mito.
+
+00:31:32.498 --> 00:31:37.638
+<v SPEAKER_2>Quindi il tuning deve fare parte del progetto di delivery.
+
+00:31:37.638 --> 00:32:00.218
+<v SPEAKER_2>Se non c'è tuning, il tuning è continuativo però, sicuramente almeno all'inizio ci deve essere, in cui alcune regole vengono abilitate perché fanno parte del contesto del cliente, come hai detto tu, una finanziaria diversa da una azienda produttiva, altre magari no e questa cosa deve essere rivista in modo ricorrente, perché tutto invecchia.
+
+00:32:00.218 --> 00:32:25.478
+<v SPEAKER_1>Secondo me è proprio in questa fase che si innesca bene il tema della tele-intelligence, perché in un ambito di detection ci piacerebbe forse quasi scontato, cioè dovrebbe essere ovvio che chi fa servizi di detection, gli MDR, i SOC, usufruiscano delle fonti di intelligence per migliorare la detection.
+
+00:32:25.478 --> 00:32:32.098
+<v SPEAKER_1>Questo dovrebbe essere un'ovvietà, sappiamo che non è esattamente così, però dovrebbe essere un'ovvietà.
+
+00:32:32.098 --> 00:32:57.778
+<v SPEAKER_1>Ma anche la Toki implementa le tecnologie, quello che si diceva prima, siccome vanno poi implementate delle regole contestuali all'azienda in cui si sta implementata la tecnologia e contestualizzate anche nella tipologia di attacchi che questa azienda potrebbe subire, è proprio qua che si innesca l'intelligence, perché le informazioni dell'intelligence ti dicono come funzionano gli attacchi.
+
+00:32:57.778 --> 00:33:06.338
+<v SPEAKER_1>Quindi tornando all'esempio di prima che non è proprio il più semplice, però non mi stanno venendo in mente esempi più semplici.
+
+00:33:06.338 --> 00:33:13.998
+<v SPEAKER_1>Se voglio fare una regola di detection che mi aiuti a intercettare un common in control, devo sapere come funzionano gli attacchi common in control.
+
+00:33:13.998 --> 00:33:28.498
+<v SPEAKER_1>Meglio ancora se ho un descritto da qualche parte come i 3 tactor attivi in questo periodo stanno implementando il loro common in control, dove ci saranno ancora una volta degli artefatti e dei comportamenti.
+
+00:33:29.478 --> 00:33:43.258
+<v SPEAKER_1>Nell'istudio, cioè ce li ho, li devo studiare, e quando capisco, ah questo 3tactor utilizza una websocket, si parlava ieri dell'websocket, in questo modo la utilizza, perfetto, faccio una regola di detection nel mio contesto.
+
+00:33:43.258 --> 00:33:50.718
+<v SPEAKER_1>Se è una cosa che mi interessa, devo capire se quel tipo di attacco su di me ha un'efficacia, in base al mio contesto.
+
+00:33:50.758 --> 00:34:00.578
+<v SPEAKER_1>Se ce l'ha, se alla domanda se mi attaccassero così, avrebbero successo, se le risposte sì, devo fare una regola.
+
+00:34:00.578 --> 00:34:03.058
+<v SPEAKER_1>Devo implementare delle regole per intercettarlo.
+
+00:34:04.898 --> 00:34:09.158
+<v SPEAKER_1>Non è un processo facile ovviamente, non è per niente facile.
+
+00:34:09.158 --> 00:34:16.818
+<v SPEAKER_2>Allora, non è facile, però non è neanche così complesso, nel senso che sta tutto qua, cioè io le cose le devo provare sulla mia infrastruttura.
+
+00:34:16.818 --> 00:34:24.658
+<v SPEAKER_2>Nessuno oggi, immagino, è in grado di dire se un particolare attacco passa sulla sua infrastruttura o meno.
+
+00:34:24.658 --> 00:34:27.738
+<v SPEAKER_2>Cioè questa cosa va provata in qualche modo.
+
+00:34:27.738 --> 00:34:36.058
+<v SPEAKER_2>E nel provarlo si mettono in atto delle misure che permettono di bloccarlo.
+
+00:34:36.058 --> 00:34:53.238
+<v SPEAKER_2>C'è chi pecca un po di superiorità, diciamo così, in cui molto spesso ho sentito persone dire che la mia infrastruttura è sicura, qualunque cosa voglia dire questa parola, e questa cosa, questo attacco, non può passare.
+
+00:34:55.318 --> 00:35:12.318
+<v SPEAKER_2>È un po come dire nascondersi, a mio parere, perché il concetto di zero trust che viene tanto pubblicizzato, lo prendo un po come filosofia, prevederebbe che io permetto solo quello che è estrettamente necessario, la mia applicazione.
+
+00:35:12.338 --> 00:35:14.218
+<v SPEAKER_1>E solo quello che ho fondato, praticamente.
+
+00:35:14.218 --> 00:35:15.278
+<v SPEAKER_2>Esatto, quindi in teoria...
+
+00:35:15.278 --> 00:35:17.538
+<v SPEAKER_1>Un deny all tranne.
+
+00:35:17.538 --> 00:35:25.938
+<v SPEAKER_2>Esatto, il tuo command e control nella mia infrastruttura zero trust non funziona a priori, lo so, perché l'ho programmata zero trust.
+
+00:35:25.938 --> 00:36:40.258
+<v SPEAKER_2>In realtà l'autopratico così non è, perché il tuo command e control può passare per, non dico un qualcosa che non ho previsto, ma per un servizio che io uso, e semplicemente è stato come l'esempio che hai fatto ieri, che secondo me merita appunto di essere raccontato, uso un canale che tecnicamente è prevista da quell'applicazione, ma è stato alterato, oppure uso un pezzo che è previsto, mi viene in mente un servizio cloud, un gmail, un calendar, un github, o la qualsiasi che devo permettere, perché nella mia azienda è previsto che venga usato, e il TreTactor usa proprio quello per fare command e control, e io non sono in grado di distinguere, perché lo zero trust è una gran bella idea, una gran bella utopia, ma all'altro pratico io non sono in grado di distinguere, sebbene in teoria sarebbe possibile, un accesso malevolo da un accesso consentito, perché io non sono in grado di andare a ridentificare il repository, cioè non sono in grado di dire, che i miei sviluppatori devono andare su questi 20 repository GitHub e non su tutti gli altri.
+
+00:36:40.258 --> 00:36:56.218
+<v SPEAKER_2>Nessuno arriva a questo livello, lo sfido al contrario, identificare un tenant SharePoint buono da un tenant SharePoint compromesso, senza contare se quello buono viene compromesso, che anche lì ha distruito.
+
+00:36:56.218 --> 00:37:16.098
+<v SPEAKER_1>Ultimamente facevo l'esempio di una campagna di phishing che ho analizzato, proprio per esercizio di threat intelligence, e il link che veniva portato dentro il corpo dell'e-mail per far transitare l'e-mail dal sistema di anti-spam, essenzialmente.
+
+00:37:16.958 --> 00:37:33.218
+<v SPEAKER_1>In realtà il link ha un GCP bucket, quindi ha un'area storage GCP, con dentro un HTML statico, con dentro un pezzettino di JavaScript per fare il redirect verso un altro sito, che poi era effettivamente, cominciava a essere già sospetto.
+
+00:37:33.218 --> 00:37:49.438
+<v SPEAKER_1>Quindi la mail passava perché qualsiasi sia stato il meccanismo di analisi del sistema del mail security gateway, avrebbe visto un link, che era un link degli storage bucket di Google.
+
+00:37:49.438 --> 00:37:55.258
+<v SPEAKER_1>Quindi o blocchi gli storage bucket di Google, a prescindere da tua azienda, oppure quel link non risulta malevolo.
+
+00:37:56.038 --> 00:38:01.278
+<v SPEAKER_1>E poi dopo, quando l'utente ci clicca, scatta il redirect.
+
+00:38:01.278 --> 00:38:18.898
+<v SPEAKER_1>E se hai un altro sistema che a quel punto non è il mail security gateway, perché sei già fuori da lì, cioè lì è già passato, se hai un altro sistema che potrebbe essere il firewall, che riconosce la seconda azione, allora magari la back in quella in quella fase, se no scappa anche quella.
+
+00:38:18.898 --> 00:38:38.438
+<v SPEAKER_2>Guarda, io ho analizzato lo stesso comportamento, lo stesso attacco che viene diviso in fasi in ambito sociale, è sempre un phishing, ma appunto targetizzando la persona e non tanto l'azienda, in cui il primo messaggio che l'utente riceveva dall'attacker non era di nessuna azione, quindi era una notifica.
+
+00:38:38.858 --> 00:38:41.898
+<v SPEAKER_2>Adesso non ricordo, non era preciso, era un...
+
+00:38:41.898 --> 00:38:51.698
+<v SPEAKER_2>abbiamo visto una transazione a carta di credito sospetta, è stata bloccata, ma verifica nel tuo conto.
+
+00:38:51.698 --> 00:38:53.378
+<v SPEAKER_2>Fine, questo era il messaggio.
+
+00:38:53.378 --> 00:39:02.978
+<v SPEAKER_2>Ok, non c'è azione, non c'è niente, sfugge da qualunque tipo di concetto dell'urgenza, dell'azione da fare, eccetera eccetera.
+
+00:39:03.018 --> 00:39:16.798
+<v SPEAKER_2>Le fasi seguenti incrementavano, come insegna anche Kevin Mitrink, di dividere l'attacco in fasi e in ogni fase aggiungere un piccolo pezzo di informazione finché non hai il puzzle più completo o sufficiente.
+
+00:39:16.798 --> 00:39:18.918
+<v SPEAKER_2>Ti sfido a bloccare una cosa di già.
+
+00:39:18.918 --> 00:39:20.198
+<v SPEAKER_1>Diventa complicativo.
+
+00:39:20.198 --> 00:39:43.158
+<v SPEAKER_1>Lì l'unica cosa che puoi fare, ad esempio nell'ambito della threat intelligence, questa sequenza di attività verrebbe documentata all'interno di un evento proprio a livello di azioni, in cui gli artefatti sono il sender dell'email che sarà un sender pulito, però un artefatto nel senso che sono una serie di puntini che si devono unire.
+
+00:39:43.158 --> 00:39:48.298
+<v SPEAKER_1>Il corpo, la richiesta fatta da un'email pulita, quindi senza link all'interno dell'email, ad esempio.
+
+00:39:48.298 --> 00:39:55.578
+<v SPEAKER_1>Sono tutti elementi che dip singolarmente non hanno nessun senso, perché il sender se è pulito non genera allarmi.
+
+00:39:55.578 --> 00:39:58.498
+<v SPEAKER_1>La mail se non ha link dentro da analizzare non genera allarmi.
+
+00:39:58.898 --> 00:40:02.338
+<v SPEAKER_1>Non ci sono legati, non ci sono quindi file da analizzare.
+
+00:40:02.338 --> 00:40:07.078
+<v SPEAKER_1>Di per sé singolarmente gli elementi non muovono nulla, diciamo.
+
+00:40:07.078 --> 00:40:29.138
+<v SPEAKER_1>Tutti assieme invece la storia del un'email che mi arriva che mi dice di controllare il mio conto o l'elenco delle spese della carta di credito, senza nessuna action, senza nessun link, tutto insieme potrebbe diventare un evento analizzabile, quindi anche riconoscibile.
+
+00:40:29.138 --> 00:40:33.158
+<v SPEAKER_1>Poi questo in particolare è difficile a prescindere da riconoscere.
+
+00:40:33.158 --> 00:40:49.318
+<v SPEAKER_1>Anche in situazioni meno, come dire, meno sofisticate è l'insieme degli eventi che ci aiuta a capire se è un threat o meno, più che il singolo artefatto che sì ci aiuta in molti casi, ma in altri casi può essere forviante.
+
+00:40:49.318 --> 00:40:59.838
+<v SPEAKER_1>Torno all'esempio che facevo prima del bucket storage di Google, su virus total l'url dei bucket storage di Google è classificata come phishing.
+
+00:40:59.838 --> 00:41:01.778
+<v SPEAKER_1>Cioè è classificata.
+
+00:41:01.778 --> 00:41:09.198
+<v SPEAKER_1>Ovviamente nessuno si sogna di bloccarlo, cioè è un rating molto basso, mi pare che aveva tre punti di classificazione come phishing.
+
+00:41:10.298 --> 00:41:11.358
+<v SPEAKER_1>Perché è finita lì?
+
+00:41:11.358 --> 00:41:24.058
+<v SPEAKER_1>Perché questo tipo di azione esiste dal 2021 e quindi dai oggi dai domani, alla fine i sistemi l'hanno cominciato a classificare come phishing.
+
+00:41:24.058 --> 00:41:37.898
+<v SPEAKER_1>È un errore tecnico secondo me, perché sarebbe più corretto classificare come link di phishing al massimo l'url compresa, compreso il bucket name, non solo il domain name di Google dei bucket storage.
+
+00:41:37.898 --> 00:41:41.378
+<v SPEAKER_1>Cioè tecnicamente sarebbe un errore come classificazione.
+
+00:41:41.378 --> 00:41:45.958
+<v SPEAKER_1>Però ci sono degli effetti collaterali a ragionare troppo staticamente.
+
+00:41:45.958 --> 00:42:00.898
+<v SPEAKER_2>È il concetto che dicevi tu all'inizio, nel momento che l'attaccher si trova bloccato nel suo lavoro, quindi il blocco, gli IOC a livello di FQDN, ha cominciato a usare dei sistemi trusted, che non puoi bloccare, certo.
+
+00:42:00.898 --> 00:42:03.898
+<v SPEAKER_2>Gli ha avvelenati in parte, per cui non puoi bloccarli.
+
+00:42:03.898 --> 00:42:12.438
+<v SPEAKER_2>E la gestione del bucket, del singolo FQDN tipo bucket a url non è fattibile, non si può.
+
+00:42:12.498 --> 00:42:13.698
+<v SPEAKER_1>Esatto, esatto.
+
+00:42:13.698 --> 00:42:24.698
+<v SPEAKER_2>E il sistema di categorizzazione sta mostrando dei suoi limiti, in cui da una parte quello che hai detto tu adesso appunto non può più essere sufficiente l'FQDN, perché risulta inutile.
+
+00:42:24.918 --> 00:42:30.378
+<v SPEAKER_2>Lo blocchi, non lo blocchi, quindi non lo blocco, ma so che è veicolo e quindi non sto spostando il problema.
+
+00:42:30.378 --> 00:42:31.058
+<v SPEAKER_1>Esatto.
+
+00:42:31.058 --> 00:42:52.898
+<v SPEAKER_2>Dall'altro, il concetto che mi è piaciuto molto, in cui si passa da azione di attacco a storia, come l'hai chiamata tu prima, in cui per comprendere un attacco non è più un'azione, devi comprendere la storia e tracciare una storia in un'infrastruttura è un'altra cosa rispetto a tracciare il singolo evento o un numero di eventi tutto sommato ridotto.
+
+00:42:52.898 --> 00:43:44.558
+<v SPEAKER_1>Sì, a quel punto a livello di detection, diciamo uno che sa usare la tecnologia, se gli si dice guarda le condizioni per capire, resto su questo esempio della mail di Scam, se vedi una mail con dentro il link ai bucket storage di GCP non è un problema, però se vedi un email che all'interno questo tipo di link che punta un bucket storage e il contenuto dell'html del bucket storage ha questo snipp di codice, allora potrebbe essere un problema, quindi iMS si infila una serie di azioni, anche con degli IOC precisi, c'è il bucket storage, c'è anche però un file, c'è anche un pezzo di contenuto che devi andare a intercettare, se tutto, se sommi tutto e le condizioni si verificano, allora potrebbe essere una cosa da segnalare a livello di detection.
+
+00:43:44.558 --> 00:44:27.958
+<v SPEAKER_1>Ovviamente devo conoscere la storia, quindi mi serve l'informazione di threat intelligence, non a livello di singoli IOC, ma proprio di tutta la catena degli eventi di cui devo andare a caccia, e avendo la catena degli eventi e avendo dall'altra parte i log, le mail che sono arrivate, i click che fa l'utente, perché la mail arriva dal sistema di posta elettronica, se l'utente ci clicca sul firewall e il log della navigazione che è stata eseguita, magari ce l'ho anche del processo da cui è partito il click, che potrebbe essere il client di posta o il browser, qualsiasi cosa succeda, se ho tutti gli eventi che mi servono, riesco a riconoscere quell'azione, e a quel punto riesco anche a fare la detection.
+
+00:44:29.278 --> 00:44:36.458
+<v SPEAKER_1>Se non so cosa cercare, come sempre, se non so cosa cercare, è difficile che riesca a far scattare una detection.
+
+00:44:36.638 --> 00:44:48.978
+<v SPEAKER_1>Su delle cose su cui, by default, nessuno può pretendere che il vendor, by default, introduca queste regole e non è neanche pensabile.
+
+00:44:52.858 --> 00:45:04.198
+<v SPEAKER_2>Bene, quindi abbiamo introdotto l'argomento, ne abbiamo svicerato la complessità, sicuramente generando un certo tipo di timori, e dobbiamo fare ordine.
+
+00:45:04.198 --> 00:45:05.478
+<v SPEAKER_1>Dobbiamo fare ordine?
+
+00:45:05.478 --> 00:45:12.178
+<v SPEAKER_2>Dobbiamo approcciare correttamente il problema per gestirlo, o per farlo gestire, uno delle due.
+
+00:45:12.618 --> 00:45:25.278
+<v SPEAKER_1>Sì, potremmo fare come prossimo step, capire meglio, fare un piccolo focus su come è strutturato un evento di threat intelligence, magari partendo da un esempio.
+
+00:45:25.278 --> 00:45:27.978
+<v SPEAKER_2>Sì, pensai che amo sempre gli esempi pratici.
+
+00:45:27.978 --> 00:45:40.758
+<v SPEAKER_1>Infatti, ci sono un esempio da raccontare e da questo evento quali elementi ricaviamo e di conseguenza come spostiamo queste informazioni sui sistemi di detection per fare la famosa rigola.
+
+00:45:43.058 --> 00:45:46.098
+<v SPEAKER_2>Mi sembra un ottimo progetto.
+
+00:45:46.098 --> 00:45:55.678
+<v SPEAKER_2>Quindi direi che ci sintonizziamo per la prossima volta, spero in tempi più consoni, diciamo alle aspettative del nostro piccolo pubblico.
+
+00:45:55.678 --> 00:46:03.678
+<v SPEAKER_2>Fateci sapere cosa ne pensate, fateci anche sapere se l'idea di avere un esempio pratico, quindi più live, può interessarvi.
+
+00:46:05.198 --> 00:46:06.458
+<v SPEAKER_1>Ciao a tutti.
+
+00:46:06.458 --> 00:46:07.518
+<v SPEAKER_2>Ciao a tutti, grazie.

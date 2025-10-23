@@ -1,0 +1,766 @@
+WEBVTT
+
+00:00:10.373 --> 00:00:12.613
+<v SPEAKER_1>Bentornati a tutti a Info Sec. Unplugged.
+
+00:00:12.613 --> 00:00:15.553
+<v SPEAKER_1>Io sono Andrea Dainese e con me c'è Rocco Sicilia.
+
+00:00:15.553 --> 00:00:16.353
+<v SPEAKER_2>Ciao Rocco.
+
+00:00:16.353 --> 00:00:18.853
+<v SPEAKER_2>Ciao.
+
+00:00:19.193 --> 00:00:55.493
+<v SPEAKER_2>Oggi avevo un argomento che volevo proporti perché, diciamo, approfittare per la tua esperienza nel mondo network e vedere se ci sono delle tematiche in ambito proprio, diciamo, utilizzo delle reti o funzionalità che gli switch mettono in una disposizione che un attacker può sfruttare per una specifica fase, in realtà, dell'attacco, ovvero il contesto, che è uno dei contesti su cui sto lavorando, è la prima mappatura della rete in cui ho infilato potenzialmente un dispositivo esterno.
+
+00:00:55.493 --> 00:01:18.053
+<v SPEAKER_2>Quindi la classica situazione in cui l'attacker riesce, in qualche modo, a portare un dispositivo all'interno della rete target, banalmente una porta RJ45 disponibile e non configurata in modo tale da essere, da dare almeno accesso a una rete, anche senza necessariamente un'accesso, una configurazione di HCP.
+
+00:01:18.053 --> 00:01:40.033
+<v SPEAKER_2>Quindi porta che va app, diciamo, quindi NIC che va app anche l'altro dispositivo, ma non riceve poi un IP del sistema e da lì, soltanto l'obiettivo è quello di andare a caccia di informazioni per capire come configurarsi, come autoconfigurarsi l'ispositivo, quindi con il più valido nella rete, e capire un pochino come è fatta la rete in cui è stata infilata.
+
+00:01:40.033 --> 00:01:48.413
+<v SPEAKER_2>Quindi prima a livello 2, nel suo domino di broadcast, e poi se è possibile andare anche un po oltre quello che è il suo domino di broadcast.
+
+00:01:48.413 --> 00:02:02.713
+<v SPEAKER_2>Di solito gli obiettivi che io mi do quando sono in quel contesto è capire gli host che ho attorno e magari un'idea ma la sono anche fatta, e cercare una via verso internet che sia il più silente possibile.
+
+00:02:02.713 --> 00:02:13.053
+<v SPEAKER_2>E avevo fatto delle valutazioni che in passato avevano anche funzionato, però magari ci sono anche dei metodi un po più furbi per fare queste due macroattività di base.
+
+00:02:13.053 --> 00:02:21.733
+<v SPEAKER_2>E poi da lì ovviamente più si sa della rete, più si hanno informazioni su come è fatta la network, e meglio è dal punto di vista dell'attacchera.
+
+00:02:21.733 --> 00:02:27.573
+<v SPEAKER_2>Più cose capisco di come sono fatte le altre subnet, e meglio è.
+
+00:02:27.573 --> 00:03:19.113
+<v SPEAKER_2>L'unica cosa che provo sempre, perché ho notato che non disturba mai, anche in presenza di sonde di rete, ho notato che questa cosa non disturba, è il classico ARP Scan, che mi consente almeno di capire il giusto che ho nella mia rete, anche se non ho l'IP, anche con la nico completamente unconfigured a livello 2, serenamente, indovinando le reti, non so in che subnet sono, quindi facciamo un ARP Scan sulla 191.6.8.0.0.24, poi da lì facendo un po di tentativi, a un certo punto comincio a rispondere qualcosa, quindi capisco, indovino su che rete sono, provando un po di subnetting, a un certo punto riesco a configurare la nicca sul mio dobbino di broadcast.
+
+00:03:19.113 --> 00:03:30.953
+<v SPEAKER_2>E da lì faccio un po di altri passettini, ad esempio ascolto il traffico di broadcast, quindi magari mi arriva qualche richiesta di HCP, ad esempio il traffico di broadcast e poco altro.
+
+00:03:30.953 --> 00:03:42.273
+<v SPEAKER_2>Più o meno dalle briciole che tiro fuori riesco sempre a configurare il dispositivo, però raramente riesco a ottenere informazioni più profonde.
+
+00:03:43.213 --> 00:03:59.013
+<v SPEAKER_2>Ad esempio il vlan id della rete in cui sono, ammesso che ce l'abbia, non ho mai provato neanche a pensare come potrei capire il vlan id in cui sono infilato, insomma che non è capitato questa o altre informazioni che potrei capire da quella posizione.
+
+00:04:01.093 --> 00:04:02.993
+<v SPEAKER_1>Allora, mi vengo in mente alcune cose.
+
+00:04:02.993 --> 00:04:09.633
+<v SPEAKER_1>Intanto parliamo di accesso fisico, quindi dispositivo collegato a uno switch, quindi lasciamo stare tutto il mondo virtuale.
+
+00:04:13.293 --> 00:04:29.413
+<v SPEAKER_1>Fatalità è un argomento su cui sto lavorando, ma per chi ci ascolta in realtà io e te lavoriamo su cose simili, ma spesso separatamente ed è un caso che stiamo lavorando sulla stessa cosa, su cui sul mio tavolo non si vedono, ci sono un paio di Raspberry Pi e uno switch.
+
+00:04:29.413 --> 00:04:34.113
+<v SPEAKER_1>Sto lavorando proprio per uno scenario simile, ma mi stavo focalizzando sull'802.1x.
+
+00:04:35.133 --> 00:04:45.913
+<v SPEAKER_1>Volevo fare una POC, insomma, definitiva che mi serve come dimostrazione per far vedere Pro e Contro, o meglio Pro e Contro, ho sbagliato di dire Pro e Contro.
+
+00:04:45.913 --> 00:04:55.433
+<v SPEAKER_1>Gli scenari in cui 802.1x funziona, gli scenari in cui assolutamente dà un senso di sicurezza molto fittizia.
+
+00:04:56.813 --> 00:05:03.153
+<v SPEAKER_1>Quindi accantoniamo momentaneamente questo tema, ne riparleremo in seguito quando avrò tutto pronto.
+
+00:05:04.573 --> 00:05:39.613
+<v SPEAKER_1>Quando ti colleghi a uno switch, molto probabilmente in maniera silente come dici tu, tramite i broadcast riesci a determinare alcuni ostre sulla rete, quelli che sono più attivi nel giro di alcuni minuti, insomma il tempo che la tabella ARP dei sistemi scada e quindi venga un po rifrescata, nel giro di 5-10 minuti dovresti ottenere tutti gli ostre che comunicano sulla rete, e facendo forse qualche analisi statistica, potresti anche determinare il gateway.
+
+00:05:39.613 --> 00:06:03.013
+<v SPEAKER_1>Se invece ti inserisci in serie, quindi un piccolo dispositivo a due porte trasparente, è un po più semplice perché analizzando il traffico che passa dall'ost che sta dietro il tuo dispositivo in avanti, riesci a determinare molto più facilmente i gateway, le comunicazioni, eccetera eccetera.
+
+00:06:03.073 --> 00:06:07.193
+<v SPEAKER_2>In quel caso la configurazione sarebbe un bridge secco?
+
+00:06:08.393 --> 00:06:19.613
+<v SPEAKER_1>Sì, un po di più in realtà, perché di default i bridge, anche i soft bridge tipo quello di Linux, che è quello che conosco meglio, filtrano dei frame a livello 2.
+
+00:06:19.653 --> 00:06:31.413
+<v SPEAKER_1>Quindi tutta la parte LHCP, 802.1x per l'appunto CDP e LHDP sono filtrati, perché non sono pensati per fare, parlando livello 2, più op.
+
+00:06:33.253 --> 00:06:47.693
+<v SPEAKER_1>C'è una piccolissima patch che sviluppai ancora tanti anni fa con il famoso UNEET Lab, ora i VNG, perché mi servivano dei bridge effettivamente che facessero forwarding di tutto per abilitare forwarding di qualsiasi frame.
+
+00:06:47.693 --> 00:06:48.993
+<v SPEAKER_1>Una cosa veramente banale.
+
+00:06:49.773 --> 00:06:59.913
+<v SPEAKER_1>Una volta che hai fatto questa cosa hai un bridge completamente trasparente e quindi di fatto non dico invisibile, ma quasi.
+
+00:06:59.913 --> 00:07:24.653
+<v SPEAKER_1>Analizzando la comunicazione che sta tra, facciamo finta di metterci in serie a una stampante, quindi tra la stampante e lo switch, puoi vedere chi comunica con la stampante, dati sicuramente interessanti sui analisi e protocolli della stampante, però vedi in qualche modo puoi già vedere il MAC address del gateway, quindi dove ti arriva e da lì anche l'IP.
+
+00:07:25.833 --> 00:07:27.713
+<v SPEAKER_1>E quindi hai una configurazione più facile.
+
+00:07:27.713 --> 00:07:35.933
+<v SPEAKER_1>Poi è vero che non hai la maschera di rete, perché è un attributo che non viaggia di fatto nella rete.
+
+00:07:35.933 --> 00:07:45.953
+<v SPEAKER_1>La puoi determinare, quindi l'IP che hai dietro la stampante, il tuo gateway, un'analisi di quante ARP girano, più o meno ti fai un'idea della rete.
+
+00:07:45.953 --> 00:07:52.173
+<v SPEAKER_1>E molto probabilmente sarà una barra 24, lo di solito si vede, quella o leggermente più larga.
+
+00:07:52.173 --> 00:08:06.273
+<v SPEAKER_2>Tuttavia avevo notato, magari facciamo una parentesi sul demo del subnetting, però in passato mi era capitato di fare trouble shooting su dei problemi di rete, che andava e non andava.
+
+00:08:06.333 --> 00:08:13.153
+<v SPEAKER_2>E avevo trovato, lo sto che aveva problemi, aveva una subnet più grande rispetto a quella della rete.
+
+00:08:14.333 --> 00:08:33.193
+<v SPEAKER_2>Il problema era parziale, per esempio, vedeva tranquillamente il gate, poi andava verso l'internet, però a volte quando chiamava una rete a fianco, anche se la rete andava a chiamare, era fuori dalla subnetta sbagliata addirittura, comunque aveva problemi a raggiungere altre reti.
+
+00:08:33.193 --> 00:08:34.753
+<v SPEAKER_2>Quindi avevano dei comportamenti anomali.
+
+00:08:36.013 --> 00:08:54.193
+<v SPEAKER_2>Da questo, in passato, avevo provato, ma non mi aveva funzionato, una volta beccati anche i primi due ottetti della subnette, mettevo una barra 16 e cercavo di ingannare in qualche misura il fatto di non conoscere esattamente la subnette.
+
+00:08:54.193 --> 00:09:15.853
+<v SPEAKER_2>E più o meno, un pochino mi funzionava come metodo, però ovviamente incappavo negli stessi problemi di rete e cercavo poi di indovinare l'effetto che va a barra 24 o in alcuni casi anche delle anomale, tra virgolette le barra 20, barra 21, barra 22, che sono barretti un po più ampio rispetto alla classica barra 24.
+
+00:09:15.853 --> 00:09:23.353
+<v SPEAKER_2>Non so se quel comportamento anomalo della barra 16 che un po va, un po non va, può essere sfruttato secondo te come trucchetto.
+
+00:09:25.013 --> 00:09:28.033
+<v SPEAKER_1>Credo di capire a cosa stai facendo riferimento.
+
+00:09:28.193 --> 00:09:35.993
+<v SPEAKER_1>Sto facendo un mio pensiero rispetto a ciò che ho vissuto diversi anni fa sulle reti tipicamente Cisco.
+
+00:09:38.073 --> 00:09:44.673
+<v SPEAKER_1>Oggi dovrebbe essere disabilitato di default, anni fa mi pareva fosse attivo, vado a memoria, sono passati tanti anni.
+
+00:09:44.673 --> 00:09:52.673
+<v SPEAKER_1>Che è la funzionalità di IP proxy harp, che si configura sui Gateway layer 3 tipicamente Cisco Catalyst.
+
+00:09:52.673 --> 00:09:54.253
+<v SPEAKER_1>Sempre vado a memoria.
+
+00:09:55.373 --> 00:10:06.413
+<v SPEAKER_1>Questa funzionalità ti permetteva sotto alcune condizioni di funzionare correttamente anche se la maschera di rete era sbagliata.
+
+00:10:06.413 --> 00:10:15.433
+<v SPEAKER_1>Perché il Gateway layer 3 aveva conizioni di quali erano le reti connesse e quindi di fatto faceva proxy.
+
+00:10:15.573 --> 00:10:26.813
+<v SPEAKER_1>Quindi tu la chiamavi come se fosse locale e il Gateway ti rispondeva facendo la proxy, quindi simulando un host di un'altra rete come se fosse locale alla tua.
+
+00:10:26.813 --> 00:10:30.513
+<v SPEAKER_1>E questo era il motivo per cui probabilmente funzionava.
+
+00:10:30.513 --> 00:10:33.793
+<v SPEAKER_1>Nelle reti vecchie questa cosa probabilmente è ancora funzionata.
+
+00:10:33.793 --> 00:10:50.033
+<v SPEAKER_1>Mi capita ogni tanto di vederla e generalmente è fonte di problemi, proprio perché non è la causa del problema, ma siccome nasconde problemi si accumulano errori sul subnetting che a un certo punto esplodono.
+
+00:10:50.953 --> 00:11:00.333
+<v SPEAKER_1>E quando esplodono, in realtà, andando a capire come mai ha funzionato fino a prima, è proprio perché c'è questa configurazione sul layer 3.
+
+00:11:00.333 --> 00:11:05.373
+<v SPEAKER_2>Quindi probabilmente avevo beccato un gateway con il proxy attivo.
+
+00:11:05.373 --> 00:11:07.473
+<v SPEAKER_1>Esatto, esatto.
+
+00:11:08.313 --> 00:11:43.113
+<v SPEAKER_1>Allora, sono passati veramente tanti anni, per cui potrei anche sbagliare, ma chiamando di fatto un IP come locale, quindi in realtà funziona perché è ancora tuttora supportato a livello di ARP, quindi facendo un ARP request per un IP che in realtà non è locale, lo Switch, avendo quella rete connessa, rispondeva con il proprio MAC address e faceva di fatto da proxy tra le due comunicazioni, anche se non erano all'interno della stessa rete.
+
+00:11:43.113 --> 00:11:48.853
+<v SPEAKER_1>Quindi in questo caso, sarebbe da provare, ma se ricordo bene, in questo caso poi ti funziona.
+
+00:11:48.853 --> 00:12:10.893
+<v SPEAKER_2>Sì che tra l'altro è estremamente contenutitutivo, io davo per scontato, io darei quasi per scontato che se genero un pacchetto verso un IP che sicuramente è all'interno della mia subnet, mi aspetto che il gateway di quel pacchetto gli frega assolutamente nulla, c'è la richiesta all'interno.
+
+00:12:10.893 --> 00:12:13.673
+<v SPEAKER_1>Esatto, dovrebbe ignorarlo, esattamente.
+
+00:12:13.673 --> 00:12:38.173
+<v SPEAKER_1>Infatti, breve menzione di come funziona, se il mio host chiama o meglio vuole raggiungere un IP che non è sulla stessa rete e lo sa perché a questo serve la subnet, lo sappiamo ma giusto per chi ci ascolta, fa un'operazione matematica e da lì determina se l'IP sta nella rete o se non sta nella propria rete.
+
+00:12:38.173 --> 00:12:45.073
+<v SPEAKER_1>Se sta nella rete lo chiama direttamente, se non sta nella rete usa il MAC address del gateway per uscire.
+
+00:12:45.073 --> 00:13:02.753
+<v SPEAKER_1>Ecco, i proxy ARP invalida tutta questa teoria per semplificare la cosa, quindi sì, assolutamente può essere sfruttato perché a quel punto non devi neanche fare un hop per arrivare alle reti remote.
+
+00:13:02.753 --> 00:13:23.333
+<v SPEAKER_1>Però prima di questo la mia riflessione è che una volta identificato il gateway, prima di procedere a qualunque scan, quindi cercherai nella scaletta delle cose da fare, cercherai di capire il prima possibile se il tuo gateway è un firewall o è un semplice gateway layer 3, diciamo che si ferma a livello 3 della Pilaosi.
+
+00:13:23.333 --> 00:13:46.073
+<v SPEAKER_1>Perché, sempre parlando per gli ambienti che conosco, se le reti sono ruotate da uno switch layer 3, non c'è alcun tipo di controllo, quindi sai che puoi essere tanto rumoroso quanto vuoi, perché è improbabile che ci sia un controllo, a meno di di essere passivi, può succedere, ma sempre statisticamente parlando non ne vedo così tanti.
+
+00:13:49.253 --> 00:13:50.393
+<v SPEAKER_1>Come lo fai a determinarlo?
+
+00:13:50.393 --> 00:14:01.473
+<v SPEAKER_1>Secondo me una volta che hai identificato una comunicazione corretta, poi ad esempio la stampante può uscire per andare...
+
+00:14:04.233 --> 00:14:07.033
+<v SPEAKER_1>La stampante in realtà non è l'esempio migliore.
+
+00:14:07.033 --> 00:14:19.453
+<v SPEAKER_1>Sì, anche la stampante funziona l'invio per e-mail, quindi facciamo che possa raggiungere il server via smtp, usando delle porte diverse dall'smtp.
+
+00:14:19.453 --> 00:14:29.833
+<v SPEAKER_1>Se ottieni come risposta un pacchetto reset, probabilmente non sei dietro un firewall, perché ti fa passare connessioni diverse da quelle che dovresti usare.
+
+00:14:29.833 --> 00:14:48.393
+<v SPEAKER_1>Sono sempre assolzioni, però una volta che con un po di tentativi non rumorosi, quindi diciamo selettivi, hai compreso se il tuo gateway filtra a livello 4 in su, oppure no, sai che puoi fare i tuoi lavori con più tranquillità.
+
+00:14:48.393 --> 00:14:51.373
+<v SPEAKER_1>Ad esempio tu hai citato la parte di ARP.
+
+00:14:52.393 --> 00:15:20.233
+<v SPEAKER_1>La parte di ARP è locale la tua rete e risponde molto velocemente, quindi capire quanti IP ci sono attivi anche in una rete molto grande a questione di pochi istanti, però essendo broadcast e se hai un firewall con il PS attivo, tecnicamente dovrebbe alzare una battendierina e dire attenzione, qua il numero di ARP request eccede il valore consentito, sospetto ARP scan.
+
+00:15:20.333 --> 00:15:32.753
+<v SPEAKER_2>Quindi è meglio prima identificare l'eventuale firewall e dopo eventualmente sparare l'ARP scan sulla subnet.
+
+00:15:32.753 --> 00:15:43.693
+<v SPEAKER_1>Sì, poi onestamente io dubito che qualcuno vada a vedersi quel tipo di evento, però in teoria quell'evento dovrebbe essere generato, finire in un CM e essere gestito da qualcuno.
+
+00:15:43.693 --> 00:15:51.773
+<v SPEAKER_1>Però ecco, prima te ne rendi conto, meglio sai se puoi essere rumoroso o no.
+
+00:15:51.773 --> 00:15:57.973
+<v SPEAKER_1>Anche se rispetto a un ARP scan non vedo alternative, perché anche ti sposti a livello di ping e l'ARP funziona lo stesso.
+
+00:15:57.973 --> 00:16:03.693
+<v SPEAKER_1>Quindi comunque se vuoi fare una scansione sotto il rumore dell'ARP scan non lo puoi fare.
+
+00:16:03.793 --> 00:16:39.313
+<v SPEAKER_2>Esatto, tra l'altro sulla cosa della verifica se la porta risponde esatto o il pacchetto vede droppato, mi metto una cosa che ho discorso qualche tempo fa con uno dei vari member del canale Telegram che mi chiedeva che deve aver visto qualche how-to in cui sulle scansioni gli suggerivano di verificare, assieme ad esempio al più classico degli Nmap, verificare anche la risposta attraverso Wireshark e mi chiedeva come mai stava qua.
+
+00:16:39.733 --> 00:16:53.353
+<v SPEAKER_2>In realtà serve esattamente a questo, perché Nmap ti dà un esito della risposta, ma non ti dice, non vedi dai Nmap se il pacchetto è stato, se hai ricevuto un reset, un drop o qualcos'altro.
+
+00:16:53.353 --> 00:17:01.133
+<v SPEAKER_2>Quindi solo con Wireshark, guardando quella risposta su Wireshark, vedi effettivamente la risposta e quindi torna utile.
+
+00:17:01.173 --> 00:17:27.053
+<v SPEAKER_2>Anche in questo caso con Arp, effettivamente dalle proprie che avevo fatto io, l'altro giorno stavo giocando con Scapy, ero messo a fare i pacchetti Arp con Scapy, nonostante il tool Arpscan faccia esattamente la stessa cosa, proprio identico anche il traffico e si vede bene quando c'è una, via CMP ad esempio, quando c'è un reset o un drop, vedi proprio il pacchetto troncato, invece in altro caso vedi la risposta di reset.
+
+00:17:28.073 --> 00:17:29.813
+<v SPEAKER_1>Esatto.
+
+00:17:29.813 --> 00:17:48.253
+<v SPEAKER_1>Se ricordo male, l'nmap ti dà un output specifico in base allo scan, se scegli il TCP scan, mi pare anche il SIN, ti dà open, closed o filtered, in cui sta aperta, chiaramente risponde, closed ha ricevuto reset, filtered non ha ricevuto nulla.
+
+00:17:48.313 --> 00:18:09.713
+<v SPEAKER_2>Esatto, io onestamente ho smesso di fidarmi, quando comincio a vedere, credo proprio per i comportamenti attivi dei firewall o di altri device, quando comincio a vedere 12.000 porte filtrate, ok, nel senso che siccome ti vedi un sacco di porte filtrate di ipotizia è un firewall, perché non mi viene in mente nessun...
+
+00:18:09.793 --> 00:18:12.013
+<v SPEAKER_1>Esatto, era quello che intendevo prima, sì.
+
+00:18:12.013 --> 00:18:13.253
+<v SPEAKER_2>Che ti risponde.
+
+00:18:14.753 --> 00:18:20.233
+<v SPEAKER_2>Anche i web application firewall a volte hanno comportamenti di questo tipo.
+
+00:18:20.233 --> 00:18:27.973
+<v SPEAKER_2>Ti autorispondi dicendo, va beh, quale host potrebbe rispondere con migliaia di porte filtrate?
+
+00:18:27.973 --> 00:18:31.733
+<v SPEAKER_2>Giusto il firewall e gli altri probabilmente non ha senso.
+
+00:18:32.933 --> 00:19:06.373
+<v SPEAKER_1>E tra l'altro mi viene in mente una caratteristica che ho vissuto anni fa ed era in tutti i casi tecnologia checkpoint in cui non mi ricordo il protocollo, non era VoIP ma era qualcosa di video, sostanzialmente di default era attivo una sorta di proxy di un protocollo video e facendo la scansione di qualsiasi host in qualsiasi rete e appunto Nmap ritornava che tutti quegli host avevano la porta aperta su questo specifico protocollo.
+
+00:19:07.233 --> 00:19:38.533
+<v SPEAKER_1>Anche questo è un'indicatore chiaramente di, mi sa che era proprio invece SIP, quindi la 60-60, 60-61, giù di là insomma, e anche questo può essere uno dei test interessanti, perché non solo ti determina che hai chiaramente un faro da qualche parte che ti fa proxy, in realtà neanche proxy, perché poi la porta era chiusa, quindi è proprio che termina le connessioni SIP, ma che molto probabilmente è anche un faro che quella cosa la supporta, che ne ricordo, checkpoint.
+
+00:19:38.533 --> 00:19:41.513
+<v SPEAKER_1>E mi è successo solo con checkpoint, questa cosa qua.
+
+00:19:44.413 --> 00:19:55.953
+<v SPEAKER_1>Ok, quindi abbiamo parlato di ARP, e identificare se tu hai un faro ti permette di capire anche quanto sei a rischio di essere rilevato.
+
+00:19:55.953 --> 00:20:14.153
+<v SPEAKER_1>Forse prima, diciamo, facendo la scaletta delle cose da fare più sicure, se sei collegato a una porta fisica e gli switch sono configurati bene o male come fanno tutti, tu puoi ascoltare i frame CDP e LLDP, che sono i protocolli di adiacenza.
+
+00:20:17.213 --> 00:20:20.553
+<v SPEAKER_1>Lì vale per i trunk più che per l'accesso.
+
+00:20:23.993 --> 00:20:31.273
+<v SPEAKER_1>Allora, se hai una porta in accesso, in realtà lo switch mi pare che non ti dica l'inquevulante che hai.
+
+00:20:31.273 --> 00:20:49.833
+<v SPEAKER_1>Però ho notato appunto per quel prodotto che stavo costruendo, open source, che fa discovery di rete, ho controllato che l'LLDP è un protocollo implementato in maniera abbastanza arbitraria, per cui ci trovi informazioni di qualsiasi tipo.
+
+00:20:49.833 --> 00:20:59.613
+<v SPEAKER_1>Stavo studiando appunto una marca qualche giorno fa e tra i campi l'LLDP che manda fuori ti manda proprio l'avilan di accesso in cui hai quella porta.
+
+00:20:59.613 --> 00:21:06.053
+<v SPEAKER_1>Quindi in generale non l'ho mai visto, quindi l'avilan che sei non l'ho mai vista in porta in accesso.
+
+00:21:06.053 --> 00:21:10.453
+<v SPEAKER_1>Quindi è la prima volta, però l'analisi del protocollo potrebbe dirti qualcosa di più.
+
+00:21:10.453 --> 00:21:25.033
+<v SPEAKER_2>Tra l'altro adesso vado un po in memoria, siccome le uniche volte che ho approcciato realisti davvero LLDP è stato passivamente su un host VMware, perché di default gli app link degli switch supportano LLDP.
+
+00:21:25.033 --> 00:21:33.453
+<v SPEAKER_2>E se non ricordo, mi pare di aver visto le informazioni anche in quei rari casi in cui la link di management era collegata in access, se non ricordo male.
+
+00:21:33.453 --> 00:21:36.393
+<v SPEAKER_2>Quindi probabilmente li manda lo stesso.
+
+00:21:36.393 --> 00:21:52.873
+<v SPEAKER_1>Le informazioni le hai, quindi tu hai lo switch remoto, l'IP di gestione remota, i maccaders, numerosiari, questo dipende dal tipo lost name di solito, le port, la porta da cui il pacchetto esce, quindi la porta a cui ti hai fatto sei collegato.
+
+00:21:52.873 --> 00:22:14.873
+<v SPEAKER_1>Se è in trunk, vado sempre a memoria, non ho mai fatto in realtà scansione a basso livello di questi protocolli, se è in trunk passano anche la porta nativa, perché caso capita spesso, se ho un trunk configurato con la nativa 90 a 3 da una parte e 90 dall'altra, lo switch tipicamente ti dà quel messaggio, quindi in trunk questa informazione passa.
+
+00:22:14.873 --> 00:22:18.853
+<v SPEAKER_1>In accesso mi pare di no, però non ci metto la mano sul fuoco.
+
+00:22:18.853 --> 00:22:26.573
+<v SPEAKER_1>Ed è sicuramente un'informazione che non ti costa nulla andare ad analizzare e non è a rischio.
+
+00:22:28.553 --> 00:22:40.733
+<v SPEAKER_2>E ti ricordi se probabilmente in questa fase potrei aver già configurato la NIC, ma non è detto.
+
+00:22:40.733 --> 00:22:41.913
+<v SPEAKER_1>No, non necessariamente.
+
+00:22:41.913 --> 00:23:03.173
+<v SPEAKER_1>Cioè se tu riesci a gestirtela da remoto tramite bluetooth, wifi o 4G, e quindi in realtà non hai bisogno di accelerare, una di come dire, riconfigurare la tua macchina perché faccia in automatico, te la puoi fare con calma, se no ed è quello a cui sto lavorando, fatalità.
+
+00:23:03.173 --> 00:23:05.793
+<v SPEAKER_1>A questo punto mettiamo insieme le forze.
+
+00:23:06.753 --> 00:23:15.853
+<v SPEAKER_1>Stavo riflettendo appunto con scappi di analizzare questi protocolli, questa serie di informazioni che arrivano nella mia idea.
+
+00:23:15.853 --> 00:23:47.493
+<v SPEAKER_1>Mi mettevo in serie a un dispositivo per rilevare una serie di attributi per autoconfigurarmi, quindi appunto il gateway, il cdpl, e di tutto una serie di cose avere una sorta di configuratore che ogni volta rimane in ascolto dei flussi di rete e man mano che ne rileva uno interessante va a riempire un file che poi genererà la configurazione magari dopo circa 10 minuti, così a span.
+
+00:23:47.493 --> 00:23:49.673
+<v SPEAKER_2>L'autoconfigurazione era uno dei miei obiettivi.
+
+00:23:49.673 --> 00:24:02.713
+<v SPEAKER_2>Stavo cercando di affinare le informazioni perché nella precedente, il lamiere a raspberry, c'è il progetto a cui faccio riferimento che vorrei rinnovare a 4 anni più o meno.
+
+00:24:04.333 --> 00:24:09.073
+<v SPEAKER_2>E si accontentava di poche informazioni perché andava per tentativi.
+
+00:24:09.073 --> 00:24:20.733
+<v SPEAKER_2>A un certo punto, quando imbrocava la configurazione giusta, lo capiva perché c'era un trace verso Google, ad esempio, che andava a buon fine e era felice.
+
+00:24:20.733 --> 00:24:22.213
+<v SPEAKER_2>Quella era la configurazione che mantieneva usata.
+
+00:24:22.213 --> 00:24:34.273
+<v SPEAKER_2>Volevo un attimo migliorarla perché in alcune circostanze mi era capitato che non riusciva a trovare la combinazione corretta di configurazione e io avevo finito i tentativi di verifica che potevo fare.
+
+00:24:34.273 --> 00:24:41.253
+<v SPEAKER_2>Già con LDP, ad esempio, ce ne sono di nuovi che non ho mai provato e probabilmente sono anche molto precisi da quel punto di vista.
+
+00:24:43.353 --> 00:25:01.673
+<v SPEAKER_1>Se sei in serie a un dispositivo è semplice perché sicuramente ricevi delle connessioni di rete, quindi se il tuo IP è di un'altra rete rispetto a quello che ti metti in serie, sicuramente trovi il MAC address e l'IP del dispositivo che ti sta dietro.
+
+00:25:01.673 --> 00:25:03.533
+<v SPEAKER_1>Questo è abbastanza banale.
+
+00:25:03.533 --> 00:25:16.433
+<v SPEAKER_1>A quel punto puoi più o meno indovinare che se riceve una connessione con un IP completamente diverso, vuol dire che sta da un'altra rete e quindi automaticamente hai il MAC address del Gateway.
+
+00:25:16.433 --> 00:25:21.953
+<v SPEAKER_1>Una risoluzione e ti trovi anche il IP e questo l'abbiamo fatto velocemente.
+
+00:25:21.953 --> 00:25:31.113
+<v SPEAKER_1>A quel punto ti devi scegliere un indirizzo IP libero che strane in range tra il tuo Gateway e quello dietro che hai e li vai per tentativi.
+
+00:25:31.113 --> 00:25:42.013
+<v SPEAKER_1>In realtà hai tutto quello che ti serve perché se poi il tuo command e control sta fuori, puoi già cablarlo dentro, non ti salve neanche il DNS e qui con questo hai già una raggiungibilità.
+
+00:25:43.113 --> 00:25:46.613
+<v SPEAKER_2>Basta con l'indirizzo IP, anche perché DNS...
+
+00:25:48.713 --> 00:26:05.973
+<v SPEAKER_2>Poi ci diamo il gancio per un'altra chiacchierata sull'indirizzo DNS per la parte command and control, ma in generale volevo evitarlo perché molti firewall, ma non la parte DNS security, quindi se posso evitare di fare traffico mio con la parte DNS lo evito.
+
+00:26:05.973 --> 00:26:08.733
+<v SPEAKER_1>Sì, sì, sì, concordo assolutamente.
+
+00:26:08.733 --> 00:26:11.793
+<v SPEAKER_1>Non è detto che non sia sospetto questa cosa qua.
+
+00:26:11.793 --> 00:26:15.133
+<v SPEAKER_1>Cioè che un oggetto non faccia il traffico DNS.
+
+00:26:15.133 --> 00:26:27.253
+<v SPEAKER_1>Esatto, le cose più avanzate a un certo punto rilevano un IP che viene usato, un IP internet chiaramente che viene usato, senza però avere una corrispondenza DNS.
+
+00:26:29.053 --> 00:26:34.853
+<v SPEAKER_1>E quindi secondo me alza delle asticelle di alert.
+
+00:26:36.873 --> 00:26:58.473
+<v SPEAKER_1>Proseguendo con l'analisi sempre passiva, un'altra cosa interessante secondo me è lo spanning tree, che ti interessa non tanto per sapere le caratteristiche, perché alla fine un spanning tree chiaramente, se sei in uno switch di accesso, ci sarà in esecuzione molto probabile.
+
+00:26:58.473 --> 00:27:03.093
+<v SPEAKER_1>Non è certo, però già se non ce l'hai, puoi fare delle assunzioni sul dispositivo.
+
+00:27:04.433 --> 00:27:07.333
+<v SPEAKER_1>Lasciamo stare i casi che vediamo.
+
+00:27:09.753 --> 00:27:28.273
+<v SPEAKER_1>Purtroppo in alcuni corsi di ethical hacking, io ho visto con profonda tristezza il fatto che l'utente che si accede, che si aggancia a una porta di accesso, può influenzare l'elezione del root bridge tramite spanning tree, che è vero.
+
+00:27:28.273 --> 00:27:37.813
+<v SPEAKER_1>E facendo così, e qua cito dal corso che ho tristemente visto, veicolare su di sé il traffico, tutto il traffico di tutte le reti.
+
+00:27:37.813 --> 00:27:40.393
+<v SPEAKER_1>Chiaramente no, non funziona così.
+
+00:27:41.713 --> 00:27:43.753
+<v SPEAKER_1>Diciamo che lo spanning tree può aiutare...
+
+00:27:43.753 --> 00:27:46.693
+<v SPEAKER_2>La catara per i capelli, forse, come affermazione.
+
+00:27:46.693 --> 00:27:49.133
+<v SPEAKER_1>Tristissimo, tristissimo.
+
+00:27:50.693 --> 00:28:08.653
+<v SPEAKER_1>Questa cosa può influenzare, non come noi che facciamo questo mestiere con etica, ma chi lo fa senza etica, perché chiaramente poi far cambiare la topologia ogni totte secondi e facendo un the night of service alla fine.
+
+00:28:09.893 --> 00:28:20.193
+<v SPEAKER_1>E sono anche abbastanza sicuro che con grande fatica si dileva dove è il dispositivo che sta mandando in topology change ogni due minuti.
+
+00:28:20.193 --> 00:28:27.913
+<v SPEAKER_1>E quindi quando c'è la topology change la topologia si ferma, si ferma per 50 secondi e qualcosa.
+
+00:28:27.913 --> 00:28:33.353
+<v SPEAKER_1>E a noi non interessa, però ecco, il rischio cliente questa cosa va detta.
+
+00:28:34.573 --> 00:28:44.053
+<v SPEAKER_1>Poi ci sono, c'è un'altra cosa secondo me abbastanza di distruttiva che è il VTP, il...
+
+00:28:44.053 --> 00:28:45.673
+<v SPEAKER_1>VTP si chiami così?
+
+00:28:47.053 --> 00:28:54.053
+<v SPEAKER_1>Mi sta al acronimo, è quello di Autoconfigurazione delle VLAN, è sempre un protocollo Cisco, che ha...
+
+00:28:54.053 --> 00:28:57.333
+<v SPEAKER_2>VLAN transparent, vi pare forse?
+
+00:28:57.333 --> 00:28:58.013
+<v SPEAKER_2>Protocoll?
+
+00:28:58.013 --> 00:29:02.833
+<v SPEAKER_1>No, non è transparent, è VLAN transparent, anche in protocoll, non mi ricordo.
+
+00:29:02.833 --> 00:29:05.613
+<v SPEAKER_1>Qualcuno ce lo suggerirà, ho veramente un voto di memoria.
+
+00:29:05.613 --> 00:29:12.973
+<v SPEAKER_1>Sostanzialmente è quello che ti permette di riconfigurare il database delle VLAN di tutti gli switch in maniera distribuita.
+
+00:29:12.973 --> 00:29:22.133
+<v SPEAKER_1>Questa cosa ha un problema, perché nella versione 2 è ancora molto in voga, per quello che riesco a vedere, non ha controllo.
+
+00:29:22.133 --> 00:29:35.913
+<v SPEAKER_1>Quindi un dispositivo che invia un frame VTP con una release più alta del database può modificare la configurazione delle VLAN.
+
+00:29:35.913 --> 00:29:41.353
+<v SPEAKER_1>La configurazione di fatto sono le VLAN, quelle che sono configurate negli switch, o no?
+
+00:29:41.353 --> 00:29:52.953
+<v SPEAKER_1>Nell'atto distruttivo, purtroppo ho visto più di uno scottarsi su questa cosa qua, si rischia di cancellare tutte le VLAN configurate in tutti gli switch Cisco.
+
+00:29:52.953 --> 00:29:55.673
+<v SPEAKER_2>VLAN Trance Protocoler.
+
+00:29:55.693 --> 00:29:57.933
+<v SPEAKER_1>Ecco sì, banale, grazie.
+
+00:29:59.313 --> 00:30:02.293
+<v SPEAKER_2>È Google che ha risposto, non me lo ricordavo.
+
+00:30:03.413 --> 00:30:12.653
+<v SPEAKER_1>Non andrei a toccarlo, non andrei neanche minimamente a pensare come mettere un frame di questo tipo, perché veramente si fanno danni.
+
+00:30:12.653 --> 00:30:20.513
+<v SPEAKER_1>Chiaramente si fanno danni se la topologia è disegnata male, è debole, però siccome non è raro vederla disegnata male.
+
+00:30:20.513 --> 00:30:31.113
+<v SPEAKER_2>Poi forse è anche superato oggi come tipologia di protocollo di configurazione, cioè immagino che le attuali funzionalità di automazione delle reti forse no.
+
+00:30:31.213 --> 00:30:33.433
+<v SPEAKER_2>Non penso che si basi non su VTP, no?
+
+00:30:33.433 --> 00:30:34.133
+<v SPEAKER_1>Ad oggi.
+
+00:30:34.133 --> 00:30:48.853
+<v SPEAKER_1>No, diciamo così, le funzionalità di automazione non hanno problemi a creare la stessa bilan sul 50 dispositivi, il VTP lo si vede ancora, tranne nelle reti dove qualcuno si è scottato che allora viene disabilitato dappertutto.
+
+00:30:50.193 --> 00:31:00.033
+<v SPEAKER_1>Esiste la versione 3 che risolve questo piccolo problema, che è rimasto per anni però davvero lo vedo raramente.
+
+00:31:00.033 --> 00:31:02.693
+<v SPEAKER_1>Però anche qui siamo sempre nell'ambito Cisco.
+
+00:31:04.793 --> 00:31:06.593
+<v SPEAKER_1>C'è un'altra funzionalità.
+
+00:31:06.593 --> 00:31:17.113
+<v SPEAKER_2>Questo protocolle tipo VTP nella comunicazione tra lo switch che, se non ricordo male, si chiama Master e parlava coi vari switch.
+
+00:31:18.633 --> 00:31:20.653
+<v SPEAKER_2>Quella comunicazione da dove transita?
+
+00:31:20.993 --> 00:31:22.493
+<v SPEAKER_2>Tutto sulla native?
+
+00:31:25.413 --> 00:31:27.113
+<v SPEAKER_1>Mi pare di sì.
+
+00:31:27.113 --> 00:31:30.133
+<v SPEAKER_1>No sulla native, sulla uno.
+
+00:31:30.133 --> 00:31:31.653
+<v SPEAKER_1>Sì, però prendi la...
+
+00:31:31.653 --> 00:31:33.193
+<v SPEAKER_1>è una cosa che ho analizzato anni fa.
+
+00:31:33.193 --> 00:31:42.473
+<v SPEAKER_1>Forse c'è ancora un mio post in giro da qualche parte che è rivolta all'idea di che cosa succede se si rimuove la VLAN 1 dalla propria infrastruttura.
+
+00:31:42.953 --> 00:31:47.413
+<v SPEAKER_1>E ci sono dei protocolli che usano la uno per passare.
+
+00:31:47.413 --> 00:31:49.233
+<v SPEAKER_1>Alcuni no, usano la nativa.
+
+00:31:49.233 --> 00:31:50.773
+<v SPEAKER_1>Alcuni usano proprio la uno.
+
+00:31:50.773 --> 00:31:55.973
+<v SPEAKER_1>Quindi rimuovendo la uno dal trunk, quel protocollo cessava di funzionare.
+
+00:31:55.973 --> 00:31:57.913
+<v SPEAKER_1>Non ricordo nello specifico.
+
+00:32:00.253 --> 00:32:08.733
+<v SPEAKER_1>Dicevo poi c'è un altro protocollo sempre per facilitare la vita dei network admin, che anche qui era attivo di default.
+
+00:32:08.733 --> 00:32:18.513
+<v SPEAKER_1>Oggi sugli ultimi catalyst non lo so, ma potrei scommettere di sì, che era il DTP, Dynamic Trunking Protocol, che è la negoziazione del trunk.
+
+00:32:18.513 --> 00:32:23.773
+<v SPEAKER_1>Questo secondo me lato offensivo può rilevare interesse.
+
+00:32:23.773 --> 00:32:32.393
+<v SPEAKER_1>Sostanzialmente tu puoi richiedere allo switch che la tua porta venga negoziata non più in accesso, ma in trunk.
+
+00:32:33.653 --> 00:32:36.293
+<v SPEAKER_1>E di me ne sia un'altra che adesso ti racconto.
+
+00:32:36.293 --> 00:32:43.133
+<v SPEAKER_1>Quindi a quel punto va da sé che se tu sei in ascolto, lo switch ti invierà il traffico per tutte le VLAN.
+
+00:32:43.133 --> 00:32:53.613
+<v SPEAKER_1>E puoi vedere non solo quali VLAN sono configurate, ma anche proprio il traffico e espostarti, o meglio configurarti una sub interface per VLAN.
+
+00:32:53.613 --> 00:32:56.333
+<v SPEAKER_1>A quel punto sei in locale in tutte le VLAN.
+
+00:32:58.953 --> 00:33:06.433
+<v SPEAKER_1>Reticisco, questo io lo vedo veramente, siccome devi disattivarlo e il comando è...
+
+00:33:08.113 --> 00:33:11.793
+<v SPEAKER_1>Switch port non negotiate, mi pare, sì.
+
+00:33:12.933 --> 00:33:15.733
+<v SPEAKER_1>Nelle configurazioni che analizzo non c'è mai questo record.
+
+00:33:15.733 --> 00:33:20.713
+<v SPEAKER_1>E quindi di fatto tutte le porte di accesso possono negoziare come tranche.
+
+00:33:20.713 --> 00:33:29.653
+<v SPEAKER_1>Bisogna un attimo studiarsi il protocollo, sapere che frame inviare per negoziarlo, però tutto sommato lo vedo abbastanza semplice.
+
+00:33:30.753 --> 00:33:45.093
+<v SPEAKER_1>Il paio di questo è la VoiceVLAN, che è lo switch sostanzialmente, parlo sempre del mondo Cisco, poi ogni vendor ha la sua derivazione.
+
+00:33:47.133 --> 00:33:48.793
+<v SPEAKER_1>Quindi vanno un po studiate tutte.
+
+00:33:48.793 --> 00:34:07.253
+<v SPEAKER_1>La VoiceVLAN nel mondo Cisco di fatto permette al client, quindi a chi è collegato alla porta di accesso, di negoziare la porta non come access, ma come trunk di fatto, dove è un trunk con solo la vlan di accesso e la vlan voice.
+
+00:34:09.613 --> 00:34:22.773
+<v SPEAKER_1>Questa negoziazione si fa tramite CDP, se ricordo bene, quindi il CDP, lo switch che riceve il frame CDP, se riconosce un telefono dall'altra parte, gli assegna un trunk con la vlan di accesso e la vlan voice.
+
+00:34:23.673 --> 00:34:34.493
+<v SPEAKER_1>È chiaro che non serve dire cosa succede se un attacker accede la vlan voice, dichiarata come voice, e lo lasciamo così per esercizio.
+
+00:34:34.493 --> 00:34:40.493
+<v SPEAKER_2>In base a come ognuno ha configurato la propria voice vlan, farà le conclusioni.
+
+00:34:42.853 --> 00:34:52.293
+<v SPEAKER_1>Sempre su questo tema, quindi la possibilità di saltare direttamente in modo facile, c'è la tecnica del vlan hopping.
+
+00:34:53.313 --> 00:35:11.273
+<v SPEAKER_1>Io qui sono un po tiepido, perché se il tuo gateway è un firewall, la premessa sempre la rendiamo semplice, quindi la parte tecnica che ci ascolta ci permette la semplificazione in favore di chi magari non è tecnico.
+
+00:35:11.333 --> 00:35:25.933
+<v SPEAKER_1>La tecnica che vi lan opping di fatto ti permette di inviare un frame con due vilans, quindi con il tag di due vilans, per bypassare il firewall in modo che lo switch diciamo ruoti, non è corretto dire ruoti.
+
+00:35:25.933 --> 00:35:33.413
+<v SPEAKER_1>Inoltre il frame ha la vilan di destinazione, è un modo per ingannare lo switch.
+
+00:35:33.413 --> 00:35:43.173
+<v SPEAKER_1>Funziona su alcuni casi, quindi già non su tutti, alcuni switch sono particolarmente vulnerabili, altri invece non lo sono proprio.
+
+00:35:43.173 --> 00:35:49.733
+<v SPEAKER_1>Anche qui, se ricordo bene, i Cisco non sono vulnerabili perché fanno questo check, vado sempre a memoria.
+
+00:35:49.733 --> 00:35:51.593
+<v SPEAKER_1>E...
+
+00:35:51.593 --> 00:36:13.233
+<v SPEAKER_1>Sono molto scettico di questa tecnica, perché alla fine tu innesti una sorta di traffico asimmetrico, perché anche supponendo di raggiungere con la tecnica evulan hopping la rete server, quindi bypassando il tuo firewall, perché lo switch che la inoltre è direttamente, il ritorno sarà direttamente...
+
+00:36:14.473 --> 00:36:20.713
+<v SPEAKER_1>Sarà, scusa, nel path, diciamo, regolare, quindi attraverso il gateway, attraverso il firewall.
+
+00:36:20.713 --> 00:36:26.153
+<v SPEAKER_2>Sì, quindi quasi sicuramente il trafico asimmetrico viene droppato.
+
+00:36:26.173 --> 00:36:35.993
+<v SPEAKER_1>Esatto, auspicabilmente la rete viene segmentata da un firewall, quindi se c'è il firewall e è un trafico asimmetrico, il firewall lo blocca.
+
+00:36:35.993 --> 00:36:51.073
+<v SPEAKER_1>Se il tuo gateway non è un firewall, come ci siamo detti all'inizio, probabilmente non è presidiato, non c'è alcun tipo di visibilità, può andare con un port scan tranquillo, senza alcuni problemi, quindi ecco perché sono scettico.
+
+00:36:54.473 --> 00:37:12.913
+<v SPEAKER_1>Più o meno queste sono le tecniche che mi vengono in mente che possono essere fatte a livello di rete, quindi quelle più distruttive magari da non fare, quelle diciamo più passive dove si raccolgono una serie di dati, però tutto sommato mi pare di averle elencate tutte.
+
+00:37:12.913 --> 00:37:16.313
+<v SPEAKER_1>Non so se ti vieni in mente qualcosa che magari a me è sfuggito.
+
+00:37:16.313 --> 00:37:32.673
+<v SPEAKER_2>No, stavo facendo ragionando, sono preso mille appunti su quello che hai detto, e stavo ragionando già con queste informazioni sulla rete, sull'omino di perlustrazione in cui mi trovo con il dispositivo, si raccoglie praticamente tutto.
+
+00:37:32.673 --> 00:37:34.093
+<v SPEAKER_2>Con un po di...
+
+00:37:34.093 --> 00:38:00.833
+<v SPEAKER_2>Se il firewall non è rognoso, o se ho degli elementi di routing prima del firewall, alcune cose le posso portare anche al di là del router, prima di incontrare poi il firewall che mi dà più filo da torcere, nel senso che giustamente dropperà delle richieste o potrebbe allarmarsi per altre richieste.
+
+00:38:00.833 --> 00:38:06.753
+<v SPEAKER_2>Però già così si raccoglie un sacco di informazioni.
+
+00:38:06.753 --> 00:38:10.913
+<v SPEAKER_2>Alcune le ho proprio mai neanche pensate di politizzare l'LDP.
+
+00:38:11.673 --> 00:38:22.913
+<v SPEAKER_2>Non mi sono mai neanche messo in scan o a verificare semplicemente con Wireshark in LDP che cosa viene mandato a un device.
+
+00:38:22.913 --> 00:38:25.573
+<v SPEAKER_2>Quindi quelli me li guardo sicuramente.
+
+00:38:25.573 --> 00:38:30.893
+<v SPEAKER_2>VTP ce l'avevo lavorato, ma non l'avevamo mai usato in questo senso.
+
+00:38:30.893 --> 00:38:32.653
+<v SPEAKER_2>Anche ho avuto brutte esperienze comunque.
+
+00:38:34.113 --> 00:38:36.313
+<v SPEAKER_1>Il lavoro che si fanno da anni seri.
+
+00:38:38.393 --> 00:38:49.353
+<v SPEAKER_2>Il villain hopping non l'ho provato da un sacco di tempo, perché a un certo punto non ha più funzionato, ma in senso che è stato fixato a livello switch in quasi tutti i contesti in cui ci ho lavorato.
+
+00:38:49.353 --> 00:38:55.273
+<v SPEAKER_2>Però devo dire che capita ogni tanto di trovare qualche cosa di glorioso che potrebbe...
+
+00:38:56.353 --> 00:38:57.373
+<v SPEAKER_2>Potrebbe essere un po di ragione.
+
+00:38:59.313 --> 00:39:08.413
+<v SPEAKER_2>E l'unica cosa che probabilmente non hai citato, perché è praticamente impossibile trovarlo, è la possibilità di saturare la mecca della stable.
+
+00:39:08.413 --> 00:39:10.473
+<v SPEAKER_2>Alcuni sui che ci si comportavano.
+
+00:39:10.513 --> 00:39:12.113
+<v SPEAKER_2>Però non mi succede da...
+
+00:39:12.113 --> 00:39:19.593
+<v SPEAKER_2>Non lo so, non saprei dire quanti anni non mi succede di poter saturare la mecca della stable.
+
+00:39:19.593 --> 00:39:24.413
+<v SPEAKER_1>Sì, anche perché sono un numero abbastanza elevato di meccaders che bisogna usare.
+
+00:39:24.413 --> 00:39:30.093
+<v SPEAKER_1>Sì, me l'ero segnato, anzi no, volevo segnarmelo, me l'ero dimenticato poi parlando di segnarlo.
+
+00:39:30.093 --> 00:39:37.293
+<v SPEAKER_1>Sempre nei corsi di ethical hacking si dice che appunto saturando la tabella TCAM lo switch si comporta poi come un hub.
+
+00:39:39.133 --> 00:39:59.613
+<v SPEAKER_1>Nell'unico caso dove ho visto veramente questa cosa qua, nel senso che il numero di meccaders in rete era di qualche decina di migliaia e aveva di fatto superato la capacità degli switch, il risultato è che la rete aveva grossi problemi.
+
+00:39:59.613 --> 00:40:05.773
+<v SPEAKER_2>Anche perché poi meccaders li spara anche sui tranks, cioè assegnala anche.
+
+00:40:05.773 --> 00:40:07.033
+<v SPEAKER_1>Sì, sì, sì, assolutamente.
+
+00:40:07.033 --> 00:40:36.793
+<v SPEAKER_1>Quindi il pacchetto, se la tua porta comincia a mandare fuori, dopo parliamo di come magari proteggersi da queste cose qua, mandare fuori decine di migliaia di meccaders, lui li manda fino all'upstream, fino a dove arriva, e a catena, diciamo, se la tua topologia è vasta, questi meccaders arrivano dappertutto e tutti gli switch cominciano effettivamente a non avere più posto in tabella per sapere dove sono, e cominciano effettivamente a comportarsi come hub.
+
+00:40:36.793 --> 00:40:45.133
+<v SPEAKER_1>Solo che, cioè hub per chi magari non li ha mai visti, sono degli switch che inoltrano tutti i pacchetti a tutto, ok?
+
+00:40:45.133 --> 00:40:49.073
+<v SPEAKER_1>Quindi puoi sniffare il traffico anche di connessioni che non sono tue.
+
+00:40:49.073 --> 00:41:00.993
+<v SPEAKER_1>Il problema, nell'unico caso in cui qualche anno fa non tanti ho visto questa cosa qua, perdi in prestazioni, ma perdi enormemente in prestazioni.
+
+00:41:00.993 --> 00:41:12.453
+<v SPEAKER_1>Quindi tutto il pensiero di faccio un'attività per essere più visibile possibile, qui in realtà si stanno creando più problemi possibili, quindi la vedo veramente in salita.
+
+00:41:16.393 --> 00:41:21.833
+<v SPEAKER_1>Sì, questa cosa qua mi ero proprio scopordato nella tabella di inserirla.
+
+00:41:22.153 --> 00:41:48.993
+<v SPEAKER_1>Un'altra cosa, un'altra riflessione, è che una volta che tu hai identificato il tuo gateway, quindi per questo dovrebbe essere una delle prime cose da fare, ma di là dell'ARP scan che è quello, abbiamo detto che lo si deve fare e probabilmente passa in, diciamo, non visto, passa non visto perché comunque il numero di ARP, di richieste ARP, è nella rete, è comunque elevato.
+
+00:41:48.993 --> 00:41:55.053
+<v SPEAKER_1>Quindi secondo me serve da verificare, faremo un laboratorio su questo.
+
+00:41:55.093 --> 00:42:03.553
+<v SPEAKER_1>La parte IDS, perché si chiama Detection, non può essere prevention, non analizza questa cosa qua.
+
+00:42:03.553 --> 00:42:23.033
+<v SPEAKER_1>Cioè non c'è una soglia sopra il quale viene fatto un alert, anche se in realtà non è neanche così strano, però comunque è modulabile perché se io potrei fare una richiesta ARP di uno ogni, che ne so, ventesimo di secondo e magari per una rete può essere abbastanza fattibile.
+
+00:42:23.313 --> 00:42:27.353
+<v SPEAKER_1>Comunque, ok, supponiamo che questa comunque non si possa far nulla.
+
+00:42:27.353 --> 00:42:39.633
+<v SPEAKER_1>Tutti gli scan successivi li puoi fare evitando il tuo gateway, quindi una volta sai il gateway, gli scan metti esclusione sul tuo gateway e quindi di fatto non vengono rilevati.
+
+00:42:40.793 --> 00:42:52.393
+<v SPEAKER_1>Ospicabilmente il firewall dovrebbe essere configurato correntamente, però escludendolo quel traffico lì, chiaramente parliamo all'interno della stessa rete, non dovrebbe essere, non crea troppo disturbo.
+
+00:42:52.493 --> 00:42:53.213
+<v SPEAKER_1>Mettiamola così.

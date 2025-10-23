@@ -1,0 +1,718 @@
+WEBVTT
+
+00:00:08.598 --> 00:00:13.378
+<v SPEAKER_1>Benvenuti in Info Sec. Unplugged, io sono sempre Andrea Dainese e con me c'è Rocco Sicilia.
+
+00:00:13.378 --> 00:00:13.958
+<v SPEAKER_1>Ciao Rocco.
+
+00:00:13.958 --> 00:00:15.798
+<v SPEAKER_2>Ciao.
+
+00:00:15.958 --> 00:00:18.258
+<v SPEAKER_1>Il tema di oggi è compliance.
+
+00:00:18.258 --> 00:00:38.898
+<v SPEAKER_2>Esatto, c'eravamo lasciati un po di tempo fa con l'idea di fare il percorso, diciamo il percorso di maturazione di un di un C-level o anche di un team manager in ambito, in ambito, in un team IT, nel momento in cui entra in azienda si trovavano una serie di temi da gestire.
+
+00:00:38.898 --> 00:00:44.198
+<v SPEAKER_2>Alcuni molto tecnici e giustamente avevi suggerito che un tema che si può trovare a gestire.
+
+00:00:44.198 --> 00:00:56.238
+<v SPEAKER_2>Se è fortunato o sfortunato non lo so, però potrebbe essere un greenfield in alcuni casi, l'applicazione di un framework o di una certificazione, anche in alcuni casi.
+
+00:00:56.238 --> 00:01:07.318
+<v SPEAKER_2>In altri casi magari si trova cose già fatte, deve in qualche modo prendere le radini di quello che è stato fatto precedentemente e dargli una direzione.
+
+00:01:08.758 --> 00:01:26.298
+<v SPEAKER_2>Ovviamente ci sono tanti temi, non so, secondo te, in questo periodo storico quale potrebbe essere quello più in voga, anzi forse ce ne sono alcuni più in voga di altri, poi ci sono dei sempreverdi come le 27.000 per dire che sono delle pietre miliari, ma sicuramente ci sono anche altre.
+
+00:01:27.418 --> 00:01:44.158
+<v SPEAKER_1>Beh, visto che siamo a fine 2024, direi che l'hype è sulla NIST 2, di cui però magari parliamo dopo, perché tanti hanno già parlato, ma in realtà non c'è tanta documentazione in giro da quello che vedo, a parte la direttiva in sé.
+
+00:01:44.158 --> 00:01:55.878
+<v SPEAKER_1>Secondo me, sempre nell'ottica del CISO, o futuro CISO che entra in azienda e deve ancora capire dove è finito, l'ambito compliance è un buon punto di partenza.
+
+00:01:55.878 --> 00:02:13.318
+<v SPEAKER_1>Cioè capire se un'azienda è soggetta a normative particolari, tu hai citato la parte 27001, sicuramente T-Sax di cui tu sei più ferrato di me è un'altra buona alternativa, la NIST l'abbiamo detta, e perché non citare anche il povero e bistrattato GDPR?
+
+00:02:13.318 --> 00:02:13.978
+<v SPEAKER_2>GDPR?
+
+00:02:13.978 --> 00:02:19.438
+<v SPEAKER_2>L'ho invitato apposta, solo per non generare troppi malumori.
+
+00:02:21.278 --> 00:02:22.638
+<v SPEAKER_1>Lo farò io.
+
+00:02:22.638 --> 00:02:51.338
+<v SPEAKER_1>Quindi arrivare in azienda e cominciare a capire, sicuramente con chi si lavora, le relazioni con le persone, le tecnologie eccetera eccetera, ma quali normative l'azienda è obbligata letteralmente o meno a seguire e partire da là, senza citare dalla NIST 2, perché in questo contesto oggi è troppo recente, quindi non ci sono ancora assessment di quel tipo, chissà se mai ci saranno in modo generalizzato.
+
+00:02:51.338 --> 00:03:10.438
+<v SPEAKER_1>Sicuramente qualcuno sarà soggetto, ma non in modo generale e quindi partire da un report aiuta, speriamo se è ben fatto, a capire quali sono le debolezze e quali sono i punti aperti in cui il CISO deve inizialmente mettere mano.
+
+00:03:10.438 --> 00:03:22.158
+<v SPEAKER_1>Chiaramente ci occupiamo di normative legate in qualche modo alla sicurezza dell'informazione, perché poi c'è tutto un ecosistema di cui CISO magari si interessa molto meno.
+
+00:03:22.158 --> 00:03:24.058
+<v SPEAKER_1>Da dove vuoi partire?
+
+00:03:24.178 --> 00:03:42.598
+<v SPEAKER_2>Allora, partire è proprio la parte, uno degli elementi che ho notato discutendo con varie detti lavori, persone che lavorano all'interno di un'azienda, è proprio il punto di partenza, che mi sembra forse il momento più critico in cui bisogna fare la fotografia iniziale del, diciamo, dello status.
+
+00:03:43.678 --> 00:04:18.678
+<v SPEAKER_2>E effettivamente, parlando anche con figure che, diciamo, a livello consulenziale sono attive su questo fronte, è una sorta di assessment iniziale, mi pare di capire sia proprio la cosa migliore da fare, è partire da un pre-assessment, da un momento di si di raccolta informazioni, di quello che dello status dell'azienda, e da lì olio di gomito e gap analysis, probabilmente, per capire cosa bisogna fare per adeguare lo status.
+
+00:04:20.318 --> 00:04:43.398
+<v SPEAKER_2>Su questo pre-assessment, io vedo molti che vanno giù di Excel, quindi c'è una serie di punti, e una serie di X da spuntare in maniera molto asettica, e la cosa che mi piacerebbe ragionare, su cui mi piacerebbe ragionare in maniera un pochino più strutturata, è ok partire dai singoli punti.
+
+00:04:43.398 --> 00:05:02.378
+<v SPEAKER_2>Non so se con la tua esperienza un Excelone può già soddisfare questo microtask del pre-assessment, ma la cosa che più mi sta a cuore è poi quei punti in qualche misura devo trasformarli non soltanto in della documentazione, ma anche poi in attività più operative.
+
+00:05:02.558 --> 00:05:48.898
+<v SPEAKER_2>Da queste gap analysis, ad esempio, una cosa che noto, se l'azienda magari è la prima volta che approccia quel tipo di, in quel modo strutturato a certi temi, la gap analysis potrebbe essere abbastanza sconfortante, cioè potrebbe essere che gli manca tutta la documentazione perché non è abituata a documentare, non è abituata magari proprio al concetto di policy come cosa spesso richiesta da questi framework, e a volte, penso l'abbia visto anche tu, a volte c'è molto effort spostato sulla documentazione e come dire, si dà quasi per scontato quell'operatività magicamente, in qualche modo, la realtà si adegui a quello che è stato scritto nei documenti, ho avuto la sensazione che a volte vengono approcciate così.
+
+00:05:48.898 --> 00:06:03.458
+<v SPEAKER_2>E non so se è un problema proprio di come viene improntata la gap analysis o se invece è un problema più profondo e più operativo, cioè che si scrive qualcosa, ma poi si fa fatica a realizzarlo.
+
+00:06:05.658 --> 00:06:12.878
+<v SPEAKER_1>Allora hai aperto praticamente per ogni frase c'è un tema che andrebbe sviscerato in un'oretta di podcast.
+
+00:06:12.878 --> 00:06:17.098
+<v SPEAKER_1>Proveremo in qualche modo a stringere o faremo qualche puntata aggiuntiva.
+
+00:06:20.278 --> 00:06:27.858
+<v SPEAKER_1>Il fatto di usare Excel come strumento base di questo tipo di attività, secondo me è un tasto fortemente dolente.
+
+00:06:27.858 --> 00:06:32.938
+<v SPEAKER_1>Però prima io farei un disclaimer, perché ne io ne te di professione facciamo gli auditor.
+
+00:06:32.938 --> 00:06:34.318
+<v SPEAKER_2>Esatto, quindi...
+
+00:06:34.318 --> 00:06:39.078
+<v SPEAKER_1>Dovrebbe essere ovvio, però, per chi ci conosce, però giusto per essere trasparenti.
+
+00:06:39.078 --> 00:06:58.038
+<v SPEAKER_1>Però ci troviamo spesso coinvolti in auditor, perdone, per il fatto che conosciamo molto bene tecnicamente le infrastrutture e siamo in grado di fare quel che io chiamo da collante tra l'azienda e la parte di compliance.
+
+00:06:58.038 --> 00:07:07.458
+<v SPEAKER_1>Quindi ne parliamo in questo ruolo qua e quindi è un ruolo che molto si avvicina a quello che dicevi tu, che è il focus di questa serie di podcast, quello del CISO.
+
+00:07:08.858 --> 00:07:11.258
+<v SPEAKER_1>Chiuso disclaimer.
+
+00:07:11.258 --> 00:07:12.598
+<v SPEAKER_1>Allora da dove partire?
+
+00:07:13.678 --> 00:07:15.118
+<v SPEAKER_1>Partiamo dall'excel.
+
+00:07:15.118 --> 00:07:19.458
+<v SPEAKER_1>Il mondo della compliance adora gli excel.
+
+00:07:19.458 --> 00:07:30.298
+<v SPEAKER_2>Ti dico che ti dico più disagio sull'excel, così magari ti ti do l'elemento di ragionamento che ho, diciamo quello che ho maturato io.
+
+00:07:30.458 --> 00:07:39.478
+<v SPEAKER_2>La risposta è socialmente sul mondo CIS, perché sono gli ultimi che ho affrontato, però vale più o meno anche per gli altri argomenti.
+
+00:07:39.478 --> 00:07:53.818
+<v SPEAKER_2>A fronte di un controllo, la risposta sì, no, ce l'ho, non ce l'ho, da un punto di vista tecnico, e quindi anche da un punto di vista del security manager che riceve quella domanda, è troppo stringente.
+
+00:07:53.818 --> 00:07:56.358
+<v SPEAKER_2>Non è mai sì o no.
+
+00:07:56.358 --> 00:08:01.298
+<v SPEAKER_2>È sempre una risposta un po più evoluta, un po più articolata.
+
+00:08:01.298 --> 00:08:04.358
+<v SPEAKER_2>Questo è il primo elemento che per me è spiazzante.
+
+00:08:06.898 --> 00:08:28.798
+<v SPEAKER_1>Allora, nell'Excel, sono anch'io partito da CIS la settimana scorsa, perché mi sono trovato a vera che fare con la NIS, e ho trovato un buon strumento, usare i controlli CIS e mapparli con i, mi pare 10, 12, mi sfuggi il numero esatto di requisiti che vengono menzionati in modo specifico dalla NIS 2.
+
+00:08:28.798 --> 00:08:42.878
+<v SPEAKER_1>Quindi lo strumento era buono, e a mio malgrado ho riusato l'Excel, ha giuggeto appunto una considerazione sulla sulla parte NIS di quei controlli che ritenevo rilevanti.
+
+00:08:43.958 --> 00:08:57.678
+<v SPEAKER_1>E il problema è sempre lo stesso quello che hai detto tu, quindi al di là del sì o del no, bisogna inserire una descrizione del perché, intanto non è mai sì, e non è neanche, a volte è no, ma spesso non è mai neanche no.
+
+00:08:57.678 --> 00:09:07.478
+<v SPEAKER_1>Perché magari c'è, ma non è formalizzato, non c'è un processo, c'è, ma è all'80%, c'è, ma ci sono delle eccezioni, ma le eccezioni non sono documentate.
+
+00:09:07.478 --> 00:09:17.658
+<v SPEAKER_1>Quindi comunque tutto questo deve essere inserito e inserire queste considerazioni in un Excel non è comodo, non lo trovo per niente comodo.
+
+00:09:19.338 --> 00:09:34.598
+<v SPEAKER_1>Perché inserire quel tipo di testo, anche solo spezzetterlo in paragraphi, gestire la correzione ortografica, è due o tre cose che tecnicamente un editor di testo fa, lì è estremamente complicato e secondo me non è neanche leggibile.
+
+00:09:34.598 --> 00:09:42.738
+<v SPEAKER_1>Perché tu l'hai visto, ma chi ha visto a presente l'Excel dei controlli ICS è già abbastanza largo, è già esteso.
+
+00:09:42.738 --> 00:10:03.378
+<v SPEAKER_1>Io ho dovuto aggiungere un'altra due o tre colonne, quindi uno è semplicemente il check rilevante per NISO, no, gli altri due sono la lettera di riferimento della normativa e una descrizione, serviva a quei monitor ultra wide che ho visto in alcuni clienti.
+
+00:10:03.378 --> 00:10:18.558
+<v SPEAKER_1>Quindi poco pratico, però tant'è, questo è poco da fare, è il sistema che io vedo preferito, lo vedo sempre in tutti gli auditori 27001 che ho vissuto, viene usato Excel come base per fare l'assessment.
+
+00:10:18.558 --> 00:10:22.178
+<v SPEAKER_1>Non so in ambito T-Sax, non so se c'hai già avuto a che fare.
+
+00:10:23.058 --> 00:10:26.698
+<v SPEAKER_2>Ma sì, in effetti non ho visto usare l'Excel.
+
+00:10:27.898 --> 00:10:42.158
+<v SPEAKER_2>Forse lì è così, siccome T-Sax, giusto per chi non la conosce, non è diversissima dalla 27001, ma ha un riferimento specifico del mondo automotive, e quindi forse è sufficientemente peculiare da permettere una templatizzazione.
+
+00:10:42.158 --> 00:11:37.638
+<v SPEAKER_2>Quindi quello che sto vedendo è che molti partono da dei template già abbastanza strutturati, forse perché il modello lo prevede, cioè il modello non prevede che tu abbia, come dire, non è tanto orientata al ce l'ho, non ce l'ho, devo migliorare, devo maturare, ma ci sono degli elementi che devi avere e in base al tipo di livello che vuoi ottenere di certificazione, l'auditor va più in dettaglio nella ricerca delle informazioni, ma quelle cose non puoi non averle, devi comunque maturarle in un certo contesto, ma in realtà poi anche le altre, dubito che in una 27000 puoi un punto completamente non averlo, probabilmente puoi avercelo in maturazione, ma proprio non averlo forse non è previsto anche nelle altre modelli.
+
+00:11:37.638 --> 00:11:45.538
+<v SPEAKER_1>Diciamo che ci sono alcuni punti a cui una specifica azienda potrebbe non essere soggetta, questa cosa va giustificata in un certo modo.
+
+00:11:45.538 --> 00:12:05.038
+<v SPEAKER_1>C'è chi dice evita di scartare troppi i controlli perché poi ti fanno storia, qualcun altro dice no, se è tuo diritto scartali, scartali, qualcun altro dice no, in qualche modo inventati un processo che copre quel controllo e gesticilo.
+
+00:12:05.038 --> 00:12:16.998
+<v SPEAKER_1>Di differenze e questo secondo me è un altro problema, però tornando alla T-Sax mi pare di capire che la T-Sax sia nata, quindi con un certo supporto dietro e in realtà è mancata d'altra normative.
+
+00:12:16.998 --> 00:12:19.258
+<v SPEAKER_1>Quindi quello che tu hai visto è il costuritore in play.
+
+00:12:19.258 --> 00:12:33.398
+<v SPEAKER_2>Diciamo che, ad esempio, la grande differenza tra la 27000 e la T-Sax è che la 27000 ha lo scope, vado a memoria, lo scope lo decide l'azienda, la T-Sax lo scope è ben definito, cioè è proprio chiaro quello che è lo scope.
+
+00:12:33.398 --> 00:12:54.578
+<v SPEAKER_2>Quindi non hai neanche giustamente la libertà di variare molto su quel fronte, perché lo scope è ben chiaro, è il mondo automotive, sono i processi che hanno a che fare con la produzione, con la filiera dell'automotive e quindi all'interno di un'azienda quando applichi T-Sax lo stai applicando chiaramente a un pezzo della tua filiera di produzione e lì non c'è scampo.
+
+00:12:54.578 --> 00:13:15.578
+<v SPEAKER_2>Quindi è molto chiaro, è molto rigido non in senso negativo, è rigido nel senso che lo scope è chiaro, è ben chiaro qual è lo scope e non c'è l'esigenza di fare ragionamenti differenzi da quello che lo scope che richiede la T-Sax, che porta a T-Sax.
+
+00:13:15.638 --> 00:13:24.218
+<v SPEAKER_2>Mentre il 27000 è uno obiettivamente l'azienda a titolo di applicare uno scope specifico a quel percorso.
+
+00:13:24.218 --> 00:13:40.178
+<v SPEAKER_2>Quindi questa effettivamente cambia parecchio, in un certo senso la rende più abbordabile, nel senso che non che sia più facile da conseguire, perché poi i controlli sono molto simili.
+
+00:13:40.178 --> 00:13:52.518
+<v SPEAKER_2>Si aggiunge la parte di ricerca e sviluppo, anche qua, lì si aggiunge, perché lo prevede lo scope, un'azienda che ha un reparto di ricerca e sviluppo potrebbe scegliere di metterlo in scope o meno nella 27001.
+
+00:13:52.518 --> 00:13:55.678
+<v SPEAKER_2>Quindi una 27001 potrebbe diventare una T-Sax.
+
+00:13:55.678 --> 00:14:04.378
+<v SPEAKER_2>Anzi, se non ricordo male, se hai già fatto il percorso 27001 ti trovi già tantissima documentazione già pronta in realtà per l'ambito T-Sax.
+
+00:14:04.418 --> 00:14:12.578
+<v SPEAKER_2>Penso, a parte un boarding, un autobording dei dipendenti, è praticamente la stessa, cioè non cambia nella sostanza.
+
+00:14:12.578 --> 00:14:39.698
+<v SPEAKER_2>E quindi sì, T-Sax da questo punto di vista, da questo agevolatore ovviamente non è spendibile come una 27000, nel senso che è interessante soltanto per la filiera automotive e quindi non è come quel bollino 27001 che viene diciamo più facile da spendere, perché più generico è da, sì, obiettivamente abbraccia più ambiti.
+
+00:14:39.698 --> 00:14:55.758
+<v SPEAKER_2>Poi la cosa interessante dello scope è che, mi è capitato anche di vedere, scope un po eccessivamente piccoli diciamo, quindi azienda che magari è molto strutturata, che sceglie volutamente uno scope un po piccolino per farcela stare dentro più facilmente, ma questo è un altro discorso.
+
+00:14:56.818 --> 00:15:14.298
+<v SPEAKER_1>Sì, spesso ci attacchiamo ai bollini e non andiamo a guardare qual è lo scope, quindi anche la 27001 ho visto aziende che l'hanno ridotto molto e per mettere il bollino, tanto alla fine si richiede che faccia bella mostra il bollino in sé.
+
+00:15:15.338 --> 00:15:33.038
+<v SPEAKER_1>Io ho seguito in passato un paio di aziende dal punto di vista di GDPR, che sai che a me piace particolarmente come è costruito, ma in quei casi mi sono fatto aiutare in tramite i casi da uno strumento esterno, quindi non ho lavorato con il solito Excel, eccetera.
+
+00:15:33.038 --> 00:15:57.158
+<v SPEAKER_1>Però ritengo che sia, non dico un caso unico, assolutamente, però nel panorama internazionale, quando io vado dai clienti vedo che tutti lavorano ancora a documenti Word ed è estremamente faticoso, trovo molto più pratico lavorare a template, perché in ogni caso, qualunque sia la normativa, bisogna garantire una sorta di dinamicità.
+
+00:15:57.158 --> 00:16:00.078
+<v SPEAKER_1>La documentazione deve essere dinamica, non può essere statica.
+
+00:16:00.078 --> 00:16:05.678
+<v SPEAKER_1>Se è statica non riuscirà mai a essere al passo con la dinamicità dell'azienda.
+
+00:16:09.978 --> 00:16:11.038
+<v SPEAKER_1>Facciamo un passo indietro.
+
+00:16:11.038 --> 00:16:25.218
+<v SPEAKER_1>Quindi il nostro famoso CISOT arriva in azienda, si dà un'occhiata o comunque chiede un pre-assessment da dove è possibile, si trova un documento da andare a controllare, andare come spunto, uno spunto di partenza tutto sommato.
+
+00:16:26.458 --> 00:16:45.758
+<v SPEAKER_1>Quello che io ho notato è che se torniamo alla base delle infrastrutture tecnologiche, tutte le normative che abbiamo citato, come hai detto tu, dicono più o meno le stesse cose, informe diverse, su scopi diversi, eccetera, eccetera, però la stragrande maggioranza dei processi sono comuni a tutte.
+
+00:16:45.758 --> 00:17:05.158
+<v SPEAKER_1>In questo senso io sposo particolarmente una condivisione, nell'ambito ISO viene chiamato sistema di gestione, quindi una condivisione della sistema di gestione affinché sia trasversale a più normative e certificazioni diverse.
+
+00:17:05.158 --> 00:17:15.118
+<v SPEAKER_1>Questo perché aiuta, dal mio punto di vista, dalla mia esperienza, enormemente a gestire la parte burocratica, che comunque è estremamente importante.
+
+00:17:15.118 --> 00:17:22.958
+<v SPEAKER_1>Quindi se noi trattiamo gli audit come audit al di là della certificazione, presentiamo l'azienda in modo omogeneo integrato.
+
+00:17:23.538 --> 00:17:32.458
+<v SPEAKER_1>Se ogni audit lo gestiamo a sestante, intanto impazziamo perché significa che non possiamo nemmeno raggrupparli.
+
+00:17:32.618 --> 00:17:44.778
+<v SPEAKER_1>E poi ogni procedura rischia di dover essere fatta in più salse, in più secondo più normative diverse.
+
+00:17:44.778 --> 00:17:49.618
+<v SPEAKER_1>E secondo me questo è estremamente dispersivo.
+
+00:17:52.118 --> 00:17:55.958
+<v SPEAKER_1>Come lavorano gli auditor?
+
+00:17:55.958 --> 00:18:02.758
+<v SPEAKER_1>Io ne ho seguiti diversi e vedo che anche loro hanno approcci completamente diversi.
+
+00:18:02.758 --> 00:18:29.938
+<v SPEAKER_1>Ci sono quelli molto più legati alla normativa, ci sono quelli un po più tecnici, non sono piuttosto rari, però bene o male, la T-SACS non la conosco, si basano su quello, è una sorta di fiducia, quindi l'azienda dichiara come lavora, questo è vero soprattutto per la ISO, e l'auditor ha il compito di verificare l'aderenza al modello in cui si è dichiarato.
+
+00:18:30.598 --> 00:18:39.058
+<v SPEAKER_1>Quindi la coerenza realtà è quello che si dichiara, quello che dicevi prima tu.
+
+00:18:40.518 --> 00:18:53.758
+<v SPEAKER_1>Questo permette di solito di presentare una realtà molto diversa, cioè come dire, presento all'auditor una situazione che è molto diversa dalla realtà.
+
+00:18:53.998 --> 00:19:01.978
+<v SPEAKER_1>E qui, lo vedo fare tantissime volte, qui secondo me si perde proprio tutto il senso delle varie normative.
+
+00:19:01.978 --> 00:19:09.718
+<v SPEAKER_1>Si prende il bollino, si passa l'esame, come avere un dump dell'esame e fine.
+
+00:19:09.718 --> 00:19:10.398
+<v SPEAKER_2>Si ma questo...
+
+00:19:10.398 --> 00:19:11.798
+<v SPEAKER_1>Si perde il senso.
+
+00:19:13.418 --> 00:19:51.038
+<v SPEAKER_2>No, approfitto del gancio perché forse questa è un po figlia proprio della metodologia in cui i controlli o i vari capitoli e i certificazioni sono dei macrotemi, in un certo senso, in cui è relativamente facile dare un sì e anche dimostrare, ad esempio banale, se il controllo è relativo alla salvaguardia delle informazioni a livello di disponibilità, tradotto back-up, una delle traduzioni è back-up.
+
+00:19:52.718 --> 00:20:06.638
+<v SPEAKER_2>Quando si parla di disponibilità del dato, e io tecnicamente lo traduco in una delle tematiche che rendono il dato disponibile, come può essere appunto il processo di back-up, e quindi dico sì, lo gestisco con il mio processo di back-up.
+
+00:20:06.638 --> 00:20:15.618
+<v SPEAKER_2>In realtà poi ci sono altre mille sfaccettature tecniche che non possono emergere da quel macro controllo.
+
+00:20:16.338 --> 00:20:21.518
+<v SPEAKER_2>Dovrei andare molto più in profondità, quindi metto anche nei panni dell'oditoro, anche se volesse andare a scavare.
+
+00:20:21.618 --> 00:20:29.178
+<v SPEAKER_2>Quello scavare sarebbe molto oneroso, andare a vedere il singolo, come lo stai facendo.
+
+00:20:29.178 --> 00:20:39.918
+<v SPEAKER_2>Ci sono dei parametri che ovviamente le certificazioni danno per capire appunto se lo si sta eseguendo correttamente o come è stato dichiarato più che correttamente.
+
+00:20:39.918 --> 00:20:49.398
+<v SPEAKER_2>Però è così ampio il tema che spesso quei parametri stessi mi sembrano deboli, adesso tutto rispetto per chi ha fatto le certificazioni.
+
+00:20:49.398 --> 00:21:16.358
+<v SPEAKER_2>Però in un certo senso è anche facile aggirare il controllo che viene dichiarato, aggirare quello che è dichiarato, o dichiarare quel minimo indispensabile per appunto dare all'udito, un modo di dire ok, hai seguito il parametro, il KPI hai raggiunto, ma la qualità con cui quel KPI è stato raggiunto potrebbe essere discutibile.
+
+00:21:16.358 --> 00:21:34.338
+<v SPEAKER_2>Questo è un elemento che tecnicamente l'ho sempre visto come un punto di debolezza di come vengono affrontate alcune certificazioni, non da tutti, per carità, però tendenzialmente c'è una sorta di scollatura forte tra quello che avviene e quello che si può dichiarare senza mentire.
+
+00:21:34.338 --> 00:21:36.018
+<v SPEAKER_2>Ecco, questo è un po la...
+
+00:21:37.518 --> 00:21:51.278
+<v SPEAKER_1>Tu hai citato il backup, quindi mi aggancio proprio su questa cosa qui che è uno dei time che vedo più spesso sia perché effettivamente è difficile da gestire, sia perché non si percepisce il valore che è il test di restore.
+
+00:21:51.278 --> 00:22:06.318
+<v SPEAKER_1>Noi sappiamo che una volta fatto un backup auspicabilmente il backup può essere riutilizzato per restaurare i dati, ma sappiamo anche che in alcuni eventi, in alcuni casi, questo non è stato possibile.
+
+00:22:06.318 --> 00:22:10.998
+<v SPEAKER_1>A mia vita mi è capitato assai di rado, probabilmente anche tu hai avuto esperienze simili.
+
+00:22:11.998 --> 00:22:27.998
+<v SPEAKER_1>Il controllo viene proprio dal fatto che i vari backup dovrebbero avere a loro volto una sorta di test di qualità, quindi a campione verificare che i backup siano utili al restore in caso di necessità.
+
+00:22:29.438 --> 00:22:40.178
+<v SPEAKER_1>Quello che io ho sempre visto sono stati dei test effettuati per soddisfare il requisito della certificazione e non come processo in sé.
+
+00:22:40.918 --> 00:23:07.538
+<v SPEAKER_1>Quindi qualcuno che a caso prendeva dei backup e provava a fare un restore, con un dispegno comunque enorme di tempo, piuttosto che fermarsi e dire ok noi abbiamo dei backup, proviamo a capire come in qualche modo verificare se sono integri, in modo che sia altrettanto utile l'azienda, senza possibilmente avere una persona là dietro che fa questo lavoro a mano.
+
+00:23:07.998 --> 00:23:18.118
+<v SPEAKER_2>Anche perché tanto gli strumenti lo consentono abbondantemente ormai, quindi non è neanche una cosa che ti devi impegnare più di tanto.
+
+00:23:18.118 --> 00:23:27.178
+<v SPEAKER_1>Sì, la gestione dello strumento, ma questo è un tema che probabilmente affronteremo in seguito, o meglio la gestione efficace dello strumento, significa conoscerlo.
+
+00:23:28.438 --> 00:23:49.538
+<v SPEAKER_1>Difficilmente ogni azienda può conoscere tutti gli strumenti che ha in campo, e quindi è una sorta di traslare, si trasla al consulente che te l'ha proposto installato, sperando che te l'abbia ottimizzato durante l'installazione, che ti abbia passato le competenze, e tutti questi sei cominciano a essere un po copolunghi.
+
+00:23:49.538 --> 00:23:51.078
+<v SPEAKER_1>Eh sì, sono diventati tanti.
+
+00:23:51.118 --> 00:24:13.398
+<v SPEAKER_2>Quindi il problema, trovando il nostro protagonista, è che il CIO CISO di turno, se si trova qualcosa di già fatto, deve avere modo di verificare le discrepanze tra il dichiarato e l'esistente, che per quanto possano essere poche, probabilmente ci saranno, abbastanza raro.
+
+00:24:13.398 --> 00:24:27.378
+<v SPEAKER_2>Quanto meno in relazione alla precisione, cioè è difficile che, come dicevi tu prima, è difficile che quello che ho dichiarato nel framework, nella documentazione del framework, sia effettivamente lo specchio delle realtà.
+
+00:24:27.378 --> 00:24:34.618
+<v SPEAKER_2>La realtà avrà n.000 sfaccettature in più, quantomeno in più rispetto a quello che c'era dentro, che in qualche modo devo andare a capire.
+
+00:24:34.618 --> 00:25:12.518
+<v SPEAKER_2>Qua sarebbe bello poter, anzi, era una delle cose che ce l'ho insegnate per le prossime chiacchierate, era la parte della documentazione tecnica, perché un CISO probabilmente vorrebbe anche, e anche un CIO, poter vedere queste informazioni, vorrebbe poterle leggere su un documento tecnico, ma qua c'è un grande problema delle aziende, dei team IT in generale, almeno in Italia, ma non so se, penso che all'estero non sia così diverso in Europa, onestamente, che sulla documentazione IT, tendenzialmente siamo un po scarsini, il team IT non ha molta voglia di fare documentazione IT.
+
+00:25:14.098 --> 00:25:21.398
+<v SPEAKER_1>Sì, questo è un problema, perché poi tenerla e tenerla aggiornata è un altro paio di maniche, ma appunto ne parleremo.
+
+00:25:21.398 --> 00:25:37.478
+<v SPEAKER_1>Il mio consiglio al CISO è di usare queste certificazioni, sapendo appunto che può e ci sarà una forte sconnessione con la realtà, ma sono la via in cui il business riconosce in qualche modo l'utilità.
+
+00:25:37.478 --> 00:25:47.318
+<v SPEAKER_1>Quindi è difficile che un'azienda dica no, non intendo mettere fondi per soddisfare i requisiti o le non conformità che mi sono state rilevate.
+
+00:25:47.318 --> 00:26:02.678
+<v SPEAKER_1>E quindi in questo senso l'Uditor può essere veramente un alleato del CISO, che può aiutarlo a sottolineare delle mancanze di cui il CISO magari si è accorto e ha bisogno di una parte esterna che lo sostenga.
+
+00:26:03.778 --> 00:26:14.458
+<v SPEAKER_1>Invece non c'è, generalmente non c'è, una relazione diretta tra la certificazione di sicurezza acquisita dall'azienda e la reale postura di sicurezza dell'azienda.
+
+00:26:14.458 --> 00:26:19.558
+<v SPEAKER_1>Quindi in questo mito, a costo di inimicarmi tante persone, però lo vorrei sfatare.
+
+00:26:19.558 --> 00:26:33.458
+<v SPEAKER_1>Non è che perché un'azienda è certificata ISO 27001, allora ha una buona postura di sicurezza, perché quello che ci siamo detti, queste certificazioni non sono tipicamente tecniche, anche se entrano nel merito un po del tecnico.
+
+00:26:34.498 --> 00:26:41.978
+<v SPEAKER_1>Per varie ragioni che magari non affrontiamo, anche perché sono un po delicate, c'è sempre la famosa birra nei dittorni di Padova.
+
+00:26:41.978 --> 00:26:47.298
+<v SPEAKER_2>Però secondo me questa cosa che dici che è particolarmente vera, secondo me è proprio quello che è legato al tema qualitativo.
+
+00:26:47.298 --> 00:27:06.958
+<v SPEAKER_2>Cioè io posso dirti serenamente come azienda che gestisco il backup, che ho una procedura di backup, che ho una procedura di recovery, posso dichiarare tutto senza mentire, obiettivamente senza mentire, ma potrei aver fatto le cose così male, io o chi per me, da rendere tutta quella struttura inefficace.
+
+00:27:06.958 --> 00:27:11.498
+<v SPEAKER_2>E purtroppo questo non viene fuori da quella documentazione.
+
+00:27:11.498 --> 00:27:21.978
+<v SPEAKER_2>Potrebbe emergere, però penso sia veramente infattibile, da un audit che va nel merito, ma nel merito specifico, ma io penso sia veramente poco praticabile.
+
+00:27:22.558 --> 00:27:51.258
+<v SPEAKER_2>Già gli audit sono una cosa non semplice, hanno quelle full immersion da una giornata, forse anche due, quindi almeno quelli che ho visto io, e anche quelli che ho diciamo di fronte nel prossimo periodo, e si resta appunto su quella superficie che è il dichiarato e il documentato, e sì qualche evidenza di solito viene anche richiesta, però si cerca di restare abbastanza sui massimi sistemi, o entrare proprio nel bit.
+
+00:27:51.258 --> 00:28:00.458
+<v SPEAKER_2>Se dovessimo entrare nel bit, probabilmente diventano audit di settimane, obiettivamente non si può fare, quindi li accettiamo così, non è che devono cambiare.
+
+00:28:00.458 --> 00:28:01.238
+<v SPEAKER_1>Li accettiamo così.
+
+00:28:01.238 --> 00:28:10.598
+<v SPEAKER_2>Però è vero che bisogna tenere conto che non possono essere una dichiarazione di postura, quello sicuramente no.
+
+00:28:11.878 --> 00:28:23.798
+<v SPEAKER_1>Li accettiamo così anche perché in questo momento, e penso anche per l'immediato futuro e anche medio termine, non c'è possibilità che cambino, sono audit di processo, non sono audit di sicurezza veri e propri.
+
+00:28:24.398 --> 00:28:50.558
+<v SPEAKER_1>E questo mi è fatto venire in mente un caso che mi è successo tempo fa, in cui un'azienda aveva fatto tutto sul sistema di backup separato, tecnicamente lo spacciavano come fisicamente separato e in quell'azienda mi trovavo a fare un cosiddetto table top exercise per capire come erano non solo fatti, che non era proprio il focus, ma come reagivano in determinate situazioni.
+
+00:28:51.178 --> 00:28:57.578
+<v SPEAKER_1>In una chiacchierata che sarà durata una mezz'ora, gli ho smontato la loro separazione fisica del backup.
+
+00:28:57.578 --> 00:29:08.838
+<v SPEAKER_1>Ma sia chiaro, non perché loro partivano da una mentalità dolosa in cui avevano fatto le cose male sapendo di farle male.
+
+00:29:08.838 --> 00:29:24.218
+<v SPEAKER_1>Gli avevano fatte bene considerando il loro punto di vista, ma guardando un attimo con un passo indietro tutte le cose che loro avevano fatto, il contesto aziendale, il processo, come salvavano le password principalmente, eccetera, eccetera.
+
+00:29:24.218 --> 00:29:40.198
+<v SPEAKER_1>Mettendo assieme tutte queste caratteristiche che tu conosci meglio di me, è venuto fuori veramente in mezz'ora di discussione che il loro backup era fragile tanto quanto la vulnerabilità critica che avevano sul server SXI.
+
+00:29:40.238 --> 00:29:45.778
+<v SPEAKER_1>Quindi, crollato quello che crollava a catena tutto senza possibilità di recupero neanche di un singolo bit.
+
+00:29:45.778 --> 00:29:52.038
+<v SPEAKER_2>Sì, sì, sì, questa cosa paradossalmente la incontri in quasi tutti i contesti.
+
+00:29:52.038 --> 00:29:56.538
+<v SPEAKER_2>Nessuno se ti sposti sul metodaggio probabilmente troverai le stesse fragilità.
+
+00:29:56.598 --> 00:30:01.678
+<v SPEAKER_2>Se ti sposti sul file distribuito, troverai prolette stesse, cioè.
+
+00:30:02.978 --> 00:30:08.778
+<v SPEAKER_2>Soprattutto è lì un po un tema molto tecnico di diventare un po troppo autoreferenziati.
+
+00:30:08.778 --> 00:30:16.078
+<v SPEAKER_2>Fai fatica poi a vedere le cose nel loro insieme e a capire come e dove devi migliorare.
+
+00:30:16.078 --> 00:30:18.678
+<v SPEAKER_2>Se sei troppo autoreferenziato, questo è un altro tema.
+
+00:30:18.738 --> 00:30:21.538
+<v SPEAKER_2>Poi è un tema proprio di IT management.
+
+00:30:21.538 --> 00:30:25.778
+<v SPEAKER_2>Evitare l'autoreferenziazione è abbastanza importante.
+
+00:30:25.938 --> 00:30:28.338
+<v SPEAKER_2>Ci arriva anche su questo secondo me.
+
+00:30:29.178 --> 00:30:35.838
+<v SPEAKER_2>Ecco, la cosa da sottolineare è che tutte queste cose difficilmente emergono in una fase certificativa.
+
+00:30:35.838 --> 00:30:47.478
+<v SPEAKER_2>Quindi il CIO e il CISO difficilmente, facendo questo tipo di certificazioni o seguendo questo tipo di framework, riescono a fare emergere questa profondità tecnica.
+
+00:30:47.638 --> 00:30:58.258
+<v SPEAKER_2>Emergono altre tematiche, tutta la parte procedurale e tutta la parte anche di policy che sono un po anche un obiettivo nella mente, nella vision tecnica dell'azienda.
+
+00:30:58.258 --> 00:31:03.038
+<v SPEAKER_2>Quelle lì si emergono in questi contesti, però cosa c'è sotto?
+
+00:31:03.038 --> 00:31:05.758
+<v SPEAKER_2>Resta sotto finché non ci va veramente dentro.
+
+00:31:07.298 --> 00:31:16.098
+<v SPEAKER_1>Infatti il CISO ha bisogno comunque di un aiuto tipicamente esterno per analizzare tecnicamente la tenuta in l'azienda.
+
+00:31:17.438 --> 00:31:19.938
+<v SPEAKER_1>Tu hai parlato di autoreferenzialità, sono d'accordo.
+
+00:31:19.938 --> 00:31:27.858
+<v SPEAKER_1>Chi è troppo dentro un'azienda non riesce a vedere un punto di vista diverso, perché semplicemente troppo...
+
+00:31:27.858 --> 00:31:38.698
+<v SPEAKER_1>tipicamente sono persone che hanno anni e anni di esperienza in quell'azienda, che da una parte è preziosissima, perché comunque conoscono vita, morte, miracoli dell'azienda, i processi, come funzionano, tutto.
+
+00:31:38.698 --> 00:31:40.698
+<v SPEAKER_1>Dall'altra però è quel punto di vista.
+
+00:31:40.698 --> 00:32:08.178
+<v SPEAKER_1>Non hanno mai visto l'altra faccia della medaglia, quindi nella mia esperienza c'è bisogno di una persona esterna che abbia visto mondi diversi, che poi paradossalmente si sommidiano tutti, e riesca a fare emergere le vere criticità dell'azienda, che sono quelle che intanto spaventano il ciso, perché è quello che lo riguarda direttamente, e sono quelle anche che mettono in profonda crisi l'azienda in caso di compromissione.
+
+00:32:09.318 --> 00:32:11.678
+<v SPEAKER_1>E quindi sono anche quelle più urgenti da guardare.
+
+00:32:12.078 --> 00:32:24.918
+<v SPEAKER_2>Ma poi un'altra cosa che poi ritroderà sicuramente sulle tematiche più tecniche, anche in confronto con altre figure, le stesse figure in altre aziende.
+
+00:32:24.918 --> 00:32:35.558
+<v SPEAKER_2>Ho in mente ad esempio nella nostra zona c'è il CIO Club, che sono varie organizzazioni autocreatesi proprio per condividere informazioni.
+
+00:32:35.558 --> 00:32:50.818
+<v SPEAKER_2>Come ci si condivide informazioni a livello tecnico nelle varie community, anche a quel livello fa bene andare a chiacchierare con altri CIO, con altri team manager di come hanno affrontato le certificazioni, dove hanno avuto difficoltà.
+
+00:32:50.818 --> 00:32:59.078
+<v SPEAKER_2>Aiuta perché si riesce appunto a vedere le cose da più punti di vista, da punti di vista differenti.
+
+00:32:59.078 --> 00:33:04.298
+<v SPEAKER_2>Non è raro che una figura come community manager o un CIO sia nella stessa azienda anche da tempo.
+
+00:33:06.278 --> 00:33:11.278
+<v SPEAKER_2>Ci sta perché può essere anche un avanzamento di carriera in alcuni casi.
+
+00:33:11.278 --> 00:33:20.418
+<v SPEAKER_2>Cioè persone che hanno maturato quella posizione nel tempo, quindi non è così strano che il CIO di un'azienda sia all'interno di un'azienda da 10-15 anni, assolutamente.
+
+00:33:22.458 --> 00:34:17.218
+<v SPEAKER_2>Sì, non è una cosa rara e quindi il tema di il confronto anche con figure che hanno il tuo stesso ruolo da un'altra parte diventa molto utile, come è altrettanto utile il confronto con le persone diciamo tecnicamente valide all'interno della struttura, quindi seguire anche quelli che ci suggerivano che arrivano proprio dall'operation, sono quelli che tanto i problemi li sanno loro probabilmente e sono quelli che li vivono, quindi sta poi al CISO fare un po la tara di quello che viene suggerito a livello tecnico, a livello di operation con quelli che sono gli obiettivi aziendali, come può essere il conseguimento di una 27.000 per dire, e poi con la parte economica perché ovviamente tutto quello che devi adeguare vuol dire che probabilmente devi spendere delle risorse che a volte sono o soldi o tempo.
+
+00:34:17.218 --> 00:34:20.078
+<v SPEAKER_2>Queste sono le risorse di cui si dispone.
+
+00:34:20.078 --> 00:34:22.478
+<v SPEAKER_2>Con risorse non li risco mai le persone.
+
+00:34:22.478 --> 00:34:27.598
+<v SPEAKER_2>Quindi risco soldi e tempo, le persone sono gli attori coinvolti.
+
+00:34:30.758 --> 00:34:37.118
+<v SPEAKER_1>Tornando alle certificazioni soggette, diciamo che chiuderai il cerchio rienumerandole.
+
+00:34:37.158 --> 00:34:40.878
+<v SPEAKER_1>Quindi abbiamo parlato di T-SACS per la parte automotive.
+
+00:34:42.038 --> 00:34:51.178
+<v SPEAKER_1>Ce n'è una che mi è venuta in mente adesso che riguarda le poche aziende italiane che sono nella catena di approvvigionamento del Dipartimento della Difesa americana.
+
+00:34:51.178 --> 00:34:57.278
+<v SPEAKER_1>Mi pare si chiami CMMC, che sta per Service Security Maturity Model Certification.
+
+00:34:57.278 --> 00:34:59.398
+<v SPEAKER_1>Vado a memoria, spero io non ho sbagliato.
+
+00:35:00.838 --> 00:35:31.938
+<v SPEAKER_1>Poi c'è la ISO 27001, classica, che di solito riguarda le aziende che offrono a l'ora volta servizi agli esterni, e quindi devono fare servizi tipicamente informativi, basati su informazioni, quindi vendita e rivendita di informazioni, o comunque basati su quello, che quindi devono dimostrare una sicurezza, lo uso di nuovo le virgolette come prima, ce lo siamo già detto, sulla tenuta dell'azienda, sulla capacità di gestire la sicurezza delle informazioni.
+
+00:35:33.578 --> 00:35:45.698
+<v SPEAKER_1>Poi ce ne sono varie altre variegate, magari meno conosciute, meno importanti, ce n'è una per la parte maritima e via dicendo, però ce ne sono due che sono diventate legge da una da un po, una molto recente.
+
+00:35:45.738 --> 00:36:03.778
+<v SPEAKER_1>Quella recente è la cosiddetta NIS 2, che è attiva mi pare da settembre e da gennaio ci saranno i primi obblighi, le cui multe si aggirano al 2% del fatturato, poi dipende dal tipo di mancanza.
+
+00:36:04.018 --> 00:36:13.518
+<v SPEAKER_1>E devo dire che la NIS 2 ha avuto un ottimo scherzando di co-ficio marketing perché è stata presa sul serio da tante aziende che conosco.
+
+00:36:13.598 --> 00:36:18.498
+<v SPEAKER_1>Quindi quando si parla di NIS 2 in molte aziende, queste aziende si spaventano.
+
+00:36:18.498 --> 00:36:32.458
+<v SPEAKER_1>E poi c'è il GDPR del 2016, se non sbaglio, che adesso i puristi della parte legislativa magari mi cazzeranno, però il concetto è che dice più o meno le stesse cose della NIS 2.
+
+00:36:32.458 --> 00:36:36.058
+<v SPEAKER_1>Le multe tutto sommato sono anche molto simili.
+
+00:36:36.058 --> 00:36:42.638
+<v SPEAKER_1>Chiaramente il GDPR è limitato al dato personale, mentre la NIS 2 ha un scope più ampio.
+
+00:36:43.218 --> 00:36:47.558
+<v SPEAKER_1>E il GDPR non si può dire, non viene affregato un cazzo a nessuno.
+
+00:36:47.558 --> 00:36:48.658
+<v SPEAKER_2>E ormai è andato il secondo piano.
+
+00:36:48.658 --> 00:37:14.298
+<v SPEAKER_1>Questa cosa per me è paradossale, perché quando i clienti mi dicono ah le NIS 2 sono tutti spaventati, faccio notare che se avessero fatto bene la parte GDPR, non dico che tutto è fatto, ma diciamo che un buon 80% e soprattutto la mentalità sarebbe già orientata al rischio del dato personale.
+
+00:37:14.298 --> 00:37:20.718
+<v SPEAKER_1>Prima più ampio, adesso avrebbe già quell'approccio, invece chiaramente è mancato.
+
+00:37:20.978 --> 00:37:57.178
+<v SPEAKER_2>Ti racconto un micro aneddoto sul GDPR fresco fresco, parlando con un conoscente, non do riferimenti, ma non ha a che fare con il nostro mondo aziendale, così tolgo il dubbio, non è un nostro cliente, un nostro conoscente dal punto di vista professionale, per una persona che lavora nell'ambito IT e si parlava appunto di GDPR, lo ha affrontato il tema anni fa, tutto sotto controllo, e chiacchierando così scopro che non hanno mai pensato al login centralizzato degli accessi amministrativi, ho detto, guarda che farebbe parte.
+
+00:37:57.178 --> 00:37:59.398
+<v SPEAKER_1>Quella è ancora prima la normativa, però va bene.
+
+00:37:59.598 --> 00:38:03.038
+<v SPEAKER_2>Guarda che anche prima del GDPR questa cosa c'era.
+
+00:38:03.038 --> 00:38:03.918
+<v SPEAKER_2>Davvero?
+
+00:38:03.938 --> 00:38:11.758
+<v SPEAKER_2>Non ho mai saputo, ma scusa, cosa hai guardato in questi 8 anni, solo 8 anni che c'è il GDPR in vigore.
+
+00:38:11.758 --> 00:38:17.638
+<v SPEAKER_2>Secondo me questa cosa, magari questa era anche troppo eclatante, ma non sono sicuro.
+
+00:38:17.638 --> 00:38:20.178
+<v SPEAKER_1>No, no, questo è il fatto, non lo è.
+
+00:38:21.598 --> 00:38:24.018
+<v SPEAKER_2>Secondo me si trova anche in altri ambiti.
+
+00:38:25.618 --> 00:38:39.718
+<v SPEAKER_1>E quindi per il famoso ciso che entra in azienda, se è un dirigente, io dico anche attenzione, perché tipicamente firma delle carte con le quali si prende della responsabilità legale.
+
+00:38:41.298 --> 00:38:55.998
+<v SPEAKER_1>Se l'azienda ha, diciamo, alterato ed ulcorato il processo di compliance, di determinate normative, io darai un consiglio di fare un attimo attenzione a cosa si firma.
+
+00:38:58.998 --> 00:39:18.178
+<v SPEAKER_1>All'altro di queste settimane mi pare una multa per il no rispetto a GDPR di un famoso food delivery che ha preso per non aver abusato dei dati personali, mi pare 3 milioni e mezzo di multa.
+
+00:39:18.838 --> 00:39:21.538
+<v SPEAKER_2>Quindi facciamoci qualche considerazione.
+
+00:39:21.538 --> 00:39:52.058
+<v SPEAKER_2>Spesso uno dei commenti sulle multe post breach, quindi dopo che viene appurato che diciamo l'ente o l'azienda briciata non aveva fatto tutto quello che avrebbe dovuto fare, sono stati sempre molto parchi, come il livello di sanzione, sono stati abbastanza bassi di solito, qua invece sono stati un po più aggressivi.
+
+00:39:52.058 --> 00:40:04.778
+<v SPEAKER_1>Sì, le violazioni erano importanti, io ci sarei andato ancora più pesante con denuncia di tutti i dirigenti, perché eccedevano l'abuso di dati personali, era proprio sorveglianza eccetera eccetera.
+
+00:40:04.818 --> 00:40:17.298
+<v SPEAKER_1>Bene, tema diverso, tutte queste normative alla fine dicono le stesse cose, quindi devi avere un approccio basato sul rischio, quindi la mentalità dell'azienda, devi sapere dove sono i tuoi dati.
+
+00:40:18.958 --> 00:40:30.058
+<v SPEAKER_1>Banalmente quali dati hai, dove sono, quanto durano eccetera eccetera, dove sono salvati, quindi un approccio al rischio degli asset, rischio in senso ad impatto di compromissione sul sistema e quindi sul dato che contiene.
+
+00:40:30.058 --> 00:40:57.658
+<v SPEAKER_1>Va gestito il ciclo di vita degli asset, compresa la parte di patching pensata sempre, diciamo, compresa la parte di vulnerabilità, pensata sempre con un approccio del rischio, chiaramente incident response, dove c'è anche chiaramente la parte di preparation, detection e via dicendo, notifica veramente continuità operativa di cui disaster coverage è una parte e non dico che abbiamo detto tutto, ma abbiamo veramente detto l'80 per cento.
+
+00:40:58.778 --> 00:41:01.878
+<v SPEAKER_2>Sì, sono praticamente ai fatti...
+
+00:41:01.918 --> 00:41:06.478
+<v SPEAKER_2>effettivamente è tanta roba, cioè dentro questi premossi è veramente una montagna di roba.
+
+00:41:06.478 --> 00:41:09.538
+<v SPEAKER_2>Già farne una parte è un gran lavoro effettivamente.
+
+00:41:11.078 --> 00:41:23.778
+<v SPEAKER_1>In un certo senso si è avverata una predizione che ho fatto, ormai sarà due o tre anni fa, in cui la 27001 sarebbe diventata come la 9001, quindi una sorta di must per qualsiasi azienda.
+
+00:41:23.778 --> 00:41:41.118
+<v SPEAKER_1>In realtà è stato fatto un po di più, perché è vero che la 27001 è un po più ampia dell'anis 2, però veramente tantissimi punti sono comuni, quindi di fatto una buona parte della 27001 è stata messa obbligatoria per legge per tantissime aziende.
+
+00:41:44.898 --> 00:41:49.578
+<v SPEAKER_1>Questa è la situazione in cui siamo oggi.
+
+00:41:51.318 --> 00:41:53.858
+<v SPEAKER_1>Secondo me abbiamo più o meno detto tutto.
+
+00:41:53.858 --> 00:42:01.418
+<v SPEAKER_2>Sì, il next step, siamo affrontati il tema per dargli una chiusura.
+
+00:42:01.458 --> 00:42:13.598
+<v SPEAKER_2>Da un punto di vista del CISO, sono strumenti che possono essere utili per avere una panoramica sulla situazione, almeno a livello di...
+
+00:42:13.598 --> 00:42:28.218
+<v SPEAKER_2>Io li chiamerei quasi obiettivi, perché mi piace pensare che quello che viene messo in quei documenti, se non è completamente aderente alla realtà, sia almeno una sorta di dichiarazione di intenti.
+
+00:42:28.218 --> 00:42:38.538
+<v SPEAKER_2>Cioè, magari non è precisamente così, ma nella nostra mente vorrebbe essere così, e quindi ci si cerca di andare sempre più vicini a quel dichiarato.
+
+00:42:38.538 --> 00:42:53.238
+<v SPEAKER_2>Poi, tra l'altro, sono tutti i framework che sono pensati per il miglioramento continuo, quindi l'idea è quella di maturare anno per anno, migliorando appunto nei punti in cui vengono segnalate delle discrepanze o dei punti di miglioramento.
+
+00:42:54.618 --> 00:42:57.358
+<v SPEAKER_2>E quello può essere una buona spinta.
+
+00:42:57.758 --> 00:43:29.038
+<v SPEAKER_2>E l'altro elemento di chiusura che ti sarei valido che effettivamente, essendo cose spinte spesso dal business, spesso l'entry point, la scintilla viene dal business, e essendo tematiche che vengono prettamente gestite da IT, qua ci sarebbe un'altra piccola parentesi che non ha tanto senso che vengono gestite solo dalle IT, perché poi coinvolgono tantissime parti dell'azienda, però questo magari è un altro discorso.
+
+00:43:29.038 --> 00:43:42.738
+<v SPEAKER_2>Potrebbe essere, dato l'opportunità per collaborare con gli altri team, l'HR e il marketing in primis, come tipologia di, come team con cui c'è una collaborazione per la 27.000 viene in mente, anche per T-SACS.
+
+00:43:44.718 --> 00:44:01.118
+<v SPEAKER_2>E poi sono uno strumento che possono aiutare a dare una direzione, ecco questo sicuramente, e a avere una validazione esterna, nel caso il Cione abbia bisogno, su elementi che magari si vogliono migliorare all'interno della struttura.
+
+00:44:01.118 --> 00:44:04.098
+<v SPEAKER_2>Questo effettivamente torna molto utile.
+
+00:44:05.298 --> 00:44:06.798
+<v SPEAKER_1>Guarda, mi aggiungo due cose.
+
+00:44:06.798 --> 00:44:16.078
+<v SPEAKER_1>Allora tu hai citato il fatto che questa parte normativa, quindi la sicurezza delle informazioni, non può essere una cosa solo relegata all'IT.
+
+00:44:16.218 --> 00:44:35.698
+<v SPEAKER_1>E mi permetto di sottolinearla, perché ci sono dei processi, ad esempio la parte di gestione di risorse umane, ma aggiungerei la parte di gestione industriale, che tipicamente fa capo un altro reparto, piuttosto che anche la semplice gestione delle vulnerabilità, che deve coinvolgere i responsabili applicativi che possono essere di qualunque del reparto.
+
+00:44:35.898 --> 00:44:43.878
+<v SPEAKER_1>E quindi è un problema, ma non è solo un problema, è uno scopo trasversale all'azienda.
+
+00:44:43.878 --> 00:44:59.678
+<v SPEAKER_1>Dopo, li sottolineo il fatto che l'auditor, anche se esterno, è un amico, o almeno secondo me va considerato come un amico, perché è dalla vostra parte, perché tende a portare l'azienda a un miglioramento continuo.
+
+00:44:59.678 --> 00:45:13.578
+<v SPEAKER_1>Lo scopo non è passare la certificazione, lo scopo è via via spalare e sistemare e rattoppare le crepe, eccetera, eccetera, restaurare l'azienda da un punto di vista infrastrutturale, chiaramente.
+
+00:45:13.578 --> 00:45:36.078
+<v SPEAKER_1>Quindi in questo senso va considerato come un amico e in tutto questo, quello che ci siamo detti, è che comunque non sono certificazioni e quindi audit tecnici, si fermano a un livello di processo o comunque da un punto di vista tecnico molto alto, c'è bisogno di andare anche in profondità.
+
+00:45:36.078 --> 00:45:39.778
+<v SPEAKER_1>Buon punto di partenza ma non ci si può fermarlo.
+
+00:45:39.778 --> 00:46:11.218
+<v SPEAKER_2>Io come come next step per la prossima chiacchierata mi verrebbe voglio di parlare di documentazione tecnica, ma perché mi sembra un un buon punto d'aggancio appunto la parte framework con con quello che tecnicamente poi un IT manager, un CEO, diciamo ciò che potrebbe aiutarli a capire cosa c'è sotto sotto il cofano ed è anche uno dei grandi punti dolenti, quindi andrei accenderei quel tema come prossimo.
+
+00:46:12.698 --> 00:46:19.318
+<v SPEAKER_1>Perfetto, mi trovi completamente d'accordo, anche perché ci infilo sicuramente qualche considerazione sulla automazione.
+
+00:46:19.318 --> 00:46:32.318
+<v SPEAKER_2>Perfetto, poi è un tema che secondo me splitteremo in più tempo, perché una cosa è la documentazione di rete, una cosa è i processi, lo apriamo in più, lo spacchettiamo in più tematiche.
+
+00:46:34.658 --> 00:46:40.338
+<v SPEAKER_1>Bene, allora grazie a tutti che ci avete ascoltato fin qua, tra quarti d'ora circa.
+
+00:46:40.338 --> 00:46:42.598
+<v SPEAKER_1>Spanne e a presto.
+
+00:46:42.598 --> 00:46:44.198
+<v SPEAKER_2>Ciao.
+
+00:46:44.198 --> 00:46:44.578
+<v SPEAKER_1>Ciao ciao.

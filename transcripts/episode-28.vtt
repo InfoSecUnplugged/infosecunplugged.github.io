@@ -1,0 +1,442 @@
+WEBVTT
+
+00:00:08.972 --> 00:00:13.272
+<v SPEAKER_2>Bentornati ad Info Sec. Unplugged, io sono Andrea Dainese e con me c'è sempre Rocco Sicilia.
+
+00:00:13.272 --> 00:00:14.072
+<v SPEAKER_2>Ciao Rocco.
+
+00:00:14.072 --> 00:00:15.572
+<v SPEAKER_1>Ciao, buongiorno a tutti.
+
+00:00:15.572 --> 00:00:19.792
+<v SPEAKER_1>Allora, ci eravamo lasciati l'altra volta con un po di idee.
+
+00:00:19.792 --> 00:00:26.452
+<v SPEAKER_1>Prima di iniziare la chiacchierata, volevamo proporvi un'attività da fare assieme.
+
+00:00:26.452 --> 00:00:48.272
+<v SPEAKER_1>Visto che abbiamo parlato di Zaster Recovery e abbiamo ancora questa e un'altra puntata in cui discuteremo di questo argomento, volevamo organizzare una sessione di tabletop, exercise, sull'argomento di Zaster Recovery, quindi una sessione simulata per chi non ha familiarità con l'esercitazione di questo tipo di attività.
+
+00:00:48.272 --> 00:00:56.712
+<v SPEAKER_1>Volevamo ipotizzare di fare un gruppo di persone, poi seguiranno dettagli su tempistiche e numero di persone che possono partecipare.
+
+00:00:56.752 --> 00:01:27.152
+<v SPEAKER_1>Ovviamente lo useremo un po ristretto ad alcune, ad un tot di partecipanti per non fare confusione semplicemente, in cui a Sima Andrea vi presentiamo uno scenario di disastro da gestire, distribuiremo dei ruoli e daremo uno storytelling, diciamo, all'attività che vi proponiamo e poi i partecipanti saranno chiamati nelle rispettive funzioni a gestire, a prendere decisioni su quello che bisognerà fare per gestire questa situazione di emergenza.
+
+00:01:27.152 --> 00:01:44.252
+<v SPEAKER_1>Così proviamo a fare qualcosa di concreto, ma di fattibile, utilizzando i mezzi di comunicazione remota, per vedere un po assieme cosa vuol dire gestire un incidente per chi ha la fortuna di non aver mai dovuto gestire nulla di simile.
+
+00:01:45.672 --> 00:02:02.352
+<v SPEAKER_2>Abbiamo imputizzato di farlo verso fine novembre, in un giorno feriale, in orario ancora da definire, ma sarà o lavorativo o comunque appena dopo, quindi in orario diciamo un 17-19 circa.
+
+00:02:02.352 --> 00:02:09.432
+<v SPEAKER_2>Se avete già interesse contattateci direttamente al link ed in email dove ritenete opportuno.
+
+00:02:09.432 --> 00:02:13.232
+<v SPEAKER_2>Come detto Rocco seguiranno indicazioni perché lo stiamo ancora disegnando.
+
+00:02:14.472 --> 00:02:14.912
+<v SPEAKER_1>Perfetto.
+
+00:02:15.872 --> 00:02:34.932
+<v SPEAKER_2>Bene, allora chiudiamo con questa puntata in un modo o nell'altro l'argomento di R con quello che ce l'avamo lasciati che riguardano tutto sommato più la parte di testing, quindi la parte più tecnica, la fase di design ce la siamo già lasciata alle spalle, la prima e la metà della seconda puntata ci rimane questa.
+
+00:02:36.472 --> 00:02:37.932
+<v SPEAKER_2>Da dove partiamo?
+
+00:02:37.932 --> 00:02:58.052
+<v SPEAKER_2>Allora, sempre all'atto pratico, quindi avendo visto e avendo disegnato di R, avendo riprovati di fatto quello che io ho visto che nella realtà, quando si comincia a mettere le mani ci si rende conto effettivamente di che cosa serve, cosa bisogna portare in di R e soprattutto quali sono le dipendenze.
+
+00:02:58.052 --> 00:03:05.332
+<v SPEAKER_2>Questo apre tanti scenari che cercheremo di stringere appunto per chiudere l'argomento oggi.
+
+00:03:05.332 --> 00:03:15.112
+<v SPEAKER_2>Sostanzialmente ogni azienda dovrebbe, nel mondo ideale degli unicorni, dovrebbe avere un piano, uno schema di come funzionano le applicazioni.
+
+00:03:15.112 --> 00:03:20.552
+<v SPEAKER_2>Io questa cosa non l'ho mai vista, cioè nel senso esiste, ma non l'ho mai vista completa.
+
+00:03:20.552 --> 00:03:27.132
+<v SPEAKER_2>E quindi la pratica, quindi la messa in piedi di un di R, fa vedere esattamente quali sono poi le dipendenze.
+
+00:03:27.132 --> 00:03:31.632
+<v SPEAKER_2>Questo implica che ci saranno tanti test, più e più volte.
+
+00:03:31.632 --> 00:03:46.112
+<v SPEAKER_2>E questo implica anche che un sistema di automazione che ci faccia partire i servizi, le applicazioni, le virtual machine, tutto quello che è necessario in un posto che abbiamo chiamato di R, aiuta molto la fase di test.
+
+00:03:46.112 --> 00:03:53.292
+<v SPEAKER_2>Io sono un amante del lavorare di giorno, perché sia più svegli, sia più reattivi, si riesce a comprendere meglio.
+
+00:03:53.292 --> 00:04:01.372
+<v SPEAKER_2>E quindi il mio approccio, ne avevamo già parlato forse l'altra volta, è di costruire un DR che possa essere acceso senza disturbare la produzione.
+
+00:04:01.372 --> 00:04:04.372
+<v SPEAKER_2>E in questo senso viene spesso denominato come bolla.
+
+00:04:05.592 --> 00:04:09.832
+<v SPEAKER_2>Questa cosa è sempre più complicata, perché le dipendenze dell'AtoCloud sono sempre di più.
+
+00:04:09.832 --> 00:04:18.992
+<v SPEAKER_2>Però ecco, forse l'ultima parte di design che menzioniamo oggi, cioè nella fase di design dobbiamo rendersi conto di come lo dobbiamo provare, come lo possiamo provare.
+
+00:04:18.992 --> 00:04:39.672
+<v SPEAKER_2>E appunto l'idea di avere, abbiamo detto all'inizio, un DR totale, quindi non posso separare le applicazioni, ma devo farlo partire in modo integrale, e l'idea di poterlo far partire in una bolla mi aiuta poi in tutta la fase di testing, che come abbiamo detto non è solo testing, ma è anche una sorta di miglioramento continuo.
+
+00:04:39.672 --> 00:04:44.112
+<v SPEAKER_2>Parto con 150 servizi e scopro che me ne servono altri 20.
+
+00:04:44.112 --> 00:05:16.952
+<v SPEAKER_1>Se di solito quello che ho notato guardando alcune attività proprio di test è che si danno per scontato molte cose, quindi ad esempio si dà per scontato, quando si fanno i test soprattutto, non potendo e non dovendo spesso disattivare alcuni servizi base, i domain controller, per dire mai che si vengono spenti dall'altra parte, soprattutto quando poi questi sono attivi anche sul suo sito di recovery, ci sono delle componenti il cui testing viene trascurato da questo punto di vista.
+
+00:05:16.952 --> 00:05:31.392
+<v SPEAKER_1>Quindi effettivamente avere una struttura che ti permette di mettere in bolla quello che devi accendere e poi ti permette e ti obbliga a fare delle ulteriori verifiche degli ulteriori test che altrimenti rischi di dare per scontato.
+
+00:05:33.492 --> 00:05:38.732
+<v SPEAKER_2>Sì, hai detto bene, la sequenza di startup spesso è rigida.
+
+00:05:38.732 --> 00:05:49.492
+<v SPEAKER_2>Non dovrebbe essere così, nel senso che un'applicazione ben scritta è in grado di partire, attendere che le dipendenze siano funzionanti per poi partire effettivamente.
+
+00:05:49.772 --> 00:05:58.692
+<v SPEAKER_2>Anche qua, questa è la teoria, nella pratica in realtà, se il database non è acceso, spesso l'applicazione non parte, quindi l'applicazione deve partire dopo.
+
+00:05:58.692 --> 00:06:14.932
+<v SPEAKER_2>E quindi, torno sul piano automatico, far partire i servizi nell'ordine giusto, verificare che siano accesi e funzionanti, prima di far partire i sistemi che dipendono dai primi, è importante e semplifica enormemente.
+
+00:06:14.932 --> 00:06:38.612
+<v SPEAKER_2>Tra l'altro, un sistema automatico spesso è autodocumentato, quindi non serve documenti che io ho visto di centinaia di pagine dove una persona deve leggere passo passo e fare, non scherzo, centinaia di operazioni a mano, ma schiaccia un pulsante e poi alla fine del risultato, magari di una o due ore di lavoro, parte tutto l'ambiente.
+
+00:06:38.612 --> 00:06:51.592
+<v SPEAKER_1>Tra l'altro, aggiungo una postilla, una cosa che ho visto proprio recentemente, di cui non mi ero mai reso conto perché non ho mai affrontato una certa specificità in un ambito SAP.
+
+00:06:51.592 --> 00:07:00.032
+<v SPEAKER_1>Discusendo appunto la procedura di DR, la parte di avvio dei sistemi era tutto sommato semplice, che si concludeva potenzialmente anche in pochi minuti.
+
+00:07:00.032 --> 00:07:06.632
+<v SPEAKER_1>La parte di adeguamento delle configurazioni di SAP era un documento di 70 pagine e richiedeva giorni.
+
+00:07:06.632 --> 00:07:25.572
+<v SPEAKER_1>E non ci avevo mai fatto caso, non ho mai affrontato il DR di un infrastruttura SAP, non pensavo fosse così complesso onestamente, che ci potessero essere applicazioni così complicate, di cui il processo documentato per riattivare le servizie in DR durasse ipoteticamente un paio di giorni.
+
+00:07:25.572 --> 00:07:47.492
+<v SPEAKER_1>Quindi per chi ha infrastrutture di una certa complessità, insomma, bisogna tenere da conto anche delle persone che impieghi in questo tipo di operation, cioè devi sapere che avrei delle persone occupate per giorni a fare questa attività, oltre al servizio fermo, in quel caso specifico, non è banale.
+
+00:07:47.492 --> 00:08:00.392
+<v SPEAKER_2>Io ho un'esperienza simile, migliore della tua devo essere sincero, non c'era swap di mezzo, ma c'erano applicazioni custom basate su i prodotti più particolari di Oracle, non è una critica Oracle, era le più re-applicazioni.
+
+00:08:00.392 --> 00:08:03.232
+<v SPEAKER_1>Esigenze tecniche, diciamo, del sistema.
+
+00:08:03.232 --> 00:08:23.532
+<v SPEAKER_2>Dove lo startup, diciamo, infrastrutturale, quindi c'erano i server virtualizzazione, la bolla della rete, il firewall, le applicazioni, le virtual machine, ci parliamo di circa 3.000 virtual machine, i server comunque di Oracle, fino allo startup di Oracle, questo richiedeva circa due ore, due ore e mezza.
+
+00:08:23.532 --> 00:08:37.612
+<v SPEAKER_2>Dopodiché la palla veniva passata a chi gestiva gli applicativi e doveva lavorare per 6-8 ore per fare tuning, riuscire a farli funzionare perché cambiava un dominio, per me è stata una cosa pazzesca, nel senso che da mio punto di vista...
+
+00:08:38.272 --> 00:08:46.512
+<v SPEAKER_1>Noi nel nostro isola felice delle infrastrutture in cui quando la macchina è accesa e ha network siamo sereni.
+
+00:08:46.512 --> 00:08:54.052
+<v SPEAKER_1>Poi lo strato applicativo ha un livello di complessità che effettivamente a me non è mai capitato di affrontare, ma è da considerare.
+
+00:08:54.052 --> 00:08:55.092
+<v SPEAKER_2>Assoluto.
+
+00:08:55.092 --> 00:09:22.812
+<v SPEAKER_2>Io credo, però veramente è noto che io non sono un programmatore, però credo che sia possibile, come disegniamo, l'abbiamo parlato di disegnare un DR, affinché sia sostenibile da un punto di vista operativo, io credo sia possibile, credo il movimento The Vops vada in quella direzione, sia sostenibile, perdone, sia disegnabile delle applicazioni che possono essere sostenibili, anche da un punto di vista di manutenzione, di DR e via dicendo.
+
+00:09:22.812 --> 00:09:25.212
+<v SPEAKER_2>Immagino di sì.
+
+00:09:25.212 --> 00:09:30.192
+<v SPEAKER_2>Non sono la persona più adatta a rispondere a questa domanda.
+
+00:09:30.192 --> 00:09:50.692
+<v SPEAKER_2>Abbiamo detto di far partire il DR in una bolla, quindi da un punto di vista di rete, ancora una volta l'abbiamo disegnata in modo tale, adesso non ci spendiamo su questo, però sicuramente dovrà essere isolata con i servizi minimi, con una copia della T-Directory di cui accennavi prima, chiaramente non quella originale, perché sennò lo sporchiamo.
+
+00:09:50.692 --> 00:09:54.312
+<v SPEAKER_1>C'è il problema del DR, esatto, a parte il cyber.
+
+00:09:54.312 --> 00:10:14.732
+<v SPEAKER_2>Esatto, i firewall, eccetera, c'è tutto quello che è necessario, più delle macchine e ponte che mi permettono, in modo sicuro, di accedere dal mio ambiente operativo, dove io lavoro, io persona, all'ambiente bolla che non, da lì veramente non deve uscire un bit, perché se esce un bit, io rischio di sporcare i dati di produzione.
+
+00:10:14.732 --> 00:10:26.672
+<v SPEAKER_2>E lì, anche questo per esperienza passata, poi sono dolori capire, come dire, togliere i dati di test dalle scritture di produzione nello stesso database.
+
+00:10:26.672 --> 00:10:28.452
+<v SPEAKER_2>Quindi la bolla deve essere veramente una bolla.
+
+00:10:28.732 --> 00:11:03.632
+<v SPEAKER_1>Tra l'altro, questa cosa mi è capitato spesso che questo fosse il motivo per il quale le applicazioni poi non vedevano effettivamente testate, cioè non vedevano accese, perché si faceva fatica, non era impossibile, ma era faticoso, a ottenere appunto una bolla di questo tipo, perché le applicazioni erano dipendenti da componenti esterne che non ci sarebbero stati all'interno della bolla, ma mettendole in comunicazione con queste componenti esterne, inevitabilmente avrebbero modificato, avrebbero fatto dei change su sistemi terzi e non si poteva accettare.
+
+00:11:03.632 --> 00:11:13.332
+<v SPEAKER_1>E quello che è stato accettato, comprensibile ma molto pericoloso, è ok, allora l'applicazione non la accendiamo e non la testiamo.
+
+00:11:13.332 --> 00:11:25.352
+<v SPEAKER_1>Quindi sono dei test di DR purtroppo viziati dal fatto che in realtà non si ha la certezza di cosa succede quando l'applicazione poi parte in quelle condizioni, perché non è stato mai potuto verificare.
+
+00:11:27.572 --> 00:11:43.872
+<v SPEAKER_2>Sì, questa cosa è molto pericolosa, perché è più pericolosa di non testare il rastorbo a un backup secondo me, perché le tecnologie oggi del backup sono abbastanza resiliente, è difficile che con le tecnologie oggi ho un backup e non riesco poi a ristorarlo.
+
+00:11:43.872 --> 00:11:50.972
+<v SPEAKER_2>È successo, però mi sento di dire che statisticamente parlando, negli ultimi otto anni questa cosa non l'ho vista.
+
+00:11:52.032 --> 00:12:07.952
+<v SPEAKER_2>In passato, soprattutto con i tpera più frequente, ma la probabilità che io costruisco un sistema di DR, faccio delle assoluzioni come quelle che hai detto tu adesso, e in realtà non è così, è molto alta.
+
+00:12:10.552 --> 00:12:31.292
+<v SPEAKER_2>C'è poi un caso particolare di DR che ho visto che poi è una sorta di ultimo paracadute, quindi il DR è il nostro paracadute e qualcuno, giustamente, con assolutamente d'accordo, fa l'ultimo paracadute di emergenza, cioè si fa una copia di tutta la base dati critograffata su cloud.
+
+00:12:31.292 --> 00:12:36.232
+<v SPEAKER_2>Ci sono vari servizi, più o meno economici, lo abbiamo accennato anche l'altra volta.
+
+00:12:36.232 --> 00:12:48.692
+<v SPEAKER_2>Benissimo, ma non, come dire, nel computo totale di questa strategia, assolutamente, che io sposo, va contato il tempo di restorra.
+
+00:12:48.692 --> 00:13:17.792
+<v SPEAKER_2>Cioè nel senso un conto è se ce l'ho a casa il dato da restaurare, un conto se sta in cloud a qualche parte dove a se sono 20 tera, la mia banda è a 100 mega, ho fatto un esempio, non è che sia proprio istantaneo, b molto probabilmente non mi costa niente buttare i dati in cloud, ma a tirarli giù sì e anche quella cosa ogni tanto dovrò provarla, perché non è detto che venga giù e sia effettivamente usabile, quindi ogni tanto bisogna provarla.
+
+00:13:17.792 --> 00:14:31.532
+<v SPEAKER_1>Si è fatto questa cosa, cozza con una cosa che di solito viene fatta in fase di dimensionamento del sito DDR, per ragioni comprensibili spesso non è pari potenza, pari prestazioni del sito principale, quindi se nel sito principale ho un giga di banda, spesso nel sito DDR non ho un giga di banda disponibile, spesso si va un po a risparmio, però è da lì che poi devo tirare i dati, quindi non posso contare sul mio giga che ho nel sito primario, perché dovrò probabilmente lavorare dall'altra parte, se sto andando in DDR è probabile che abbia dei problemi grossi sul sito primario, e quindi ci si scontra con proprie scelte, semplicemente perché le abbiamo fatte con poca visione rispetto a quello che poi dovremmo fare nella fase DDR, ma qua rientra ancora una volta nella tematica testing, cioè se io testassi veramente la situazione definitiva, cioè nel mio test DDR ho scelto di mettere i miei dati, i miei 72 terabyte su Glacier, bene, allora devo fare un test in cui mi scarico quei tera dal sito DDR e mi renderò conto che ci metterò giorni, e quindi non va bene allora quella scelta, quindi dovrò fare un'altra scelta o espandere le capabilizzi del sito.
+
+00:14:31.532 --> 00:15:16.352
+<v SPEAKER_1>Tutte cose che quando si scrive, quando si mette su carta il processo, il workflow, potrebbero non saltare all'occhio, poi sicuramente a quelli più esperti saltano all'occhio anche queste piccole discrepanze, però sicuramente è molto raro che saltino l'occhio al business, anzi probabilmente il business tenderebbe a tagliare dove vede una spesa senza riflettere troppo sulle conseguenze di quella spesa, cioè magari avrebbe una variazione parziale di quello che sta tagliando, del tipo taglio la banda, ma se tanto in fase DDR quando acceto al sito anche se vado più lento non è un problema, sì, che se vai più lento tu non è un problema, ma se non ci sono i dati è un problema, quindi testarla su queste cose è l'unica.
+
+00:15:16.352 --> 00:15:44.972
+<v SPEAKER_2>Assolutamente, anche perché il concetto del vado più lento, ne avevamo già accennato due puntate fa, mi sembra non è allora vado più lento è accettabile, ma il vado più lento potrebbe essere che alla fine è così lento, che è tutto inutilizzabile e io non posso leggere i clienti VIP come quelli che vanno a velocità diciamo 80 per cento rispetto al normale e i clienti diciamo non VIP dove vanno al 20 per cento.
+
+00:15:44.972 --> 00:16:01.732
+<v SPEAKER_2>No, se arrivano da internet è difficile questa cosa qui, quindi si rischia di come quando si fa il click day, quindi ci sono le offerte o come si chiamano non i buoni dello stato, ma non sfugge il termine.
+
+00:16:02.872 --> 00:16:11.372
+<v SPEAKER_2>Vabbè, ci siamo capiti che bisogna iscriversi a un particolare sito in un'area temporale molto rispettata e alla fine il risultato è che c'è il boom e non va niente.
+
+00:16:11.372 --> 00:16:12.252
+<v SPEAKER_2>Conciutto è quello.
+
+00:16:12.252 --> 00:16:15.232
+<v SPEAKER_2>Non è che qualcuno va più lento, non va più niente.
+
+00:16:16.792 --> 00:16:18.752
+<v SPEAKER_2>Mi rimangono due cose.
+
+00:16:18.752 --> 00:16:21.692
+<v SPEAKER_2>Le lascio a te l'idea di dove partire.
+
+00:16:21.692 --> 00:16:27.312
+<v SPEAKER_2>Il mondo del rollback e il mondo del cloud.
+
+00:16:27.352 --> 00:16:35.992
+<v SPEAKER_2>E in particolare io l'ho pensato perché pensare al DR di un servizio cloud è controintuitivo.
+
+00:16:35.992 --> 00:16:43.692
+<v SPEAKER_2>Nel senso che qualcuno dice va bene, me lo darà il servizio cloud, il mio DR sarà implicito.
+
+00:16:43.692 --> 00:16:51.252
+<v SPEAKER_2>Che può essere vero se compro un software, un servizio tipo un SaaS, ma non è vero se compro un Riasso.
+
+00:16:52.472 --> 00:17:11.772
+<v SPEAKER_2>Ma soprattutto lo cito perché la normativa Dora, se non sbaglio proprio la Dora, dice se avete dei servizi cloud, in realtà non è così, se avete dei fornitori critici, ma limitiamoci al cloud, dovete pensare a un piano di uscita che non è un piano di DR, ma non ci va neanche tanto distante.
+
+00:17:11.892 --> 00:17:36.072
+<v SPEAKER_1>Bene, partirei sicuramente dal primo tema, cioè il rollback, che paradossalmente, spero di essere smentito da tutti quelli che capicaranno su questo podcast, spessissimo si trovano piani di disaster recovery anche molto ben documentati, ma non c'è nessuna idea di come tornare indietro, perché non è stato pensato come si torna indietro.
+
+00:17:36.392 --> 00:17:50.612
+<v SPEAKER_1>Mi è anche capitato che degli team manager che mi dicessero no, ma non si torna indietro, cioè se dovesse capitare quella diventa la nuova situazione definitiva e si valuta un nuovo piano ddr in cui il nuovo sito di produzione è quello di là.
+
+00:17:50.612 --> 00:17:58.272
+<v SPEAKER_1>Adesso io capisco che inevitabilmente ci sono delle complicazioni da questo punto di vista da considerare.
+
+00:17:59.752 --> 00:18:02.372
+<v SPEAKER_1>Mi è partito Siri, scusate, al volo.
+
+00:18:03.752 --> 00:18:10.312
+<v SPEAKER_1>Ma non è accettabile che non ci sia modo o non si sia pensato a come si torna indietro da quella situazione.
+
+00:18:10.312 --> 00:18:26.992
+<v SPEAKER_1>Per una serie di ragioni che non abbiamo neanche il tempo di discutere in un singolo podcast dovete necessariamente, va necessariamente, valutato come si fa una volta in DR, quali sono gli step per tornare a situazioni di normalità.
+
+00:18:26.992 --> 00:18:42.752
+<v SPEAKER_1>Ovviamente, con tutte le eccezioni del caso, ovvio che si è preso fuoco il sito primario e bisogna ricomprare tutto il datacenter, ovviamente stiamo parlando di una cosa un po più complessa di un semplice rollback nel sito primario.
+
+00:18:42.752 --> 00:19:16.692
+<v SPEAKER_1>Ma nella maggior parte dei casi, in quasi tutti i casi, nella maggior parte non so, non ho questa statistica così precisa, in molti casi, diciamo così, nel caso il disaster recovery si è stato innescato per una responsa di un incidente cyber, che era quello da cui eravamo partiti come ipotetico scenario da aggiungere agli scenari di disastro, in quel caso il sito primario non viene distrutto, quindi alla fine delle operazioni che ci portano fuori dall'incidente, torna a essere un sito utilizzabile.
+
+00:19:16.692 --> 00:19:34.632
+<v SPEAKER_1>In quel caso, che forse statisticamente forse quello sì è più probabile rispetto a che prenda fuoco il datacenter, se possiamo fare delle statistiche abbozzate, probabilmente in questo caso i numeri ci darebbero ragione, in quel caso ho l'infrastruttura per tornare indietro e devo sapere come si può tornare indietro.
+
+00:19:34.632 --> 00:20:00.652
+<v SPEAKER_1>Non è neanche raro che i sistemi siano così complessi e l'infrastruttura sia così complessa, o il piano ddr sia stato, qui uso una parola non piacevole, il piano ddr sia così abbuzzato che funziona, ma fare il rollback è un casino, pazzesco, perché non è stato pensato anche per avere poi il modo di tornare comodamente indietro.
+
+00:20:00.652 --> 00:20:12.712
+<v SPEAKER_1>Poi c'è un'altra cosa che aggiungo, ma perdona postilla che non vorrei dimenticarmi, che anche quando siamo, perché è una delle cose che poi aiuta il rollback, anche il sito ddr deve avere delle sue logiche di backup.
+
+00:20:12.712 --> 00:20:31.912
+<v SPEAKER_1>Cioè io quando sono di là, se sto di là un mese, non posso non fare più i backup per un mese, che mi servono, anche perché molto probabilmente nel vostro piano ddr originale avrete usato, si saranno utilizzate le copie di backup o gli snapshot per accendere i sistemi che abbiamo portato sul sito secondario.
+
+00:20:32.292 --> 00:20:37.852
+<v SPEAKER_1>E quella stessa modalità è quella che ci può aiutare a tornare poi sul sito principale.
+
+00:20:37.852 --> 00:20:47.572
+<v SPEAKER_1>Quindi sono tante cose che vanno un pochino predisposte, anche quando poi si pensa a come si torna indietro.
+
+00:20:47.572 --> 00:21:01.872
+<v SPEAKER_1>Ultima cosa che ci si dimentica è che il rollback è purtroppo doloroso dal punto di vista del fervo di servizio, quasi quanto il DR, cioè a un certo punto solo che pianificato, la differenza è quella.
+
+00:21:01.872 --> 00:21:16.772
+<v SPEAKER_1>Di ere ti capita di averlo fare in emergenza, il rollback lo puoi pianificare, ma a un certo punto quasi certamente dovrete pianificare un fermo di servizio, spegnere i sistemi, fare le sincronizzazioni, riaccendere i sistemi e ritestare tutte le applicazioni.
+
+00:21:16.772 --> 00:21:22.032
+<v SPEAKER_1>Se il piano di DR vi ha chiesto due giorni, anche il rollback probabilmente vi chiederà due giorni.
+
+00:21:22.032 --> 00:21:24.632
+<v SPEAKER_1>Non è uno schiocco di dita, va tenuto in considerazione.
+
+00:21:27.052 --> 00:21:39.592
+<v SPEAKER_2>Questo mi ha fatto venire in mente una cosa che ho usato in passato, su quello che hai detto pienamente d'accordo, credo di non aver mai visto un rollback in vita mia, né un piano ma né effettivamente qualcuno che l'ha fatto.
+
+00:21:41.192 --> 00:22:25.412
+<v SPEAKER_2>Il passato mi ha aiutato un sistema di monitoraggio ben fatto, cioè se io ho un sistema di monitoraggio che mi controlla il funzionamento delle mie applicazioni, e anche questo sistema l'ha portato chiaramente in DR, ma è un aiuto enorme perché nel momento che io lo porto in DR e sono in grado in modo diciamo automatico, dinamico di aggiornare tutti i miei puntamenti e farvi arrivare nel sito di DR, io ho subito lo stato di salute della mia infrastruttura, quindi man mano che ci lavoro e l'accendo, so esattamente cosa funziona e cosa no, invece di avere qualcuno che a mano va a provare e spera, si accorge che manca un pezzo, eccetera eccetera.
+
+00:22:25.412 --> 00:22:26.912
+<v SPEAKER_1>Sì, è vero, è vero, è vero.
+
+00:22:26.912 --> 00:22:40.192
+<v SPEAKER_1>Questa cosa purtroppo è una cosa che spesso manca, spessissimi sistemi di monitoraggio sono favolosi sul sito primario, assenti sul sito di DR, e quindi se va giù veramente il primario si è ciechi.
+
+00:22:40.192 --> 00:22:45.572
+<v SPEAKER_2>Qua si apre una nuova serie di puntate sul sistema di monitoraggio, ma non ne parleremo ora.
+
+00:22:47.252 --> 00:23:12.592
+<v SPEAKER_2>Allora, l'ultima cosa prima di arrivare alla chiusura secondo me è quello che dicevo prima sulla parte di normativa Dora, ma in realtà noto che molti stanno arrivando alle stesse conclusioni, ossia i fornitori critici devono essere sostituibili, e deve esserci un piano di essere per la sostituzione, questo è vero per la parte consulenziale, per chi vi fa manutenzione, eccetera eccetera.
+
+00:23:12.952 --> 00:23:40.192
+<v SPEAKER_2>Nello specifico nei servizi cloud significa banalmente che se il vostro provider riposta o il vostro servizio di IaaS basato su cloud non vi soddisfa o vi sta creando problemi, o ha un guasto problematico, o delle vulnerabilità, o la situazione geopolitica è cambiata, dovete avere la possibilità di spostarvi da un'altra parte.
+
+00:23:41.272 --> 00:23:47.252
+<v SPEAKER_2>In realtà la normativa è un po più precisa, dice che dovete avere un piano di spostamento.
+
+00:23:47.252 --> 00:23:59.692
+<v SPEAKER_2>È chiaro che se io devo spostarmi da un fornitore di posta elettronica a un altro, intanto ci sono due possibilità, a posso migrare la posta e bi lo persa, sono già due cose diverse.
+
+00:23:59.732 --> 00:24:01.452
+<v SPEAKER_1>Ci dipende cosa è innescato il problema.
+
+00:24:01.752 --> 00:24:08.352
+<v SPEAKER_1>Se è un problema geopolitico forse è molto rapida la richiesta di spostamento.
+
+00:24:08.352 --> 00:24:18.412
+<v SPEAKER_1>Se è un'insoddisfazione, un problema tecnico, una nuova normativa che sta entrando, che squalifica il vecchio fornitore, magari c'è un po più di tempo, dipende cosa.
+
+00:24:18.412 --> 00:24:19.732
+<v SPEAKER_2>Assolutamente.
+
+00:24:19.772 --> 00:24:37.052
+<v SPEAKER_2>Nel mondo IaaS, sia cloud che anche in realtà dei servizi, diciamo, di chi offre la parte datacenter o fa hosting, quindi non gli hyper scaler, ma qualcosa di più, diciamo, o ristretto, richiede una riflessione completamente diversa.
+
+00:24:37.052 --> 00:24:40.152
+<v SPEAKER_2>Quello sì si avvicina molto a un piano DDR.
+
+00:24:40.152 --> 00:24:47.972
+<v SPEAKER_2>Quindi anche qui bisogna comprendere l'applicazione, come è fatta, studiarla, l'infrastruttura e pianificare.
+
+00:24:48.072 --> 00:24:51.892
+<v SPEAKER_2>Non è certo qualcosa che possiamo discutere qua negli ultimi minuti che ci rimangono.
+
+00:24:51.892 --> 00:24:52.292
+<v SPEAKER_1>Certo.
+
+00:24:52.292 --> 00:24:54.912
+<v SPEAKER_2>Proprio lasciato come spunto di riflessione.
+
+00:24:54.912 --> 00:24:56.032
+<v SPEAKER_1>Sì, sì.
+
+00:24:57.572 --> 00:25:04.652
+<v SPEAKER_2>Bene, io ho esaurito i punti che avevo in mente dalla volta scorsa e forse siamo riusciti a chiudere in tempi accettabili.
+
+00:25:04.652 --> 00:25:06.052
+<v SPEAKER_1>In tempi buoni, sì, sì, sì.
+
+00:25:06.052 --> 00:25:33.372
+<v SPEAKER_1>Ma abbiamo ancora un'ultima riflessione che rimandiamo al prossimo appuntamento in cui abbiamo pensato di invitare un amico e collega, collega in senso ampio, in senso che lavora nel campo dell'Information Technology, che è Mattia Parise, che si occupa specificatamente di data protection, recovery e ambienti di soluzioni di disaster recovery, anche data protection in generale in realtà.
+
+00:25:33.372 --> 00:25:58.632
+<v SPEAKER_1>Così abbiamo modo di avere una figura veramente esperta e autorevole sul tema e magari io pensavo di tempestarlo un po di domande, chiedegli un po di pareri anche sulle cose che abbiamo toccato in queste tre puntate, se ho contato correttamente, e raccogliamo un feedback, diciamo, autorevole appunto di chi questi problemi li affronta quotidianamente.
+
+00:25:58.632 --> 00:26:12.372
+<v SPEAKER_1>Così ci facciamo un po la tara anche su quello che, sulle riflessioni che lui ha fatto, soprattutto anche in generale su data protection, ma anche proprio, lo distruberei, proprio sul tema recovery da incidente cyber.
+
+00:26:12.372 --> 00:26:23.812
+<v SPEAKER_1>Quindi capire un po meglio questo scenario che si aggiunge, di fatto, che stiamo aggiungendo, molti stanno aggiungendo ai loro scenari in caso di disastri recovery.
+
+00:26:23.812 --> 00:26:29.772
+<v SPEAKER_2>A me personalmente il termine, sono due in realtà, di cyber recovery viene chiamato così, è giusto?
+
+00:26:30.372 --> 00:27:27.932
+<v SPEAKER_2>Sì, a me piace molto nel senso che sembra una cosa, un nuovo termine marketing per giustificare una soluzione e posso essere d'accordo, però i wording, i nomi sono importanti, quindi spostare l'attenzione da disastro a in realtà un problema cyber è molto più attuale, nel senso che statisticamente è un evento molto più probabile di un disastro, volendo, nella mia storia, disastri reali, nel senso di problemi a infrastrutture, non ne ho vissuti direttamente o non hanno avuto un impatto così lungo da giustificare uno switch sul sito di Disaster Recovery, da un punto di vista invece di disastro cyber, ah beh lì possiamo convare a più volte ogni anno, quindi nelle realtà che vedo è molto molto più comune, quindi mi piace questo cambio di paradigma, nonostante poi le logiche siano le stesse.
+
+00:27:28.032 --> 00:28:04.412
+<v SPEAKER_1>Sì, infatti è utile avere un parere di quel tipo di figura, anche per capire come viene utilizzato poi nel mondo vero, perché la tendenza di utilizzare il piano DDR per uscire rapidamente dalle peste c'è sempre stata, però sapendo appunto gli oneli che questa cosa comportava, spesso è stata usata anche con una certa parsimonia, cioè si sono accettati dei fermi anche relativamente lunghi, pur di non innescare poi un processo molto complesso da governare o di cui per i quali non si era neanche pronti in alcuni casi.
+
+00:28:04.412 --> 00:28:23.132
+<v SPEAKER_1>Con il tema degli incidenti cyber si apre uno scenario che potrebbe essere più frequente, e quindi forse è una carta che si vorrebbe giocare più a cuore leggero, mi vien da dire, almeno così sto percependo, parlando con un po di detti lavori, quindi è interessante un attimo capire come si sta muovendo il mondo su questo su questo ambito.
+
+00:28:23.132 --> 00:28:51.332
+<v SPEAKER_2>C'è da dire che appunto gli attacchi cyber hanno portato agli occhi di tutti eventi che prima erano ritenuti statisticamente rari, ma quello che noi vediamo, insomma, sulle realtà che abbiamo frequentato, è che in caso di disastro dove non c'era una vera pianificazione, ero purtroppo in tantissimi casi, perché veniamo coinvolti in quelli dove ovviamente le aziende hanno difficoltà, non sono autonomi a ripartire.
+
+00:28:52.412 --> 00:29:06.592
+<v SPEAKER_2>Quelli che ho visto negli ultimi anni, prima di avere il primo applicativo core business core acceso e funzionante, richiede un lavoro di almeno cinque giorni, molto più probabilmente sette, dieci.
+
+00:29:06.592 --> 00:29:12.292
+<v SPEAKER_2>Sette, dieci per avere una ripartenza minima dell'infrastruttura informatica che tiene sul business.
+
+00:29:13.112 --> 00:29:16.652
+<v SPEAKER_2>Non so se tu, Rocco, hai visto i testimoniali diversi.
+
+00:29:16.652 --> 00:29:36.952
+<v SPEAKER_1>Sì, in caso di attacchi gravi le tempistiche sono spesso state di quel tipo, con un enorme punto interrogativo sulla disponibilità del dato, nel senso che in alcuni casi ci si è resi conto in quella situazione e sarebbe stato un problema anche se il problema non fosse stato derivante da un attacco cyber, ma da qualsiasi altra cosa.
+
+00:29:38.032 --> 00:29:54.952
+<v SPEAKER_1>I dati di cui il business aveva bisogno non erano quelli immediatamente disponibili, c'erano magari dati disponibili molto più vecchi, quindi famoso tema dell'RPO, rispetto a quelli a cui il business avrebbe voluto accedere, una volta teso 4-5 giorni per accederci.
+
+00:29:54.952 --> 00:30:13.892
+<v SPEAKER_1>Quindi queste discrepanze, in questo caso era proprio figlia di come era stato disegnato il sistema di data protection, che teneva conto del fatto che si poteva perdere il sito primario, ma non teneva conto del fatto che un incident cyber avrebbe potuto impattare anche, ad esempio, le ultime copie di backup.
+
+00:30:13.892 --> 00:30:21.392
+<v SPEAKER_1>Quindi, dimenticandosi di questi piccoli aspetti, ovviamente saltano dei pezzi.
+
+00:30:21.392 --> 00:30:32.092
+<v SPEAKER_2>Al tema cyber resilience, la progettazione di un intero processo di disaster recovery non è detto che sopravviva un attacco, perché la logica è diversa.
+
+00:30:32.092 --> 00:30:51.672
+<v SPEAKER_2>Mi pare che nella prima puntata ne avevamo parlato specifico, nel senso che proprio in un caso specifico un table top exercise ha mostrato nel giro di un paio d'ore di gioco, carta e penna come l'intero impianto di DR non avrebbe potuto sopravvivere a un disastro cyber.
+
+00:30:51.672 --> 00:31:09.752
+<v SPEAKER_1>Infatti, questa è la domanda madre di cui vorrei porre a Mattia, cioè come cambia il disegno dell'architettura di disaster recovery considerando quello scenario che è diverso dal prende fuoco datacenter o mi si esplode lo storage.
+
+00:31:09.752 --> 00:31:10.692
+<v SPEAKER_1>E uno scenario più complesso.
+
+00:31:10.692 --> 00:31:14.812
+<v SPEAKER_1>Mi si comprano, mettono anche i sistemi che avrei in parte forse utilizzato per il piano.
+
+00:31:14.812 --> 00:31:15.632
+<v SPEAKER_1>Come cambia allora?
+
+00:31:15.632 --> 00:31:16.992
+<v SPEAKER_1>Come devo ridisegnarlo?
+
+00:31:18.932 --> 00:31:27.032
+<v SPEAKER_2>Bene, tra l'altro, se avete domande che volete porre a Mattia direttamente, ce le fate avere nei canali di cui abbiamo discusso prima.
+
+00:31:27.032 --> 00:31:30.972
+<v SPEAKER_2>E per il resto direi che ci aggiorniamo la prossima volta.
+
+00:31:30.972 --> 00:31:32.972
+<v SPEAKER_1>Perfetto, alla prossima.
+
+00:31:32.972 --> 00:31:33.652
+<v SPEAKER_2>Ciao, grazie.

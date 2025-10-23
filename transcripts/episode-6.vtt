@@ -1,0 +1,601 @@
+WEBVTT
+
+00:00:09.746 --> 00:00:18.786
+<v SPEAKER_2>Bene, ti propongo di passare alla parte di XDR, che doveva essere l'argomento principale, ma in realtà abbiamo quasi finito.
+
+00:00:18.786 --> 00:00:29.986
+<v SPEAKER_2>Allora, la mia considerazione della piattaforma XDR è un'estensione di tutto quello che abbiamo raccontato, dove la X sta per raccolgo ma gli ingeri scodati da qualsiasi cosa.
+
+00:00:29.986 --> 00:00:33.106
+<v SPEAKER_2>Questa è un po la teoria, no?
+
+00:00:33.106 --> 00:00:42.406
+<v SPEAKER_2>La pratica è che l'ingestion che effettivamente io vedo fattibile non significa poi capacità di correlazione.
+
+00:00:42.406 --> 00:01:08.586
+<v SPEAKER_2>Quindi se io scelgo di buttare dentro il mio XDR dei log del mio web application file, piuttosto creativo directory, piuttosto che di un anti spam, molto probabilmente dovrò costruire tutte delle regole che siano in grado di fare, sì, di elevare gli eventi a incidente, che poi dovranno essere valutati dal triage.
+
+00:01:10.366 --> 00:01:12.766
+<v SPEAKER_2>Questo è quello che io vedo oggi.
+
+00:01:12.766 --> 00:01:21.106
+<v SPEAKER_2>Dove secondo me stiamo andando, stiamo andando in un mondo molto interessante, in tempi molto più lenti rispetto a quello che mi aspettavo.
+
+00:01:21.106 --> 00:01:31.086
+<v SPEAKER_2>Io mi aspettavo che insomma dietro ci sono vendor molto grossi, che molte di queste cose che ho detto fossero già incluse nella piattaforma.
+
+00:01:31.086 --> 00:01:37.706
+<v SPEAKER_2>Secondo me stiamo andando in una sostituzione di quello che è il vecchio CPM.
+
+00:01:39.106 --> 00:02:25.026
+<v SPEAKER_2>Non fanno le stesse cose, però da un punto di vista aziendale, quando un sistema come un XDR riesce a coprire un'alta percentuale dei sistemi, della visibilità, dell'analisi, diventa molto più attivante rispetto a una piattaforma che può coprirmi il 100%, dove è attivante sia in termini di copertura, sia in termini dall'altra parte di SIEM di necessità di ingerirmi, configurarmi i sistemi, configurarmi gli alert, configurarmi il parsing, là dove non siano inclusi, insomma un lavoro molto più oneroso e spesso SIEM mi richiede anche un costo della piattaforma stessa e molto spesso dell'infrastruttura.
+
+00:02:25.026 --> 00:02:36.686
+<v SPEAKER_2>Non sto dicendo che siano equivalenti, anche perché oggi non lo sono effettivamente, sto dicendo però che per molti contesti diventa una soluzione molto più appetibile.
+
+00:02:36.686 --> 00:02:48.986
+<v SPEAKER_2>Mi sorprende che questa cosa sia molto lontana dall'avvenire, cioè si possono fare alcune cose tutte a manina, il resto è tutto onere di qualcuno.
+
+00:02:48.986 --> 00:03:22.626
+<v SPEAKER_1>Infatti a me sembra sempre un tema di interpretazione o meglio di aspettativa, perché quello che già oggi puoi fare, come dicevi tu, a manina, se faccio in gestione anche dei log del mio Firewall, quando faccio una ricerca all'interno della piattaforma e di Rxdr in questo caso, troverò elementi che arrivano dalle telemetrie degli endpoints, elementi che arrivano dai log della componente terza parte che ho inserito.
+
+00:03:22.626 --> 00:03:26.126
+<v SPEAKER_1>Quindi ho una visione maggiore di quello che sto facendo.
+
+00:03:28.306 --> 00:03:41.326
+<v SPEAKER_1>Ovviamente questa è un'attività umana, quindi ha perfettamente senso nel momento in cui c'è un analista che sta cercando, che sta facendo triage o sta investigando su un problema.
+
+00:03:43.946 --> 00:03:49.286
+<v SPEAKER_1>Posso fare delle rule che usano anche gli elementi che arrivano dai log di terza parte?
+
+00:03:49.286 --> 00:03:53.886
+<v SPEAKER_1>Sì, però quello è già una cosa più da sì effettivamente.
+
+00:03:54.146 --> 00:04:07.086
+<v SPEAKER_1>In senso che comincia a fare delle rule di correlazione e una funzionalità tipica del SIEM, che sarebbe sicuramente comoda all'interno della piattaforma EDR.
+
+00:04:07.086 --> 00:04:14.146
+<v SPEAKER_1>Probabilmente la difficoltà è, diciamo, cioè di fatto vai a sviluppare un SIEM dentro l'EDR alla fine.
+
+00:04:14.206 --> 00:04:21.566
+<v SPEAKER_1>Cioè quello che ottieni, se arriva a quella capabilities, vuol dire che stai aggregando quella funzionalità.
+
+00:04:23.166 --> 00:04:25.006
+<v SPEAKER_1>Per quanto riguarda sarebbe apprezzatissima.
+
+00:04:28.106 --> 00:04:38.606
+<v SPEAKER_1>Non so prevedere i livelli di gestibilità della cosa, nel senso che indubbiamente renderebbe più completa, ma più complessa la piattaforma.
+
+00:04:38.606 --> 00:04:45.506
+<v SPEAKER_1>Anche io mi farei delle domande a questo punto, ma allora sostituiamo i SIEM come obiettivo finale.
+
+00:04:45.506 --> 00:04:56.526
+<v SPEAKER_1>Io noto più frequentemente il collegamento XDR più che, almeno a livello di presentazione, più che come sostituzione del SIEM.
+
+00:04:56.526 --> 00:05:07.966
+<v SPEAKER_1>E qua da capire se è un problema di capability, cioè se è difficile portare le funzionalità del SIEM dentro la piattaforma, ma vedo il collegamento più diretto con un'altra parolaccia che è il SOAR.
+
+00:05:08.766 --> 00:05:11.626
+<v SPEAKER_1>Cioè fare introdurre automazione.
+
+00:05:13.986 --> 00:05:23.146
+<v SPEAKER_1>Una volta che ho tutti i dati, anche quelli dei log di terze parti, allora mi butto direttamente sull'automazione.
+
+00:05:23.146 --> 00:05:26.106
+<v SPEAKER_1>Vedo spesso questa unione.
+
+00:05:26.106 --> 00:05:37.086
+<v SPEAKER_1>E oggi se guardo molte architetture, anche in contesti XDR, neanche io ho visto una sostituzione.
+
+00:05:38.366 --> 00:05:44.906
+<v SPEAKER_1>Ad oggi, di quello che è in grado di fare un SIEV a livello di capacità di correlazione.
+
+00:05:44.906 --> 00:05:47.546
+<v SPEAKER_1>Però concettualmente sono molto vicini.
+
+00:05:48.006 --> 00:05:54.606
+<v SPEAKER_1>Il modello su cui si lavora su un SIEV è molto vicino al modello con cui si lavora su un XDR.
+
+00:05:54.606 --> 00:05:59.946
+<v SPEAKER_1>È molto molto nel confine quasi impercettibile in alcuni ambiti.
+
+00:06:02.906 --> 00:06:18.086
+<v SPEAKER_2>Diciamo che per fare un esempio pratico, qualsiasi azienda partendo dalle, diciamo, delle EDR ha probabilmente, diciamo, una tecnologia o al massimo due tecnologie di firewall.
+
+00:06:18.086 --> 00:06:37.186
+<v SPEAKER_2>Nel caso fortuito in cui la piattaforma di EDR sia anche lo stesso vendor del firewall, diciamo che abbiamo già una prima bossa di XDR per cui il vendor integra i propri dispositivi e ne dà una parvenza, diciamo, omogenea all'interno di un'unica dashboard e abbiamo l'XDR.
+
+00:06:37.186 --> 00:06:51.886
+<v SPEAKER_2>Ed è un buon passo, in realtà, per gli EDR che non vendono firewall, in realtà non dovrebbe essere così complesso aggiungere qui tre, quattro vendor, diciamo, il supporto per qui tre, quattro vendor nella propria piattaforma.
+
+00:06:51.886 --> 00:07:04.786
+<v SPEAKER_2>Intanto tre o quattro sono i clienti interessanti, poi c'è un ecosistema di firewall, però i clienti interessanti delle piattaforme EDR hanno quei tre e quattro vendor.
+
+00:07:04.786 --> 00:07:12.586
+<v SPEAKER_2>La cosa che però veramente mi sorprende è che alla fine tutti questi clienti un sistema di Active Directory interno ce l'hanno.
+
+00:07:12.586 --> 00:07:14.446
+<v SPEAKER_2>Ed è sempre quello.
+
+00:07:14.446 --> 00:07:23.886
+<v SPEAKER_2>Adesso non sono un maestro di Active Directory assolutamente, però immagino che la parte di logging tra un 2012 e un 2016 e compagnia non sia radicalmente diverso.
+
+00:07:26.706 --> 00:07:31.226
+<v SPEAKER_2>Gli EDR che vedo possono ingerire quel tipo di log, però la si fece.
+
+00:07:31.226 --> 00:07:46.526
+<v SPEAKER_2>In realtà il vendor potrebbe invece di dare la possibilità di costruirsi quelle regole di correlazione che UGM generalmente ha implicite, già fornirle e lasciarle lasciare al cliente poi il fatto di selezionarle o no.
+
+00:07:46.566 --> 00:07:52.946
+<v SPEAKER_2>Già questo secondo me stiamo coprendo l'80-90% del...
+
+00:07:52.946 --> 00:07:57.666
+<v SPEAKER_2>alla fine l'attacco di là deve passare per endpoint, per il firewall, per Tinder, Hattori.
+
+00:07:57.666 --> 00:08:01.046
+<v SPEAKER_2>Dei questi tre sistemi li ho sotto controllo.
+
+00:08:01.046 --> 00:08:06.466
+<v SPEAKER_2>Ok, magari non avrò l'antispam, di cui magari spendiamo due parole adesso, però...
+
+00:08:06.526 --> 00:08:08.786
+<v SPEAKER_2>è il di lì che passa tutto sommato.
+
+00:08:08.786 --> 00:08:13.746
+<v SPEAKER_1>E effettivamente questa fu la funzionalità che fece apprezzare i CM di mercato.
+
+00:08:13.746 --> 00:08:18.946
+<v SPEAKER_1>Nel momento in cui si cominciò a fare ingestion di...
+
+00:08:18.946 --> 00:08:58.866
+<v SPEAKER_1>in maniera strutturata e soprattutto a correlare gli eventi, all'esempio del mondo acti directory, molte aziende cominciarono a apprezzare seriamente le funzionalità dei CM e sono diventati un prodotto non soltanto per i SOC, ma anche aziende strutturate, che tutti hanno deciso di introdurre quel tipo di tecnologia, perché ieri solo aveva forse il doppio problema, tanto devo logare perché me lo impone la legge, dovrebbe impormelo anche il buon senso, ma molti partono dal fatto che lo impone la legge, e già che ci sono uso qualcosa che interpreta correttamente quei dati e mi dà anche delle informazioni.
+
+00:08:59.866 --> 00:09:19.926
+<v SPEAKER_1>E fu, ripeto, il grande salto fu passare proprio dal contesto log destrutturato e migliaia di regole a agenti in grado di impastare quel dato e fornirlo in maniera più strutturata all'interno della tattaforma, e quindi poi tirar fuori delle informazioni da quei dati.
+
+00:09:19.986 --> 00:09:24.666
+<v SPEAKER_1>Fu proprio il, secondo me, vado a memoria nel periodo 2013-2016.
+
+00:09:26.646 --> 00:09:31.126
+<v SPEAKER_1>Ricordo l'impennata di attenzione verso quel tipo di tecnologia.
+
+00:09:32.226 --> 00:09:41.266
+<v SPEAKER_1>Quindi in realtà è già stato fatto, ancora una volta, hai perfettamente ragione, perché non farlo anche nella piattaforma all'interno di un contesto XDR.
+
+00:09:42.546 --> 00:09:45.726
+<v SPEAKER_1>Acti Directory sappiamo che è pesantemente preso di mira.
+
+00:09:45.726 --> 00:09:51.046
+<v SPEAKER_1>È uno dei punti di atterraggio preferiti dai tre tactor per una serie di circostanze.
+
+00:09:51.046 --> 00:09:56.266
+<v SPEAKER_1>Non ultima è il fatto che spesso sono configurati in maniera, diciamo, fantasiosa.
+
+00:09:56.266 --> 00:10:09.706
+<v SPEAKER_1>E quindi, punto d'attenzione importante, anche io metterei, assieme ai Firewall, che è stata credo la prima cosa che è stata presa in considerazione, anche io metterai subito dopo la parte di Acti Directory, in dubbio a me.
+
+00:10:11.826 --> 00:10:23.626
+<v SPEAKER_1>Diciamo che siamo ben oltre il 90% forse di quello che possiamo guardare in un'azienda, in un momento in cui abbiamo Endpoint, Firewall e Acti Directory, un'azienda diciamo in contesto standard.
+
+00:10:24.066 --> 00:10:39.026
+<v SPEAKER_1>Non apriamo oggi il capitolo OT, perché sparagliamo completamente i ragionamenti, quindi teniamo a parte quell'ambito lì, la visibilità con questi tre elementi su un'infrastruttura classica è molto molto elevata.
+
+00:10:42.206 --> 00:11:11.726
+<v SPEAKER_2>Questa cosa la vedo anche come un'opportunità per il System Integrator, Security Integrator meglio come nome, che offrono le soluzioni di EDR gestite, che è un po il concetto di prima, il cliente ce l'ha, non può gestirlo, nel senso non può mantenerlo, fare hunting, migliorare le regole eccetera eccetera, come abbiamo visto, come ci siamo detti, lo dovrebbe fare il rivenditore di servizio, quindi chi offre l'MDR.
+
+00:11:11.726 --> 00:11:25.266
+<v SPEAKER_2>E in questo servizio può giocarsi delle chiavi di differenziazione, andando a supportare delle piattaforme con delle regole che si devono scrivere, chiaramente, rispetto ai competitor che magari queste cose non le fanno.
+
+00:11:25.266 --> 00:11:51.886
+<v SPEAKER_2>Mi viene in mente l'antispam, quindi l'antispam notifica il numero di e-mail di spam in ingresso e in uscita, a seconda di come è stato configurato, ma l'alerting, ho scelto l'antispam per farla semplice, l'alerting di questa IP, questo utente ha superato il numero di spam lecite in un certo range orario, lo fa diventare un incidente.
+
+00:11:51.886 --> 00:11:59.286
+<v SPEAKER_2>Quindi è una fase di, scusami, è un'opportunità di differenziarsi.
+
+00:11:59.286 --> 00:12:12.126
+<v SPEAKER_2>Però è anche una zona oscura, perché mi immagino il security integrator, chiamiamolo sempre così, che va a sviluppare una serie di regole per Active Directory su uno specifico IDR.
+
+00:12:13.306 --> 00:12:28.266
+<v SPEAKER_2>E poi un domani, che non credo sia tanto lontano, il vendor le integra di suo e quindi, come dire, cancella il lavoro fatto da questo integrator e rimette tutti i partner allo stesso piano.
+
+00:12:28.266 --> 00:12:42.306
+<v SPEAKER_2>Quindi capisco anche il sospetto di andare in una direzione che è innovativa, ma rischia poi di non avere troppo futuro.
+
+00:12:42.306 --> 00:12:45.806
+<v SPEAKER_2>Però a oggi ci sarebbe in realtà questa cosa.
+
+00:12:45.806 --> 00:12:56.226
+<v SPEAKER_2>E l'automazione ci permette di gestire centinaia di clienti, ammesso che le piattafore vengono supportate, in un tempo molto molto stretto.
+
+00:12:56.226 --> 00:13:09.786
+<v SPEAKER_1>Li faccio fatica per vedere quanto si spingeranno i vendor nel inserimento di regole di base, o di comportamenti di base che siano anche...
+
+00:13:09.786 --> 00:13:16.906
+<v SPEAKER_1>che consentano di eseguire una responsa automatizzata.
+
+00:13:20.846 --> 00:13:25.506
+<v SPEAKER_1>Perché è molto difficile fare qualcosa che sia generico.
+
+00:13:25.506 --> 00:13:52.706
+<v SPEAKER_1>Quindi la mia sensazione è che il fatto che alcuni alcuni piettaforme non diano un output di sospetto o di allarme su alcuni comportamenti, quando in realtà ne vedono le telemetrie, personalmente mi faccio fatica a metterlo come dire, proprio dentro il secchio dei difetti.
+
+00:13:52.706 --> 00:14:00.526
+<v SPEAKER_1>Mi sembrano più scelte, discutibili da quel punto di vista del vendor, per non stringere troppo le maglie.
+
+00:14:00.526 --> 00:14:21.046
+<v SPEAKER_1>Posso capirla nel momento in cui l'EDR è usato con coscienza, e quindi sapendo che non è magico, non blocca tutto perché ha degli incantesimi particolari, ma blocca in base a quello che gli viene fornito come rule, come informazioni.
+
+00:14:21.046 --> 00:14:24.846
+<v SPEAKER_1>Quindi se interpretiamo bene il comportamento, questa cosa non è un vero problema.
+
+00:14:25.806 --> 00:14:29.486
+<v SPEAKER_1>Da tenere in considerazione, ma assolutamente gestibile.
+
+00:14:31.366 --> 00:14:37.966
+<v SPEAKER_1>Il fatto di avere altre informazioni, in un certo senso, quelle dell'AntiSpam, tra l'altro, sarebbero degli IOC perfetti.
+
+00:14:37.966 --> 00:15:01.506
+<v SPEAKER_1>Perché nel momento in cui l'AntiSpam, le regole dell'AntiSpam ti dicono che quel mittente malevolo, se ho configurato bene l'AntiSpam, ma lo posso tranquillamente prenderlo come IOC, se lo so, quel elemento o un host che mi manda email appunto considerate spam o considerate malevole, ma io butterei tutto dentro gli IOC a quel punto senza farmi i grossi problemi.
+
+00:15:01.506 --> 00:15:09.526
+<v SPEAKER_1>E poi ci penserà la rule dell'EDR a definire un sospetto o malevolo un comportamento in base a quello che vado a definire.
+
+00:15:09.566 --> 00:15:13.126
+<v SPEAKER_1>Però utilissime da quel punto di vista, anche i firewall.
+
+00:15:13.126 --> 00:15:21.186
+<v SPEAKER_1>Tutte le botnet dovrebbero mangiarsene tranquillamente, potrebbero mandarmi un sacco di informazioni di quel tipo.
+
+00:15:21.186 --> 00:15:30.406
+<v SPEAKER_1>Il problema mi sembra sempre, anche nel caso dell'XDR, ancora una volta è ok adesso ho tutti i dati.
+
+00:15:30.406 --> 00:15:37.946
+<v SPEAKER_1>O imparo a usarli e li uso attivamente per fare investigation, sennò ho solo tutti i dati.
+
+00:15:37.946 --> 00:15:40.866
+<v SPEAKER_1>Non è cambiato niente della punta di vistenza.
+
+00:15:40.866 --> 00:15:45.426
+<v SPEAKER_1>Tra l'altro mi prendo due minuti per raccontare un episodio.
+
+00:15:45.426 --> 00:16:01.026
+<v SPEAKER_1>Ci sono molte molte aziende che hanno servizio SOC e SOC puro, quindi detection, il SOC esterno riceve i log e in base ai log interpreta eventualmente all'arma.
+
+00:16:01.026 --> 00:16:04.606
+<v SPEAKER_1>Cosa diciamo, come dovrebbe funzionare un SOC.
+
+00:16:04.606 --> 00:16:11.946
+<v SPEAKER_1>Quindi più log ha il SOC, è meglio riesce a interpretare e a informare il cliente di eventuali problemi.
+
+00:16:11.946 --> 00:16:29.846
+<v SPEAKER_1>E poi hanno acquisito la plataforma IDR che per varie ragioni spesso non è subito integrabile o integrata con il SOC, semplicemente perché magari è fuori dallo scopo di servizio, il SOC non offre quel servizio, quindi c'è l'IDR è un elemento a parte che cercano magari di gestire internamente.
+
+00:16:29.846 --> 00:16:45.646
+<v SPEAKER_1>A parte il mio suggerimento di dare sempre accesso a chi, se il servizio lo consente di dare accesso alla plataforma IDR a chi vi fa detection, perché può fare investigation là dentro, è un elemento in più per fare l'investigazione della problematica.
+
+00:16:45.646 --> 00:17:33.926
+<v SPEAKER_1>Ma poi è interessante vedere quando arriva una detection ad esempio dal SOC, che si basa primariamente sui log che arrivano dai dispositivi di rete, quindi Firewall, e solitamente dal mondo Active Directory e altri sistemi che sono stati scelti e eletti come elementi per mandare i log, c'è una certa interpretazione tipicamente network oriented, tale oggetto, vi ho cercato di parlare con questo oggetto, quindi interpreto ad esempio come tentativo di sfiltrazione, tentativo di scansione all'interno della rete, poi vai a cercare quegli elementi sull'EDR e c'è uno scollamento totale delle informazioni, ma anche su cose banale, ad esempio che l'IP che è stato visto sul Firewall, sull'EDR non si trova, però un IP interno della rete.
+
+00:17:33.926 --> 00:17:36.926
+<v SPEAKER_1>Allora ti vengono i dubbi, ma è un endpoint che non ha l'EDR?
+
+00:17:37.346 --> 00:17:39.326
+<v SPEAKER_1>È un endpoint che ha cambiato EDR?
+
+00:17:40.926 --> 00:18:03.626
+<v SPEAKER_1>In realtà poi bisogna imparare a fare le ricerche dentro gli EDR per andare a caccia di informazioni, però avendo i due mondi scollegati è veramente complicato unire poi, fare investigazione su un'informazione che arriva dal SOC o dal CM, se uno ha un CM interno e non ha un servizio SOC, e lavorare poi, cercare poi con le informazioni all'interno degli EDR se non c'è qualcosa che ti aiuta a correllare.
+
+00:18:03.626 --> 00:18:06.026
+<v SPEAKER_1>Diventa un po complicativo obiettivamente.
+
+00:18:07.446 --> 00:18:14.746
+<v SPEAKER_1>Se cerchi in giro architetture, non è raro trovare chi dice se hai il CM, butti tutto sul CM.
+
+00:18:14.746 --> 00:18:19.426
+<v SPEAKER_1>Butti tutte le telemetrie, anche il contrario del concetto dell'XDA.
+
+00:18:19.426 --> 00:18:21.846
+<v SPEAKER_1>Butti tutto sul CM, corre la D.
+
+00:18:21.846 --> 00:18:33.086
+<v SPEAKER_1>Giustamente, chi però sa quanto costa la licenza di un CM, dice che se prendo le telemetrie e le DR e le butti tutto sul CM, ho un problema di costi da valutare.
+
+00:18:34.546 --> 00:18:36.886
+<v SPEAKER_1>Quindi, panorama complesso.
+
+00:18:36.886 --> 00:18:38.826
+<v SPEAKER_1>Forse economicamente vince l'XDR.
+
+00:18:39.546 --> 00:18:45.426
+<v SPEAKER_1>Forse economicamente, forse portare dentro l'XDR costa meno.
+
+00:18:45.466 --> 00:18:49.466
+<v SPEAKER_1>Non lo so, farò degli esperimenti di costo.
+
+00:18:49.466 --> 00:19:02.466
+<v SPEAKER_2>Io credo la vinca da un punto di vista operativo, perché i CM, oltre alla gestione del CM, che è un mondo, c'è la gestione anche di tutta la parte sottostante.
+
+00:19:02.466 --> 00:19:10.966
+<v SPEAKER_2>Quindi da un punto di vista operativo, una piattaforma cloud based, come potrebbe essere anche un CM cloud based, la vince da un punto di vista operativo.
+
+00:19:10.966 --> 00:19:23.846
+<v SPEAKER_2>Credo la vinca anche da un punto di vista di efficacia, perché le piattaforme di EDR vedo che riescono a andare molto più nel profondo di quello che vedo nelle piattaforme di CM.
+
+00:19:23.846 --> 00:19:31.246
+<v SPEAKER_2>Questo perché a volte vedo una sorta di aurea magica di cui CM sono avvolti, no?
+
+00:19:31.246 --> 00:19:34.266
+<v SPEAKER_2>E anche il EDR, XDR è uguale.
+
+00:19:34.306 --> 00:19:45.986
+<v SPEAKER_2>Nel senso che butta tutto sul CM, sì, certo, buttare non significa avere poi un valore, perché il dato che viene trasmesso con una lingua, no?
+
+00:19:45.986 --> 00:19:54.506
+<v SPEAKER_2>Quindi faccio l'esempio estremo, un giorno un'azienda mi chiede voglio che i miei log della S400 vengano integrati nel CM.
+
+00:19:54.506 --> 00:20:09.986
+<v SPEAKER_2>Sì, certo, il log della S400 erano nel caso specifico una sorta di txt, tabellare, tabellare è proprio dove è spaziato da tab, non da caratteri, che dovevano essere letti dal CM in modo sensato.
+
+00:20:09.986 --> 00:20:21.686
+<v SPEAKER_2>In mezzo ci sta il far sì che la lingua della S400 venga tradotta nella lingua del CM, se no, buttare sul CM, cioè il CM lo prende, ma non ti dà nessun valore, no?
+
+00:20:21.686 --> 00:20:23.386
+<v SPEAKER_2>Quindi non è magico.
+
+00:20:23.446 --> 00:20:24.546
+<v SPEAKER_1>Sì, sì.
+
+00:20:25.746 --> 00:20:27.586
+<v SPEAKER_1>C'è sempre dietro il lavoro normale.
+
+00:20:27.586 --> 00:20:35.186
+<v SPEAKER_1>Esatto, sì, c'è quel lavoro enorme, che chi lavora non so che conosce benissimo, di manipolare i dati.
+
+00:20:36.946 --> 00:20:51.726
+<v SPEAKER_2>Separando completamente il concetto di gestione dei log, anche da un punto di vista normativo, che allora la sì, butta tutti i log, perché la normativa mi richiede di buttare un certo tipo di log in un contenitore e tenerli sparo sei mesi.
+
+00:20:52.486 --> 00:20:58.866
+<v SPEAKER_2>Ma nel CM se il log non ha valore è solo un costo alto, ok?
+
+00:20:58.866 --> 00:21:19.326
+<v SPEAKER_2>Quindi è meglio avere poche cose, il perimetro che abbiamo raccontato prima, che però sia valorizzato correttamente, sennò è rumore, spazio, denaro, che richiede da un punto di vista di licenza generalmente e di storage che comunque non è poca roba.
+
+00:21:20.406 --> 00:21:26.606
+<v SPEAKER_2>Il tutto senza contare che poi questa cosa tecnicamente deve essere copiata da qualche parte per disaster cover.
+
+00:21:26.606 --> 00:21:40.426
+<v SPEAKER_2>Quindi il tutto dovrebbe non dico a raddoppiare, ma quasi, perché vogliamo avere i dati da un'altra parte in caso di ransomware che distrugga tutto per capire che cosa è successo o un domani ripartiamo da zero.
+
+00:21:40.426 --> 00:21:41.706
+<v SPEAKER_2>Sono tutte considerazioni.
+
+00:21:44.506 --> 00:22:13.746
+<v SPEAKER_1>E ragione che c'è, che diciamo l'evoluzione sembra andare lentamente nella direzione diciamo di un mix di art completo, dove c'è dentro tutto, posso fare tutte le mie rule, posso fare le mie investigation e nel frattempo ci sono sovrapposte appunto tecnologie come il SOAR, che in tantissimi contesti io sto vedendo come la panacea.
+
+00:22:13.746 --> 00:22:22.386
+<v SPEAKER_1>Ah, bene, non serve più fare investigation come dei matti, ci pensa l'automazione.
+
+00:22:22.386 --> 00:22:29.766
+<v SPEAKER_1>Ho visto questa tendenza che gestiamo più all'armi perché c'è il SOAR.
+
+00:22:33.566 --> 00:23:04.366
+<v SPEAKER_1>È una tendenza da cui stare attenti, se vi guardate qualsiasi framework di gestione degli EDR, nel primo, nell'introduzione viene espresso il problema del fatto che è time consuming gestire gli EDR, quindi credo poco nella scorciatoia dell'automazione come scorciatoia, credo molto nell'automazione come ottimizzazione, ma come scorciatoia all'investigation della persona, ci credo al momento molto poco.
+
+00:23:04.366 --> 00:23:07.466
+<v SPEAKER_1>Spero di essere smentito fra qualche anno.
+
+00:23:07.466 --> 00:23:22.246
+<v SPEAKER_2>Diciamo che può essere un grosso aiuto nell'arricchimento, che però non può essere massivo, perché generalmente i dati per arricchire un determinato evento vengono chiamati esternamente tramite API che hanno un costo e un limite.
+
+00:23:22.286 --> 00:23:35.766
+<v SPEAKER_2>Quindi se ho 1.0 eventi al giorno, difficilmente potrò arricchirli tutti e mille, e poi una persona si prende il lusso di guardarli tutti o solo quei 10-20 che servono.
+
+00:23:35.766 --> 00:23:42.746
+<v SPEAKER_2>Seconda cosa, viviamo in un mondo in cui c'è un hype dell'intelligenza artificiale, dove la soluzione è qualsiasi male.
+
+00:23:42.746 --> 00:24:04.026
+<v SPEAKER_2>Ma su comportamenti che non hanno storia, hanno storie magari simili, ma non specifiche, in cui le persone stesse hanno difficoltà a capire se un elemento è usato in modo malevolo o in modo lecito, perché sempre gli stessi elementi stiamo parlando, dove nell'azienda A può essere lecito e nell'azienda B può essere malevolo.
+
+00:24:04.026 --> 00:24:27.486
+<v SPEAKER_2>Lasciare che un algoritmo che si basa su delle, come si può chiamare, degli algoritmi costruiti dinamicamente, e quindi delle scelte fatte non si sa bene in quale modo, non so, io sono sempre un po perplesso, però è la mia storia.
+
+00:24:27.486 --> 00:24:31.206
+<v SPEAKER_2>Non mi fiderei completamente di questa cosa qua.
+
+00:24:31.506 --> 00:24:32.426
+<v SPEAKER_1>Più che altro per come...
+
+00:24:32.426 --> 00:24:34.686
+<v SPEAKER_2>Può essere anche una mania del controllo.
+
+00:24:35.786 --> 00:24:45.646
+<v SPEAKER_1>Ma probabilmente, almeno nel mio caso, è uno scetticismo dato da come tendenzialmente queste tecnologie vengono interpretate o utilizzate.
+
+00:24:45.646 --> 00:24:57.446
+<v SPEAKER_1>Male, diciamo, per quanto la tecnologia faccia bene il suo lavoro, poi l'utilizzo non è automaticamente altrettanto, diciamo, curato da questo punto di vista.
+
+00:24:57.446 --> 00:25:12.146
+<v SPEAKER_1>E quindi da questo deriva il mio scetticismo, perché anche l'anomaly detection come concetto era un po simile a quello che stavi dicendo tu prima, che funziona perfettamente in teoria, poi in realtà il tre-tactor...
+
+00:25:12.306 --> 00:25:36.786
+<v SPEAKER_1>Quindi se io mi basassi puramente sull'anomaly detection, che è molto collaudata come metodologia di detection, e non mi cuoro del fatto che il tre-tactor utilizza esattamente quel bias, cioè il fatto che, perfetto, allora tu usi machine learning per imparare che cos'è un'anomalia, perfetto, allora ti avveleno la tua base dati, così riesco a restare sotto traccia.
+
+00:25:36.786 --> 00:25:41.706
+<v SPEAKER_1>Quindi se le uso in maniera cieca, questo non vuol dire appunto che l'anomalia di traccia non funziona.
+
+00:25:41.706 --> 00:25:44.186
+<v SPEAKER_1>Funziona benissimo, ma non posso usarli in maniera cieca.
+
+00:25:44.186 --> 00:25:47.926
+<v SPEAKER_1>Devo comunque adattarmi alle circostanze.
+
+00:25:47.926 --> 00:25:54.466
+<v SPEAKER_1>Stessa cosa secondo me per l'ambito automazione, per l'ambito SOAR e tutto ciò che ci sta dietro.
+
+00:25:54.466 --> 00:25:56.806
+<v SPEAKER_1>Utilissimo.
+
+00:25:56.806 --> 00:26:01.886
+<v SPEAKER_1>Ripeto, che oggi sostituiscano l'attività di investigation?
+
+00:26:01.886 --> 00:26:03.706
+<v SPEAKER_1>No, secondo me no.
+
+00:26:03.706 --> 00:26:08.646
+<v SPEAKER_1>Possono aiutare l'attività di investigation, ma sostituire la vedo grigio.
+
+00:26:09.506 --> 00:26:15.286
+<v SPEAKER_1>Inviteremo qualcuno di qualche vendor per avere una controparte che ci dica il contrario.
+
+00:26:15.286 --> 00:26:16.986
+<v SPEAKER_2>Volentieri.
+
+00:26:16.986 --> 00:26:26.286
+<v SPEAKER_2>Volentieri, però, avvisiamo rischia di essere il mire preso di mira, perché ci piacciono le risposte.
+
+00:26:26.286 --> 00:26:41.206
+<v SPEAKER_1>Io ripeto sulla cosa dei vendor, che è facile a volte sparargli i conto, ma veramente se sprecchiamo, sprecchiamo, investiamo dei minuti a leggere veramente la documentazione, a scoprire delle cose incredibili.
+
+00:26:41.206 --> 00:26:45.066
+<v SPEAKER_1>Cioè proprio ci sono delle credenze che ci siamo creati.
+
+00:26:45.066 --> 00:26:53.466
+<v SPEAKER_1>Non voglio dire di chi è la colpa, però delle credenze che sono state create per lo storytelling, a causa di certe storytelling, che il vendor stesso smentisce.
+
+00:26:53.926 --> 00:26:56.886
+<v SPEAKER_1>Nella documentazione del vento ci sia esattamente il contrario.
+
+00:26:56.886 --> 00:27:02.706
+<v SPEAKER_1>Quindi non è neanche colpa del vendor che si siano creati certi miti in alcuni casi.
+
+00:27:02.706 --> 00:27:06.206
+<v SPEAKER_1>È colpa del fatto che non andiamo a leggere come funzionano le cose probabilmente.
+
+00:27:08.286 --> 00:27:22.806
+<v SPEAKER_2>Sulla anomaly detection, oltre all'esempio che hai fatto tu appunto dell'avvelenamento dell'informazione, ricordo sempre un caso che mi hai raccontato, risalo ormai diversi anni fa, ed è quello della parte SSH.
+
+00:27:23.146 --> 00:27:31.806
+<v SPEAKER_2>Allora mi raccontavi di un'analisi di una rete dove era stato installato un sistema di analisi comportamentale, eccetera eccetera.
+
+00:27:31.806 --> 00:27:43.206
+<v SPEAKER_2>Dopo un tot, adesso io vado a ricordo, tu lo sai più precisamente, viene fuori un alert perché il numero di connessioni SSH era diminuito radicalmente.
+
+00:27:44.566 --> 00:27:45.786
+<v SPEAKER_2>Me lo avevi raccontato tu, vero?
+
+00:27:45.786 --> 00:27:47.306
+<v SPEAKER_1>No, non me ricordo questo.
+
+00:27:47.306 --> 00:27:49.966
+<v SPEAKER_1>Budart, ma forse tanti anni fa.
+
+00:27:49.966 --> 00:27:50.906
+<v SPEAKER_2>Tanti anni fa, sì.
+
+00:27:50.906 --> 00:27:59.286
+<v SPEAKER_2>E la cosa curiosa era appunto che ci sia andati un po in allarme di questa caduta del numero di connessioni SSH che non doveva esserci.
+
+00:27:59.286 --> 00:28:07.266
+<v SPEAKER_2>Insomma, lo faccio breve, il risultato è che prima c'era un malware che apriva un sacco di connessioni SSH comando in controllo o simili.
+
+00:28:07.266 --> 00:28:15.106
+<v SPEAKER_2>Poi a un certo punto quel malware ha cessato di vivere per x motivi, il numero di connessioni SSH è droppato, il comportamentale ha rilevato un'anomalia.
+
+00:28:15.106 --> 00:28:17.006
+<v SPEAKER_1>Anomalia.
+
+00:28:17.606 --> 00:28:38.126
+<v SPEAKER_2>Io la tengo sempre presente questa cosa, perché un po mi ricorda quando per la prima volta ho affrontato la parte di web application firewall, in una struttura di cui il t era parte core del business, è stato installato questo web application firewall che macinava migliaia di richieste al minuto.
+
+00:28:38.126 --> 00:28:42.966
+<v SPEAKER_2>E il problema era sì, il sistema apprende, ma come fai a sapere se quello che ha preso è giusto?
+
+00:28:42.966 --> 00:28:51.566
+<v SPEAKER_2>Sono talmente tante richieste, talmente tanti applicativi, talmente alta la complessità di cui a un certo punto dici boh.
+
+00:28:51.566 --> 00:29:01.966
+<v SPEAKER_2>E non era possibile perché c'era una confusione tale che c'è in tutte le aziende dove non si sa in rete che cosa gira, cosa è giusto e cosa è anomalo.
+
+00:29:01.966 --> 00:29:25.366
+<v SPEAKER_1>E infatti, giusto per tornare al fatto che non leggiamo la documentazione dei vendor, tutti i sistemi che introducono anomali detection, si, in compresi, e quindi anche gli XDR in un certo senso, si basano su un assunto che nella fase di learning, cioè quando acquisiscono i dati, la rete sia in uno stato pulito.
+
+00:29:25.366 --> 00:29:27.706
+<v SPEAKER_1>Se no, non è possibile.
+
+00:29:27.706 --> 00:29:46.926
+<v SPEAKER_1>Quindi dovremmo prima, anzi è suggerito, prima fai un'attività di verifica del tuo status, altrimenti tu dici al tuo sistema di anomaly detection che la presenza di un malware non è un'anomalia perché c'è già il traffico, e lui come fa a distinguere, a meno che non è firmato da cosa è parte, come fa a distinguerlo.
+
+00:29:46.926 --> 00:29:52.946
+<v SPEAKER_1>Assolutamente fa parte dei comportamenti che osservo abitualmente nella rete.
+
+00:29:52.946 --> 00:30:23.806
+<v SPEAKER_1>Questa cosa qua, adesso non so quante persone che hanno inserito soluzioni che si basano sull'anomaly detection, cioè sono alcune network oriented famosissime che hanno comprato un sacco di aziende bellissime, da un punto di vista funzionale, però mi chiederei quanti prima di fare la fase di learning e quindi di acquisizione delle informazioni di base per definire la baseline, hanno fatto prima una pulizia, una verifica del fatto che la rete, il traffico di rete fosse, ha uno stato accettabile.
+
+00:30:23.806 --> 00:30:26.926
+<v SPEAKER_1>Non dico perfetto intonso, ma ha uno stato accettabile.
+
+00:30:28.266 --> 00:30:36.866
+<v SPEAKER_1>Siccome credo che la risposta sia 1 su 1 milione o giù di lì, mi farei delle domande su come stiamo facendo Anomaly Detection.
+
+00:30:37.846 --> 00:30:49.566
+<v SPEAKER_1>Lato SOC c'è un vantaggio, poi mi taccio su questa roba per poter parlare giorni, che hanno i data set che arrivano da più fonti.
+
+00:30:49.566 --> 00:31:08.386
+<v SPEAKER_1>E quindi il loro data lake è così ampio in cui questa cosa può essere un po mitigata avendo fonti diverse, si possono fare ragionamenti differenti, si può prendere un'anomalia di una infrastruttura, verificarla tramite un processo di hunting su altre infrastrutture, in cui si possono fare cose più interessanti.
+
+00:31:08.386 --> 00:31:21.446
+<v SPEAKER_1>Però singolarmente sulle piattaforme installate on-prem, solo sulla propria infrastruttura dove set di dati è solo quello che abbiamo noi, è molto più difficile, molto più complicato farlo.
+
+00:31:21.446 --> 00:31:26.586
+<v SPEAKER_1>E l'altra cosa è che è molto importante lo storico.
+
+00:31:26.586 --> 00:31:29.986
+<v SPEAKER_1>Un anomaly detection si può basare su dati di un mese, è troppo poco.
+
+00:31:31.286 --> 00:31:34.506
+<v SPEAKER_1>E mi spiace per chi dice il contrario.
+
+00:31:34.506 --> 00:31:39.126
+<v SPEAKER_2>Possiamo assaggi processi annuali, eccetera.
+
+00:31:39.126 --> 00:31:45.926
+<v SPEAKER_1>E quindi, ahimè, lo storico di dati pesa da qualche parte va messo.
+
+00:31:49.026 --> 00:31:54.666
+<v SPEAKER_2>Bene, direi che concludiamo questa lunghissima puntata oggi.
+
+00:31:54.666 --> 00:31:58.726
+<v SPEAKER_2>Abbiamo acceso un sacco di temi, vedremo quali evidenziare per la prossima volta.
+
+00:31:58.806 --> 00:32:05.106
+<v SPEAKER_2>Sicuramente l'ambito industriale che tu hai citato merita me una sessione dedicata.
+
+00:32:05.206 --> 00:32:09.686
+<v SPEAKER_1>E se abbiamo coraggio, proverei a toccare il tema delle veiding.
+
+00:32:11.166 --> 00:32:14.606
+<v SPEAKER_1>Vediamo se spendiamo due parole.
+
+00:32:14.606 --> 00:32:15.666
+<v SPEAKER_2>Assolutamente.
+
+00:32:15.666 --> 00:32:31.366
+<v SPEAKER_2>Lì, se troviamo un ospite che lo fa di mestiere, potrebbe, sempre nel tema un po più divulgativo che ci siamo dati, ecco, volentieri, potrebbe essere una terza voce.
+
+00:32:31.366 --> 00:32:37.506
+<v SPEAKER_2>Anche perché la mia, sulle veide di R, in realtà la voce non c'è, se non quella di curioso, perché non è il mio mestiere.
+
+00:32:38.886 --> 00:32:40.526
+<v SPEAKER_1>Va bene, va bene.
+
+00:32:40.526 --> 00:32:42.206
+<v SPEAKER_2>Bene, grazie a tutti.
+
+00:32:42.206 --> 00:32:42.866
+<v SPEAKER_2>Ciao Rocco.
+
+00:32:42.906 --> 00:32:43.946
+<v SPEAKER_1>Alla prossima.
+
+00:32:43.946 --> 00:32:44.086
+<v SPEAKER_2>Ciao.

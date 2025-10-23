@@ -1,0 +1,721 @@
+WEBVTT
+
+00:00:08.958 --> 00:00:13.618
+<v SPEAKER_2>Bentornati in Info Sec. Unplugged, siamo di nuovo negli uffici di NTS, questa volta di Bolzano.
+
+00:00:13.618 --> 00:00:16.478
+<v SPEAKER_2>Io sono Andrea Dainese e con me c'è Rocco Sicilia.
+
+00:00:16.478 --> 00:00:17.598
+<v SPEAKER_1>Ciao.
+
+00:00:17.598 --> 00:00:22.918
+<v SPEAKER_2>Oggi parliamo di un argomento spinoso, lungo, quindi preparatevi.
+
+00:00:22.918 --> 00:00:25.878
+<v SPEAKER_2>Il tema è CISO ma VU CISO.
+
+00:00:25.878 --> 00:00:39.138
+<v SPEAKER_2>Allora l'idea nasce, fa parte del nostro percorso, ma l'idea nasce perché nelle ultimi 10 giorni ho ricevuto una serie di spunti da persone che conosco e quindi mi sembra un buon momento per fare il punto.
+
+00:00:39.138 --> 00:00:39.718
+<v SPEAKER_2>Perché?
+
+00:00:39.718 --> 00:00:41.718
+<v SPEAKER_2>Perché io, Rocco, ne parliamo da...
+
+00:00:41.718 --> 00:00:43.678
+<v SPEAKER_1>almeno 10 anni, credo.
+
+00:00:43.678 --> 00:00:44.938
+<v SPEAKER_2>Passo il tempo, 10 anni.
+
+00:00:44.938 --> 00:00:53.398
+<v SPEAKER_2>Quindi ci sembra una buona occasione per raccontarvi quello che ci siamo detti da 10 anni a questa parte, come è voluto.
+
+00:00:53.398 --> 00:00:57.658
+<v SPEAKER_2>In particolare la scaletta che è libera di cambiare strada facendo.
+
+00:00:57.658 --> 00:01:01.138
+<v SPEAKER_2>Partiremo dall'idea nata appunto una decina di anni fa.
+
+00:01:01.138 --> 00:01:09.418
+<v SPEAKER_2>Parleremo di CISO interno ed esterno, però e contro, perché si sceglie l'uno, perché si sceglie l'altro, perché si passa dall'uno all'altro anche.
+
+00:01:09.418 --> 00:01:19.118
+<v SPEAKER_2>Un focus visto che ci abbiamo in qualche modo sbattuto la testa a implementare una linea di business che venda al servizio Vuciso.
+
+00:01:19.118 --> 00:01:26.398
+<v SPEAKER_2>Quindi porteremo sia l'esperienza di chi lo vende, sia l'esperienza dei nostri clienti che in qualche modo ci hanno poi accolto.
+
+00:01:26.398 --> 00:01:44.618
+<v SPEAKER_2>Le nostre esperienze per l'appunto, le competenze che non sono solo del Vuciso, ma del CISO, quindi le competenze in generale che chi si occupa di sicurezza in ambito italiano, principalmente nell'ambito nostro, Veneto, produttivo, quindi teniamo fuori forse le grandi aziende dove il CISO ce l'hanno interno.
+
+00:01:46.618 --> 00:01:50.198
+<v SPEAKER_1>C'è già strutturato, tipo il settore bancario tendenzialmente già strutturato.
+
+00:01:50.198 --> 00:02:04.378
+<v SPEAKER_2>Auspicabilmente, anche chi si occupa di difesa, chi si occupa di servizio, insomma tutte le aziende che il CISO ce l'hanno interno, però ritengo che forse possano trovare comunque degli spunti, e noi da loro, se poi vorranno commentare.
+
+00:02:05.438 --> 00:02:17.838
+<v SPEAKER_2>Una sorta di pro e contro CISO e VU CISO, non perché le due cose siano una contro l'altra, ma perché sono due aspetti diversi, quindi hanno cosa in comune, anche pro e contro di ciascuna possibilità.
+
+00:02:17.838 --> 00:02:26.098
+<v SPEAKER_2>E forse la cosa più importante è una riflessione sulla cultura che i clienti, le aziende, devono avere prima di...
+
+00:02:28.018 --> 00:02:31.158
+<v SPEAKER_2>Portarsi a casa, ci so, bucci so.
+
+00:02:31.158 --> 00:02:31.618
+<v SPEAKER_2>Bene.
+
+00:02:31.618 --> 00:02:32.398
+<v SPEAKER_1>Partiamo dall'idea.
+
+00:02:32.598 --> 00:02:34.418
+<v SPEAKER_1>Ok, parto io?
+
+00:02:36.118 --> 00:02:37.458
+<v SPEAKER_1>Un po di contesto.
+
+00:02:40.358 --> 00:02:42.738
+<v SPEAKER_1>Ho detto 10, ma forse poco meno, forse 8.
+
+00:02:42.738 --> 00:02:44.758
+<v SPEAKER_1>Comunque io ricordo...
+
+00:02:46.298 --> 00:02:55.358
+<v SPEAKER_1>Il contesto era maturato tra il 2017 e il 2018, quindi poco prima le riflessioni più a briglia sciolta.
+
+00:02:55.358 --> 00:02:58.638
+<v SPEAKER_2>Nate come chiacchierata, veramente libera.
+
+00:02:58.738 --> 00:03:05.058
+<v SPEAKER_1>E soprattutto sollecitata da esigenze che abbiamo incontrato sul territorio.
+
+00:03:05.058 --> 00:03:17.918
+<v SPEAKER_1>Quindi l'azienda con cui si collaborava, si discuteva, era chiaro che cominciava a diventare utile avere all'interno della struttura aziendale delle figure che in qualche modo guidassero.
+
+00:03:17.918 --> 00:03:28.278
+<v SPEAKER_1>Quindi non chiamiamole ancora, non c'era ancora una label, esisteva ovviamente formalmente, ma non era ancora così necessario etichettarla con la label CISO.
+
+00:03:28.278 --> 00:03:57.878
+<v SPEAKER_1>Comunque era chiaro, guarda caso, quando è diventato più sensibile e di moda all'ambito cyber security, perché quegli erano gli anni anche in cui molte aziende hanno capito che la sicurezza informatica non era un aspetto collaterale, cominciava a diventare una cosa strutturale dell'azienda come tema per qualsiasi tipo di azienda che usava tecnologia e quindi emergeva questa esigenza di qualcuno che guidasse un pochino, si, tirasse le fila.
+
+00:03:57.878 --> 00:04:02.278
+<v SPEAKER_1>Esatto, che avesse un po il timone di quello che si doveva fare.
+
+00:04:02.278 --> 00:04:29.918
+<v SPEAKER_1>In un contesto in cui queste figure ovviamente in Italia praticamente non esistevano, esistevano le figure di management tecnico, quindi tra i C level c'era il Cio eventualmente, tra l'altro guarda caso spesso poi eletto il doppio ruolo Cio-Ciso, con tutte le problematiche che ne deriva, perché sono due figure che dovrebbero cooperare sicuramente, ma hanno obiettivi in un certo senso differenti.
+
+00:04:29.918 --> 00:04:40.818
+<v SPEAKER_1>Mancava effettivamente questa figura a cui appoggiare, a cui chiedere come orientare le scelte aziendali sui temi di sicurezza informatica.
+
+00:04:40.818 --> 00:04:59.178
+<v SPEAKER_1>E molto frequentemente tra l'altro si erano tematiche, diciamo che venivano delegate a figure che avevano forte competenze tecniche anche all'interno della struttura, a volte forti, a volte non forti, però erano le uniche che potevano mettere becco su quegli argomenti, perché qualcosa ci capivano.
+
+00:05:01.438 --> 00:05:14.338
+<v SPEAKER_1>Mancava forse a quell'epoca e nell'esperienza di tutti noi l'attitudine a governare un tema, non soltanto essere operativi su una tematica.
+
+00:05:14.338 --> 00:05:34.778
+<v SPEAKER_1>Quindi esisteva in alcuni contesti lo strato tecnico capace di fronteggiare certe tematiche con le competenze per fronteggiare certe tematiche, ma non c'era la preparazione, non c'era la cultura, non c'era l'idea per non parlare dei processi, c'era una mala pena con gli IT in molti contesti, anche con gli security non esistevano dei processi che parlavano di sicurezza informatica.
+
+00:05:34.778 --> 00:05:49.738
+<v SPEAKER_1>E quindi l'ipotesi del dare supporto a queste aziende con un ruolo che forse inizialmente assomigliava più a quello dell'advisor più che a quello del del ciso nominato, diciamo.
+
+00:05:49.738 --> 00:05:55.578
+<v SPEAKER_1>Questa incomprensione di ruolo tra quello che potrebbe essere un advisor e quello che è un ciso forse esiste tuttora.
+
+00:05:55.578 --> 00:06:15.938
+<v SPEAKER_1>Cioè ci sono figure che ho avuto anche modo di conoscere, competentissime nell'ambito governance che hanno anche il ruolo di ciso o vciso, ma in realtà fungono più da advisor in realtà più che da ciso, che forse è un pezzo della competenza che sta dentro dentro il ciso, ma non può essere solo quello, deve essere anche altro.
+
+00:06:15.938 --> 00:06:33.758
+<v SPEAKER_2>Secondo me è tutto, ma probabilmente è un appunto che parliamo dopo quando parliamo di cultura, e che forse non aveva affrontato per primo, ma noi per diciamo nella nostra esperienza è quello che avviene dopo, perché nel nostro percorso ci siamo accorti strada facendo, che se manca la cultura in azienda è difficile anche iniziare.
+
+00:06:33.758 --> 00:06:49.558
+<v SPEAKER_2>Quello che hai detto del cio che poi spesso veniva eletto come ciso, nel senso che strada facendo ci si accorge anche da un punto di vista normativo, che occorre mettere l'etichetta di responsabile della sicurezza a qualcuno, e veniva messa tuttora viene messa in molti casi al cio.
+
+00:06:50.398 --> 00:07:34.658
+<v SPEAKER_2>E quello che hai detto che hanno, oltre dovrebbero avere una cultura diversa, una base tecnica spesso simile, ma una mentalità diciamo diversa, perché il cio ha lo scopo di far funzionare i servizi, magari ne parliamo dopo in alcuni casi, far funzionare significa non fare delle azioni che invece il ciso dovrebbe fare, e il ciso ha come primo scopo il fatto di renderle sicuri, quindi io ho assistito a volte anche prima persona a battaglie un po esagerato, a scontri su cosa doveva fare uno o cosa doveva fare l'altro, anche proprio di come dire, questo è cosa mia, me ne occupo io, il ciso che doveva in qualche modo fare le pulci a quello che il cio voleva fare.
+
+00:07:34.658 --> 00:07:39.258
+<v SPEAKER_2>Quindi possiamo già trarre una prima conclusione, non è una buona idea dare al cio...
+
+00:07:39.258 --> 00:07:42.478
+<v SPEAKER_1>Si, collassare le funzioni non è una buona idea.
+
+00:07:42.478 --> 00:07:53.378
+<v SPEAKER_2>E diventa anche complicato, anche questo è un argomento di cui parliamo dopo, far sì che il ciso, come ho spesso visto, sia una persona che sta sotto il cio gerarchitamente.
+
+00:07:53.378 --> 00:07:57.118
+<v SPEAKER_1>Sì, anche questa è una cosa credo italiana.
+
+00:07:59.198 --> 00:08:00.598
+<v SPEAKER_1>Sei ottimista.
+
+00:08:01.698 --> 00:08:04.678
+<v SPEAKER_1>Sì, voglio essere ottimista.
+
+00:08:04.678 --> 00:08:08.898
+<v SPEAKER_1>L'ho vista tantissime volte, sarebbe da indagare anche con i colleghi all'estero.
+
+00:08:11.578 --> 00:08:13.338
+<v SPEAKER_1>Si, probabilmente, non ha nessun senso.
+
+00:08:13.778 --> 00:08:34.718
+<v SPEAKER_1>Non ha nessun senso perché di fatto quello che avviene, volendo essere molto pragmatici, è che si antepone la vision del cio, non che sia necessariamente sbagliata la sua vision, ma viene anteposta a una vision che ha pari valore, di fatto, che dovrebbe avere pari valore, proprio dal punto di vista della struttura aziendale di come funziona l'azienda.
+
+00:08:35.598 --> 00:08:37.218
+<v SPEAKER_1>Ed è anche scorretto il contrario.
+
+00:08:37.218 --> 00:08:39.378
+<v SPEAKER_1>Non l'ho mai visto, però è anche scorretto il contrario.
+
+00:08:39.378 --> 00:08:55.978
+<v SPEAKER_1>Cioè il cio sotto il ciso nello stesso modo è sbagliato, perché questi due cavalli che trainano dei due forti mandati aziendali devono essere sullo stesso piano, se no è inevitabile lo squilibrio.
+
+00:08:55.978 --> 00:09:01.518
+<v SPEAKER_2>Possiamo fare uno spoiler di quello che abbiamo imparato in questi appunto 7-10 anni, che è proprio questo.
+
+00:09:01.518 --> 00:09:12.018
+<v SPEAKER_2>Quindi sia la parte tecnica, infrastruttura, che la parte di sicurezza sono degli argomenti, dei problemi, è sbagliato dirlo, degli asset aziendali.
+
+00:09:12.018 --> 00:09:22.618
+<v SPEAKER_2>Quindi che esistano, funzionano e siano sicuri è una responsabilità trasversale all'azienda, perché senza IT le aziende non funzionano, se non sono sicure tutta l'azienda ha problemi.
+
+00:09:22.618 --> 00:09:29.578
+<v SPEAKER_2>Quindi in questo senso entrambi dovrebbero essere pari livello e rispondere in qualche modo alla direzione generale.
+
+00:09:30.478 --> 00:09:35.858
+<v SPEAKER_2>Perché hanno delle mission diverse, devono collaborare ma non possono dipendere una dall'altra.
+
+00:09:35.858 --> 00:09:57.098
+<v SPEAKER_1>Poi mi sento anche di dire, il pragmatismo deve prevalere, per il mio punto di vista, ma io ho anche una visione molto tecnica, diciamo, di questi contesti, deve prevalere il pragmatismo nel senso che non voglio scolpire niente sulla pietra, l'importante è dare i giusti pesi.
+
+00:09:57.238 --> 00:10:09.518
+<v SPEAKER_1>Quindi, al di là di come poi l'organigramma è strutturato, dei vari incastri che si fanno nelle organizzazioni, è importantissimo che vengano dati i giusti pesi alle figure corrette.
+
+00:10:09.518 --> 00:10:19.378
+<v SPEAKER_2>Sì, questo è il nostro racconto di oggi, e probabilmente appunto anche della prossima volta, non è così si fa, ma è dati a nostri sette anni di esperienza.
+
+00:10:19.378 --> 00:10:20.238
+<v SPEAKER_1>Cosa abbiamo visto.
+
+00:10:20.238 --> 00:10:24.018
+<v SPEAKER_2>Possiamo dire cosa funziona meglio e cosa funziona peggio.
+
+00:10:24.018 --> 00:10:26.458
+<v SPEAKER_2>Il ciso sotto il cio ha più difficoltà.
+
+00:10:26.598 --> 00:10:27.918
+<v SPEAKER_1>Potrebbe avere delle difficoltà.
+
+00:10:27.918 --> 00:10:42.178
+<v SPEAKER_2>Non è che non funzioni in assoluto, però se la relazione è probabile che a un certo punto diventi conflittuale per divergenza di scopo, se il ciso dipende dal cio, il ciso ha delle difficoltà.
+
+00:10:42.178 --> 00:10:52.178
+<v SPEAKER_1>Poi è difficile per vedere il futuro, quindi è difficile anche mettere in casellare questi step in un t zero che sia già perfetto.
+
+00:10:52.178 --> 00:10:54.178
+<v SPEAKER_1>Può essere un'evoluzione.
+
+00:10:54.338 --> 00:10:57.158
+<v SPEAKER_2>È assolutamente un'evoluzione infatti.
+
+00:10:57.158 --> 00:11:32.758
+<v SPEAKER_2>E quindi a un certo punto ci siamo trovati e abbiamo riflettuto che questa necessità del mercato appunto di a un certo punto nominare un ciso interno vuoi per consapevolezza, cioè ci si rende conto che qualcuno deve tirare le fila di quell'argomento, vuoi per richieste normative, dove almeno due che ne conosciamo, che è il 27001 e TISACS, richiedono che questa etichetta venga associata a qualcuno, nasce l'idea nostra che non tutte le aziende debbano per forza avere un ciso dedicato interno, anzi non tutte possono trovarlo.
+
+00:11:32.758 --> 00:11:36.418
+<v SPEAKER_1>Sì, c'è un tema di, sono tante teme, quanti ce ne sono.
+
+00:11:36.478 --> 00:11:38.678
+<v SPEAKER_2>Esatto, quanti ce ne sono nell'area nostra.
+
+00:11:38.678 --> 00:11:46.118
+<v SPEAKER_2>E scoprirete che l'area è importante da un punto di vista di aziende, ma molto povera di figure di ciso.
+
+00:11:46.118 --> 00:11:46.558
+<v SPEAKER_1>Esatto.
+
+00:11:46.558 --> 00:11:55.438
+<v SPEAKER_2>Possiamo dire che c'è scarsità del mercato di figure capaci di prendere in mano questa questa area aziendale.
+
+00:11:55.438 --> 00:11:56.238
+<v SPEAKER_1>Esatto.
+
+00:11:56.238 --> 00:12:09.758
+<v SPEAKER_1>E poi anche è anche difficile forse per le aziende che hanno varie dimensioni e vari budget allocare, diciamo, le risorse per quel tipo di figura.
+
+00:12:09.758 --> 00:12:19.618
+<v SPEAKER_1>Quindi c'è anche la tematica del lo vorrei, mi serve, ma faccio fatica ad allocare un budget per quel tipo di figura oggi.
+
+00:12:19.618 --> 00:12:27.118
+<v SPEAKER_2>Quindi difficile da trovare costosa, ma anche che ha bisogno di un'esperienza passata notevole.
+
+00:12:27.118 --> 00:12:37.998
+<v SPEAKER_2>Quindi l'esperienza passata non è solo esperienza tecnica o normativa che ti dà l'etichetta come CISO, ma è anche conoscere l'azienda.
+
+00:12:37.998 --> 00:12:51.298
+<v SPEAKER_2>Quindi infatti molte aziende hanno scelto di promuovere una persona interna a CISO, anche questa non è necessariamente una scelta sbagliata o giusta, ma è chiaro che se conosce l'azienda gli manca tipicamente conoscere il contesto sicurezza.
+
+00:12:51.298 --> 00:12:58.038
+<v SPEAKER_2>Se invece la prendi da fuori che è già un CISO deve imparare, ci sarà un momento in cui deve imparare a conoscere l'azienda.
+
+00:12:58.038 --> 00:13:06.858
+<v SPEAKER_1>Sì, ci sono sicuramente una serie di parametri da valutare, tra cui appunto la conoscenza dell'azienda o del settore, il settore in cui opera.
+
+00:13:07.018 --> 00:13:25.978
+<v SPEAKER_1>Sulla mia pelle, sulla nostra pelle, abbiamo visto che quello che affronta in generale il team security, quindi non necessariamente il CISO, in un settore finance rispetto al settore industriale, alcuni temi sono ovviamente sovrapposti, ma altri sono assolutamente peculiari.
+
+00:13:26.058 --> 00:13:36.158
+<v SPEAKER_1>Oti per il mondo industriale che non esiste nel finance, tutta la parte di, ad esempio, transazioni elettroniche nel finance che non esiste nel finance, quindi sono temi.
+
+00:13:36.158 --> 00:13:47.958
+<v SPEAKER_2>Anche l'OT produttivo è diverso dall'OT medicale, che ci sono mondi completamente diversi, che è ancora diverso dall'OT, che ne so, dell'oil and gas o delle infrastrutture critiche cittadine, quindi...
+
+00:13:47.958 --> 00:13:58.458
+<v SPEAKER_1>Giusto per mettere a giungere un sacco di carne sul fuoco, faremo 12 puntali su questa cosa, sempre per accentuare queste differenze.
+
+00:13:59.558 --> 00:14:26.018
+<v SPEAKER_1>Il mondo industriale si sposta, l'hai citato prima, verso certificazioni come T-SACs nell'ambito automotive, il mondo finance va verso framework, ad esempio il mondo bancario, va verso framework come Tiber, ho mai capito come si pronuncia, o anche la Dora, che sì, i contenuti quando poi andiamo a guardare, molte cose si toccano, ma già sono framework che si applicano o ad uno o all'altro, non si applicano ad entrambi.
+
+00:14:26.018 --> 00:14:32.918
+<v SPEAKER_2>Senza parlare della Nissan, che ormai diventa un must fino al 2024 in poi.
+
+00:14:32.918 --> 00:14:41.238
+<v SPEAKER_2>E quindi ci troviamo e immaginiamo un mondo dove le aziende possano utilizzare un ciso esterno.
+
+00:14:41.238 --> 00:14:44.698
+<v SPEAKER_2>Questo che poi è diventato anche la questione del DPO, prenderlo dentro o prenderlo fuori?
+
+00:14:44.718 --> 00:15:05.758
+<v SPEAKER_1>Anche è vero, che era già avvenuta, perché se non ricordo male, quando abbiamo cominciato a mettere queste etichette era già il 2018-2019 forse, quindi era già passato qualche anno di chiacchiera e il GDPR era già bello attivo dal 2015, 2016.
+
+00:15:05.758 --> 00:15:09.898
+<v SPEAKER_2>Se non sbaglio, poi anche lì è cambiata se non sbaglio.
+
+00:15:09.898 --> 00:15:19.798
+<v SPEAKER_2>C'è una dichiarazione del garante che, mi ricordo se prima era pro contro interno, poi è detto apertura anche all'esterno, però è evoluta anche questo nel caso.
+
+00:15:19.798 --> 00:15:32.038
+<v SPEAKER_2>Quindi pur non legandoci al mondo di PO, abbiamo immaginato che un CISO potesse essere esterno con i pro e conto di cui magari parliamo dopo.
+
+00:15:33.178 --> 00:15:49.778
+<v SPEAKER_2>E l'abbiamo pensato come linea di business, quindi allora lavoravamo per un'azienda che aveva in mente di offrire il servizio VCCISO a dei clienti tipicamente dell'ambito produttivo della nostra area di cui noi abbiamo appunto fatto il VCCISO poi in seguito.
+
+00:15:49.778 --> 00:16:05.398
+<v SPEAKER_2>E in questa linea di business, possiamo già fare un piccolo spoiler, ci siamo accorti che è difficile rendere questa linea sostenibile solo con il servizio VCCISO.
+
+00:16:05.458 --> 00:16:13.418
+<v SPEAKER_2>Per le problematiche di prima, sono pochi, sono scarsi, costano comunque e non scalano.
+
+00:16:13.418 --> 00:16:25.378
+<v SPEAKER_2>Quindi una persona umanamente può seguire, credo al massimo, due aziende non eccessivamente grandi, prima di essere full time, di non avere più spazio per nient'altro.
+
+00:16:25.378 --> 00:16:34.218
+<v SPEAKER_1>Sì, è sicuramente una figura che a tutt'oggi secondo me è ancora da esplorare la modalità ezo-service, in senso che si è evoluta molto nel tempo.
+
+00:16:34.218 --> 00:16:44.498
+<v SPEAKER_1>Oggi ci sono aziende che ho visto che fanno quello di mestiere, cioè di lavoro offrono il Vuciso in varie modalità, tra l'altro ho visto.
+
+00:16:44.498 --> 00:16:50.298
+<v SPEAKER_1>Ci sono le singole persone che operano come Vuciso, ci sono i team che operano come Vuciso, sono varie situazioni.
+
+00:16:50.298 --> 00:17:00.438
+<v SPEAKER_1>Però diciamo che col senno di poi, poi guardando un po di documentazione, quello che noi avevamo discusso e iniziato a mettere in campo nel resto del mondo era, stava prendendo la stessa piega.
+
+00:17:00.558 --> 00:17:08.258
+<v SPEAKER_1>Io ricordo di aziende di consulenza a livello worldwide che stavano andando in quella direzione.
+
+00:17:08.258 --> 00:17:14.118
+<v SPEAKER_1>Forse alcuni, se non ricordo male, inizialmente gli avevamo dato un altro nome, avevamo usato subito la label Vuciso.
+
+00:17:14.118 --> 00:17:28.478
+<v SPEAKER_2>No, ci siamo agganciati Vuciso, perché poi in quel periodo là veniva usato nel mondo statunitense, e quindi gli abbiamo dato una label riconosciuta, l'avevamo chiamato inizialmente in un modo leggermente diverso.
+
+00:17:28.478 --> 00:17:39.918
+<v SPEAKER_1>Mi pare che Ciso è da service, agganciandoci al tema IAS, SAS, e poi appunto la nomenclatura ha portato a Vuciso ufficialmente, a un certo punto come noi.
+
+00:17:39.918 --> 00:17:47.878
+<v SPEAKER_2>Poi posso dire che era più giusto il nostro, perché il termine virtual Ciso, il Ciso non è virtuale, è una persona carne e ossa.
+
+00:17:47.878 --> 00:17:56.538
+<v SPEAKER_1>È più un servizio, forse concettualmente era più corretto, ma mi pare di aver visto anche qualche vendor che ha tenuto quella nomenclatura.
+
+00:17:56.538 --> 00:18:03.178
+<v SPEAKER_1>Universalmente penso ormai sia adottato V Ciso come terminologia.
+
+00:18:03.178 --> 00:18:16.198
+<v SPEAKER_2>Quindi nella linea di business che avevamo pensato, avevamo fatto proprio un business case, dove abbiamo studiato la parte anche remunerativa del Ciso e la difficoltà a scalare il servizio.
+
+00:18:16.978 --> 00:18:29.618
+<v SPEAKER_2>E quindi ci aveva portato ad alcune riflessioni su che cosa in parallelo doveva poter dare questa consulenza, questa azienda di consulenze per rendere il servizio più sostenibile.
+
+00:18:29.618 --> 00:18:40.518
+<v SPEAKER_2>Se prendi una persona e ha una remunerazione che gli parla lo stipendio abbondantemente per carità, ma non scala, significa che questo servizio non puoi darlo a chiunque.
+
+00:18:40.898 --> 00:18:44.258
+<v SPEAKER_2>Rilallo a clienti molto molto specifici.
+
+00:18:44.258 --> 00:18:55.578
+<v SPEAKER_1>Cioè le aziende che si avventurano che scelgono di erogare quel tipo di servizio devono considerare che non possono erogare solo quelli servizi, non considerare un set di servizi da strutturare.
+
+00:18:55.578 --> 00:19:12.018
+<v SPEAKER_2>Infatti il concetto poi era questo, accoppiare, cosa che poi non siamo riusciti a fare in quell'occasione, accoppiare il servizio di Vuciso per dare tutti i servizi correlati alla security nel caso il cliente avesse voluto servirsi dello stesso parte.
+
+00:19:12.018 --> 00:19:13.418
+<v SPEAKER_2>Anche questo non è detto.
+
+00:19:13.418 --> 00:19:13.918
+<v SPEAKER_1>Esatto.
+
+00:19:13.918 --> 00:20:08.678
+<v SPEAKER_2>Ma molti clienti dicono no, io voglio differenziare, anche giustamente dire, da una parte ho chi governa la strategia, dall'altra ho chi la implementa, ma non voglio, cioè non voglio creare delle commissioni, cioè voglio che il Vuciso sia, o il Vuciso interno è uguale in questo caso, sia libero di monitorare gli altri servizi di security di cui l'azienda si serve, che è corretto come idea, però mi sento di dire che, almeno nella nostra esperienza, il Vuciso nostro abbiamo costruito una relazione tale con i nostri clienti, di cui il cliente si fidava prima di noi e poi di tutto il resto, quindi sapeva che in noi trovava, in qualche modo non dico la verità, ma almeno un punto di vista indipendente, rispetto anche al nostro'azienda per cui lavoravamo.
+
+00:20:08.678 --> 00:20:34.858
+<v SPEAKER_2>E questa fiducia ricopriva, andava sopra il fatto, e divene eventuali commissioni, perché il cliente aveva sperimentato che, possiamo dire nel nostro caso, non c'era quel nascondiamolo polvere sotto il tappeto, ma c'era trasparenza e una sorta di prima di tutto di dare onore, dare seguito alla missione o quel cliente ci aveva dato, appunto il vuciso, prima piuttosto che poi vendere altro.
+
+00:20:34.858 --> 00:20:51.038
+<v SPEAKER_1>Secondo me, assolutamente, questo tema secondo me non si smarcherà mai, cioè nel senso che è una di quelle tematiche che non, come dire, non troverà un punto di incontro tra le parti a un certo punto, è molto dipendente dalla relazione.
+
+00:20:51.958 --> 00:21:02.778
+<v SPEAKER_1>È una cosa che si vede su tantissime tematiche in ambito IT in generale, in ambito cyber forse lo si noto un pelo di più, ma è lo stesso problema che si ha in altri contesti.
+
+00:21:02.778 --> 00:21:16.578
+<v SPEAKER_1>Basta pensare a tutte quelle aziende che, ad esempio, offrono un servizio di monitoraggio, mi sposto un attimo alla cybersecurity, un servizio di monitoraggio, fault management, ma fanno anche gestione dell'asset.
+
+00:21:18.138 --> 00:21:31.138
+<v SPEAKER_1>Ovviamente deve esserci un rapporto di fiducia tra il cliente e l'azienda che eroga quel servizio e fa anche la manutenzione, altrimenti decade completamente il meccanismo in sé.
+
+00:21:31.138 --> 00:21:37.158
+<v SPEAKER_1>E ci sono tutti i vantaggi anche nell'avere quei due servizi all'interno della stessa azienda.
+
+00:21:37.158 --> 00:21:46.538
+<v SPEAKER_1>Altre aziende possono tranquillamente scegliere, invece di separare questi ruoli, perché preferiscono avere due punti di vista assolutamente assettici, pur fidandosi magari dei due partner.
+
+00:21:47.098 --> 00:21:48.798
+<v SPEAKER_1>Sì, magari preferiscono avere due.
+
+00:21:48.798 --> 00:21:51.538
+<v SPEAKER_2>Ma tutto sommato, in fondo in fondo, forse perché non si fidano.
+
+00:21:51.538 --> 00:21:53.078
+<v SPEAKER_2>Perché se no non si apparerebbero.
+
+00:21:53.078 --> 00:21:53.598
+<v SPEAKER_1>Questo è vero.
+
+00:21:53.598 --> 00:21:59.658
+<v SPEAKER_2>A meno che non ci sia un problema di competenze, nel senso che un partner è molto bravo su una verticalità, anche, anche.
+
+00:21:59.998 --> 00:22:12.238
+<v SPEAKER_2>E non bravo sull'altro e quindi il cliente decida di separare le due cose, ma in un servizio di monitoraggio e di gestione dell'asset che hai fatto tu l'esempio prima, dovrebbero far parte dello stesso.
+
+00:22:12.238 --> 00:22:26.238
+<v SPEAKER_1>Teoricamente sì, la competenza dovrebbe esistere, poi ci sono sempre i casi in cui il sistema integrator che fa soltanto delivery non vuole fare nessun tipo di maintenance come servizio, quindi esistono sicuramente le eccezioni.
+
+00:22:26.238 --> 00:22:43.098
+<v SPEAKER_1>Nell'ambito segurazione informatica, infosecurity in generale, questa cosa è semplicemente un po più accentuata perché è più di pancia, perché sai che il problema non è un fault tecnico, ma il problema potrebbe essere nascondere magari i problemi che possono portare a un breach, ad esempio.
+
+00:22:43.758 --> 00:22:52.978
+<v SPEAKER_1>Quindi c'è il nervo un po più scoperto, ma è la stessa identica problematica che c'è sempre stata nell'ambito della consulenza della system integration.
+
+00:22:52.978 --> 00:23:04.758
+<v SPEAKER_2>E quindi possiamo dire che la fiducia nel CISO, V-CISO è una delle qualità più importanti che devono essere inserite nella relazione azienda, appunto responsabile della sicurezza.
+
+00:23:04.778 --> 00:23:06.298
+<v SPEAKER_1>Tanto interno quanto esterno.
+
+00:23:06.298 --> 00:23:07.158
+<v SPEAKER_2>Assolutamente.
+
+00:23:07.158 --> 00:23:18.138
+<v SPEAKER_2>Infatti noi parliamo di V-CISO perché è la nostra esperienza, però tantissime cose, infatti una degli ultimi punti, appunto il paragone tra CISO e V-CISO, sono in comune tra i due.
+
+00:23:18.138 --> 00:23:29.818
+<v SPEAKER_2>Adesso abbiamo raccontato, siamo partiti dall'idea, ma strada facendo, appunto arriviamo poi a convergere in queste due tip, in questa figura che può essere interna barra esterna.
+
+00:23:29.818 --> 00:23:32.858
+<v SPEAKER_2>E arriviamo all'esperienza che abbiamo fatto.
+
+00:23:32.938 --> 00:23:49.818
+<v SPEAKER_2>Quindi contiamo alcuni clienti di cui uno in particolare è topico per te, uno in particolare ma non l'unico per me, e possiamo trarre, senza far nomi ovviamente, alcune conclusioni difficili perché comunque l'esperienza non è una start.
+
+00:23:49.818 --> 00:23:52.958
+<v SPEAKER_2>Però delle lezioni imparate strada facendo.
+
+00:23:55.178 --> 00:24:14.278
+<v SPEAKER_1>La lezione che mi porto a casa io in quel ruolo è che per quanta esperienza una persona possa avere in un ruolo tecnico o menageriale, è comunque bisogna approcciarla come un percorso.
+
+00:24:14.278 --> 00:24:19.238
+<v SPEAKER_1>E bisogna aver bene in mente il fatto che quel percorso non può durare poco.
+
+00:24:19.238 --> 00:24:21.838
+<v SPEAKER_1>E per forza un percorso che dura anni.
+
+00:24:21.838 --> 00:24:42.278
+<v SPEAKER_1>Perché le aziende che arrivano intanto alla maturità di dire ok mi serve quella figura nel mio organico, già stanno facendo un passo di un certo tipo e stanno inserendo, stanno spostando in maniera anche forse come dire, quasi dolorosa alcuni equilibri.
+
+00:24:42.278 --> 00:24:48.538
+<v SPEAKER_1>Cioè stanno praticamente dicendosi ci serve qualcuno che ci dica che dobbiamo fare delle cose.
+
+00:24:48.538 --> 00:24:54.678
+<v SPEAKER_2>E tipicamente sarà una figura che diventerà un po scomoda se manca quel tipo di cultura.
+
+00:24:54.678 --> 00:25:11.358
+<v SPEAKER_1>Esatto, sì sì, inevitabilmente verrà visto esattamente come quei bravissimi team manager che riuscivano a imporre dei grandi cambiamenti dell'azienda e spesso generavano molte lamentele, nonostante quello che stavano facendo era esattamente il loro lavoro.
+
+00:25:11.358 --> 00:25:11.798
+<v SPEAKER_2>Esatto.
+
+00:25:11.798 --> 00:25:31.258
+<v SPEAKER_1>Ok, più o meno si rischia di creare lo stesso effetto, quindi il passaggio culturale è forte e potrebbe essere, può capitare che a livello di management, magari questa cosa ha già maturato a un certo livello ma non ci si può aspettare che l'azienda si muova come un unico blocco.
+
+00:25:31.258 --> 00:25:45.978
+<v SPEAKER_1>Quindi quando le aziende sono di una certa dimensione è perfettamente normale che una scelta presa da una parte del management abbia poi un'inerzia molto difficile da affrontare su tutto il resto dell'azienda.
+
+00:25:47.178 --> 00:25:49.258
+<v SPEAKER_1>Quindi non è una bacchetta magica.
+
+00:25:49.258 --> 00:25:56.318
+<v SPEAKER_1>Quindi la prima cosa che mi porta a caso è va affrontata come una scala da fare veramente un gradino alla volta.
+
+00:25:58.378 --> 00:26:13.618
+<v SPEAKER_2>Nell'ottica prima che abbiamo detto prima di linea di business, questa cosa funziona come Vuciso, nel senso che il Vuciso auspicabilmente deve accompagnare un'azienda a un percorso di crescita, ma a un certo punto dovrebbe slegarsi sempre di più.
+
+00:26:13.618 --> 00:26:22.518
+<v SPEAKER_2>L'azienda, se nel percorso che sta facendo comprende l'utilità del CISO, dovrebbe eleggere una persona interna che man mano cresce.
+
+00:26:22.598 --> 00:26:30.778
+<v SPEAKER_2>Quindi se il tempo è CISO massimo, all'inizio fa tutto lui, man mano una persona interna cresce finché i tempi si invertono.
+
+00:26:30.778 --> 00:26:34.678
+<v SPEAKER_2>Quindi diventa più una sorta di advisor, di mentor.
+
+00:26:34.678 --> 00:26:43.238
+<v SPEAKER_1>Sì, questo rispecchia esattamente come io ho interpretato quel tipo di funzione.
+
+00:26:43.858 --> 00:27:00.198
+<v SPEAKER_1>È evidente l'accesso di vantaggi enormi nell'usare figure esterne o team esterni per un tema proprio di quantità di competenze a cui puoi attingere e esperienze a cui puoi attingere.
+
+00:27:00.198 --> 00:27:12.978
+<v SPEAKER_1>Dall'altro lato ovviamente quelli tipo di figure esterne, quindi parliamo del buciso o del CISO service in generale come concetto, è un tipo di figura che per forza di cose, si diceva prima, non conosce bene l'azienda.
+
+00:27:13.038 --> 00:27:17.158
+<v SPEAKER_1>Quindi deve anche lui imparare come funziona l'azienda.
+
+00:27:17.158 --> 00:27:21.618
+<v SPEAKER_1>Già questo vi chiede mesi e anni, esatto.
+
+00:27:21.618 --> 00:27:25.998
+<v SPEAKER_2>Conoscerla sei mesi e un anno, conoscerla bene, da mia esperienza, un paio d'anni.
+
+00:27:25.998 --> 00:27:29.818
+<v SPEAKER_1>Eh sì, sì, sì, c'è un percorso abbastanza lungo.
+
+00:27:29.818 --> 00:27:32.938
+<v SPEAKER_1>Quindi sono i pro e i contro delle due cose.
+
+00:27:32.938 --> 00:27:54.498
+<v SPEAKER_1>Una volta che però questo meccanismo è ingranato, quindi che esiste la figura in azienda che ha operato, che ha avuto modo di operare, quindi ci sono stati dei cambiamenti dell'evoluzione intero dell'azienda, nella mia testa effettivamente il percorso di maturazione porterebbe a un certo punto a nominare una figura all'interno dell'azienda, quindi proprio full time in organico, che vada a ricoprire quel ruolo.
+
+00:27:54.498 --> 00:28:02.238
+<v SPEAKER_1>Quindi questo accompagnamento non saprei minimamente misurarlo, probabilmente sono veramente anni, ma in realtà dipende da un sacco di fattori.
+
+00:28:02.238 --> 00:28:14.558
+<v SPEAKER_1>Se il team all'interno è molto forte, ci sono delle persone molto competenti che crescono molto rapidamente e soprattutto c'è un team strutturato, cioè un team da cui puoi attingere, allora magari questo passo è molto più veloce.
+
+00:28:14.558 --> 00:28:54.758
+<v SPEAKER_1>Ci sono i casi limiti in cui il VCsO viene introdotto in un contesto dove non c'è un team security, c'è un team IT, ma non esiste un team security, e inevitabilmente quella cosa richiederà un po più tempo, perché devi creare prima un team, già intanto probabilmente c'è un problema di maturità, perché se giustissimo per carità dare giustizia al ruolo nominando il VCsO, ma se manca l'operation hai un problema, cioè ti manca un pezzettino, sai che dovrai costruire almeno l'operation subito dopo, se invece hai già un operation, poi è più facile, è più veloce, non più facile, è più veloce il percorso.
+
+00:28:54.758 --> 00:29:04.798
+<v SPEAKER_2>Infatti stiamo mettendo assieme, ma non poteva anche andare diversamente, i punti relativi alle nostre esperienze, alle competenze e ci so, buciso e poi alla fine cultura, ma ci sta.
+
+00:29:04.798 --> 00:29:06.658
+<v SPEAKER_2>Non può che essere così.
+
+00:29:06.658 --> 00:29:16.838
+<v SPEAKER_2>E appunto quello che io mi sono trovato, appunto quello che hai detto tu, è di accompagnare un'azienda per un tempo limitato, due aziende in realtà.
+
+00:29:16.838 --> 00:29:27.678
+<v SPEAKER_2>Una è per un tempo più continuato, ma era molto piccolina, quindi aveva delle esigenze ridotte e aveva demandato in totale la funzione di supervisione della sicurezza.
+
+00:29:28.538 --> 00:29:39.118
+<v SPEAKER_2>E l'altra invece aveva bisogno di un percorso per un tema specifico, che era tra la compliance e l'adeguamento di una soluzione tecnica, quindi erano simili.
+
+00:29:40.318 --> 00:30:00.818
+<v SPEAKER_2>Allora, possiamo partire dal fatto che se l'azienda tipicamente non fa servizi IT, non li vende, non gestisce dati, eccetera, non ha le competenze dentro, difficilmente li ha anche, forse ha qualcuno che supervisiona la parte tecnica, ma non è proprio un cio vero e proprio, ma ciso interno non se ne parla.
+
+00:30:00.818 --> 00:30:10.878
+<v SPEAKER_2>Quindi trovarlo fuori non solo è la scelta più veloce, ma è anche la scelta per capire se culturalmente l'azienda è pronta per fare questo passo che non è affatto detto.
+
+00:30:11.038 --> 00:30:26.178
+<v SPEAKER_1>No, no, è ragione, c'è un tema di time to market, cioè mi serve, se faccio tutto il percorso ci metto anni, lo compro, provo, creo una forzatura provando, vediamo se l'azienda ingrana quel ruolo e poi faccio le valutazioni.
+
+00:30:26.178 --> 00:30:33.198
+<v SPEAKER_2>Probabilmente è sottovalutato il fatto di provare, perché la gente dice prendo un ciso e il ciso è il salvatore della patria, ci pensa tutto lui.
+
+00:30:33.858 --> 00:30:36.378
+<v SPEAKER_1>O quanto meno è colpa sua.
+
+00:30:36.378 --> 00:30:42.158
+<v SPEAKER_2>Quello viene sempre dato, a volte ho visto aziende prendere il ciso perché in qualunque caso era colpa sua.
+
+00:30:42.158 --> 00:30:43.618
+<v SPEAKER_2>Però no, non è così.
+
+00:30:43.618 --> 00:30:54.878
+<v SPEAKER_2>Come non è colpa del DPO, perché il DPO ha una funzione di supervisione, il ciso ha una funzione di definire una strategia, non è lui che la implementa, si propone.
+
+00:30:54.878 --> 00:30:56.858
+<v SPEAKER_1>Cioè la catena è bella lunga.
+
+00:30:56.858 --> 00:31:01.578
+<v SPEAKER_2>Esatto, quindi non può essere colpa sua semplicemente perché ha l'etichetta del ciso.
+
+00:31:01.578 --> 00:31:06.198
+<v SPEAKER_2>Lui propone cose, l'azienda dice no, non ti do budget, no, quelle cose non le facciamo.
+
+00:31:06.778 --> 00:31:10.298
+<v SPEAKER_1>Il ciso automaticamente è salvatore.
+
+00:31:10.298 --> 00:31:24.778
+<v SPEAKER_1>Sì, di fatto nel momento in cui si esautora consapevolmente o non consapevolmente, la figura che tu hai deciso di inserire è una sorta di autosabotaggio, ma vale per tutte le figure apicali nell'ambito tecnico.
+
+00:31:25.098 --> 00:31:30.618
+<v SPEAKER_1>Se non do budget al CIO, non si può pretendere che l'azienda maturi dal punto di vista tecnologico.
+
+00:31:30.618 --> 00:31:33.718
+<v SPEAKER_2>Il ciso in particolare non può essere salvatore della patria.
+
+00:31:33.858 --> 00:31:38.398
+<v SPEAKER_2>Io ho visto un posto su LinkedIn che mi è piaciuto.
+
+00:31:38.398 --> 00:31:41.018
+<v SPEAKER_2>Non l'ho commentato perché rischiava il flame.
+
+00:31:41.018 --> 00:31:46.098
+<v SPEAKER_2>Era una provocazione chiara che diceva il futuro è senza ciso.
+
+00:31:46.098 --> 00:31:49.278
+<v SPEAKER_2>In inglese, non ricordo, cito più o meno a memoria.
+
+00:31:49.918 --> 00:31:58.118
+<v SPEAKER_2>La provocazione era che il ruolo del ciso è finito, deve evolvere eccetera eccetera e quindi non è più necessario.
+
+00:31:59.158 --> 00:32:06.418
+<v SPEAKER_2>Non l'ho commentato, però provo a farlo adesso perché il pensiero non poteva stare in un tre righe di LinkedIn, era un po più complicato.
+
+00:32:06.418 --> 00:32:13.918
+<v SPEAKER_2>Allora non sono completamente in disaccordo, però bisogna un attimo all'interno della provocazione capire il significato.
+
+00:32:13.918 --> 00:32:20.158
+<v SPEAKER_2>Quindi il fatto che la sicurezza sia un problema azionale, questa cosa le azioni solo devono mettere in testa.
+
+00:32:20.158 --> 00:32:42.458
+<v SPEAKER_2>Cioè il ciso è quello che ti aiuta a capire, a definire una strategia, a tradurre le cose po più tecniche in rischio, di questo magari parliamo dopo, ma qualcuno dall'altra parte lo deve ascoltare perché se dall'altra parte nessuno lo ascolta il ciso va solo, potrà dire abbiamo questi problemi, li elenca, li riporta, nel momento che li riporta tra lato l'anno prossimo.
+
+00:32:42.458 --> 00:32:43.758
+<v SPEAKER_1>L'anno prossimo abbiamo gli stessi problemi.
+
+00:32:43.758 --> 00:32:45.738
+<v SPEAKER_2>Esatto, esatto, e strada facendo.
+
+00:32:45.738 --> 00:32:51.878
+<v SPEAKER_2>Quindi il ciso non è neanche quello che richiede sempre soldi per comprare cose, ma è quello che...
+
+00:32:51.878 --> 00:32:56.078
+<v SPEAKER_1>Anzi, su questa cosa ti interrompo un nanosecondo.
+
+00:32:57.318 --> 00:33:03.198
+<v SPEAKER_1>Una cosa la metto nelle cose che mi sono portata a casa, prendersi dei momenti di consolidamento.
+
+00:33:03.198 --> 00:33:17.138
+<v SPEAKER_1>Sono sacrosanto, se no non si fa a tempo a far maturare le decisioni fatte che hai già del nuovo effort da portare in operation, quindi rischi veramente di impantanarti.
+
+00:33:17.138 --> 00:33:40.458
+<v SPEAKER_2>No, sono d'accordo, assolutamente, perché quello che il ciso prova a modificare dovrebbe essere conscio di non poterlo modificare in un mese, due mesi, tre mesi, ma deve dire queste cose vanno modificate, chiaro, prima è, meglio è, perché auspicabilmente c'è un rischio aziendale legato, ma è anche comprensibile che l'azienda dica no, quest'anno io il budgeto non ce l'ho per fare quella cosa, proviamo a farlo in due anni.
+
+00:33:40.458 --> 00:33:41.738
+<v SPEAKER_2>Cosa possiamo fare in due anni?
+
+00:33:41.738 --> 00:33:46.218
+<v SPEAKER_2>Quindi è un dialogo, non può essere una persona abbandonata a se stessa.
+
+00:33:46.218 --> 00:34:09.198
+<v SPEAKER_2>Quindi in questo senso posso essere d'accordo che il ciso, come era visto una volta, perché era visto in modo sbagliato, non c'è più, ma auspicabilmente è il momento in cui il ciso è una persona che è un po il portavoce di determinate problematiche come lo è il cio, e in azienda si parla di queste cose e si riesce a fare dei passi amanti.
+
+00:34:09.198 --> 00:34:18.078
+<v SPEAKER_2>Mi piace l'idea che siamo a un punto di evoluzione, ma come non può un'azienda togliere il ciso, se toglie il ciso chi è che parla di sicurezza?
+
+00:34:18.198 --> 00:34:18.998
+<v SPEAKER_1>HR?
+
+00:34:19.358 --> 00:34:20.458
+<v SPEAKER_1>Oggi nessuno.
+
+00:34:20.458 --> 00:34:21.218
+<v SPEAKER_2>Siamo in grado?
+
+00:34:21.218 --> 00:34:22.578
+<v SPEAKER_2>Marketing per il suo?
+
+00:34:22.938 --> 00:34:24.178
+<v SPEAKER_1>Siamo sicuri?
+
+00:34:24.238 --> 00:34:26.138
+<v SPEAKER_2>Cioè, la parte tecnica è quella che ha meno problemi.
+
+00:34:26.138 --> 00:34:41.478
+<v SPEAKER_1>Hai citato i due team, spero che nessuno se la prenda male, che tipicamente generano molta entropia, perché la sicurezza informatica tocca ovviamente, non solo gli aspetti tecnici, tocca tutti gli aspetti legati alla sicurezza delle informazioni.
+
+00:34:41.478 --> 00:34:46.318
+<v SPEAKER_1>E quindi il marketing maneggia informazioni, la HR maneggia informazioni, tutti maneggiano informazioni.
+
+00:34:46.318 --> 00:35:01.938
+<v SPEAKER_1>L'azienda ha alcuni anche molto delicate, e quindi le tematiche entrano completamente in quei team e serve una figura a cui tutti possono guardare per chiedere supporto su come gestire certe cose.
+
+00:35:01.938 --> 00:35:06.858
+<v SPEAKER_2>Tra l'altro ho parlato di HR marketing, ma potremmo parlare di sales, tutti alla fine sono nello stesso sistema.
+
+00:35:06.858 --> 00:35:09.098
+<v SPEAKER_1>Anche nell'operation industriale.
+
+00:35:10.458 --> 00:35:16.498
+<v SPEAKER_2>Lì potremmo raccontare delle storie dell'horror, forse magari faremo una puntata doc su questo, storie dell'horror.
+
+00:35:16.498 --> 00:35:25.178
+<v SPEAKER_2>Ma HR non deve capire quali sono i rischi di sicurezza del suo modo di operare, ci sta, non è il suo mestiere.
+
+00:35:25.178 --> 00:35:34.938
+<v SPEAKER_2>Ma parlando con il CISO, è l'amico, va be, lo stiamo sminuendo però, è la persona che li guida a capire cosa stanno facendo e capire come lo possono fare meglio.
+
+00:35:34.938 --> 00:35:52.718
+<v SPEAKER_2>Se il CISO è abbastanza bravo e riesce a costruire un dialogo, HR sempre per citare loro, questo dialogo sarà produttivo perché le persone di HR, quando cominciano a capire cosa è più a rischio di altro, saranno loro che faranno trigger verso il CISO per capire se operano correttamente o no.
+
+00:35:52.718 --> 00:35:55.618
+<v SPEAKER_2>E questo ha un valore enorme per la ZEA.
+
+00:35:55.618 --> 00:36:00.458
+<v SPEAKER_1>Sì, si lega molto alla tematica che non mi ricordo in che punto l'aveva messo sulla cultura aziendale.
+
+00:36:00.498 --> 00:36:02.918
+<v SPEAKER_2>L'ultimo, ma per forza si mescola.
+
+00:36:02.918 --> 00:36:40.638
+<v SPEAKER_1>La spoileriamo in cui nel momento in cui il CISO riesce a costruire questo percorso e riesce a inserire in altre figure che non si occupano di sicurezza informatica, quel tipo di cultura diventa un circolo effettivamente virtuoso in cui l'HR ad esempio trova beneficio, giusto per ci dare un punto che mi sta a cuore, in una procedura di un boarding strutturata, un boarding outboarding, perché la cito, ed è trovata 27001, devono farla praticamente tutti quelli che vogliono approcciarla, ed è il primo scoglio in cui i team IT si trovano, è il fatto che si rendono conto che quella roba lì non è soltanto IT, è anche un'altra cosa.
+
+00:36:40.638 --> 00:36:48.038
+<v SPEAKER_2>Esatto, e quello è forse il primo punto dove deve essere un forte dialogo tra due reparti che parlano lingue completamente diverse.
+
+00:36:48.038 --> 00:36:50.238
+<v SPEAKER_1>Assolutamente.
+
+00:36:50.238 --> 00:37:08.278
+<v SPEAKER_2>Ok, quindi un percorso, e qui forse mi sposto su un pro del vuciso, è che un'azienda che magari non ce l'ha dentro o non ce l'ha strutturato, può provare a prenderlo fuori per capire se è pronta a fare questo passo, perché è un passo importante che cambierà l'azienda.
+
+00:37:08.278 --> 00:37:17.518
+<v SPEAKER_2>E sebbene tutte le aziende oggi dovrebbero fare questo passo, realisticamente non tutte le aziende sono pronte, anzi poche sono pronte, devo essere sincero.
+
+00:37:17.518 --> 00:37:18.878
+<v SPEAKER_2>E quindi lo si prende come testo.

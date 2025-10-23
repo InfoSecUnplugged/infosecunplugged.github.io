@@ -1,0 +1,454 @@
+WEBVTT
+
+00:00:09.077 --> 00:00:13.997
+<v SPEAKER_2>Bentornati ad Info Sec. Unplugged, io sono Andrea Dainese e come sempre c'è Rocco Sicilia.
+
+00:00:13.997 --> 00:00:15.517
+<v SPEAKER_1>Ciao a tutti.
+
+00:00:15.517 --> 00:00:20.697
+<v SPEAKER_2>Bentornati dopo ormai più di un mese, forse due mesi di assenza.
+
+00:00:20.697 --> 00:00:40.677
+<v SPEAKER_2>Volevamo partire da un evento che abbiamo fatto un po di tempo fa in ambito sicurezza industriale con NTS, l'azienda per cui lavoriamo, e cogliamo l'occasione per riprendere i temi che probabilmente sono di interesse anche a più persone, tutti quelli che non hanno potuto partecipare e che comunque sono invitati anche alla prossima edizione.
+
+00:00:40.677 --> 00:00:43.257
+<v SPEAKER_2>Rocco, vuoi partire tu?
+
+00:00:43.257 --> 00:01:25.097
+<v SPEAKER_1>Si, in tal caso si incastra bene col filone C o CSO visto che ovviamente ne parliamo in ambito, guardiamo la parte sicurezza del mondo industriale, la parte operation technologies, quindi si infila anche nel filone che stavamo conducendo, deviando un pochino su quelle che sono tutte le tematiche OT, tutti i problemi che tendenzialmente le aziende con cui abbiamo collaborato negli anni ci hanno manifestato quando approcciano il tema della sicurezza in ambito industriale, quindi l'argomento era proprio come gestire la sicurezza in ambito industriale, partendo dalle principali problematiche che ci raccontano poi alle persone che lavorano sul campo.
+
+00:01:26.117 --> 00:01:38.957
+<v SPEAKER_2>Avevamo diviso la sessione in quattro temi, li abbiamo chiamati obiezioni, che sono le cose che ci vengono dette un po da tutti i clienti, e giusto una breve introduzione sull'evento.
+
+00:01:38.957 --> 00:02:11.197
+<v SPEAKER_2>L'evento aveva preso luogo appunto su consiglio di un cliente che aveva questa esigenza di discutere in una tavola rotonda i temi relativi al sicurezza industriale, quindi noi abbiamo colto con piacere questa richiesta e abbiamo organizzato una tavola rotonda in modo molto ristretto, anche volontariamente ristretto per favorire la condivisione, appunto perché noi che vediamo più ambienti ci siamo accorti che i temi che tutti soffrono, che tutti vedono, che tutti devono gestire, sono alla fine sempre gli stessi con leggeri varianti.
+
+00:02:11.197 --> 00:02:20.697
+<v SPEAKER_2>Come dicevi tu Rocco, si innesta molto bene nella parte di governance ciso, anche se oggi forse la vediamo da un punto di vista un pochino più tecnico.
+
+00:02:21.137 --> 00:02:22.077
+<v SPEAKER_1>Sicuramente più tecnico.
+
+00:02:22.077 --> 00:02:30.757
+<v SPEAKER_1>Tra l'altro è stato interessante durante l'evento vedere come effettivamente le problematiche erano trasversali a diverse tipologie di aziende.
+
+00:02:30.757 --> 00:02:43.017
+<v SPEAKER_1>Quindi più o meno a prescindere dal business model o del settore in cui opera l'azienda, se c'è di mezzo un infrastruttura OT, tendenzialmente i problemi sono sempre più o meno gli stessi, quelli che vengono affrontati.
+
+00:02:43.077 --> 00:02:46.517
+<v SPEAKER_1>Quindi probabilmente anche quando...
+
+00:02:46.517 --> 00:02:54.917
+<v SPEAKER_1>diciamo, anche le obiezioni che discutiamo in questa sessione probabilmente sono le stesse che anche altre persone hanno dovuto affrontare.
+
+00:02:54.917 --> 00:03:04.697
+<v SPEAKER_2>Tanto per precisare, al tavolo avevamo aziende della parte oil and gas, della parte energetica, della parte automotive, della parte industriale produttiva.
+
+00:03:04.737 --> 00:03:12.257
+<v SPEAKER_2>Quindi, sì, sistemi, ambienti molto diversi, però alla fine, come dicevi tu, i problemi erano molto simili.
+
+00:03:12.517 --> 00:03:14.917
+<v SPEAKER_1>Sì.
+
+00:03:14.917 --> 00:03:16.297
+<v SPEAKER_1>Partiamo dalla prima.
+
+00:03:16.297 --> 00:03:20.457
+<v SPEAKER_1>Come diceva Andrea, abbiamo individuato i quattro principali.
+
+00:03:20.457 --> 00:03:43.817
+<v SPEAKER_1>La prima che io personalmente e frequentemente incontro quando parlo soprattutto con chi opera all'interno del mondo OT, quindi non con la figura IT asservita all'ambito OT, ma proprio con i tecnici su campo in ambito industriale, dove spesso si cerca di andare a portare un po di cultura della sicurezza.
+
+00:03:43.817 --> 00:03:53.057
+<v SPEAKER_1>Una delle prime cose che vengono segnalate è che l'infrastruttura si ritiene sicura perché non espone servizi.
+
+00:03:53.057 --> 00:04:00.057
+<v SPEAKER_1>In questa affermazione ci sono dei malintesi di base, diciamo almeno, abbiamo individuato dei malintesi di base.
+
+00:04:00.057 --> 00:04:02.697
+<v SPEAKER_1>Il primo è proprio il concetto di servizio.
+
+00:04:02.697 --> 00:04:06.477
+<v SPEAKER_1>Cioè cosa vuol dire espongo un servizio o non espongo un servizio.
+
+00:04:06.477 --> 00:04:21.257
+<v SPEAKER_1>Discutendo, abbiamo capito che in molti contesti, questo non espongo servizi si riuscire al fatto che le macchine che stanno utilizzando non hanno configurati dei servizi specifici che vengono poi utilizzati da altri sistemi.
+
+00:04:21.697 --> 00:04:30.757
+<v SPEAKER_1>Mentre in ambito IT, quando parliamo di servizi, ci riferiamo in maniera un po più ampia a qualsiasi software che espone un servizio a rete che venga o non venga utilizzato.
+
+00:04:30.757 --> 00:04:40.977
+<v SPEAKER_1>Questo non è importante in realtà ai fini della verificazione della postura, perché se il servizio c'è potenzialmente sfruttabile, anche se non c'è nessun client che lo utilizza.
+
+00:04:40.977 --> 00:04:53.357
+<v SPEAKER_1>Questo è stato un primo punto di attenzione su cui capire come parlare la stessa lingua quando si affronta questo argomento.
+
+00:04:53.357 --> 00:05:11.297
+<v SPEAKER_2>Hai detto proprio un punto importante, quando ci troviamo poi a parlare con le persone che hanno la responsabilità degli impianti del mondo OT, quindi non solo impianti industriali, ma possono essere anche medicali e via dicendo, la prima cosa è proprio stabilire un linguaggio comune, capire di che cosa stiamo parlando.
+
+00:05:11.297 --> 00:05:25.057
+<v SPEAKER_1>Ci sono terminologie che nell'ambito OT sono, diciamo, nell'uso comune e nell'ambito OT non è detto che vengono utilizzate nello stesso modo, cioè a volte vengono proprio utilizzate in maniera diversa.
+
+00:05:26.257 --> 00:05:38.097
+<v SPEAKER_1>Non saprei dire i motivi del perché le nomenclature si sono un po evolute in maniera diversa, però così è, e così dobbiamo in qualche modo affrontarla.
+
+00:05:39.897 --> 00:05:51.037
+<v SPEAKER_1>L'altro tema è proprio quello dei protocolli, che per chi viene dal mondo IT possono sembrare, diciamo, protocolli un po strani, perché effettivamente non vengono utilizzati nel mondo IT.
+
+00:05:51.037 --> 00:06:14.157
+<v SPEAKER_1>All'esempio Modbus, DNP3, c'erano diversi protocolli che sono proprio pensati per funzionare nel mondo dell'Operation Technologies e sono spesso protocolli che sono stati portati poi all'interno del mondo Ethernet, cioè nativamente non erano neanche utilizzati a livello Ethernet, ma erano utilizzati tramite altri sistemi di trasmissione come ad esempio la trasmissione seriale.
+
+00:06:14.757 --> 00:07:00.497
+<v SPEAKER_1>E questi protocolli, proprio per come sono stati progettati, non presentano sistemi di sicurezza a livello strutturale, anche se con la loro evoluzione sono stati introdotti meccanismi di sicurezza come la cifratura e l'autenticazione, quando i sistemi si parlano tra di loro con questi protocolli, nativamente non erano stati pensati in questo modo e molto frequentemente, quello che poi ci viene detto dagli addetti ai lavori, è che vengono tuttora utilizzati spesso nella modalità più grezza, diciamo così, quindi senza cifratura, senza autenticazione, spesso detta anche dagli stessi operatori, perché è molto scomodo utilizzarli in questi contesti, inserendo anche meccanismi nati per proteggere la comunicazione.
+
+00:07:00.497 --> 00:07:10.577
+<v SPEAKER_1>Il problema sta nel fatto che proprio per come sono fatti questi protocolli e il fatto che poi vengono utilizzati senza dei meccanismi specifici di protezione, diventa relativamente semplice.
+
+00:07:10.777 --> 00:07:23.237
+<v SPEAKER_1>Qua per fare la trasformazione tecnica diventa complicato, magari sarà uno spin off tecnico sull'esploiting dei protocolli nel mondo T, però merita un approfondimento solo questo aspetto.
+
+00:07:23.237 --> 00:08:32.057
+<v SPEAKER_1>Però per farla molto breve, appunto essendo protocolli che tendenzialmente vengono utilizzati in chiaro, e avendo come obiettivo nella trasmissione, il fatto di trasmettere informazioni un po nella forma che aveva l'ore, diciamo così, quindi dei parametri con delle valorizzazioni che vengono trasmessi da un sistema a un altro sistema è relativamente facile una volta che il TreTactor è in rete, e qua ci sono dei malware appunto che operavano in tal senso, che tuttora operano in tal senso, intercettare questo tipo di comunicazione, quantomeno leggerla, quindi quantomeno sniffare il traffico che viene inviato che si scambiano i sistemi e in alcuni casi anche a modificarlo, perché a quel punto basta appunto poter eseguire un attacco di tipo man in the middle, e purtroppo per obbussoliscenza di sistemi è spesso è possibile farlo, e quindi andare a modificare questi valori in real time, tradotto in maniera molto terra a terra, se sto inviando un comando, un braccio meccanico di rotare di 90 gradi, un attacco man in the middle potrebbe consentire di modificare quel parametro e farlo ruotare di 95 gradi.
+
+00:08:32.057 --> 00:08:40.457
+<v SPEAKER_1>Quindi se c'è lo spazio, gira di 95 gradi, se non c'è lo spazio, urta qualcosa, probabilmente anche una persona, dipende come è fatto poi l'impianto.
+
+00:08:40.457 --> 00:08:57.337
+<v SPEAKER_1>Questo è il livello di il problema che si genera, e la base sta nel fatto che il protocollo che viene utilizzato spesso è un protocollo che ha delle sue debolezze e non viene utilizzato in modo tale da rendere poco sfruttabile, a rendere poco sfruttabile queste debolezze.
+
+00:08:58.037 --> 00:09:06.377
+<v SPEAKER_2>C'è questa differenza di punto di vista tra chi parla di sicurezza del mondo IT e chi parla di sicurezza del mondo OT che poi più la safety.
+
+00:09:06.377 --> 00:09:13.017
+<v SPEAKER_2>Quindi in questi due modi di parlare fa sempre sul tema di settare un linguaggio comune.
+
+00:09:13.017 --> 00:09:24.757
+<v SPEAKER_2>Quindi chi costruisce l'impianto elettrico era abituato ad utilizzare dei bus dove c'era una fiducia intrinseca, perché di fatto l'informazione viaggiava su un cavo, il cavo non poteva essere intercettato.
+
+00:09:25.557 --> 00:09:41.377
+<v SPEAKER_2>Nel momento in cui questa cosa è stata trasformata, trasformata in un termine grosso, è stata portata su Ethernet quindi su IP, sono state fatte le assunzioni di sicurezza e di fiducia che prima avevano un senso.
+
+00:09:41.377 --> 00:09:47.017
+<v SPEAKER_2>Portandolo su un protocollo diciamo più promiscuo questa cosa non ha più senso.
+
+00:09:47.017 --> 00:10:12.557
+<v SPEAKER_2>Quindi uno dei promessi del mondo industriale è appunto la debolezza del protocollo che portando lo suo Ethernet ha dei rischi in più, ma mi viene in mente, non l'abbiamo neanche citato durante la tavola rotonda, mi viene in mente anche che la rete Ethernet stessa è molto meno resiliente e affidabile di un cavo che ero progettato per trasferire quell'informazione.
+
+00:10:12.557 --> 00:10:25.037
+<v SPEAKER_2>Quindi quando ci si affida una rete Ethernet non si considera che la rete Ethernet by design può fallire per un tempo anche molto molto lungo e poco sostenibile per gli impianti.
+
+00:10:25.037 --> 00:10:27.757
+<v SPEAKER_2>Quindi due visioni molto molto diverse.
+
+00:10:29.177 --> 00:10:39.397
+<v SPEAKER_1>Poi un'altra cosa che avevano citato, però vado veloce perché lo approfondiamo dopo, è proprio un tema di contesto ambientale.
+
+00:10:39.397 --> 00:10:53.157
+<v SPEAKER_1>Cioè questi sistemi nel mondo industriale sono spesso macchine, sono governati da War Station, che hanno un certo livello di accessibilità, diciamo così, sia fisica che dal punto di vista digitale.
+
+00:10:55.537 --> 00:11:08.797
+<v SPEAKER_1>E quindi c'è proprio un tema di presidio, di come presidiare dei sistemi che per loro natura devono essere facilmente accessibili, sia dai dipendenti, dagli utilizzatori, che anche da chi poi fa manutenzione su questi ambienti.
+
+00:11:08.797 --> 00:11:34.217
+<v SPEAKER_1>Quindi noi vorremmo blindare tanto, l'IT vorrebbe blindare il più possibile il livello d'accesso o presidiare il più possibile il livello d'accesso a questi sistemi, ma poi ci troviamo in un contesto in cui è molto difficile presidiare per diversi vincoli, e dove c'è anche un certo movimento di persone, cioè vengono acceduti da persone di differenze, spesso ci sono utenze problemistiche, ci sono tanti problemi che si legano proprio all'accessibilità del sistema.
+
+00:11:35.737 --> 00:11:53.817
+<v SPEAKER_1>L'altra obiezione che si lega appunto a questo elemento è proprio il fatto che per rendere facile l'utilizzo di questi sistemi all'utilizzatore diretto, spesso sono completamente sprotetti dal punto di vista di credenziali o password di accesso.
+
+00:11:53.817 --> 00:12:28.157
+<v SPEAKER_1>Classica situazione è la macchina allocked, con l'impossibilità appunto di mettere uno screensaver o una login screen dopo tot minuti, come di solito facciamo nel mondo IT, è una policy standard diciamo, le motivazioni sono diverse, la prima è appunto magari la postazione è usata da più utenti, e è complesso per chi gestisce la postazione, vincolare le persone che ci lavorano a fare logout, login al cambio turno ad esempio, quando qualcuno deve eseguire un'operazione sul sistema.
+
+00:12:28.157 --> 00:12:42.577
+<v SPEAKER_1>A volte gestiscono anche sistemi critici, e non è pensabile in caso di problemi, dover inserire una login o un pin per bloccare l'impianto, quindi sono tante problematiche che derivano proprio dall'utilizzo che se ne fa.
+
+00:12:42.577 --> 00:13:17.197
+<v SPEAKER_1>Quindi spesso quello che viene fatto è lasciare la macchina senza una credenziale, sempre unlocked, spesso anche poi sono macchine che ovviamente hanno delle roppe riferiche, quindi hanno ad esempio le porte USB, si spera disabilitate, ma spesso sono abilitate proprio perché vengono utilizzate in fase di motenzione, quindi ci sono tutta una serie di elementi e di esigenze del mondo OT che cozzano completamente con i principi di sicurezza che nel mondo OT ci sembrano, sono diciamo diventati normali, invece nel mondo OT diventano dei constrain che sono difficili da superare.
+
+00:13:17.197 --> 00:13:54.077
+<v SPEAKER_2>Mi viene in mente che su questo tema qua abbiamo aperto una discussione, perché la domanda era ok, ma ha senso che queste workstation abbiano di fatto una protezione, poi molto spesso la protezione è una password così semplice da poterla scrivere su un'etichetta che sta fianco del monitor, in altri casi qualcuno ha riferito, ma io le mie postazioni le metto a dominio, ma ci sono delle altre implicazioni, quindi ad esempio l'obsolescenza, le workstation di un impianto hanno un'obsolescenza molto più lunga, cioè vengono mantenute per un tempo molto più lungo rispetto a quello che viene mantenuto ad esempio i system di Active Directory.
+
+00:13:54.077 --> 00:14:07.937
+<v SPEAKER_2>Questo implica che l'aggiornamento, la manutenzione dei system di Active Directory siano legati alla vita di impianti che rimangono ma così immutabili anche per 20-30 anni.
+
+00:14:07.937 --> 00:14:23.277
+<v SPEAKER_2>Quindi tutta una serie di problematiche legate in cui alla fine abbiamo ipotizzato che una buona scelta potesse essere slegare il mondo IT dal mondo IT per non avere queste dipendenze intrinseche.
+
+00:14:23.277 --> 00:14:46.677
+<v SPEAKER_2>Quindi se da una parte sappiamo che i sistemi OT, World Station OT, invecchieranno o meglio diventeranno obsolete, ma sarà necessario mantenerle, avranno password semplici, ma di fatto lo dobbiamo permettere, addirittura senza password, a questo punto vale la pena non portarsi nel mondo IT queste debolezze, questi rischi, ma gestirle come sistemi separati e autonomi.
+
+00:14:46.677 --> 00:14:54.617
+<v SPEAKER_1>Sì, diciamo che visto che all'orizzonte c'è la tempesta perfetta in cui la macchina è appunto obsoleta delle vulnerabilità, come dicevi.
+
+00:14:54.617 --> 00:15:04.157
+<v SPEAKER_1>Perché detto molto chiaramente, spesso queste workstation hanno sistemi operativi ampiamente end of support, anche end of life, in diverse situazioni.
+
+00:15:04.157 --> 00:15:05.537
+<v SPEAKER_1>Quindi parliamo...
+
+00:15:05.537 --> 00:15:09.797
+<v SPEAKER_1>Frequentemente si trovano macchine con Windows XP e Windows 7 per capirci.
+
+00:15:11.097 --> 00:15:14.717
+<v SPEAKER_1>La credenziale è debole o addirittura assente.
+
+00:15:14.897 --> 00:15:45.857
+<v SPEAKER_1>Se in più è anche a dominio questa macchina e se per alcune esigenze operative, anche questa cosa che capita, gli utenti che usano la macchina sono anche amministratori locali, e così si inanellano tutta una serie di debolezze tali da rendere quei sistemi estremamente appetibili per un 3Tactor, perché sono sistemi estremamente vulnerabili, ma sfruttabili anche per arrivare appunto a colpire gli ambienti IT, perché la via verso l'acto di direttore a quel punto è una via molto interessante, se ho quel tipo di accesso su quel tipo di macchina.
+
+00:15:45.857 --> 00:15:56.557
+<v SPEAKER_1>Poi ovviamente, non l'abbiamo detto prima, ma è l'occasione per dirlo adesso, sono macchine su cui spesso non si possono installare strumenti di detection evoluta, tipo gli ADR.
+
+00:15:56.557 --> 00:16:10.917
+<v SPEAKER_1>È molto raro che un impianto di Al-Ok a installare un ADR su quelle workstation, per mille motivi, a volte, credo non ti leciti onestamente, però per mille motivi questa cosa capita spesso.
+
+00:16:10.917 --> 00:16:18.717
+<v SPEAKER_1>Quindi anche chi poi deve gestire quel sistema ha anche pochi strumenti per capire cosa sta succedendo.
+
+00:16:19.537 --> 00:16:22.957
+<v SPEAKER_1>Questo è proprio il contesto peggiore che si potrebbe verificare.
+
+00:16:22.957 --> 00:16:26.597
+<v SPEAKER_1>Quindi anche piccoli accorgimenti cambiano di tanto la postura.
+
+00:16:26.597 --> 00:16:36.777
+<v SPEAKER_1>Potrebbe essere una buona segmentazione delle reti, quindi limitare molto la visibilità del mondo OT verso il mondo ET, limitarlo ovviamente a quello che è necessario.
+
+00:16:37.917 --> 00:17:23.497
+<v SPEAKER_1>Se è necessaria una struttura Active Directory, una cosa che si è discusa in tutti gli eventi che abbiamo affrontato, c'era il tema del valutare se fare strutture Active Directory separate, però ovviamente c'è la paura di affrontare un progetto troppo complesso nel dover gestire due Active Directory completamente separati, probabilmente a senso su grandi volumi, su infrastrutture con moltissimi endpoint nell'ambito OT, quasi tutti quelli con cui abbiamo parlato preferiscono portare fuori dall'Active Directory questi sistemi e tenerli in una loro bolla, e gestirli stand-alone o con altri strumenti di gestione, che non necessariamente l'Acti Directory non è l'unico strumento che si può adoperare in questo senso.
+
+00:17:23.497 --> 00:17:25.637
+<v SPEAKER_2>Dipende anche da che cosa possiamo fare.
+
+00:17:25.637 --> 00:17:41.857
+<v SPEAKER_2>Anche se li mettiamo all'interno di Active Directory, ma non possiamo mettere qualunque tipo di policy, perché poi il costruttore in qualche modo potrebbe lamentarsi che l'impianto è stato manomesso, non è più in garanzia, abbiamo aggiunto un pezzo all'Active Directory che in realtà non ci dà alcun beneficio.
+
+00:17:42.577 --> 00:17:53.077
+<v SPEAKER_2>Se invece siamo nella situazione in cui possiamo imporre ai nostri fornitori di impianti qualche misura di sicurezza, allora lì può essere una valutazione.
+
+00:17:53.077 --> 00:18:00.737
+<v SPEAKER_2>Quindi il fine, al di là del tecnicismo, abbiamo sempre cercato di toglierci dal punto di vista tecnico.
+
+00:18:00.937 --> 00:18:14.217
+<v SPEAKER_2>È importante capire la parte tecnica, ma non possiamo farne una questione solo tecnica, ma metterci anche sul livello di quali vantaggi ottengo, come abbasso il rischio e soprattutto che cosa, effettivamente, posso fare.
+
+00:18:15.537 --> 00:18:23.837
+<v SPEAKER_2>La terza obiezione, il terzo punto che abbiamo preso in considerazione, è la manutenzione remota non deve essere ostacolata.
+
+00:18:23.837 --> 00:18:31.357
+<v SPEAKER_2>Questa è una cosa che sta in questo periodo un po arrivando alle cronache.
+
+00:18:31.357 --> 00:18:43.197
+<v SPEAKER_2>Le persone, le aziende si rendono conto che c'è un enorme problema e che in questo momento non è gestito, non è gestito nella maggior parte dei casi, poi ci sono sempre aziende virtuose e parliamo della manutenzione remota.
+
+00:18:43.197 --> 00:18:54.237
+<v SPEAKER_2>Quindi da dopo l'era del Covid la gestione remota è stata definitivamente stoccanata, quindi è certo che qualunque impianto è monitorato da remoto.
+
+00:18:54.237 --> 00:18:57.417
+<v SPEAKER_2>E questo monitoraggio è in due vie.
+
+00:18:57.417 --> 00:19:12.897
+<v SPEAKER_2>Da una parte il partner, l'integratore, può accedere al sistema quando lo desidera per fare tutte le verifiche del caso, dall'altra è altrettanto probabile che gli impianti, soprattutto se recenti, di 5-8 anni, facciano o mandano telemetria a casa madre.
+
+00:19:13.957 --> 00:19:20.657
+<v SPEAKER_2>Ecco, sono due dettagli che magari sembrano banali, ma hanno delle implicazioni enormi.
+
+00:19:20.657 --> 00:19:30.137
+<v SPEAKER_2>Il primo è il fornitore che è collegato con WPN e Always On al suo cliente e quindi può farci svariati casi.
+
+00:19:30.137 --> 00:19:53.437
+<v SPEAKER_2>Quindi abbiamo menzionato durante le due sessioni situazioni in cui i dispositivi di produzione del cliente sono stati usati per fare demo senza che i clienti lo conoscessero verso altri clienti, anche competitor, e in ogni caso è noto che diciamo che ci sono delle possibilità di alterazione del funzionamento dell'impianto.
+
+00:19:53.437 --> 00:20:04.977
+<v SPEAKER_2>Ma c'è un altro caso grosso che non è ancora proprio conosciuto, non ci si ancora spenimentati con esso, che è il fatto della supply chain attack.
+
+00:20:05.197 --> 00:20:14.637
+<v SPEAKER_2>Quindi chi fa come mestiere l'integratore è probabile che di mestiere non conosca o non lo faccia sicurezza.
+
+00:20:14.637 --> 00:20:31.437
+<v SPEAKER_2>Quindi abbiamo avuto appunto testimonianze in cui i partner, gli integratori, sono stati vittime di botnet, di ransomware, di attacchi di vari tipi, e questi attacchi in alcuni casi si sono poi espansi fino ad alcuni dei loro clienti.
+
+00:20:31.437 --> 00:20:33.517
+<v SPEAKER_2>Quindi proprio la definizione di supply chain attack.
+
+00:20:33.897 --> 00:20:41.337
+<v SPEAKER_1>Anche perché la visibilità del fornitore, in questo caso, è limitata a quello che l'impianto vede.
+
+00:20:41.337 --> 00:20:49.517
+<v SPEAKER_1>Quindi se l'impianto è in una rete da ampia visibilità, ovviamente il fornitore potenzialmente ha quel livello di visibilità.
+
+00:20:49.517 --> 00:21:00.377
+<v SPEAKER_1>Il tre-tactor nel suo modo superandi, nel momento in cui trova un pezzo di rete che sia del target principale o di un target secondario, cioè di un cliente, per lui va ben uguale.
+
+00:21:01.017 --> 00:21:09.797
+<v SPEAKER_1>Se il target è interessante, è interessante a prescindere, e quindi fare hope sull'impianto è un attimo da quel punto di vista.
+
+00:21:09.797 --> 00:21:15.717
+<v SPEAKER_1>Soprattutto se trova poi situazioni molto generose dal punto di vista della visibilità.
+
+00:21:15.717 --> 00:21:34.877
+<v SPEAKER_2>Non è raro trovare in una sede produttiva una singola rete che racchiude tutto il mondo OTI, anche IOT, quindi Billion Automation, la parte industriale, qualunque cosa finisce nella stessa rete OTI, che è considerata sicura, diciamo, è considerata un rischio livello più alto, quindi è protetta da un punto di vista perimetrale.
+
+00:21:34.877 --> 00:21:52.217
+<v SPEAKER_2>Ma nel momento in cui abbiamo questi gateway che tengono WPN always on, sia WPN su internet, ma si trovano anche sistemi di accesso 4G e via dicendo, nel momento in cui c'è un trattactor all'interno viene compromesso un impianto, da lì è possibile accedere a qualunque cosa.
+
+00:21:52.217 --> 00:22:04.037
+<v SPEAKER_2>Inoltre, se le politiche sono stringenti di ingresso verso il mondo OT, è probabil, o meglio è statisticamente probabil, che siano in realtà molto deboli dall'impianto OT verso la parte IT.
+
+00:22:04.037 --> 00:22:07.857
+<v SPEAKER_2>Quindi ci sono, ecco, delle cose da sistemare.
+
+00:22:07.857 --> 00:22:15.737
+<v SPEAKER_2>In tutto questo ci sono poi delle gestioni improvvisate di accesso remoto.
+
+00:22:16.197 --> 00:22:30.577
+<v SPEAKER_2>Quindi le aziende che non sono strutturate ma hanno bisogno di improvvisare un accesso remoto, troviamo l'Anikonet, il Team Viewer, non perché siano strumenti sbagliati, ma perché sono strumenti improvvisati.
+
+00:22:30.577 --> 00:22:46.697
+<v SPEAKER_1>Sì, in questo caso il problema che ho visto, io porto un case, ma probabilmente ce ne sono di vari tipi, che quando si usano questi strumenti, poi chi installa l'applicazione spesso, in alcuni casi non lo fa, avendo cura di verificare la fonte da cui viene scaricato il software.
+
+00:22:46.697 --> 00:23:08.637
+<v SPEAKER_1>Quindi quello che capita poi nel mondo vero, che ci capita a tutti di gestire in maniera abbastanza ordinaria, è di trovare strumenti scaricati da siti non affidabili che si portano dietro dei malware interi, o quantomeno degli spyware, cioè la migliore dei casi sono degli spyware, in alcuni casi proprio dei malware.
+
+00:23:08.637 --> 00:23:17.837
+<v SPEAKER_1>E strumenti che funzionano, c'è anche il teamviewer modificato, che è ucciso teamviewer perché è un caso abbastanza noto, probabilmente uno dei più frequenti.
+
+00:23:17.837 --> 00:23:30.897
+<v SPEAKER_1>Esistono diverse versioni teamviewer modificate, quando te lo scarichi e se lo si installa funziona benissimo, ma si porta dietro anche delle DLL malevole, quindi infetta il sistema anche con alcuni malware specifici.
+
+00:23:30.897 --> 00:23:49.677
+<v SPEAKER_2>Sempre su questo tema c'era poi la parte di telemetria, quindi il dato che esce dall'impianto verso l'esterno, ma fa il paio anche col fatto che oggi il sistema industriale, quindi i sistemi OT non sono più localizzati all'interno di un'area geografica, di uno stabile eccetera eccetera o di un campus, ma sono distribuiti su internet.
+
+00:23:49.677 --> 00:24:04.297
+<v SPEAKER_2>Quindi è normale trovare dei componenti che stanno in cloud e quindi è sempre più difficile gestire la sicurezza di un impianto utilizzando il famoso PureToolModel che abbiamo usato più e più volte in queste sessioni.
+
+00:24:04.297 --> 00:24:08.557
+<v SPEAKER_2>Non c'è nulla di male nella telemetria, se è controllata e ha contratto.
+
+00:24:08.557 --> 00:24:20.437
+<v SPEAKER_2>Cioè ci sta che la telemetria aiuti tutta la gestione preventiva dell'impianto, ma i dati che escono potrebbero essere anche coperti da proprietà intellettuale.
+
+00:24:20.437 --> 00:24:25.577
+<v SPEAKER_2>L'ultimo punto che abbiamo discusso è ogni change potrebbe compromettere l'impianto.
+
+00:24:25.577 --> 00:24:41.777
+<v SPEAKER_2>Ne abbiamo già parlato, in realtà c'è questo sacro timore, a volte corretto, molto spesso in realtà è proprio un sacro timore, nel senso che non è reale che qualunque change a qualunque componente dell'impianto possa compromettere le funzionalità dell'impianto.
+
+00:24:42.877 --> 00:24:56.297
+<v SPEAKER_2>Mi è capitato spesso di vedere bandi di gara per impianti produttivi che dovevano prevedere la parte di aggiornamento, eccetera, eccetera, nel tempo, come varie normative.
+
+00:24:56.297 --> 00:25:10.577
+<v SPEAKER_2>Poi questi impianti quando sono stati messi in campo non erano configurati per essere aggiornati, cioè era risaputo da tutti i clienti compreso che quei sistemi dovevano essere semplicemente intoccabili.
+
+00:25:11.977 --> 00:25:29.257
+<v SPEAKER_2>Questo è chiaramente un problema, forse è il problema più riconosciuto che ci sia nel mondo OT, cioè ci sono, durano 20-30 anni, così nascono, così muoiono, a meno che non vengano fatti i refit che si o no capitano ogni 10-15 anni e va gestita questa cosa.
+
+00:25:30.337 --> 00:25:46.697
+<v SPEAKER_2>Questa era a corollario di tutti i rischi che abbiamo già enumerato, come abbiamo provato poi a indirizzare, abbiamo provato a indirizzare sostanzialmente a gestire il problema, non da un punto di vista tecnico, quantomeno non solo, ma da un punto di vista strategico di abbassamento del rischio.
+
+00:25:46.697 --> 00:25:57.677
+<v SPEAKER_2>Quindi sicuramente vanno valutati i rischi con una via o con analisi che vanno in quella direzione e poi questi sistemi vanno protetti il più possibile.
+
+00:25:59.137 --> 00:26:07.957
+<v SPEAKER_1>La sensazione che ancora oggi ho quando ne discuto con gli addetti lavori è che sia molto difficile, che ovviamente tutti vorremmo peggiare tutto.
+
+00:26:08.597 --> 00:26:09.157
+<v SPEAKER_2>Sarebbe bello.
+
+00:26:09.157 --> 00:26:21.517
+<v SPEAKER_1>Sarebbe resiliente, iper peggiato, iper segmentato, però nella realtà dei fatti è una sorta di chimera.
+
+00:26:21.517 --> 00:26:30.717
+<v SPEAKER_1>Quindi c'è un po la sensazione che fare enforcement su questi sistemi sia molto complesso, quasi utopistico.
+
+00:26:30.717 --> 00:26:37.297
+<v SPEAKER_1>Quindi un buon compromesso potrebbe essere quello di aumentare tantissimo il livello di visibilità su quello che sta accadendo.
+
+00:26:37.297 --> 00:26:38.397
+<v SPEAKER_1>Che oggetti ci sono?
+
+00:26:38.397 --> 00:26:45.357
+<v SPEAKER_1>Non l'abbiamo detto, però è una delle grandi cose che si discute, che spesso non c'è il censimento di quanti device ci sono in quelle reti.
+
+00:26:45.357 --> 00:26:49.157
+<v SPEAKER_1>Quindi già sapere cosa c'è potrebbe essere un buon punto di partenza.
+
+00:26:49.157 --> 00:26:57.277
+<v SPEAKER_1>Quindi sapere esattamente come sono popolate, chi dialoga con chi, con che tipo di protocolli, che tipo di conversation ci sono all'interno della struttura.
+
+00:26:57.277 --> 00:27:05.277
+<v SPEAKER_1>Avere un censimento dei sistemi e delle vulnerabilità, quindi avere una mappatura dei rischi all'interno della struttura, quindi aumentare molto il livello di visibilità.
+
+00:27:05.277 --> 00:27:14.357
+<v SPEAKER_1>Sulla rete probabilmente si può agire in maniera massiva, però si possono fare dei ragionamenti un po più invasivi.
+
+00:27:14.357 --> 00:27:22.217
+<v SPEAKER_2>Ci sono oggi delle tecnologie che aiutano a dividere un'unica rete industriale in pezzi in modo trasparente.
+
+00:27:22.697 --> 00:27:23.977
+<v SPEAKER_2>Quindi, chiamiamo le zone.
+
+00:27:23.977 --> 00:27:32.477
+<v SPEAKER_2>D'altra parte, in qualunque ambiente produttivo ci sono più linee produttive che generalmente non hanno bisogno di parlarsi o si parlano molto poco.
+
+00:27:32.477 --> 00:27:41.797
+<v SPEAKER_2>Ogni linea produttiva potrebbe essere una sorta di sotto zona di sicurezza che, se compromessa, non può andare a parlare con le altre sotto zone quantomeno.
+
+00:27:41.797 --> 00:27:50.017
+<v SPEAKER_2>Quindi ci sono dei ragionamenti tecnici che sono figlia poi di una analisi più strategica per gestire il rischio.
+
+00:27:50.897 --> 00:28:08.877
+<v SPEAKER_1>Non abbiamo lo stesso livello di response che avremo in una rete IT con NDR, EDR e astronavi, però almeno ci spostiamo in un contesto quantomeno un po presidiato rispetto a non sapere neanche cosa sta accadendo all'interno di quella struttura.
+
+00:28:10.277 --> 00:28:25.477
+<v SPEAKER_2>La tavola rotonda poi ha lasciato spazio più a delle visioni tattiche, quindi della visione di prodotti che potevano implementare le strategie di cui avevamo discusso nella tavola rotonda e sono andate proprio in questa direzione.
+
+00:28:25.477 --> 00:28:31.317
+<v SPEAKER_2>Da una parte la visibilità, quindi capire che cos'ho, cosa c'è, come è fatto, chi parla con chi e via dicendo.
+
+00:28:31.317 --> 00:28:39.677
+<v SPEAKER_2>Dall'altra parte la gestione dell'accesso remoto, l'abbiamo capito, è uno dei punti più importanti nel mondo industriale, ma non solo.
+
+00:28:40.417 --> 00:28:44.037
+<v SPEAKER_1>Deve esserci, ma deve essere anche presidiato, se no diventa un...
+
+00:28:44.037 --> 00:28:45.497
+<v SPEAKER_2>Assolutamente.
+
+00:28:45.497 --> 00:29:06.577
+<v SPEAKER_2>E il terzo punto è la parte di detection, quindi se non possiamo scoprire o mettere dei componenti di detection forti sulle workstation e via dicendo, ma almeno capire con una ipote in particolare, abbiamo parlato, se c'è qualche anomalia all'interno della rete, forse più critica dell'azienda.
+
+00:29:06.757 --> 00:29:46.757
+<v SPEAKER_1>Sì, è un bel trucchetto che si usa anche in ambito it, in maniera abbastanza, anzi molto soddisfacente, il fatto di avere appunto un po il meccanismo del canary, quindi degli oggetti come le onipot che raccogliendo delle anomalie all'interno della rete ci danno un segnale forte che qualcosa non sta funzionando, non potendo avere degli strumenti come gli edr sui device che vorremmo controllare, guardare quello che succede attorno è un trucchetto valido in questo caso, molto valido in questo caso.
+
+00:29:46.757 --> 00:30:01.637
+<v SPEAKER_2>Io chiuderai con una considerazione che è stata fatta sull'appunto, come dicevi prima, sulla ci piacerebbe avere tutto pecciato, aggiornato eccetera eccetera, perché c'è qualcuno anche che si opera per effettivamente avere dei sistemi industriali all'ultima release.
+
+00:30:02.057 --> 00:30:27.097
+<v SPEAKER_2>Quello che è venuto fuori è che il tempo di aggiornamento era di almeno 6 mesi, più tendenti ai 10, con un lavoro in mani, ma il problema che abbiamo discusso è che con un tempo di patching di 6-10 mesi non stiamo assolutamente gestendo un rischio, perché se ho una vulnerabilità critica oggi, e la mia misura di sicurezza prevede una soluzione da qui a 10 mesi, devo trovare altre soluzioni.
+
+00:30:27.097 --> 00:30:44.257
+<v SPEAKER_1>Sì, infatti, anzi, in un contesto in cui tendenzialmente, almeno le aziende con cui mi capita di collaborare, stiamo cercando di portare il tempo di esposizione da quando si ha l'informazione dell'esposizione, quindi si sa di essere vulnerabili a qualcosa di critico.
+
+00:30:44.257 --> 00:31:00.697
+<v SPEAKER_1>Ovviamente, dove critico è qualcosa che ha un fortissimo impatto sulla produzione ed è anche sfruttabile, si sta cercando di portare la finessa esposizione a poche ore, a 10 mesi siamo proprio distantissimi da quegli obiettivi, tanto da farlo diventare insensato.
+
+00:31:00.957 --> 00:31:02.457
+<v SPEAKER_2>Esatto, insensato.
+
+00:31:02.457 --> 00:31:12.517
+<v SPEAKER_2>L'approccio migliore è portare forse la parte di incident management e response all'interno del mondo OT con delle peculiarità che sono completamente diverse dal mondo OT.
+
+00:31:12.517 --> 00:31:18.297
+<v SPEAKER_2>Quindi se nell'IT abbiamo dei tempi degli strumenti eccetera eccetera, nel mondo OT ne abbiamo completamente diversi.
+
+00:31:18.297 --> 00:31:35.637
+<v SPEAKER_2>Si parla spesso di convergenza IT e OT per alcuni aspetti io sono anche d'accordo, alcuni sistemi di infrastruttura come le reti potrebbero effettivamente convergere, altre secondo me completamente no, ma ce lo siamo anche raccontato in questi minuti qua.
+
+00:31:36.797 --> 00:31:54.357
+<v SPEAKER_2>Bene, vi abbiamo riassunto quello che abbiamo discusso in questa tavola aratonda che ha avuto già due edizioni, probabilmente ce ne sarà una terza in un futuro un po più in là, e basta fateci sapere se vi è piaciuto, se avete altri temi da discutere noi siamo sempre felici.
+
+00:31:54.357 --> 00:31:55.077
+<v SPEAKER_1>Alla prossima.
+
+00:31:55.077 --> 00:31:55.757
+<v SPEAKER_2>Ciao, grazie.

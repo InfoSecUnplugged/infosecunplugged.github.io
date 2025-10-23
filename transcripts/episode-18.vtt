@@ -1,0 +1,820 @@
+WEBVTT
+
+00:00:08.418 --> 00:00:18.618
+<v SPEAKER_1>Bentornati a Info Sec. Unplugged, io sono Andrea Dainese, questa volta vi salutiamo dagli nuovi uffici di Verona appena aperti ancora da inaugurare e com'è come sempre c'è Rocco Sicilia.
+
+00:00:18.618 --> 00:00:59.218
+<v SPEAKER_2>Ciao, allora oggi abbiamo detto di toccare l'argomento network, sempre dal punto di vista dell'IT manager, visto che sotto il nome network sono mille capitoli che si potrebbero aprire e tendenzialmente l'IT manager che arriva a prendere in gestione una nuova rete, quindi ipotizziamo non un green field, ma un ingresso in un'azienda che è già strutturata, che ha già le sue sedi, le sue network, la sua infrastruttura, di solito voleva un po capire come è stata gestita fino a quel momento la rete.
+
+00:00:59.218 --> 00:01:06.538
+<v SPEAKER_2>Da un punto di vista di sicurezza, probabilmente gli interesserà capire quali sono le aree sensibili della rete.
+
+00:01:06.538 --> 00:01:14.578
+<v SPEAKER_2>Io ho un po in testa il concetto del capire, ad esempio, quali sono i punti di accesso di quella rete e eventualmente dei servizi che la popolano.
+
+00:01:14.578 --> 00:01:22.318
+<v SPEAKER_2>Quindi probabilmente c'è un punto di accesso che riguarda l'utenza, probabilmente c'è qualcosa che riguarda le utenze guest, qualcosa che riguarda i servizi.
+
+00:01:22.798 --> 00:01:32.698
+<v SPEAKER_2>Se è un'azienda multisede probabilmente ha altre sedi con cui si deve, con cui deve comunicare o addirittura erogare servizi per altre sedi.
+
+00:01:32.698 --> 00:01:40.238
+<v SPEAKER_2>E quindi si creano, da qualche parte probabilmente c'è o non c'è, uno schema generale che descrive questa rete.
+
+00:01:41.278 --> 00:01:49.438
+<v SPEAKER_2>Noi ragionamola tecnici potremmo ipotizzare come dovrebbe essere una rete, non dico perfetta, però con i suoi crismi diciamo di design di base.
+
+00:01:50.358 --> 00:01:59.398
+<v SPEAKER_1>Allora io potrei fare uno spoiler di cosa questo nostro ciso incontrà nelle aziende, basandomi su una statistica che rasenta quasi la certezza.
+
+00:01:59.398 --> 00:02:10.478
+<v SPEAKER_1>Si troverà un ambiente diviso in zone, tra cui una esterna internet, una DMZ perché non manca mai, e una o più zone interne.
+
+00:02:10.698 --> 00:02:17.278
+<v SPEAKER_2>Potremmo partire, in effetti ora che visto la tua intro, potremmo partire dai classici errori.
+
+00:02:17.338 --> 00:02:20.858
+<v SPEAKER_2>Esatto, stavo giungendo qua.
+
+00:02:22.338 --> 00:02:26.678
+<v SPEAKER_1>Queste zone di sicurezza tipicamente sono state costruite a sentimento.
+
+00:02:26.678 --> 00:02:32.698
+<v SPEAKER_1>Ho detto la DMZ perché non manca mai, l'ho sottolineato apposta, ne abbiamo già parlato in vari modi.
+
+00:02:32.698 --> 00:02:42.698
+<v SPEAKER_1>A volte sfugge il motivo per cui è stata costruita la DMZ, cioè sfugge il motivo profondo per cui mettiamo dei sistemi lì e non li mettiamo da un'altra parte.
+
+00:02:42.898 --> 00:02:50.898
+<v SPEAKER_1>Li mettiamo perché tipicamente sono quelli che offrono servizio internet, ma magari dopo ci parliamo su un attimo.
+
+00:02:50.898 --> 00:03:05.278
+<v SPEAKER_1>La zona interna qui potrebbe essere una, nei casi in cui c'è un firewall perimetrale e dentro ragioniamo in comoda come vent'anni fa, dove la zona è trusted, sicura e tutto il resto.
+
+00:03:06.398 --> 00:03:16.998
+<v SPEAKER_1>Può essere negli ambienti magari dove si sono un po ammodernati negli ultimi cinque, otto anni, dove c'è una zona effettivamente di sicurezza per l'ambiente server, uno per l'ambiente client, eccetera, eccetera.
+
+00:03:16.998 --> 00:03:30.178
+<v SPEAKER_2>Ho approfitto per inserire una parolaccia, esattamente in contraposizione al concetto di zona trusted, questo grande calderone di cui mi fido, è stato introdotto a un certo punto il tema dell'un-trust.
+
+00:03:30.178 --> 00:03:31.818
+<v SPEAKER_1>Esatto, esatto.
+
+00:03:31.818 --> 00:03:34.858
+<v SPEAKER_2>Proprio in contraposizione, direi, a quel modello.
+
+00:03:34.858 --> 00:03:42.518
+<v SPEAKER_1>Questo perché tecnologicamente non è una tecnologia che ho mai gestito direttamente, non ho mai avuto questa fortuna.
+
+00:03:42.518 --> 00:03:55.078
+<v SPEAKER_1>Nei firewall primissimi, se non sbaglio, c'erano proprio di default la zona trust, si chiamavano trust and trust, esatto, o in alcuni casi inside outside, ma il concetto era lo stesso.
+
+00:03:55.078 --> 00:03:58.018
+<v SPEAKER_1>Ma c'è una ragione tecnica per questo.
+
+00:03:58.018 --> 00:04:15.698
+<v SPEAKER_1>Tanti anni fa i firewall non erano in grado di performare abbastanza per segmentare tutte le reti interne, quindi si confinava il perimetro esterno, il perimetro interno, perché le minacce arrivavano tipicamente da fuori, quindi era difficile, il senso ce l'aveva, oggi non c'è più quel senso là.
+
+00:04:15.698 --> 00:04:34.058
+<v SPEAKER_1>E nei casi più gravi, diciamo, la zona interna, quindi la famosa trusted, è geograficamente ampia, quindi permette di collegarci tramite poveretti, tipicamente a MPLS, a tutta una serie di siti interni.
+
+00:04:34.058 --> 00:04:58.298
+<v SPEAKER_2>Aggiungo, visto che sul tema minacce, che oggi è molto più frequente, il fatto che la potenziale minaccia arrivi nella zona truste, quella che sarebbe stata la zona trusted, proprio perché viene portata dentro incautamente, ad esempio da un utente, e quindi quella zona che era trusted in realtà diventa un potenziale ricettacolo di problemi.
+
+00:04:58.298 --> 00:05:00.438
+<v SPEAKER_1>Ecco, questa forse non è...
+
+00:05:01.958 --> 00:05:08.138
+<v SPEAKER_1>è la classica cosa che conosciamo, ma non abbiamo forse realizzato a fondo.
+
+00:05:08.138 --> 00:05:09.798
+<v SPEAKER_1>Riprendo cosa hai detto tu.
+
+00:05:09.798 --> 00:05:18.798
+<v SPEAKER_1>Una volta l'attacco mirava i servizi applicativi esterni, poi assuondo i bucari negli ultimi anni, bene o male i perimetri li abbiamo esforzati.
+
+00:05:18.798 --> 00:05:22.418
+<v SPEAKER_1>Esatto, un pochino, dai, un pochino, abbastanza.
+
+00:05:22.418 --> 00:05:25.658
+<v SPEAKER_1>Però il punto debole oggi si dice molto che la persona...
+
+00:05:25.658 --> 00:05:40.098
+<v SPEAKER_1>Non voglio puntare il dito contro la persona, però diciamo che gli attacchi vanno contro la persona, quindi è più facile tramite malware o tipicamente malware arrivare nell'end point che sta nella zona trusted.
+
+00:05:40.258 --> 00:05:43.858
+<v SPEAKER_2>Il grande tema dell'end point security lo mandiamo avanti?
+
+00:05:43.858 --> 00:05:46.338
+<v SPEAKER_1>Lo mandiamo avanti, sì, sì, assolutamente.
+
+00:05:46.338 --> 00:05:51.278
+<v SPEAKER_2>Non ne parliamo, non perché ce ne dimentichiamo, ma perché teniamo l'argomento network.
+
+00:05:51.278 --> 00:06:00.778
+<v SPEAKER_1>Però il concetto è che una volta che sono nell'end point, in una zona trusted, che cosa c'è che mi separa dalle altre zone di sicurezza?
+
+00:06:00.778 --> 00:06:07.678
+<v SPEAKER_1>Se sono nell'implementazione di rete classica, quindi quella di 10-15 anni fa, la risposta è niente.
+
+00:06:08.998 --> 00:06:19.838
+<v SPEAKER_1>Un'altra premessa secondo me importante, perché io le do sempre per scontato, poi mi scontro con persone che la interpretano in modo diverso e c'è il famoso segmentazione, segregazione.
+
+00:06:19.838 --> 00:06:23.118
+<v SPEAKER_1>Ora al di là dei termini per me è sempre importante capirsi.
+
+00:06:23.258 --> 00:06:51.358
+<v SPEAKER_1>Quindi vedo usare il termine segmentazione quando le reti sono distribuite, gli applicativi, i servizi, i sistemi sono distribuiti in reti diverse e quindi è segmentato, sarebbe il dominio layer 2 è segmentato in reti layer 3 diverse, ma queste reti non c'è un controllo tra reti, quindi c'è un tipicamente un router, un switch.
+
+00:06:51.358 --> 00:06:53.038
+<v SPEAKER_1>Esatto.
+
+00:06:53.038 --> 00:07:05.258
+<v SPEAKER_1>Il risultato apparentemente nel mio modo di vedere, ovvio, ma ho scoperto che non è così, è che trasitare da una reti all'altra non c'è, non c'è alcun controllo, si fa senza problemi.
+
+00:07:05.258 --> 00:07:24.058
+<v SPEAKER_2>E qua metto una cosa, un asterisco su delle cose che ho visto che mi hanno fatto raggelare, non tanto perché è sbagliato concettualmente, ma perché la reti ingestibile, cioè fare ACL sui router, al di là del fatto che sono regole molto statiche, però obiettivamente uno diventa matto a gestire.
+
+00:07:24.058 --> 00:07:28.558
+<v SPEAKER_1>Diventa matto, ma è anche inutile, facciamo una digressione un po tecnica.
+
+00:07:28.558 --> 00:07:30.258
+<v SPEAKER_1>Ok, proviamo a fare una digressione tecnica.
+
+00:07:30.258 --> 00:07:43.478
+<v SPEAKER_1>Allora, le ACL nei dispositivi, le IRTRA di solito sono quegli switch molto grandi, una volta grandi nel senso da un punto di vista fisico dimensionale, adesso magari sono piccolini, però sono più potenti di accesso.
+
+00:07:43.478 --> 00:07:44.758
+<v SPEAKER_2>Di solito tante porte.
+
+00:07:44.758 --> 00:07:45.958
+<v SPEAKER_1>Di solito sì.
+
+00:07:45.958 --> 00:07:49.798
+<v SPEAKER_1>Fanno la raccolta, ecco, e fanno routine tra le reti diverse.
+
+00:07:49.798 --> 00:08:02.478
+<v SPEAKER_1>Ora lì uno potrebbe dire, e qualcuno mi ha detto effettivamente, io faccio delle ACL e uso lì la mia segregazione del traffico, quindi impedisco che tutti possano comunicare con tutti.
+
+00:08:02.478 --> 00:08:19.558
+<v SPEAKER_1>Ora, quando un cliente mi dice questo, io sono scettico perché da un punto di vista operativo è difficilissimo da gestire, a meno di sistemi di automazione che non ho mai visto in piedi, non che siano impossibili, ma non ho mai visto in piedi.
+
+00:08:19.558 --> 00:08:32.098
+<v SPEAKER_1>In più c'è una ragione tecnica, nel senso che quei dispositivi là tipicamente non parlano layer 4, quindi per ogni verso del traffico devo fare una ACL di andata e una di ritorno.
+
+00:08:32.098 --> 00:08:53.758
+<v SPEAKER_1>Ora, piccola digressione tecnica sempre nell'ambito generalista, quindi non ci fucilino i più tecnici perché non è nostra intenzione insegnare a loro il mestiere, ma per come funziona il traffico succede che da un punto di vista offensivo è molto semplice bypassare questa regola.
+
+00:08:53.758 --> 00:09:17.158
+<v SPEAKER_1>Provo a spiegarlo, se io devo permettere l'accesso a un servizio web sulla porta 4.3 da A a B, quindi qui ho il servizio, di conseguenza devo permettere il ritorno dalla sorgente 4.4.3 a tutto, se io sono qui, mi metto come source e quindi bypasso il concetto di ACL.
+
+00:09:17.158 --> 00:09:23.478
+<v SPEAKER_1>Quindi il concetto è un lavoro enorme per ottenere un risultato abbastanza basso.
+
+00:09:23.478 --> 00:09:42.278
+<v SPEAKER_2>Poi c'è da aggiungere oltre al tema praticamente tecnico proprio di come viene ingegnilizzata, delle possibilità di ingegnilizzazione che ti dà la ACL, quindi cerco di limitare un certo tipo di conversation, ma appunto basato su porta destinazione, porta sorgente e ovviamente gli IP.
+
+00:09:42.278 --> 00:09:51.078
+<v SPEAKER_2>C'è da dire che in ambito security questa cosa decade tantissimo nel momento in cui io in quelle porte in realtà non ho un controllo del tipo di applicazione che sta utilizzando la porta.
+
+00:09:51.298 --> 00:10:02.178
+<v SPEAKER_2>Porta 443, per un firewall UTM può voler dire HTTPS, ma per un router non c'è un protocollo di riferimento.
+
+00:10:02.178 --> 00:10:10.218
+<v SPEAKER_1>C'è un caso in cui le ACL hanno un senso quando io posso fare una separazione a livello di IP, quindi non lavoro sulle porte ma lavoro degli IP.
+
+00:10:10.218 --> 00:10:19.298
+<v SPEAKER_1>Faccio un esempio che io ho usato tanti anni fa, era un router locali delle filiali italiane collegati tutte in MPLS.
+
+00:10:19.298 --> 00:10:25.718
+<v SPEAKER_1>Ogni filiale doveva avere una rete guest e il requisito della rete guest era deve accedere a internet appunto.
+
+00:10:25.718 --> 00:10:35.718
+<v SPEAKER_1>In questo caso funziona perché la rete guest non devo farmi, devo permettere questo, quell'altro eccetera eccetera, ma devo permettere l'accesso a tutti gli IP che non sono interni.
+
+00:10:35.718 --> 00:10:38.998
+<v SPEAKER_1>Quindi in questo caso funziona da segregazione.
+
+00:10:38.998 --> 00:10:48.818
+<v SPEAKER_1>Chiaramente gestivo circa un'ottantina di router, non potevo gestirle manualmente, dovevo gestirli automaticamente, quindi c'era un'automazione.
+
+00:10:48.818 --> 00:10:55.338
+<v SPEAKER_1>Breve premessa per cui le ACL, tipicamente nel mondo enterprise, le ACL router non vanno.
+
+00:10:56.498 --> 00:11:13.118
+<v SPEAKER_2>Quindi di solito il design va o sul firewall, diciamo, di perimetro che è in grado di gestire a livello di carico proprio quella conversation, sono i design più si chiamai più enterprise, cioè di solito c'è la logica del bastione interno e il bastione esterno.
+
+00:11:13.118 --> 00:11:16.698
+<v SPEAKER_1>Esatto, dipende dalla quantità di traffico che bisogna gestire.
+
+00:11:16.938 --> 00:11:34.398
+<v SPEAKER_1>Assolutamente, perché il firewall, perché dà visibilità, quindi vi dice non solo che sta passando qualcosa o vi impedisce, o vi permette di bloccare il trafico, ma vi dice sono passate queste connessioni da verso con questa banda.
+
+00:11:35.578 --> 00:11:46.138
+<v SPEAKER_1>Tipicamente, è la cosa più utile, vengono attivate le firme per rilevare treppe interni che vi segnalano se c'è qualcosa di anomalo, di molto sporco nella rete interna.
+
+00:11:47.078 --> 00:12:10.798
+<v SPEAKER_2>Al netto del tema del carico, questa è una domanda che mi faccio spesso e non ho una risposta secca, tu ci vedi altre motivazioni tecniche per prediriggere il design con più bastioni rispetto alla singola macchina che è in grado di gestire tutto il trafico, ammesso che si abbia la possibilità di di accorpare tutto sul singolo cluster.
+
+00:12:11.958 --> 00:12:22.558
+<v SPEAKER_1>Allora, oggi se il carico aumenta, il doppio bastione mono vendor, e dopo ti spiego perché, il mio pensiero mono vendor è la soluzione ideale.
+
+00:12:22.558 --> 00:12:32.858
+<v SPEAKER_1>Le cose secondo me stanno cambiando quindi nel giro di quattro anni potremmo vedere una rivoluzione e ci arriviamo, perché ci sono delle considerazioni logiche.
+
+00:12:32.858 --> 00:12:36.038
+<v SPEAKER_1>Quindi secondo me funziona, il mono vendor perché?
+
+00:12:36.038 --> 00:12:45.598
+<v SPEAKER_1>Perché tipicamente da un sistema centrale gli posso gestire entrambi e usare vendor diversi, faccio un rant?
+
+00:12:45.598 --> 00:12:52.798
+<v SPEAKER_1>Usare vendor diversi è una strategia commerciale del fatto che se c'è il vendor A anche il vendor B può vendere un pezzo, però non può.
+
+00:12:52.798 --> 00:12:55.838
+<v SPEAKER_2>C'è chi dà una motivazione strategica?
+
+00:12:55.838 --> 00:12:57.038
+<v SPEAKER_1>Sì.
+
+00:12:57.078 --> 00:13:00.638
+<v SPEAKER_2>Se ho un problema su un vendor che ci può essere.
+
+00:13:01.078 --> 00:13:03.078
+<v SPEAKER_1>Sì, assolutamente, la teoria è quella.
+
+00:13:03.218 --> 00:13:10.278
+<v SPEAKER_2>C'è anche statisticamente un matematico potrebbe dirmi se due vendor potreste potenziare i problemi dei due vendor.
+
+00:13:10.278 --> 00:13:10.798
+<v SPEAKER_2>Esatto.
+
+00:13:10.798 --> 00:13:11.998
+<v SPEAKER_2>È difficile scegliere.
+
+00:13:12.018 --> 00:13:13.798
+<v SPEAKER_1>Esatto.
+
+00:13:13.798 --> 00:13:14.798
+<v SPEAKER_1>La teoria è questa.
+
+00:13:14.798 --> 00:13:17.158
+<v SPEAKER_1>Se cade un firewall, un vendor, cade l'altro.
+
+00:13:17.158 --> 00:13:28.418
+<v SPEAKER_1>Però qualunque firewall cada, venga compromesso in questo senso qua, vi espone delle reti a delle minacce che tipicamente non volete esporre.
+
+00:13:29.258 --> 00:13:34.518
+<v SPEAKER_1>Quindi tecnicamente, o meglio, da un punto di vista ideologico ho seri dubbi.
+
+00:13:34.518 --> 00:13:41.658
+<v SPEAKER_1>Da un punto di vista operativo poi questa cosa qua funziona, non funziona perché dovrei duplicare il lavoro.
+
+00:13:41.778 --> 00:13:52.318
+<v SPEAKER_1>Lo devo fare nel firewall perimetrale in una salsa, nel lingua del vendor A, e nel firewall, diciamo, data center o interno nella lingua B.
+
+00:13:52.318 --> 00:14:03.558
+<v SPEAKER_1>Quindi devo avere persone che sono schillate su tutti e due i firewall, o quantomeno operativamente sanno che la regola A deve essere leggermente adattata nel vendor B.
+
+00:14:03.558 --> 00:14:12.438
+<v SPEAKER_2>Forse è l'unico caso in cui vedo sano un approccio multivendor e se ho delle esigenze veramente molto molto specifiche.
+
+00:14:12.438 --> 00:14:24.758
+<v SPEAKER_2>Adesso è relativamente raro che le future set classiche che oggi cerchiamo in un firewall UTM tendenzialmente più vendor coprono quel future set.
+
+00:14:24.758 --> 00:14:33.558
+<v SPEAKER_2>Potrebbero esserci delle casistiche, però sono veramente molto molto verticali, che un vendor, come l'approccio a un vendor, non mi piace di più rispetto a un altro.
+
+00:14:33.558 --> 00:14:38.738
+<v SPEAKER_2>Mi vengo in mente soprattutto per tematiche molto specialistiche come l'ambito OT, ad esempio.
+
+00:14:38.738 --> 00:15:01.418
+<v SPEAKER_2>Potrebbe essere che io veda utile, quindi stiamo parlando di un altro pezzo della rete, veda più utile un vendor specifico, perché sulla parte OT mi dà un modo di lavorare meglio, non dico meglio il vendor in sé, ma mi dà delle future che posso usare meglio, rispetto ad un altro vendor che magari a perimetro invece mi dà delle future specifiche per quell'ambito.
+
+00:15:01.418 --> 00:15:11.438
+<v SPEAKER_2>Poi forse alcuni vendor hanno delle classificazioni di firewall e licensing anche un po più dedicato al mondo di alcuni mondi rispetto ad altri.
+
+00:15:11.558 --> 00:15:18.878
+<v SPEAKER_2>È un po la stessa logica che potremmo fare con quello che di fatto è diventato un altro oggetto, che è il web application firewall.
+
+00:15:18.878 --> 00:15:29.218
+<v SPEAKER_2>Oggi molti UTM integrano alcune funzionalità che trovi in un web application firewall, però se voglio proteggere un web server in maniera verticale probabilmente metterò on-off e non on firewall.
+
+00:15:29.318 --> 00:15:30.378
+<v SPEAKER_1>Assolutamente.
+
+00:15:30.378 --> 00:15:37.738
+<v SPEAKER_1>Ci sono delle specializzazioni, le hai citate benissimo, il web application firewall e il firewall OT, che effettivamente giustificano un vendor particolare.
+
+00:15:37.738 --> 00:15:45.658
+<v SPEAKER_1>Negli altri casi a mio parere no, perché operativamente è complicato avere persone schillate da una parte e dall'altra.
+
+00:15:45.658 --> 00:15:55.478
+<v SPEAKER_1>E sia chiaro, fare una regola sul firewall oggi non è dire da a porta a massimo applicativo, che già è tanto, già spesso non la vediamo l'applicativo.
+
+00:15:55.478 --> 00:15:58.298
+<v SPEAKER_2>Diciamo già che chi le fa così è rimasto un po indietro.
+
+00:15:59.718 --> 00:16:06.158
+<v SPEAKER_2>E ancora una volta, non è che sta sbagliando nel senso stretto del termine, però non sta usando minimamente tutte le future che...
+
+00:16:06.218 --> 00:16:08.278
+<v SPEAKER_1>Esatto, ed è proprio questo il punto.
+
+00:16:08.278 --> 00:16:19.918
+<v SPEAKER_1>Quando si fa una regola sul firewall deve essere fatta con delle configurazioni, delle ottimizzazioni speciali vendor-dependent che non sono uguali tra vendor.
+
+00:16:19.918 --> 00:16:25.318
+<v SPEAKER_1>Anche la parte logging non è uguale tra vendor, hanno delle peculiarità diverse.
+
+00:16:25.418 --> 00:16:33.898
+<v SPEAKER_1>Quindi il lavoro operativo per standardizzare due vendor diversi è talmente enorme di cui alla fine non ne vedo grandi vantaggi.
+
+00:16:33.898 --> 00:16:35.698
+<v SPEAKER_2>Forse non c'è risultato, vero?
+
+00:16:35.698 --> 00:16:48.478
+<v SPEAKER_2>Quindi, diciamo, sullo tema comunicazioni tra le reti, il primo ambito importante è capire i firewall in quella rete che ruolo stanno avendo e come le voglio separare.
+
+00:16:48.478 --> 00:17:00.558
+<v SPEAKER_2>L'altro pezzo di rete, come dire, su cui mettere un po il naso, è la comunicazione con le eventuali sedi esterne.
+
+00:17:00.558 --> 00:17:01.838
+<v SPEAKER_1>Sì, assolutamente.
+
+00:17:01.838 --> 00:17:04.178
+<v SPEAKER_2>Qua vado dritto al punto.
+
+00:17:04.178 --> 00:17:13.518
+<v SPEAKER_2>Tipicamente osserviamo spessissimo, ancora oggi, delle grandissime reti MPLS in cui si ritorna un po il concetto di prima.
+
+00:17:13.518 --> 00:17:23.158
+<v SPEAKER_2>Probabilmente ci sono delle logiche di routing che possono limitare il traffico tra sedi, cioè si può fare qualcosa in quel caso.
+
+00:17:23.158 --> 00:17:34.518
+<v SPEAKER_2>Però ce l'ho a dire che una volta che ho implementato quelle logiche di routing e ho deciso una visibilità a livello MPLS, se c'è soltanto la CPE che dà accesso alla rete, poi il resto è campo libero.
+
+00:17:34.558 --> 00:17:36.398
+<v SPEAKER_2>Questo è quello che notiamo.
+
+00:17:36.398 --> 00:17:47.478
+<v SPEAKER_1>Statisticamente, o meglio, idealmente potrei cambiare topologie, quindi fare a Ben Spook dove le varie sedi parlano solo con l'app centrale dove auspicabilmente ho un firewall.
+
+00:17:47.478 --> 00:18:01.758
+<v SPEAKER_2>E quindi lì diventa un po più complicato forse gestire il carico perché hai effettivamente un punto centrale in cui avrai tanta banda e una macchina in grado di gestire le sessioni di tutti quanti.
+
+00:18:01.758 --> 00:18:06.058
+<v SPEAKER_1>Nell'ambitore te, ad esempio, può avere senso dove i negozi parlano solo con l'app centrale.
+
+00:18:06.058 --> 00:18:10.118
+<v SPEAKER_1>Quindi anche lì non c'è una verità che si adatta a tutti.
+
+00:18:10.218 --> 00:18:12.278
+<v SPEAKER_1>Bisogna rifletterci un attimo.
+
+00:18:12.278 --> 00:18:16.338
+<v SPEAKER_1>Però statisticamente tutte le implementazioni, retail compreso, sono full mesh.
+
+00:18:16.338 --> 00:18:17.958
+<v SPEAKER_1>Quindi chiunque parla con chiunque.
+
+00:18:17.958 --> 00:18:30.558
+<v SPEAKER_1>E vabbè, è chiaro che se sono, come hai visto, toccato con mano tu in un negozio sperso nelle campagne italiane, arrivi secco in data center.
+
+00:18:30.558 --> 00:18:31.398
+<v SPEAKER_2>Capita, capita.
+
+00:18:31.398 --> 00:18:55.958
+<v SPEAKER_2>Tra l'altro, va giusto per citarla, questo che citiamo nell'ambito retail, nell'ambito in generale, della grande distribuzione, sono reti dove bisogna anche considerare proprio il tema quantitativo, perché una catena italiana o europea, cioè di quel tipo di dimensione, parliamo di centinaia, migliaia di punti vendita.
+
+00:18:55.958 --> 00:19:05.438
+<v SPEAKER_2>Quindi qualsiasi cosa tu decidi, ad esempio decido di mettere un firewall per il negozio, supponiamo, vuol dire metto mille cluster.
+
+00:19:05.578 --> 00:19:06.018
+<v SPEAKER_1>Esatto.
+
+00:19:06.018 --> 00:19:19.578
+<v SPEAKER_2>Quindi effettivamente l'IT manager, visto che siamo o il CIO, anche il CISO che sta chiedendo di fare improvement della security, si deve rendere conto che ok, spendiamo, investiamo per mille.
+
+00:19:19.578 --> 00:19:23.018
+<v SPEAKER_2>Cioè quella città lì è per mille, quindi bisogna ragionarci anche su questo.
+
+00:19:23.018 --> 00:19:32.878
+<v SPEAKER_1>Fatti, però dovremmo parlare in una puntata dedicata, perché ci sono varie soluzioni, ci sono soluzioni integrate a SD-WAN, a Cloudbase, dove possono o non possono avere senso.
+
+00:19:32.878 --> 00:19:44.718
+<v SPEAKER_1>Però economicamente anche lì, come detto prima, non sposo il multivendor, però se una soluzione diventa sostenibile per l'azienda, perché prima di tutto deve essere sostenibile, è ragione.
+
+00:19:45.058 --> 00:20:01.658
+<v SPEAKER_2>Quello potrebbe essere un caso in cui l'headquarter è trattato in un certo modo con dei vendori specifici, dove ho esigenze di sede con tantissima frequentazione, ad esempio, o perché erogo i servizi anche da quella sede.
+
+00:20:02.718 --> 00:20:06.878
+<v SPEAKER_2>Assolutamente che potremmo fare la distinzione anche dei data center esterni, ma ci arriviamo dopo.
+
+00:20:07.078 --> 00:20:18.418
+<v SPEAKER_2>E invece se ho 500, 1000 branch office, probabilmente li potrei selezionare una tecnologia più comoda per quel tipo di esigenza.
+
+00:20:18.418 --> 00:20:24.258
+<v SPEAKER_2>Ovviamente in qualche modo devo fare dell'integrazione, o il processo in qualche modo di essere integrato.
+
+00:20:24.258 --> 00:20:33.298
+<v SPEAKER_1>Io volevo però tornare un attimo al processo metodologico prima di buttarci sulla parte tecnologica per dare le basi su come procedere.
+
+00:20:33.298 --> 00:20:40.298
+<v SPEAKER_1>Quindi il nostro CISO si è fatto bene o male un'idea che non differisce tanto da quello che abbiamo appena raccontato, sempre statisticamente parlando.
+
+00:20:40.938 --> 00:20:42.278
+<v SPEAKER_1>E poi?
+
+00:20:42.278 --> 00:20:48.578
+<v SPEAKER_1>E poi il punto principale secondo me è capire cosa c'è per capire come proteggerlo.
+
+00:20:48.578 --> 00:21:08.918
+<v SPEAKER_1>Quindi ogni area di sicurezza che può essere l'interno dove c'è tutto o appunto le singole zone di sicurezza conterranno dei dati preziosi dell'azienda, dei dati, dei servizi, ma abbiamo parlato della parte ottiva, benissimo, o i negozi, insomma ci sono delle cose che vanno protette.
+
+00:21:09.158 --> 00:21:21.998
+<v SPEAKER_1>Ed è questo, cioè bisogna partire da questo, quindi capire come una cosa va protetta e c'è tutto il discorso di quanto è vulnerabile, quanto è aggiornabile, quanto può essere protetto, come eccetera eccetera.
+
+00:21:21.998 --> 00:21:29.538
+<v SPEAKER_1>Dobbiamo cominciare a definire con chi deve e soprattutto in una logica zero trust con chi non deve parlare.
+
+00:21:30.418 --> 00:21:36.478
+<v SPEAKER_2>Dove questo con chi non è l'host, almeno nella mia testa, non è tanto l'host, ma è più l'utente.
+
+00:21:36.478 --> 00:21:51.298
+<v SPEAKER_1>L'utente sì, nell'ottica zero trust dovrebbe essere non solo chi, nel senso utente anche host applicativo, ma chi come, quindi il protocollo, quando con che applicativo diventa complicato.
+
+00:21:51.298 --> 00:21:55.118
+<v SPEAKER_1>Però già se identifichiamo cosa c'è, è già tanto.
+
+00:21:55.178 --> 00:21:56.458
+<v SPEAKER_2>Esatto, esatto.
+
+00:21:56.458 --> 00:22:01.118
+<v SPEAKER_2>Effettivamente questa cosa si ribalte immediatamente post-assessment.
+
+00:22:01.118 --> 00:22:07.718
+<v SPEAKER_2>Spesso ci capita di suggerire dei ritocchi di rete, in alcuni casi anche purtroppo dei redesign.
+
+00:22:07.718 --> 00:22:18.478
+<v SPEAKER_2>Capito anche quel classico esempio, giusto per ricitarlo, una rete OT che ha una barra 8, probabilmente bisogna rimetterci mano.
+
+00:22:20.358 --> 00:22:35.038
+<v SPEAKER_2>Questa cosa, effettivamente il design della rete diventa un elemento di sicurezza, non soltanto di buona gestione del network, perché se ho disegnato bene la rete, poi applicare delle polissi di sicurezza diventa un po più facile.
+
+00:22:35.118 --> 00:22:36.278
+<v SPEAKER_1>Assolutamente.
+
+00:22:36.278 --> 00:22:40.378
+<v SPEAKER_2>Ho quella granularità che mi aiuta ad agire anche chirurgicamente.
+
+00:22:40.378 --> 00:23:01.898
+<v SPEAKER_2>Se invece ho delle reti mal disegnate, facciamo dei esempi estremi, estremi che per noi vorrebbero essere estremi, ma sono reali, in cui non ho ad esempio un firewall tra il mondo server e il mondo client, che nelle nostre testi probabilmente è un'ovvietà, da quel punto di vista.
+
+00:23:02.638 --> 00:23:09.118
+<v SPEAKER_2>Se quella cosa manca, bisogna introdurla, è sicuramente un elemento sicuro da mettere a mano.
+
+00:23:09.118 --> 00:23:20.258
+<v SPEAKER_1>Secondo me hai fatto un ottimo esempio, perché appunto 10-15 anni fa, nel concetto prima Retean Trust, Rete Trust, nella Rete Trust ci finiva tutto server e client.
+
+00:23:20.438 --> 00:23:26.558
+<v SPEAKER_1>E ad oggi vediamo, per fortuna non tantissime aziende, ma ne vediamo che hanno ancora quell'ottica lì.
+
+00:23:27.078 --> 00:23:31.038
+<v SPEAKER_2>C'è la classica Retona Server, la Retona ancora più grossa.
+
+00:23:31.038 --> 00:23:32.038
+<v SPEAKER_2>Esatto.
+
+00:23:32.038 --> 00:23:35.538
+<v SPEAKER_2>Sulla parte client e queste due reti sono rootate tra di loro.
+
+00:23:35.538 --> 00:23:36.658
+<v SPEAKER_1>O addirittura sono la stessa rete.
+
+00:23:36.658 --> 00:23:43.998
+<v SPEAKER_2>O addirittura la stessa rete, è vero, mi è capitato anche questo molto più raramente, però il routing è abbastanza frequente.
+
+00:23:46.198 --> 00:23:53.218
+<v SPEAKER_2>L'altro passettino è proprio sulle DMZ che hanno uno scopo preciso.
+
+00:23:53.218 --> 00:23:55.018
+<v SPEAKER_1>Dovrebbero avere uno scopo preciso.
+
+00:23:55.278 --> 00:24:02.058
+<v SPEAKER_1>Originariamente erano le reti che accettavano connessioni da internet, ma non potevano farle su internet.
+
+00:24:02.058 --> 00:24:04.098
+<v SPEAKER_1>Quindi, vi faccio un passo indietro.
+
+00:24:04.098 --> 00:24:13.958
+<v SPEAKER_1>Quindi noi una volta che abbiamo identificato cosa c'è, dobbiamo determinare le regole con cui il traffico va e termina in questa zona di sicurezza.
+
+00:24:13.958 --> 00:24:24.918
+<v SPEAKER_1>Alcune regole sono per il funzionamento, quindi tocca abilitarle, altre perché sono necessarie per erogare servizi e quindi sono lo scopo.
+
+00:24:24.918 --> 00:24:54.618
+<v SPEAKER_1>Per fare un esempio, perché apparentemente ho detto la stessa cosa ma in realtà no, molti application server quando partono devono chiamare degli indirizzi internet per validare xml certificati e questo è obbligatorio per il funzionamento dell'applicativo, ma l'applicativo ad esempio è un portale interno di risorse di HR, e quindi il suo scopo è che sia raggiungibile dagli utenti interni e magari remoti e possa raggiungere database dove ci stanno le informazioni.
+
+00:24:54.618 --> 00:25:21.218
+<v SPEAKER_1>Quindi questa serie di regole, sempre parlando del nostro CISO quindi ad alto livello, spesso mi sono fatto aiutare da un odioso Excel che non piace però visivamente aiuta, dove c'è una matrice da A, dove la diagonale non ha senso perché da A la stessa zona di sicurezza si comincia a dipingere di rosso o di verde o di giallo a seconda di che cosa proprio ad alto livello dovrebbe succedere.
+
+00:25:21.478 --> 00:25:31.478
+<v SPEAKER_2>Almeno si riesce a capire quella rete con chi deve comunicare e quindi posso anche qualificare, come dicevi prima, con chi non deve comunicare.
+
+00:25:31.478 --> 00:26:01.578
+<v SPEAKER_2>Cioè posso anche mettere delle chiusure definitive a certe conversazioni all'interno dell'assaltora e dove deve comunicare posso andare a vedere che policy applicare, quindi andare un po più nel dettaglio a capire cosa permettere, cosa no, dove fare enforcement, dove no, dove fare dei compromessi, che inevitabilmente qualche compromesso dobbiamo farlo, l'importante è che siano pochi e ben capiti, ben studiati.
+
+00:26:01.578 --> 00:26:25.898
+<v SPEAKER_1>Ecco, non è banale perché il CISO tipicamente può fare questo lavoro, quindi arrivare ad un'idea di dove è il dato importante dell'azienda, dove è l'applicativo quello che impatta di più il business, quindi capire bene o male il flusso di traffico da A, ma non è il suo mestiere capire quali sono i vettori, i threat vector che possono arrivare lì.
+
+00:26:25.898 --> 00:26:29.278
+<v SPEAKER_1>E qua ci vuole un aiuto di chi fa il tuo mestiere.
+
+00:26:29.278 --> 00:26:30.118
+<v SPEAKER_2>Sì, sì, sì.
+
+00:26:30.118 --> 00:26:32.738
+<v SPEAKER_2>Beh, lì ci sono tanti approcci.
+
+00:26:32.738 --> 00:26:56.458
+<v SPEAKER_2>C'è un altro problema che mi è venuto in mente, che ho notato in varie situazioni, quando si approccia a questa cosa in un brownfield, quindi diciamo una rete che già lavora e devo introdurre delle enforcement, la prima grande cosa che ci si chiede è, anzi ci si rende conto che non si sa esattamente chi raggiunge quel servizio, quel servizio con chi parla.
+
+00:26:56.458 --> 00:27:03.258
+<v SPEAKER_2>C'è manca una mappatura ed è obiettivamente difficile farla, di quali sono le conversazioni tra questi sistemi.
+
+00:27:05.978 --> 00:27:31.818
+<v SPEAKER_2>Un po ho notato che ci si aiuta, diciamo strada facendo, una bella ottica che ho visto applicare ai nostri colleghi, ad esempio, che a me è piaciuta perché mi sembrava molto pragmatica, è quello di inserire la piattaforma del firewalling con un enforcement molto molto light e usare il traffico, diciamo, le future di visualizzazione del traffico che le piattaforme consentono per andare a qualificare il traffico e via via stringere.
+
+00:27:32.318 --> 00:27:33.498
+<v SPEAKER_2>Ci sono anche robe per...
+
+00:27:33.498 --> 00:27:38.678
+<v SPEAKER_2>robe, tecnologie per mappare un pochino meglio questa cosa se uno avesse l'igenza di fare la mappatura.
+
+00:27:39.418 --> 00:27:52.198
+<v SPEAKER_1>Sì, allora da un punto di vista pragmatico il Fairo secondo me è l'oggetto ideale, perché per il discorso che ci dicevamo prima è l'oggetto che ci dà quel tipo di visibilità, quindi perfetto.
+
+00:27:53.498 --> 00:27:57.998
+<v SPEAKER_1>Funziona se ho un punto layer 3, oddio funzionerebbe anche layer 2 però un pochino più complicato.
+
+00:27:57.998 --> 00:28:00.998
+<v SPEAKER_2>Layer 2 con la vitica future, come si chiamava le due segmentation.
+
+00:28:01.498 --> 00:28:10.158
+<v SPEAKER_1>Oviline insertion, o comunque si mette una porta tap che acquisisce tutto il traffico, eccetera, e da lì si può capire chi parla con chi.
+
+00:28:10.158 --> 00:28:19.618
+<v SPEAKER_1>Però sempre pragmatico, come dicevi appunto dei colleghi, meglio partire da reti piuttosto che host, perché sennò il problema è talmente...
+
+00:28:19.618 --> 00:28:21.658
+<v SPEAKER_2>Se ho migliaia di host, è diventato matto....
+
+00:28:21.678 --> 00:28:23.178
+<v SPEAKER_1>che è inaffrontabile.
+
+00:28:23.178 --> 00:28:38.658
+<v SPEAKER_1>Un'altra possibilità sempre concreta economicamente per chi non ha ancora il firewall ma vuole avere un'idea di quanto, anche perché se non ce l'hai, fai anche fatica a capire la dimensione, il sizing del firewall.
+
+00:28:38.658 --> 00:28:43.938
+<v SPEAKER_1>Quindi se c'è già un dispositivo layer 3, NetFlow può essere un aiuto.
+
+00:28:43.938 --> 00:28:45.158
+<v SPEAKER_2>Almeno le conversation.
+
+00:28:45.158 --> 00:28:47.438
+<v SPEAKER_1>Esatto, almeno le conversation.
+
+00:28:47.438 --> 00:28:56.518
+<v SPEAKER_1>E meno pratico, non perché non sia utile, ma perché di fatto l'atto pratico nel firewall ti dà già l'interfaccia che ti fa vedere cosa ti serve.
+
+00:28:56.518 --> 00:29:00.938
+<v SPEAKER_1>In NetFlow bisogna un po inventarsela, adattarsi con prodotti più o meno costosi.
+
+00:29:00.938 --> 00:29:12.898
+<v SPEAKER_2>C'è un, chiamiamolo BIAS, che ho visto, quando l'ho visto su una dashboard che veniva da NetFlow, popolata tramite NetFlow.
+
+00:29:12.898 --> 00:29:16.558
+<v SPEAKER_2>Giusto per capirci, NetFlow è un protocollo, non mi ricordo se era proprietario.
+
+00:29:16.558 --> 00:29:25.658
+<v SPEAKER_1>È un protocollo, NetFlow è nato come si esce, mi pare che AsFlow si chiama quello standard, esatto, o IP fix, non ricordo.
+
+00:29:26.838 --> 00:29:35.298
+<v SPEAKER_2>Ti dà gli elementi IP sorgente, porta sorgente, IP destinazione e porta destinazione, la timeline, non mi ricordo se ha anche altri parametri.
+
+00:29:35.298 --> 00:29:39.258
+<v SPEAKER_1>È una telemetria, la differenza importante del firewall.
+
+00:29:39.258 --> 00:29:44.578
+<v SPEAKER_1>Infatti in questo momento le stiamo dicendo che vale l'uno o l'altro, in realtà fanno due cose diverse.
+
+00:29:44.578 --> 00:29:48.878
+<v SPEAKER_1>Il firewall tipicamente a fine connessione ti dà il report di cosa è successo.
+
+00:29:49.358 --> 00:29:54.458
+<v SPEAKER_1>E te lo dà se in una connessione ad esempio database può dartelo anche giorni dopo.
+
+00:29:55.678 --> 00:29:59.018
+<v SPEAKER_1>Però per l'utilizzo che ne vogliamo fare può andare bene così.
+
+00:29:59.018 --> 00:30:07.438
+<v SPEAKER_1>Netflow invece fa telemetria, quindi ogni minuto circa, 30 secondi si può configurare, ti dice sono passati questi byte da A.
+
+00:30:07.438 --> 00:30:12.618
+<v SPEAKER_1>E quindi ti dà l'utilizzo quasi istantaneo.
+
+00:30:12.618 --> 00:30:26.178
+<v SPEAKER_2>Ho visto l'approccio che ho visto che non è sbagliato, però potrebbe nascondere dei problemi e quello di usare, di approcciare quello schema, quell'output di Netflow su base volume.
+
+00:30:26.178 --> 00:30:29.578
+<v SPEAKER_2>Quindi parto dalle conversazioni più grosse, più ciccione.
+
+00:30:30.598 --> 00:30:36.098
+<v SPEAKER_2>Non dico dimenticandosi, però tralasciando, intendendo tralasciare quelli che hanno poco volume.
+
+00:30:36.098 --> 00:30:42.418
+<v SPEAKER_2>Solo che in quelli di poco volume c'è di HCP, c'è DNS, cioè ci sono dei protocolli che comunque sono importantissimi.
+
+00:30:42.418 --> 00:30:51.978
+<v SPEAKER_2>Se si approccia quel metodo che è un metodo valido, bisogna comunque considerare tutte le conversazioni, non solo quelle cucciole.
+
+00:30:52.118 --> 00:31:00.018
+<v SPEAKER_1>È un lavoro, dobbiamo riparare in un altro momento, perché la gestione di file è a oggi tuttora complicato.
+
+00:31:00.018 --> 00:31:03.718
+<v SPEAKER_1>Comunque è un lavoro di raffinazione continua, assolutamente.
+
+00:31:03.718 --> 00:31:13.798
+<v SPEAKER_1>Però a un certo punto, tra la famosa matrici definita prima e qualcosa che segmenta il traffico, dovremmo riuscire a fare un match di cosa è compliant e cosa no.
+
+00:31:15.538 --> 00:31:16.958
+<v SPEAKER_1>E torniamo alla DMZ.
+
+00:31:16.958 --> 00:31:34.578
+<v SPEAKER_1>Quindi una volta la DMZ era la rete che riceveva trafico da internet e poteva collegarsi ad alcune host interne su specifica porta applicativo, nel verso opposto non poteva collegarsi a internet.
+
+00:31:34.578 --> 00:31:39.458
+<v SPEAKER_1>L'idea è che se mi viene compromesso dentro, non posso chiamare un command e control fuori.
+
+00:31:39.478 --> 00:31:43.338
+<v SPEAKER_1>La teoria, cosa è successo nel mondo?
+
+00:31:43.338 --> 00:31:48.658
+<v SPEAKER_1>È molto simile nel pure due model, nel mondo utile riparleremo è successa la stessa cosa.
+
+00:31:48.658 --> 00:31:52.598
+<v SPEAKER_1>L'evoluzione degli applicativi ha creato quello che ti dicevo prima.
+
+00:31:52.598 --> 00:32:01.798
+<v SPEAKER_1>Se io ho un WordPress interno, chi gestisce il WordPress che non è l'IT, vuole poter fare click upgrade e nell'upgrade c'è il WordPress che chiama fuori.
+
+00:32:01.798 --> 00:32:02.658
+<v SPEAKER_2>Certo.
+
+00:32:02.698 --> 00:32:15.718
+<v SPEAKER_1>Nel mondo application server devono validare tipicamente xml e certificati fuori, via dicendo, insomma c'è una casistica molto alta di chiamate dalla rete di Mz alla rete internet.
+
+00:32:16.798 --> 00:32:17.738
+<v SPEAKER_1>E questo è un problema.
+
+00:32:17.738 --> 00:32:19.098
+<v SPEAKER_1>Il secondo problema che vedo...
+
+00:32:19.098 --> 00:32:23.398
+<v SPEAKER_2>Giusto per infilarmi, ovviamente le minacce si sono infilate esattamente in quelle chiamate.
+
+00:32:24.218 --> 00:32:35.178
+<v SPEAKER_2>Quindi non è strano che i command in controllo utilizzino quei protocolli di comunicazione che sono quelli che abbiamo a un certo punto deciso di far utilizzare il servo di Mz.
+
+00:32:35.178 --> 00:32:36.938
+<v SPEAKER_1>Certo.
+
+00:32:37.638 --> 00:32:43.958
+<v SPEAKER_1>L'idea, l'approccio zero trust funziona o non funziona, dipende da quanta roba c'è nella rete di Mz.
+
+00:32:43.958 --> 00:32:46.298
+<v SPEAKER_1>Quindi non è proprio banalissimo.
+
+00:32:48.918 --> 00:32:50.638
+<v SPEAKER_1>Cosa è successo poi il lato interno?
+
+00:32:50.638 --> 00:32:51.978
+<v SPEAKER_1>Perché poi sono le varie direzioni.
+
+00:32:52.058 --> 00:32:54.698
+<v SPEAKER_1>Quindi dalla DMZ interna l'abbiamo appena visto.
+
+00:32:55.098 --> 00:33:10.578
+<v SPEAKER_1>Dalla DMZ all'interno nelle aziende un po strutturate, con diversi applicativi, succede che l'host della DMZ A deve parlare con l'host Z interno, l'host B con l'host Y.
+
+00:33:10.578 --> 00:33:22.118
+<v SPEAKER_1>A un certo punto ho visto che chi gestisce i firewall per non impazzire fa dalla rete DMZ alla rete server tutti per i protocolli MySQL.
+
+00:33:22.118 --> 00:33:33.918
+<v SPEAKER_1>Poi si aggiunge il SQL Server, poi si aggiunge l'FTP, poi ci sono cinque batch in SSA che aggiunge anche quello in fin di conti.
+
+00:33:33.918 --> 00:33:36.578
+<v SPEAKER_2>A fine la DMZ diventa un'altra rete server.
+
+00:33:36.598 --> 00:33:37.638
+<v SPEAKER_1>Esattamente.
+
+00:33:37.638 --> 00:33:47.218
+<v SPEAKER_1>Quindi la matrice del nostro CSO viene violata perché alla fine quando è concesso SSH o SSL lì può veramente passarci qualunque cosa.
+
+00:33:48.098 --> 00:33:50.238
+<v SPEAKER_1>Ma non è finita.
+
+00:33:50.238 --> 00:33:53.438
+<v SPEAKER_1>Fammi fare mente locale, quindi da dentro a fuori, eccetera, eccetera.
+
+00:33:54.958 --> 00:34:08.518
+<v SPEAKER_1>Questa lato sviluppo, questa cosa del famoso tree tire, quindi avere un front-end, un back-end, un database, eccetera, separati, l'ho visto in diverse realtà tradursi nella rete DMZ.
+
+00:34:08.518 --> 00:34:11.338
+<v SPEAKER_1>Metto una batteria di reverse proxy.
+
+00:34:11.338 --> 00:34:16.698
+<v SPEAKER_1>Reverse proxy è quello che una connettività da fuori e me la rimappa dentro.
+
+00:34:16.698 --> 00:34:20.098
+<v SPEAKER_1>Chiaramente stiamo semplificando tantissimo.
+
+00:34:20.098 --> 00:34:20.958
+<v SPEAKER_1>Che cosa succede?
+
+00:34:20.958 --> 00:34:41.138
+<v SPEAKER_1>Succede che togliendo eventuali bug del web server in sé, che siamo nel 2024, non sono così frequenti, tutto il traffico che viene terminato da reverse proxy viene mappato nell'host interno, nella rete server dove tipicamente ci stanno anche i database.
+
+00:34:41.598 --> 00:34:50.978
+<v SPEAKER_1>Questa cosa qui ha di fatto bypassato la DMZ, perché il reverse proxy non aggiunge nessuna misura di sicurezza.
+
+00:34:50.978 --> 00:35:01.018
+<v SPEAKER_1>In sé è solo uno specchio, quello che dentro butto fuori, a meno che di non avere estensioni tipo mode security, web application firewall, etc.
+
+00:35:01.018 --> 00:35:03.158
+<v SPEAKER_1>L'idea è questa.
+
+00:35:03.158 --> 00:35:05.318
+<v SPEAKER_1>Ma ne ho visto delle altre?
+
+00:35:05.318 --> 00:35:28.478
+<v SPEAKER_1>Nelle aziende magari un pochino più piccole ma complicate, dove c'è build automation, servizio di allarme, le guardie giurate che controlla le telecamere che sono sparse nelle tutte le sedi interne, ma passano per la DMZ, ci sono delle meravigliose inatte che mappano agli più pubblici delle telecamere o del mondo build automation direttamente ancora in una rete dentro.
+
+00:35:28.478 --> 00:35:32.898
+<v SPEAKER_2>Shodan ci ha fatto divertire tantissimo su queste cose.
+
+00:35:32.898 --> 00:35:41.698
+<v SPEAKER_1>Quindi siamo partiti dal mettiamo la DMZ perché non si nega mai, si ce l'abbiamo messo, c'è scritto DMZ, ma non sarà niente.
+
+00:35:41.698 --> 00:36:00.618
+<v SPEAKER_2>La chiuderei con l'errore che purtroppo vedo ancora, sempre meno ma è proprio quello più eclatante, server in DMZ che ha anche la NIC nella rete server, proprio per chiudere e quindi cortocircuito secco, in realtà non esiste la DMZ, di fatto cade completamente il concetto di DMZ.
+
+00:36:00.618 --> 00:36:07.698
+<v SPEAKER_1>O ha una NIC su una rete backup barra storage, per montare dei volumi che è montata anche da rete server.
+
+00:36:07.698 --> 00:36:33.878
+<v SPEAKER_2>Questo è un vecchio problema di design, ecco questa cosa tocca, uso il gancio per andare sul design delle reti a livello datacenter, dove un errore che vedo spesso è una non ripartizione tra ciò che è la parte server inteso, la network che espone i servizi anche semplicemente interni, da quelle che sono le network infrastrutturali.
+
+00:36:34.538 --> 00:36:57.738
+<v SPEAKER_2>E quindi, per dirla molto grezza, è correttissimo che il server applicativo abbia la NIC su una rete raggiungibile da tutti i client dell'azienda, con le dovute cautele è assolutamente inappropriato che gli SXI abbiano una NIC sulla stessa rete, cosa che invece tendenzialmente è sempre meno, però non è raro trovare.
+
+00:36:57.738 --> 00:37:02.958
+<v SPEAKER_2>E questo vale per tutti gli oggetti che fanno parte dell'infrastruttura.
+
+00:37:03.078 --> 00:37:06.118
+<v SPEAKER_2>E quindi tra l'altro è anche facile capire chi ci deve parlare.
+
+00:37:06.118 --> 00:37:12.718
+<v SPEAKER_2>Solo lì ti deve parlare con quegli oggetti, quindi è anche relativamente semplice costruire una regola da quel punto di vista.
+
+00:37:12.718 --> 00:37:27.798
+<v SPEAKER_1>Sì, diciamo che per sanare, anche per capire cosa c'è, dobbiamo fermarci, cominciare a fare un passo indietro, guardare che cosa è stato fatto negli ultimi anni e guardarlo in modo critico sapendo che ci dobbiamo mettere le mani.
+
+00:37:28.438 --> 00:38:03.198
+<v SPEAKER_1>Il CISO, e poi forse chiudiamo e riprendiamo la prossima volta con il design più tecnico, il CISO ha questo complito enorme, spesso in salita, in cui ostacola l'operatività, perché dice che ci dobbiamo fermare e queste cose le dobbiamo mettere a posto e convincere le persone a fare questa cosa qui, quindi questa analisi critica di quello che è stato fatto è un lavoro secondo me enorme, un po perché si peste ai piedi di chi quel lavoro l'ha fatto, che magari è lì da vent'anni e non accetta tanto di buon grado consigli, e forse secondo me è la sfida più alta che il CISO deve fare.
+
+00:38:03.198 --> 00:38:25.038
+<v SPEAKER_2>Sì, comunque è un approccio che deve, è un lavoro che richiede poi dei change, a volte anche intensi, e a volte vuol dire anche mettere mano pesantemente alla rete, quindi bisogna anche ragionare in ottica di investimenti, quindi inevitabilmente non è qualcosa che si può fare a colpo secco, probabilmente richiede dei passaggi.
+
+00:38:25.038 --> 00:38:25.658
+<v SPEAKER_1>Assolutamente.
+
+00:38:25.658 --> 00:38:35.558
+<v SPEAKER_2>L'importante è, almeno dal mio punto di vista molto analitico, fare una mappatura di come stanno girando le cose in quel momento, capire quali sono gli strati di comunicazione.
+
+00:38:35.558 --> 00:39:02.158
+<v SPEAKER_2>Dichiamo strati perché sono veramente gli strati, uno strato sprettamente infrastrutturale, uno sprettamente legato ai servizi, uno sprettamente legato agli utenti, agli accessi, quindi si creano effettivamente delle stratificazioni della rete e in questi strati devo capire che cosa mi aiuta a mettere dei paletti nelle conversazioni e poi questa cosa, come si diceva prima, si ribalta direttamente sul livello di sicurezza dell'infrastruttura.
+
+00:39:02.158 --> 00:39:07.318
+<v SPEAKER_1>Bene, direi che per oggi la terminiamo qui e la prossima volta andiamo più sul tecnico.
+
+00:39:07.318 --> 00:39:07.978
+<v SPEAKER_2>Perfetto.
+
+00:39:07.978 --> 00:39:09.838
+<v SPEAKER_1>Grazie, grazie per averci ascoltato.
+
+00:39:09.838 --> 00:39:09.978
+<v SPEAKER_1>Ciao.

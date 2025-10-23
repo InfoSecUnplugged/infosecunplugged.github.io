@@ -1,0 +1,532 @@
+WEBVTT
+
+00:00:08.902 --> 00:00:12.102
+<v SPEAKER_2>E poi c'erano tre domande che volevo fare.
+
+00:00:12.102 --> 00:00:14.642
+<v SPEAKER_2>Allora, uno in realtà, a due di le hai già un po risposto.
+
+00:00:14.642 --> 00:00:24.202
+<v SPEAKER_2>Una è cosa succede se non prestidio la tecnologia, non prestidio le DR, cosa che è nella quasi totalità dei clienti che io conosco.
+
+00:00:24.202 --> 00:00:35.202
+<v SPEAKER_2>La seconda è cosa succede se sbaglio, questa è già un po risposta, se sbaglio a fare una policy, la faccio troppo larga, la faccio troppo stretta è ovvio, ma la faccio troppo larga o in qualche modo non adego le mie policy.
+
+00:00:35.742 --> 00:00:50.642
+<v SPEAKER_2>E la terza, un po l'hai accendata prima, come faccio a verificare se la mio setup corrisponde all'attuale livello di minaccia, diciamo in termine globale, ed è adeguato alla mia organizzazione?
+
+00:00:50.642 --> 00:00:57.422
+<v SPEAKER_2>È chiaro che non c'è un test, una tantum è un test, una verifica continua, ma come faccio a fare questo test?
+
+00:00:57.422 --> 00:01:01.302
+<v SPEAKER_2>Allora, quindi prima cosa succede se non la presidio?
+
+00:01:03.062 --> 00:01:07.402
+<v SPEAKER_1>C'è stata una discussione appassionante sull'inchiede in qualche giorno fa.
+
+00:01:07.402 --> 00:01:33.142
+<v SPEAKER_1>Al di là della configurazione, dell'hunting, che sappiamo essere un problema forse dettato dal fatto che non si è ben consci di come si utilizza quella soluzione, è ovvio che se faccio una cosa che per natura mi spara all'armi e non guardi dell'armi, siamo appunto a capo, quindi lì il presidio è ovviamente fondamentale.
+
+00:01:33.142 --> 00:01:36.762
+<v SPEAKER_1>Sulla H24 o non H24, secondo me è un tema di contesto.
+
+00:01:36.762 --> 00:01:40.222
+<v SPEAKER_1>Ci saranno realtà dove ha senso e realtà dove forse non ha senso.
+
+00:01:40.222 --> 00:01:45.222
+<v SPEAKER_1>Quindi va qualificato ancora una volta quello che serve all'azienda.
+
+00:01:45.222 --> 00:01:52.642
+<v SPEAKER_1>Poi quando dico ha senso o non ha senso, non intendo a livello assoluto, intendo forse anche a livello economico.
+
+00:01:52.862 --> 00:02:11.402
+<v SPEAKER_1>Cioè tutte le organizzazioni dovranno fare, dovranno rapportare il rischio di avere un presidio limitato a un non H24 rispetto ai costi che sosterrebbero in caso di incidente.
+
+00:02:11.522 --> 00:02:12.362
+<v SPEAKER_1>La banalizzo.
+
+00:02:12.522 --> 00:02:21.042
+<v SPEAKER_1>Se un'azienda, dico una cosa che già di base non è vera, però è giusto per avere uno spaccato di come si potrebbe ragionare.
+
+00:02:21.462 --> 00:02:38.122
+<v SPEAKER_1>Se io ho un esercizio H24, cioè se io ho i servizi H24 e erogo degli SLA H24, sarei un po incauto a non dotarmi di un servizio che con uno SLA in qualche modo mi copre nell'intero arco della giornata.
+
+00:02:38.122 --> 00:02:44.162
+<v SPEAKER_1>Se non ho questo problema posso fare ragionamenti diversi, che non vuol dire se sono 8x5 allora deve essere tutto 8x5.
+
+00:02:44.162 --> 00:02:52.622
+<v SPEAKER_1>Poi ci sono ovviamente dei compromessi in base anche a che tipo di strumenti sto utilizzando, però posso fare dei ragionamenti da questo punto di vista.
+
+00:02:52.622 --> 00:03:18.562
+<v SPEAKER_1>Ho usato l'IDR, a differenza del CM, è attivo, cioè fa detection e response, quindi è una cosa che è configurata per avere una reazione, non è soltanto in ascolto, quindi posso permettermi di fare dei giochi, come dire di fare in modo che i miei tempi di reazione non siano necessariamente così mediati.
+
+00:03:19.762 --> 00:03:39.302
+<v SPEAKER_1>Altra cosa da considerare è che appunto l'IDR funziona se c'è una minaccia che conosce la blocca, e quindi siamo sorrivi, a meno che non siamo stati così furbi da disabilitare delle rule che bloccano le minacce note, ma teoricamente se la conosce la blocca, quindi possiamo, tra virgolette, provare...
+
+00:03:39.302 --> 00:03:40.242
+<v SPEAKER_2>Visto anche questo.
+
+00:03:40.802 --> 00:03:49.822
+<v SPEAKER_2>Perché comunque la disabilitazione può essere necessaria per il funzionamento di un applicativo, ma l'abuso di quella disabilitazione può portare a disastri.
+
+00:03:49.882 --> 00:03:52.102
+<v SPEAKER_2>Quindi è un confine molto sottile, no?
+
+00:03:52.102 --> 00:03:56.542
+<v SPEAKER_1>Esatto, quando si fa le eccezioni bisogna darci molto, molto cauti.
+
+00:03:56.542 --> 00:04:12.322
+<v SPEAKER_1>Però escludendo casi limite, almeno quelli che vorremmo essere casi limite, ma forse non sono così rari, ci stiamo preoccupando di tutto ciò che non conosciamo, quindi di come abbiamo impostato le rule.
+
+00:04:12.322 --> 00:04:20.002
+<v SPEAKER_1>Tra l'altro nulla vieta di impostare rule anche aggressive in detection e non in response, quindi mi faccio avvisare, ma non blocco.
+
+00:04:21.322 --> 00:04:30.282
+<v SPEAKER_1>Come strumento è molto d'utile, dà veramente tanto spazio per ragionare, però bisogna usarlo, ecco questo è il tema di base.
+
+00:04:30.362 --> 00:04:35.442
+<v SPEAKER_1>Quindi sul presidio si può un po ragionare.
+
+00:04:35.442 --> 00:04:38.282
+<v SPEAKER_1>Non mi ricordo più la domanda, però nel frattempo qual era andata dove era partita.
+
+00:04:38.282 --> 00:04:40.222
+<v SPEAKER_2>Allora, uno era se non presidio la tecnologia.
+
+00:04:40.222 --> 00:04:49.942
+<v SPEAKER_2>In realtà abbiamo risposto se non presidio la tecnologia può essere che di fatto una minaccia rilevata in detection passi sottotono.
+
+00:04:49.942 --> 00:05:02.922
+<v SPEAKER_2>Cioè una serie di detection che dovrebbero essere anomale, dovrebbero in qualche modo altare il livello di attenzione e nessuno le vede, nessuno le di fatto fa un'azione diciamo di miglioramento o di blocco.
+
+00:05:03.382 --> 00:05:15.122
+<v SPEAKER_2>Ed è anche vero che anche le minacce che vengono bloccate, se la tecnologia non è presidiata, prima o poi è possibile che queste minacce evolvano e riescano a trovare la chiave per passare.
+
+00:05:15.122 --> 00:05:22.102
+<v SPEAKER_2>Sempre per il fatto che nessuno vede cosa sta succedendo, nessuno ne migliora diciamo l'efficacia dello strumento.
+
+00:05:22.342 --> 00:05:26.362
+<v SPEAKER_1>Sì, quello che capita è che magari hai un'infezione latente e resta lì.
+
+00:05:26.362 --> 00:05:33.762
+<v SPEAKER_1>Fin quando per qualche ragione non riesce a sconfinare da dove si è infilata e fa danni.
+
+00:05:34.822 --> 00:06:08.942
+<v SPEAKER_2>Anche perché oggi lo vedo abbastanza spesso sui casi che mi capita di analizzare, il comportamento visto a un livello diciamo un pochino più alto, quindi non esplicitamente tecnico ma un pochino più alto, il comportamento di tantissimi applicativi che noi usiamo, sto pensando agli agenti di monitoraggio, agli agenti di reporting, quelli che controlla le licenze e glia dicendo, si comportano come dei malware, cioè nel senso fanno chiamate a dei sistemi esterni, command and control, dal quale ricevono una serie di informazioni.
+
+00:06:08.942 --> 00:06:19.762
+<v SPEAKER_2>Quindi cercando di astrarre un attimo i malware si comportano in una maniera molto simile, chiamano fuori, ricevono delle azioni e poi in qualche modo le eseguono.
+
+00:06:21.982 --> 00:06:22.662
+<v SPEAKER_2>Non banale.
+
+00:06:23.322 --> 00:07:12.402
+<v SPEAKER_1>Infatti nei comportamenti è poi divertente, non so se è il caso di aprire, c'è un'altra parentesi che forse è meglio ritagliare un'altra chiacchierata, però è divertente vedere appunto come una volta configurato un EDR in un certo modo, notare come alcuni dettagli su un comportamento che viene intercettato come malevolo, cambiando alcuni piccoli elementi, quello stesso comportamento non viene segnalato come malevolo, o quantomeno non subito, magari poi può essere che nel tempo venga poi acquisita, avevano acquisito le informazioni per dare una segnalazione, però spessissimo è capitato, facendo delle attività operative, che in prima estanza alcuni comportamenti passassero lisci, semplicemente cambiando ad esempio il target di destinazione della connessione.
+
+00:07:13.422 --> 00:07:20.382
+<v SPEAKER_1>Perché in quel caso specifico fu una chiamata verso Pestbin rispetto a una chiamata verso Dropbox.
+
+00:07:20.382 --> 00:07:41.802
+<v SPEAKER_1>Stesso identico comportamento, cambiava soltanto il sito finale su cui veniva aperta la connessione, quello di su Pestbin, veniva neanche bloccato, passava, ma veniva poi inviata l'allarme come comando in controllo, e quello invece verso Dropbox, no, non veniva inviato l'allarme, ma gli eventi registrati erano gli identici.
+
+00:07:44.022 --> 00:07:51.702
+<v SPEAKER_2>Ecco, c'è da dire che chi scrive malware usa quelle accortezze, diciamo, per passare sottotono, che chi scrive applicativi non usa.
+
+00:07:51.702 --> 00:08:16.802
+<v SPEAKER_2>Quindi stiamo al paradosso dove un'applicativa ha molto più probabilità di essere diciamo etichettato come comportamento malevolo di un malware vero e proprio, che invece usa una serie di accortezze come usare Dropbox, o domani sarà OneDrive, o Gmail stessa, cioè se non sono viste, e in quel modo passa a invisibile una connettività con Gmail, Gmail riceve delle istruzioni e poi può scatenare qualcosa.
+
+00:08:18.222 --> 00:08:30.482
+<v SPEAKER_2>La seconda domanda è cosa succede se sbaglio o poi, sì l'abbiamo detto, è via della prima, alla fine è la stessa cosa, abbiamo già risposto, qualcosa di malevolo può passare sottotono o posso essere riempito di falsi positivi.
+
+00:08:31.402 --> 00:08:33.862
+<v SPEAKER_2>Come faccio a verificare l'efficacia?
+
+00:08:33.862 --> 00:09:05.182
+<v SPEAKER_1>Allora qui purtroppo ho una mentalità viziata dal lavoro che faccio, però anche confrontandomi con altre persone la cosa migliore secondo me è pianificare come fanno molte realtà, fortunatamente realtà più mature, pianificare dei test di sicurezza che coinvolgano in qualche misura l'EDR o se l'azienda è addirittura così matura da avere un servizio che li supporta in intero servizio MDR, se possibile.
+
+00:09:05.182 --> 00:09:44.782
+<v SPEAKER_1>Anche perché è interessante appunto vedere se mentre lavoro soltanto sull'EDR sto lavorando su dei parametri funzionali, quindi mi sto verificando se le minacce che io potrei utilizzare in un contesto di attacco simulato e quindi simulando quello che potenzialmente potrebbe fare un retractor, verifico cosa l'EDR è in grado di osservare, di cosa è in grado di usare, di cosa è in grado di intercettare e su quegli output affino la configurazione del DR Ed è un parametro sicuramente interessante.
+
+00:09:44.782 --> 00:10:04.762
+<v SPEAKER_1>Secondo me ancora più interessante è in quel caso testare anche come il team che gestisce quella piattaforma reagisce a fronte di una minaccia, perché, ok, me l'ha detto, però la catena funziona nel momento in cui qualcuno fa anche delle azioni quando l'EDR segnala qualcosa.
+
+00:10:04.762 --> 00:10:18.282
+<v SPEAKER_1>Quindi in quel contesto ritengo più interessante rispetto a una verifica prettamente funzionale, quindi riesco o non riesco a girare o evadere il tuo EDR.
+
+00:10:19.902 --> 00:10:27.562
+<v SPEAKER_1>Penso sia più utile qualcosa che si estenda anche alle procedure e alla competenza, se vogliamo, del team che lo sta gestendo.
+
+00:10:27.562 --> 00:10:34.202
+<v SPEAKER_1>Se c'è un servizio è un'ottima occasione per andare a fare improvement anche di quel servizio di gestione.
+
+00:10:34.202 --> 00:10:40.682
+<v SPEAKER_1>Però, ripeto, questo è chiaramente un'opinione, diciamo, dall'angolatura di chi fare teaming.
+
+00:10:41.162 --> 00:10:46.682
+<v SPEAKER_1>Un'altra persona, probabilmente, darebbe anche altre risposte.
+
+00:10:47.222 --> 00:10:55.242
+<v SPEAKER_1>Ho la sensazione che quasi tutte le tecnologie di security oggi, se voglio avere un parametro di se sta funzionando o non sta funzionando, ci devo sparare contro.
+
+00:10:55.242 --> 00:10:58.822
+<v SPEAKER_1>Ci devo sparare contro e su quello mi faccio delle valutazioni.
+
+00:10:58.822 --> 00:11:09.442
+<v SPEAKER_1>Sono relativamente certo, anzi molto certo in realtà, che le tecnologie in campo abbiano il potenziale per fare faville.
+
+00:11:11.262 --> 00:11:14.202
+<v SPEAKER_1>Penso sia utile misurare lo sto potenziale a un certo punto.
+
+00:11:14.242 --> 00:11:18.482
+<v SPEAKER_1>Certo, di vedere che poi non abbiamo il potenziale tecnologico, proprio il potenziale di utilizzo in realtà.
+
+00:11:18.482 --> 00:11:26.562
+<v SPEAKER_1>Penso sia molto utile andare a vedere cosa succede nel mondo vero e su quello si fanno le modifiche del caso.
+
+00:11:26.562 --> 00:11:38.422
+<v SPEAKER_1>C'era un esempio che volevo fare venuto in mente, giusto per capire come la tematica prettamente tecnologica è delicatissima e non saprei neanche come saltarci fuori sulla parte dell'economia.
+
+00:11:38.422 --> 00:11:42.382
+<v SPEAKER_1>Quel test che avevamo fatto su quel file Smallware a giugno...
+
+00:11:43.162 --> 00:11:47.242
+<v SPEAKER_2>È un giorno diventato famoso, ne parlano, è una specie di leggenda.
+
+00:11:47.242 --> 00:12:02.382
+<v SPEAKER_1>L'altro giorno mi ha scritto una persona che mi ha detto, non posso fare il nome del vendor, però sono un vendor che non è sicuramente tra quelli blasonati, anzi penso sia anche un po scomparso dai radar, lui aveva una regola che lo bloccava.
+
+00:12:02.662 --> 00:12:03.802
+<v SPEAKER_2>Di default?
+
+00:12:03.802 --> 00:13:00.062
+<v SPEAKER_1>Di default, una regola che aveva costruito lui per fare un'altra cosa, andava a bloccare quel file Smallware, perché aveva una situazione contestuale in cui doveva bloccare le connessioni HTTPS verso i cloud driver, in buona sostanza, e quindi le DR, per quando non fosse stato tra i big player, ma di base alle stesse funzionalità, cioè funziona di base nello stesso modo, se funzionalità, scusate, ho detto una cosa sbagliata, il funzionamento di base è simile a quello degli altri DR, e quindi poteva costruire una regola di detection anche su quella gasistica, ovviamente non era una regola di default, quello che dicevi tu prima, di default, effettivamente capita che non ci siano queste regole, però anche su qualcosa che non è top di gamma, probabilmente con più difficoltà, con tutti i limiti del caso, poteva, aveva modo di fare una detection rule.
+
+00:13:00.062 --> 00:13:10.302
+<v SPEAKER_1>Quello che abbiamo osservato noi è che nelle configurazioni default dei blasonati non c'era una detection rule specifica, quindi è un po paradossale questa cosa.
+
+00:13:10.302 --> 00:13:11.702
+<v SPEAKER_2>Sì, abbastanza.
+
+00:13:13.622 --> 00:13:48.642
+<v SPEAKER_2>Il che apre un tema, lo apro dopo perché sennò non finiamo più, comunque il tema è come la scelgo questa tecnologia, però volevo un attimo rifare il punto su come testo la tecnologia, quindi per testare questo tipo di tecnologia nel mio contesto, da essere intanto contestualizzato poi di fatto la devo provare, quindi la devo provare su dei scenari reali e realistici di attacco simulato ed emulato, o per meglio dire diciamo attacchi automatici o diciamo più manuali artigianali.
+
+00:13:48.642 --> 00:14:21.622
+<v SPEAKER_2>Questo perché ci sono due approcci, uno è il testing automatico che io ho visto, dove ci sono delle soluzioni specifiche che lanciano una serie di attacchi già accaduti in passato, quindi malware reali e ha il pregio di essere automatico, quindi può testare decine, centinaia, migliaia di attacchi in un lasso di tempo molto breve e lo può fare continuamente per testare se le policy delle DR fanno effettivamente blocco di questi malware o no.
+
+00:14:22.642 --> 00:14:29.842
+<v SPEAKER_2>Test automatico, molto bello, molto veloce, molto diciamo continuativo con un problema.
+
+00:14:29.842 --> 00:14:41.362
+<v SPEAKER_2>I malware sono presi dalla realtà, ma in qualche modo i malware reali di cinque anni fa i commande e controllo non ci sono più, quindi sono stati modificati eccetera eccetera.
+
+00:14:41.362 --> 00:15:08.042
+<v SPEAKER_2>Quindi va comunque preso con le pinte e poi ci sono tutta la parte di simulazione, diciamo più passiamo il termine artigianale nel senso che ci sono delle persone che mettono il cappello da criminale e cercano di sviluppare appositamente delle regole, delle tecniche per bypassare gli EDR nel contesto specifico del cliente.
+
+00:15:08.042 --> 00:15:16.442
+<v SPEAKER_2>E questo chiaramente è molto più efficace anche se è meno massivo.
+
+00:15:16.442 --> 00:15:31.662
+<v SPEAKER_2>L'uno non sostituisce l'altro, ma l'altro, quindi il testing diciamo manuale, permette poi di verificare tutto il ciclo, tutto il processo, quindi non solo la piattaforma, ma anche chi quella piattaforma la presidia, quindi tutto il processo di response.
+
+00:15:33.922 --> 00:15:35.942
+<v SPEAKER_2>Come scelgo la tecnologia?
+
+00:15:35.942 --> 00:15:50.342
+<v SPEAKER_2>Quindi abbiamo visto che andare su Gartner in alto a destra può essere una buona idea, ma ci sono anche soluzioni meno blasonate che effettivamente un bloc che hanno diciamo dei pro nascosti magari perché non si conoscono.
+
+00:15:51.682 --> 00:15:53.142
+<v SPEAKER_2>Che è una premessa?
+
+00:15:53.142 --> 00:16:09.602
+<v SPEAKER_2>Questa premessa ne la faccio perché parlando recentemente con il team manager, questa persona mi diceva sì però alla fine piuttosto che avere la piattaforma piena di falsi positivi, preferisco una piattaforma meno aggressiva che fa il suo, ma magari ha qualche buco.
+
+00:16:10.482 --> 00:16:18.882
+<v SPEAKER_2>Ora, non sono propriamente d'accordo, perché una soluzione di questo tipo è un po l'ultimo paracadute che l'azienda ha.
+
+00:16:18.882 --> 00:16:26.782
+<v SPEAKER_2>Cioè, questa tecnologia entra in gioco quando il malware è arrivato nell'end point e qualcuno o qualcosa l'ha eseguito.
+
+00:16:26.782 --> 00:16:30.642
+<v SPEAKER_2>Quindi è l'ultima, proprio l'ultima protezione che abbiamo.
+
+00:16:30.642 --> 00:16:33.202
+<v SPEAKER_2>Quindi andare a scegliere.
+
+00:16:33.202 --> 00:16:39.122
+<v SPEAKER_2>Volontariamente una tecnologia che ha delle scoperture lo trovo un po in cauto, punto uno.
+
+00:16:39.122 --> 00:16:43.282
+<v SPEAKER_2>Ponto due, è vero che all'interno di un'organizzazione posso avere delle necessità diverse.
+
+00:16:43.282 --> 00:16:48.762
+<v SPEAKER_2>Quindi posso avere gli end point mobili, quindi le persone che vanno in giro che hanno un tipo di necessità.
+
+00:16:48.762 --> 00:16:51.542
+<v SPEAKER_2>Gli end point diciamo fissi in azienda che ne hanno un'altra.
+
+00:16:51.542 --> 00:16:53.782
+<v SPEAKER_2>I server iper protetti che ne hanno un'altra.
+
+00:16:53.782 --> 00:16:57.262
+<v SPEAKER_2>Quelli di front-end pubblicati su internet, un'altra.
+
+00:16:57.262 --> 00:17:02.222
+<v SPEAKER_2>E il mondo industriale, un'altra ancora, dove magari l'ADR non ce lo posso installare.
+
+00:17:03.402 --> 00:17:15.622
+<v SPEAKER_2>Tuttavia, trovo improbabile che un'azienda scelga due o tre soluzioni di ADR diverse semplicemente perché ha degli scenari diversi, dei scenari di rischio diversi.
+
+00:17:15.622 --> 00:17:25.462
+<v SPEAKER_2>Quindi l'assunzione è che la piattaforma sarà unica, molto probabilmente, e questa piattaforma avrà delle policy diverse rispetto agli specifici contesti.
+
+00:17:26.642 --> 00:17:28.442
+<v SPEAKER_2>Come la scelgo?
+
+00:17:28.442 --> 00:17:32.702
+<v SPEAKER_2>Mi è venuta una domanda che mi è venuta adesso, non era preparata, quindi te la butto proprio addosso.
+
+00:17:32.782 --> 00:17:34.522
+<v SPEAKER_2>Come scegli una tecnologia del genere?
+
+00:17:34.522 --> 00:17:35.282
+<v SPEAKER_2>Da dove parti?
+
+00:17:35.282 --> 00:17:41.042
+<v SPEAKER_1>Il processo decisionale secondo me dipende da molti fattori.
+
+00:17:42.062 --> 00:17:48.422
+<v SPEAKER_1>In questo periodo metterei tra uno dei fattori principali, ne vedo due, anzi, abbastanza importanti.
+
+00:17:48.422 --> 00:17:52.682
+<v SPEAKER_1>Uno è che che tecnologia ho in campo all'interno dell'organizzazione.
+
+00:17:52.682 --> 00:18:01.482
+<v SPEAKER_1>Potrebbe essere che una soluzione rispetto a un'altra mi dia delle integrazioni, che penso sia corretto considerare.
+
+00:18:01.642 --> 00:18:17.322
+<v SPEAKER_1>Visto il lavoro che fa quel tipo di applicazione, di software, garantirmi una scelta che mi aiuta a integrarmi meglio nel mio ecosistema potrebbe essere una cosa intelligente.
+
+00:18:17.322 --> 00:18:30.662
+<v SPEAKER_1>In generale, ma è un problema che non si pone, è vero per tutte le soluzioni che vado a inserire nel mio stack tecnologico in generale, quindi come si diceva anche l'altra volta, ma non è appunto questo il problema.
+
+00:18:30.662 --> 00:18:36.342
+<v SPEAKER_1>Se devo selezionare una soluzione magari guardo qualcosa che ha delle API che siano consistenti.
+
+00:18:36.342 --> 00:18:46.722
+<v SPEAKER_1>È un po verticale come tipologie di analisi, però penso che un team manager non possa non valutare come si integrerà con il resto del ecosistema oggi.
+
+00:18:46.762 --> 00:19:13.742
+<v SPEAKER_1>Cioè se continuiamo a ragionare per silos, siccome il contesto su cui di solito questa cosa va implementata sono contesti di una certa dimensione, se parliamo appunto di un EDR usato come andrebbe usato, quindi con qualcuno che per quanto minima parte lo gestisca, di solito sono contesti dove non c'è una sola persona all'IT, ma ci sono più figure che si dividono un po gli oneri.
+
+00:19:13.742 --> 00:19:22.722
+<v SPEAKER_1>Appunto se comincio a riempirmi di silos, cosa che vedo tantissimo in realtà, tantissime soluzioni, tutte bellissime ma che non si parlano.
+
+00:19:23.962 --> 00:19:29.662
+<v SPEAKER_1>Ovvio che è un problema di gestione dopo, perché devo guardare i 14 console, ovviamente avrò un problema di gestione.
+
+00:19:29.662 --> 00:19:39.042
+<v SPEAKER_1>Quindi se parto da uno stack tecnologico, ciò che è integrabile io lo metterei a foto al comune con le nuove soluzioni.
+
+00:19:39.042 --> 00:19:46.222
+<v SPEAKER_1>Poi visto che è una soluzione in questo caso specifico che devo usare, cioè che dovrei voler usare, ecco, lo mettiamo così.
+
+00:19:47.302 --> 00:19:59.422
+<v SPEAKER_1>Una guardata su come funzionano, in caso specifico verticale, su come funzionano le dashboards, come sono le rule, come è fatto il meccanismo, come è fatto l'ashboard per eseguire le query, ad esempio.
+
+00:19:59.422 --> 00:20:09.502
+<v SPEAKER_1>Ok, quindi qualcosa che va un po oltre, anzi, che potrebbe sfociare in una POC della soluzione, più che in una semplice presentazione.
+
+00:20:09.582 --> 00:20:12.922
+<v SPEAKER_1>Ovvio che Energivore, però la scelta è abbastanza critica.
+
+00:20:14.342 --> 00:20:33.042
+<v SPEAKER_1>Scegliere qualcosa che mi è comodo da usare potrebbe essere la chiave che poi porta l'IT a usarla veramente con la soluzione e non essere il unesimo baraccone che ho comprato, fa il suo e poi sta lì perché non so usarlo, non ho voglia di usarlo, è complesso da utilizzare.
+
+00:20:34.842 --> 00:20:53.022
+<v SPEAKER_1>Ci sta anche che uno delega, non me ne frega niente, voglio il servizio e quindi però non sto scegliendo la soluzione, in quel caso sto delegando un servizio a una terza parte, quindi la soluzione a quel punto forse neanche mi interessa, cioè la scelta della singola soluzione forse non mi interessa.
+
+00:20:54.162 --> 00:20:56.962
+<v SPEAKER_1>Beh, direi questi i due principali elementi.
+
+00:20:56.962 --> 00:21:08.202
+<v SPEAKER_1>Poi ovviamente c'è un aspetto economico, però le fasce di mercato non hanno delle diversità.
+
+00:21:09.722 --> 00:21:12.642
+<v SPEAKER_1>Quindi se sono in una fascia, più o meno la spesa è quella.
+
+00:21:12.642 --> 00:21:20.902
+<v SPEAKER_1>Se cambio fascia, ovviamente ho una spesa inferiore o superiore, però coerente con gli altri prodotti della stessa fascia.
+
+00:21:21.662 --> 00:21:37.022
+<v SPEAKER_1>Non voglio assolutamente lanciarmi in discussioni di una fascia meglio dell'altra, secondo me è tutto sempre da contestualizzare in chi sta comprando in quel caso e chi deve usufruire di quella di quella di quella soluzione.
+
+00:21:38.302 --> 00:21:53.562
+<v SPEAKER_2>Quindi l'integrazione prima di tutto e ci sta perché la soluzione deve integrarsi in un processo aziendale che sia erogato dall'azienda stessa o da un partner, comunque quello che ci siamo detti va gestito e poi secondo me è una soluzione che è facile da provare.
+
+00:21:53.562 --> 00:22:03.922
+<v SPEAKER_2>Posso prendermi un endpoint e installarmelo sul cloud fuori dai miei confini, installarci la gente e provarlo.
+
+00:22:03.922 --> 00:22:13.482
+<v SPEAKER_2>Molto probabilmente provarlo significa farci passare dei malware più o meno sofisticati e vedere se si comporta come deve comportarsi.
+
+00:22:13.482 --> 00:22:20.962
+<v SPEAKER_2>Sì, sì, molto probabilmente qua c'è bisogno di aiuto, bisogna farlo fare a qualcuno che ha questo tipo di competenze.
+
+00:22:20.962 --> 00:22:31.502
+<v SPEAKER_2>Però non è, come dire, passano i termini a provare un firewall dove è impossibile ricostruire un ambiente parallelo con gli stessi tipi di flussi di rete.
+
+00:22:31.762 --> 00:22:32.402
+<v SPEAKER_1>È invasivo.
+
+00:22:32.402 --> 00:22:38.022
+<v SPEAKER_2>Stiamo parlando di installare un endpoint da qualche parte, ammazzarci dentro qualche malware e vedere cosa succede.
+
+00:22:38.102 --> 00:22:42.342
+<v SPEAKER_2>E anche una soluzione abbastanza semplice da sostituire.
+
+00:22:44.642 --> 00:22:52.982
+<v SPEAKER_2>Non in dolore, però tutto sommato si tratta di disinstallare un'agente precedente, di installare il nuovo e un po di lavoro senza ombra di rubbio.
+
+00:22:52.982 --> 00:23:00.942
+<v SPEAKER_2>Ma anche qua non è sostituire un firewall, che è drammatico sia anche da un punto di vista operativo di fermi macchina.
+
+00:23:00.942 --> 00:23:04.682
+<v SPEAKER_2>Quindi questo la rende abbastanza duttile come possibilità.
+
+00:23:04.682 --> 00:23:17.122
+<v SPEAKER_2>Lo posso scegliere, posso prendermi il tempo per sceglierla bene, la scelgo, se ho sbagliato, mi rendo conto che proprio non ci siamo, la posso sostituire, insomma con un'effort tutto sommato relativo.
+
+00:23:18.542 --> 00:23:19.682
+<v SPEAKER_2>Stavi aggiungendo?
+
+00:23:19.682 --> 00:23:29.922
+<v SPEAKER_1>Sì, no, c'era un altro elemento che mi era venuto in mente sempre da una discussione avuta con un ricercatore, che lavora in un band, ma di fatto è un ricercatore.
+
+00:23:34.922 --> 00:23:38.862
+<v SPEAKER_1>Stavo cercando di ricostruire cosa mi aveva detto per dirlo in maniera che non sia compromettente.
+
+00:23:41.242 --> 00:23:54.282
+<v SPEAKER_1>È abbastanza interessante in queste soluzioni valutare, qui è una porta aperta per il futuro, però io ci farei una pensata, valutare i servizi che il vendor è in grado di erogare.
+
+00:23:57.302 --> 00:24:12.262
+<v SPEAKER_1>Non è un mistero, alcuni vendor si sono dotati o per acquisizione, quasi tutti per acquisizione, non so, forse qualcuno non per acquisizione, però molti per acquisizione, sono dotati anche di team di incident response, legati ovviamente alla piattaforma in qualche misura.
+
+00:24:12.262 --> 00:24:25.422
+<v SPEAKER_1>Quindi potrebbe essere furbo anche selezionare qualcuno che dietro ha dei team che in qualche modo arricchiscono l'utilizzo di quella piattaforma.
+
+00:24:25.422 --> 00:24:29.422
+<v SPEAKER_1>Anche per la Trit Intelligence vale lo stesso modello.
+
+00:24:30.202 --> 00:25:32.642
+<v SPEAKER_1>Siccome queste piattaforme usufriscono dei risultati della Trit Intelligence per individuare nuove minacce, fa parte del meccanismo, diciamo, lato vendor di improvement, è ovvio che se il vendor ha anche un team che fa quello di mestiere, magari c'è anche chi lo eroga direttamente, ma c'è anche chi ce l'ha internamente solo per fare quel tipo di lavoro, insomma è una riflessione che andrei a fare rispetto a chi usa la stessa meccanica comprata all'esterno, cioè quindi il vendor ma ricompra qualcosa all'esterno, ma praticamente credo che quasi tutti i vendor abbiano in qualche misura dei team di ricerca specifici su questo ambito, è una cosa comunque che ci penserei nell'ottica di valutare un domani se ho bisogno, Ad esempio, di aggiungere degli elementi di incident response che per spiegata facile è ok adesso supponiamo di aver fatto tutto bene, la piattaforma ci avvisa di tutto, siamo bravissimi, la presidiamo.
+
+00:25:32.862 --> 00:25:39.842
+<v SPEAKER_1>Il tema incident response emerge quando ho il problema, cioè ok adesso ho una minaccia concreta da debellare, che faccio?
+
+00:25:39.842 --> 00:25:47.162
+<v SPEAKER_1>Lì entra in gioco la incident response e ancora una volta o siamo stati capaci noi di costruirci qualcosa internamente o devo chiedere aiuto all'esterno.
+
+00:25:47.962 --> 00:25:56.982
+<v SPEAKER_1>Quindi è un tema che spero a pochi capiterà di trattare, ma evidentemente sarebbe poco cauto non considerarlo in generale.
+
+00:25:56.982 --> 00:25:58.522
+<v SPEAKER_2>Statisticamente a qualcuno capita.
+
+00:25:58.522 --> 00:26:00.602
+<v SPEAKER_1>A qualcuno, esatto.
+
+00:26:00.602 --> 00:26:04.202
+<v SPEAKER_2>E qualcuno dice ma è successo proprio a me.
+
+00:26:04.202 --> 00:26:05.222
+<v SPEAKER_1>Nonostante avessi i VDR.
+
+00:26:05.222 --> 00:26:08.702
+<v SPEAKER_2>Sì, sono d'accordo con te.
+
+00:26:09.002 --> 00:26:17.962
+<v SPEAKER_2>Il vendor, perché proprio per cui è vendor, conosce molto bene una piattaforma e probabilmente è in grado di gestirla, diciamo, meglio di tanti altri.
+
+00:26:17.962 --> 00:26:23.382
+<v SPEAKER_2>Meglio significa anche improvement o automazione su larga scala.
+
+00:26:23.422 --> 00:26:33.342
+<v SPEAKER_1>Ma una cosa, ad esempio, che non suggerisco, almeno sui big player, di buttare un occhio al report di 30 Intelligence che fanno.
+
+00:26:35.262 --> 00:26:36.442
+<v SPEAKER_1>Molti li vedono separati.
+
+00:26:36.442 --> 00:26:43.842
+<v SPEAKER_1>In realtà quei report sono fantastici per fare improvement di quelle piattaforme, perché si sono elencate le nuove minacce.
+
+00:26:43.842 --> 00:26:48.782
+<v SPEAKER_2>Infatti, questo poi non toglie comunque una sorta di ciclo di controllo della piattaforma.
+
+00:26:48.782 --> 00:27:21.122
+<v SPEAKER_2>Cioè il fatto che l'ho comprata dal vendor, il vendor la gestisce e mi fa response, non significa che ok adesso me ne dimentico, va comunque testato, ma va testato non perché la piattaforma o il vendor lo sia come dire approssimativo, ma perché ogni azienda è un po a sé, il contesto quindi è preciso e non è detto che quello che sia dato ad altri sia adatti allo stesso modo a un'azienda manifatturiera del nord-est italiano, con tutte le specialità di tutte le aziende che ci sono chiaramente.
+
+00:27:21.122 --> 00:27:28.842
+<v SPEAKER_2>Quindi l'improvement necessita di una verifica sul campo precisa e contestualizzata.
+
+00:27:31.322 --> 00:27:34.782
+<v SPEAKER_2>Ok, direi che abbiamo sviscerato l'argomento.
+
+00:27:34.782 --> 00:27:39.342
+<v SPEAKER_2>Potremmo parlare di XDR, ma lo faremo la prossima volta, perché ci vorrà un'altra oretta.
+
+00:27:39.822 --> 00:27:57.762
+<v SPEAKER_1>Io appunterai due argomenti, sicuramente l'XDR come estensione, perché è sicuramente da valutare e se i voglia ci sarebbe un terreno scivoloso, che è la tematica dell'Evasion degli EDR.
+
+00:27:57.762 --> 00:28:05.022
+<v SPEAKER_1>In questo periodo ho sentito diverse conversazioni e anche dispute sul tema.
+
+00:28:07.142 --> 00:28:17.062
+<v SPEAKER_1>Mi piaceva magari spendere due parole, un po per non terrorizzare le persone, un po per rendersi conto di che cosa vuol dire, cosa comporta e come si gestisce.
+
+00:28:20.362 --> 00:28:29.722
+<v SPEAKER_2>Prendo i due consigli, l'XDR secondo me è l'evoluzione dell'EDR, nel senso quello che in realtà è tutta onestà, secondo me siamo in ritardo.
+
+00:28:29.722 --> 00:28:39.382
+<v SPEAKER_2>Nel senso mi aspettavo una imposizione delle piattaforme XDR, molto molto più veloce rispetto a quello che sta accadendo realmente.
+
+00:28:39.382 --> 00:28:41.142
+<v SPEAKER_2>Questa cosa non me la spiego onestamente.
+
+00:28:43.062 --> 00:28:55.982
+<v SPEAKER_1>È malizioso direi che c'è anche un tema di ammortamento di investimenti enormi, infatti magari su piattaforme CM, perché secondo me non dico che lei sostituisce.
+
+00:28:57.082 --> 00:29:01.082
+<v SPEAKER_1>Però c'è un evidente overlap da questo punto di vista, ne parliamo poi.
+
+00:29:01.082 --> 00:29:10.362
+<v SPEAKER_2>Sì, io penso che tenderà a sostituirle, o meglio, adesso è un po quello che è successo con Splunk, la sua acquisizione secondo me.
+
+00:29:11.042 --> 00:29:19.602
+<v SPEAKER_2>Diventeranno la base nascosta, o quello che è successo per Elastic, la base nascosta di piattaforme complesse, di ecosistemi complessi.
+
+00:29:19.602 --> 00:29:31.582
+<v SPEAKER_2>Invece il classico SIEM che l'azienda si ottiene in casa per ingerire tutti gli eventi, prioritizzarli, creare le rule di correlazione, eccetera, eccetera, secondo me diventa sempre più nicchia.
+
+00:29:31.582 --> 00:29:47.242
+<v SPEAKER_2>Non perché siano inutili, ma il discorso di prima, la maggior parte dell'azienda non ha competenze per arrivare a quel livello e probabilmente con un 80 per cento di copertura è veramente serena.
+
+00:29:47.242 --> 00:29:50.842
+<v SPEAKER_2>Tanto alla fine l'attacco da qualche parte ci deve passare.
+
+00:29:50.842 --> 00:29:59.522
+<v SPEAKER_2>Se il mio 15-20 per cento è nascosto, il primo poi passa nel rimanente 80 per cento che è coperto.
+
+00:29:59.522 --> 00:30:05.902
+<v SPEAKER_2>A quel punto l'efficacia non è la stessa, ma non è neanche così distante.
+
+00:30:06.842 --> 00:30:10.322
+<v SPEAKER_2>Però senza anticipare troppo.
+
+00:30:10.322 --> 00:30:13.022
+<v SPEAKER_2>Ok, allora ti direi alla prossima.
+
+00:30:13.022 --> 00:30:15.262
+<v SPEAKER_1>Alla prossima, buona giornata.
+
+00:30:15.262 --> 00:30:16.602
+<v SPEAKER_2>Grazie a tutti, ciao.

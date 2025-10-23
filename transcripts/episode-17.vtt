@@ -1,0 +1,1039 @@
+WEBVTT
+
+00:00:09.796 --> 00:00:14.436
+<v SPEAKER_2>Benvenuti a Info Sec. Unplugged, io sono Andrea Dainese, con me c'è sempre Rocco Sicilia.
+
+00:00:14.436 --> 00:00:15.076
+<v SPEAKER_2>Ciao Rocco.
+
+00:00:15.076 --> 00:00:16.956
+<v SPEAKER_1>Ciao.
+
+00:00:16.956 --> 00:00:21.596
+<v SPEAKER_2>E lo spunto di oggi vuole essere la documentazione in azienda.
+
+00:00:22.076 --> 00:00:36.476
+<v SPEAKER_1>Ci ho lasciati con questo task, di parlare un po del tema della documentazione, sempre dal punto di vista del nostro CEO, IT manager, CISO, che deve prendere in mano la situazione.
+
+00:00:38.576 --> 00:00:46.276
+<v SPEAKER_1>Uno delle cose di cui abbiamo parlato la volta scorsa, che spesso manca, è una documentazione aggiornata.
+
+00:00:46.276 --> 00:00:53.496
+<v SPEAKER_1>Vogliamo essere buoni, parliamo di documentazione aggiornata, non di assenza di documentazione, a quanto riguarda l'infrastruttura.
+
+00:00:55.116 --> 00:01:36.656
+<v SPEAKER_1>Noi magari la vediamo più venendo dal lato della consulenza, approcciamo il tema chiedendo se c'è della documentazione di rete, all'esempio della documentazione operativa anche in relazione alle procedure, quando dobbiamo preparare degli assessment o lavorare su dei progetti e ci rendiamo conto, almeno è molto più facile che mi venga risposto o non c'è quel tipo di documento o ci sono delle bozze non aggiornate, appunto, comunque raramente, non è un 100% fail, però raramente mi viene presentato un documento completo e aggiornato.
+
+00:01:36.656 --> 00:01:39.456
+<v SPEAKER_1>Ecco, questo è più o meno quello che osservo.
+
+00:01:40.616 --> 00:01:45.076
+<v SPEAKER_1>Visto che siamo in due, ti chiedo se anche tu osservi la stessa cosa, così vediamo.
+
+00:01:45.076 --> 00:01:47.876
+<v SPEAKER_2>Sì, qua ci sta un FacePalm.
+
+00:01:47.876 --> 00:01:54.956
+<v SPEAKER_2>Io non so veramente da dove partire, perché secondo me la situazione è abbastanza disastrosa.
+
+00:01:54.956 --> 00:01:58.476
+<v SPEAKER_2>Nel senso che, come hai detto tu, spesso la documentazione non c'è.
+
+00:01:59.276 --> 00:02:17.756
+<v SPEAKER_2>Se c'è è appena bozzata o vecchia, ma il problema che io vedo è che ad oggi non vedo strumenti, come si può dire, assodati, industrializzati, cioè dei prodotti che hanno lo scopo di fare documentazione fatta bene.
+
+00:02:17.816 --> 00:02:24.876
+<v SPEAKER_2>E questo so già che mi attirerò le iere di molti, però è la mia opinione pragmatica come al solito.
+
+00:02:25.636 --> 00:02:27.976
+<v SPEAKER_1>Pessole che hanno fatto documentazione, cioè ci è capitato.
+
+00:02:28.616 --> 00:02:41.116
+<v SPEAKER_2>Pessole che hanno dovuto fare documentazione si sono dovute anche tappare il naso e abbiamo comunque dovuto lavorare a Excel e a Word, però vorrei dirlo pubblicamente.
+
+00:02:41.116 --> 00:02:48.716
+<v SPEAKER_2>Se lavoriamo con fogli Word o Excel, stiamo lavorando nel modo sbagliato.
+
+00:02:48.716 --> 00:02:59.076
+<v SPEAKER_2>La brutta notizia è che non ci sono strumenti oggi pensati per fare documentazione integrata in azienda.
+
+00:02:59.076 --> 00:03:05.656
+<v SPEAKER_2>Integrata intendo nonché l'IT usa i suoi strumenti, la qualità usa i suoi, lo sviluppo usa i suoi, eccetera.
+
+00:03:05.656 --> 00:03:22.896
+<v SPEAKER_2>Intendo che l'azienda ha un ecosistema di documenti che non siano statici, quindi non sia il documento Word o il foglio Excel, perché vi sfido a tenere aggiornata una documentazione al suono di fogli Word, documenti Word.
+
+00:03:22.896 --> 00:03:24.836
+<v SPEAKER_2>E questo è un problema.
+
+00:03:24.836 --> 00:03:48.436
+<v SPEAKER_2>È un problema di compliance, normativa, io cito sempre GDPR, ma non solo, perché per fortuna direi le normative richiedono una dinamicità dell'azienda, e quindi se i documenti vengono scritti e rimangono liberati, non servono a niente, è il modo sbagliato per fare le cose.
+
+00:03:48.436 --> 00:03:57.116
+<v SPEAKER_1>Forse si possono pensare, almeno così l'avevo approcciata io in passato, vediamo la discussione aperta, si possono pensare di diverse classi di documentazione.
+
+00:03:58.936 --> 00:04:34.236
+<v SPEAKER_1>Word, sono assolutamente d'accordo, è inusabile, può essere magari comodo per scrivere, cioè io posso capire chi approccia inizialmente così la documentazione col documento di testo, perché butta giù tutto quello che, diciamo, ha esigenza di mantenere su un documento, ma la realtà dei fatti che poi quando vai a cercare di informazione, trovarla è veramente da un suicidio, anche perché poi diventano nello documenti, sappiamo quali sono i problemi tecnici.
+
+00:04:36.356 --> 00:05:16.716
+<v SPEAKER_1>In passato un prima usilio per quella tipologia di documentazione, cioè se devo scrivere effettivamente una procedura operativa, dico a caso, qualcosa che su quel tipo di supporto già il passaggio dal documento Word a una wiki, ad esempio, una wiki interna, già su quello ho visto dei vantaggi, non con la pretesa di mettere in quel documento tutti i dettagli tecnici, per questo parlerei di diversi tipi di documentazione, che poi un tecnico potrebbe potrebbe voler verificare o aggiornare.
+
+00:05:16.716 --> 00:05:40.596
+<v SPEAKER_1>Quindi, ad esempio, mettere lo schema di rete dentro la wiki potrebbe avere un senso, ma poi sappiamo che le modifiche sono molto complicate, o quantomeno richiederebbero dei vari passaggi di modifica, e quindi quello che succede tipicamente è che il contenuto wiki magari resta e aggiornato, ma gli schemi sono quelli vecchi, non vengono mai aggiornati, perché magari sono anche complessini.
+
+00:05:43.016 --> 00:05:52.276
+<v SPEAKER_1>Tengono l'esempio della rete perché quello che forse viene più, non so se è più facile, ma è quello che mi ha dato più soddisfazione in passato.
+
+00:05:52.276 --> 00:06:05.896
+<v SPEAKER_1>Per alcune tipologie, per alcuni ambienti e scenari dell'infrastruttura, probabilmente appoggiarsi a qualcosa che sia una strazione dell'infrastruttura aiuta di più.
+
+00:06:05.896 --> 00:06:21.136
+<v SPEAKER_1>Quindi mi viene in mente, ad esempio, se voglio avere una documentazione completa, ad esempio, del mio asset, devo affiancare un database che ha l'elenco dell'asset a eventualmente delle note tecniche.
+
+00:06:21.136 --> 00:06:26.296
+<v SPEAKER_1>Quindi devo avere, diciamo, dei posti dedicati dove mettere certe informazioni.
+
+00:06:26.296 --> 00:06:34.076
+<v SPEAKER_1>Non posso pretendere di avere un documentone con la tabellona degli asset, sarebbe poco usabile effettivamente.
+
+00:06:34.476 --> 00:06:53.616
+<v SPEAKER_1>Ha più senso, ma, ripeto, ragione a voce alta, avere degli strumenti digitali, quindi, ad esempio, in formato database in cui avere gli elenchi degli asset, degli items in generale, e poi eventualmente dei documenti a supporto che posso linkare all'interno della struttura.
+
+00:06:53.616 --> 00:07:09.936
+<v SPEAKER_1>Molti strumenti in realtà poi usano la tecnica delle page o delle knowledge base da associare a uno specifico elemento in modo da avere, diciamo, una parte scritta associata all'elemento che sto documentando.
+
+00:07:09.936 --> 00:07:13.716
+<v SPEAKER_1>Questo è uno spunto, diciamo, che mi viene in mente.
+
+00:07:13.716 --> 00:07:27.076
+<v SPEAKER_1>Anche perché poi quando hai un database organizzato di elementi, poi estrarre dei grafi, dei design, comincia a diventare plausibile.
+
+00:07:27.196 --> 00:07:34.096
+<v SPEAKER_1>Cioè, si può cominciare a pensare di estrarre degli elementi visivi di quello che ho documentato.
+
+00:07:34.096 --> 00:07:37.376
+<v SPEAKER_1>Ovviamente, se documento con sufficiente dettaglio.
+
+00:07:39.876 --> 00:07:56.416
+<v SPEAKER_2>Mi sono segnato un po di punti, tanti in realtà, da discutere perché credo sia un tema forse più ampio di quello dell'altra volta e direi anche strettamente legato, perché se la volta scorsa abbiamo parlato di compliance, non esiste compliance, non siamo in grado di documentare i processi.
+
+00:07:58.316 --> 00:08:11.196
+<v SPEAKER_2>Allora io parto dicendo che 1 la documentazione è onerosa, quindi se vogliamo tenere e gestire una documentazione a qualunque livello non possiamo pensare di farlo una tantum e poi dimenticarcela.
+
+00:08:11.196 --> 00:08:27.716
+<v SPEAKER_2>Questo è vero per le policy, per le procedure e i processi aziendali, ma direi come hai fatto tu l'esempio della documentazione di rete, è ancora più vero per tutti i processi T, quindi nel momento che qualcuno tocca qualcosa la documentazione dovrebbe essere aggiornata.
+
+00:08:27.716 --> 00:08:35.256
+<v SPEAKER_2>Poi tu hai giustamente diviso o meglio menzionato che la documentazione va fatta a vari livelli.
+
+00:08:35.256 --> 00:08:50.936
+<v SPEAKER_2>Allora partendo dall'altra volta, quindi citando la parte compliance abbiamo sicuramente delle policy, poi abbiamo delle procedure e per me le procedure sono qualcosa di estremamente stringato e descrittivo, quindi c'è il disegno del flusso e veramente poco altro.
+
+00:08:52.116 --> 00:09:11.896
+<v SPEAKER_2>Non sono un amante di documentazione centinaia di pagine, solo per il gusto di scriverla e per me deve essere utile, cioè se c'è un documento o qualcuno lo legge e ne trae un'utilità, ma se poi alla fine nessuno lo legge perché è barboso o vecchio, c'è qualcosa che non funziona a livello di azienda.
+
+00:09:11.896 --> 00:09:15.956
+<v SPEAKER_2>E poi c'è la documentazione tecnica che forse ci possiamo focalizzare lì.
+
+00:09:17.196 --> 00:09:19.856
+<v SPEAKER_2>Ma mi sento di fare questa riflessione.
+
+00:09:19.896 --> 00:09:26.876
+<v SPEAKER_2>La documentazione tecnica non è reportistica, quindi dividerei i due ambiti.
+
+00:09:26.876 --> 00:09:41.696
+<v SPEAKER_2>Cioè se le informazioni stanno in un database, come dire, il database potrebbe documentare la serie di asset, ma non serve scrivere dei documenti per ognuno che lo documenta.
+
+00:09:41.696 --> 00:09:51.656
+<v SPEAKER_2>Cioè quella è reportistica, la reportistica in un modo totale può essere generata alla bisogna di chi ha bisogno di vedere con l'informazione.
+
+00:09:53.436 --> 00:09:54.496
+<v SPEAKER_2>Tu hai parlato di Wiki.
+
+00:09:54.496 --> 00:10:02.416
+<v SPEAKER_2>Noi tra l'altro abbiamo avuto un'esperienza assieme in cui abbiamo basato la documentazione aziendale su uno strumento particolare che era X-Wiki.
+
+00:10:02.416 --> 00:10:04.776
+<v SPEAKER_2>Lo citiamo perché serve di spunto.
+
+00:10:04.776 --> 00:10:11.036
+<v SPEAKER_2>Non è il migliore della terra, ma nel nostro contesto abbiamo trovato delle cose positive.
+
+00:10:11.936 --> 00:10:18.236
+<v SPEAKER_2>Il problema di qualsiasi strumento wiki secondo me è che rischia di diventare caotico.
+
+00:10:18.236 --> 00:10:33.116
+<v SPEAKER_2>Cioè se ogni persona liberamente aggiunge pagine documenti per la cronaca X-Wiki permette anche di integra, come altri strumenti, di integrare una serie di script e quindi leggere dinamicamente sorgenti di dati esterne.
+
+00:10:33.116 --> 00:10:36.756
+<v SPEAKER_2>Quindi questo lo faceva particolarmente utile.
+
+00:10:36.756 --> 00:10:41.016
+<v SPEAKER_2>Però ecco qualsiasi strumento di wiki rischia di diventare caotico.
+
+00:10:41.476 --> 00:10:42.996
+<v SPEAKER_2>Se non ben governato.
+
+00:10:42.996 --> 00:11:07.216
+<v SPEAKER_2>Quindi la riflessione a posteriori è le aziende che vogliono strutturare la documentazione aziendale con wiki, ottimo strumento secondo me anche per ricercarla, ma devono fermarsi un attimo l'oneroso di cui prima, strutturarlo e come dire, demandare a una persona, a due persone l'onere di definirne la struttura.
+
+00:11:08.196 --> 00:11:12.436
+<v SPEAKER_2>Altrimenti diventerà caotico e sarà il cestino della documentazione.
+
+00:11:12.436 --> 00:11:24.916
+<v SPEAKER_2>Il cestino nel senso sarà il deposito della documentazione, dove ci sarà qualcosa, ma sapere se quel qualcosa è rilevante, aggiornato o semplicemente da buttare, sarà già difficile.
+
+00:11:24.916 --> 00:11:32.236
+<v SPEAKER_2>Quindi prima di spostare il problema proviamo a pianificarlo prima.
+
+00:11:32.236 --> 00:11:37.756
+<v SPEAKER_1>Sì, non va visto come uno sketchbook, cioè non è un posto a notare con lo se.
+
+00:11:37.756 --> 00:11:43.156
+<v SPEAKER_1>È uno strumento strutturato per fare un documento utile.
+
+00:11:43.156 --> 00:11:51.156
+<v SPEAKER_2>Esatto, e altre aziende ho visto usare gitbook o equivalenti, benissimo, uguale, vale lo stesso discorso di cui prima.
+
+00:11:51.156 --> 00:12:05.296
+<v SPEAKER_2>Forse il concetto di gitbook per sua natura riesce a essere già strutturato dall'inizio, perché wiki lascia dei gradi di libertà che un gitbook ha più difficoltà a lasciare, però va bene, il concetto è uguale, benissimo.
+
+00:12:06.916 --> 00:12:14.956
+<v SPEAKER_2>Nel mezzo ci sono poi anche tutte una serie di automazioni che possono essere fatte per generare dinamicamente una serie di pagine.
+
+00:12:14.956 --> 00:12:19.776
+<v SPEAKER_2>Però, ecco, ritornerai sul fatto che una cosa è la documentazione, una cosa è la reportistica.
+
+00:12:24.476 --> 00:12:54.596
+<v SPEAKER_2>Tu hai parlato di documentazione di rete, siccome un po il mio campo, e ci stavo lavorando giusto un quarto d'ora fa, è forse quello che lascia più spunto, più libertà, ma è forse anche un po complesso, perché appunto le documentazioni di rete di solito sono un sacco di nodi collegati assieme ed è difficile tenere traccia a un livello comprensibile di che cosa succede.
+
+00:12:54.596 --> 00:13:25.216
+<v SPEAKER_2>Quindi tipicamente poi ci sono disegni ad altissimo livello di come è fatta una rete in cui una sede è rappresentata da un box e il cloud da un altro box, in cui ci sono delle frecce che li collegano, però è una documentazione di rete talmente ad alto livello che tecnicamente non è utile, cioè tecnicamente significa entra un nuovo collega nell'ambito rete, ha bisogno di capire in che ambiente si sta muovendo e deve capire cosa c'è, come sono collegati, dove sono i flussi di rete, eccetera.
+
+00:13:25.776 --> 00:13:32.756
+<v SPEAKER_1>Sì, lo vedo veramente, però mi rendo conto che è un mio bias.
+
+00:13:32.756 --> 00:13:36.496
+<v SPEAKER_1>Io avrei bisogno di capire che cos'ho e dove ho fisicamente.
+
+00:13:36.496 --> 00:13:46.936
+<v SPEAKER_1>Quindi il primo elemento è che documenterei in un formato appunto digitale tipo un database o un asset management o un alibio di avvittura.
+
+00:13:47.976 --> 00:13:53.896
+<v SPEAKER_1>Ciò che ho è dove sono fisicamente anche questi oggetti, con i loro bei dettagli.
+
+00:13:53.896 --> 00:14:00.096
+<v SPEAKER_1>Quindi sono oggetti che hanno una monosenzione, deve essere annotata come proprietà dell'oggetto.
+
+00:14:00.916 --> 00:14:03.916
+<v SPEAKER_1>Tutto ciò che riscrive l'oggetto è di fatto una proprietà dell'oggetto.
+
+00:14:03.916 --> 00:14:09.276
+<v SPEAKER_1>Alla fine il concetto è abbastanza semplificabile così.
+
+00:14:09.636 --> 00:14:15.216
+<v SPEAKER_1>E un secondo dopo, dopo che ho capito che cos'ho e dove sono, come dialogano tra di loro.
+
+00:14:15.216 --> 00:14:19.016
+<v SPEAKER_1>Quindi un secondo dopo viene la rete a livello 2 prima e poi a livello 3.
+
+00:14:19.596 --> 00:14:23.336
+<v SPEAKER_1>Questo almeno nel mio mappa mentale.
+
+00:14:24.696 --> 00:14:27.316
+<v SPEAKER_2>E poi lo dico subito così apriamo un altro tema.
+
+00:14:27.316 --> 00:14:34.176
+<v SPEAKER_2>C'è il mondo del ok ma se io devo operare su quei dispositivi, su quell'ambiente, come ci devo operare?
+
+00:14:34.176 --> 00:14:43.776
+<v SPEAKER_2>Cioè banalmente, ed è veramente quello che stavo lavorando un quarto d'ora fa, se io devo configurare o verificare la configurazione delle interfacce di rete di uno switch.
+
+00:14:43.776 --> 00:14:48.416
+<v SPEAKER_2>Qualcosa veramente banale che dovrebbe poter fare l'ultimo arrivato.
+
+00:14:48.416 --> 00:14:51.736
+<v SPEAKER_2>Come faccio a sapere se quella configurazione è corretta?
+
+00:14:51.736 --> 00:14:52.756
+<v SPEAKER_2>Dov'è il template?
+
+00:14:52.756 --> 00:14:55.076
+<v SPEAKER_2>Su che basi mi regolo?
+
+00:14:55.076 --> 00:15:07.916
+<v SPEAKER_2>Sempre per evitare che l'ultimo che arriva non aumenti l'entropia usando il suo punto di vista, senza chiedersi come mai determinate scelte sono state fatte in passato.
+
+00:15:11.196 --> 00:15:12.736
+<v SPEAKER_2>Allora, partiamo da cosa c'è e dov'è.
+
+00:15:13.876 --> 00:15:18.656
+<v SPEAKER_1>Scusami, anche questo lo potremmo mettere dentro il...
+
+00:15:18.656 --> 00:15:46.016
+<v SPEAKER_1>Avrebbe il suo cappello di compliance, nel senso che se l'ho definito prima come deve essere la configurazione di uno switch a livello di naming convention, tutti i parametri diciamo di base, la potremmo mettere come documento, sia un documento tecnico che descrive appunto come fa lo switch, ma poi il tema è appunto restare compliance a quel modello, quindi devo anche sapere dov'è, se no vado a caso.
+
+00:15:47.036 --> 00:15:57.496
+<v SPEAKER_2>Allora, sia chiaro, è una compliance tecnica, nessun odito sulla terra vi verrà a chiedere la compliance della singola interfaccia di livello, o almeno ormai non è mai successo, è il vita mia.
+
+00:15:57.536 --> 00:16:24.956
+<v SPEAKER_1>Penso anche che possa succedere, però mi viene in mente la certificazione PCI DSS, che prevede, ma in realtà anche altre, prevedono l'introduzione di default configuration documentate per i dispositivi, che li ovviamente sono soggetti, dove bisogna garantire che non ci siano le configurazioni di fabbrica, quindi è previsto quel dettaglio lì.
+
+00:16:24.956 --> 00:16:39.916
+<v SPEAKER_1>Poi sì, non penso che nessuno venga fisicamente a verificare come è dovuta essere compliance il singolo apparato, però mi viene in mente questo dettaglio perché toccava un po il tema.
+
+00:16:39.916 --> 00:16:48.076
+<v SPEAKER_2>Però a livello operativo, abbiamo parlato dello Switch, ma possiamo fare la stessa analogia su una regola di un Firewall.
+
+00:16:49.416 --> 00:17:06.636
+<v SPEAKER_2>È importante, cioè è importante sapere delle mie 10.000 porte dello Switch o delle mie 2.000 regole del Firewall, o quante escono dal template che io mi sono prefissato, perché è in quello che si insinua poi la minaccia.
+
+00:17:06.636 --> 00:17:12.816
+<v SPEAKER_2>Più Firewall, forse, che lo Switch di attacchi di prossimità, magari non ce ne sono ancora tantissimi, però ce ne sono.
+
+00:17:15.216 --> 00:17:27.016
+<v SPEAKER_2>Ecco, su questo, secondo me, già parlarne, siamo no dei visionari di TPU, probabilmente una sorta di stregoni vesti da lontano che si chiedono cose talmente strane.
+
+00:17:27.016 --> 00:17:33.776
+<v SPEAKER_2>Le regole del Firewall si fanno a mano, l'interfaccia dello Switch si configura a mano fino al problema, salvo alcune eccezioni.
+
+00:17:33.776 --> 00:17:40.476
+<v SPEAKER_1>Che poi non è neanche, tecnicamente parlando, diciamo, non è neanche così complesso da realizzare.
+
+00:17:40.556 --> 00:17:54.956
+<v SPEAKER_1>Cioè, sì, non dico che sia una cosa facile da cinque minuti, però definire una base, diciamo, di templatezazione per un device e poi documentarne i change.
+
+00:17:55.036 --> 00:18:00.356
+<v SPEAKER_1>Non stiamo parlando di una cosa, diciamo, che ha delle complessità enormi, tecnicamente parlando.
+
+00:18:01.036 --> 00:18:08.396
+<v SPEAKER_1>È un forse più un tema di volontà a volte, in modo da dire, e di strumenti anche, cioè vorrei anche di strumenti che mi aiutano.
+
+00:18:09.436 --> 00:18:13.176
+<v SPEAKER_2>Sì, e questo probabilmente è il punto iniziale dolente.
+
+00:18:13.176 --> 00:18:29.196
+<v SPEAKER_2>Cioè, non vedo strumenti sostenibili economicamente per l'azienda, perché poi ci sono dei bellissimi strumenti, però quello che io vedo è che hanno un costo troppo alto rispetto a quella che è l'azienda, è disposta poi a pagare.
+
+00:18:30.196 --> 00:18:37.556
+<v SPEAKER_2>Quindi partiamo dall'idea che per il solito ambiente in cui noi lavoriamo tipicamente non ci sono quegli strumenti.
+
+00:18:37.556 --> 00:18:44.776
+<v SPEAKER_2>Si possono farli in casa, nel senso che ci sono una serie di costruttivi che poi possono essere messi assieme.
+
+00:18:49.056 --> 00:18:53.236
+<v SPEAKER_2>I mean, the skills are in the configuration of the device.
+
+00:18:53.236 --> 00:18:59.436
+<v SPEAKER_2>We are still too much connected to the CLI, to the CLI, and we hardly manage to break away from that concept.
+
+00:18:59.516 --> 00:19:03.096
+<v SPEAKER_2>Difficilmente riusciamo a slegarci da quel concetto là.
+
+00:19:03.756 --> 00:19:31.696
+<v SPEAKER_2>Questo lo vedo in ambienti anche medio grandi, dove un po mi sorprende devo dire, ho delle esperienze recenti proprio in questo ambito, ed è anche il problema, perché se tutto è nuovamente legato alla CLI, la variabilità che la CLI ti dà è talmente vasta che è difficile poi riportarla a un fattore comune, e quindi torniamo al template.
+
+00:19:31.696 --> 00:20:00.196
+<v SPEAKER_2>Qui tutto si può fare anche per piccoli passi, manca la volontà e comunque non lo si approccia in modo corretto, cioè ci si butta sull'automazione, io sono un fan ma anche cauto, perché prima la dobbiamo pensare, prima dobbiamo decidere, ok io vado a fare queste cose qua, che cosa mi porta il famoso why, ma soprattutto come evito che vada nel caos.
+
+00:20:01.916 --> 00:20:06.756
+<v SPEAKER_2>E il mio lavoro, quindi ci metto le mani tutti i giorni.
+
+00:20:10.156 --> 00:20:58.176
+<v SPEAKER_1>Partendo dalla micro esigenza della documentazione e usando come tool l'ambito dell'automazione, che secondo me sarebbe effettivamente il cambio e la strategia per ottenere un risultato, il fatto di avere un po di automazione anche già in quel task, mi vengono in mente alcuni strumenti potenzialmente utili, sono i famosi IPAM, stando sull'ambito rete, quindi stiamo toccando una specifica esigenza, quindi non è uno strumento general purpose, va bene proprio per quella specifica esigenza.
+
+00:20:58.176 --> 00:21:46.796
+<v SPEAKER_1>L'IPAM, giusto per chi non ha mai sentito parlare, di fatto sono dei database anche loro con gli strumenti che raccolgono una serie di informazioni, quindi anche loro all'interno hanno il loro bel elenco di oggetti di network appliance, nel caso specifico di cui la rete è popolata, anche gli host possono essere inseriti all'interno del database, ma la cosa più interessante è che sono in grado di gestire le network all'interno della struttura nelle loro varie forme, quindi esiste l'entità subnet, esiste l'entità vlan, ovviamente possono essere legate tra di loro, esiste l'entità router, quindi ha una logica per il router dentro lo strumento, e consente, inserendo le informazioni correttamente, di avere una buona visione di come è fatta la rete.
+
+00:21:46.796 --> 00:21:55.356
+<v SPEAKER_1>Quindi a livello di documentazione è molto utile, molto più utile di un visio enorme inaggiornabile, per capirci da questo punto di vista.
+
+00:21:55.416 --> 00:21:56.616
+<v SPEAKER_1>Sì, assolutamente.
+
+00:21:56.616 --> 00:22:09.636
+<v SPEAKER_1>Soprattutto spesso consentono, che è una cosa che a me piace molto e che ho trovato utilissima in tantissimi assessment, consente di dividere quella che è la logica a livello 2 della rete, quindi le interconnessioni, da quella che è la logica a livello 3.
+
+00:22:09.636 --> 00:22:13.856
+<v SPEAKER_1>Quindi come gira il traffico, che è un'altra cosa che ad esempio...
+
+00:22:13.856 --> 00:22:21.776
+<v SPEAKER_1>Ecco, questa cosa in particolare ho notato ha creato tantissima confusione in alcune aziende.
+
+00:22:21.776 --> 00:22:52.596
+<v SPEAKER_1>C'era magari la mappatura a livello 3, e quindi dove sono le network, come comunicano tra di loro, qui sono i default gateway, ma a livello di interconnessione c'era il buio totale, e quindi in caso di problemi, quando ti serve capire chi è connesso a cosa, c'era veramente difficoltà nel capire dove stava il problema, perché non mancava proprio la documentazione, e se hai un problema di rete e la rete non funziona bene, è difficile poi andare sul dispositivo a vedere cosa non sta funzionando, perché non ci arrivi a volte.
+
+00:22:53.036 --> 00:22:56.996
+<v SPEAKER_1>Questa è l'importanza della documentazione a livello network.
+
+00:22:58.856 --> 00:23:04.796
+<v SPEAKER_1>Ipam mi è sembrato un buon modo per raccogliere quelle informazioni.
+
+00:23:04.796 --> 00:23:22.336
+<v SPEAKER_1>L'automazione su quel tipo di strumento è strautile, perché il tipo di informazioni che servono per avere poi la documentazione completa sono tutte cose che possiamo chiedere veramente con degli scriptini banalissimi ai device.
+
+00:23:22.516 --> 00:23:25.836
+<v SPEAKER_1>Quindi veramente si tratta di scripting.
+
+00:23:25.836 --> 00:23:28.576
+<v SPEAKER_1>Già chiamarlo automazione è un complimento.
+
+00:23:28.576 --> 00:23:30.036
+<v SPEAKER_1>Stiamo parlando di scripting base.
+
+00:23:30.036 --> 00:23:35.056
+<v SPEAKER_1>Poi è meglio inserirlo in un contesto di automazione, però stiamo parlando veramente di scripting banalissimo.
+
+00:23:36.876 --> 00:23:46.996
+<v SPEAKER_2>Io sposo questa tua proposta nel senso che l'Ipam piace anche a me come strumento, perché è un po, lasciami il termine, l'asset inventory visto dalla rete.
+
+00:23:46.996 --> 00:23:49.156
+<v SPEAKER_2>Non è proprio corretto, però dai, passamela.
+
+00:23:50.576 --> 00:23:55.076
+<v SPEAKER_2>Nasce per indicizzare tipicamente gli Ip, quindi capire quali sono usati.
+
+00:23:55.076 --> 00:23:59.996
+<v SPEAKER_2>No, poi è stato esteso, come hai detto tu, Villain, Warf, eccetera, eccetera.
+
+00:23:59.996 --> 00:24:06.336
+<v SPEAKER_2>Non è un asset inventory, sebbene possa fare gran lavoro, è abbastanza facile da implementare.
+
+00:24:06.336 --> 00:24:22.676
+<v SPEAKER_2>Ci sono due soluzioni open source, che poi nascono dallo stesso padre, Netbox e Nautobot, che secondo me sono molto meglio di tantissime soluzioni commerciali.
+
+00:24:22.676 --> 00:24:29.296
+<v SPEAKER_2>Non è un CMDB, non è un sistema di monitoraggio, però in un certo senso, come dicevi tu, sono tutte collegate queste cose.
+
+00:24:30.576 --> 00:24:47.216
+<v SPEAKER_2>Per chi, e diamo un primo suggerimento forse più concreto di tutti gli altri, gestisci ancora oggi gli IP con i file Excel, e lo so che ce ne sono tantissime di aziende che fanno così, è un buon momento per fermarsi e cominciare a fare un po d'ordine.
+
+00:24:47.216 --> 00:24:49.176
+<v SPEAKER_1>Almeno quello.
+
+00:24:49.176 --> 00:24:50.756
+<v SPEAKER_2>Almeno quello.
+
+00:24:50.756 --> 00:25:02.956
+<v SPEAKER_2>E purtroppo non si può, anche da abili programmatori, non si potrà prendere il file Excel e buttarlo dentro l'IPAM, perché l'IPAM richiede per fortuna un minimo di pianificazione.
+
+00:25:02.956 --> 00:25:04.536
+<v SPEAKER_2>Provo a fare due esempi.
+
+00:25:04.576 --> 00:25:13.356
+<v SPEAKER_2>Tu hai parlato delle VLAN, che per chi meno tecnici possiamo dirgli come un identificativo numerico della rete.
+
+00:25:14.456 --> 00:25:21.656
+<v SPEAKER_2>E c'è anche la parte VRF che probabilmente molte aziende enterprise non hanno o non sanno di avere, perché non hanno questa esigenza.
+
+00:25:22.676 --> 00:25:30.496
+<v SPEAKER_2>Queste due entità sono locali, o meglio, è un'informazione locale al dispositivo.
+
+00:25:30.916 --> 00:25:39.036
+<v SPEAKER_2>E devi permettervi un attimo una disquisizione tecnica, perché è importante per l'idea di pianificare.
+
+00:25:39.036 --> 00:25:49.156
+<v SPEAKER_2>Quindi quando noi andiamo a disegnare una rete, una VLAN, ma è ancora più vero per la VRF, tipicamente cerchiamo di dare una nomenclatura.
+
+00:25:49.156 --> 00:25:59.656
+<v SPEAKER_2>Quindi arrivo io, faccio la mia rete, eccetera eccetera, e dico che la VLAN ha quattro, e la VLAN ha dei dispositivi degli utenti, e la chiamo Office su tutti i dispositivi.
+
+00:26:02.256 --> 00:26:13.856
+<v SPEAKER_2>Vado in ferie e arriva un collega che magari mi sostituisce che non fa quello di mestiere, deve attaccare un altro dispositivo e lì la chiama, non Office, ma la chiama Ufficio.
+
+00:26:13.856 --> 00:26:16.936
+<v SPEAKER_2>E ne ho viste tante cose così, no?
+
+00:26:16.936 --> 00:26:30.816
+<v SPEAKER_2>E quando tu vuoi riportare queste informazioni nell'IPAM c'è un problema, perché tu stai usando lo stesso identificativo con nomi diversi e comincia a venire fuori i problemi, perché poi ha ariti complessi.
+
+00:26:30.816 --> 00:26:33.876
+<v SPEAKER_2>Esatto, esatto.
+
+00:26:33.876 --> 00:26:36.996
+<v SPEAKER_2>Per questo è importante, è importante cominciare a fare d'ordine.
+
+00:26:36.996 --> 00:26:49.376
+<v SPEAKER_2>Poi gli IPAM oggi, i due nomi ci dati prima, sono molto ampi, perché vi permettono di tenere traccia delle wifi, dei dispositivi, delle reti, delle racchi unit su singolo rec, dei cavi, del cablaggio.
+
+00:26:50.356 --> 00:27:07.336
+<v SPEAKER_2>E non bisogna farsi guidare dalla potenzialità dello strumento, perché vi permetterebbe veramente di sapere in quante tratti un troncone di rete, proprio un cavo in rame, è diviso patchpan su patchpan, eccetera eccetera.
+
+00:27:07.336 --> 00:27:22.776
+<v SPEAKER_2>È chiaro che partire da un'azienda che oggi funziona e cominciare a fare un analisi di questo tipo, quindi capire in quanti tronconi è diviso un cavo di rete e quali tipi di ogni porta sono stati usati, diventa impossibile.
+
+00:27:23.816 --> 00:27:35.416
+<v SPEAKER_2>Però sapendo appunto di semplificare il mondo, si può come detto tu cominciare a fare discovery di rete e cominciare a capire almeno come i dispositivi sono connessi.
+
+00:27:36.496 --> 00:28:04.576
+<v SPEAKER_2>Il secondo errore dopo il file xl degli indirizzi p che io vedo praticamente sempre è il rappresentare la rete con un unico diagramma, quindi layer 2 layer 3 tutto assieme e al fine non si capisce nulla, perché o non si sa esatto o non si sa come sono collegati i dispositivi o non si sa come il pacchetto viene ruotato di rete in rete.
+
+00:28:04.576 --> 00:28:16.116
+<v SPEAKER_2>Quindi il secondo consiglio è che i diagrammi devono essere due come hai detto tu giustamente uno per la parte layer 2 e uno per la parte layer 3 e già così non basteranno ma già così è tanta roba.
+
+00:28:16.116 --> 00:28:24.796
+<v SPEAKER_2>Perché è importante perché quando c'è un problema e io documentavo per me stesso questa è una cosa che facevo non so se mai capitato anche a te.
+
+00:28:24.796 --> 00:28:56.576
+<v SPEAKER_2>Nelle aziende in cui di volta in volta andavo a lavorare non trovavo documentazione scritta mi trovavo a dover capire come era fatto un ambiente e cominciavo da dispositivo a dispositivo a tracciarmi come erano collegati in modo che se un collega mi chiama e mi dice non funzionano più la stampante sapevo dove era, sapevo dove era il percorso che da router arrivava alla stampante e potevo collegarmi, potevo controllare tutte le tratte.
+
+00:28:57.636 --> 00:28:59.456
+<v SPEAKER_1>Un asterisco.
+
+00:28:59.456 --> 00:29:20.436
+<v SPEAKER_1>Probabilmente se io che te veniamo dalla dottrina zisco di come si documenta, di come dire la rete, quindi giusto prendere un riferimento chiaro proprio del design dove c'è una forte distinzione tra livello 2 e livello 3, proprio alle basi di come si disegna una rete.
+
+00:29:20.436 --> 00:29:24.436
+<v SPEAKER_1>Un asterisco importante, così diciamo, un elemento.
+
+00:29:24.436 --> 00:29:41.616
+<v SPEAKER_1>E confermo comunque, scusa se ti ho interrotto, che anche io ho questa esigenza di capire intanto l'interconnessione come è fatta, soprattutto tra switch, che poi è una cosa che cambia completamente il modo di come girano i pacchetti poi dentro la rete, e poi anche gli host che sono connessi.
+
+00:29:44.556 --> 00:29:46.116
+<v SPEAKER_2>Ricordo due esempi in particolare.
+
+00:29:46.116 --> 00:30:01.156
+<v SPEAKER_2>Allora il primo è che se la vostra infrastruttura, quindi non parliamo di accesso, non parliamo di data center, è completamente cloud based, forse vi potete risparmiare il diagramma layer 2, perché è nascosto da chi vi offre in infrastruttura, ma mi sa che è l'unico caso.
+
+00:30:01.156 --> 00:30:14.556
+<v SPEAKER_2>Però in ambito diciamo enterprise grosse, quindi aziende che lavorano sul dato, probabilmente avete una complicità in più, l'overlay o l'underlay, quindi in realtà i documenti non sono nemmeno due, sono tre, però questo è un altro un altro mondo.
+
+00:30:14.696 --> 00:30:20.296
+<v SPEAKER_1>Ci sono le incezioni che magari discutiamo a parte quando andiamo a spettacolare.
+
+00:30:20.296 --> 00:30:25.416
+<v SPEAKER_2>Sì, però adesso me l'hai veramente tirata fuori e quindi non posso non citarla.
+
+00:30:25.416 --> 00:30:50.916
+<v SPEAKER_2>Mi vengono in mente i container e quindi la parte tutto Kubernetes, via dicendo, dove introducono un livello, altro che ben più di uno e un'azienda che ho in mente doveva attivare appunto un cluster, non era Kubernetes simile, non ci diamo il vendore per non mi sembra corretto in questo momento.
+
+00:30:50.916 --> 00:31:05.556
+<v SPEAKER_2>Non è un problema del vendore sia chiaro, un problema di design perché quando vengono implementati quel tipo di soluzioni là praticamente sono una sorta di data center in a box che viene affidato poi a chi fa devops, nel bene e nel male.
+
+00:31:05.556 --> 00:31:06.536
+<v SPEAKER_2>Che cosa succederà?
+
+00:31:06.536 --> 00:31:19.876
+<v SPEAKER_2>Che nella mentalità classica si doveva dividere appunto questo cluster in dmz, servizi esposti e produzione all'interno e ai servizi interni.
+
+00:31:19.876 --> 00:31:26.476
+<v SPEAKER_2>Solo che il data center in a box, quindi il cluster Kubernetes di turno, questa distinzione non ce l'ha.
+
+00:31:26.476 --> 00:31:31.536
+<v SPEAKER_2>Nel senso è all'interno di chi fa questa operazione.
+
+00:31:31.536 --> 00:31:37.276
+<v SPEAKER_2>E quindi il risultato sono stati messi due o quattro server fuori, un altro po di server dentro.
+
+00:31:37.276 --> 00:31:43.676
+<v SPEAKER_2>VxLan tra essi ha costruito l'overlay che chiaramente bypassava qualunque regola di firewall.
+
+00:31:43.816 --> 00:31:46.656
+<v SPEAKER_1>Infatti era gradamente connessi in realtà.
+
+00:31:46.656 --> 00:31:47.876
+<v SPEAKER_1>Non c'era una...
+
+00:31:47.876 --> 00:31:49.216
+<v SPEAKER_2>Esatto, esatto.
+
+00:31:49.216 --> 00:31:57.436
+<v SPEAKER_2>No, era stato inutile far passare, dividere il class de Kubernetes da un firewall.
+
+00:31:57.436 --> 00:32:16.316
+<v SPEAKER_2>Questo è successo diversi anni fa, quindi oggi magari potrebbe far sorridere, però agli inizi in cui la parte IT classica, quindi chi faceva infrastruttura di tipo classico, gli veniva presentato una cosa del genere dove non era ben chiaro che cosa succedesse là dentro, amero che non ci aveva già sbattuto la testa.
+
+00:32:16.316 --> 00:32:45.396
+<v SPEAKER_2>E quindi per me è stato un po buffo far notare che appunto questa divisione dentro e fuori non aveva molto senso, in più chiaramente quella cosa che era stata installata non era documentata, nessuno aveva idea di come venivano mappa a teleporti, di come erano i flussi di traffico dai verso internet, quindi non c'era alcuna idea, era proprio una scatola nera presa, comprata, messa lì con tutti i problemi del caso.
+
+00:32:46.956 --> 00:32:59.336
+<v SPEAKER_2>Tornando al nostro CMDB, una volta che è auspicabilmente ben documentato, possiamo andarci a popolare il sistema di monitoraggio con i famosi piccoli script che tu hai detto.
+
+00:32:59.396 --> 00:33:05.316
+<v SPEAKER_2>Quindi tutte le porte taggate, come, che ne so, Trunk o Uplink, possono essere automaticamente...
+
+00:33:08.576 --> 00:33:16.116
+<v SPEAKER_2>possono popolare il sistema di monitoraggio, senza dover poi ricordarsi dispositivo per dispositivo a farlo umano.
+
+00:33:17.816 --> 00:33:29.216
+<v SPEAKER_2>Quindi, se noi ci fermiamo un attimo e pianifichiamo cosa e come vogliamo documentare e lo facciamo per piccoli passi, costostiamo questo non ecosistema.
+
+00:33:29.216 --> 00:33:33.576
+<v SPEAKER_2>E questo ecosistema sgraverà di molto la parte operativa.
+
+00:33:33.576 --> 00:33:46.936
+<v SPEAKER_2>Certo, dobbiamo fare ordine prima, perché se la VLAN 4 di cui prima è chiamata in 7 modi diversi, qualunque scrivito di automazione sarà pieno di eccezioni.
+
+00:33:46.936 --> 00:33:51.836
+<v SPEAKER_2>Nel senso, non sarà possibile poi far convergere queste informazioni.
+
+00:33:52.656 --> 00:34:11.276
+<v SPEAKER_2>E purtroppo, fare pulizia richiede anche dei fermi e porterà ad errori, nel senso che sbagliando per quanto si pianificano le cose, è possibile che ci siano degli errori che poi impattino sulla disponibilità della rete.
+
+00:34:11.276 --> 00:34:23.196
+<v SPEAKER_1>Se probabilmente a livello di processo siamo, prima si definiscono gli standard, quindi l'anime in convention che voglio utilizzare, come si chiama le video handle e subnet come devono essere fatte.
+
+00:34:23.196 --> 00:34:25.516
+<v SPEAKER_1>Qui si fa una serie di valutazioni.
+
+00:34:26.736 --> 00:34:42.376
+<v SPEAKER_1>Se fosse un green field è il design e se siamo in una situazione già in produzione, non dico che è un redesign, però ci si dà delle regole di base.
+
+00:34:42.376 --> 00:34:49.156
+<v SPEAKER_1>A quel punto diventa anche relativamente più facile trovare ciò che è fuori dalla compliance, perché quando andrò...
+
+00:34:49.156 --> 00:34:52.016
+<v SPEAKER_1>Questo è un trucchetto che avevo usato anche un paio di volte in operation.
+
+00:34:52.016 --> 00:35:06.436
+<v SPEAKER_1>Cioè quando vado poi a raccogliere le informazioni sui vari apparati, immediatamente emergerà, puoi farti lanciare un'eccezione nel tuo script quando trova qualcosa che non esiste nella compliance.
+
+00:35:06.476 --> 00:35:21.376
+<v SPEAKER_1>Quindi se tu hai definito quattro tipologie di vilani di qua a caso con quattro nomi specifici, se il nome delle vilani che trovo sull'apparato non corrisponda a nessuno di quelli che ho nel mio template, evidentemente c'è qualcosa che non torna.
+
+00:35:21.376 --> 00:35:22.996
+<v SPEAKER_1>O banalmente non c'è il nome.
+
+00:35:22.996 --> 00:35:24.076
+<v SPEAKER_1>Ho trovato...
+
+00:35:24.076 --> 00:35:26.636
+<v SPEAKER_1>Cosa più divertente forse è trovare le vilani senza nome.
+
+00:35:26.696 --> 00:35:30.116
+<v SPEAKER_1>Centinaia di vilani senza nome, non sai cosa fanno.
+
+00:35:30.116 --> 00:35:35.456
+<v SPEAKER_1>Hai anche il dubbio se è giusta quella che sei usata o meno in alcuni casi, va be.
+
+00:35:37.036 --> 00:35:50.696
+<v SPEAKER_1>Quindi riesci poi a raccogliere le informazioni e cominci a fare effettivamente pulizia senza ancora spingerci sull'andare in scrittura sul device, anche se poi in realtà lo stesso processo puoi usarlo per andare in scrittura sul device.
+
+00:35:50.696 --> 00:35:55.096
+<v SPEAKER_1>Cioè come raccogliere le informazioni puoi anche pushare una nuova configurazione.
+
+00:35:55.496 --> 00:36:03.896
+<v SPEAKER_1>Però questo in dato ci porta sull'e-pan di turno tutto quello che ci serve per capire come è fatta la rete.
+
+00:36:03.896 --> 00:36:10.476
+<v SPEAKER_1>Giusto per dare due elementi tecnici che magari qua tu forse ci avrai anche sbattuto la testa.
+
+00:36:12.016 --> 00:36:27.576
+<v SPEAKER_1>Da cosa deriva la mappatura a livello 2, da cosa deriva la mappatura a livello 3, da quello che ho visto io, una volta che posso raccogliere i MAC Address pubblicati sulle varie porte degli amparati, posso fare una mappatura a livello 2.
+
+00:36:27.576 --> 00:36:35.736
+<v SPEAKER_1>Cioè ho le varie idea chains e le vedo perché vedo appunto quali oggetti sono direttamente connessi tra di loro e a quale porta.
+
+00:36:35.736 --> 00:36:39.516
+<v SPEAKER_1>Quindi riesci ad avere quantomeno tutti gli elementi per disegnarla.
+
+00:36:39.516 --> 00:36:45.456
+<v SPEAKER_1>Poi forse disegnarla non è così in un colpo secco, però gli elementi sono tutti.
+
+00:36:45.616 --> 00:36:48.076
+<v SPEAKER_1>E l'altra credo sia l'esabele di routing.
+
+00:36:48.076 --> 00:36:57.396
+<v SPEAKER_1>Quindi quando ho le varie routing table, le varie subnet, dovrei avere tutti gli elementi per poter disegnare anche la mappa Ledo 3.
+
+00:36:57.396 --> 00:36:58.756
+<v SPEAKER_2>Sì, corretto.
+
+00:37:00.116 --> 00:37:32.156
+<v SPEAKER_2>Sempre andando sul tecnico, chiaramente noi vogliamo essere estremamente divulgativi, non che siano complessi da tecniche, però aiuta molto quei protocolli di adiacenza che mostrano, si chiamano Cdp, LL, Dp che mostrano che cosa è connesso dall'altra parte, con tutte le eccezioni del caso, perché se il mio ecosistema di dispositivi è mono vendor, non esclusivamente Cisco, ma diciamo mono vendor, mi aiuta perché parlano più o meno la stessa lingua.
+
+00:37:32.156 --> 00:37:43.956
+<v SPEAKER_2>Quando cominciò a collegare dispositivi di qualunque tipo ho notato che l'implementazione di questi protocolli di adiacenza può essere molto fantasiosa, diciamo così.
+
+00:37:43.956 --> 00:38:00.736
+<v SPEAKER_2>E quindi le informazioni non sono proprio facili da automatizzare perché dall'altra parte il dispositivo ti risponde non con un singolo pacchetto come è successo in tutti gli altri 99,99% dei casi, ma in maniera completamente inaspettata.
+
+00:38:01.076 --> 00:38:02.856
+<v SPEAKER_2>E queste cose comunque aiutano.
+
+00:38:02.856 --> 00:38:16.916
+<v SPEAKER_2>Quindi comprare dispositivi economici di volta in volta dal vendor che fa meno sicuramente ha una convenienza economica, immediata, ma indirettamente a una complessità che aumenta.
+
+00:38:18.636 --> 00:38:38.396
+<v SPEAKER_2>Abbiamo parlato di rete, però la rete non è l'unico caos infrastrutturale, ma mi permetto di citare il firewall, quindi le regole che vengono aggiunte in modo infinito nei firewall, e alla fine nessuno osa rivederle, toccarle perché non si sa che cosa si rompe.
+
+00:38:39.536 --> 00:39:15.716
+<v SPEAKER_2>Secondo me nel firewall la situazione di documentazione è ancora più disastrata, perché oggi gli strumenti non permettono di documentare una change, quindi la change sta ospicabilmente in un ticket e fa riferimento a una regola, solo che la regola non è detto che abbia un'id univoco e che rimanga, e quindi questa informazione si perde, quindi nel giro di un tempo che può essere a seconda della dinamicità, qualche mese o qualche anno non è più possibile sapere chi e perché ha inserito delle regole all'interno di un faro.
+
+00:39:17.376 --> 00:39:31.016
+<v SPEAKER_2>Ci sarebbe tanto da dire, magari lo faremo in un approfondimento, però volevo citare anche il DNS, altro cestino caotico delle infrastrutture, e non so neanche che dire, va bene così.
+
+00:39:31.256 --> 00:39:33.616
+<v SPEAKER_2>Lo citiamo solo così, pur parlando.
+
+00:39:33.616 --> 00:39:38.696
+<v SPEAKER_2>Non so se ti vengono in mente altri cestini infrastrutturali che nessuno osa toccare per pulirlo.
+
+00:39:38.696 --> 00:39:54.556
+<v SPEAKER_1>Ma allora, quelli classici, cioè quelli proprio che, come dire, indocumentabili, proprio perché è difficile ricostruire una storia, e quindi a volte ci devi veramente rimettere la testa da zero, c'è anche la T-Directory.
+
+00:39:55.076 --> 00:40:21.656
+<v SPEAKER_1>Altro strumento su cui ci sarebbe tanto bisogno di darsi delle regole, però devo dire che nei ambienti maturi queste regole cominciano ad esserci col supporto di strumenti di identity management, quindi si sta cominciando a ragionare veramente di governance dell'acti directory, ma sono una percentuale troppo piccola di realtà, stanno facendo questo processo, stanno facendo questo passaggio.
+
+00:40:21.656 --> 00:40:41.976
+<v SPEAKER_1>Nella maggior parte dei casi l'acti directory è proprio un calderone di configurazioni, altro posto dove la tendenza è quello di aggiungere e mai di rimuovere, quindi inevitabilmente restano strati e strati di configurazioni passate, ma indocumentate.
+
+00:40:42.536 --> 00:40:50.056
+<v SPEAKER_1>Io capisco anche che sia, parliamo anche più di firewall, forse è anche difficile documentare quel tipo di oggetto.
+
+00:40:50.056 --> 00:41:04.756
+<v SPEAKER_1>Probabilmente bisogna fare dei compromessi in cui la documentazione di quell'oggetto si può anche limitare all'approccio con cui viene gestito quel servizio all'interno dell'azienda.
+
+00:41:04.756 --> 00:41:18.996
+<v SPEAKER_1>Quindi il firewall potremmo avere la documentazione delle zone, per aver descritto da qualche parte le zone e a cosa sono dedicate, e potremmo permetterci di avere in documentazione la singola rules.
+
+00:41:18.996 --> 00:41:25.136
+<v SPEAKER_1>Poi la singola rules probabilmente va in un altro posto, che è un aspetto che tocchiamo in un'altra occasione.
+
+00:41:25.656 --> 00:41:27.816
+<v SPEAKER_1>E la stessa cosa per l'acti directory.
+
+00:41:29.116 --> 00:41:45.836
+<v SPEAKER_1>Almeno i gruppi, per dire, e il loro livello di accesso, quello sì deve essere documentato, ma perché deve essere deciso a priori, prima di creare il gruppo devo aver scelto quel gruppo cosa farà, e che livello di privilegi avrà all'interno del mio activity directory.
+
+00:41:45.836 --> 00:41:53.276
+<v SPEAKER_1>Poi potrei non avere, anzi ce l'avrò comunque a per cento da qualche parte, la documentazione degli utenti.
+
+00:41:54.216 --> 00:42:05.596
+<v SPEAKER_1>Magari in documentazione non mi porto le singole proprietà di tutti gli items, quello ovviamente non ha senso, sono migliaia, sono miglioni in alcuni casi, un po come le regole del Firewall, non le devo documentare.
+
+00:42:05.596 --> 00:42:10.516
+<v SPEAKER_1>Ma come è fatta la struttura, quella da qualche parte deve essere definita.
+
+00:42:10.516 --> 00:42:17.216
+<v SPEAKER_1>I monetari devono trovarsi domani con dei gruppi, che nessuno sa chi ha fatto, perché sono stati fatti, se sono ancora utilizzati.
+
+00:42:18.376 --> 00:42:35.396
+<v SPEAKER_1>La stessa cosa succede una volta sugli exchange, oggi in generale sui sistemi di posta elettronica, mailing list, un po a caso, liste di distribuzione, sono i classici posti dove si annida la polvere diciamo dei sistemi.
+
+00:42:37.076 --> 00:42:43.236
+<v SPEAKER_2>Prendo i tuoi spunti per fare una sorta di recap di quello che ci siamo detti.
+
+00:42:43.416 --> 00:42:52.176
+<v SPEAKER_2>Da una parte abbiamo detto che gli strumenti oggi non ci permettono di arrivare a un livello di documentazione decente per l'azienda.
+
+00:42:52.176 --> 00:43:05.316
+<v SPEAKER_2>Quindi sicuramente possiamo scrivere cose, usando sistemi, abbiamo parlato di Word, di Wiki, di Gitbook, eccetera eccetera, possiamo scrivere cose, ma documentare l'operation oggi non ci sono quel tipo di strumenti.
+
+00:43:05.316 --> 00:43:11.396
+<v SPEAKER_2>Nel caso, ad esempio, che hai detto tu del Firewall, sicuramente possiamo dividere il problema.
+
+00:43:11.396 --> 00:43:16.556
+<v SPEAKER_2>E io effettivamente avevo provato ad approcciarlo in questo modo, in svariati contesti.
+
+00:43:16.596 --> 00:43:26.496
+<v SPEAKER_2>Non so se sia ancora in ullo quell'approccio là, dove le zone sono effettivamente documentate in modo descrittivo, perché una volta definita, insomma, non cambiano.
+
+00:43:26.496 --> 00:43:33.696
+<v SPEAKER_2>Poi magari se ne aggiunge qualcuno ogni tanto, però se ogni anno aggiungete cinque zone nel vostro Firewall, probabilmente c'è qualcosa di sbagliato.
+
+00:43:33.696 --> 00:43:35.956
+<v SPEAKER_2>Avete bisogno di una tecnologia diversa.
+
+00:43:35.956 --> 00:43:51.256
+<v SPEAKER_2>Quindi la zona può essere descritta, la famosa politica d'alto livello e ne viene anche descritto le regole del traffico dai verso quella zona e questo è una descrizione di quattro, otto righe, non di più.
+
+00:43:51.256 --> 00:44:16.416
+<v SPEAKER_2>E più o meno dovrebbe essere statica, perché speriamo auspicabilmente questa tipo di politica viene approvata dall'azienda e tutti sanno, mi sto riflettendo alle aziende che vendono più dati, quindi hanno una struttura di server molto più ampia rispetto alle aziende produttive.
+
+00:44:16.416 --> 00:44:30.396
+<v SPEAKER_2>Tutti sanno in azienda che per costruire un certo tipo di servizio bisogna soddisfare la sicurezza descrita da quel documento che fa riferimento alle singole zone e il cui il traffico è ben descritto.
+
+00:44:30.396 --> 00:44:55.536
+<v SPEAKER_2>Se abbiamo questo possiamo non documentare ogni singola regola, auspicabilmente dovremmo farlo, però magari ci parleremo in un altro momento, ma possiamo verificare la compliance di quelle regole, quindi definite le regole, posso dire ok, definite la politica, per non usare troppe volte lo stesso termine, vado a verificare per ciascuna regola del faro se soddisfa la politica che mi sono dato.
+
+00:44:55.536 --> 00:45:19.816
+<v SPEAKER_2>E in un certo senso anche su attività elettronica, in una piccola parte che sta per i permessi, io spingo le aziende a arrivare a quel livello, quindi mi riferisco in particolare agli accessi, perché è un po la cosa che tocca dappertutto, quindi spesso la Tridirectoria è il centro, è il sistema centrale di autenticazione e di permessi.
+
+00:45:21.056 --> 00:45:35.916
+<v SPEAKER_2>E se i permessi vengono dati per gruppo, quello che può essere definito un security group, la mia verifica non deve essere tanto documentare ogni persona perché è in un gruppo e perché no.
+
+00:45:35.916 --> 00:45:39.336
+<v SPEAKER_2>Se auspicabilmente anche di sì, ma non è quello lo scopo.
+
+00:45:39.396 --> 00:45:47.776
+<v SPEAKER_2>Lo scopo è descrivere ogni security group in modo chiaro, sapendo quali accessi eredita un utente si fa parte di quello.
+
+00:45:47.776 --> 00:46:00.076
+<v SPEAKER_2>E dopodiché, come dire, dare una reportistica ai responsabili di questi gruppi che possono controllare se è corretto che le persone siano dentro quei gruppi o no.
+
+00:46:00.076 --> 00:46:06.556
+<v SPEAKER_2>Non è documentazione 100%, non ci vogliamo neanche probabilmente arrivare, però intanto stiamo tenendo sottotraccia le cose.
+
+00:46:06.676 --> 00:46:31.616
+<v SPEAKER_2>Stiamo demandando le persone di verificare quanto è la loro responsabilità, in particolare sul Security Group, sto pensando, e quindi non è un'accentrale solo alla responsabilità dell'IT, perché l'IT alla fine cerca di fare il suo meglio nell'erogare un servizio, non mantenere applicazioni, sistemi, reti e via dicendo, però non può essere oniscente.
+
+00:46:34.336 --> 00:46:46.996
+<v SPEAKER_2>I proprietari dell'applicazione, i proprietari di prodotto, i responsabili di prodotto, hanno una responsabilità non solo che il prodotto venda, ma che funzioni, che sia aggiornato, che sia sicuro, eccetera eccetera.
+
+00:46:46.996 --> 00:46:53.056
+<v SPEAKER_2>Quindi è corretto che determinate scelte siano in capo a loro, non a persone che gli devono correre dietro.
+
+00:46:53.056 --> 00:46:55.636
+<v SPEAKER_2>Mi vengono in mente gli aggiornamenti, ma ne parleremo in futuro.
+
+00:46:58.516 --> 00:47:09.336
+<v SPEAKER_1>Su il tema dell'acti diretto, lo aggiungo sia per un altro tassello, probabilmente non è l'unico servizio che ha questa particolarità.
+
+00:47:10.136 --> 00:47:17.776
+<v SPEAKER_1>L'IT esiste all'interno dell'azienda, ha un servizio interno, serve perché deve erogare un servizio all'azienda.
+
+00:47:17.776 --> 00:47:24.016
+<v SPEAKER_1>Alcuni servizi sono veramente al completo servizio di un dipartimento.
+
+00:47:24.196 --> 00:47:52.356
+<v SPEAKER_1>Ad esempio, l'acti directory, oltre a delle funzioni di gestione che l'IT utilizza per i fatti propri, ma il grande utilizzatore dell'acti directory è l'HR, che è l'ente, il gruppo all'interno dell'azienda, che chiede all'IT, o tramite strumenti a volte, di creare nuovi dipartimenti, nuovi utenti, nuovi accessi.
+
+00:47:52.536 --> 00:48:02.116
+<v SPEAKER_1>Cioè, è da lì che arriva, è il punto di origine, diciamo, dell'esigenza, il dipartimento che ha l'esigenza che vengono fatte delle configurazioni.
+
+00:48:02.236 --> 00:48:09.876
+<v SPEAKER_1>Mi reallaccio al tema, ad esempio non mi ricordo se lo avevano citato, però la scorsa parliamo delle certificazioni.
+
+00:48:10.036 --> 00:48:29.676
+<v SPEAKER_1>Il primo punto veramente tecnico dell'AISO 27001, se non ricordo male, è proprio l'onboarding, proprio il primo capitolo che tocca agli aspetti tecnici dei sistemi, l'acti directory, appunto, e coinvolge immediatamente un team che non è IT, che è l'Hichar, che è il team che dovrebbe disegnare quel processo.
+
+00:48:29.676 --> 00:48:34.676
+<v SPEAKER_1>È sul processo di onboarding, ma è certo un processo IT, quello dell'onboarding.
+
+00:48:34.676 --> 00:48:36.216
+<v SPEAKER_2>Esatto.
+
+00:48:36.216 --> 00:48:56.236
+<v SPEAKER_1>Ancora una volta, a questo punto di vista, il tema documentazione diventa abbastanza cruciale, perché se l'Hichar, come probabilmente è ovvio che sia, ha bisogno di capire che privilegi di accesso a una persona, non perché vuole sapere come è configurato l'HackDirectory, ma perché vuole sapere se accede a delle risorse specifiche dell'azienda di cui ha bisogno, banalmente.
+
+00:48:56.236 --> 00:48:59.196
+<v SPEAKER_1>È una cosa normale all'interno dell'azienda.
+
+00:48:59.196 --> 00:49:07.516
+<v SPEAKER_1>L'Hichar dovrebbe avere anche un modo per verificare questa configurazione senza necessariamente interpellare l'IT.
+
+00:49:07.516 --> 00:49:13.516
+<v SPEAKER_1>E da qua che vengono fuori le astrazioni proposte dai tool di identity management.
+
+00:49:13.516 --> 00:49:22.256
+<v SPEAKER_1>Ho visto qualche bel livello di astrazione che dava veramente a l'Hichar la possibilità di descrivere una configurazione.
+
+00:49:22.256 --> 00:49:38.036
+<v SPEAKER_1>Quest'utente con questi privilegi di accesso che appartiene a questo gruppo, questo dipartimento dell'azienda e di conseguenza l'IT che ha già preparato il setting di configurazioni che servono, avremmo pusciate le configurazioni utili all'Hack Directory.
+
+00:49:38.036 --> 00:49:47.636
+<v SPEAKER_1>Ma già il fatto di avere, in un linguaggio completamente intelligibile, a una persona non tecnica, che cosa fa quella configurazione?
+
+00:49:47.656 --> 00:49:58.196
+<v SPEAKER_1>Quello ha un altissimo livello di configurazione, di documentazione, tanto che la rende accessibile a persone non tecnico, quindi proprio il massimo che si poteva fare.
+
+00:49:59.736 --> 00:50:01.116
+<v SPEAKER_2>Mi fa venire in mente due cose.
+
+00:50:01.216 --> 00:50:06.296
+<v SPEAKER_2>Una un po buffa, che sveto spesso, e credo ci esista anche proprio una funzionalità di Active Director.
+
+00:50:06.296 --> 00:50:12.536
+<v SPEAKER_2>Di solito quando arriva, di solito no, però spesso l'ho visto fare in aziende piccole, ma anche in aziende molto grandi.
+
+00:50:12.536 --> 00:50:26.836
+<v SPEAKER_2>Arrivano nuove persone e deve ottenere dei permessi, giustamente per lavorare, e viene detto di solito la richiesta di HR, questa persona entra in azienda dal clonare i permessi da questa persona.
+
+00:50:27.716 --> 00:50:45.376
+<v SPEAKER_2>Quindi non si sa che cosa faccia la persona già residente in azienda, potrebbe aver ereditato di richiesta in richiesta poteri enormi, e siccome nessuno lo sa e nessuno sa che cosa deve fare la nuova persona, alla fine si dice clone i permessi che più o meno andranno bene.
+
+00:50:46.396 --> 00:50:48.496
+<v SPEAKER_2>Non serve commentare, è chiaro.
+
+00:50:48.496 --> 00:51:02.716
+<v SPEAKER_2>Quello che però mi era venuto in mente, che non ho citato, è che nella preanalisi prima di mettere le mani, una delle domande che io faccio spesso è ok, adesso facciamo delle cose, miglioreremo la visibilità, la documentazione, eccetera, eccetera.
+
+00:51:02.716 --> 00:51:06.336
+<v SPEAKER_2>Però il fine è migliorare anche l'operatività.
+
+00:51:06.336 --> 00:51:09.836
+<v SPEAKER_2>Tu hai parlato di e-Char in particolare.
+
+00:51:09.976 --> 00:51:13.156
+<v SPEAKER_2>E la domanda che faccio è, ma alla fine come vuoi operare?
+
+00:51:13.156 --> 00:51:16.556
+<v SPEAKER_2>Cioè nel caso specifico e-Char come vuole operare?
+
+00:51:16.556 --> 00:51:36.356
+<v SPEAKER_2>Vuole ancora aprire un ticket e chiedere un permesso, eccetera, o magari vogliamo dare un'interfaccia per fare e la responsabilità chiaramente per aggiungere gli utenti e toglierli, e magari aggiungerli ad alcuni gruppi, quelli diciamo a di interesse aziendale, non interesse produttivo di singoli team.
+
+00:51:36.356 --> 00:51:43.616
+<v SPEAKER_2>Perché a quel punto veramente ci siamo risparmiati per un'azienda abbastanza dinamica, un'enorme quantità di lavoro.
+
+00:51:43.616 --> 00:51:54.316
+<v SPEAKER_2>E-Char invece di aprire un ticket con la richiesta, apre una pagina web uguale, inserisce i campi e hopla l'utente è già stato creato.
+
+00:51:54.316 --> 00:52:10.596
+<v SPEAKER_1>Diventa concettualmente, diventa replicabile anche per il team IT, in tantissimi aspetti della gestione dei propri asset, degli strumenti di cui tipicamente si occupa.
+
+00:52:10.716 --> 00:52:16.036
+<v SPEAKER_1>La base tanto per l'e-char quanto per l'e-t è che il processo sia già stato definito.
+
+00:52:16.116 --> 00:52:34.496
+<v SPEAKER_1>C'è una volta che hai definito il processo e so qual è il mio standard di configurazione, allora poi farlo diventare uno script o un'interfaccia è soltanto questione di buttare giù un po di codice alla fine o adottare uno strumento ve lo fa, visto che ce ne sono alcuni che lo fanno di mestiere.
+
+00:52:35.656 --> 00:52:44.776
+<v SPEAKER_2>Adesso vivi in mente un rant e sono tentato dal farlo, quindi lo farò siccome ne parlerò anche dopo domani e chi ascolterà il podcast in realtà sarà già passato, lo faccio.
+
+00:52:45.596 --> 00:52:56.516
+<v SPEAKER_2>La questione non è parlare in linguaggio naturale alla t-director per far creare l'utente o aggiungerlo o toglierlo dai gruppi, cioè non è questa la questione.
+
+00:52:56.516 --> 00:53:05.636
+<v SPEAKER_2>Quello è una disquisizione tecnica, un esercizio anche carino però fine a se stesso, lo dico e me ne assumo una responsabilità.
+
+00:53:05.636 --> 00:53:26.336
+<v SPEAKER_2>La questione è definire il processo, la responsabilità di fronte anche alla sicurezza, perché poi, e io l'ho visto, se un auditor 27001, PCI DSS o T-Zax viene e si fa dare l'elenco dei dipendenti che sono andati via e ne scopre che uno è ancora attivo, veramente sono cazzi, ok?
+
+00:53:26.336 --> 00:53:30.436
+<v SPEAKER_2>Credo sia una delle cose più gravi su cui io ho vissuto.
+
+00:53:30.436 --> 00:53:37.436
+<v SPEAKER_2>Quindi la questione non è chiedere a T-director per piacere mi crei un nuovo utente con queste caratteristiche, no.
+
+00:53:37.436 --> 00:53:50.456
+<v SPEAKER_2>E probabilmente non ha senso farlo, la questione è demandare la responsabilità a chi deve averla, sviltire i processi operativi e far sì che l'ecosistema aziendale funzioni meglio.
+
+00:53:50.456 --> 00:53:57.496
+<v SPEAKER_1>Questo approccio porta una serie di vantaggi enormi proprio sull'operation.
+
+00:53:57.616 --> 00:54:05.616
+<v SPEAKER_1>Non voglio neanche toccare la tematica tempo, ovviamente si risparmia tempo, ma non è neanche quello il primo punto.
+
+00:54:05.616 --> 00:54:29.936
+<v SPEAKER_1>Il primo punto è la riduzione degli errori, che è enorme, e anche la riduzione dell'entropia, cosa che invece ho il timore che parlando via ChatGPT all'acta di directory, penso che l'entropia aumenterebbe probabilmente, ci sarebbero molte più configurazioni fantasiose, perché dai troppo spazio a quel punto.
+
+00:54:29.936 --> 00:54:46.536
+<v SPEAKER_2>Sì, esatto, poi anche lì sotto bisogna definire un processo, però allora se il processo lo devo definire, perché devo perdere tempo a trasformare il linguaggio naturale quando stiamo parlando di un form con quattro campi, cioè qual è l'onere?
+
+00:54:46.536 --> 00:54:49.876
+<v SPEAKER_2>Sposta al problema, questo è il punto.
+
+00:54:51.096 --> 00:55:11.816
+<v SPEAKER_1>Poi giusto come chiosa di quasi chiusura, tutto ciò, l'esigenza di documentare bene, ovviamente non è un esercizio di stile, serve ad affrontare nel migliore dei modi gli eventuali problemi che poi il team inevitabilmente prima o poi dovrà affrontare.
+
+00:55:11.816 --> 00:55:20.536
+<v SPEAKER_1>Dubito che qualcuno possa avvantare una carriera senza Fault da gestire all'interno di un'infrastruttura.
+
+00:55:20.536 --> 00:55:31.196
+<v SPEAKER_1>E Fault sono, spero non all'ordine del giorno, ma in alcuni contesti sì, anche all'ordine del giorno, e non avere documentazione aggiornata su cui basarsi.
+
+00:55:32.636 --> 00:55:43.356
+<v SPEAKER_1>O non avere dei contesti omogenei con cui lavorare porta inevitabilmente a delle difficoltà.
+
+00:55:43.356 --> 00:55:48.816
+<v SPEAKER_1>Cioè a volte si fa veramente fatica, si spreca tantissimo tempo a cercare l'informazione.
+
+00:55:48.816 --> 00:55:58.956
+<v SPEAKER_1>Io ho visto proprio questa cosa, proprio dall'inizio, se c'è un problema su quella parato, come ci si collega, dove sono le credenziali?
+
+00:55:58.996 --> 00:56:00.716
+<v SPEAKER_1>Sì, proprio da lì si parte.
+
+00:56:00.716 --> 00:56:05.276
+<v SPEAKER_1>Quindi un quarto d'ora per capire come ci si collega l'apparato.
+
+00:56:05.276 --> 00:56:07.276
+<v SPEAKER_1>Non è accettabile.
+
+00:56:07.276 --> 00:56:10.776
+<v SPEAKER_2>Le credenziali, si è stato rinominato.
+
+00:56:10.776 --> 00:56:11.956
+<v SPEAKER_2>Esatto, esatto, esatto.
+
+00:56:11.956 --> 00:56:13.436
+<v SPEAKER_1>Chi ci ha messo le mani l'ultima volta?
+
+00:56:13.436 --> 00:56:16.196
+<v SPEAKER_1>Nessuno ovviamente, da sé che...
+
+00:56:16.196 --> 00:56:18.276
+<v SPEAKER_1>è proprio una mancanza di informazioni.
+
+00:56:18.436 --> 00:56:36.476
+<v SPEAKER_1>La mancanza di informazioni strutturate genera dei problemi poi in una fase magari critica come può essere un folto da gestire per non parlare degli incidenti di sicurezza, dove la tensione è altissima e questo genera soltanto solo confusione.
+
+00:56:36.476 --> 00:56:43.756
+<v SPEAKER_1>Questo è il motivo per il quale ci preoccupiamo di avere una documentazione aggiornata, non perché è bella da esibire.
+
+00:56:44.056 --> 00:56:45.436
+<v SPEAKER_1>E in caso di fault...
+
+00:56:45.436 --> 00:56:54.696
+<v SPEAKER_1>È sicuramente bello dirla anche per un tecnico che si è impegnato a farla, ma l'obiettivo è veramente molto operativo.
+
+00:56:57.116 --> 00:57:03.296
+<v SPEAKER_2>E in caso di fault è la risposta che ho sentito dare, non può essere a prova vedere su wiki che trovi qualcosa.
+
+00:57:04.696 --> 00:57:13.016
+<v SPEAKER_2>E un'ovvietà, la vostra documentazione deve sopravvivere a un fault, qualunque esso sia, se no...
+
+00:57:14.756 --> 00:57:16.356
+<v SPEAKER_2>Vabbè, l'abbiamo capito.
+
+00:57:16.356 --> 00:57:24.336
+<v SPEAKER_2>Per collegarmi un'infrastruttura, risolvere un problema, non ho la documentazione perché è parte dell'impatto, siamo appunto a capo.
+
+00:57:25.316 --> 00:57:26.296
+<v SPEAKER_1>Questo tema...
+
+00:57:26.296 --> 00:57:29.016
+<v SPEAKER_1>Ecco, qua faccio un asterisco grosso.
+
+00:57:29.016 --> 00:57:36.236
+<v SPEAKER_1>Il tema degli elementi di gestione dell'infrastruttura che vivono grazie all'infrastruttura.
+
+00:57:38.116 --> 00:57:47.376
+<v SPEAKER_1>Ce l'hai su tantissime cose, quindi sistemi di monitoraggio dentro l'infrastruttura che monitorizzano, sistemi di backup dentro l'infrastruttura che backupano.
+
+00:57:47.376 --> 00:57:51.816
+<v SPEAKER_1>Questa cosa qua ne parliamo quando tocchiamo i singoli temi.
+
+00:57:51.816 --> 00:57:54.976
+<v SPEAKER_1>Sarebbe bello non doverne parlare, ma evidentemente...
+
+00:57:56.176 --> 00:57:59.796
+<v SPEAKER_2>Ok, direi che abbiamo raggiunto quasi l'ora di tempo.
+
+00:58:00.876 --> 00:58:04.956
+<v SPEAKER_2>Per oggi è abbastanza, poi sempre spunti nuovi, benvenuti nei commenti.
+
+00:58:04.956 --> 00:58:13.476
+<v SPEAKER_2>Magari ci danno l'opportunità di espandere qualche specifico argomento, magari anche da un punto di vista più tecnico.
+
+00:58:14.196 --> 00:58:16.156
+<v SPEAKER_2>Direi che siamo a posto, che dici?
+
+00:58:16.156 --> 00:58:17.336
+<v SPEAKER_1>Sì, sì, direi di sì.
+
+00:58:17.336 --> 00:58:19.256
+<v SPEAKER_1>Io, se sei d'accordo, mi appunterai...
+
+00:58:19.256 --> 00:58:20.196
+<v SPEAKER_1>io partirei dal...
+
+00:58:20.196 --> 00:58:22.416
+<v SPEAKER_1>come prossimo tema, andrei...
+
+00:58:22.416 --> 00:58:29.236
+<v SPEAKER_1>comincerei a andare sugli aspetti un po più tecnici, tecnici dei team management e partirei dal network, se sei d'accordo.
+
+00:58:29.236 --> 00:58:35.336
+<v SPEAKER_2>Ok, benissimo, mi trovi sempre a favore, sempre la mia vecchia fiamma.
+
+00:58:35.336 --> 00:58:49.396
+<v SPEAKER_2>E io spero, vivamente a chiusura dell'episodio, di non aver generato più sconforto che altro, però dal punto di vista programmatico noi sempre sempre terra terra, così così la viviamo e così ve la raccontiamo.
+
+00:58:49.396 --> 00:58:51.496
+<v SPEAKER_1>Esatto, va bene.
+
+00:58:51.496 --> 00:58:54.516
+<v SPEAKER_2>Beh, grazie, bye bye, a presto, ciao.

@@ -1,0 +1,898 @@
+WEBVTT
+
+00:00:09.273 --> 00:00:19.773
+<v SPEAKER_1>Per venire in mente un'evoluzione che il mondo IT ha avuto, io prima di venire dal mondo Rete vengo dal mondo Storage, e Storage è proprio quelli grandi, quelli lunghi metri, metri.
+
+00:00:19.773 --> 00:00:21.913
+<v SPEAKER_2>Robbe, il vero Storage.
+
+00:00:21.913 --> 00:00:26.053
+<v SPEAKER_1>Io sono un fattore del Fiber Channel, l'ho adorato come protocollo nonostante la sua complessità.
+
+00:00:26.053 --> 00:00:28.733
+<v SPEAKER_2>Perché non era IP probabilmente.
+
+00:00:28.733 --> 00:00:29.893
+<v SPEAKER_1>E questo.
+
+00:00:29.893 --> 00:00:38.113
+<v SPEAKER_1>A un certo punto, se ben ricordi, qualcuno ha deciso che il Fiber Channel era troppo costoso e si è inventato di usare le reti Ethernet e facciamo i scasi.
+
+00:00:38.113 --> 00:00:39.573
+<v SPEAKER_2>Ehi, scasi, ecco.
+
+00:00:41.193 --> 00:00:49.433
+<v SPEAKER_1>Allora io ho detto al mio capo, ma guarda, Wikipedia, e allora era vero così, citava i scasi come il Fiber Channel dei poveri.
+
+00:00:49.433 --> 00:00:53.053
+<v SPEAKER_1>Non era proprio così brutale, ma il succo era questo.
+
+00:00:53.053 --> 00:01:16.993
+<v SPEAKER_1>Però il concetto era, ma perché trasportare un scasi, perché sempre di scasi per sotto Fiber Channel c'è comunque scasi, un protocollo time sensitive in cui proprio la latenza è la cosa più importante che ci sia, cioè diciamo il pacchetto deve essere veicolato con certezza all'host destinatario in un tempo estremamente ristretto.
+
+00:01:16.993 --> 00:01:19.833
+<v SPEAKER_1>Cioè no, sappiamo cosa succede.
+
+00:01:19.833 --> 00:01:36.533
+<v SPEAKER_1>Portarlo, perché ai scasi, ai scasi su IP alla fine, portarlo su una rete Ethernet dove l'Ethernet, gli switch Ethernet, by design possono bloccare le comunicazioni per un tempo che va anche fino al minuto, cosa potrà mai andare storto, no?
+
+00:01:36.533 --> 00:01:39.993
+<v SPEAKER_1>E in molti casi è andato storto, effettivamente.
+
+00:01:39.993 --> 00:01:50.153
+<v SPEAKER_1>Poi qualcuno ha detto, eh però effettivamente le scasi non è così funzionale, però avere la convergenza Ethernet a storage è bello, facciamo il Fiber Channel over Ethernet.
+
+00:01:50.153 --> 00:01:53.393
+<v SPEAKER_2>Ecco, l'ha detto un brand in particolare.
+
+00:01:53.393 --> 00:01:56.793
+<v SPEAKER_1>Esatto, un brand in particolare, che l'idea non era male.
+
+00:01:56.833 --> 00:01:58.513
+<v SPEAKER_2>No, non era male.
+
+00:01:58.513 --> 00:02:09.693
+<v SPEAKER_1>Trasformare una rete che può fallire by design in una rete che non può fallire era così complicato che alla fine la tecnologia è fallita.
+
+00:02:10.973 --> 00:02:23.213
+<v SPEAKER_1>Ed ora portiamo l'Ethernet, che è una tecnologia che fallisce by design, in un mondo industriale dove la latenza e la certezza di consegna è la priorità top.
+
+00:02:23.213 --> 00:02:33.713
+<v SPEAKER_1>Tanto che se una comunicazione tra due dispositivi dell'impianto viene bloccata, l'impianto deve fermarsi.
+
+00:02:33.713 --> 00:02:38.873
+<v SPEAKER_1>Anche qui, è vero che non è un evento così comune, però ricordiamoci, è by design.
+
+00:02:38.913 --> 00:02:41.893
+<v SPEAKER_1>Quindi, attenzione a quello che andiamo a fare.
+
+00:02:42.013 --> 00:02:54.673
+<v SPEAKER_1>Il rischio, e mi ricollego a questo, il fatto che non venga percepito è perché si fanno delle assunzioni, come la storia del uso un kernel vecchio, perché sono abituato a quello, si fanno delle assunzioni completamente sbagliate.
+
+00:02:54.673 --> 00:02:55.833
+<v SPEAKER_2>Sì, sì.
+
+00:02:55.833 --> 00:02:57.733
+<v SPEAKER_2>Ma manca proprio...
+
+00:02:58.053 --> 00:03:08.293
+<v SPEAKER_2>Uso il tuo esempio di Faber Chandler, perché anche secondo me è emblematico, perché andando a ritroso nella storia, ci permettiamo questa parentesi storico-informatica.
+
+00:03:09.393 --> 00:03:11.053
+<v SPEAKER_1>L'abbiamo detto che avremmo divagato.
+
+00:03:11.053 --> 00:03:14.113
+<v SPEAKER_2>Esatto, come ovvio che sia.
+
+00:03:14.113 --> 00:03:30.113
+<v SPEAKER_2>Il processo fu al contrario, cioè quando bisognava comunicare con il gestore, gli è serviva qualcosa di affidabile, senza una latenza, senza un controllo di errore, perché Faber Chandler non prevede il controllo, cioè la trasmissione e quella è, perché ti scasi, che è il frame scasi che viaggiano.
+
+00:03:30.113 --> 00:03:40.993
+<v SPEAKER_2>E in base a questi requisiti è stato scelto il Faber Chandler su fibra ottica, il protocollo Faber Chandler sul mezzo fibra ottica, perché aveva rispettabili requisiti tecnici.
+
+00:03:40.993 --> 00:03:45.333
+<v SPEAKER_2>Introducendo gli scasi, è come dire, sai cosa, dei requisiti tecnici ce ne freghiamo.
+
+00:03:45.333 --> 00:04:02.593
+<v SPEAKER_2>Introduciamo una cosa che può ammettere la latenza, e quindi è ovvio che non può funzionare, ma perché ci sia dimenticato il requisito tecnico, o quantomeno, ecco, c'è tutta una storia, diciamo, era un periodo in cui anche gli switch stavano facendo una certa evoluzione.
+
+00:04:02.673 --> 00:04:12.133
+<v SPEAKER_2>Gli amici, possiamo dirlo, il brand che praticamente si è inventato Fibre Channel over Ethernet, se non ricordo male, Fusisco il primo a proporlo come modello.
+
+00:04:12.133 --> 00:04:27.853
+<v SPEAKER_2>Ma lo proponeva forte del fatto che aveva una tecnologia di switching che supportava quel modello, cioè il design per fare Fibre Channel over Ethernet, non era lo stesso che si usava per fare escasi, era una roba un po diversa, un po più complessa.
+
+00:04:27.853 --> 00:04:29.933
+<v SPEAKER_1>Completamente diversa.
+
+00:04:29.933 --> 00:04:38.213
+<v SPEAKER_2>Quindi partendo anche lì dall'origine, voglio portare questa cosa diversa adegua anche all'infrastruttura.
+
+00:04:38.213 --> 00:04:40.553
+<v SPEAKER_2>A escasi invece questa cosa non c'era.
+
+00:04:40.553 --> 00:04:46.853
+<v SPEAKER_2>Infatti tantissime aziende usavano gli switch di accesso o di core per piccolare escasi.
+
+00:04:46.893 --> 00:05:02.773
+<v SPEAKER_1>In quello proprio, hai ragione, salvo poi accorgersi che le code, il buffer delle porte, dei switch di accesso era troppo corto per garantire un utilizzo salvo, safe di escasi.
+
+00:05:02.773 --> 00:05:07.413
+<v SPEAKER_1>Ah, allora non è così semplice, no, non è proprio.
+
+00:05:07.453 --> 00:05:20.433
+<v SPEAKER_2>Mondo T, effettivamente, al fine la trasmissione di bus era, potremmo associarla come si voleva trasmettere lo scasi su Fiber Channel, e a un certo punto gli abbiamo cambiato il mezzo sotto.
+
+00:05:20.433 --> 00:05:22.793
+<v SPEAKER_2>Tra l'altro, con lo stesso concetto, quali switch usiamo?
+
+00:05:22.793 --> 00:05:25.573
+<v SPEAKER_2>Ma quelli che ci sono in giro negli armadi, ovviamente, no?
+
+00:05:26.493 --> 00:05:28.573
+<v SPEAKER_2>Cosa vuoi che cambi?
+
+00:05:28.573 --> 00:05:31.253
+<v SPEAKER_1>Esatto, uno switch va nell'altro.
+
+00:05:31.253 --> 00:05:54.033
+<v SPEAKER_1>E la cosa curiosa è che prima di Fiber Channel lo scasi era un pacchettino che veniva inviato in un cavo praticamente seriale, lunghi più o meno, variabili, fino a 25 metri, vado a memoria, con una banda bassissima perché doveva garantire l'integrità del segnale dall'inizio alla fine e quindi le performance degli Storage erano infimi.
+
+00:05:54.033 --> 00:06:10.193
+<v SPEAKER_1>Fiber Channel è arrivato per dire, ok, togliamo il rame, mettiamo la fibra, togliamo la necessità di avere un cavo seriale e mettiamo un protocollo di router, perché vale la pena ricordarlo, Fiber Channel non è switching, ma è routing affidabile che non prevede perdita del pacchetto, eccetera eccetera.
+
+00:06:10.193 --> 00:06:14.933
+<v SPEAKER_1>Tra l'altro è complessissimo dietro, perché deve garantire proprio queste cose.
+
+00:06:14.933 --> 00:06:20.193
+<v SPEAKER_1>A un certo punto, cominci tu, bufò, qualcuno è detto, troppo complicato, via, usiamo IP, è fatta.
+
+00:06:20.193 --> 00:06:22.153
+<v SPEAKER_2>IP è più facile.
+
+00:06:22.153 --> 00:06:27.133
+<v SPEAKER_1>Esatto, e risolviamo il problema, complessità tolta, eccetera eccetera.
+
+00:06:27.133 --> 00:06:31.333
+<v SPEAKER_1>E in molti casi è andata bene, ma in molti casi ci si è fatto anche tanto tanto male.
+
+00:06:32.393 --> 00:06:44.453
+<v SPEAKER_2>Anche lì, io l'ho vissuto perché in quel periodo, tra l'altro, ero più spostato sul mondo sistemistico datacenter, quindi mi sono beccato anche la mia bella dose di storage, fiber channel e scasi.
+
+00:06:47.613 --> 00:06:58.313
+<v SPEAKER_2>E diciamo che ci si è dovuto, ci abbiamo dovuto sbattere la faccia per capire che quella roba lì fatta in maniera amatoriale non poteva funzionare.
+
+00:06:58.313 --> 00:07:00.533
+<v SPEAKER_2>Bisognava farlo in altro modo.
+
+00:07:00.733 --> 00:07:07.433
+<v SPEAKER_2>Oggi, però sono passati 15 anni, oggi un'architettura a escasi è fatta bene e non spaventa nessuno.
+
+00:07:07.433 --> 00:07:13.813
+<v SPEAKER_2>Ma c'è stata in mezzo un'evoluzione non solo della parte network, anche della parte storage.
+
+00:07:13.813 --> 00:07:15.613
+<v SPEAKER_2>Cioè tutti hanno fatto un adeguamento.
+
+00:07:15.613 --> 00:07:28.153
+<v SPEAKER_2>Quindi la ToT, cambiare il mezzo, vuol dire entrare in un mood in cui dovranno adeguarsi anche i sistemi all'interno delle macchine.
+
+00:07:28.153 --> 00:07:33.533
+<v SPEAKER_2>Infatti qua i capitoli sono produttori di macchine che hanno problemi diversi da affrontare.
+
+00:07:33.533 --> 00:07:37.413
+<v SPEAKER_2>I produttori di macchine hanno tutto un percorso di adeguamento davanti.
+
+00:07:37.413 --> 00:07:40.633
+<v SPEAKER_2>Non saprei neanche dire quanto tempo durerà.
+
+00:07:40.633 --> 00:07:47.713
+<v SPEAKER_2>Devono entrare nell'ottica che le loro macchine devono essere aggiornabili, monitorabili, cosa che fino a ieri non era richiesto.
+
+00:07:47.713 --> 00:07:50.333
+<v SPEAKER_2>Poi adesso arrivano delle bellissime certificazioni.
+
+00:07:50.333 --> 00:07:54.913
+<v SPEAKER_2>Un automotive, cioè T-Sax, la IEC 62443.
+
+00:07:54.913 --> 00:07:57.533
+<v SPEAKER_2>Non mi ricordo mai se il numero è giusto, però tu lo sai bene, meglio.
+
+00:07:57.533 --> 00:07:59.193
+<v SPEAKER_1>62443.
+
+00:07:59.193 --> 00:08:06.393
+<v SPEAKER_2>Che impongono tutta una serie di criteri e quindi quella cosa, la tua produzione, ha la sua strada.
+
+00:08:06.393 --> 00:08:12.953
+<v SPEAKER_2>Ci vorranno anni, credo, per imboccarla bene, però ha una sua strada.
+
+00:08:12.953 --> 00:08:17.253
+<v SPEAKER_2>Lato utilizzatori, c'è tutta la tematica che ci sta attorno.
+
+00:08:17.253 --> 00:08:29.753
+<v SPEAKER_2>Quindi, ok, anche se domani ti do una macchina che ha, diciamo, come dire, dei meccanismi di aggiornamento, poi ti devi comunque dotare del fatto che delle procedure per tenere aggiornato quel software.
+
+00:08:29.753 --> 00:08:33.733
+<v SPEAKER_2>Quindi, tutto è una filiera che si deve muovere assieme.
+
+00:08:33.733 --> 00:08:36.813
+<v SPEAKER_2>Oggi siamo in una situazione in cui le macchine sono quelle di 20 anni fa.
+
+00:08:36.813 --> 00:08:42.693
+<v SPEAKER_2>Stiamo infilando IT dentro un contesto dove non c'era e vorremmo monitorarlo.
+
+00:08:42.693 --> 00:08:47.693
+<v SPEAKER_2>Più o meno questo è il pantano in cui siamo.
+
+00:08:49.133 --> 00:08:51.513
+<v SPEAKER_1>Hai detto due cose su cui voglio portare due esempi.
+
+00:08:51.573 --> 00:09:01.913
+<v SPEAKER_1>Una è la certificazione, mi pare proprio la 62443, che in uno dei vari rami prevede che i sistemi siano aggiornabili per stare up to date con le varie pacce di sicurezza.
+
+00:09:01.913 --> 00:09:11.713
+<v SPEAKER_1>Anche questo secondo me è un assurdo, perché il tempo di vita dell'impianto è così lungo che alla fine non è una cosa fattibile.
+
+00:09:11.713 --> 00:09:35.653
+<v SPEAKER_1>Però ricordo in più casi in cui il cliente lo aveva un po imposto come requisito e l'impianto che gli era stato fornito appunto prevedeva di essere aggiornato con una piccola nota piccola, scritto piccolo, che diceva che ad ogni aggiornamento, concordato appunto con l'integratore, sarebbe stato necessario una rivalidazione della macchina.
+
+00:09:35.653 --> 00:09:37.993
+<v SPEAKER_2>Niente impossibile, non lo farà.
+
+00:09:37.993 --> 00:09:40.613
+<v SPEAKER_2>Per alcune aziende vuole dire, starà fermi.
+
+00:09:40.673 --> 00:09:47.493
+<v SPEAKER_1>Il risultato è che si può aggiornare, ok, che c'è sul controllo della certificazione.
+
+00:09:47.493 --> 00:09:50.393
+<v SPEAKER_1>Lo fai veramente e non lo fa nessuno.
+
+00:09:50.393 --> 00:09:59.633
+<v SPEAKER_1>L'altra cosa che mi è venuta in mente quando ho detto che utilizzatori e produttori hanno necessità diverse, è sulla parte del monitoraggio.
+
+00:09:59.633 --> 00:10:23.293
+<v SPEAKER_1>Ho parlato con diversi produttori negli anni passati, loro, giustamente dal loro punto di vista, hanno bisogno di monitorare le macchine perché gli permette di vedere se sono in buono stato per fare upselling e poi a fare anche delle cose più o meno, diciamo, corrette come monitoraggio remoto non, diciamo, non previsto e via dicendo.
+
+00:10:24.753 --> 00:10:37.153
+<v SPEAKER_1>Lato cliente si installano di solito delle box, dei gateway VPN o con etuità 4G e 5G via dicendo, che permettono all'impianto di essere gestito da remoto.
+
+00:10:37.153 --> 00:10:51.973
+<v SPEAKER_1>Io ho visto che i clienti generalmente non sono veramente consapevoli di questa cosa, cioè lo fanno ma non comprendono che quello è un ponte e qui parliamo dell'attacco supply chain, da loro al produttore.
+
+00:10:51.973 --> 00:10:58.033
+<v SPEAKER_1>Quindi se il produttore viene in realtà è l'integratore, l'integratore viene compromesso che è molto più debole del produttore.
+
+00:11:00.533 --> 00:11:10.213
+<v SPEAKER_1>In un attimo sono dentro anche il loro impianto e infatti abbiamo vissuto entrambi casi in cui è effettivamente successo.
+
+00:11:10.213 --> 00:11:44.693
+<v SPEAKER_1>Quando i clienti scoprono questa cosa qua e si rendono conto che il loro impianto è visto o gestito da remoto H24 e nei loro impianti viaggiano di solito breveti, ricette particolari, poi a seconda dello scopo del cliente, cominciano, è come se gli si accendesse una lampadina e dicono ah ma allora io mi devo occupare anche della parte 8, non posso demandarla e fregarmene, perché non è più un problema di security che non comprendono, ma è un problema di copertura dei brevetti di business.
+
+00:11:47.493 --> 00:12:07.833
+<v SPEAKER_2>Sì, è vero, diventa un tema di continuità del servizio in molti casi, che potremmo dire da un punto di vista del processo mentale all'interno dell'azienda ci sta, che l'azienda si preoccupa di ciò che potrebbe compromettere il business.
+
+00:12:08.513 --> 00:12:17.073
+<v SPEAKER_2>Fa il paio con quello che si può sviluppare a livello di sia di innovazione che di tutela del business, anche sulla parte security.
+
+00:12:17.073 --> 00:12:49.893
+<v SPEAKER_2>Però finché non gli è chiaro questo meccanismo, effettivamente non si innesca nulla e da quello che ho visto io, tra l'altro quasi tutti gli impianti, parliamo ovviamente di impianti di una certa dimensione, però quasi tutti i produttori, i bar integratori, offrono servizi di teleassistenza al cliente finale, quindi non so dare una percentuale, ma immagino che tantissimi impianti siano in realtà costantemente connessi perché mandano telemetrie al produttore o a chi gestisce quell'impianto.
+
+00:12:49.893 --> 00:13:04.053
+<v SPEAKER_2>E guardando, semplicemente, in realtà basta guardare la documentazione di chi fornisce sistemi di telecontrollo, perché poi c'è un'azienda che fornisce i sistemi di telecontrollo specifico, quindi si è creato anche un business su questa cosa.
+
+00:13:04.053 --> 00:13:17.133
+<v SPEAKER_2>Guardando come funzionano questi sistemi di telecontrollo, che di solito sono una cosa molto furba, fanno degli hub, potranno chiamarli VPN, molto spesso sono qualcosa che assomiglia ad un hub VPN.
+
+00:13:17.133 --> 00:13:35.093
+<v SPEAKER_2>E il punto di accesso è molto ghiotto, perché se entro come manutentore o persona che è consulente banalmente, che può accedere a una serie di sistemi, basta a volte compromettere una credenziale, anche se era una roba pazzesca.
+
+00:13:35.773 --> 00:13:39.813
+<v SPEAKER_1>Sì, basta compromettere un utente dell'integratore.
+
+00:13:39.813 --> 00:13:47.833
+<v SPEAKER_2>Quando sono lì, si vedono, poi sono fatti molto bene questi sistemi, magari un set di macchine a cui quell'utente era titolato ad accedere.
+
+00:13:47.833 --> 00:13:51.633
+<v SPEAKER_2>Ma ci accede direttamente, perché il tunneling di solito è costruito in modo tale.
+
+00:13:51.773 --> 00:13:56.053
+<v SPEAKER_2>Mi baso su quello che ho visto proprio su un produttore di questo tipo di tecnologia.
+
+00:13:56.053 --> 00:14:04.353
+<v SPEAKER_2>Quindi non quello che necessariamente alcune aziende fanno la macchina e integrano questo sistema nel loro servizio.
+
+00:14:04.353 --> 00:14:05.953
+<v SPEAKER_2>Altre invece si appoggiano a terzi.
+
+00:14:05.953 --> 00:14:10.973
+<v SPEAKER_2>Questo che gli sto raccontando come funziona un terzista di base.
+
+00:14:10.973 --> 00:14:12.613
+<v SPEAKER_2>Ma ho visto che sono tutti molto simili.
+
+00:14:12.613 --> 00:14:15.173
+<v SPEAKER_2>Entrando da lì, ho visibilità, sono stati di macchine.
+
+00:14:15.173 --> 00:14:26.953
+<v SPEAKER_2>E siccome la macchina di atterraggio è la stazione Windows che pilota la linea, ad esempio, si trovano a poter dialogare, ad esempio, direttamente con quella macchina Windows.
+
+00:14:26.993 --> 00:14:35.813
+<v SPEAKER_2>Quindi ha il tre-tactor che ha un punto di accesso dritto sulla macchina dentro la rete industriale praticamente.
+
+00:14:36.933 --> 00:14:44.073
+<v SPEAKER_2>E siccome è usata per manutenzione, altro meccanismo, non è un utente che acceda a un servizio e quindi magari l'accesso è limitato così.
+
+00:14:44.073 --> 00:14:50.813
+<v SPEAKER_2>Siccome è manutenzione, di solito è accesso molto aperto a quel tipo di asset.
+
+00:14:50.813 --> 00:14:55.273
+<v SPEAKER_2>Infatti le aziende mature che capiscono di avere questo problema, cosa fanno?
+
+00:14:55.273 --> 00:15:12.973
+<v SPEAKER_2>Cercano di dotarsi di ulteriori strumenti o chiedono a chi gli fornisce questi strumenti di aggiungere delle funzionalità di controllo, registrazione delle sessioni, monitoraggio delle sessioni quando inizia la manutenzione, quando termina la manutenzione, eccetera.
+
+00:15:12.973 --> 00:15:21.313
+<v SPEAKER_2>Una volta abbiamo collaborato, ti ricordi, su un software per accreditare il manudentore che potesse accedere al sistema.
+
+00:15:21.373 --> 00:15:24.453
+<v SPEAKER_2>Tutte integrazioni alla fine per cosa?
+
+00:15:24.453 --> 00:15:32.613
+<v SPEAKER_2>Perché hai aperto delle porte, cioè hai delle porte con delle serrature, per verità, che però hai distribuito a terzisti e devi in qualche modo controllarle.
+
+00:15:32.613 --> 00:15:39.653
+<v SPEAKER_2>E quelle serrature vanno dritte sulla tua rete industriale, dove potenzialmente spegni la macchina.
+
+00:15:39.653 --> 00:15:41.913
+<v SPEAKER_2>Quindi fai danni grossi da quel punto di vista.
+
+00:15:43.113 --> 00:15:48.193
+<v SPEAKER_1>Sì, ricordiamoci, come abbiamo aperto la sessione, basta un niente per rompere quelle macchine.
+
+00:15:48.193 --> 00:15:49.493
+<v SPEAKER_1>Basta un...
+
+00:15:49.493 --> 00:15:57.233
+<v SPEAKER_1>l'ARP non lo si può fare da remoto, ma un ping massivo, sì, e generalmente basta per rompere quelle macchine là.
+
+00:15:57.233 --> 00:15:59.633
+<v SPEAKER_1>Ma rompa le falle malfunzionale.
+
+00:15:59.633 --> 00:16:05.273
+<v SPEAKER_1>Malfunzionale significa che il prodotto che quella macchina vorrebbe produrre non è vendibile.
+
+00:16:05.333 --> 00:16:06.693
+<v SPEAKER_1>Infatti...
+
+00:16:06.733 --> 00:16:08.433
+<v SPEAKER_1>da qui a peggio.
+
+00:16:08.433 --> 00:16:11.073
+<v SPEAKER_2>Spesso è una tematica...
+
+00:16:11.073 --> 00:16:20.373
+<v SPEAKER_2>perché il grande evento magari viene visto come poco probabile, quindi è un argomento che è più difficile da discutere.
+
+00:16:20.373 --> 00:16:31.273
+<v SPEAKER_2>Il piccolo evento, quindi, tipo, cambia un parametro nella configurazione del sistema tale per cui i successivi 10.000 pezzi escono difettosi.
+
+00:16:32.313 --> 00:16:35.493
+<v SPEAKER_2>Questa cosa è una ronghia grossa, perché li butti poi coi pezzi.
+
+00:16:35.493 --> 00:16:38.793
+<v SPEAKER_2>Quindi è un costo potenzialmente molto elevato.
+
+00:16:38.793 --> 00:16:40.893
+<v SPEAKER_2>Poi ovviamente dipende da cosa produci.
+
+00:16:40.893 --> 00:16:44.573
+<v SPEAKER_2>Se produci, non so, le paperelle di gomma è un problema.
+
+00:16:44.573 --> 00:16:47.693
+<v SPEAKER_2>Se produci condensatori magari è un altro problema.
+
+00:16:47.693 --> 00:16:50.293
+<v SPEAKER_2>Dipende ovviamente dal prodotto.
+
+00:16:50.333 --> 00:17:11.353
+<v SPEAKER_2>Però è da considerare, infatti molti prodotti di security, torno al tema di origine, quelli più evoluti e non so che evoluzione avrà questo tipo di funzionalità, controllano proprio dentro lo stream dei dati la variazione dei dati.
+
+00:17:11.453 --> 00:17:18.513
+<v SPEAKER_2>Che da punto di vista tecnico è molto interessante, però è un bel casino da implementare, perché vuol dire che devi essere lì a guardare tutto il flusso dei dati.
+
+00:17:21.593 --> 00:17:33.053
+<v SPEAKER_1>Tanto che quel prodotto là non è usabile solo per rilevare anomalie di security, ma anche anomalie di funzionamento dell'impianto, quindi ha una sorta anche di manutazione preventiva.
+
+00:17:35.953 --> 00:17:43.013
+<v SPEAKER_1>Sono complessi e come ci siamo detti in passato, una tecnologia che viene introdotta deve essere gestita oppure tanto vale.
+
+00:17:44.333 --> 00:18:01.573
+<v SPEAKER_1>Mi viene in mente un responsabile da un impianto produttivo con cui io raccontavo una tecnologia specifica, forse uno dei precursori, e poi un'azienda italiana spostata in Svizzera, di questo tipo di appliance.
+
+00:18:01.573 --> 00:18:08.233
+<v SPEAKER_1>La sua risposta che mi ha fatto un po ribridire, mi ha detto sì, bella però, sai, mi fa...
+
+00:18:08.233 --> 00:18:21.193
+<v SPEAKER_1>se io installo quella appliance e poi qualcosa non va, e qualcuno si fa male, ma nessuno ha verificato il log che c'era un'anomalia, io sono responsabile, se io invece quella sonda non ce l'ho, pace.
+
+00:18:23.253 --> 00:18:24.153
+<v SPEAKER_1>Punti di vista.
+
+00:18:24.253 --> 00:18:27.793
+<v SPEAKER_2>Eh sì, infatti, probabilmente anche, anche...
+
+00:18:29.993 --> 00:18:48.873
+<v SPEAKER_2>C'è ancora un'immaturità tecnologica, diciamo, da questo punto di vista, quindi non sia neanche ancora la certezza che quella che sia sufficientemente affidabile probabilmente da quel punto di vista, o che sia poco controllabile, anche perché come dicevi tu, tu puoi avere un sistema che ti allarma, però vuol dire che qualcuno va a raccoglierla all'altro.
+
+00:18:48.873 --> 00:18:51.593
+<v SPEAKER_1>Lo vede, capisce, eccetera, eccetera.
+
+00:18:51.593 --> 00:19:00.553
+<v SPEAKER_1>Diciamo che a volte viene visto un po come una sorta cosa magica che ti dirà vita, morte, miracoli, un po come tante tecnologie come il SIEM, no?
+
+00:19:00.553 --> 00:19:02.933
+<v SPEAKER_1>Ho il SIEM, quindi vedrò tutto.
+
+00:19:02.933 --> 00:19:03.993
+<v SPEAKER_1>No, non è proprio così.
+
+00:19:03.993 --> 00:19:05.373
+<v SPEAKER_1>Vedi quello...
+
+00:19:05.693 --> 00:19:08.733
+<v SPEAKER_2>Se leggi tutto, vedi tutto.
+
+00:19:08.733 --> 00:19:14.273
+<v SPEAKER_1>Leggi tutto, i dati sono benissimi, le hai fatte benissimo, la regola di correlazione pure, diciamo che vedi tantissimo.
+
+00:19:14.873 --> 00:19:22.193
+<v SPEAKER_1>Cioè, accendi, butti i log, e speri che qualcosa funzioni, no, non sarà, non è una cosa magica, no?
+
+00:19:22.193 --> 00:19:24.093
+<v SPEAKER_1>Quindi un po lo stesso concetto.
+
+00:19:25.153 --> 00:19:39.293
+<v SPEAKER_1>Però c'è tanto lavoro da fare, quello che io ho visto non basta la normativa che obbliga a fare determinati controlli affinché questi vengano fatti, ma mi serve proprio una comprensione nelle aziende che io in questo momento non vedo.
+
+00:19:39.913 --> 00:19:45.713
+<v SPEAKER_1>Non vedo non perché non la si voglia avere, ma come se avessero tutti altri problemi a cui pensare.
+
+00:19:45.713 --> 00:19:52.253
+<v SPEAKER_1>E infine l'attacco agli impianti industriali non è una cosa che vedi sui giornali tutti i giorni.
+
+00:19:52.253 --> 00:19:55.773
+<v SPEAKER_1>Quindi tutto sommato perché deve capitare a me, capiterà a qualcun altro.
+
+00:19:55.773 --> 00:19:58.133
+<v SPEAKER_2>Nonostante ce n'è stato qualcuno di clamoroso.
+
+00:19:59.193 --> 00:20:03.693
+<v SPEAKER_1>Ce n'è stato qualcuno di clamoroso e ce ne sono stati perché sono un po come gli attacchi.
+
+00:20:03.693 --> 00:20:15.013
+<v SPEAKER_1>Quelli che finiscono sui giornali sono una parte di quelli reali, sono quelli più clamorosi e quelli a cui per un motivo o per l'altro è stata fatta pubblicità.
+
+00:20:15.013 --> 00:20:29.773
+<v SPEAKER_1>Ma ce ne sono tantissimi, ne ricordo uno di cui non sono stato testimone diretto ma indiretto, che era un magazzino automatico con tutti i carrelli eccetera eccetera, nel quale a un certo punto i carrelli hanno cominciato a scontrarsi l'uno con l'altro.
+
+00:20:29.773 --> 00:20:37.193
+<v SPEAKER_1>Non era Amazon mai per capirci quel sistema là, era sempre un'azienda italiana e cosa cosa va per mesi.
+
+00:20:37.193 --> 00:20:59.033
+<v SPEAKER_1>Quindi chiama l'integratore, fa gli analizzare il codice perché si scontra, non c'è un bug, non c'è un bug, mesi, mesi, mesi dopo, finché arriva il vendor, appunto di cui prima piazza una sonda e vede che questi impianti qua hanno una bright della configurazione del PLC anomala che non era prevista nota.
+
+00:20:59.033 --> 00:21:12.813
+<v SPEAKER_1>In tutti gli impianti che io vado c'è la chiavetta sui grossi armadi che è girata non in, diciamo, in uno, ma in CONF MODE in cui accettano la configurazione a remoto e questa la vedo dappertutto.
+
+00:21:14.213 --> 00:21:29.733
+<v SPEAKER_1>E appunto hanno rilevato che c'erano dentro questa azienda c'era un gruppo, una PT, che stava studiando come funzionava questo sistema di carrelli automatici e gli stava cambiando il codice per, probabilmente, ricatto, non si sa.
+
+00:21:29.733 --> 00:21:32.553
+<v SPEAKER_1>Insomma, è stato fermato in tempo.
+
+00:21:32.553 --> 00:21:41.733
+<v SPEAKER_1>Però gli attacchi ci sono, non sono così comuni, non si trovano sui giornali, ma non per questo, magari, ignoriamo.
+
+00:21:41.733 --> 00:22:01.253
+<v SPEAKER_1>Nel senso che prevenire, o meglio, cominciare a dare un po di ordine a questo mondo qua è sia un lavoro, un onere molto grande, ma non è neanche così impossibile, facendo con calma e in modo strutturato, e con l'esperienza di Kiki, in qualche modo, l'ha già fatto.
+
+00:22:04.833 --> 00:22:26.373
+<v SPEAKER_1>Su questo, a volte, per esempio, per fare un po d'ordine, allora, prima cosa secondo me è se non c'è una collaborazione a livello aziendale tra il mondo IT e il mondo T non c'è verso, perché uno dei requisiti del mondo T è di andare a funzionare prima possibile il mondo IT e fare un pochino d'ordine.
+
+00:22:26.373 --> 00:22:43.653
+<v SPEAKER_1>Quindi è chiaro che se tutti gli switch industriali hanno le porte attive già configurate affinché chi arriva nel mondo T possa all'istante zero attaccare qualsiasi cosa e averla disponibile, cozza chiaramente col mondo di sicurezza, di verifica, di sapere cosa c'è collegato.
+
+00:22:43.653 --> 00:22:47.193
+<v SPEAKER_1>Quindi chiaramente la premessa è questa.
+
+00:22:47.193 --> 00:23:13.033
+<v SPEAKER_1>E poi c'è un modello che a me piace molto, ha fatto la sua storia, secondo me non è applicabile, però è un buon riferimento che è il pur di un model, dove, tringo e semplifico enormemente, il mondo OT non può comunicare col mondo IT e fuori, ma dovrebbe passare per una sorta di DMZ che sta tra il mondo IT e il mondo OT, una sorta di terra di confine.
+
+00:23:13.033 --> 00:23:41.133
+<v SPEAKER_1>Se noi teniamo, diciamo, questo a modello, sapendo che ci sono i WPN installati dai produttori direttamente nel mondo IT che se non li installi non ti danno assistenza, però se almeno lo usiamo come riferimento possiamo comprendere che cosa va bene, che cosa è molto rischioso e prendere delle contromisure, facevi riferimento al software appunto di validazione e attivazione automatica di queste WPN, può essere una scelta.
+
+00:23:42.633 --> 00:23:58.513
+<v SPEAKER_1>Mi vengono in mente questi due approcci per cominciare a fare ordine, a mettere quel perimetro di sicurezza intorno a un mondo completamente ingestito e ingestibile soprattutto.
+
+00:23:59.933 --> 00:24:02.013
+<v SPEAKER_1>Buon punto di partenza.
+
+00:24:02.013 --> 00:24:33.993
+<v SPEAKER_2>Anche io partire da quel lato gestione IT di quella parte di organizzazione, partire anche da creare dei confini discutibili, nel senso da contrattare questi confini quanto devono essere stretti, in base alle esigenze dell'operatività, e cominciare a mettere degli elementi di ascolto, di rilevamento quantomeno di quello che accade là dentro, nei limiti del possibile.
+
+00:24:36.113 --> 00:24:47.373
+<v SPEAKER_2>L'unico altro elemento che auspico a questo punto, ma che sto anche iniziando a vedere, è che questa collaborazione dovremmo iniziare a vedere, sarebbe desiderabile anche da chi produce.
+
+00:24:49.573 --> 00:24:55.733
+<v SPEAKER_2>Ci sono molti elementi che sono ingovernabili, come dicevi tu prima, by design.
+
+00:24:55.733 --> 00:24:57.653
+<v SPEAKER_2>Cioè, by design non ci posso fare niente.
+
+00:24:57.713 --> 00:25:08.373
+<v SPEAKER_2>Se non ci posso fare niente, by design e anche lato, sia lo team manager che gli team manager, sono ovviamente estremamente limitati nelle scelte.
+
+00:25:08.373 --> 00:25:20.033
+<v SPEAKER_2>E lì, visto che comunque c'è tantissima integrazione nel mondo industriale, cioè le macchie non escono da una fabbrica con lo stampino e vengono installate, sono vari elementi che vengono integrati assieme.
+
+00:25:20.033 --> 00:25:34.393
+<v SPEAKER_2>Quindi c'è una filiera con cui si può discutere, probabilmente anche lì il cliente finale, nel momento in cui è un'azienda strutturata, può darsi che si è arrivato il momento in cui può chiedere dei requisiti, anche lui, no?
+
+00:25:34.393 --> 00:25:42.013
+<v SPEAKER_2>Quindi sì, ho capito che il disegno è fatto così, ma io come requisito ho bisogno, ad esempio, che gli switch mi consentano un monitoraggio della rete.
+
+00:25:44.433 --> 00:26:00.393
+<v SPEAKER_2>Poi ci sono delle cose difficili da aggiornare, però è assolutamente vero, però, ad esempio, tutta la parte software che gira sui sistemi operativi, diciamo, classici, Windows o Linux o che sia, forse si può iniziare a introdurre un modello di aggiornamento diverso rispetto a quelli dei firmware.
+
+00:26:00.393 --> 00:26:15.293
+<v SPEAKER_2>Sono forse prematuro pretendere che anche i firmware vengano aggiornati con la stessa frequenza con cui vengono aggiornati oggi i sistemi operativi, però si possono accettare velocità diverse per un periodo nell'interregno, diciamo.
+
+00:26:15.293 --> 00:26:17.413
+<v SPEAKER_2>Un po di cose da mettere in campo.
+
+00:26:17.413 --> 00:26:23.413
+<v SPEAKER_2>Anche le aziende dovrebbero almeno in parte accettare che quelle macchine non si possono fermare solo a Ferragosto.
+
+00:26:23.413 --> 00:26:29.113
+<v SPEAKER_2>Cioè, sono vari attori che devono mettersi d'accordo.
+
+00:26:30.253 --> 00:26:38.953
+<v SPEAKER_1>Secondo me, sull'aggiornamento dei sistemi Windows, cioè diciamo degli sistemi utenti, quindi Windows, tipicamente Windows, perché si è sempre fatto così.
+
+00:26:38.953 --> 00:26:46.393
+<v SPEAKER_1>Non c'è una vera ragione parlando appunto con dei produttori, per cui Windows è il sistema operativo imberante negli HMI.
+
+00:26:46.393 --> 00:26:59.433
+<v SPEAKER_1>C'è una sorta di sacro timore che, cambiando una virgola, e la virgola può essere disabilito il print spooler, piuttosto che chiudo una condivisione di rete, piuttosto che faccio un update o installo un antimalware, ci sia un impatto enorme.
+
+00:27:00.253 --> 00:27:21.273
+<v SPEAKER_1>Ma in realtà, nella stragrande maggioranza dei casi, questo non accade, perché è vero che è una comunicazione real time, presunta real time, ma in realtà l'update, le patch, eccetera, anche il cambio di sistema operativo, a meno che non ci sia un incompatibilità del software, non è un problema così grande.
+
+00:27:21.273 --> 00:27:31.133
+<v SPEAKER_2>Infatti io ho un'opinione cattiva su questa cosa, che probabilmente la paura viene da retaggi del passato, dove la cosa è stata impattante.
+
+00:27:31.133 --> 00:27:41.413
+<v SPEAKER_2>Però se ho quella paura, secondo me l'unica vera motivazione è che sono consapevole del fatto che il software forse l'ho fatto male e mi limito a dire fatto male.
+
+00:27:41.413 --> 00:27:47.753
+<v SPEAKER_1>Non volevo dirlo io, l'hai detto tu, perché mi associo a questa cosa qua.
+
+00:27:47.753 --> 00:28:01.573
+<v SPEAKER_1>Generalmente sempre proveniente dal mondo, perché il mondo è diverso, nel mondo IT, anche nel mondo IT ci sono software fatti male, però cominciano a diminuire perché li bucano in un istante zero, si rompono.
+
+00:28:01.573 --> 00:28:05.193
+<v SPEAKER_1>Bene o male c'è un'attenzione di più maggiore sulla sicurezza.
+
+00:28:05.193 --> 00:28:07.273
+<v SPEAKER_1>Nel mondo IT fa quello che deve fare?
+
+00:28:07.273 --> 00:28:09.673
+<v SPEAKER_1>Sì, lo fa e nel caso migliora.
+
+00:28:09.673 --> 00:28:10.613
+<v SPEAKER_1>Perfetto.
+
+00:28:10.613 --> 00:28:11.713
+<v SPEAKER_1>Ci sono corner case?
+
+00:28:11.713 --> 00:28:15.313
+<v SPEAKER_1>Non mi interessa, tanto non ci saranno perché non devono esistere.
+
+00:28:15.313 --> 00:28:15.953
+<v SPEAKER_2>Sì, sì, infatti.
+
+00:28:15.953 --> 00:28:19.473
+<v SPEAKER_1>Ok, va bene.
+
+00:28:19.473 --> 00:28:25.933
+<v SPEAKER_1>Mi ricordo che parlando in quello che dicevi prima, cioè che forse bisogna anche cominciare a far valere la propria voce.
+
+00:28:26.213 --> 00:28:31.533
+<v SPEAKER_1>Chiaramente là dove è possibile, perché se io sono grande e il mio integratore è piccolo, non c'è problema.
+
+00:28:31.533 --> 00:28:36.493
+<v SPEAKER_1>Se io sono piccolo e il mio integratore è un colosso, mi prendo quello che mi viene dato.
+
+00:28:36.493 --> 00:28:57.413
+<v SPEAKER_1>Però mi ricordo appunto nel caso azienda grande integratore piccolo, in cui io facevo per la parte dell'integratore piccolo, cioè diciamo ero dalla parte dell'integratore piccolo, gli era stato chiesto di mettere gli HMA virtuali così da garantire anche un'operazione, la gestione remota tramite il VDI di VMware.
+
+00:28:58.133 --> 00:29:10.013
+<v SPEAKER_1>E l'integratore mi ha chiesto appunto una mano per capire quali erano gli impatti, perché chiaramente il box, il totem non era più lì a due metri dalla macchina, ma stava in data center, eccetera eccetera.
+
+00:29:10.013 --> 00:29:27.893
+<v SPEAKER_1>E io gli chiesi, ma sì certo che c'è un impatto, sicuramente c'è un rutino in mezzo, eccetera eccetera, c'è una latenza maggiore, eccetera, ma quali sono le caratteristiche di latenza, banda, con numero di connessioni che voi avete bisogno da una parte all'altra, perché se ho questo numero posso dirvi sì, c'è un problema, se no, no.
+
+00:29:27.893 --> 00:29:48.073
+<v SPEAKER_1>E questo numero non si sapeva, perché è chiaro è lì e quindi nessuno si è mai posto problema, sì ma quanto deve essere la latenza, ma tanto è lì, lo switch funziona, sul lavoro lo fa, non è mai stato neanche misurato, quindi senza sapere questo non lo posso sapere.
+
+00:29:48.073 --> 00:29:59.213
+<v SPEAKER_1>Cinque millisecondi in più vi rompe il dispositivo, mi immagino di no, perché come hai detto tu il software non è proprio così perfetto, ma proprio il fatto di non essere così perfetto lo rende fragile.
+
+00:29:59.213 --> 00:30:14.593
+<v SPEAKER_1>Mi ricordo degli software sviluppati, per fortuna si vedono di rado, ma da qualche parte si vedono, ancora con la mentalità NetBIOS, siamo tutti una grande rete e in broadcast in qualche modo funziona.
+
+00:30:14.593 --> 00:30:28.073
+<v SPEAKER_1>Il momento in cui la rete si è trasformata in routine di rete, perché c'erano branch a remoti e ci si è dovuto inventare qualsiasi cosa per far funzionare questo benedetto software che teneva l'azienda.
+
+00:30:28.073 --> 00:30:45.733
+<v SPEAKER_2>Ho trovato interfacce di dialogo tra la parte macchina e la parte sistema operativo, dove il requisito era che il workgroup di lavoro doveva essere lo stesso, perché da qualche parte è ardenizzato, ar-coded nel software, c'era quella roba là.
+
+00:30:49.913 --> 00:30:54.413
+<v SPEAKER_1>Tra l'altro mi è fatto rimettere un'altra cosa che per chi appunto viene dal mondo di t è banale, no?
+
+00:30:54.413 --> 00:31:09.893
+<v SPEAKER_1>Quindi tutti gli impianti, sempre lavoravo con un integratore, mi chiedeva un consiglio sul design di rete, tutti gli impianti venivano fatti con lo stesso indirizzamento 192 168 10-24.
+
+00:31:11.533 --> 00:31:15.033
+<v SPEAKER_1>E io le dicevo sì, ok, proprio questa rete avete scelto.
+
+00:31:15.033 --> 00:31:15.953
+<v SPEAKER_1>Ciao a tutti.
+
+00:31:15.953 --> 00:31:18.053
+<v SPEAKER_1>Intanto è sbagliato cablarla.
+
+00:31:19.433 --> 00:31:20.813
+<v SPEAKER_1>Qual è l'unico problema?
+
+00:31:20.813 --> 00:31:27.833
+<v SPEAKER_1>L'unico problema è se questo impianto deve comunicare con altri host che sono su questa rete, perché se non è così, in qualche modo la mascheriamo.
+
+00:31:27.833 --> 00:31:36.113
+<v SPEAKER_1>Ma se il cliente usa quella rete e da quella rete deve comunicare all'impianto, diventa molto complicato, non impossibile, è molto complicato.
+
+00:31:36.793 --> 00:31:46.433
+<v SPEAKER_1>E di una banalità estrema, un integratore non nato ieri ma con decenni di esperienza, di cui tutti gli impianti sono usciti con questa rete qua.
+
+00:31:48.333 --> 00:32:10.473
+<v SPEAKER_2>Se penso agli ultimi 5-7 anni, da quando dialogo con aziende che usano quel tipo di impianti, il fatto che gli impianti abbiano la stessa rete, cioè che un produttore, quindi macchine fatte da stessi produttori, hanno le stesse reti macchina all'interno, è praticamente uno standard.
+
+00:32:10.553 --> 00:32:12.653
+<v SPEAKER_2>C'è proprio uno standard.
+
+00:32:12.653 --> 00:32:16.033
+<v SPEAKER_2>La prossima macchina cosa esce con le stesse configurazioni di rete?
+
+00:32:16.033 --> 00:32:29.713
+<v SPEAKER_2>Addirittura così standard che in alcuni casi, non so se te l'ha capitato anche a te, i dispositivi configurati, la configurazione dei dispositivi della interfaccia non prevede il cambio dell'IP e se lo prevede, prevede magari il cambio dell'IP, ma non del gateway, proprio così no.
+
+00:32:29.713 --> 00:33:00.973
+<v SPEAKER_2>Cioè perché non è neanche pensato per essere modificato, perché se vuoi modificare le informazioni, mi aveva raccontato un ingegnere che lavorava sugli impianti, quindi cliente in realtà, mi ha raccontato che lui quando aveva necessità, perché gli era capitato di fare un cambio di configurazione IP, doveva scaricare un tool, cioè usavo da usare un tool che frecciava le informazioni nuove sul firmware, che erano marchiate, scritte a fuoco sul dispositivo.
+
+00:33:00.973 --> 00:33:18.293
+<v SPEAKER_1>Sì, perché come nel mondo, non ricordo come si chiama il bus, in cui se ricordo bene si sceglieva un identificativo che in realtà era un intero, che rimaneva quello per tutta la durata dell'impianto, e quell'attuatore, quel sensore veniva referenziato con quello specifico numero, è stato trasportato all'IP.
+
+00:33:18.293 --> 00:33:26.213
+<v SPEAKER_1>Quindi, giustamente non c'è un sistema di DNS, posso anche capire, quindi se i sistemi devono parlarsi tra loro, l'IP sono cablati.
+
+00:33:27.933 --> 00:33:30.613
+<v SPEAKER_1>Posso comprendere il motivo per cui ho fatto questo?
+
+00:33:30.613 --> 00:33:44.133
+<v SPEAKER_1>Ho difficoltà a comprendere come mai la prima domanda al cliente non è ok, a me serve una rete U barra 24 barra 20 eccetera eccetera, quali reti posso usare?
+
+00:33:44.133 --> 00:33:46.473
+<v SPEAKER_1>Se ne stacca una e poi usi quella.
+
+00:33:46.473 --> 00:33:51.333
+<v SPEAKER_1>Invece no, tutte escono, come hai detto tu, con lo stesso indirizzamento, perché si è sempre fatto così?
+
+00:33:51.333 --> 00:33:52.853
+<v SPEAKER_1>Alla fine che problema c'è?
+
+00:33:52.853 --> 00:33:54.133
+<v SPEAKER_2>Sì, non.
+
+00:33:54.133 --> 00:33:57.493
+<v SPEAKER_1>Ci sono corner case dove questo è un problema.
+
+00:33:57.493 --> 00:34:09.613
+<v SPEAKER_2>E che negli ultimi anni quei corner case sono diventati lo status de facto, cioè non sono diventato difficile gestirli, è diventato un problema gestirli in quella modalità.
+
+00:34:09.633 --> 00:34:11.153
+<v SPEAKER_1>Ma perché?
+
+00:34:11.153 --> 00:34:21.613
+<v SPEAKER_1>Perché qualche anno fa ci siamo inventati l'industria 4.0 e gli vari incentivi in cui abbiamo cominciato a collegare il mondo IT al mondo OT e lì sono cominciati gli enormi problemi.
+
+00:34:21.613 --> 00:34:29.933
+<v SPEAKER_1>Prima erano tutti impianti separati, quindi in realtà allora poteva anche andar bene, tanto vivevano di vita propria, fine del problema.
+
+00:34:29.933 --> 00:34:32.753
+<v SPEAKER_1>Quando li abbiamo messi assieme, sono cominciati i disastri.
+
+00:34:32.833 --> 00:34:44.713
+<v SPEAKER_2>Il rischio esisteva lo stesso perché io sono abbastanza fan del mondo air gapped, quindi esisteva comunque una quota di rischio, però infinitesimale rispetto a quella che abbiamo creato.
+
+00:34:46.013 --> 00:34:49.253
+<v SPEAKER_1>Assolutamente.
+
+00:34:49.253 --> 00:35:13.873
+<v SPEAKER_1>Quando poi, secondo me, andiamo con le tecnologie IT, mi vengono in mente i NAC 80021X, piuttosto che i Macadam's Bypass o la segmentazione delle reti L2 più o meno trasparente, le vogliamo applicare nel mondo OT, laddove ci venga permesso, perché non è così, e in qualche modo lì ti diventa il parafumine di qualsiasi virgola non funzioni.
+
+00:35:13.873 --> 00:35:19.113
+<v SPEAKER_1>Quindi alla fine sono tecnologie belle la segmentazione di rete trasparente.
+
+00:35:20.513 --> 00:35:22.373
+<v SPEAKER_1>Tu sai che io sono sempre molto scettico.
+
+00:35:22.373 --> 00:35:23.873
+<v SPEAKER_2>Lo so.
+
+00:35:23.873 --> 00:35:28.393
+<v SPEAKER_1>Sulla finalità security del NUC, ecco sulla finalità security.
+
+00:35:28.393 --> 00:35:43.513
+<v SPEAKER_1>Nel mondo industriale secondo me è proprio una partita persa, perché tantissimi dispositivi non la supportano, ma addirittura sono silenti per cui rendono molto complicato anche proprio solo attivarla solo così per monitoraggio assessment.
+
+00:35:44.053 --> 00:36:07.713
+<v SPEAKER_2>E curioso perché l'L2 Segmentation se non ricordo male è stata inventata apposta per il mondo OT, cioè per far fronte a problematiche OT, perché nel mondo IT aggiungere una network viene gratis, aggiungevano la rete, aggiungevano la VULAM, segmenti, facendo un'altra subnet.
+
+00:36:07.713 --> 00:36:19.933
+<v SPEAKER_2>Nel mondo OT questa cosa era un po più difficile e quindi è stato un tampone, almeno io me la ricordo come proposta, come tampone, proprio a network design, diciamo così, un po fantasiosi nel mondo OT.
+
+00:36:19.933 --> 00:36:27.173
+<v SPEAKER_2>Quindi non cambi l'indirizzamento della tua rete OT, fai un bellissimo gioco di bilan e ottieni lo stesso risultato.
+
+00:36:27.173 --> 00:36:27.973
+<v SPEAKER_2>Molto furba come cosa.
+
+00:36:27.993 --> 00:36:29.433
+<v SPEAKER_1>C'è il solo di bilan translator.
+
+00:36:29.433 --> 00:36:30.893
+<v SPEAKER_2>Esatto, esatto.
+
+00:36:30.893 --> 00:37:12.093
+<v SPEAKER_1>C'è tra l'altro, visto che così siamo pur parler, una storiella di uno dei vendor che ha ideato una tecnologia che a me piace molto, che ho usato appunto di questa segmentazione trasparente, che chiamiamo la bilan translation, ha un nome diverso ma senza riferimenti, e si narra che sia stata inventata per errore, cioè era un bug, no, non era di fatto un bug, era una feature che non era prevista e che poi è diventata di fatto una feature di prodotto molto bella, che appunto viene usata nel mondo industriale, soprattutto nei mondi, in ambienti molto grandi, l'ho vista in alcuni casi in ambienti navali se ricordo bene, che apprezzo molto, quindi è così.
+
+00:37:12.093 --> 00:37:16.333
+<v SPEAKER_2>Probabilmente qualsiasi network ingegnere rabbrividisce davanti a quella funzionalità.
+
+00:37:16.333 --> 00:37:18.693
+<v SPEAKER_2>Cioè penso che nessuno possa essere...
+
+00:37:18.693 --> 00:37:32.773
+<v SPEAKER_2>Io mi ricordo quando me l'ha raccontata, non sono mai stato un network ingegnere, però ho lavorato sul mondo Rete, quando me l'ha raccontata, il mio cervello ha automaticamente proiettato un'immagine, quella del Vilani mismatch dei catalyst, perché...
+
+00:37:34.653 --> 00:37:39.673
+<v SPEAKER_1>No, non è neanche quello, perché di fatto poi la configurazione è coerente.
+
+00:37:40.453 --> 00:37:42.813
+<v SPEAKER_1>È un bridge di Vilani, è una bestemmia.
+
+00:37:44.013 --> 00:37:50.513
+<v SPEAKER_2>Anche lì, quando uno parla di bridge, io sto attento perché quando bridge male le cose, sai cosa succede?
+
+00:37:50.513 --> 00:37:54.533
+<v SPEAKER_2>Insomma, sono sempre argomenti molto delicati.
+
+00:37:54.533 --> 00:38:10.093
+<v SPEAKER_1>Diciamo che questa, assieme al Priveti Vilani, che è un'altra tecnologia che a me piace molto ed usa altra pochissimo in realtà, ma secondo me perché non ne si comprende la potenzialità, sono state un po tirate, usurpate per fare tantissime cose.
+
+00:38:10.153 --> 00:38:18.513
+<v SPEAKER_1>Per esempio, ho visto le Priveti Vilani usare per fare micro segmentazione, che uno diceva, beh, è ovvio, insomma, non proprio.
+
+00:38:18.513 --> 00:38:20.893
+<v SPEAKER_2>Non si presta molto, diciamo, a Vilani a me.
+
+00:38:20.893 --> 00:38:21.933
+<v SPEAKER_1>Esatto.
+
+00:38:21.933 --> 00:38:24.553
+<v SPEAKER_1>Adesso non usando le parole corrette perché me mi sfuggono.
+
+00:38:24.553 --> 00:38:45.313
+<v SPEAKER_1>C'era un unico dominio di Vilani, quello in cui prevedeva, sfugge proprio il termine, in cui si prevede che l'end point possa comunicare solo il gateway, quindi non è prevista la comunicazione tra due end point diretta e la micro segmentazione funzionava così, perché il gateway era il punto di sicurezza che faceva una sorta di proxy tra tutte le comunicazioni.
+
+00:38:45.313 --> 00:38:58.113
+<v SPEAKER_1>A livello 2 mi ricordo che per garantire la funzionalità di questa cosa, qualsiasi ip l'end point andava a contattare, aveva sempre lo stesso arp, che era quello del gateway.
+
+00:38:58.113 --> 00:39:10.693
+<v SPEAKER_1>Quindi la prima volta che ho fatto show arp, display arp, che cavolo ero sul sistema eccetera, ho visto tutti gli ip con lo stesso arp, ho detto, qua c'è un problema, c'è un problema.
+
+00:39:10.693 --> 00:39:18.193
+<v SPEAKER_2>No, infatti, perché tu vedi quella roba è per te chiaramente un problema la roba di questo, cioè la percepisci come un...
+
+00:39:18.193 --> 00:39:26.673
+<v SPEAKER_1>Arp Poisoning, prima risposta, una volta dici, non può essere perché ok, hai fatta bene, ma in una macchina virtuale, in un dominio, insomma è un po complicato.
+
+00:39:26.673 --> 00:39:32.353
+<v SPEAKER_1>Allora ti chiedi che cosa c'è, andiamo a vedere, apri i vetti di là, ma tu guarda, ma voi sapete?
+
+00:39:32.353 --> 00:39:35.813
+<v SPEAKER_1>No, ma davvero funziona così?
+
+00:39:35.813 --> 00:39:46.053
+<v SPEAKER_2>Quello ad esempio, io me lo ricordo utilizzato nel mondo VMware, però in alcuni contesti ogni cosa probabilmente è meglio metterlo nel suo contesto.
+
+00:39:46.053 --> 00:40:05.473
+<v SPEAKER_2>Nel mondo virtuale, le private villan come concetto hanno funzionato molto bene, ve lo usate spesso e volentieri, ma nel mondo T non so se porterebbero lo stesso risultato, ma probabilmente sarà ben applicabile.
+
+00:40:07.093 --> 00:40:31.713
+<v SPEAKER_1>Allora, secondo me può avere il suo senso, però si viola la regola numero uno, non si può toccare il mondo industriale funzionante, però se ci pensi le aziende abbastanza strutturate hanno più linee produttive, di cui impianti sono ben o male atomici, e questi impianti stanno su un'unica retta, tipicamente una barra 16.
+
+00:40:31.713 --> 00:40:41.533
+<v SPEAKER_1>In realtà non c'è nessun motivo per non segmentare questi impianti in bolle, che lo facciamo con la VLAN Translation, che lo facciamo con la PVLAN.
+
+00:40:41.533 --> 00:40:54.093
+<v SPEAKER_1>In realtà va tutto bene, questi dispositivi si parlano tra loro e con le porte in pari si chiamano ibride, non sono certo, sono tipicamente i gate o le stazioni di controllo e tutto funziona magicamente.
+
+00:40:54.093 --> 00:41:03.133
+<v SPEAKER_1>Quindi le tecnologie per affrontare la sicurezza nel mondo di OT sono quelle che abbiamo usato per anni e anche dimenticato in alcuni casi al mondo di T.
+
+00:41:03.133 --> 00:41:05.453
+<v SPEAKER_1>E che non si vuole farlo.
+
+00:41:05.453 --> 00:41:06.933
+<v SPEAKER_1>E questo è il problema.
+
+00:41:06.933 --> 00:41:10.793
+<v SPEAKER_1>Quindi il mio approccio e torno proprio all'inizio è questo.
+
+00:41:10.833 --> 00:41:11.953
+<v SPEAKER_1>Sicurezza nel mondo di T.
+
+00:41:11.953 --> 00:41:13.373
+<v SPEAKER_1>OT, scusa.
+
+00:41:13.373 --> 00:41:13.773
+<v SPEAKER_1>OT.
+
+00:41:13.773 --> 00:41:17.993
+<v SPEAKER_1>Bene, sappiamo che non si può toccare, non si può aggiornare e durerà vent'anni.
+
+00:41:19.053 --> 00:41:20.813
+<v SPEAKER_1>Cosa vuoi che ci facciamo?
+
+00:41:20.813 --> 00:41:26.933
+<v SPEAKER_1>Ci costruiamo un perimeter attorno, visibilità e se c'è qualcosa che non va reagiamo.
+
+00:41:26.933 --> 00:41:29.853
+<v SPEAKER_1>Ma come prevenzione si può far niente.
+
+00:41:29.853 --> 00:41:31.013
+<v SPEAKER_2>È dura.
+
+00:41:32.693 --> 00:41:37.393
+<v SPEAKER_2>Va bene, abbiamo chiarato ore 10.
+
+00:41:37.393 --> 00:41:45.393
+<v SPEAKER_1>Bene, ottimo, possiamo chiudere questa puntata e aspettare commenti e proposte anche per la prossima, perché ogni tanto anche noi siamo corto di idee.
+
+00:41:45.393 --> 00:41:50.933
+<v SPEAKER_1>Quindi se qualcuno vuole proporre argomenti, le volentieri, accettiamo volentieri.
+
+00:41:50.933 --> 00:41:56.113
+<v SPEAKER_2>Ci appeschiamo dallo stack di idee.
+
+00:41:56.113 --> 00:41:58.333
+<v SPEAKER_1>Assolutamente.
+
+00:41:58.333 --> 00:42:00.613
+<v SPEAKER_1>Bene, grazie e alla prossima.
+
+00:42:00.613 --> 00:42:01.133
+<v SPEAKER_2>Ciao a tutti.

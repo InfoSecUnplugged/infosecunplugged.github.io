@@ -1,0 +1,994 @@
+WEBVTT
+
+00:00:09.310 --> 00:00:16.570
+<v SPEAKER_2>Bentornati in Info Sec. Unplugged io sono Andrea Dainese, con me c'è Rocco Sicilia e siamo sempre negli uffici di Verona.
+
+00:00:16.770 --> 00:00:23.090
+<v SPEAKER_1>Ci eravamo detti di affrontare in maniera più tecnica la parte data center network.
+
+00:00:24.170 --> 00:00:34.010
+<v SPEAKER_1>Abbiamo discusso a livello campus che tipo di esigenze ci possono essere, soprattutto se riguarda un network design che tocca elementi di sicurezza.
+
+00:00:35.290 --> 00:00:43.650
+<v SPEAKER_1>Il data center, ovviamente parliamo di aziende che hanno esigenze di avere una serie di servizi all'interno della struttura.
+
+00:00:43.650 --> 00:00:47.810
+<v SPEAKER_1>Tutte hanno questa esigenza, però la dimensione conta in questo caso.
+
+00:00:47.810 --> 00:00:50.710
+<v SPEAKER_1>Potrei fare scelte molto diverse in base alla dimensione.
+
+00:00:50.710 --> 00:00:58.550
+<v SPEAKER_1>Ci assistiamo su un tipo di azienda enterprise, visto che la figura che stiamo ipotizzando è una figura che è all'interno del mondo enterprise tipicamente.
+
+00:01:01.790 --> 00:01:08.490
+<v SPEAKER_1>E devo un po capire come disegnare, supponiamo, una rete data center che sia solida.
+
+00:01:08.490 --> 00:01:20.110
+<v SPEAKER_1>Lì c'è pesante il tema della ridondanza, ad esempio, cosa che magari su una rete campus non sia importante, però posso permettermi dei criteri di ridondanza diversi.
+
+00:01:20.110 --> 00:01:24.850
+<v SPEAKER_1>Invece in data center probabilmente partiamo dall'idea che quella rete non si può mai fermare, molto probabilmente.
+
+00:01:25.290 --> 00:01:33.390
+<v SPEAKER_1>Ha delle esigenze prestazionali differenti dal mondo client e ci sono anche protocolli un po diversi dentro.
+
+00:01:33.810 --> 00:01:51.470
+<v SPEAKER_1>Mentre le reti client, le reti campus hanno l'utente che accede a dei servizi, a internet o a servizi interne, nelle reti data center tipicamente abbiamo l'inbound del trafico, anzi l'inbound delle richieste da parte degli utenti che vanno ovviamente considerate, ma che si fermano alla parte server.
+
+00:01:51.470 --> 00:02:00.510
+<v SPEAKER_1>E poi dietro c'è tutto un mondo bellissimo che gli utenti non conoscono e non devono conoscere, che è la struttura portante del data center.
+
+00:02:01.730 --> 00:02:03.990
+<v SPEAKER_2>Allora, è un tema abbastanza ampio.
+
+00:02:03.990 --> 00:02:36.230
+<v SPEAKER_2>Allora, allargherai un attimo alle persone che lavorano in un'azienda più piccola dove hanno un data center tutto assomato molto molto piccolo e che magari lo vogliono per questioni economiche dare fuori a infrastrutture virtuali o in hosting, perché comunque i data center vengono costruiti qui così, in questo modo, dovrebbero essere costruiti così e quindi anche per loro capire le logiche che ci sono alla base gli può aiutare a fare delle scelte piuttosto che delle altre.
+
+00:02:36.230 --> 00:02:49.970
+<v SPEAKER_2>Il mondo cloud, quindi chi ha servizi con cloud, differisce un pochino, non tantissimo, ma essendo i cloud degli enormi applicativi è il discorso dei faro multi-vendor che abbiamo fatto l'altra volta.
+
+00:02:50.810 --> 00:03:06.510
+<v SPEAKER_2>Nei mondi cloud, negli hyper scaler, quello che noi raccontiamo oggi dei data center di tipo classico va tradotto nella lingua dell'hyper scaler del caso.
+
+00:03:06.550 --> 00:03:14.370
+<v SPEAKER_2>Quindi partirei dal data center che nelle realtà magari più piccole è visto come una parte della rete.
+
+00:03:15.510 --> 00:03:19.610
+<v SPEAKER_2>Allora il data center ha delle esigenze diverse dal campus.
+
+00:03:19.610 --> 00:03:22.050
+<v SPEAKER_2>Direi che dovrebbe essere una base.
+
+00:03:22.050 --> 00:03:23.450
+<v SPEAKER_2>Ok, perché?
+
+00:03:25.650 --> 00:03:27.830
+<v SPEAKER_2>Partiamo dallo storage.
+
+00:03:27.830 --> 00:03:29.870
+<v SPEAKER_1>Anche io partirei da lì.
+
+00:03:29.870 --> 00:03:30.590
+<v SPEAKER_2>Partirei da lì.
+
+00:03:30.590 --> 00:03:42.930
+<v SPEAKER_2>Allora, nel casi più complicati e quindi non sono quelli di cui stiamo raccontando, la rete storage è su una infrastruttura separata di tipo Fiber Channel e quindi è un mondo tutto a parte.
+
+00:03:42.930 --> 00:03:45.970
+<v SPEAKER_2>Nel mondo di enterprise partiamo di storage su IP.
+
+00:03:45.970 --> 00:03:49.350
+<v SPEAKER_1>E spesso sì, è abbastanza consolidato.
+
+00:03:51.170 --> 00:03:55.010
+<v SPEAKER_1>Siamo i tre protocolli, a me ne dico nemmeno tre, principali.
+
+00:03:55.010 --> 00:03:58.730
+<v SPEAKER_1>Uno lo conosciamo in pochi, forse Fiber Channel over Ethernet.
+
+00:03:58.730 --> 00:03:59.790
+<v SPEAKER_2>Sì, che sta morendo.
+
+00:03:59.850 --> 00:04:02.370
+<v SPEAKER_2>Anzi possiamo già celebrare il funerale.
+
+00:04:04.770 --> 00:04:07.950
+<v SPEAKER_1>Gli altri, probabilmente, più diffusi sono NFS e Scasi.
+
+00:04:07.950 --> 00:04:08.990
+<v SPEAKER_2>Esatto, esatto.
+
+00:04:08.990 --> 00:04:17.230
+<v SPEAKER_2>Poi c'è il mondo chips che non è tipicamente data center, però è client to server o endpoint to server.
+
+00:04:17.230 --> 00:04:24.430
+<v SPEAKER_2>Allora, perché è importante che gli apparati data center siano pensati diversamente?
+
+00:04:24.430 --> 00:04:27.910
+<v SPEAKER_2>Perché hanno bisogno di prestazioni molto più spinte.
+
+00:04:27.910 --> 00:04:30.830
+<v SPEAKER_2>Allora, il motivo, lo devo fare un passo tecnico.
+
+00:04:31.710 --> 00:04:46.010
+<v SPEAKER_1>Scusa, non tanto a livello di banda, perché è possibile che la parte servente abbia una richiesta di bandwidth anche più alto rispetto all'interno della data center, ma soprattutto a livello di latency.
+
+00:04:46.010 --> 00:04:47.950
+<v SPEAKER_2>E sì, è affidabilità.
+
+00:04:47.950 --> 00:05:03.910
+<v SPEAKER_2>Quindi deve essere pensato per ridurre il più possibile la perdita di pacchetti, anche nei casi peggiori, perché finché va tutto bene, quando poi ci sono dei casi peggiori è lì che c'è la corruzione, perché di sto lo già stiamo parlando.
+
+00:05:03.910 --> 00:05:05.330
+<v SPEAKER_2>Allora il perché.
+
+00:05:06.430 --> 00:05:12.670
+<v SPEAKER_2>Dividiamo i mondi, ethernet e quello che è la scasi una volta, che è tuttora.
+
+00:05:12.670 --> 00:05:19.050
+<v SPEAKER_1>Che è tuttora scasi, sì, perché giusto per dare l'elemento tecnico.
+
+00:05:19.050 --> 00:05:24.110
+<v SPEAKER_1>Quando parliamo di fiber channel, parliamo di fatto di una rete ottica che dentro parla scasi.
+
+00:05:24.150 --> 00:05:27.630
+<v SPEAKER_1>I messaggi dentro sono scasi, quindi il protocollo è quello.
+
+00:05:27.630 --> 00:05:42.930
+<v SPEAKER_2>Il protocollo storage, a parte da NFS che ha un mondo diverso, ma si interseca molto, sotto sotto parla scasi, che è un protocollo vecchissimo, che io facevo transitare su cavi di rame lunghi 25 metri.
+
+00:05:42.930 --> 00:05:45.870
+<v SPEAKER_1>Perché i dischi erano scasi, c'erano connettori scasi.
+
+00:05:46.850 --> 00:05:51.250
+<v SPEAKER_2>E chi ha una peculiarità non può essere perso in nessun caso.
+
+00:05:51.370 --> 00:05:55.070
+<v SPEAKER_2>Un pacchetto scasi deve essere garantito l'articolo.
+
+00:05:55.070 --> 00:05:56.990
+<v SPEAKER_1>Non è previsto il controllo di errore.
+
+00:05:59.770 --> 00:06:05.950
+<v SPEAKER_2>Allora, c'è il controllo di errore nel senso verifica se arriva corrotto, ma non c'è la retransmission tipica del TCP.
+
+00:06:05.950 --> 00:06:11.890
+<v SPEAKER_2>O comunque, non sono così esperto, ma mi pare che non ci sia.
+
+00:06:11.890 --> 00:06:25.170
+<v SPEAKER_2>Dall'altra parte abbiamo il mondo Ethernet, dove by design è previsto che salti, cioè le comunicazioni si fermino per riconvergere, per un tempo che può andare anche quasi ai 60 secondi.
+
+00:06:25.170 --> 00:06:31.190
+<v SPEAKER_2>Quindi, da una parte non c'è perdita, dall'altra va bene se ci fermiamo a 60 miliardi di secondi.
+
+00:06:31.190 --> 00:06:40.550
+<v SPEAKER_1>Il protocollo prevede tranquillamente le perdite, tanto i pavetini nuori trasmessi, coi problemi di latency che conosciamo, però la comunicazione continua.
+
+00:06:40.550 --> 00:06:45.930
+<v SPEAKER_2>È chiaro che se usiamo Ethernet per trasportare scasi, potrebbe avere un problema.
+
+00:06:47.650 --> 00:06:50.250
+<v SPEAKER_2>E quando è che usiamo Ethernet per trasportare scasi?
+
+00:06:50.250 --> 00:06:54.950
+<v SPEAKER_1>Ovviamente tecnologicamente abbiamo fatto esattamente quella scelta a un certo punto.
+
+00:06:54.950 --> 00:06:59.130
+<v SPEAKER_1>C'è la storia, non io e te.
+
+00:06:59.130 --> 00:07:02.670
+<v SPEAKER_1>A un certo punto il mondo ha cominciato ad usare Ethernet per trasbettere scasi.
+
+00:07:02.670 --> 00:07:03.870
+<v SPEAKER_2>Esatto.
+
+00:07:03.870 --> 00:07:11.470
+<v SPEAKER_2>Facciamo un breve escurso su Fiber Channel che AI-PU sarà sconosciuto o tenuto a distanza per via della complessità e della delicatezza.
+
+00:07:11.470 --> 00:07:29.230
+<v SPEAKER_2>Nel mondo Fiber Channel ci sono delle caratteristiche per garantire appunto una totale affidabilità della rete, in cui tanto Fiber Channel sono tipicamente due rete parallele e separate, in cui il pacchetto può andare nell'una o nell'altra rete e deve essere garantito l'arrivo.
+
+00:07:30.830 --> 00:07:35.070
+<v SPEAKER_2>Per questa garanzia tutto il firmware dalla A alla Z deve essere certificato.
+
+00:07:35.390 --> 00:07:53.530
+<v SPEAKER_2>Quindi parliamo del firmware, della scheda di rete, del sistema operativo, dell'Hypervisor sopra, del sistema operativo della macchina virtuale dentro, dei VMware Tools se ci sono, degli Switch Fiber Channel, dei backup, tutto, tutto, doveva essere in una matrice N dimensionale certificata.
+
+00:07:53.530 --> 00:08:00.270
+<v SPEAKER_2>E questa forse è la complessità più grande di Fiber Channel che ha portato strade parallele.
+
+00:08:00.270 --> 00:08:15.930
+<v SPEAKER_1>È anche molto interessante il concetto di, effettivamente, quando si parla di Sun, Storage Area Network, che non sono gli storage, così lo dico ogni tanto per ricordarcelo, che Sun è la rete che collega i nodi agli storage, no, non lo storage.
+
+00:08:15.930 --> 00:08:20.490
+<v SPEAKER_1>E interessante proprio il fatto che quando si parla di doppia rete, sono proprio due reti.
+
+00:08:20.490 --> 00:08:21.390
+<v SPEAKER_2>Due reti.
+
+00:08:21.390 --> 00:08:28.030
+<v SPEAKER_1>Sono proprio una rete composta da alcuni nodi e l'altra rete composta dagli altri nodi.
+
+00:08:28.070 --> 00:08:29.890
+<v SPEAKER_2>Viene detto di solito fabbrica a fabbrica.
+
+00:08:29.970 --> 00:08:30.370
+<v SPEAKER_1>Esatto.
+
+00:08:30.370 --> 00:08:36.950
+<v SPEAKER_2>Da un punto A allo storage B, posso scegliere due percorsi paralleli fisicamente separati.
+
+00:08:36.950 --> 00:08:51.090
+<v SPEAKER_2>Quando io vado nei miei switch, fiber channel che in realtà sarebbero dei router per il tipo di funzionamento che hanno e collego delle fibre, sto preventivamente alloccando della banda dal punto A al punto B.
+
+00:08:51.090 --> 00:08:53.310
+<v SPEAKER_2>Chiaramente stiamo semplificando enormemente.
+
+00:08:54.330 --> 00:08:58.450
+<v SPEAKER_1>Anche perché non so quanti usano ancora fiber channel.
+
+00:08:59.650 --> 00:09:11.710
+<v SPEAKER_1>È molto usato in un mondo enterprise, però probabilmente un network engineer di recente introduzione potrebbe non averlo mai visto.
+
+00:09:11.710 --> 00:09:12.930
+<v SPEAKER_2>Anche perché non è il suo mestiere.
+
+00:09:12.950 --> 00:09:15.370
+<v SPEAKER_2>Nel netto l'ingegnero tipicamente non fa fiber channel.
+
+00:09:15.810 --> 00:09:19.130
+<v SPEAKER_2>È chi di chi fa storage di solito.
+
+00:09:19.130 --> 00:09:23.370
+<v SPEAKER_2>Tutti i miei rispetti perché è un protocollo che io adoro nonostante la complessità.
+
+00:09:23.370 --> 00:09:33.650
+<v SPEAKER_2>Quindi dicevo che quando hai uno switch si alloca preventivamente della banda, perché ogni, non sempre, ogni quattro porte c'è una banda allocabile e quindi io la splitto, eccetera eccetera.
+
+00:09:35.630 --> 00:09:40.230
+<v SPEAKER_2>Ci sono delle problematiche che non sono note, ho scoperto.
+
+00:09:40.230 --> 00:09:47.070
+<v SPEAKER_2>Se io ho quattro porte, due le uso, che ne so, ho quattro porte che mi fanno 32 giga massimo, ok?
+
+00:09:47.070 --> 00:09:58.170
+<v SPEAKER_2>Quindi io alloco 8 e 8 per, che ne so, la banda, e poi ho una porta che allocco, che ne so, 16 per il backup.
+
+00:09:58.170 --> 00:10:01.210
+<v SPEAKER_2>E poi l'ultima la lascio vuota perché ho finito la banda.
+
+00:10:01.210 --> 00:10:03.230
+<v SPEAKER_1>La banda di quel blocco.
+
+00:10:03.230 --> 00:10:17.650
+<v SPEAKER_2>Il problema è che se io sto alloccando due porte, 8 e 8 lato storage che mi richiedono una certa banda e una certa latenza, mentre ho il backup che mi chiede magari a spike di banda, ma con latenza che tutto sommato può essere anche più bassa.
+
+00:10:17.650 --> 00:10:28.950
+<v SPEAKER_2>Siccome queste porte vanno assieme, si influenzano e l'ho visto in alcuni casi in cui quando partiva il backup si rallentava tutto e c'erano problemi di rete.
+
+00:10:30.310 --> 00:10:35.850
+<v SPEAKER_1>Anche perché sulla parte di Fiber Channel è ancora più evidente il tema degli IO.
+
+00:10:35.990 --> 00:10:37.590
+<v SPEAKER_1>Di quanto IO puoi fare.
+
+00:10:37.590 --> 00:10:38.550
+<v SPEAKER_2>E infatti ci stavano arrivando.
+
+00:10:38.550 --> 00:10:41.030
+<v SPEAKER_1>Quei limiti, scusa mi ho voluto anticiparti.
+
+00:10:41.030 --> 00:10:54.170
+<v SPEAKER_2>Quando io ho latenza, ho problemi nella rete Fiber Channel, perché l'ho mal configurata, ho mal assegnato le bande, ho accorpato una porta di backup con delle porte ad alta velocità che non devono essere, succede che i pacchetti vengono rallentati.
+
+00:10:54.170 --> 00:11:07.310
+<v SPEAKER_2>C'è un buffer sostanzialmente che invece nel net e in via, e quello che arriva arriva, il resto a me lo rimanderò, in Fiber Channel c'è invece una teoria, un approccio diverso, c'è una sorta di posso inviare?
+
+00:11:07.310 --> 00:11:12.470
+<v SPEAKER_2>Si, dammi quattro pacchetti, ecco le quattro, posso mandartene altre, eccetera, eccetera.
+
+00:11:12.470 --> 00:11:17.750
+<v SPEAKER_2>Quindi una misconfiguration nel mondo Fiber Channel impatta direttamente sulla velocità dello storage.
+
+00:11:17.750 --> 00:11:18.550
+<v SPEAKER_1>C'era IO.
+
+00:11:18.550 --> 00:11:31.430
+<v SPEAKER_1>Latency e sicuramente sono effetti che tutti abbiamo visto almeno una volta, macchine che impiantatissime, che però con la CPU non tanto alta.
+
+00:11:31.430 --> 00:11:33.890
+<v SPEAKER_1>Il tipico comportamento da IO.
+
+00:11:33.890 --> 00:11:43.790
+<v SPEAKER_1>Latency potrebbe essere la parte virtuale dello storage, ma in molti casi il problema è proprio a monte sulla rete Fiber Channel.
+
+00:11:43.790 --> 00:11:46.170
+<v SPEAKER_2>Quindi che cosa è successo nel mondo?
+
+00:11:46.170 --> 00:11:47.970
+<v SPEAKER_2>Credo che abbiamo dato l'idea della complessità.
+
+00:11:47.970 --> 00:11:49.030
+<v SPEAKER_2>Questo era lo scopo.
+
+00:11:49.030 --> 00:11:58.450
+<v SPEAKER_2>Per evitare questa complessità, non è neanche facile trovare persone che conoscono bene Fiber Channel, si è deciso di cambiare strada.
+
+00:11:58.450 --> 00:12:00.270
+<v SPEAKER_2>Quindi buttiamo via Fiber Channel.
+
+00:12:00.270 --> 00:12:03.650
+<v SPEAKER_1>Sì, quindi questo è una cosa che ho avuto sempre il dubbio.
+
+00:12:03.710 --> 00:12:09.990
+<v SPEAKER_1>Il tema del cambio è costo e complessità.
+
+00:12:09.990 --> 00:12:28.970
+<v SPEAKER_1>Io avevo anche l'idea che fosse anche più spostata sul costo, nel senso che, ancora una volta sbagliando, riuso tecnologia Ethernet che tendenzialmente già sto usando all'interno del data center.
+
+00:12:28.970 --> 00:12:30.250
+<v SPEAKER_2>Assolutamente, fattore costo.
+
+00:12:30.350 --> 00:12:37.330
+<v SPEAKER_2>Non devo comprarmi noi due reti fiberchannel per gestire qualcosa che posso buttare su Ethernet.
+
+00:12:37.330 --> 00:12:45.190
+<v SPEAKER_1>Giusto per spetsi una lancia in favore dei network design che ho visto la Tovendor.
+
+00:12:45.190 --> 00:13:13.210
+<v SPEAKER_1>Ancora una volta l'ho vista sui design che proponeva Cisco, i validenti design che proponeva Cisco, in cui quando si faceva una rete fiberchannel over Ethernet, ma era anche suoi scasi lo stesso concetto, comunque era proposta una fabrica ai scasi, o fiberchannel over Ethernet, con degli apparati di un certo tipo e altri apparati con altre caratteristiche per la parte dei network inbound.
+
+00:13:13.210 --> 00:13:22.090
+<v SPEAKER_1>Quindi, dal punto di vista del design, l'idea è stata messa giù in maniera pulita con dei crismi.
+
+00:13:22.090 --> 00:13:31.070
+<v SPEAKER_1>Quello che però abbiamo visto tutti accadere probabilmente è che i top of rack diventavano il punto d'aggregazione anche per le reti e le scase.
+
+00:13:31.070 --> 00:13:54.330
+<v SPEAKER_2>Infatti, la semplificazione ha detto non usiamo fiberchannel che viene oggi usata su aziende che tipicamente hanno grandi strutture dati, terra petabyte di dati e quindi hanno bisogno di una velocità molto superiore, quando nel mondo di enterprise hanno detto togliamo quella roba a letto e cerchiamo di mettere tutto su Ethernet.
+
+00:13:54.330 --> 00:14:24.310
+<v SPEAKER_2>Quindi hanno preso l'istruzione scasi, quella che io facevo passare nei cavi rame dedicati di 25 metri, che erano a 20 megabit, con una velocità irrisoria, e veniva portata ed è stata immessa all'interno di Ethernet per la parte FCOE o TCP per la parte ai scasi, che sarebbe i scasi su IP, sostanzialmente, su TCP sarebbe.
+
+00:14:24.310 --> 00:14:25.890
+<v SPEAKER_1>Sì, sì, sì.
+
+00:14:25.890 --> 00:14:29.470
+<v SPEAKER_2>Ma, scasi è sempre scasi, quindi non può essere perso.
+
+00:14:31.910 --> 00:14:46.150
+<v SPEAKER_2>Purtroppo, chi si è trovato, chi NetTour che è ingegnere si è trovato a gestire un protocollo ai scasi era un protocollo come un altro, perché le reti Ethernet sono sempre state fallibili by design, quindi il problema non si pone.
+
+00:14:46.150 --> 00:14:56.050
+<v SPEAKER_2>Quindi le reti ai scasi sono state implementate in ottica network design senza rendersi conto che si stava portando uno storage.
+
+00:14:56.050 --> 00:15:05.050
+<v SPEAKER_2>E i disastri sono stati ovvi, perché interruzioni di rete, quindi mancanza di pacchetti scasi continuativi, ha portato a corruzione di...
+
+00:15:05.050 --> 00:15:11.950
+<v SPEAKER_1>Macchine crash, macchine crash, poi ricordo bellissimi litigi sul tema MTU.
+
+00:15:11.950 --> 00:15:13.370
+<v SPEAKER_2>Sul tema MTU, assolutamente.
+
+00:15:13.370 --> 00:15:19.290
+<v SPEAKER_1>Per un periodo era quasi tutti i vendor richiedevano i jumbo frame, quindi le MTU non le mettono.
+
+00:15:19.290 --> 00:15:23.810
+<v SPEAKER_1>Questa cosa mi pare sia anche un po sparita come requisito.
+
+00:15:23.810 --> 00:15:26.810
+<v SPEAKER_2>Allora dovrebbe esserci, è originario...
+
+00:15:26.810 --> 00:15:35.310
+<v SPEAKER_2>Allora, la MTU 9000 veniva chiesto, o almeno storicamente a me è stato chiesto nelle reti NFS per ottimizzazione.
+
+00:15:36.150 --> 00:15:38.690
+<v SPEAKER_2>Parliamo magari un'altra un attimo.
+
+00:15:38.690 --> 00:15:45.730
+<v SPEAKER_2>Nelle iscasi non era un problema, però teniamo conto che non è corretto la MTU del Fiber Channel, se non sbaglio è M16.
+
+00:15:45.730 --> 00:15:57.810
+<v SPEAKER_2>Quindi ha parità di media, perché qualcuno ha detto la porta Fiber Channel era 8 GB quando in Ethernet era disponibile la 10 e quindi era più veloce l'Ethernet.
+
+00:15:57.810 --> 00:15:59.710
+<v SPEAKER_2>Non è proprio così, però proprio vero.
+
+00:15:59.710 --> 00:16:05.170
+<v SPEAKER_1>Poi sull'MTU c'è tutta una scienza bellissima, perché in posto la MTU è M16, poi ci metto la VLAN, ci metto...
+
+00:16:05.170 --> 00:16:07.710
+<v SPEAKER_1>Comincio a mettere delle feature che...
+
+00:16:07.710 --> 00:16:25.690
+<v SPEAKER_1>adesso, sarebbe un approfondimento solo su quello, ma giusto per capirci, una volta che ho impostato un MTU su quella porta, di fatto, quindi sul ramo di comunicazione, se aggiungo delle feature rubo dei bit a quella dimensione.
+
+00:16:25.730 --> 00:16:27.990
+<v SPEAKER_1>Quindi, l'MTU è in realtà che poi va a usare il pacchetto più piccolo.
+
+00:16:27.990 --> 00:16:37.370
+<v SPEAKER_1>Quindi se il protocollo mi richiede 1.6 di MTU, in realtà la porta devo implementarla, devo configurarla, 1.6 più, qualcos'altro, perché se voglio usare altre feature.
+
+00:16:37.370 --> 00:16:50.390
+<v SPEAKER_1>Questa cosa, io l'ho vista in tantissime situazioni, mi è capitato di fare trouble shooting quando lavoravo sulla parte del data center, in cui puntualmente il problema era nella catena, perché poi ovviamente...
+
+00:16:50.390 --> 00:16:53.150
+<v SPEAKER_2>Nella catena, esatto, di cui non tutto è sotto tuo controllo.
+
+00:16:53.150 --> 00:16:53.710
+<v SPEAKER_1>Esatto, esatto.
+
+00:16:53.710 --> 00:16:56.850
+<v SPEAKER_1>Nella catena c'era una porta, magari configurato un MTU sbagliato.
+
+00:16:56.850 --> 00:17:08.970
+<v SPEAKER_2>Esatto, credo che l'MTU sia ancora il problema più esoterico, dove la gente si spacca la testa, perché apparentemente la cosa funziona, quindi la connessione c'è, un po di dati transita, ma ad un certo punto si pianta tutto.
+
+00:17:08.970 --> 00:17:12.550
+<v SPEAKER_1>Il problema è il MTU, faremo un capitolo, una puntata dedicata all'MTU.
+
+00:17:12.550 --> 00:17:15.610
+<v SPEAKER_2>Va bene, avrei degli esempi molto esoterici che ho vissuto.
+
+00:17:15.610 --> 00:17:22.430
+<v SPEAKER_1>Perché l'ho visto in due occasioni specifici, poi chiuso la parentesi, mondo storage e mondo provider, quando segui le trasmissioni.
+
+00:17:22.430 --> 00:17:27.010
+<v SPEAKER_1>Lì si apre veramente un mondo benissimo, chiusa la parentesi.
+
+00:17:27.010 --> 00:17:41.990
+<v SPEAKER_2>E quindi il concetto è che i dispositivi data center, tipicamente oggi, devono essere disegnati per bassa latenza, perché se vi perdete scasi che sta encapsulato e magari neanche sapete di usarlo, si blocca tutto.
+
+00:17:42.090 --> 00:17:43.770
+<v SPEAKER_2>E uno dice, va be uso NFS.
+
+00:17:45.530 --> 00:17:55.790
+<v SPEAKER_2>Le NFS di solito si usa nel comunicazione host hypervisor, citiamo VMware ma chiaramente non è l'unico, storage.
+
+00:17:56.830 --> 00:18:02.390
+<v SPEAKER_2>Lo storage ha i dischi delle macchine virtuali, ma l'intelligenza sta sul server.
+
+00:18:02.390 --> 00:18:19.330
+<v SPEAKER_2>Quindi il server istanzia una piccola percentuale di CPU, di schede di rete emulante, di schede storage emulante che parlano i scasi attraverso il protocollo dell'hypervisor sotto NFS con il disco che sta dall'altra parte.
+
+00:18:19.330 --> 00:18:21.130
+<v SPEAKER_2>Quindi il programma ci è identico.
+
+00:18:21.130 --> 00:18:22.030
+<v SPEAKER_1>Sì, sì, sì.
+
+00:18:22.030 --> 00:18:31.410
+<v SPEAKER_1>Hai una serie di stratificazioni che in alcuni contexti, anche lì è stato molto interessante l'evoluzione di NFS, perché in alcuni contesti funzionava molto, molto bene.
+
+00:18:31.490 --> 00:18:34.390
+<v SPEAKER_1>In altri contesti, tipicamente quando...
+
+00:18:34.390 --> 00:18:45.470
+<v SPEAKER_1>adesso è un'esperienza che ho fatto io, non è detto che siano la legge, cioè possono essereci tantissimi contesti, per esempio quando avevo carichi molto eterogenei, NFS lo vedevo un po faticato.
+
+00:18:45.470 --> 00:18:46.190
+<v SPEAKER_2>Assolutamente.
+
+00:18:46.190 --> 00:18:55.010
+<v SPEAKER_1>Rispetto invece a una rete a escasi, ovviamente disegnata coi crismi giusti, perché se la facciamo male siamo punta a capo, dove ci si poteva permettere un po di...
+
+00:18:55.010 --> 00:19:02.010
+<v SPEAKER_1>una volta un ingegnere aveva fatto un'espressione bellissima, lui lo chiamava frullatore di IO.
+
+00:19:02.010 --> 00:19:12.250
+<v SPEAKER_1>Cioè quando IO molto diversi tra di loro, lo scasi è un protocollo preferibile da quel punto di vista, quindi ai scasi diventava preferibile.
+
+00:19:12.250 --> 00:19:24.390
+<v SPEAKER_1>Ovviamente Fiber Channel non si sarebbe neanche scomposto, con i scasi abbiamo detto un po di problemi che avremmo dovuto affrontare, con NFS invece si rischiava di fare fatica.
+
+00:19:24.390 --> 00:19:32.050
+<v SPEAKER_1>Poi secondo me sulla parte NFS, spero di non fare incavolare nessuno, gli storage vendor ci hanno messo un po del loro.
+
+00:19:32.050 --> 00:19:35.030
+<v SPEAKER_1>Assolutamente, stavo per dire.
+
+00:19:35.030 --> 00:19:45.230
+<v SPEAKER_1>C'è stata un'adozione di NFS forse un po incauta, cioè nel senso che correttissimo adottarlo, implementarlo e portarlo sulle macchine storage.
+
+00:19:45.230 --> 00:20:13.730
+<v SPEAKER_1>In alcuni casi ho visto delle implementazioni NFS un po immature, quindi macchine che proprio sperimentato, macchine che NFS performavano malissimo, questo è stato un paio di occasioni in cui ho lavorato direttamente sul, ho avuto modo di lavorare proprio a stretto contatto col vendor, che non cito per non far incavolare nessuno veramente, come macchine che NFS performavano veramente male, stessa macchina riconfigurate nei scasi una bomba.
+
+00:20:13.730 --> 00:20:14.890
+<v SPEAKER_2>Sì, hanno delle peculiarità.
+
+00:20:14.890 --> 00:20:26.350
+<v SPEAKER_1>Quindi questa cosa mi ha fatto pensare che non fosse un tema proprio di protocollo insieme, ma forse anche le macchine ci hanno messo un po del loro.
+
+00:20:26.530 --> 00:20:28.290
+<v SPEAKER_2>L'esperienza mia è stata la stessa.
+
+00:20:28.290 --> 00:20:57.490
+<v SPEAKER_2>Io vengo dal mondo Fiber Channel, io ho imparato lo storage del Fiber Channel, la cosa più semplice naturalmente, e poi anni dopo, per un discorso non tanto di costo, ma di competenze, il mio responsabile aveva fatto la scelta tecnica di passare su NFS e usammo in particolare, possiamo dirlo NetApp, perché allora era uno dei primi che ha spinto la parte NFS molto forte, l'ha ottimizzata a mio parere molto bene.
+
+00:20:57.490 --> 00:21:08.690
+<v SPEAKER_1>Con il secondo di poi forse loro aprirono la pista con una buona implementazione di NFS, erano i filer, i filer, si chiamavano i filer, evidentemente con delle scelte maturate.
+
+00:21:10.950 --> 00:21:16.490
+<v SPEAKER_1>E gli altri che sono arrivati dopo probabilmente sono, non dico, improvvisati.
+
+00:21:16.490 --> 00:21:19.050
+<v SPEAKER_2>Alcuni si sono improvvisati e si vedeva.
+
+00:21:19.050 --> 00:21:40.150
+<v SPEAKER_1>Poi a livello diciamo, l'età forse è l'unica che ha una storia in quella direzione, cioè che è nata proprio con l'idea di fare una macchina, non dico general propose, però che avesse un certo tipo di prestazioni sull'NFS, infatti aveva il suo file system che era diverso da come gli altri approcciavano con la tecnologia.
+
+00:21:40.150 --> 00:22:09.750
+<v SPEAKER_1>Gli altri, i vendor che venivano da Fiber Channel e hanno infilato NFS a forza, a parte che ho visto di quelle robe inenarrabili, tipo il controller di Windows 2003, adesso che l'ho detto qualcuno capisce anche chi è il vendor, un controller con Windows 2003 che esportavano NFS con sotto scaccia, robe che a me vien da dire ma perché l'hai fatto, chi l'ha pensato, in tempi relativamente più recenti.
+
+00:22:09.750 --> 00:22:10.430
+<v SPEAKER_2>Come si chiamava?
+
+00:22:10.430 --> 00:22:11.990
+<v SPEAKER_2>C'era una distribuzione apposta?
+
+00:22:11.990 --> 00:22:25.250
+<v SPEAKER_1>C'era una distribuzione apposta, io ricordo un vendor che aveva dei controller separati che avevano scasi tra il controller e gli dischi e esportava i Dnfs, che era ovviamente...
+
+00:22:26.730 --> 00:22:28.670
+<v SPEAKER_1>sembrava troppo una crocchio.
+
+00:22:29.530 --> 00:22:29.870
+<v SPEAKER_2>Lo era?
+
+00:22:29.870 --> 00:22:31.010
+<v SPEAKER_2>No, no, no, lo era.
+
+00:22:31.010 --> 00:22:34.030
+<v SPEAKER_1>È come se io facessi due bei serveroni Windows.
+
+00:22:34.030 --> 00:22:35.330
+<v SPEAKER_2>Infatti credo non esista più.
+
+00:22:35.330 --> 00:22:40.350
+<v SPEAKER_1>No, no, è stata cassata, è stato un po sul mercato perché il vendor era...
+
+00:22:40.450 --> 00:22:46.530
+<v SPEAKER_1>non è un vendor di primo peso, c'è un vendor di un certo peso, però non ha avuto tanto futuro.
+
+00:22:46.530 --> 00:23:22.050
+<v SPEAKER_1>In tempi più recenti invece c'è un ritorno di Fiber Channel abbastanza importante su certe classi di storage, forse l'introduzione dei solid state, quindi avere una disponibilità di IO così elevata al lato disco ha permesso a Fiber Channel di tornare perché ovviamente lo sfrutti veramente quel tipo di architettura e quei vendor che ho in mente sulla parte diciamo che nascono, che hanno deciso di maniera sul mondo scasi, cominciano a trattare praticamente in maniera paritetica Fiber Channel con i scasi.
+
+00:23:22.050 --> 00:23:32.090
+<v SPEAKER_2>Sì, è corretto, a netto del, e di solito i vendor danno con le specifiche, di implementare le reti ai scasi in un certo modo, quindi non dal punto di vista del network ingegnero.
+
+00:23:32.110 --> 00:23:33.350
+<v SPEAKER_1>Esatto, esatto.
+
+00:23:33.390 --> 00:23:41.250
+<v SPEAKER_2>Anzi, chi, dentro di un ingegner che vede implementare due reti ai scasi così, gli sembra qualcosa che è fatta male, però alzo perché.
+
+00:23:41.250 --> 00:23:49.010
+<v SPEAKER_1>Ecco, giusto per introdurre qualche parolaccia che era proprio anche dei bias che ho visto.
+
+00:23:49.010 --> 00:23:57.710
+<v SPEAKER_1>Converged storage non vuol dire che in un singolo coppia di switch convergono tutte le reti dell'azienda, è un altro significato.
+
+00:23:59.530 --> 00:24:04.390
+<v SPEAKER_1>È un design che si possono utilizzare nel mondo data center.
+
+00:24:04.410 --> 00:24:17.330
+<v SPEAKER_1>Uno dei principi, che è giusto sottolineare, è che la rete storage ha delle caratteristiche che dobbiamo osservare, dei design che dobbiamo osservare, anche nella scelta del modello degli apparati.
+
+00:24:17.370 --> 00:24:29.130
+<v SPEAKER_1>Cioè parliamo proprio di latency in microsecond, se non ricordo male, rispetto a latency, ben più easy, diciamo, da raggiungere sugli switch che possiamo mettere anche magari dopo freq, perché no?
+
+00:24:34.730 --> 00:24:57.550
+<v SPEAKER_2>E poi c'è Fiber Channel over Ethernet, FCOE, che è una tecnologia che voleva mettere assieme l'Ethernet, quindi la flessibilità di Ethernet, con la fidavità di Fiber Channel, ma inevitabilmente ci è scontrata, perché doveva portare la complessità del Fiber Channel al mondo Ethernet, ed è stato il suo talone da kill per il suo fallimento.
+
+00:24:59.190 --> 00:25:01.510
+<v SPEAKER_1>Forse non vorrei mettermi...
+
+00:25:01.510 --> 00:25:22.870
+<v SPEAKER_1>non voglio parlare per conto di chi ha implementato quel protocollo, che è stato secondo me un buon esperimento, diciamo così, un buon tentativo da quel punto di vista di sfruttare le potenzialità di Ethernet per l'ambito Fiber Channel.
+
+00:25:22.870 --> 00:25:31.430
+<v SPEAKER_1>Però obiettivamente forse la complessità era tale che si poteva a quel punto tranquillamente adottare Fiber Channel, non c'era tutto questo vantaggio.
+
+00:25:31.430 --> 00:25:32.930
+<v SPEAKER_2>Era sempre...
+
+00:25:32.930 --> 00:25:35.850
+<v SPEAKER_1>Beh, nasceva proprio per l'ambito Converge, da adesso che ci penso.
+
+00:25:35.850 --> 00:25:37.890
+<v SPEAKER_1>L'idea era proprio di avere comunque una rete convergente.
+
+00:25:37.930 --> 00:25:39.310
+<v SPEAKER_2>Esatto, l'idea era proprio quello.
+
+00:25:39.450 --> 00:25:51.630
+<v SPEAKER_2>Compro, siccome devo comprarmi degli apparati di qualità nel mondo datacenter, per la banda, eccetera, eccetera, a questo punto li compro con la doppia funzionalità Ethernet e Fiber Channel.
+
+00:25:51.750 --> 00:25:57.270
+<v SPEAKER_1>Con certamente aveva assolutamente senso, anche perché potevi giocare molto bene col QoS rispetto ai pacchetti di...
+
+00:25:57.270 --> 00:26:02.410
+<v SPEAKER_2>Assolutamente, potevi differenziare i ruoli, il network amministrato, dallo storage amministrato, eccetera.
+
+00:26:02.410 --> 00:26:13.930
+<v SPEAKER_2>Quindi era stata pensata bene per essere flessibile, il suo problema è stato che nel momento in cui io devo aggiornare un firmware e un nexus, vabbè, ci sta la portata nexus.
+
+00:26:13.930 --> 00:26:15.310
+<v SPEAKER_1>È nata praticamente sulle apparati.
+
+00:26:15.310 --> 00:26:17.030
+<v SPEAKER_2>È nata lì e credo ne abbiano fatto.
+
+00:26:17.030 --> 00:26:22.330
+<v SPEAKER_2>Non sono quelli che l'hanno sviluppato, gli unici, ma sono quelli che chiaramente l'hanno sdoganato.
+
+00:26:23.750 --> 00:26:31.050
+<v SPEAKER_2>Dovevo scontrarmi con tutta la matrice di cui prima, la matrice di compatibilità di tutto il mondo Fiber Channel.
+
+00:26:31.050 --> 00:26:36.110
+<v SPEAKER_2>Questa complessità ne ha impedito l'adozione, ne ha impedito lo sviluppo.
+
+00:26:37.590 --> 00:26:43.890
+<v SPEAKER_1>Che poi, scusami se ti interrompo, ha perfettamente senso all'interno di quelli che si chiamavano pod, no?
+
+00:26:43.890 --> 00:26:44.230
+<v SPEAKER_2>Sì.
+
+00:26:44.230 --> 00:26:58.030
+<v SPEAKER_1>Cioè, nell'imprevenzione di un pod, lì effettivamente aveva una semplificazione, perché aveva un unico punto di controllo, si chiama Fabric Interconnect, in cui da quel punto si poteva aggirire tutto.
+
+00:26:58.030 --> 00:27:16.110
+<v SPEAKER_1>E lì c'era l'accumulità di gestione, l'unico punto di controllo effettivamente di questi due mondi, che finiva, cioè proprio il confine era con gli storage di quel momento storico, che tipicamente non parlavano Fiber Channel over Ethernet, quindi avevi ovviamente la parte Sun che era tradizionale.
+
+00:27:16.110 --> 00:27:57.650
+<v SPEAKER_2>Infatti FCOE sopravvive ancora in quel piccolo segmento di chi usa soluzioni Blade, quindi dal Blade al Switch dove poi riceve la connettività esterna, storage ed Ethernet, e lì si parla Fiber Channel over Ethernet, con tutte le problematiche del caso, perché un impatto Ethernet su quegli Switch l'ha, ne impatta la CPU e deve essere garantito al frame Fiber Channel di arrivare correttamente, altrimenti viene ritardato il famoso frame pacchetto Fiber Channel con dentro l'influzione e scasi e gli stori a Giovano corrotti.
+
+00:27:57.650 --> 00:28:00.990
+<v SPEAKER_2>Esatto, quindi è una considerazione non banale.
+
+00:28:00.990 --> 00:28:17.870
+<v SPEAKER_1>A profitto del tema Blade, perché anche sul tema Blade, diciamo nel design del datacenter, ovviamente, diciamo, se l'esigenza è di una certa densità di sistemi, molte aziende prediligono l'ambito Blade.
+
+00:28:19.890 --> 00:28:38.290
+<v SPEAKER_1>Secondo me sul tema Blade anche quello potrebbe essere un capitolo diverso, sono dei vendor che hanno definito delle linee che a me personalmente sono piaciuti di più, in cui lo chassis non cambiava praticamente mai, altri vendor in cui lo chassis capiva un po troppo frequentemente, e quindi perdeva anche forse un po lo scopo del Blade.
+
+00:28:38.290 --> 00:28:44.590
+<v SPEAKER_1>Però questo potrebbe essere una cosa un po del mercato italiano in cui se compro un Blade, lo chassis me lo voglio tenere per 15 anni.
+
+00:28:44.690 --> 00:28:52.370
+<v SPEAKER_2>Ma venivano pubblicizzati così, i primi vendor Blade ti dicevano lo chassis, te lo compri una volta e poi le lame...
+
+00:28:52.370 --> 00:28:55.810
+<v SPEAKER_1>Nel mercato questo è stato relativamente vero.
+
+00:28:55.810 --> 00:29:02.190
+<v SPEAKER_1>Mi sento di citare Cisco come esempio di vendor che ha tenuto gli chassis per veramente molto lungere.
+
+00:29:02.190 --> 00:29:20.730
+<v SPEAKER_1>E in molti casi, ho parlato con clienti che al rinnovo della lama, non dopo tre anni, però dopo cinque, sei anni, capitava che le nuove lame super fighe, super pompate, non andavano più su uno chassis che aveva cinque, sei anni.
+
+00:29:20.730 --> 00:29:22.910
+<v SPEAKER_2>Fisicamente non entrava la lama.
+
+00:29:22.910 --> 00:29:23.330
+<v SPEAKER_1>Esatto.
+
+00:29:23.330 --> 00:29:29.310
+<v SPEAKER_2>Infatti conosco clienti che hanno bannato quella tecnologia perché hanno tradito le promesse.
+
+00:29:29.310 --> 00:29:53.370
+<v SPEAKER_1>Certo, giustamente, ma anche io, da persona che poi deve manutenere con l'infrastruttura, se per non trovarmi in quella situazione, probabilmente vado a prediligere dei classici rec server, anche perché poi nel frattempo l'alta densità di risorse è arrivata anche su dei server relativamente pochi rec unit, quindi why not?
+
+00:29:53.370 --> 00:29:53.530
+<v SPEAKER_1>Certo.
+
+00:29:53.530 --> 00:30:12.270
+<v SPEAKER_1>A quel punto compro dei bei serverazzi, belli carichi di CPU e RAM, con i limiti del caso che sono limiti puramente di gestione, perché è più difficile avere un unico punto di controllo, anche se ci sono tecnologie anche lì interessanti, per controllare l'hardware diciamo dei vari rec server.
+
+00:30:12.270 --> 00:30:23.870
+<v SPEAKER_2>Un vendor non vale l'altro, nel senso che la scelta andrebbe fatta non solo dal costo, ma anche dalla capacità di gestire un largo numero di server.
+
+00:30:23.870 --> 00:30:25.630
+<v SPEAKER_1>Sì, infatti, infatti.
+
+00:30:25.630 --> 00:30:37.430
+<v SPEAKER_1>Ci metterei dentro, siccome parliamo di design data center, la parte anche di evoluzione è assolutamente da considerare quando cominci a disegnare quel pezzo dell'infrastruttura.
+
+00:30:37.430 --> 00:30:53.350
+<v SPEAKER_1>Cioè, io devo poter pensare, sarebbe corretto farlo, ma qui veramente penso siano ancora pochi quelli che lo fanno, quando implemento il mio pod, diciamo, il mio primo elemento data center, devo già pensare a quell'oggetto come lo sveccherò.
+
+00:30:53.350 --> 00:30:56.910
+<v SPEAKER_1>Introduro delle nuove lame, metterò tre server nuovi.
+
+00:30:56.910 --> 00:31:04.850
+<v SPEAKER_1>Se devo espandere lo storage, che opzioni ho di scale up o scale out di quell'architettura?
+
+00:31:06.130 --> 00:31:18.770
+<v SPEAKER_1>Spessissimo ho incontrato design che non avevano praticamente nessuna possibilità di scale up o scale out, quindi l'unico modo per rinnovare era un altro mega investimento per partire con un altro pezzo di infrastruttura, travasare.
+
+00:31:18.770 --> 00:31:19.750
+<v SPEAKER_2>Esatto.
+
+00:31:19.810 --> 00:31:32.790
+<v SPEAKER_1>Pessima, cioè attendere ovviamente è uno spreco economico, perché se avessi pensato a come quella architettura può fare scale out, ho l'investimento iniziale e poi dei piccoli investimenti man mano che l'infrastruttura cresce.
+
+00:31:32.790 --> 00:31:47.910
+<v SPEAKER_1>Se invece non ci ho pensato ho risparmiato probabilmente nella prima implementazione e poi dopo tre anni, quando alla prima esigenza di scale out devo buttare dentro ancora un bel po di quattrini, perché non posso fare scale out, devo prendere un altro pezzo di infrastruttura.
+
+00:31:48.510 --> 00:31:53.910
+<v SPEAKER_1>Fino a situazioni eclatanti è uscito solo questa perché mi è rimasta nel cuore.
+
+00:31:53.910 --> 00:31:56.270
+<v SPEAKER_1>Era così triste che mi ha fatto così ridere.
+
+00:31:56.270 --> 00:32:13.710
+<v SPEAKER_1>In cui il cliente che avevo conosciuto era partito con due server, cluster due server, connessione praticamente back to back con lo storage, e l'aggiunta del terzo server è costato quanto?
+
+00:32:13.710 --> 00:32:13.990
+<v SPEAKER_1>Tutto, certo.
+
+00:32:13.990 --> 00:32:15.970
+<v SPEAKER_1>Praticamente come la prima presentazione.
+
+00:32:15.970 --> 00:32:18.690
+<v SPEAKER_1>Ovviamente la Team Agere ci è rimasta un po male.
+
+00:32:18.690 --> 00:32:22.690
+<v SPEAKER_2>Io immagino di dover buttar via tutto per avere qualcosina in più.
+
+00:32:22.690 --> 00:32:29.030
+<v SPEAKER_2>Nel millacciuto discorso in cui quando compro qualcosa dovrei anche pensare a quando la dovrò dismettere.
+
+00:32:29.070 --> 00:32:30.090
+<v SPEAKER_1>Sì, questa è una cosa...
+
+00:32:30.090 --> 00:32:37.950
+<v SPEAKER_2>In generale, perché tecnologicamente uno story non è uno storage, un fire non è uguale a tutti gli altri.
+
+00:32:39.230 --> 00:32:47.610
+<v SPEAKER_2>Ha perfettamente senso usare tutte le caratteristiche che mi sono utili per tirare meglio fuori da quella tecnologia, ma a un certo punto lo dovrò cambiare.
+
+00:32:47.630 --> 00:33:03.950
+<v SPEAKER_1>Questa è una bella appunto CIO-CISO-Oriented, che mi piacerebbe che qualcuno ci dia il feedback, sì, io lo faccio, che mettere una scadenza all'asset, all'atto della messa in servizio.
+
+00:33:03.950 --> 00:33:06.010
+<v SPEAKER_2>Sì, ma credo che non l'avevo mai visto.
+
+00:33:06.430 --> 00:33:25.930
+<v SPEAKER_1>Neanche io, ricordo di progetti in cui ho previsto il campo nell'asset, in metodo nel CMDB, è entrato in servizio, è fine servizio, e l'obiettivo era, se entra in servizio oggi, va fuori servizio per policy, supponiamo, in 5 anni.
+
+00:33:25.930 --> 00:33:35.190
+<v SPEAKER_1>Ok, ma è una scelta, diciamo, che faccio in maniera, se non 5, 6, l'importante è che io decida quanto deve durare quel robo.
+
+00:33:35.190 --> 00:33:38.630
+<v SPEAKER_2>Che non mi aspetti che duri all'infinito e sia pronto a dismetterlo.
+
+00:33:38.630 --> 00:33:50.450
+<v SPEAKER_1>Esatto, e pronto vuol dire che un anno prima, se non addirittura ancora, ancora, ancora, ancora con più anticipo devo pensare come quel robo l'iva andrà fuori servizio, e quindi come se li impiazza.
+
+00:33:50.450 --> 00:34:04.630
+<v SPEAKER_2>Ad esempio, se il mio storage usa Fiber Channel, devo trovare un modo applicativamente sostenibile, quindi devo fermare l'applicazione per portare il disco, il dati e da un'altra parte rimappare i puntamenti.
+
+00:34:04.630 --> 00:34:09.930
+<v SPEAKER_2>Qualcuno direbbe, beh, ma con NFS è più facile, forse perché faccio una copia sincrona.
+
+00:34:09.930 --> 00:34:17.290
+<v SPEAKER_2>Sì, potrebbe essere più facile, però se il mio storage NFS contiene 100 milioni di piccoli file, potrebbe essere un problema.
+
+00:34:17.290 --> 00:34:22.290
+<v SPEAKER_2>Quindi riflettere su queste cose prima di farci del male possibilmente.
+
+00:34:23.350 --> 00:34:24.170
+<v SPEAKER_2>Torniamo alle reti.
+
+00:34:24.170 --> 00:34:28.410
+<v SPEAKER_2>Quindi abbiamo capito che le reti non sono tutte uguali, i dispositivi di rete non sono tutte uguali.
+
+00:34:29.370 --> 00:34:47.130
+<v SPEAKER_2>Oggi io direi che da un punto di vista di nuovamente di security, tutte le reti, tutte le zone di rete, che in senso fanno un match, una zona di sicurezza, una rete, non è sempre vero, però assumiamo così per semplicità, hanno come gateway un firewall.
+
+00:34:47.130 --> 00:34:52.450
+<v SPEAKER_2>Oggi potrei dire che prima approssimazione questo è il design preferibile.
+
+00:34:52.450 --> 00:35:01.230
+<v SPEAKER_2>Per quello che ci siamo detti l'altra volta, il firewall è il punto più semplice, più economico, più facile da gestire dove ho visibilità e dove posso mettere delle regole.
+
+00:35:01.230 --> 00:35:02.830
+<v SPEAKER_1>Bene, ultimamente un asterisco.
+
+00:35:04.270 --> 00:35:08.470
+<v SPEAKER_1>Accettiamo serenamente che alcune reti esistano solo a livello 2.
+
+00:35:08.470 --> 00:35:10.790
+<v SPEAKER_2>Accettiamo serenamente che alcune reti esistano solo a livello 2.
+
+00:35:10.790 --> 00:35:14.590
+<v SPEAKER_1>Perché questa è una cosa che alcuni non l'hanno considerato.
+
+00:35:15.210 --> 00:35:25.890
+<v SPEAKER_1>Tutto deve averlo detto, non è vero, alcune reti possono esistere solo a livello 2, se gli serve parlare solo tra di loro, ci togliamo una grandissima ruotura di scatole, cioè non devo fare regole per parlarci dopo.
+
+00:35:27.130 --> 00:35:34.990
+<v SPEAKER_2>Quindi questo secondo me è l'approccio, diciamo, più comune, anche oggi, più utile.
+
+00:35:34.990 --> 00:35:43.410
+<v SPEAKER_2>L'altra volta dicevamo che il panorama sta cambiando, nel senso che mi aspetto che in 4 anni questa cosa non sia più vera.
+
+00:35:43.410 --> 00:35:44.370
+<v SPEAKER_2>Perché non sia più vera?
+
+00:35:45.790 --> 00:36:07.810
+<v SPEAKER_2>Perché da un punto di vista offensivo, e ti ripasso la parola, il lateral movement è fatto così, cioè alla fine una rete, qualunque rete interna, a meno di non fare centinaia di zone di sicurezza diverse, cose che tipicamente di fare non permettono di fare, hanno un limite nella zona di sicurezza che è proporzionale alla dimensione e alla complicità di fatto delle aziende.
+
+00:36:07.810 --> 00:36:11.830
+<v SPEAKER_2>Ecco, ho delle reti con un numero di hosta abbastanza alto.
+
+00:36:11.830 --> 00:36:15.910
+<v SPEAKER_2>E quindi spostarmi da un punto di vista dell'attaccher.
+
+00:36:15.910 --> 00:36:20.710
+<v SPEAKER_1>Eh, lì ci sono vari problemi che possiamo considerare.
+
+00:36:20.710 --> 00:36:26.590
+<v SPEAKER_1>Trovo utile, sono un po di parte, ragionare ancora una volta di attack path.
+
+00:36:26.590 --> 00:37:03.930
+<v SPEAKER_1>Ovvero, tendenzialmente il retactor cercherà, se trova un punto di accesso che probabilmente oggi non è tanto il servizio, può essere anche il servizio vulnerabile che consenta il primo accesso, ma molto più probabilmente è qualcosa che ha permesso un accesso su una postazione sulla rete client e quindi la direttrice sarà dall'esterno verso l'interno, nel senso che la delivery del malware viene veicolata in qualche modo verso l'interno, in vari modi, può essere anche direttamente dall'interno, cioè può essere anche un insizer, però supponiamo il caso più tipico, mi sono portato dentro un malware in qualche modo.
+
+00:37:03.930 --> 00:37:09.330
+<v SPEAKER_1>Repeto, tema delivery è un altro mega capitolo, anzi sono più capitoli probabilmente.
+
+00:37:09.330 --> 00:37:21.990
+<v SPEAKER_1>Da lì l'attacker probabilmente cercherà, intanto probabilmente cercherà di avere una comunicazione con quel malware già dalla postazione che ha infettato e quindi avremo un primo tentativo di comunicazione dalla rete client verso l'esterno.
+
+00:37:22.250 --> 00:37:29.270
+<v SPEAKER_2>Scusa, che statisticamente oggi l'appostazione infettata è un PC di un utente più che un application server?
+
+00:37:29.270 --> 00:37:30.170
+<v SPEAKER_1>Molto più probabile.
+
+00:37:30.170 --> 00:37:32.090
+<v SPEAKER_1>Statisticamente.
+
+00:37:32.090 --> 00:38:09.970
+<v SPEAKER_1>Se andiamo nella casistica di come, diciamo, delle famiglie di malware da cui si parte spesso gli attacchi, tendenzialmente sono pensati per infettare un'appostazione di un utente e quindi, probabilmente, il 3Tactor ragiona, anzi, tendenzialmente il ragionamento è quello, metto un piede dentro in un posto molto comodo, dove la comunicazione con l'esterno è molto facile, perché tipicamente, anche qua, sarebbe, anzi, no, adesso la affrontiamo, tipicamente siamo molto permissivi, in molti casi, nella comunicazione verso l'esterno.
+
+00:38:09.970 --> 00:38:30.290
+<v SPEAKER_1>Poi c'è anche chi usa le dovute e cautele, però tendenzialmente l'IT manager che deve affrontare n richieste, diciamo, di accesso a risorse esterne, a volte tende ad allargare un po le maglie, delegando la sicurezza di quella navigazione alle future del firewall, e ci sta come comportamento.
+
+00:38:30.290 --> 00:38:46.610
+<v SPEAKER_1>Quindi, il stratego probabilmente ha relativamente poca difficoltà a parlare verso l'esterno, anche perché usa una serie di trucchetti, che magari in un'altra sessione andiamo ad utilizzare, se riesce a avere quel livello di controllo, che puramente è un livello di controllo anche solo di user space, quindi è relativamente difficile da intervenire.
+
+00:38:46.610 --> 00:38:48.950
+<v SPEAKER_1>A quel punto parte un altro pezzo di attività.
+
+00:38:48.950 --> 00:38:53.950
+<v SPEAKER_1>Andrà a caccia di informazioni, di sistemi, che sono proprio nelle nostre reti datacenter.
+
+00:38:53.950 --> 00:39:03.430
+<v SPEAKER_1>Quindi andrò a cercare dove è il fail serve, andrò a cercare dove sono i sistemi di backup, andrò a cercare dove sono, se riesco, lo strato più basso del datacenter, quindi di hypervisor.
+
+00:39:03.450 --> 00:39:06.350
+<v SPEAKER_1>Ha capitato di vedere attacchi anche direttamente all'hypervisor.
+
+00:39:06.350 --> 00:39:09.610
+<v SPEAKER_1>E qui si apre la tematica di come devono parlare le reti da di loro.
+
+00:39:09.610 --> 00:39:11.030
+<v SPEAKER_2>Ecco, è fatto secondo me un bel esempio.
+
+00:39:11.110 --> 00:39:21.230
+<v SPEAKER_2>Nel senso che ho spesso visto la suddivisione di MZ, che abbiamo raccontato tutte le filosofie l'altra volta.
+
+00:39:21.230 --> 00:39:24.710
+<v SPEAKER_2>Poi c'è la rete client, dove ci sono i PC degli utenti.
+
+00:39:24.710 --> 00:39:27.590
+<v SPEAKER_2>Poi c'è la rete server, dove ci sono tutti i server.
+
+00:39:27.590 --> 00:39:40.010
+<v SPEAKER_2>Poi gli applicativi, SAP, CRM, i server di risorse umane, i database, l'attivo di directory, i server SXI, tutto, tutto.
+
+00:39:40.010 --> 00:39:43.090
+<v SPEAKER_2>A volte c'è una rete di management separata, ma non sempre.
+
+00:39:43.090 --> 00:39:44.450
+<v SPEAKER_2>E lì c'è tutto.
+
+00:39:44.450 --> 00:39:49.090
+<v SPEAKER_2>Quindi in uno scenario del genere, spostarsi da una parte all'altra è tutto lì.
+
+00:39:49.090 --> 00:40:09.090
+<v SPEAKER_1>Diventa relativamente facile perché se sono stato un po grezzo, diciamo così, nelle regole di firewalling e ho ad esempio accettato che tutti i protocolli della parte servente sono accessibili della parte client, ovviamente il threat actor che è nella parte client potrà sfruttare tutti i canali di comunicazione esistenti verso la parte server.
+
+00:40:09.090 --> 00:40:27.150
+<v SPEAKER_1>Quindi se ci sono finite dentro, dico a caso, a livello, anzi facciamo un esempio molto classico, è perfettamente corretto che, all'esempio, la parte server e sport, i chips, che mette comunicazione, dia disponibilità di chips verso la parte client.
+
+00:40:28.190 --> 00:40:36.130
+<v SPEAKER_1>Dovremo evitare in questa scelta, in questo design delle regole, dovremo evitare di permettere che i chips a tutta la parte server.
+
+00:40:36.670 --> 00:40:42.150
+<v SPEAKER_1>Perché potrebbe essere che anche altri server usino chips, ma non per i client.
+
+00:40:42.150 --> 00:40:44.550
+<v SPEAKER_1>Magari lo usano tra di loro, perché devono comunicare tra di loro.
+
+00:40:44.550 --> 00:40:57.150
+<v SPEAKER_1>Ma una regola così grezza consente al retactor di spazzolarsi tutte le share, cosa che ovviamente anche in fase di assessment facciamo, andiamo a caccia di share, perché nelle share si annida sempre il demonio.
+
+00:40:57.190 --> 00:40:59.190
+<v SPEAKER_2>Esatto, tipo un file di password in chiaro.
+
+00:40:59.370 --> 00:41:06.630
+<v SPEAKER_1>Ad esempio, per andare su una cosa che ho raccontato recentemente, ci casca veramente di tutto nelle share.
+
+00:41:08.270 --> 00:41:37.110
+<v SPEAKER_1>Anche perché ricordiamoci sempre che sono sistemi su cui mettono le mani a volte tante persone, a volte solo interni, a volte anche esterni, e quindi mi è capitato di dover discutere, usiamo questo esempio, delle share che sono lì ma non si sa bene perché, poi si scopre che è il collega della mutazione o l'azienda esterna che fa mutazione sul sistema che per comodità appoggia, per portare i firmware sull'ambiente di che gestisce, si è aperta una share così carica il firmware.
+
+00:41:37.110 --> 00:41:42.250
+<v SPEAKER_1>Bene, al netto del motivo, però gli utenti lì non ci devono andare lo stesso.
+
+00:41:42.250 --> 00:41:59.010
+<v SPEAKER_2>Secondo me il tema di gestione degli spazi condivisi disco, perché giustamente gli utenti devono potersi scambiare dei dati in team, come singoli, tra sistemi, è di una importanza enorme spesso, anzi secondo me sottovalutata e richiederà una puntata.
+
+00:41:59.010 --> 00:42:22.750
+<v SPEAKER_2>Però secondo me è veramente importante che il nostro cito risponda alla domanda come possono gli utenti lavorare assieme in team, ma team che non sono i commerciali, i tecnici, i HR, sono team trasversali, come lavorano assieme in sicurezza e spesso anche con team che hanno una durata temporale finita, a qualche mese, sei mesi, un anno.
+
+00:42:22.830 --> 00:42:43.630
+<v SPEAKER_1>Il sistema collaborazione è un altro capitolo e mi limito a dire, a citare me stesso in un posto di almeno tre anni fa in cui provocatoriamente dissi forse è il caso di dismettere il file server, forse è il caso di cambiare tecnologi, è stato un po provocatorio però quello che vedo mi fa pensare che forse non vanno più bene come strumenti.
+
+00:42:43.630 --> 00:43:01.570
+<v SPEAKER_2>Sono parzialmente d'accordo perché poi i file server si stanno trasferendo con le stesse logiche in cloud, ma a me piace l'idea, non l'ho mai vista, non so neanche se possa esistere una costruzione di file server temporaneo tra team, che muore alla fine del progetto.
+
+00:43:01.570 --> 00:43:04.530
+<v SPEAKER_1>Un po il concetto di space che si ha all'interno di strumenti collaborazioni.
+
+00:43:04.530 --> 00:43:07.250
+<v SPEAKER_2>Sì, che però deve morire a un certo punto.
+
+00:43:07.250 --> 00:43:09.470
+<v SPEAKER_1>Poi sappiamo che non si cancella mai niente.
+
+00:43:09.470 --> 00:43:14.450
+<v SPEAKER_2>Però il problema è che non si cancella, è che poi in quella sporcizia chi attacca ci sguazza.
+
+00:43:14.530 --> 00:43:15.870
+<v SPEAKER_1>Eh sì, sì, sì.
+
+00:43:15.970 --> 00:43:28.150
+<v SPEAKER_1>Su tema datacenter mi è venuto in mente che forse possiamo cominciare a parlare di di shadow IT del mondo datacenter.
+
+00:43:28.150 --> 00:43:32.570
+<v SPEAKER_1>Cioè nel senso che cominciamo a osservare situazioni di shadow IT anche nel mondo datacenter.
+
+00:43:32.570 --> 00:43:35.110
+<v SPEAKER_1>Però questa cosa magari me la tengo per la prossima volta.
+
+00:43:35.110 --> 00:43:52.010
+<v SPEAKER_2>Volevo prima di chiudere solo un'ultima indicazione nel perché penso che da qui a quattro anni le cose volveranno, che è esattamente per mettere una toppa a la libertà di movimento, alla promiscuità delle reti, diciamo, mettiamola così.
+
+00:43:52.010 --> 00:44:01.350
+<v SPEAKER_2>Quindi troppi sistemi all'interno delle reti, perché fino ad oggi non potevamo che fare così, sia chiaro, non è stato un design sbagliato, oggi c'era quella possibilità.
+
+00:44:01.350 --> 00:44:09.410
+<v SPEAKER_2>Parliamo di microsegmentazione, esistono già quel tipo di tecnologie, ma mi vedo che economicamente sono poco sostenibili.
+
+00:44:10.170 --> 00:44:25.490
+<v SPEAKER_2>Si sta cominciando a pensare di portare un Firewall che non ha le caratteristiche degli NGFW, dei Next Generation Firewall che vediamo oggi, per chiaramente risorse computazionali, sulla porta dello Switch fisico e virtuale.
+
+00:44:26.610 --> 00:44:46.470
+<v SPEAKER_2>Se queste tecnologie saranno sostenibili per le aziende, sia da un punto di vista license che da un punto di vista operativo che non sarà banale, si comincerà a segmentare in sottogruppi di host i server che oggi stanno in un unico grande gruppo.
+
+00:44:46.470 --> 00:45:01.090
+<v SPEAKER_2>E quindi il server che oggi è gateway unico di tutte le reti, scusate il firewall che oggi è gateway unico di tutte le reti, potrebbe perdere nuovamente il suo ruolo a favore di un firewall più perimetrale.
+
+00:45:03.950 --> 00:45:09.310
+<v SPEAKER_1>Metterei come prossimo argomento i pro e i contro di una micro segmentazione rispetto ad altri design che si possono applicare.
+
+00:45:09.310 --> 00:45:14.770
+<v SPEAKER_2>Ok, mentre quello che dicevi tu un attimo fa lo mandiamo più avanti.
+
+00:45:14.770 --> 00:45:17.550
+<v SPEAKER_2>Perfetto, grazie e alla prossima.

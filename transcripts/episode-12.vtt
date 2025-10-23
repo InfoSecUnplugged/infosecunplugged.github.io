@@ -1,0 +1,1015 @@
+WEBVTT
+
+00:00:10.913 --> 00:00:15.373
+<v SPEAKER_2>Benvenuti in Info Sec. Unplugged, io sono Andrea Dainese, con me c'è Rocco Sicilia.
+
+00:00:15.373 --> 00:00:27.393
+<v SPEAKER_2>Bentornati dopo diverso tempo e questa volta vorremmo introdurre un nuovo percorso, un nuovo viaggio e lascio la parola a chi l'ha pensato e me l'ha raccontato pochi minuti fa.
+
+00:00:27.393 --> 00:00:28.933
+<v SPEAKER_2>A te Rocco.
+
+00:00:28.933 --> 00:00:31.173
+<v SPEAKER_1>Grazie, allora come ti accennavo?
+
+00:00:31.173 --> 00:00:50.533
+<v SPEAKER_1>L'idea era di provare a costruire assieme un percorso fatto di chiacchierate ovviamente, tramite in cui proviamo a ripercorrere tutti gli step che potrebbe fare un IT manager, ma anche forse un C o un Ciso, dipende poi dalla figura incaricata e dipende dall'argomento che tocchiamo.
+
+00:00:50.533 --> 00:01:23.753
+<v SPEAKER_1>Nel momento in cui, diciamo, è entrato in una nuova azienda, è entrato in una nuova fase professionale, si trova a dover mappare la situazione tecnologica e IT che si trova e da lì deve cominciare probabilmente a fare una serie di scelte, che possono essere anche solo di conferma di quello che trova, ma più frequentemente cominciare a battezzare delle nuove linee strategiche, quindi magari anche delle nuove scelte tecnologiche, di design, di implementazione, in base a quello che appunto trova, in base anche al business dell'azienda in cui si trova.
+
+00:01:23.753 --> 00:01:42.393
+<v SPEAKER_1>Più frequentemente, l'idea mi viene un po da alcune chiacchierate avute negli ultimi anni, in realtà con molte figure di questo tipo, soprattutto con CIO e CISO, dove questa è un pochino la parte del lavoro che si trovano a fare nel mondo vero.
+
+00:01:42.393 --> 00:02:01.133
+<v SPEAKER_1>Entrano in una nuova realtà, cercano di prendere coscienza di quello che c'è, come è stato implementato quello che esiste a livello tecnologico di servizi interni, servizi IT, e su quello cominciano a muoversi, cominciano a capire se devono fare dei change sull'architettura, se devono implementare nuovi servizi, se devono buttare all'aria tutto e rifare tutto.
+
+00:02:01.533 --> 00:02:06.313
+<v SPEAKER_1>Ognuno poi si comporta in base a quello che ritiene opportuno.
+
+00:02:06.313 --> 00:02:07.893
+<v SPEAKER_1>Ma tutti hanno più o meno questo problema.
+
+00:02:07.893 --> 00:02:14.573
+<v SPEAKER_1>Si trovano uno status e devono andare verso un altro status di maturazione.
+
+00:02:14.573 --> 00:02:38.513
+<v SPEAKER_1>Ok, noi magari pensavamo di vederla un po più in ottica security, ma ci dovremmo spesso dire che la security in realtà è un argomento completamente pervasivo, quindi potremmo anche vederla in ottica di tecnologie e di soluzioni, dando ovviamente uno uno sguardo importante al tema security, che è il tema che diciamo che ci sta un po più a cuore visto le nostre professionalità.
+
+00:02:40.353 --> 00:03:02.753
+<v SPEAKER_1>E volevo partire iniziando a discutere con te quali sono gli elementi da che questa figura si troverebbe da affrontare, quindi come minimo ci sono gli aspetti tecnologici, ma solo quelli li possiamo spacchettare in diverse tecnologie, in diversi ambiti tecnici, e ognuno merita un suo focus.
+
+00:03:02.753 --> 00:03:04.793
+<v SPEAKER_1>Questo è un pochino l'idea.
+
+00:03:04.793 --> 00:03:18.513
+<v SPEAKER_1>Poi scegliamo di volta in volta in queste chiacchierate dove soffermarci di più, magari anche con l'aiuto di chi ascolterà le puntate, se ci sono degli ambiti di interesse particolari, magari approfondiamo più certi aspetti.
+
+00:03:18.513 --> 00:03:30.233
+<v SPEAKER_1>Immagino che ci siano delle tematiche, visto anche i feedback che ricevo ogni tanto dopo le nostre chiacchierate, ci siano delle tematiche che in qualche modo rappresentano un problema costante, in più realtà.
+
+00:03:30.233 --> 00:03:49.893
+<v SPEAKER_1>Quindi noto che spesso le domande vanno a appuntare sempre in alcuni specifici ambiti, perché evidentemente dove c'è più difficoltà nel scegliere una direzione, o nel scegliere una tecnologia, o prendere una scelta strategica, e quindi magari su quelle ci dedichiamo un po più tempo, su altre andiamo avanti un po più spediti.
+
+00:03:52.553 --> 00:04:58.213
+<v SPEAKER_2>Guarda, il sentimento che ho, che credo sia molto coerente anche, molto come dire, forse la prima reazione che una persona potrebbe avere quando entra in un'azienda e gli viene dato, o viene promosso a Cyber Security, chiamiamo Cyber Security Manager, senza voler andare ancora più su della scala, mi sento un po spaesato, cioè l'entrare in un'azienda e dire ok, non la conosco, perché se la conoscessi sarebbe già tanta roba, e devo cominciare a fare ordine in quell'azienda, mi ha sempre dato questa prima reazione, ma credo sia normale e credo sia proprio il primo effetto che una persona si trova in un luogo che non conosce, dove deve effettivamente fare ordine, rendere la struttura più resiliente, E lo deve fare anche con una certa urgenza, cioè nel senso lui ha l'onere, in quel momento gli viene dato di garantire della sopravvivenza dell'azienda in caso di attacchi.
+
+00:04:58.213 --> 00:05:08.913
+<v SPEAKER_2>Ma ci dimentichiamo che l'attacco è uno dei fault, ma in realtà possono essere anche fault di tipo molto infrastrutturale, quindi anche quello è un problema.
+
+00:05:10.753 --> 00:05:47.433
+<v SPEAKER_2>E la seconda nota che mi sono fatto proprio in questo momento è che noi adesso facciamo una chiacchierata introduttiva generale e nella generalità stiamo già sbagliando, nel senso che il focus dell'azienda è di primaria importanza, perché se è un'azienda mi è venuta in mente sanitaria con cui ho avuto un contatto recentemente, piuttosto che una produttiva, piuttosto che un'azienda focalizzata su servizi tecnologici, IT inteso, vengono trattati in modo completamente diverso.
+
+00:05:47.433 --> 00:05:48.613
+<v SPEAKER_1>Sì, è vero.
+
+00:05:50.133 --> 00:06:05.253
+<v SPEAKER_2>Un esempio su tutti è un'azienda con una forte impronta tecnologica, quindi che ha come business la vendita di servizi, sicuramente ha uno staff e delle competenze in casa molto importanti.
+
+00:06:05.733 --> 00:06:10.433
+<v SPEAKER_2>Un'azienda produttiva, almeno quello che vedo io, produttiva, sanitaria, eccetera, eccetera.
+
+00:06:10.433 --> 00:06:13.693
+<v SPEAKER_2>Queste competenze li hanno in modo sempre sempre più risiccato.
+
+00:06:13.953 --> 00:06:16.993
+<v SPEAKER_2>Nel senso, si contano sulle dita di una mano.
+
+00:06:16.993 --> 00:06:31.533
+<v SPEAKER_2>Aziende molto grandi che hanno un personality ridottissimo, assolutamente insufficiente, non solo a mantenere l'infrastruttura e la sua evoluzione, ma senza neanche parlare appunto della poi della messa in sicurezza.
+
+00:06:31.533 --> 00:06:39.413
+<v SPEAKER_2>Quindi questi magari faremo delle puntate ad hoc, però ecco nella generalizzazione sappiamo di sbagliare.
+
+00:06:39.413 --> 00:07:04.393
+<v SPEAKER_1>C'è sì, è vero, tutti hanno una rete, anzi andando su qualcosa un po più specifico, tutti hanno un'infrastruttura per la gestione dei file, ad esempio, delle informazioni, però in base al tipo di business dell'azienda, queste infrastrutture possono essere effettivamente molto diverse, le scelte strategiche molto diverse e in base alle scelte che fa un'azienda potrebbero servire competenze diverse rispetto ad altre.
+
+00:07:04.393 --> 00:07:25.053
+<v SPEAKER_1>Ma viene a mente, ad esempio, anche nello stesso contesto, chi sceglie, ad esempio, di mantenere in questo periodo storico i file, le informazioni, in una tecnologia che ormai potremo definire un po vetusta, come il classico file server, si appoggia su un certo set di competenze.
+
+00:07:25.153 --> 00:08:20.053
+<v SPEAKER_1>Chi approccia l'archiviazione dei dati in un modo completamente diverso, ad esempio, utilizzando soluzioni completamente cloud-oriented, quindi vari drive, ovviamente intersecati con tecnologie di communication, le skill cambiano completamente, perché non hai più proprio quel tipo di tecnologia sotto, ma che è un'altra, e lo approcciavo recentemente con un team che si trova, ad esempio, si è accorto di non avere nessuna competenza di come mappare le policy di accesso ai file, una volta che sono passati in cloud, perché è completamente diversa, proprio la soluzione è fatta in maniera diversa, e non sanno, si sono trovati a non saper bene come mappare le politiche di accesso, ma erano perfettamente in grado di farle una settimana prima, Quindi si trovano a dover acquisire una nuova skill perché hanno cambiato modalità di lavoro.
+
+00:08:20.053 --> 00:08:21.353
+<v SPEAKER_1>Quindi tutte cose...
+
+00:08:21.353 --> 00:08:23.713
+<v SPEAKER_1>Poi qua entra anche la tematica del make or buy.
+
+00:08:23.713 --> 00:08:28.613
+<v SPEAKER_1>Cioè, ok, cosa riesco a portarmi in casa come competenza e lo faccio?
+
+00:08:28.613 --> 00:08:29.953
+<v SPEAKER_1>E cosa invece non ci riesco?
+
+00:08:29.953 --> 00:08:33.033
+<v SPEAKER_1>Perché è troppo complesso e lo devo comprare fuori.
+
+00:08:33.033 --> 00:08:37.033
+<v SPEAKER_1>Altra scelta strategica che spesso i CEO e i CEO si trovano a fare.
+
+00:08:38.093 --> 00:08:45.633
+<v SPEAKER_1>Cosa porto all'interno del team e cosa invece prendo fuori come competenza perché magari mi ci vuole troppo tempo?
+
+00:08:45.633 --> 00:08:50.533
+<v SPEAKER_1>Sono già understaffed, se metto dentro altra roba rischio di diventare un collo di bottiglia.
+
+00:08:50.533 --> 00:08:54.773
+<v SPEAKER_1>Quindi sono tutte scelte strategiche che ha senso di scutere.
+
+00:08:55.793 --> 00:09:00.693
+<v SPEAKER_2>Allora, io mi sono già segnato dei punti, perché secondo me nella chiacchierata li abbiamo già nominati.
+
+00:09:00.693 --> 00:09:14.973
+<v SPEAKER_2>Cioè, lì la famosa nuova risorsa che entra in un'azienda, a mio parere, deve iniziare, potremmo dire, a fare un assessment, ma in modo anche molto più pragmatico e colloquiale, deve parlare con le persone.
+
+00:09:14.973 --> 00:09:46.873
+<v SPEAKER_2>Cioè, deve capire dove è finito, perché soprattutto se è una persona che viene da fuori, di solito ha magari un'idea di cosa fa l'azienda, ma poi scoprire come funziona dentro tutto un altro film, deve parlare con le persone, capire la strategia dell'azienda, dove la strategia non è solo la strategia di business, ma anche la strategia tecnologica che è stata usata almeno fino ad ora, quindi spostata verso il cloud, verso on-prem, verso competenze interne, verso competenze esterne, eccetera, eccetera.
+
+00:09:46.873 --> 00:09:47.473
+<v SPEAKER_2>Chi c'è?
+
+00:09:47.473 --> 00:09:55.933
+<v SPEAKER_2>Cioè chi sa fare le cose dentro o chi le fa se sono dentro o fuori, quindi ancora un'altra a parlare con le persone.
+
+00:09:57.473 --> 00:10:03.973
+<v SPEAKER_2>Capire le tecnologie che ci sono, chiaramente chi le sa usare.
+
+00:10:03.973 --> 00:10:35.893
+<v SPEAKER_2>Questa cosa che tu hai citato, fatalità, è proprio questa mattina è stato rilasciato un post che ho scritto su Linkedin credo un mese e mezzo fa e avevo schedulato, dove parlo dei costi nascosti del cloud, dove non vuole essere una critica sul modello cloud, ma vuole essere una focalizzazione sul fatto che, attenzione, il cloud è un mondo diverso e in base al vendor che scegliamo il mondo è ancora più diverso e le differenze non sono affatto banali l'una dall'altra.
+
+00:10:38.033 --> 00:10:54.853
+<v SPEAKER_2>E quindi spostare il workload là significa dover fare un lavoro di competenze perché se no ci saranno problemi di ottimizzazione dei costi, di sicurezza, di competenze, di saper, come citato tu un esempio perfetto, fare anche le cose più banali che prima si sapevano fare.
+
+00:10:56.813 --> 00:11:57.353
+<v SPEAKER_2>E in tutto ciò secondo me siamo ancora a livello di capire la strategia make or buy, cioè l'azienda ha una preferenza per farsi le cose internamente, gestire le competenze internamente e fino a che punto, perché questo qua non può essere vero in assoluto, oppure ha già un'impronta di dare fuori una serie di attività, servizi, gestioni, eccetera, eccetera, in modo più o meno marcato per magari focalizzarsi, mi viene in mente l'esempio di una farmaceutica, sto parlando in generale, chiaramente, non in modo specifico, che ha un focus nella produzione di farmaci, di principi attivi, insomma di sostanze chimiche, e nel farlo ha una struttura IT interna abbastanza complicata, fatta di impianti, di produttivi, piadigciska, a seconda di come è costruito, quindi un mondo OT, un mondo IT che raccoglie dati, raccoglie brevetti, fa simulazioni, eccetera, eccetera.
+
+00:11:58.033 --> 00:12:11.833
+<v SPEAKER_2>E quindi oltre agli specialisti nel sviluppo, studio, produzione del farmaco, ci vogliono gli specialisti che quella struttura la sanno gestire, organizzare, rendersi cura, resiliente, eccetera, eccetera.
+
+00:12:11.833 --> 00:12:18.493
+<v SPEAKER_2>Ma questo esce dal focus dell'azienda, non che non sia importante, ma esce dal focus.
+
+00:12:20.653 --> 00:13:05.713
+<v SPEAKER_2>E questo ha delle conseguenze nella gestione del personale, trovarlo, acquisirlo, ma anche secondo me una cosa di cui poco si parla è dare un senso alla vita della persona, la persona magari altamente tecnica che gli piace un certo tipo di complessità, troverà più attrattivo dei mondi, più attrattivi dei mondi più tecnologici, quindi su aziende magari focalizzate all'IT, e troverà forse un po noiosi dei mondi produttivi, che tendenzialmente sono più statici, e questa attrattività fa la differenza nella capacità di trattenere le persone o no, non è banale secondo me.
+
+00:13:05.933 --> 00:13:07.193
+<v SPEAKER_2>Si parla poco di questo.
+
+00:13:07.193 --> 00:13:30.133
+<v SPEAKER_1>Si parla poco, ma è un tema che ho discuso di recentemente, ho una parentesi di questo argomento, ma visto che la figura su cui vogliamo ragionare è quella di una figura di management, avrà lui poi il problema del personale da tirar dentro o meno, quindi è perfettamente calato nel contesto.
+
+00:13:31.933 --> 00:13:44.513
+<v SPEAKER_1>E non mi ricordo se sul gruppo Telegram o in un'altra occasione si era discusso un pochino della tematica proprio del come si stanno muovendo le figure tecniche nel panorama IT.
+
+00:13:44.513 --> 00:13:56.273
+<v SPEAKER_1>Provavelmente la visione in quella chiacchierata era un po più italiana come punto di osservazione, ma non penso sia diversissimo a livello europeo.
+
+00:13:56.273 --> 00:14:04.953
+<v SPEAKER_1>Anzi, parlando con i nostri colleghi in Austria e in Germania, mi è capitato di percepire sentimenti simili.
+
+00:14:04.953 --> 00:14:11.593
+<v SPEAKER_1>C'è effettivamente un problema nelle lezioni operative, diciamo nelle aziende si di prodotto, diciamo così.
+
+00:14:14.693 --> 00:14:25.713
+<v SPEAKER_1>Le figure tecniche rischiano un po di appiattirsi, proprio perché se c'è poco evoluzione, il lavoro tende a diventare rutinario, tende veramente ad appiattirsi anche la professionalità.
+
+00:14:25.713 --> 00:14:48.753
+<v SPEAKER_1>Abbiamo io tantissime casistiche, ho operato con tantissime persone, ciò che si sono rese conto dopo, ad esempio, 10-15 anni nella stessa azienda, nello stesso ruolo, aziende che non fanno tecnologia di mestiere, si sono rese conto che la loro seniority si era un pochino appiattita sulle esigenze aziendali e non si era evoluta.
+
+00:14:50.033 --> 00:15:08.733
+<v SPEAKER_1>Nel momento in cui una figura tecnica sente le esigenze di una certo tipo di evoluzione, molto probabilmente, a meno in questo periodo storico, si osserva che si smigrano verso gli integrator, verso aziende di consulente, verso aziende che gli danno una prospettiva di crescita proprio sul piano delle competenze.
+
+00:15:08.733 --> 00:15:10.553
+<v SPEAKER_1>E non è una cosa banale.
+
+00:15:10.733 --> 00:15:43.153
+<v SPEAKER_1>È un po un paradosso, e poi chiuso la parentesi, perché è un tema che mi sono già segnato, è un po un paradosso perché in realtà le aziende che fanno prodotto dovrebbero essere estremamente motivate a innovarsi per tutta una serie di motivazioni, dal banale essere più competitivi rispetto al competitor fino a una crescita tecnologica dell'azienda, cioè migliorare il prodotto che producono, farlo in maniera più efficiente, più efficace, più veloce, più rapidamente sul mercato, qualità maggiore, tutti una serie...
+
+00:15:43.153 --> 00:15:49.453
+<v SPEAKER_1>Dove qualità è anche, per dirne una, la tutela dei dati del cliente, cioè anche quella qualità del prodotto.
+
+00:15:49.453 --> 00:16:01.713
+<v SPEAKER_1>Quindi ci sono tantissime cose che si possono fare a livello di tecnologia, anche in un'azienda che non lavora, che come Core non ha l'IT.
+
+00:16:01.713 --> 00:16:13.073
+<v SPEAKER_1>E questo lo vediamo in realtà quando incontriamo aziende mature dove i team IT, mi capitano, e sono anche contento quando collaboro con un'azienda dove c'è un team IT di 30-40 persone.
+
+00:16:13.073 --> 00:16:52.853
+<v SPEAKER_1>Cioè vedi subito che non l'hanno presa alla leggera, non stanno prendo sotto gambe il tema, almeno le risorse ci sono per mettere in piede la cosa, poi magari mancano altre cose, però si nota subito lo stacco rispetto a quelle aziende in cui il team IT è l'IT manager che in realtà è già operation, che non riesce a fare il manager perché deve fare anche operation, e ha pochissime figure sotto, magari con delle specializzazioni molto speciche, quello che segue SAP, quello che segue il network, ha proprio 3-4 verticalizzazioni, ma in realtà poi l'infrastruttura è enorme e quelle figure riescono al massimo a stare dietro ai problemi del day by day.
+
+00:16:53.533 --> 00:17:04.133
+<v SPEAKER_1>E quindi diventa molto complicato crescere, molto complicato fare un percorso di crescita, proprio perché non è stato dato peso in questo caso a quel reparto.
+
+00:17:04.133 --> 00:17:07.033
+<v SPEAKER_1>Questo è un temone, effettivamente.
+
+00:17:07.033 --> 00:17:12.973
+<v SPEAKER_2>Aggiungo una cosa e provo a fare un passo in più, perché secondo me quello che hai detto è molto importante.
+
+00:17:12.973 --> 00:17:26.793
+<v SPEAKER_2>Cioè una persona che ha una seniority aziendale di molti anni, dove molti anni è tipicamente 5-10 anni, ha probabilmente una visione dell'azienda molto completa, molto ampia.
+
+00:17:26.793 --> 00:17:44.213
+<v SPEAKER_2>Ma, e non cito parole mie, ma cito parole di persone che mi hanno detto proprio questa cosa qua e apprezzano un punto di vista esterno proprio per questo, ma sono racchiuse, appunto per un tempo molto lungo sono state racchiuse per anni, per 10 anni all'interno della stessa azienda e non hanno visto mondo.
+
+00:17:44.213 --> 00:17:47.213
+<v SPEAKER_2>Quindi non hanno visto quello che succede fuori.
+
+00:17:47.213 --> 00:17:51.693
+<v SPEAKER_2>Quindi in questo senso il loro punto di vista è un po drogato dal loro ambiente.
+
+00:17:52.753 --> 00:18:07.473
+<v SPEAKER_2>È chiuso, è ridotto e ha un pregio perché conoscono appunto vita, morte e miracoli dell'azienda, ma ha appunto questa difficoltà del ha sempre fatto le cose in un certo modo e magari non sa che si può fare in altro modo.
+
+00:18:07.713 --> 00:18:22.253
+<v SPEAKER_2>E io vedo persone che sono consce di questa cosa e quindi apprezzano un punto di vista esterno e lo fanno comunque con senso critico, non prendendo come oro colato tutto quello che racconto, assolutamente cosa che sconsiglio di fare.
+
+00:18:23.433 --> 00:18:34.773
+<v SPEAKER_2>E persone invece che non si rendono conto di essere nella loro bolla, anzi che dicono io sono 10 anni che lavoro nella mia azienda, quindi la conosco perfettamente, non può insegnarmi come si fa.
+
+00:18:34.773 --> 00:18:52.533
+<v SPEAKER_2>Ed è vero, non è mia intenzione assolutamente insegnarti come si fa, il mio punto di vista è ti porto qualcosa di esterno, perché se contiamo gli ultimi 10 anni, quindi 2024-2014, ci diamo un'idea delle infrastrutture quanto sono cambiate in questi anni.
+
+00:18:52.533 --> 00:19:00.493
+<v SPEAKER_2>Le tecnologie c'erano già, ma semplicemente ne erano ancora in una fase sperimentale, piuttosto che invece oggi li cominciamo a trovare dappertutto.
+
+00:19:00.493 --> 00:19:08.213
+<v SPEAKER_2>Delle complessità, dei vari layer che sono stati inseriti in modo più o meno sensato e troviamo mondi molto diversi.
+
+00:19:08.213 --> 00:19:47.053
+<v SPEAKER_2>E come dire, la capacità critica, quindi so che sono nella mia bolla, ma sono aperto ad ascoltarti e cerco di farmi un'idea, ci permette di fare un viaggio assieme per il miglioramento della tua infrastruttura, perché poi non è neanche la mia, oppure viceversa diventa un problema culturale in cui tu hai la tua bolla, sei conscio, sei come dire, super esperto della tua azienda, ma non riusciamo a comunicare, perché sei chiuso da questo punto di vista esterno.
+
+00:19:48.073 --> 00:20:19.713
+<v SPEAKER_2>E in questo, e poi ti lascio al tuo punto di vista, in questo inserisco la valutazione della capacità tecnica, e ne abbiamo già parlato varie volte tra la persona che ha un background tecnico piuttosto che no, di la capacità tecnica di discutere, di analizzare criticamente quello che gli viene raccontato, sia da vendor, sia da noi come consulenti o qualsiasi cosa.
+
+00:20:19.713 --> 00:20:30.413
+<v SPEAKER_2>Quindi non prendere come oro colato quello che racconta uno o quello che racconta l'altro, ma saper calare, saper creare un ponte da dove sei e a dove vuoi arrivare.
+
+00:20:33.053 --> 00:20:53.833
+<v SPEAKER_1>Adesso mi sembra dire altre cose, però su questo tema in particolare, mi appunterai probabilmente, visto che siamo sempre dal punto di vista delle figure di management, e tornerà sicuramente il tema ciso-tecnico, ciso-non-tecnico, non si può non scappare.
+
+00:20:53.893 --> 00:20:55.753
+<v SPEAKER_2>Non citarlo, l'ho lasciato a te dirlo.
+
+00:20:55.753 --> 00:20:59.053
+<v SPEAKER_1>Ok, ne dovremo però forse discutere.
+
+00:20:59.053 --> 00:21:25.493
+<v SPEAKER_1>Stavo pensando che questo tipo di approccio, cioè il modo con cui vorrei approcciare questo filone di chiacchierate, forse non è diversissimo dal modo in cui approcciamo quelle fasi del lavoro che facciamo, quelle fasi consulenziali del lavoro che facciamo, quando aiutiamo magari un'azienda, o più che un'azienda, magari proprio la singola figura di management, a orientarsi nelle potenziali scelte.
+
+00:21:25.493 --> 00:21:27.053
+<v SPEAKER_1>Cioè alla fine l'approccio è un po quello, no?
+
+00:21:27.053 --> 00:21:33.413
+<v SPEAKER_1>Capisco cosa c'è, cerco di capire come sono fatto, e da lì comincio a fare delle valutazioni.
+
+00:21:33.413 --> 00:21:38.193
+<v SPEAKER_1>Adesso magari avremo l'opportunità in queste chiacchierate di discutere tantissimi aspetti.
+
+00:21:38.193 --> 00:21:53.593
+<v SPEAKER_1>Di solito invece quando operativamente, almeno a me capita di discutere più dei silos di solito, perché le aziende giustamente devono pianificarsi, anche gli investimenti devono scegliere un pezzo alla volta dove vogliono mettere le mani.
+
+00:21:53.593 --> 00:22:01.293
+<v SPEAKER_1>Quindi c'è anche il tema del capire da dove parto, tra le mille cose anche capire quali sono gli aspetti più urgenti da considerare rispetto a quelli meno urgenti.
+
+00:22:01.293 --> 00:22:12.433
+<v SPEAKER_1>Però assomiglia un pochino, mi ha affesso una voce alta, a come approcciamo anche alcune attività operative che andiamo a fare su campo.
+
+00:22:12.433 --> 00:22:36.173
+<v SPEAKER_1>In realtà poi volevo attingere proprio da quell'esperienza, cioè attingerei proprio da quello che abbiamo visto negli ultimi anni, vorrei dire negli ultimi 3-4 anni, ma in realtà vedo cose che sono così da 10-15 anni, quindi attingeremo da quello che abbiamo visto negli ultimi 15 anni, e vedere quali sono i passi per andare a migliorare certe situazioni.
+
+00:22:38.453 --> 00:22:49.413
+<v SPEAKER_1>Sul piano tecnico invece, provando a fare un esercizio di stile sugli argomenti tecnici che tu tratteresti.
+
+00:22:49.453 --> 00:23:11.873
+<v SPEAKER_1>Io me l'ho segnato banalmente sicuramente di discutere, di fare una, quindi di partire da un assessment di quello che c'è a livello di rete, quello che c'è a livello di asset, quello che c'è a livello di servizi interni, per avere almeno una mappatura di base di quello che ho in casa.
+
+00:23:11.873 --> 00:23:53.473
+<v SPEAKER_1>Questo perché una delle prime domande, anzi uno dei primi confronti che mi è capitato di fare in alcuni contesti, a figure che proprio entravano nel ruolo, non mi è capitato spessissimo, però quelle due tre volte in cui incontravo un CIO che era appena diventato CIO o IT manager dell'azienda, vedevo proprio, nel suo essere spaisato diciamo, vedevo proprio questa esigenza del capire banalmente quanti apparati ha in gestione, se sono sotto manutenzione o no, se sono dove sono fisicamente, proprio anche la posizione fisica dell'apparato, se ci sono dei servizi in cloud e se hanno tutti gli strumenti di gestione.
+
+00:23:53.473 --> 00:23:58.413
+<v SPEAKER_1>Quindi questa mappatura, tu la vedi su quali temi tecnici la vedi?
+
+00:23:58.473 --> 00:24:03.513
+<v SPEAKER_1>Io mi rossino da un punto network, asset, servizi, però sicuramente c'è del l'altro.
+
+00:24:03.513 --> 00:24:26.233
+<v SPEAKER_2>Allora io farei prima un passo indietro proprio appena pena, perché sai che oltre la parte tecnica ho avuto la fortuna sfortuna di occuparmi anche di compliance e sempre nell'ottica del manager che entra in azienda, secondo me farsi un'idea di quali normative l'azienda deve sottostare e come è andato in passato io partirai da là.
+
+00:24:26.233 --> 00:24:27.033
+<v SPEAKER_2>Perché partirai da là?
+
+00:24:27.133 --> 00:24:29.073
+<v SPEAKER_2>Perché probabilmente ci sono già dei report.
+
+00:24:29.113 --> 00:24:46.353
+<v SPEAKER_2>Almeno quelli devono esserci, quindi al di là che sia carta come dire, giudiamo il termine carta da parati piuttosto che assesment reali senza alcuna presunzione di insinuare nessun dubbio riguardo, però almeno c'è un qualcosa, un'evidenza da cui partire.
+
+00:24:46.353 --> 00:24:48.413
+<v SPEAKER_2>E quindi partirai dalle normative.
+
+00:24:49.713 --> 00:24:52.073
+<v SPEAKER_1>Speriamo che nessuno si trovi nella situazione in cui.
+
+00:24:52.073 --> 00:24:56.193
+<v SPEAKER_1>Ok, partiamo da quello che abbiamo scritto a livello GDPR per poi scoprire che non c'è un.
+
+00:24:56.193 --> 00:25:02.353
+<v SPEAKER_2>Ecco, non volevo citarlo, ho sempre la luce di una discussione avvenuta recentemente sul canale Telegram.
+
+00:25:02.513 --> 00:25:05.373
+<v SPEAKER_1>È vero, è vero, anche questo sei discurso.
+
+00:25:05.373 --> 00:25:17.493
+<v SPEAKER_2>Sì, comunque bisognerebbe partire anche da là, però se già la normativa, probabilmente la carta può essere più o meno importante, dato GDPR purtroppo spesso è veramente carta così di straccia.
+
+00:25:17.533 --> 00:25:29.653
+<v SPEAKER_2>Ah, sì, per come è stata implementata, chiaramente non perché il problema di questo, e visto che me l'hai tirata fuori, la cito, è la sensibilità dell'azienda alla normativa.
+
+00:25:29.653 --> 00:25:40.053
+<v SPEAKER_2>Cioè se l'azienda come è statisticamente molto probabile, non ha alcuna sensibilità, il risultato sarà che quella carta lì è carta straccia.
+
+00:25:40.053 --> 00:25:50.893
+<v SPEAKER_2>Nei rarissimi casi che ho visto, quella sensibilità potrebbe essere molto molto più ampia, allora come dire la documentazione ha un senso.
+
+00:25:50.893 --> 00:25:55.293
+<v SPEAKER_2>Però dopo ci arriviamo, perché magari ci aiuta come come metodo.
+
+00:25:55.293 --> 00:26:13.253
+<v SPEAKER_2>Lato normative è 9.001, 27.001 normativa, ma anche nel quelli che è, insomma lì probabilmente l'azienda è più sensibile, perché ha un impatto diretto e immediato sul business, se non soddisfa, mi viene anche la t-sack, se non soddisfa quelle normative.
+
+00:26:13.253 --> 00:26:18.833
+<v SPEAKER_2>E quindi, come dire, il punto di partenza potrebbe essere un po più di valore rispetto ad altri.
+
+00:26:18.833 --> 00:26:30.133
+<v SPEAKER_2>Ma in generale, rapporto passati, quindi qualunque cosa sia stato fatto in passato può essere un punto di partenza per dire come era la situazione e probabilmente come è ancora.
+
+00:26:31.713 --> 00:26:48.673
+<v SPEAKER_2>Dopodiché l'infrastruttura, io partirei dagli applicativi, nel senso che partirei da lì, cercherei di individuare quali sono gli applicativi importanti, considerati critici per l'azienda e dove stanno.
+
+00:26:48.673 --> 00:26:50.053
+<v SPEAKER_2>Perché parto da questi?
+
+00:26:52.393 --> 00:27:06.353
+<v SPEAKER_2>Perché mutuando forse l'approccio un po di GDPR, che è un po l'approccio del dato, quindi capire quali dati ho, dove sono, chi ci accede, come sono protetti è un po mi sembra sensato.
+
+00:27:06.353 --> 00:27:25.913
+<v SPEAKER_2>Poi chiaro che sotto c'è un'infrastruttura, perché è solo un punto di partenza di fatto, perché inevitabilmente capire l'applicativo significa capire dove è il dato, dove risiede il dato su uno più server, su un cloud piuttosto che un altro, come è protetto a livello infrastrutturale, se lo perdo, se si corrompe, cosa succede, dove riparto.
+
+00:27:25.913 --> 00:27:37.193
+<v SPEAKER_2>Quindi l'infrastruttura ci arriviamo subito dopo, però abbiamo il focus, come dire, del se succede qualcosa a questo, l'azienda ha dei problemi immediati.
+
+00:27:37.193 --> 00:27:47.333
+<v SPEAKER_2>E se l'azienda ha un problema sul WordPress, probabilmente magari problemi di tipo reputazionale, ma magari l'azienda continua senza problemi.
+
+00:27:47.333 --> 00:27:50.373
+<v SPEAKER_1>Tipo in chiave ITIL ma poi servizi interni?
+
+00:27:51.693 --> 00:27:59.033
+<v SPEAKER_2>Sì, provo il GDPR perché comunque a me piace come è stata costruita.
+
+00:27:59.033 --> 00:28:11.553
+<v SPEAKER_2>Cioè mi parto dal dato, dov'è l'archivio, quali archivi ho nella mia azienda, quindi senza andare nel focus dati personali, ma provo a andare nel focus azienda, ma appogli archivi che sono critici per l'azienda.
+
+00:28:11.553 --> 00:28:21.073
+<v SPEAKER_2>Quindi nell'esempio della farmaceutica di prima, ci staranno le ricette di produzione, come è fatto, i brevetti, le formule chimiche, eccetera, eccetera.
+
+00:28:21.073 --> 00:28:24.493
+<v SPEAKER_2>Se l'azienda perdo quello, l'azienda chiude.
+
+00:28:24.493 --> 00:28:35.053
+<v SPEAKER_2>O per le aziende di fashion sono i cataloghi molto spesso, quelli non chiaramente dell'anno subito seguente, ma di quelli futuri.
+
+00:28:35.053 --> 00:28:44.293
+<v SPEAKER_2>Quelle cose li mi dà, ma mi dà anche come manager, forse una forza maggiore poi al bordo per chiedere o di fare cose.
+
+00:28:45.813 --> 00:28:48.193
+<v SPEAKER_2>Quindi l'archivio, dov'è l'archivio?
+
+00:28:50.173 --> 00:29:03.133
+<v SPEAKER_2>Quali ho prima di tutto, e già il quali ho non è banale, perché l'attivo direttore è un archivio, il Salesforce è un altro, la mailing list che sta su Mailchimp è un altro ancora, eccetera eccetera.
+
+00:29:03.133 --> 00:29:07.613
+<v SPEAKER_2>Sono tutti archivi, un lavoro enorme, però partiamo.
+
+00:29:07.613 --> 00:29:09.093
+<v SPEAKER_2>Dove sta?
+
+00:29:09.093 --> 00:29:10.993
+<v SPEAKER_2>Chi lo vede?
+
+00:29:10.993 --> 00:29:11.953
+<v SPEAKER_2>E come è protetto?
+
+00:29:13.093 --> 00:29:17.293
+<v SPEAKER_2>E magari se è compliant le leggi vigenti o no, non farebbe neanche male.
+
+00:29:21.493 --> 00:29:28.833
+<v SPEAKER_1>E da quello effettivamente vai a costruire, emergono i vari sistemi a supporto delle varie applicazioni, dei vari archivi.
+
+00:29:28.833 --> 00:29:30.073
+<v SPEAKER_2>Esatto.
+
+00:29:30.073 --> 00:29:53.353
+<v SPEAKER_2>Da lì ti sposti sicuramente all'infrastruttura, dove l'infrastruttura sempre in ottica, ormai io cerco di ragionare al se le cose vanno male, il mio paracadute di emergenza funziona, quindi una volta trovato l'archivio, sapere che c'è un back-up e sapere che c'è magari una coppia di DR da qualche parte, auspicabilmente imbutabile, mi dice che anche se va male almeno riparto.
+
+00:29:53.353 --> 00:29:56.533
+<v SPEAKER_2>Certo se me li rubano è un altro problema, ma almeno riparto.
+
+00:29:57.693 --> 00:30:15.173
+<v SPEAKER_2>E qui arriviamo all'infrastruttura, quindi l'infrastruttura che può essere costruita da reti geografiche piuttosto che locali, più o meno ampie, più o meno condivise, più o meno rese sicure, più o meno resilienti, più o meno stabili perché molto spesso capita.
+
+00:30:15.173 --> 00:30:18.433
+<v SPEAKER_2>Sì sì la rete ce l'ho, funziona, ma hai delle interruzioni.
+
+00:30:18.433 --> 00:30:22.333
+<v SPEAKER_2>Sì, due tre volte a settimana la rete si blocca per mezz'ora.
+
+00:30:22.333 --> 00:30:24.573
+<v SPEAKER_2>Beh, non è magari un problema di sicurezza come dire.
+
+00:30:24.573 --> 00:30:26.013
+<v SPEAKER_1>Per abitudine diciamo.
+
+00:30:26.013 --> 00:30:29.953
+<v SPEAKER_2>Esatto, in senso stretto però è un problema di resilienza.
+
+00:30:29.953 --> 00:30:32.173
+<v SPEAKER_2>Qualche domanda me la farei.
+
+00:30:32.173 --> 00:30:38.593
+<v SPEAKER_2>E qui secondo me riprendiamo esattamente il discorso che facevamo prima, la capacità di valutare quello che c'è.
+
+00:30:38.593 --> 00:30:47.173
+<v SPEAKER_2>Cioè, ad esempio, io non ho mai lavorato nel mondo database, un po li conosco, però non sono la persona più esperta.
+
+00:30:47.173 --> 00:30:56.113
+<v SPEAKER_2>E oggi va per la maggiore appunto tutta la parte cloud legata a Microsoft, EntraID, la suite 365, eccetera, eccetera.
+
+00:30:56.113 --> 00:31:03.953
+<v SPEAKER_2>E la domanda che poi è quello che dicevi tu prima è ma chi è in grado di valutare se un'infrastruttura del genere è sicura?
+
+00:31:03.953 --> 00:31:05.573
+<v SPEAKER_2>Ci sono strumenti automatici o no?
+
+00:31:06.433 --> 00:31:18.933
+<v SPEAKER_2>E qui secondo me non c'è verso, bisogna chiedere aiuto all'esterno, perché se l'azienda non è a focus IT le competenze dentro non le ha.
+
+00:31:18.933 --> 00:31:56.093
+<v SPEAKER_2>Ma se è a focus IT, è esattamente quello che dicevamo prima, probabilmente le persone lavorano lì da un tempo molto lungo, hanno un focus che è orientato alla funzionalità dell'infrastruttura, quindi l'infrastruttura funziona, è stabile, le change vengono fatte in un certo tempo, ma non hanno quella che a me piace chiamare mentalità distruttiva, in un libro alla cita come prequisito per fare trait modeling, non hanno la capacità di valutare in modo critico un'infrastruttura.
+
+00:31:58.173 --> 00:32:04.873
+<v SPEAKER_2>E ti faccio un esempio, queste cose possono essere anche molto banali per un consulente esterno da vedere, che magari ha occhio.
+
+00:32:04.873 --> 00:32:17.573
+<v SPEAKER_2>Tu lo fai tra l'altro di mestiere, la distruzione delle infrastrutture io provo a farlo dall'altro punto di vista, però chi un po ne ha vista e un po l'occhio ce l'ha, quindi non pensiamo che siano attività che possano durare mesi.
+
+00:32:19.153 --> 00:32:33.973
+<v SPEAKER_2>Alcuni anni fa un'azienda mi chiama e mi chiede di fare quella che viene detto come mi sfugge quei table top exercise, quindi facciamo una chiacchierata tra un team per capire come si reagisce, eccetera eccetera.
+
+00:32:34.433 --> 00:32:44.453
+<v SPEAKER_1>Scusa, però micro parentesi, dovremmo anche discutere in questo contesto l'utilità dei table top exercise, proprio in questo tipo di esercizi?
+
+00:32:44.453 --> 00:32:59.793
+<v SPEAKER_2>Assolutamente, secondo me hanno un'immediatezza incomparabile rispetto ad altri assessment per un team chiaramente schillato che sa di cosa sta parlando e gli dà tantissimi spunti in tempi molto veloci.
+
+00:32:59.793 --> 00:33:07.493
+<v SPEAKER_2>Un piccolo spoiler, lo racconto nel libro che ho scritto con una nostra amica ex collega, è proprio l'ultimo.
+
+00:33:07.493 --> 00:33:18.673
+<v SPEAKER_2>Nella chiacchierata appunto viene fuori il come reagisce un'azienda a un breach, una compromissione totale in infrastruttura.
+
+00:33:18.673 --> 00:33:23.313
+<v SPEAKER_2>E la risposta è stata, c'è nessun problema, il mio backup è separato su altri direttori separato.
+
+00:33:23.313 --> 00:33:25.373
+<v SPEAKER_2>Ah, benissimo, quindi è sicuro.
+
+00:33:25.373 --> 00:33:29.173
+<v SPEAKER_2>Sì, sì, sì, assolutamente sicuro.
+
+00:33:29.173 --> 00:33:31.193
+<v SPEAKER_2>Ma la macchina virtuale del backup dove sta?
+
+00:33:31.193 --> 00:33:32.933
+<v SPEAKER_2>È nella infrastruttura di VMware.
+
+00:33:32.933 --> 00:33:36.193
+<v SPEAKER_2>E le password di VMware dove stanno per i disaster coverage?
+
+00:33:36.273 --> 00:33:45.753
+<v SPEAKER_2>È su un Excel, quindi se uno acceda a quell'Excel, distrugge tutto backup server compreso e da lì la password del data storage.
+
+00:33:45.753 --> 00:33:57.593
+<v SPEAKER_2>E questa conversazione è durata mezz'ora, quindi mezz'ora l'idea del backup super sicuro è stato incenerito con una doccia fredda di realtà.
+
+00:33:57.593 --> 00:34:01.733
+<v SPEAKER_2>È brutto, però è meglio saperlo che il tuo backup non è...
+
+00:34:01.733 --> 00:34:02.513
+<v SPEAKER_2>com'è che lo chiamano?
+
+00:34:02.513 --> 00:34:02.693
+<v SPEAKER_2>Bridge?
+
+00:34:04.873 --> 00:34:06.533
+<v SPEAKER_1>È bridge recovery?
+
+00:34:06.533 --> 00:34:12.193
+<v SPEAKER_2>Sì, c'è un termine che dice che non sopravvive a un bridge di quel tipo.
+
+00:34:14.133 --> 00:34:29.273
+<v SPEAKER_2>Ed è bene saperlo, però se noi rimaniamo dal punto di vista, e purtroppo torniamo alle competenze, rimaniamo in un punto di vista interno all'azienda, cioè chi quella cosa l'ha progettata senza quella mentalità distruttiva di cui prima, questa cosa non la vede.
+
+00:34:31.073 --> 00:34:42.513
+<v SPEAKER_2>E quindi l'assessment in sé, c'è probabilmente bisogno di forza lavoro esterna specializzata che queste cose è in grado di vederle.
+
+00:34:42.513 --> 00:35:02.153
+<v SPEAKER_1>Sì, in generale secondo me è un tema che poi ricorrerà, cioè un po delle varie questioni trasversali, soprattutto se stai facendo un appunto se sei nell'ottica dell'assessment o della o della revisione, devi per forza partire dal presupposto che vuoi mettere in discussione quello che c'è.
+
+00:35:02.153 --> 00:35:08.313
+<v SPEAKER_1>Anche se lo è estenafatto ne sei felicissimo, devi partire proprio da quel ragionamento.
+
+00:35:08.373 --> 00:35:57.973
+<v SPEAKER_1>A me capita spesso, e secondo me anche questa cosa che mi ricorrerà in tutte le chiacchierate, capita spesso che c'è della rigidità nell'affrontare un tema di una revisione o di un cambio di tecnologia, dove la motivazione è che è ancora in corso attiva la manutenzione o il support su quella tecnologia, che capisco benissimo, cioè ovvio i soldi non si buttano dalla finestra, ci mancherebbe altro, ma non può essere quella la giustificazione per mantenere un errore strategico, cioè non posso pensare veramente a livello di strategia aziendale che preferisco tener fede a una decisione sbagliata perché sennò avrei sprecato i soldi.
+
+00:35:58.153 --> 00:36:01.613
+<v SPEAKER_1>Come peso di rischio va un attimo valutato.
+
+00:36:03.453 --> 00:36:08.813
+<v SPEAKER_1>In mezzo ci sono tutti i compromessi, cioè non vuol dire ok mi rendo con l'evo sbagliato, butto via tutto all'istante.
+
+00:36:08.813 --> 00:36:42.333
+<v SPEAKER_1>No, per carità, si possono fare dei ragionamenti, ma difendere a spada tratta una scelta che poi coi dati si dimostra sbagliata, cioè proprio a livello operativo si dimostra sbagliata non ha senso ed è una cosa molto umana probabilmente delle figure, diciamo anche delle figure di management, che in qualche misura si sentono probabilmente anche attaccate in una loro decisione, ma partiamo serenamente dal punto di vista, dal presupposto che non è anche una decisione sbagliata, diciamo a livello assoluto.
+
+00:36:42.333 --> 00:36:44.993
+<v SPEAKER_1>Può essere semplicemente che le condizioni sono cambiate.
+
+00:36:44.993 --> 00:36:56.453
+<v SPEAKER_1>Ne abbiamo parlato, mi ricordo, è un tema che sto affrontando con almeno cinque o sei team di management, la tematica del vado su cm o su xdr.
+
+00:36:56.453 --> 00:37:05.193
+<v SPEAKER_1>Ok, questa cosa oggi tra l'altro per me è un po così possibile scegliere, perché è ancora un momento di mescolanza eccessivo.
+
+00:37:05.193 --> 00:37:11.153
+<v SPEAKER_1>Supponiamo, come abbiamo previsto in parte io e te, che domani gli xdr si mangeranno il cm.
+
+00:37:11.153 --> 00:37:16.773
+<v SPEAKER_1>Facciamo questa supposizione per diciamo, proviamo a fare questa previsione.
+
+00:37:17.273 --> 00:37:50.733
+<v SPEAKER_1>Chi oggi sceglie il cm, non è che sta sbagliando tecnicamente, perché ci sono le condizioni per scegliere, anche per scegliere quella tecnologia se lui ha un certo tipo di esigenze, ma se domani quelle tecnologie verranno completamente assorbite e ci saranno delle opzioni più potenti o più funzionali a quella stessa esigenza, perché aggrapparsi a qualcosa di, diciamo, fuori dal tempo, in un certo senso, eppure di difendere una propria scelta, non ha obiettivamente senso.
+
+00:37:50.733 --> 00:37:58.573
+<v SPEAKER_2>Partiamo dall'idea che una tecnologia e quindi una scelta tecnologica ha una durata nel tempo.
+
+00:37:58.573 --> 00:38:21.673
+<v SPEAKER_2>Cioè ciò che andava bene il tempo fa, può andare bene per cinque, forse di forse dieci anni se l'ho fatto, se sono stato un early adopter con tutti i problemi dell'early adopter, ma a un certo punto quella muore, nel senso, non che muore, però il mondo offensivo si modifica e quella scelta non è più così buona come prima.
+
+00:38:21.673 --> 00:38:26.913
+<v SPEAKER_2>Faccio un esempio che credo sia noto a tutti quelli che ci ascoltano o ci ascolteranno.
+
+00:38:26.913 --> 00:38:27.893
+<v SPEAKER_2>L'MPLS.
+
+00:38:27.893 --> 00:38:48.133
+<v SPEAKER_2>Quindi se 15 anni fa l'MPLS si trovava dappertutto ed era la soluzione magica per qualsiasi cosa, per l'interconnectere sedi a livello nazionale, chiaramente parliamo del mercato italiano o a livello europeo, in maniera anche molto semplice, anche a volte a livello mondiale, aveva un problema enorme.
+
+00:38:48.133 --> 00:38:55.693
+<v SPEAKER_2>E tutti parlavano con tutto senza alcun filtro in linea generale, cioè nella stragrande maggioranza dei casi.
+
+00:38:55.693 --> 00:39:17.113
+<v SPEAKER_2>Questa cosa qui che si vede tuttora in tantissime aziende, perché è stata ereditata, capisco che da una parte qui l'infrastruttura non la butti e la rifai ogni cinque anni, dall'altra parte chi ha avuto il picco della carriera con quella tecnologia è legato a quella e la ritiene comunque un'ottima tecnologia.
+
+00:39:17.173 --> 00:39:33.673
+<v SPEAKER_2>Però oggi l'idea che esista un faro primetrale tutto dentro è, passiamo il termine, piatto, cioè senza alcun punto di controllo e questa rete si distribuisce a livello nazionale è un problema.
+
+00:39:33.673 --> 00:39:59.753
+<v SPEAKER_2>Quindi l'idea della tecnologia MPLS oggi, già da parecchio in realtà, non oggi, deve lasciare il passo a una tecnologia diversa che mi permette di avere punti di controllo distribuiti e evitare che se ho un bridge in una sede di quattro persone in centro Italia, questo si propaghi dritto in data center e ce ne sono di rete ancora fatte così, e tantissime.
+
+00:40:01.413 --> 00:40:20.093
+<v SPEAKER_2>Ed è sbagliato legarsi a quella tecnologia, ma non era sbagliata allora, è che adesso il mondo si è modificato e quindi dobbiamo reagire di conseguenza, aggrapparsi a quella tecnologia, perché era bella e lo è tuttora, ma gli mancano delle cose.
+
+00:40:20.093 --> 00:40:24.313
+<v SPEAKER_1>Spesso cambiano anche proprio i parametri globali.
+
+00:40:25.433 --> 00:40:40.733
+<v SPEAKER_1>Tengo l'esempio MPLS, era apprezzatissima soprattutto per la bassa latenza, perché internet aveva una latenza pessima, adesso questa cosa non è più così vera, quindi cambia proprio il contesto in cui tu usi una certa...
+
+00:40:40.853 --> 00:40:45.833
+<v SPEAKER_1>Cioè le motivazioni per le quali avevi fatto quella scelta, probabilmente non ci sono più...
+
+00:40:45.833 --> 00:40:49.173
+<v SPEAKER_2>Anzi, probabilmente se la cambi, ne hai anche dei vantaggi economici.
+
+00:40:49.173 --> 00:40:50.453
+<v SPEAKER_1>Esatto, esatto.
+
+00:40:50.453 --> 00:40:51.833
+<v SPEAKER_1>Questa cosa...
+
+00:40:52.853 --> 00:40:56.033
+<v SPEAKER_1>Io noto grosse resistenze, ma probabilmente ce l'ho anche io.
+
+00:40:56.033 --> 00:40:58.293
+<v SPEAKER_2>Lentissime, sì.
+
+00:40:58.293 --> 00:41:12.293
+<v SPEAKER_1>Però è proprio una skill per il management in ambito tecnologico, forse in tutti gli ambiti, la capacità di cambiare idea, di modificare le proprie percezioni in base a quello che...
+
+00:41:12.293 --> 00:41:16.613
+<v SPEAKER_1>in base a come cambia il mondo e ribaltarle sulla propria...
+
+00:41:16.613 --> 00:41:23.453
+<v SPEAKER_1>sul proprio contesto, anche quando significa tornare su una propria decisione.
+
+00:41:23.453 --> 00:41:28.093
+<v SPEAKER_2>Che non è un fallimento, è che il mondo cambia e magari si può aggiustare.
+
+00:41:30.853 --> 00:41:38.093
+<v SPEAKER_1>E così, effettivamente, facendo tutto questo giro, arriviamo a toccare probabilmente tutte le tecnologie nella nostra chiacchierata.
+
+00:41:40.193 --> 00:41:42.133
+<v SPEAKER_1>E ci siamo già segnati.
+
+00:41:42.133 --> 00:41:45.273
+<v SPEAKER_1>Probabilmente per ogni elemento c'è il tema del make or buy.
+
+00:41:45.273 --> 00:41:49.453
+<v SPEAKER_1>Quasi per tutti gli elementi, probabilmente c'è il tema del make or buy.
+
+00:41:49.593 --> 00:41:51.033
+<v SPEAKER_1>C'è una cosa delicatina.
+
+00:41:51.173 --> 00:42:01.393
+<v SPEAKER_1>Nel make or buy, diciamo, comunque c'è una riflessione da fare sulle skill che internamente devono crescere.
+
+00:42:02.653 --> 00:42:09.073
+<v SPEAKER_1>Potremmo metterci anche un focus sulla parte formazione interna, che è un elemento, cioè.
+
+00:42:09.073 --> 00:42:11.313
+<v SPEAKER_2>Sì, sicuramente.
+
+00:42:11.313 --> 00:42:31.753
+<v SPEAKER_1>Noto che nel mondo, mentre nel mondo, diciamo, degli integrator, la formazione è una cosa che riteniamo ovvia, anche se in alcuni contesti abbiamo scoperto che non è così ovvia, ma nei contesti maturi è ovvio che i team si formano.
+
+00:42:31.753 --> 00:42:36.433
+<v SPEAKER_1>Dentro le aziende, diciamo, di produzione, questa cosa diventa molto meno ovvia.
+
+00:42:36.433 --> 00:43:02.473
+<v SPEAKER_1>La formazione all'interno dei team IT non è sempre un elemento presente, ma in realtà hanno le stesse identiche esigenze di formazione di qualsiasi tecnico, e quindi non vedo perché non prende questa situazione, anche perché poi obiettivamente è una competenza che si ribalta immediatamente sulle efficienza e l'efficacia dell'infrastruttura.
+
+00:43:02.593 --> 00:43:07.813
+<v SPEAKER_1>Cioè, è un investimento tutto sommato non enorme, ma con un ritorno gigantesco.
+
+00:43:07.813 --> 00:43:13.353
+<v SPEAKER_1>Cioè, veramente tornano tantissime, quelle competenze vengono usate tantissimo poi dall'azienda.
+
+00:43:16.873 --> 00:43:31.153
+<v SPEAKER_2>Sulle competenze tecniche, nel senso di soluzione, io secondo me è chiave, non lo vedo ancora tanto, secondo me le cose stanno cambiando, ma in modo ancora abbastanza impercettibile.
+
+00:43:32.033 --> 00:43:40.213
+<v SPEAKER_2>Cioè, qualsiasi azienda oggi dovrà preferire, favorire, quantomeno, non solo le skill del prodotto.
+
+00:43:40.213 --> 00:44:00.073
+<v SPEAKER_2>Cioè, le persone di un team interno, di un'azienda produttiva, non necessariamente devono essere esperti della tecnologia firewall che hanno, la devono sapere gestire, sì, ma non devono sapere i dettagli di come funziona il sistema di failover, piuttosto che come funziona una serie di cose, eccetera.
+
+00:44:00.533 --> 00:44:18.833
+<v SPEAKER_2>Perché sono funzionalità che una volta che sono in place, sono attive e sono ben configurate, sono state provate, rimangono lì e quindi la competenza della persona che le vede una volta ogni due anni è inevitabilmente si perde.
+
+00:44:18.833 --> 00:44:26.373
+<v SPEAKER_2>Quindi non ha forse neanche così tanto senso a spingere su questo tipo di formazione.
+
+00:44:26.533 --> 00:44:32.893
+<v SPEAKER_2>È chiaro che sì, un overview serve e saper come funziona, ma non così profondamente.
+
+00:44:32.893 --> 00:44:48.353
+<v SPEAKER_2>Quello che secondo me serve è che le persone quante sono di un team IT, di un'azienda, sappiano lavorare a livello di integrazione tra dispositivi, a livello di automazione dei processi.
+
+00:44:48.353 --> 00:45:00.133
+<v SPEAKER_2>Perché lì si fa la differenza, nel senso lì la persona che lavora, che conosce l'azienda da 5, 6, 8 anni, conosce i processi, sa dove si perde tempo, sa dove si può migliorare.
+
+00:45:00.133 --> 00:45:17.573
+<v SPEAKER_2>Se ha o all'interno c'è dell'azienda la capacità di sveltirli, di migliorarli, è quello sì che è un beneficio, ma ma grosso, molto grosso, molto più che sapere il dettaglio del failover di un firewall, di un cluster, eccetera, eccetera.
+
+00:45:20.373 --> 00:45:43.693
+<v SPEAKER_1>Si fa tutto parte, diciamo, dell'avere la capacità di capire quali sono gli elementi di cui tu ti devi curare rispetto a quelli che puoi serenamente delegare e che forse non è neanche vantaggioso che te ne curi tu direttamente, né come manager, ma forse ancora di più a livello operativo, come delegato all'altimo operativo.
+
+00:45:45.133 --> 00:45:46.973
+<v SPEAKER_2>Esatto.
+
+00:45:48.573 --> 00:46:00.973
+<v SPEAKER_2>E poi secondo me, un'altra cosa che mi viene inutile, è sempre una figura esterna, però è diversa da quelle che abbiamo citato, a volte viene detta una solta come advisor o piuttosto che mentor, eccetera.
+
+00:46:00.973 --> 00:46:26.733
+<v SPEAKER_2>C'è una figura di riferimento che gli sappia raccontare come sta andando il mondo esternamente, cioè non solo della parte quali sono gli ultimi threat che spesso si vede, a livello per base e su base mensile, ma proprio il capire che determinati problemi le aziende esterne le stanno indirizzando in un certo modo piuttosto che in un altro.
+
+00:46:26.733 --> 00:46:48.953
+<v SPEAKER_2>Oggi secondo me viviamo in una transizione, che non è quella energetica, quella la lascio ad altre persone, ma di prodotto dove una multinazionale nota che ha sdoganato una tecnologia che è la virtualizzazione, ha atto subito, usiamo il termine che preferiamo, delle scelte che sono impopolari.
+
+00:46:49.993 --> 00:47:02.433
+<v SPEAKER_2>Quelle scelte impopolari stanno influenzando enormemente la strategia dei prossimi anni di, io direi, quasi tutte le aziende che conosco, ma quando dico quasi tutte, direi che è una percentuale che sfioro al 100%.
+
+00:47:03.813 --> 00:47:20.513
+<v SPEAKER_2>Quindi, sapere che se la mia azienda questa cosa non la stiamo valutando, ma tutto il mondo sì, magari qualcuno mi dice, guarda, fatti due domande, perché il mondo non ha una direzione chiara ancora, assolutamente, però sta cominciando a fare delle riflessioni.
+
+00:47:20.513 --> 00:47:40.573
+<v SPEAKER_2>E un'altra cosa che vedo, in maniera forse molto meno dirompente, è una valutazione se il cloud, ho visto anche gli ultimi rincari di questo e degli ultimi due anni scorsi, è ancora una scelta così importante come lo era prima.
+
+00:47:40.573 --> 00:47:56.353
+<v SPEAKER_2>Anche lì sto vedendo qualche, una percentuale abbastanza bassa per ora, di aziende che stava mettendo in discussione quel piano lì, ma anche qui non è una, ho sbagliato, non è, andava bene, adesso comincia a esserci qualche dubbio.
+
+00:47:56.353 --> 00:48:04.073
+<v SPEAKER_2>Anche lì non c'è la ricetta magica che funge da alternativa, devono essere delle valutazioni.
+
+00:48:05.093 --> 00:48:20.813
+<v SPEAKER_2>E quindi qualcuno che in qualche modo dia una mano agli team managers, che non può essere onnisciente ad avere degli spunti, delle prospettive diverse, secondo me può essere un buon punto d'appoggio.
+
+00:48:20.813 --> 00:48:23.933
+<v SPEAKER_1>Sì, può essere alcuni punti.
+
+00:48:23.933 --> 00:48:55.733
+<v SPEAKER_1>C'è anche proprio la tematica, ad esempio sul tema scelta, in generale coi servizi, una valutazione tra il gestire un servizio completamente internamente e usare una soluzione esterne, come potrebbe essere, appoggiare parte dell'infrasatura su una cloud o addirittura andare verso un servizio completamente gestito, un manager service esterno.
+
+00:48:55.733 --> 00:49:17.173
+<v SPEAKER_1>C'è un altro elemento che si vede forse di più nella cloud, ma è generale secondo me, che andrebbe considerato, ovvero ho notato in tantissime figure la tendenza a selezionare o comunque essere in qualche modo attirate da quello che è il feature set o la resa migliore, no?
+
+00:49:17.173 --> 00:49:28.613
+<v SPEAKER_1>Quindi si cerca di fare un parago, cioè il calcolo del del vantaggio è affidato al rapporto prezzo e vantaggio tecnico, feature set, benefici tecnologici eccetera.
+
+00:49:28.613 --> 00:49:33.713
+<v SPEAKER_1>Si usa questo metro che non è che sia corrompente, non è che è sbagliato in generale come approccio.
+
+00:49:33.713 --> 00:49:41.133
+<v SPEAKER_1>Però così facendo a volte si selezionano tecnologie o soluzioni meravigliose.
+
+00:49:41.133 --> 00:50:03.113
+<v SPEAKER_1>E mi ripeto, mi è più facile con la cloud, quindi magari si seleziona un ambito cloud perché il feature set è molto elevato, ha parametri di resilienza elevatissimi, quindi una serie di vantaggi che io farei fatica magari a fare on prem, a ottenere on prem, si scelgono, quindi si fanno anche dei compromessi economici, perché costa di più, ma non di più in proporzione ai vantaggi che ho.
+
+00:50:03.113 --> 00:50:09.893
+<v SPEAKER_1>Quindi magari costa di più in assoluto come TCO, ma ho molti più vantaggi.
+
+00:50:09.893 --> 00:50:14.693
+<v SPEAKER_1>E spessissimo ci si dimentica di fare il paragone con i vantaggi che mi servono.
+
+00:50:16.373 --> 00:50:19.853
+<v SPEAKER_1>La cosa più banale ad esempio è con l'uptime.
+
+00:50:19.853 --> 00:50:46.593
+<v SPEAKER_1>Ok, se io implemento un qualcosa che mi costa 100, in cloud o anche in altri contesti, e dove quel 100, quel costo 100, deriva dal fatto che ho un uptime di 1.49, 99,49% di uptime l'anno, e poi scopro che per il mio core business è più che sufficiente, un 99,95% dico a caso, ok?
+
+00:50:46.593 --> 00:50:51.813
+<v SPEAKER_1>Quello 0.4% di uptime che ho pagato in realtà non mi serviva.
+
+00:50:51.813 --> 00:51:17.073
+<v SPEAKER_1>Poi è ovvio che tutti noi vorremmo essere sempre, cioè vorremmo che i nostri servizi siano sempre al massimo, ma se il mio business non mi richiede quel livello qualitativo e io mi fisso su fare qualcosa che è molto al di là del livello qualitativo che mi serve, proprio operativamente, in un certo senso sto sprecando le mie finanze, cioè quei soldi potrei metterli da qualche altra parte, che magari mi danno anche più vantaggi.
+
+00:51:17.073 --> 00:51:28.753
+<v SPEAKER_1>Questa cosa con i servizi esterni che tendenzialmente hanno un livello qualitativo, adesso spero che non si confenda, molto superiore rispetto a quello che una enterprise può farsi internamente.
+
+00:51:28.753 --> 00:51:38.813
+<v SPEAKER_1>Paragone, un SOC fatto da un'azienda che fa SOC di solito funziona meglio di un mini SOC che qualcuno si fa internamente, la maggior parte dei casi è così.
+
+00:51:38.813 --> 00:51:43.713
+<v SPEAKER_1>Ovvio che apparentemente il TCO di poi c'è il tema rischio, vabbè, questa è un'altra cosa.
+
+00:51:43.713 --> 00:51:49.873
+<v SPEAKER_1>Ovvio che il total cost del SOC interno è inferiore, quello esterno è superiore.
+
+00:51:49.873 --> 00:52:01.693
+<v SPEAKER_1>Tu devi capire cosa ti serve veramente per capire se il delta costo del SOC esterno è giustificato perché tampone un rischio che tu hai, che hai effettivamente, quindi ti serve quel livello di servizio.
+
+00:52:01.693 --> 00:52:06.553
+<v SPEAKER_1>Se non ti serve quel livello di servizio, puoi adottare altre scelte, puoi fare altre voltazioni.
+
+00:52:08.533 --> 00:52:14.033
+<v SPEAKER_1>Soprattutto sulla parte infrastruttura vedo che questa distinzione è più difficile da fare.
+
+00:52:14.033 --> 00:52:31.433
+<v SPEAKER_1>Cioè si vede meno questa tendenza magari a scegliere il prodotto o la soluzione o il servizio che assolutamente ha degli isla molto più alti, dei ritorni molto più alti dal punto di vista della resa tecnica.
+
+00:52:31.433 --> 00:52:35.793
+<v SPEAKER_1>E ci si dimentica che forse tutta quella resa tecnica noi in realtà non la stiamo usando.
+
+00:52:35.793 --> 00:52:36.873
+<v SPEAKER_1>Ne usiamo solo una parte.
+
+00:52:40.553 --> 00:52:48.753
+<v SPEAKER_2>Secondo me questo è un problema di requisiti, cioè definire i veri requisiti e non farsi trascinare dai data sheet.
+
+00:52:48.753 --> 00:52:51.173
+<v SPEAKER_2>Su questa cosa mi vengono in mente due fatti.
+
+00:52:51.173 --> 00:53:12.413
+<v SPEAKER_2>Uno che spesso mi è capitato, è un po che non mi capita, ma spesso è successo in passato, di aziende che mi chiedevano una mano per disegnare la loro infrastruttura di disaster recovery, al che ha detto ok, allora qual è il tuo RTO, RPO, diciamo più stringente che ti serve per servizio?
+
+00:53:12.413 --> 00:53:16.913
+<v SPEAKER_2>E già questa era una risposta che non era facile avere.
+
+00:53:16.913 --> 00:53:23.213
+<v SPEAKER_2>E perché nell'idea è sì, ma progettiamo il DR e poi casomai facciamo tuning?
+
+00:53:23.213 --> 00:53:34.233
+<v SPEAKER_2>Eh no, perché determinati valori di RTO e RPO si raggiungono con tecnologie che possono essere anche molto molto costose.
+
+00:53:34.233 --> 00:53:44.073
+<v SPEAKER_2>Quindi saperlo prima mi aiuta a indirizzare un po la tua richiesta, ma soprattutto una possibile che non ti sia fatto un'idea quanto può stare ferma la tua azienda.
+
+00:53:44.073 --> 00:53:54.813
+<v SPEAKER_2>E la seconda cosa è che, seguo quello che hai detto tu, è che quando io scelgo una tecnologia, un uptime o definisco l'RTO, l'RBO, definisco una sorta di probabilità.
+
+00:53:54.813 --> 00:54:03.733
+<v SPEAKER_2>Cioè, quella tecnologia ha una probabilità X di guastarsi nel tempo, che spesso è molto inferiore.
+
+00:54:03.733 --> 00:54:05.773
+<v SPEAKER_2>Mi viene in mente l'altro infrastruttura di rete.
+
+00:54:05.773 --> 00:54:23.213
+<v SPEAKER_2>Ci sono dispositivi che possono andare avanti per anni, ma delle volte si guastano o, nel modo più tragico, hanno dei bug che ne impediscono anche, come dire, il corretto failover del carico, diciamo così.
+
+00:54:23.213 --> 00:54:26.713
+<v SPEAKER_2>Quando questo accade in determinate aziende è una tragedia.
+
+00:54:26.713 --> 00:54:33.753
+<v SPEAKER_2>Capisco che se in una struttura sanitaria la rete si ferma, sono problemi.
+
+00:54:33.753 --> 00:54:40.513
+<v SPEAKER_2>Ma è un evento, può succedere, e questa probabilità non può essere cancellata.
+
+00:54:40.873 --> 00:54:50.333
+<v SPEAKER_2>Cioè, quello che hai detto prima dell'infrastruttura è ancora più complesso valutarla, perché è sempre nascosta, non si vedeva sempre bene, non viene neanche presa in considerazione.
+
+00:54:50.333 --> 00:54:56.693
+<v SPEAKER_2>Non c'è un'idea della complessità che c'è dietro e quanto questa complessità sta aumentando nel tempo.
+
+00:54:56.693 --> 00:54:59.413
+<v SPEAKER_2>Ma se si ferma, cade il mondo.
+
+00:54:59.413 --> 00:55:02.713
+<v SPEAKER_2>Sì, non è un bel evento, però è come dire, è rischio, no?
+
+00:55:02.713 --> 00:55:11.613
+<v SPEAKER_2>Cioè, c'è, lo scriviamo, proviamo a valutarlo prima, lo rivaluteremo in seguito, ma esiste, non può essere annullato, no?
+
+00:55:11.753 --> 00:55:15.833
+<v SPEAKER_2>È implicito nelle tecnologie oggi più che mai.
+
+00:55:15.833 --> 00:55:47.193
+<v SPEAKER_1>Tanto mi viene in mente che livello di profondità, che spero raggiungeremo nel nostro chiacchierate, e puoi raggiungere, partendo anche da un servizio perché è complesso come il DR, questa è una chiacchierata che mi era capitato di fare in cui per calcolare veramente la probabilità, ad esempio, di dover usufruire di un servizio interno come il DR, vai a toccare le menti e mi hanno preso veramente per pazzo quando gli ho mostrato a un team i coefficienti di probabilità di rottura dei dispositivi che hanno in uso.
+
+00:55:47.193 --> 00:56:07.773
+<v SPEAKER_1>Mi hanno preso per malato di mente, magari lo sono anche, ma quello era l'unico elemento tecnico documentato per fare una stima realistica delle probabilità di rottura di un certo tipo di dispositivo che era critico in quel caso e quindi aveva senso prendere in considerazione.
+
+00:56:07.773 --> 00:56:14.933
+<v SPEAKER_1>Diversamente l'unica alternativa è che ti ridadi, cioè o speri che non si rompa o fai un'ipotesi ma completamente campatenaria.
+
+00:56:14.933 --> 00:56:41.213
+<v SPEAKER_1>Quindi se tu basi il tuo processo di, la tua probabilità di usufruire di un servizio come il disaster recovery, a sentimento ci stai prendendo una responsabilità strategica non banale, cioè potresti azzeccarci ma potresti completamente andare fuori dai parametri realistici e quindi magari sbagli completamente a valutare la tua infrastruttura di disaster recovery.
+
+00:56:41.213 --> 00:56:50.713
+<v SPEAKER_1>Visto che sono dati che ci sono, cioè i costruttori ci fanno questo enorme piacere di fornirci dei dati molto precisi tra l'altro sul coefficiente, quanto tempo di rottura.
+
+00:56:50.713 --> 00:56:58.173
+<v SPEAKER_1>Non mi ricordo se ne parlavo con te, tempo di tempo medio di ripristino in caso di fail software.
+
+00:56:58.953 --> 00:57:06.553
+<v SPEAKER_1>Quindi se si rompe, se c'è un bug software, quanto tempo richiede il patching di quella soluzione, se va riavviato o meno il servizio.
+
+00:57:06.553 --> 00:57:19.713
+<v SPEAKER_1>Ci sono proprio dei parametri che a livello poi di servizi operativi, cioè di sistemi che usi per l'operatività aziendale, magari uno attento li vuole sapere prima, li può valutare prima.
+
+00:57:19.713 --> 00:57:30.573
+<v SPEAKER_1>Sono così tanti che effettivamente fare ancora una volta, fare tutto da soli all'interno del proprio team forse devi avere 100 persone per stare dietro a tutti i singoli elementi.
+
+00:57:30.693 --> 00:57:41.253
+<v SPEAKER_1>Ancora una volta in molti contesti è saggio appoggiarsi anche a figure esterne, cioè sono cose su cui poi la delega totale secondo me è sbagliata.
+
+00:57:41.253 --> 00:57:50.913
+<v SPEAKER_1>Cioè commissionare 1DR è completamente conto terzi e io internamente non so niente di come non è fatto, secondo me forse è un po troppo più rischioso per come concepisco io l'IT.
+
+00:57:50.913 --> 00:57:55.953
+<v SPEAKER_1>Sì, infatti, si rischia anche di sbagliare.
+
+00:57:55.953 --> 00:58:13.153
+<v SPEAKER_1>Però alcuni elementi come il calcolo delle probabilità che un sistema va ad infault, se non io ho la capacità di andare a cacciare con le informazioni e valorizzarla nel mio contesto mi devo far aiutare da chi quel lavoro lo sa fare e magari lo ha fatto n.000 volte.
+
+00:58:13.153 --> 00:58:30.453
+<v SPEAKER_1>Anche perché tantissime di queste cose, altra cosa importante da ricordarsi quando si fa questo mestiere all'interno delle corporate, è che effettivamente non ti capita così frequentemente di implementare da zero un disaster recovery.
+
+00:58:30.453 --> 00:58:32.353
+<v SPEAKER_1>Sono cose che ti capitano poche volte nella vita.
+
+00:58:32.353 --> 00:58:50.773
+<v SPEAKER_1>Invece chi lo fa, magari a livello di mestiere, siccome fa quello, diciamo di solito ci si verticalizza, quindi è probabile che abbia più esperienza nel fare quel tipo di infrastruttura, quindi può darti degli elementi di riflessione più realistici, molto banalmente.
+
+00:58:50.773 --> 00:59:17.633
+<v SPEAKER_2>Proprio nel disaster recovery secondo me sono necessari così tante competenze diverse l'una dall'altra dove non è possibile dire fammelo o lo faccio internamente, cioè è proprio competenze assolutamente distribuite, perché le tecnologie sono tante e nessuno può in qualche modo conoscerle tutte, cioè nessuno in senso come una persona.
+
+00:59:17.633 --> 00:59:26.153
+<v SPEAKER_2>Poi qualcuno può avere una visione dall'alto, qualcuno ha la visione iper tecnica e ti sa ottimizzare la singola cosa, però è un team che lavora per forza.
+
+00:59:26.153 --> 00:59:33.773
+<v SPEAKER_1>Poi è una di quelle cose che va definita veramente a stretto contatto col business, perché c'è i requisiti.
+
+00:59:33.773 --> 00:59:49.373
+<v SPEAKER_1>Anche qua ci sarebbe da discutere come patteggiare i requisiti col business, perché sennò è tutto business continuity, se non si fa un ragionamento veramente chirurgico.
+
+00:59:49.373 --> 00:59:58.853
+<v SPEAKER_1>Quindi si deve partire da un'analisi col business di cosa veramente serve all'azienda e da lì poi fai tutta una serie di riflessioni.
+
+00:59:58.953 --> 01:00:01.633
+<v SPEAKER_1>Quindi quell'ambito forse è ancora più complicato.
+
+01:00:01.633 --> 01:00:11.773
+<v SPEAKER_1>Mi sono segnato, ma poi forse ci fermiamo e valuteremo se fare un altro brainstorming o se vederci in separata sede per completare l'elenco.
+
+01:00:11.773 --> 01:00:52.113
+<v SPEAKER_1>E mi sono segnato anche il monitoraggio in generale delle infrastrutture, ma non soltanto per il tema fault management, che è ovviamente uno dei core della parte monitoraggio, ma anche per avere tutti quei dati sul funzionamento delle infrastrutture, dei sistemi, monitoraggio intendo non solo metriche tecniche, anche statistiche, ad esempio, di quanti case vengono aperti dagli utenti, sono certe problematiche, quanti case vanno a che fare con la sicurezza, quanti con i fault, quanti con le performance, quindi monitoraggio nel senso ITIL del termine, gestione del servizio nel senso ITIL del termine.
+
+01:00:52.113 --> 01:01:08.133
+<v SPEAKER_1>Poi magari potremmo fare una parentesi sulle certificazioni utili all'ambito governance, management, perché si parla spesso di certificazioni tecniche per i tecnici, ma in realtà ci sono anche dei bei percorsi per chi fa management, per chi fa governance.
+
+01:01:08.133 --> 01:01:17.873
+<v SPEAKER_1>Dicevo, il partito di monitoraggio è quello che poi ti dà veramente le informazioni su come sta performando una scelta passata, che magari non hai fatto tu, o una scelta che hai fatto tu.
+
+01:01:17.873 --> 01:01:26.953
+<v SPEAKER_1>Cioè è quello che poi ti dà anche la misura se hai implementato bene, se quello che hai scelto sta funzionando veramente bene.
+
+01:01:26.953 --> 01:01:44.693
+<v SPEAKER_1>Siccome non puoi scendere o non ti puoi permettere di scendere sempre nel merito tecnico della singola scelta, il IT manager, il CIO, il CISO devono un po astrarsi e accontentarsi, in tre virgolette, di una serie di valutazioni un po asettiche.
+
+01:01:44.693 --> 01:01:52.093
+<v SPEAKER_1>Poi l'ideale è avere sempre la figura competente da interpellare per discutere le singole situazioni.
+
+01:01:53.333 --> 01:02:08.313
+<v SPEAKER_1>Ma se avessimo, anche con la competenza, anche pur essendo competente nel merito, se avessimo il CIO e il CISO che entrano nel merito tecnico di ogni singola valutazione, non ti bastano quattro vite per fare quel lavoro.
+
+01:02:10.253 --> 01:02:20.653
+<v SPEAKER_1>Quindi, non spoilerò niente sulle nostre opinioni sul tema CISO tecnico o non tecnico, però a prescindere da questo, un certo livello di astrazione serve.
+
+01:02:21.053 --> 01:02:22.633
+<v SPEAKER_1>Non è impossibile non averlo.
+
+01:02:22.633 --> 01:02:29.933
+<v SPEAKER_1>E bisogna e non può essere, qua aggiungo una mia critica bar autocritica, non può essere soltanto basato sulle nostre sensazioni.
+
+01:02:29.933 --> 01:02:34.553
+<v SPEAKER_1>Dobbiamo avere veramente dei dati obiettivi da considerare.
+
+01:02:35.793 --> 01:02:37.273
+<v SPEAKER_2>Concordo assolutamente.
+
+01:02:39.673 --> 01:02:42.453
+<v SPEAKER_1>Abbiamo messo dentro un sacco di roba.
+
+01:02:42.733 --> 01:02:43.793
+<v SPEAKER_1>Ne manca altra.
+
+01:02:43.833 --> 01:02:46.433
+<v SPEAKER_2>Tante cose che non abbiamo menzionato.
+
+01:02:46.433 --> 01:02:49.493
+<v SPEAKER_1>Esatto, però magari ci vengono via via nelle chiacchierate.
+
+01:02:49.493 --> 01:02:50.353
+<v SPEAKER_2>Sì, sì.
+
+01:02:50.373 --> 01:02:51.973
+<v SPEAKER_1>Anche secondo me.
+
+01:02:51.973 --> 01:03:01.233
+<v SPEAKER_1>A questo punto io rimanderei alla prossima chiacchierata, ma partirei della parte compliance, se d'accordo.
+
+01:03:01.233 --> 01:03:10.313
+<v SPEAKER_1>Quindi che era il primo tema che ti tiravo fuori, proprio per avere una prima mappatura di quello che c'è in un'azienda in cui un potenziale ciro finisce.
+
+01:03:11.093 --> 01:03:12.633
+<v SPEAKER_2>Ok, partiamo da lì.
+
+01:03:12.633 --> 01:03:26.893
+<v SPEAKER_2>Un altro punto di partenza che secondo me, da un punto di vista temporale, viene leggermente prima, nel senso che quando si insedia la nuova persona è il mi ambiento, parlo con le persone.
+
+01:03:26.893 --> 01:03:35.513
+<v SPEAKER_2>Quindi un'altra riflessione, magari le facciamo siccome non sono tutte e due molto lunghe, cosa chiedere ai tuoi colleghi?
+
+01:03:35.553 --> 01:03:37.033
+<v SPEAKER_1>L'ombording.
+
+01:03:37.033 --> 01:03:39.453
+<v SPEAKER_2>L'ombording, esatto.
+
+01:03:39.453 --> 01:03:45.313
+<v SPEAKER_2>Capire se deve scappare da lì a poco o se ha trovato il posto giusto.
+
+01:03:45.313 --> 01:03:46.453
+<v SPEAKER_1>Ok, grazie mille.
+
+01:03:46.453 --> 01:03:49.973
+<v SPEAKER_2>Bene, grazie a te, grazie a tutti e alla prossima.
+
+01:03:49.973 --> 01:03:51.373
+<v SPEAKER_1>Bye.
+
+01:03:51.373 --> 01:03:51.653
+<v SPEAKER_2>Ciao.

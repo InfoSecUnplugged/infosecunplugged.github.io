@@ -1,0 +1,1303 @@
+WEBVTT
+
+00:00:08.682 --> 00:00:12.982
+<v SPEAKER_1>Bentornati a Info Sec. Unplugged, io sono Andrea Dainese e con me c'è Rocco Sicilia.
+
+00:00:12.982 --> 00:00:13.622
+<v SPEAKER_1>Ciao Rocco.
+
+00:00:13.622 --> 00:00:14.922
+<v SPEAKER_2>Ciao.
+
+00:00:14.922 --> 00:00:23.522
+<v SPEAKER_1>Prima di iniziare io vorrei fare un ringraziamento a chi ci ascolta perché ascoltando una vecchia puntata qualche secondo ci siamo resi conto di quanto divaghiamo.
+
+00:00:23.522 --> 00:00:26.642
+<v SPEAKER_2>Sì, sì, come ci perdiamo facilmente sugli argomenti.
+
+00:00:26.642 --> 00:00:34.482
+<v SPEAKER_1>Quindi un grazie per seguire i nostri flussi di pensiero che magari possono essere un po scomposti e prendere troppe parentesi.
+
+00:00:34.482 --> 00:00:35.602
+<v SPEAKER_1>Quindi grazie di nuovo.
+
+00:00:37.922 --> 00:00:53.862
+<v SPEAKER_2>Bene, noi ci avevamo lasciati con l'idea di provare a dipingere il processo con il quale si costruisce una procedura di vasta recovery che poi si traduce in delle tecnologie e delle azioni da compiere.
+
+00:00:53.862 --> 00:00:54.722
+<v SPEAKER_2>Era questa un po l'idea.
+
+00:00:54.722 --> 00:01:03.122
+<v SPEAKER_2>Per poi arrivare a costruire quello che abbiamo definito il DRM mitologico, cioè quello che tutti vorremmo che nessuno probabilmente riesce a ottenere.
+
+00:01:03.782 --> 00:01:11.422
+<v SPEAKER_2>Giustamente tu mi facevi notare che la prima cosa da cui partire, più che la tecnologia, sono i requisiti di business.
+
+00:01:11.422 --> 00:01:18.802
+<v SPEAKER_1>Sì, spesso mi è capitato di andare da clienti che avevano bisogno di rivedere o fare da zero.
+
+00:01:18.802 --> 00:01:22.722
+<v SPEAKER_1>Adesso fare da zero è un po più raro, ma rivedere capita spesso.
+
+00:01:22.722 --> 00:01:37.502
+<v SPEAKER_1>E pongo delle domande e mi accorgo che in realtà anche questo problema, cioè creare una struttura e una procedura di vasta recovery, che è stato scaricato all'et dal management o magari dalla compliance, si deve fare, fatelo.
+
+00:01:37.502 --> 00:01:41.242
+<v SPEAKER_1>Sì, però non funziona.
+
+00:01:41.242 --> 00:01:47.602
+<v SPEAKER_2>Nel peggiore dei casi spesso si traduce, giusto per raccontare qualche nefandezza, si traduce in ma sì ho il backup.
+
+00:01:47.602 --> 00:01:50.202
+<v SPEAKER_2>Ma sì ho il backup, qualcosa faccio.
+
+00:01:50.202 --> 00:01:53.022
+<v SPEAKER_2>Trovo un server da qualche parte per far ripartire le cose.
+
+00:01:53.022 --> 00:01:53.842
+<v SPEAKER_2>Non funziona così.
+
+00:01:53.842 --> 00:01:54.962
+<v SPEAKER_1>Non funziona così.
+
+00:01:54.962 --> 00:02:09.202
+<v SPEAKER_1>Soprattutto oggi avere un backup non basta, tra l'altro ne abbiamo già menzionato, ci siamo promessi di riparlarne anche con una persona esterna, proprio di come lo chiamavano, resilienza all'attacco.
+
+00:02:09.202 --> 00:02:18.322
+<v SPEAKER_2>Esatto, alcuni lo chiamano cyber recovery, cioè la capacità di fare recovery considerando l'incidente cyber, non soltanto l'incidente, il fault tecnico diciamo.
+
+00:02:18.322 --> 00:02:28.242
+<v SPEAKER_1>Che oggi è un fattore chiave, nel senso non possiamo pensare che il DR oggi sia progettato come quelli di 5-8 anni fa, perché il contesto è radicalmente mutato.
+
+00:02:29.602 --> 00:02:46.082
+<v SPEAKER_1>Allora la premessa è d'obbligo, chi ci segue da un po lo sa e l'ho ripetuto in diverse puntate, me la ripeto, lo scopo di questi podcast è sempre divulgativo, e quindi non vogliono essere iper tecnici, vogliono essere comprensibili anche chi magari non è proprio del mestiere.
+
+00:02:46.082 --> 00:02:51.502
+<v SPEAKER_1>Quindi a costo di banalizzare preferiamo essere comprensibili piuttosto che spaccare il bit.
+
+00:02:53.182 --> 00:02:55.982
+<v SPEAKER_2>Poi se qualcuno vuole spaccare il bit e vuole chiedere...
+
+00:02:55.982 --> 00:02:59.042
+<v SPEAKER_1>Abbiamo canali identificati, sì, assolutamente.
+
+00:02:59.042 --> 00:03:08.342
+<v SPEAKER_1>Magari faremo degli approfondamenti iper tecnici, ma non è questa la puntata iper tecnica, anzi proprio tutt'altro parlando di design, appunto di processo.
+
+00:03:09.502 --> 00:03:24.322
+<v SPEAKER_1>Quando mi capita appunto di parlare con aziende che devono rivedere il loro processo TDR, provo a partire da tre parametri che in realtà derivano, dovrebbero derivare da una Bia, una Business Rain Impact Analysis.
+
+00:03:24.322 --> 00:03:28.402
+<v SPEAKER_1>Quante volte ti è capitato di vedere un'azienda che c'è la casa o la fatta?
+
+00:03:28.402 --> 00:03:32.282
+<v SPEAKER_2>C'è la già, rarissimo, proprio rarissimi casi.
+
+00:03:32.282 --> 00:03:55.202
+<v SPEAKER_2>Ad esempio mi viene in mente in alcuni contesti dove se non la fanno vanno in galera, praticamente tipo le multi utility o aziende che hanno particolari strutture a rischio, le acciaierie per dire, cioè loro di natura hanno quel tipo di processo, cioè sono abituati a fare delle analisi d'impatto, sia a livello di business che a livello anche ambientale, quindi si legano per avere queste cose anche da...
+
+00:03:55.202 --> 00:04:06.082
+<v SPEAKER_2>Le aziende anche molto strutturate spesso non la fanno e ci arrivano quando è il momento di discutere seriamente di DDR ad esempio o di altre tematiche.
+
+00:04:06.082 --> 00:04:19.802
+<v SPEAKER_2>Devo dire che ultimamente una spintarella è data la NIS nel momento in cui vengono chiesti un certo tipo di requisiti e il business si chiede, ma adesso ci arriviamo, si chiede ma come faccio a ponderare qual è il mio impatto?
+
+00:04:19.802 --> 00:04:23.182
+<v SPEAKER_2>Ci sarebbe la via apposta per ponderare la cosa.
+
+00:04:23.182 --> 00:04:38.662
+<v SPEAKER_1>Dovrebbe rispondere al cosa succede se, nel caso specifico cosa succede se ho un importante fault, guasto, catastrofe che impatta dalla struttura dati, perché di questo ci occupiamo oggi, sul business.
+
+00:04:40.242 --> 00:04:48.102
+<v SPEAKER_1>Cioè in altre parole cosa mi serve per dare continuità e in quanto tempo dare continuità al business.
+
+00:04:48.102 --> 00:04:52.242
+<v SPEAKER_2>Anche in maniera molto pragmatica del tipo, è proprio un'analisi Wotiff.
+
+00:04:52.582 --> 00:04:55.022
+<v SPEAKER_2>Cosa succede se non ho più internet?
+
+00:04:55.022 --> 00:04:58.082
+<v SPEAKER_2>Cosa succede se non accedo più al sistema di posta elettronica?
+
+00:04:58.082 --> 00:05:05.722
+<v SPEAKER_2>Cioè di solito si va molto sul pragmatico e ovviamente qualcuno dà delle risposte ragionando sulla casistica specifica.
+
+00:05:07.242 --> 00:05:16.242
+<v SPEAKER_1>Un'analisi fatta in realtà sulla carta al momento non era stata strutturata precedentemente, però almeno aveva il suo senso.
+
+00:05:16.242 --> 00:05:17.622
+<v SPEAKER_1>Era di un...
+
+00:05:18.982 --> 00:05:25.682
+<v SPEAKER_1>Mi scappa il termine, è giusto un produttore, insomma costruiva dei beni di uso comune, non alimentare.
+
+00:05:25.682 --> 00:05:39.602
+<v SPEAKER_1>Nell'analisi fatta al volo risultava che se avessi avuto un problema nella produzione, il magazzino conteneva merce per soddisfare la domanda dei negozi di circa 5-7 giorni.
+
+00:05:39.602 --> 00:05:48.882
+<v SPEAKER_1>Quindi aveva 5 giorni per ripartire con la produzione in modo da impolpare i magazzini e non fermare le vendite.
+
+00:05:48.882 --> 00:05:54.222
+<v SPEAKER_1>Chiaramente poi avrebbe dovuto produrre più, però era almeno un punto di partenza.
+
+00:05:54.622 --> 00:06:06.222
+<v SPEAKER_2>La cosa da sottolineare in relazione a questi ragionamenti, poi se si fa una via strutturata meglio, a volte si può partire anche da un audito interno, insomma ci sono vari livelli.
+
+00:06:06.222 --> 00:06:10.162
+<v SPEAKER_2>L'ideale sarebbe proprio fare una via, perché tocca proprio tutti gli ambiti di business.
+
+00:06:10.162 --> 00:06:20.302
+<v SPEAKER_2>Però il punto chiave è capire qual è il legame tra le tecnologie che sto utilizzando e come sta funzionando il mio business oggi.
+
+00:06:20.302 --> 00:06:35.122
+<v SPEAKER_2>È evidente che, ed è normale che sia così, a vari livelli, nell'interno delle aziende, non è detto che un manager specifico o un team specifico sia consapevole di quanto è legato a doppia mandata a una specifica tecnologia.
+
+00:06:35.122 --> 00:06:49.722
+<v SPEAKER_2>La danno per scontato, giustamente non è neanche il loro lavoro, non si pongono il problema, non si rendono conto, quindi vanno a modo di capire quanto è importante quel servizio erogato dall'IT in questo caso per loro e cosa succede se viene a mancare.
+
+00:06:49.722 --> 00:06:52.682
+<v SPEAKER_2>Esattamente questo è il punto di partenza.
+
+00:06:52.682 --> 00:07:02.322
+<v SPEAKER_1>Io ho tre parametri da cui parto per disegnare o di R e questi tre parametri non possono essere discusi o valutati o decisi dall'IT, ma sono decisioni di business.
+
+00:07:02.902 --> 00:07:13.042
+<v SPEAKER_1>E poi ci sono una serie di parametri più tecnici che sì, queste sì possono effettivamente essere discusi da chi si occupa di IT, applicazioni, eccetera eccetera.
+
+00:07:13.042 --> 00:07:23.022
+<v SPEAKER_1>I miei tre parametri da cui partire sono i famosi RTO, RPO, adesso li vediamo brevemente, e un banale se DR è parziale o totale.
+
+00:07:23.022 --> 00:07:23.882
+<v SPEAKER_1>Partiamo dall'RTO.
+
+00:07:24.582 --> 00:07:35.462
+<v SPEAKER_2>Già qua faccio una premessa diciamo di approccio, perché questi sono termini che hanno, che ha senso discutere in un tavolo tecnico.
+
+00:07:35.462 --> 00:07:57.862
+<v SPEAKER_2>Quando ne parliamo col management, se gli chiediamo qual è il RTO vuoi o qual è il RPO vuoi, anche se gli spieghiamo il concetto notato che non sempre funziona, la domanda più azzeccata che ho sentito fare degli auditor, quindi che secondo me ho visto avere un effetto positivo, è stato molto più banalmente se domani non ci fossero più i servizi di base attivi.
+
+00:07:58.682 --> 00:08:04.782
+<v SPEAKER_2>Per quanto tempo ti puoi permettere di non spedire più merce, in base al tipo di business.
+
+00:08:05.662 --> 00:08:18.922
+<v SPEAKER_2>Oppure se dovessi perdere gli ordini, se dovessimo perdere il sistema su cui si generano gli ordini, di quante ore puoi restare indietro, di quante ore anzi, puoi permetterti di perdere completamente gli ordini che hai ricevuto.
+
+00:08:18.962 --> 00:08:28.902
+<v SPEAKER_2>Quindi è meglio discutere lo use case, per poi sul tavolo tecnico andare a parlare di RTO e RPO che sono i definiti.
+
+00:08:28.902 --> 00:08:42.042
+<v SPEAKER_1>Infatti questi sono termini effettivamente più tecnici, sebbene dovrebbero essere comprensibili poi a una platea anche più manageriale, però il senso dell'RTO è il tempo che, dichiarato un disastro, ci metto a riavere dei servizi funzionanti.
+
+00:08:42.082 --> 00:08:43.642
+<v SPEAKER_2>Esatto, esatto.
+
+00:08:43.642 --> 00:08:51.362
+<v SPEAKER_1>E questa è una scelta squisitamente di business, perché chiaramente quanto tempo puoi permetterti di avere il tuo IT fermo?
+
+00:08:51.362 --> 00:08:57.822
+<v SPEAKER_1>Diamo ancora più nello specifico, il CRM fermo, il MES, quanto tempo possono essere fermi questi sistemi?
+
+00:08:57.822 --> 00:09:02.042
+<v SPEAKER_1>Allora vedrai che tutto sommato si illumina qualche lampadisa.
+
+00:09:02.042 --> 00:09:10.102
+<v SPEAKER_2>Poi la prima risposta è ovviamente zero, non deve mai fermarci e non devo perdere nessun dato ovviamente.
+
+00:09:10.102 --> 00:09:11.322
+<v SPEAKER_1>E ci arriviamo anche a questo.
+
+00:09:11.842 --> 00:09:21.342
+<v SPEAKER_1>Allora intanto viene da sé che l'RTO è diverso per ogni tipo di applicazione, e quindi questo richiederebbe di capire quali sono le applicazioni critiche.
+
+00:09:21.342 --> 00:09:23.322
+<v SPEAKER_1>E torniamo la via.
+
+00:09:23.322 --> 00:09:32.422
+<v SPEAKER_1>Cerchiamo in modo semplificato di non avere 50 applicazioni con 50 RTO diverse, perché tecnicamente poi diventa un casino gestirle.
+
+00:09:32.422 --> 00:09:36.242
+<v SPEAKER_1>Quindi cerchiamo di riassumere in due, tra gruppi.
+
+00:09:37.422 --> 00:09:46.962
+<v SPEAKER_1>E l'RTO più è breve, più costa economicamente, perché le tecnologie per azzerarlo, in realtà non è vero che ci sono, però insomma abbastanza.
+
+00:09:48.262 --> 00:09:55.802
+<v SPEAKER_1>Le tecnologie per abbreviarlo in modo enorme ci sono e costano molto.
+
+00:09:55.802 --> 00:09:58.262
+<v SPEAKER_2>Giusto per dare delle micro label.
+
+00:09:58.262 --> 00:10:06.542
+<v SPEAKER_2>Con RTO ci riferiamo al tempo che posso accettare prima di ripartire quei servizi recovery time.
+
+00:10:07.222 --> 00:10:22.982
+<v SPEAKER_2>Con RTO invece che sta per recovery point, sostanzialmente si traduce nella quantità di dati che accetto di perdere post fault, ipotizzando che appunto il momento della recovery non sia...
+
+00:10:23.082 --> 00:10:25.702
+<v SPEAKER_2>mi richiede una perdita di dati, possa richiedermi una perdita di dati.
+
+00:10:25.702 --> 00:10:28.742
+<v SPEAKER_2>Questi sono tecnicamente i parametri.
+
+00:10:28.742 --> 00:10:35.642
+<v SPEAKER_1>Quindi per abbreviare l'RTO devo diventare molto bravo a far ripartire i miei sistemi.
+
+00:10:36.082 --> 00:10:36.742
+<v SPEAKER_2>Esatto.
+
+00:10:37.242 --> 00:10:40.442
+<v SPEAKER_1>E qui l'automazione entra assolutamente.
+
+00:10:40.442 --> 00:10:52.162
+<v SPEAKER_1>Ho seguito piani di R di aziende molto grandi con migliaia di virtual machine, con un RTO certificato raggiunto di effettivamente 4 ore per migliaia di virtual machine e servizi.
+
+00:10:52.162 --> 00:10:53.142
+<v SPEAKER_2>E tanta roba.
+
+00:10:53.182 --> 00:10:55.322
+<v SPEAKER_1>È un gran risultato.
+
+00:10:55.422 --> 00:10:57.842
+<v SPEAKER_1>L'RPO come detto due è la quantità di dati persi.
+
+00:10:57.842 --> 00:11:06.322
+<v SPEAKER_1>Però io qua farei una considerazione che preparando questo podcast a qualche giorno fa in alto mi è avvenuta.
+
+00:11:06.322 --> 00:11:09.662
+<v SPEAKER_1>Lo scenario, e lo abbiamo già detto all'inizio, è mutato.
+
+00:11:09.662 --> 00:11:18.982
+<v SPEAKER_1>Per cui un RPO pensato 8 anni fa, 10 anni fa, era un RPO che derivava da eventi distruttivi fisicamente.
+
+00:11:19.082 --> 00:11:33.302
+<v SPEAKER_2>Indio, Gravifold, un grande classico è considerare, e qua mi attacco poi un altro tema, il tema del fault management, un altro pezzettino che fa parte.
+
+00:11:33.302 --> 00:11:54.502
+<v SPEAKER_2>Però ad esempio una volta qualche anno fa il tema era, mi si frigge lo storage, ho uno storage solo nel sito primario, e quella è una casistica per quanto remota che mi porta a valutare un DR Ha un problema a livello strutturale del data center, l'incendio di OVH che vi ho citato anche l'altra volta.
+
+00:11:54.502 --> 00:12:00.102
+<v SPEAKER_2>Se li sono da qualche parte gli oggetti per far ripartire tutto, faccio poco.
+
+00:12:00.102 --> 00:12:03.422
+<v SPEAKER_2>Questi erano gli eventi fino a un certo periodo storico.
+
+00:12:03.422 --> 00:12:14.042
+<v SPEAKER_2>A un certo punto gli eventi hanno cominciato a diventare più logici, infatti molte aziende hanno prima ancora che diventasse un tema relativo ai cyberattacchi.
+
+00:12:15.562 --> 00:12:24.522
+<v SPEAKER_2>Il DR è diventato una procedura, una buona pratica da utilizzare anche in caso di gravi errori umani.
+
+00:12:25.062 --> 00:12:48.602
+<v SPEAKER_2>Rari, quindi tutto insomma non era un evento che veniva preso in considerazione ufficialmente dalla procedura, però si faceva parte di come si poteva considerare, di quali potevano essere gli eventi, le situazioni che portavano l'IT manager o il CAO a dire ok andiamo con la procedura di disaster recovery.
+
+00:12:48.602 --> 00:12:49.322
+<v SPEAKER_1>Esatto.
+
+00:12:49.322 --> 00:12:50.822
+<v SPEAKER_1>La considerazione è proprio questa.
+
+00:12:50.822 --> 00:13:02.142
+<v SPEAKER_1>Oggi lo scenario è cambiato, ha aperto con una resilienza dagli attacchi e è proprio questo il punto in cui l'RPO oggi dipende dal tipo di evento.
+
+00:13:02.142 --> 00:13:16.042
+<v SPEAKER_1>Non è più un evento distruttivo, ma può essere un evento di tipo attacco malevolo che potrebbe non essere successo oggi o ieri, potrebbe essere successo come abbiamo raccontato la volta scorsa anche tre, sei mesi fa.
+
+00:13:16.042 --> 00:13:18.082
+<v SPEAKER_1>E quindi il mio RPO da dove parte?
+
+00:13:18.082 --> 00:13:31.022
+<v SPEAKER_2>Esatto, tra l'altro qua scusa mi aggiungo una cosa, perché è una cosa che mi è capitata di vedere negli ultimi anni proprio in relazione al come adeguare i piani di DR esistenti alle nuove esigenze, quello che dicevi tu prima.
+
+00:13:31.022 --> 00:13:45.042
+<v SPEAKER_2>E effettivamente in alcuni piani di DR devo dire fatti anche molto bene, spesso trovavo una serie di non so se una best practice, però in alcuni piani ho trovato scritto, o quantomeno c'è in site, alcune casistiche tipo.
+
+00:13:45.042 --> 00:13:55.022
+<v SPEAKER_2>Quindi in caso di alluvione, in caso di incendio, in caso di rottura dello storage, in caso di fault della componente network, perché magari avevano un'importanza particolare in quella struttura.
+
+00:13:55.022 --> 00:14:01.442
+<v SPEAKER_2>E i vari scenari erano stati in qualche modo, diciamo guidavano poi le scelte che faceva l'azienda.
+
+00:14:01.882 --> 00:14:07.202
+<v SPEAKER_2>E a questi scenari si è aggiunto lo scenario in caso di cifratura totale dei sistemi.
+
+00:14:07.202 --> 00:14:11.862
+<v SPEAKER_2>Quindi in caso di cyberattacco, un tipo specifico di cyberattacco.
+
+00:14:11.862 --> 00:14:18.302
+<v SPEAKER_2>Di solito, almeno da quello che ho visto io, spesso vedo documentato l'ambito ransomware, meno documentati e altri tipi di...
+
+00:14:18.382 --> 00:14:21.002
+<v SPEAKER_1>Sì, perché ransomware è la fine di un attacco.
+
+00:14:21.142 --> 00:14:25.122
+<v SPEAKER_1>La domanda dell'altra volta è ok, ma quando sono entrati?
+
+00:14:25.142 --> 00:14:28.402
+<v SPEAKER_1>Quando è che è sicuro ripristinare la mia infrastruttura?
+
+00:14:28.402 --> 00:14:29.322
+<v SPEAKER_2>Infatti è lì che casca.
+
+00:14:29.502 --> 00:14:32.622
+<v SPEAKER_1>Esatto, lì il piano si disgrega.
+
+00:14:32.622 --> 00:14:42.522
+<v SPEAKER_1>Una possibile strategia, ma va analizzata veramente l'infrastruttura, è discindere la parte dati, tipicamente database, dalla parte più applicativa, sistema operativo.
+
+00:14:42.522 --> 00:14:56.862
+<v SPEAKER_1>Se io scendo queste cose, i miei dati sono relativamente buoni fino all'ultimo backup point, buono, mentre i miei dati applicativi, non mi interessa che siano aggiornati all'ultimo istante, li posso ricostruire, dovrei poterli ricostruire.
+
+00:14:57.062 --> 00:15:35.762
+<v SPEAKER_2>E potremmo fare l'esempio in questa occasione del, diciamo, a seguito delle discussioni, verosimilmente, almeno le casistiche che io di solito trovo, sono di un recovery time che va dalle 12 alle 24 ore, poi dipende, anzi devo dire che in molti casi trovo delle richieste di recovery time, diciamo che si assegnate in maniera differente a servizi differenti, quindi ad esempio l'IRP spesso, quando si parla dei servizi regati all'IRP o al CRM, quindi qualcosa che è che fare col ciclo di fatturazione, col ciclo di vendita o con il contatto ai clienti, etc., dipende poi dal business dell'azienda.
+
+00:15:35.762 --> 00:15:52.682
+<v SPEAKER_2>Lì noto che il management chiede dei tempi di recovery, uso i termini volgari, abbastanza stringenti, quindi partono con il prima possibile che non vuol dire niente e ci si assesta su un 8, 12, 16, 24 ore.
+
+00:15:54.802 --> 00:16:01.062
+<v SPEAKER_2>Mentre per altri servizi, secondo me è anche una scelta valida in strutture complesse, magari si accettano tempi più lunghi.
+
+00:16:01.542 --> 00:16:08.002
+<v SPEAKER_2>Quindi qui c'è la famosa tematica, tecnicamente noi questa cosa poi la traduciamo in un elenco di priority.
+
+00:16:08.102 --> 00:16:25.062
+<v SPEAKER_2>Quindi avremo delle cose che faremo partire a 12 ore, entro le 12 ore, le cose entro le 24, e adesso facciamo la semplice, ipotizziamo che ci hanno chiesto un tempo di recovery di 12 ore, in giusto per stare su un sfidante, ma anche accettabile.
+
+00:16:25.062 --> 00:16:26.942
+<v SPEAKER_2>Anfattibile, assolutamente.
+
+00:16:28.022 --> 00:16:41.102
+<v SPEAKER_1>L'RPO però ha, anche come l'RTO, più e brevo, più costa, perché devo essere molto bravo a creare delle fotografie della mia infrastruttura in maniera molto veloce, frequente, e portarle in un sito sicuro.
+
+00:16:41.222 --> 00:16:43.302
+<v SPEAKER_2>Esatto, e lì ci sono dei vincoli tecnici.
+
+00:16:43.342 --> 00:17:01.462
+<v SPEAKER_1>Ci sono dei vincoli tecnici, ci sono comunque possibilità di arrivare, ipoteticamente, a un RPO di zero, sapendo appunto che se l'attacco, se l'evento distruttivo è partito, rischio di copiarmelo dall'altra parte, però sostanzialmente più è breve, più costa, e qui il costo è veramente tanto.
+
+00:17:01.462 --> 00:17:03.222
+<v SPEAKER_2>La facciamo la digressione tecnica?
+
+00:17:03.222 --> 00:17:04.702
+<v SPEAKER_1>La facciamo dopo.
+
+00:17:04.702 --> 00:17:22.042
+<v SPEAKER_1>Siamo ancora a parlare del management, e nel management deve capire se una RPO zero potrebbe essere possibile, non in tutti i casi, ma significa pagare tanto, e per infrastrutture di un certo tipo significa, secondo me, tranquillamente quintuplicare i costi.
+
+00:17:22.042 --> 00:17:26.322
+<v SPEAKER_2>Sì, ci sono anche dei limiti oltre il quale tecnicamente non si può andare.
+
+00:17:26.862 --> 00:17:28.342
+<v SPEAKER_1>La distanza, per dirne uno.
+
+00:17:28.442 --> 00:17:29.582
+<v SPEAKER_2>Sì, esatto, quella.
+
+00:17:29.582 --> 00:17:42.862
+<v SPEAKER_2>A proposito, micro parentesi sul tema distanza, giusto per rompere le scatole un po di persone che conosco, tantissime persone del tanto questo problema, sito primario a 20 km dal sito secondario.
+
+00:17:42.862 --> 00:17:43.922
+<v SPEAKER_1>Molto comodo.
+
+00:17:43.922 --> 00:17:58.122
+<v SPEAKER_1>Bellissimo da livello logistico, ma non possiamo dire che è un DR Alcune normative, alcuni auditor, diciamo che contestano la cosa, che non è detto che questo sia per forza un problema.
+
+00:17:58.122 --> 00:18:05.742
+<v SPEAKER_1>Nel senso, se io faccio un disaster recovery a 20 km dalla mia città, ma il mio business dipende da quella città.
+
+00:18:07.522 --> 00:18:14.202
+<v SPEAKER_1>È giustificabile, diciamo così, a patto che io poi abbia almeno una copia fredda da un'altra parte per altri tipi di esigenze.
+
+00:18:14.202 --> 00:18:16.682
+<v SPEAKER_1>Quindi, dal mio punto di vista è comprensibile.
+
+00:18:16.682 --> 00:18:22.602
+<v SPEAKER_1>Se il mio business è legato al territorio, non ha senso andarmi a costruire un DR che sta a 100 km.
+
+00:18:22.602 --> 00:18:23.482
+<v SPEAKER_1>Posso comprendere.
+
+00:18:23.482 --> 00:18:27.462
+<v SPEAKER_2>Anche perché stiamo parlando dell'evento specifico, il terremoto o la luvione.
+
+00:18:27.462 --> 00:18:34.802
+<v SPEAKER_2>C'è qualcosa che tocca una regione, un'area, e quindi i due siti ci cascano dentro entrambi.
+
+00:18:34.962 --> 00:18:39.342
+<v SPEAKER_2>Quindi sì, è un evento relativamente remoto, assolutamente.
+
+00:18:39.342 --> 00:18:50.062
+<v SPEAKER_2>Però, per esempio, una cosa che io aggiungo nella documentazione, nelle politiche di Sastra e Covri, è la mappa in relazione al rischio ideologico e al rischio sismico.
+
+00:18:50.062 --> 00:18:58.702
+<v SPEAKER_2>In Italia, tra l'altro, non so quanti se ne rendono conto, ma è voluta negli ultimi anni sia l'una che l'altra.
+
+00:18:58.742 --> 00:18:59.942
+<v SPEAKER_2>Sì, sì, assolutamente.
+
+00:18:59.942 --> 00:19:05.962
+<v SPEAKER_1>Così che raccontavano alle elementari come mantra che nella nostra zona non è soggetta.
+
+00:19:05.962 --> 00:19:10.382
+<v SPEAKER_2>Succede ogni 50 anni, sì, succede così, però non è che non c'è.
+
+00:19:10.382 --> 00:19:14.702
+<v SPEAKER_1>Può essere che in quei 50 anni capita mentre lavoro, ma questo è un altro discorso.
+
+00:19:14.702 --> 00:19:28.202
+<v SPEAKER_1>L'ultimo punto sempre prima di andare sul tecnico è parziale o totale, che può sembrare un punto tecnico, ma sposta completamente lì il tipo di implementazione, la difficoltà, la velocità di recovery, eccetera, eccetera.
+
+00:19:28.282 --> 00:19:42.182
+<v SPEAKER_1>Quindi è un parametro che va gestito, va gestito dal business, perché gli deve bene essere chiaro che o è tutto o è niente, ma è di fondamentale importanza per me, per arrivare poi a un'implementazione concreta.
+
+00:19:42.182 --> 00:19:50.962
+<v SPEAKER_1>Poi se vogliamo parlare in astratto c'è problema, possiamo fare anche il DR di un singolo URL di un sito web, ma poi nella pratica è un'altra cosa.
+
+00:19:51.322 --> 00:20:05.302
+<v SPEAKER_2>Poi tra l'altro anche delle implicazioni tecniche, perché da un certo punto di vista potrebbe essere più semplice, diciamo a livello di processo, buttar di là tutto, cioè pensare a un DR completo.
+
+00:20:05.302 --> 00:20:13.042
+<v SPEAKER_2>Poi ovviamente c'è un tema di risorse da valutare, di costi, però dal punto di vista del processo, parli di tutto e buona notte.
+
+00:20:13.082 --> 00:20:21.542
+<v SPEAKER_2>Esatto, siccome ci si scontra nella vita reale coi budget, coi tempi, perché quello che tiro su di là, quindi parleremo, devo anche testarlo magari.
+
+00:20:21.842 --> 00:20:23.382
+<v SPEAKER_1>Devo testarlo.
+
+00:20:23.382 --> 00:20:39.342
+<v SPEAKER_2>Quindi quando poi si tocca al profondo del processo ci si rende conto che in molti casi, almeno io non ho mai trovato una situazione in cui era mandatorio, la parola che non è italiana in realtà, fare un DR di tutti i servizi che erano disponibili.
+
+00:20:40.242 --> 00:20:42.402
+<v SPEAKER_2>Quasi sempre c'è una scelta.
+
+00:20:43.462 --> 00:20:54.662
+<v SPEAKER_1>Solo che la complessità è talmente diversa, spoiler, io preferisco totale e laddove è possibile sponsorizzo totale.
+
+00:20:54.662 --> 00:21:20.602
+<v SPEAKER_1>Ciò non significa che non siano prevedibili o gestibili, diciamo, disastri localizzati che però tipicamente i miei disastri localizzati sono un applicativo che c'è stato un errore umano o c'è stato un bug su uno specifico pezzo di database che magari l'ha compromesso, che posso gestire agevolmente con un restore magari da una copia locale.
+
+00:21:20.602 --> 00:21:42.142
+<v SPEAKER_2>Per esempio, qualche anno, giusto per andare sulle preferenze, da una decina d'anni direi, da quando le tecnologie, diciamo, hanno fatto un certo passo, le snapshot consolidate a livello storage, un sacco di figate, ho cominciato a prediligere, laddove ho tanti servizi, un campus anche a una certa distanza con repliche incrociate.
+
+00:21:42.522 --> 00:21:43.222
+<v SPEAKER_1>Esatto.
+
+00:21:43.222 --> 00:21:53.442
+<v SPEAKER_2>Perché mi sentivo, siccome sono, lo accennavo prima, siccome sono abbastanza fan del concetto di full tolerance, dove la posso applicare?
+
+00:21:56.882 --> 00:22:19.662
+<v SPEAKER_2>Se ho la possibilità di applicare, di aumentare il livello di full tolerance dei miei sistemi per allontanare l'evento di DR, ma che ben venga, spesso costa anche meno a aumentare il livello di resistenza del servizio rispetto a pensare a un DR infrastrutturato per tutte le casistiche dove andare a gestire, quindi a gestire, quindi che ben venga.
+
+00:22:19.662 --> 00:22:40.002
+<v SPEAKER_2>Quindi questo per dire anche un'altra cosa, il DR non può essere sostitutivo di una mancanza di residenza del sito, cioè fare un DR, pensare al DR quando non ho ancora sviluppato bene il clustering delle risorse dei servizi su un sito, che potrebbe essere una mezza cavolanda.
+
+00:22:40.682 --> 00:22:47.942
+<v SPEAKER_1>Ne stavo parlando proprio con un'azienda nel ramo finanziario recentemente.
+
+00:22:48.342 --> 00:23:06.262
+<v SPEAKER_1>Il mio consiglio, perché stava rivedendo tutta la struttura di datacenter, è sempre laddove possibile distribuisci i tuoi servizi, perché a fronte di un fault, un guasto, o qualche problema su un sito, gli utenti almeno possono accedere a quel tipo di servizi dall'altra parte.
+
+00:23:06.722 --> 00:23:14.022
+<v SPEAKER_1>Stiamo parlando di servizi utenti, quindi la tip directorie, di HCP, DNS, uscita internet, via dicendo.
+
+00:23:14.022 --> 00:23:34.662
+<v SPEAKER_1>Ma questo non è di R, chiaramente non è di R, perché copre alcuni scenari, disastro locale, ma non copre appunto il ransomware della situazione che, ma neanche l'errore umana, se sbaglio una patch o cancello per sbaglio un ramo della D da una parte, me lo trovo cancellato anche dall'altra, quindi scindiamo le cose.
+
+00:23:35.362 --> 00:23:38.402
+<v SPEAKER_1>La resilienza distribuita, sì, assolutamente.
+
+00:23:38.522 --> 00:23:49.742
+<v SPEAKER_1>Le copie, diciamo, resilienti, ma come si può dire, nascosta e sbagliato, non live, non operative, sì, assolutamente.
+
+00:23:49.742 --> 00:24:00.302
+<v SPEAKER_1>La combinazione di queste fa il mio piano di DR Magari all'inizio l'abbiamo semplificato dove DR è disastro, ma in realtà ci sono anche tutti questi scenari da considerare.
+
+00:24:00.302 --> 00:24:16.402
+<v SPEAKER_2>Storicamente si parla di disastro perché la tematica era limitata al disastro fisico, diciamo così, cioè si spacca qualcosa a livello proprio di infrastrutturale, e quindi poi ovviamente gli strati tecnologici sono sommati via via, e questo ha complicato anche il concetto di DR in sé.
+
+00:24:16.402 --> 00:24:23.422
+<v SPEAKER_2>Quindi una delle tematiche è, ho un problema di rete, dicevamo anche prima, ho un problema di rete a livello provider, ok?
+
+00:24:24.222 --> 00:24:32.642
+<v SPEAKER_2>E per come sono fatto questa cosa impedisce, ad esempio, l'accesso ai miei servizi in un certo data center, ma il data center funziona benissimo, non ci arrivo.
+
+00:24:32.642 --> 00:24:33.282
+<v SPEAKER_2>Che faccio?
+
+00:24:33.282 --> 00:24:33.842
+<v SPEAKER_2>Vado in DR?
+
+00:24:36.182 --> 00:24:52.902
+<v SPEAKER_1>Di solito è no, la risposta è no, perché il processo di DR è fatto, è improvvisato, è fatto su strutture economiche che non sono in grado di reggere la potenza, quindi andare in DR a uno scenario del genere sappiamo già che magari non regge all'utenza.
+
+00:24:52.902 --> 00:25:30.982
+<v SPEAKER_2>Questa è una cosa prevista, anzi è una cosa corretta da mettere nella politica di DR, soprattutto quando si parla col management, e dichiarare quante prestazioni perdi, quanto perdi in performance quando si va sui sessuali a Sterecove, quando sei nella condizione temporanea del DR Un elemento che si suggerisce di mettere a fuoco, ok si va in DR ma le transazioni saranno più lente, l'accesso alla infrastruttura è più lento, perché è normale, capita frequentemente che il livello di potenza che ho a disposizione del sito secondario non è paritario rispetto a quello che ho detto prima.
+
+00:25:31.002 --> 00:25:44.022
+<v SPEAKER_1>Su questo sono sempre molto scettico, preferisco più una strategia di usiamo le risorse del DR per altre cose sacrificabili in caso di necessità piuttosto che ridurre la potenza computazionale.
+
+00:25:44.022 --> 00:26:05.202
+<v SPEAKER_1>La motivo è semplice, sia che io offro servizi su internet che anche i miei servizi interni, perché è la stessa cosa, se i miei servizi richiedono 50x di risorse, se io gliene do 30, perché sono in DR e ne voglio meno, andrà più lento.
+
+00:26:05.202 --> 00:26:14.382
+<v SPEAKER_1>Questa è la migliore delle ipotesi che va più lento, ma se in realtà le mie risorse vanno a tappo di sessione, il risultato sarà che tutti gli utenti entreranno.
+
+00:26:14.382 --> 00:26:21.182
+<v SPEAKER_1>Se io non riesco a limitare la domanda, la domanda supera la capacità di erogazione e la satura, rendendola inservibile per tutti.
+
+00:26:21.322 --> 00:26:25.942
+<v SPEAKER_2>E una perdita di performance, ho addirittura un mancato funzionamento lì, e bisogna stare attenti.
+
+00:26:25.942 --> 00:26:30.902
+<v SPEAKER_2>Questo è uno dei motivi per il quale ti dicevo che a me piace incrociare le risorse.
+
+00:26:30.902 --> 00:26:31.922
+<v SPEAKER_1>Esattamente.
+
+00:26:31.922 --> 00:26:35.362
+<v SPEAKER_2>Adesso magari mi sbaglio, ma nella mia testa è proprio più semplice fare i calcoli.
+
+00:26:35.362 --> 00:26:37.622
+<v SPEAKER_2>Quindi ho delle risorse importanti.
+
+00:26:37.622 --> 00:26:49.482
+<v SPEAKER_2>Intanto i due siti, e ripeto, qua entriamo in una sorta di religione, a me avere un sito figo e uno che fa schifo non mi piace, concettualmente non mi piace.
+
+00:26:49.862 --> 00:26:55.462
+<v SPEAKER_2>I due siti, cioè il DR, deve avere dignità ad essere, non può essere una ciofecca.
+
+00:26:55.462 --> 00:27:03.702
+<v SPEAKER_2>Quindi già partendo da questo tema, da questo punto di partenza, ma banalmente perché non posso permettermi...
+
+00:27:03.702 --> 00:27:05.342
+<v SPEAKER_2>Mettiamoci il cappello del CIO.
+
+00:27:05.342 --> 00:27:10.542
+<v SPEAKER_2>Hai speso dei quattrini per fare il DR Ne avevi pochi, le hai fatto male, supponiamo.
+
+00:27:10.542 --> 00:27:17.142
+<v SPEAKER_2>Nel momento del bisogno, se quella roba non funziona, anche se ne hai spesi pochi, verranno...
+
+00:27:17.142 --> 00:27:18.482
+<v SPEAKER_1>A far cadere alla tua testa.
+
+00:27:18.502 --> 00:27:26.062
+<v SPEAKER_2>Esatto, quindi comprendendo tutte le situazioni del caso, quella roba non può essere fatta per non funzionare, cioè non è un flag.
+
+00:27:26.062 --> 00:27:35.442
+<v SPEAKER_1>A meno che tutti i tuoi capi, tutto il board non sia perfettamente e sia scritto da qualche parte e sia accettato che è un DR finto.
+
+00:27:35.702 --> 00:27:50.142
+<v SPEAKER_2>In un'attività per dire di consulti, mi è capitato di suggerire al management di scrivere nella procedura del DR una casistica, un corner case che però era potenzialmente che si poteva verificare per il quale il DR non avrebbe funzionato.
+
+00:27:50.142 --> 00:27:54.342
+<v SPEAKER_2>Per motivazione, budget, però tutti d'accordo.
+
+00:27:54.342 --> 00:28:05.062
+<v SPEAKER_2>In questo caso quello che abbiamo messo in piedi non funziona, quindi degli scenari che si discutevano prima, tre sono coperti e il quarto no, non è coperto, perché non abbiamo messo il budget per coperlo.
+
+00:28:05.062 --> 00:28:11.822
+<v SPEAKER_2>L'importante è dichiararle queste cose, poi probabilmente la tua testa cade allo stesso, però almeno hai cercato di fare bene il tuo lavoro.
+
+00:28:11.822 --> 00:28:28.442
+<v SPEAKER_1>C'è un fattore anche che non cade solo la tua testa lavorativamente parlando, ma se la tua testa non è ben coperta, per non parlare di altre parti anatomiche, la NIS dichiara che mi pare ottobre 2026 hai la responsabilità personale.
+
+00:28:28.442 --> 00:28:36.782
+<v SPEAKER_1>Quindi qualcuno potrebbe venire da te, dal tuo conto corrente, a chiederti come dire, indennizzi o mute, dicendo.
+
+00:28:36.782 --> 00:28:59.702
+<v SPEAKER_2>Quindi questo è un motivo per il quale mai incorciare le risorse che mi piace, due siti paritari, dal punto di vista, non dico necessariamente le prestazioni perché poi gli dipende come voglio distribuire i servizi, però sapere di avere due siti, per esempio con un Tiring, secondo le mie specifiche, se voglio Tier 4, Tier 4, se voglio meno, meno va benissimo, però l'ho selezionato, l'ho scelto.
+
+00:28:59.702 --> 00:29:05.102
+<v SPEAKER_2>Un po di cose critiche da una parte, un po di cose critiche dall'altra e mi salvo già da un punto di vista proprio di full tolerance.
+
+00:29:05.102 --> 00:29:14.082
+<v SPEAKER_2>Cioè vuol dire che in caso di disastro non ho tutti i servizi critici fermi, da una parte c'è già quello per me, vuol dire dormire molto meglio la notte.
+
+00:29:14.082 --> 00:29:22.462
+<v SPEAKER_2>Adesso mi sto ricordando perché ho smesso di fare questo lavoro, cioè ho smesso di fare di lavorare nel mondo prettamente ai team management e passare alla consulenza.
+
+00:29:22.462 --> 00:29:25.482
+<v SPEAKER_1>Per dormire meglio la notte effettivamente.
+
+00:29:25.482 --> 00:29:37.042
+<v SPEAKER_2>Ok, quindi anche per anche il disegno di partenza, potenzialmente quasi a parità di costo, perché poi non è che risparmi chissà cosa, fare un sito ciofeca che non funziona è un sito che funziona.
+
+00:29:37.042 --> 00:29:44.102
+<v SPEAKER_2>Cioè per carità se il sito ciofeca è un pollaio, e dico pollaio perché mi è successo di trovare dei server in un pollaio anni fa.
+
+00:29:44.102 --> 00:30:10.562
+<v SPEAKER_2>C'erano dei server che dovevano di una sede di un vendor che non si dice, di un datacenter, di un vecchio vendor datacenter che non si dice, non so neanche se esiste ancora, e il sito era di fatto un'area che era di vita, era prima effettivamente un pollaio, al fianco esisteva ancora il pollaio che aveva anche quel capannone, ma in un pezzo del capannone c'era il datacenter che era sito ddr.
+
+00:30:11.702 --> 00:30:13.822
+<v SPEAKER_2>Vabbè, se ne vedono tante.
+
+00:30:15.302 --> 00:30:24.682
+<v SPEAKER_2>Ok, quindi ovvio che se metto i server in un capannone che era un pollaio, mi sto assumendo dei rischi da questo punto di vista, quindi un po di scelte devo fare.
+
+00:30:24.682 --> 00:30:38.262
+<v SPEAKER_1>L'importante è che siano chiari, condivisi, perché poi nel momento di panico che segue il disastro, chi è più in alto cerca di far cadere le teste più basso tipicamente.
+
+00:30:38.382 --> 00:30:40.522
+<v SPEAKER_2>Sì, sta nei giochi, dici.
+
+00:30:40.522 --> 00:30:48.442
+<v SPEAKER_1>Io di solito non sono famoso per essere bravo a mandare giù nei momenti.
+
+00:30:48.442 --> 00:30:50.322
+<v SPEAKER_1>Se te la sei cercata, te la sei cercata.
+
+00:30:50.322 --> 00:30:52.302
+<v SPEAKER_2>Sì, già il tema è...
+
+00:30:52.302 --> 00:30:54.422
+<v SPEAKER_2>Ragazzi, io avevo detto tutto quello che devo dirvi.
+
+00:30:54.422 --> 00:30:54.882
+<v SPEAKER_1>Esatto.
+
+00:30:54.902 --> 00:30:59.362
+<v SPEAKER_2>Avete dovuto fare diverso e adesso cosa vi posso raccontare?
+
+00:30:59.362 --> 00:31:02.262
+<v SPEAKER_1>Non sono un particolarmente morbido.
+
+00:31:02.262 --> 00:31:10.942
+<v SPEAKER_1>Ok, e questi più o meno sono i parametri su cui io cerco di avere il management al tavolo, almeno questi.
+
+00:31:12.102 --> 00:31:17.402
+<v SPEAKER_2>Quindi parliamo di tempo che ci mettiamo a venire su di qua, dall'altra parte, per far la grezza.
+
+00:31:17.402 --> 00:31:19.382
+<v SPEAKER_2>Quanti dati accetto di perdere?
+
+00:31:19.382 --> 00:31:24.702
+<v SPEAKER_2>Anche qua può essere delta diversi in base al servizio, però semplifichiamola.
+
+00:31:25.742 --> 00:31:35.522
+<v SPEAKER_2>Tot ore di transazioni, poi di quello parliamo, di quanti modifichi ai file, quante modifiche ai file sono state fatte, quante transazioni eventualmente ho perso, quello è.
+
+00:31:36.062 --> 00:31:37.802
+<v SPEAKER_1>Se è parziale o totale, dopo vediamo perché.
+
+00:31:37.802 --> 00:31:39.762
+<v SPEAKER_2>Tutto quanto o solo una parte.
+
+00:31:39.762 --> 00:31:45.822
+<v SPEAKER_1>E mi piace la tua integrazione, quali scenari copro devo coprire, e quali scenari rimangono scopreti.
+
+00:31:45.822 --> 00:31:46.162
+<v SPEAKER_2>Sì, sì, sì.
+
+00:31:46.162 --> 00:31:49.882
+<v SPEAKER_2>Anche perché devo dire che quando si raggina sullo scenario si accendono cose che...
+
+00:31:49.882 --> 00:31:51.142
+<v SPEAKER_1>Esatto, si accendono lampadine.
+
+00:31:51.422 --> 00:31:59.822
+<v SPEAKER_2>E l'aggiunta dello scenario attacco cyber è esattamente quello che ha fatto scattare una serie di variazioni.
+
+00:32:01.202 --> 00:32:03.122
+<v SPEAKER_1>Ok, passiamo alla parte tecnica.
+
+00:32:03.262 --> 00:32:07.982
+<v SPEAKER_1>E qui c'è veramente l'imbarazzo da dove partire.
+
+00:32:07.982 --> 00:32:10.382
+<v SPEAKER_1>Io partirei nella gestione del dato.
+
+00:32:10.382 --> 00:32:12.042
+<v SPEAKER_2>Sì, anche io sono...
+
+00:32:12.042 --> 00:32:12.922
+<v SPEAKER_1>Dove dato è?
+
+00:32:12.922 --> 00:32:17.842
+<v SPEAKER_1>Il dato del database, il dato della virtual machine, qualunque dato.
+
+00:32:17.842 --> 00:32:22.922
+<v SPEAKER_1>Ah, non abbiamo parlato di servizi cloud, che merita una menzione a parte.
+
+00:32:22.922 --> 00:32:36.362
+<v SPEAKER_1>E non è una menzione banale, perché un paio di normative, se non sbaglio la Dora è una di queste, prevederebbe che ci sia un piano alternativo per gestire problemi nello supply chain, tra cui appunto i servizi cloud.
+
+00:32:36.362 --> 00:32:36.702
+<v SPEAKER_2>Sì, sì, sì.
+
+00:32:36.702 --> 00:32:46.182
+<v SPEAKER_2>Adesso qui, probabilmente dobbiamo fare una parentesi a parte, però effettivamente mi pare sia proprio la Dora.
+
+00:32:47.362 --> 00:32:56.422
+<v SPEAKER_2>Penso che sia stata anche soggetta a diverse interpretazioni, perché in un certo senso uno la potrebbe leggere anche come la mia infrastruttura GCP è andata down, ok?
+
+00:32:58.302 --> 00:32:58.762
+<v SPEAKER_2>Cosa devo fare?
+
+00:32:58.762 --> 00:33:01.082
+<v SPEAKER_2>Devo prevedere un altro provider?
+
+00:33:01.082 --> 00:33:01.782
+<v SPEAKER_1>Ah, scegli tu.
+
+00:33:01.782 --> 00:33:04.702
+<v SPEAKER_1>Le normative sono belle, perché non ti dicono cosa devi fare.
+
+00:33:04.702 --> 00:33:07.262
+<v SPEAKER_2>O posso usare un'altra region?
+
+00:33:07.262 --> 00:33:14.282
+<v SPEAKER_1>No, no, la normativa è specifica, perché parla di fornitore, non parla di servizio cloud, parla di fornitore.
+
+00:33:14.282 --> 00:33:29.562
+<v SPEAKER_2>Giustamente, quando mi metto nei panni anche alcuni ingegneri al con cui ho discusso, giustamente dico, quale probabilità ho, realistica, cioè esiste sicuramente, ma qual è la probabilità che tutto GCP vada down?
+
+00:33:29.602 --> 00:33:31.722
+<v SPEAKER_1>Non è solo quella la questione.
+
+00:33:31.722 --> 00:33:33.802
+<v SPEAKER_1>La questione è la valutazione del fornitore.
+
+00:33:33.802 --> 00:33:42.342
+<v SPEAKER_1>Quindi là dove il tuo fornitore non corrisponde, non fa più match con i tuoi requisiti per x motivi.
+
+00:33:42.342 --> 00:33:43.102
+<v SPEAKER_2>Quello potremmo legare.
+
+00:33:43.102 --> 00:33:45.502
+<v SPEAKER_1>Facciamo un evento, un nome scomodissimo.
+
+00:33:45.502 --> 00:33:52.642
+<v SPEAKER_1>Recentemente un ADR ha avuto un piccolo problema di tre vetti.
+
+00:33:52.642 --> 00:33:56.342
+<v SPEAKER_1>Allora un ADR famoso, senza fare i nomi, ma tanto poco ci vuole a capirlo.
+
+00:33:56.342 --> 00:34:01.282
+<v SPEAKER_1>Un ADR famoso ha avuto un piccolo problema global che ha avuto un impatto serio.
+
+00:34:01.282 --> 00:34:06.302
+<v SPEAKER_1>Un fornitore di sistemi di virtualizzazione ha cambiato proprietario.
+
+00:34:07.202 --> 00:34:09.242
+<v SPEAKER_1>E il licensing, ok.
+
+00:34:11.782 --> 00:34:18.262
+<v SPEAKER_2>Così mandiamo anche qualcuno su Dk, su Data Nightmare.
+
+00:34:20.382 --> 00:34:27.482
+<v SPEAKER_2>Nel podcast, magari vi mettiamo il link, se per caso qualcuno lo conosce, ma è abbastanza famoso, spesso si parla degli effetti delle normative.
+
+00:34:27.962 --> 00:34:29.442
+<v SPEAKER_1>Esatto.
+
+00:34:29.442 --> 00:34:34.522
+<v SPEAKER_1>Quindi sostanzialmente, poi c'è un terzo esempio che nel fratello mi è scappato, ma non importa, due ce ne bastano.
+
+00:34:34.522 --> 00:34:41.542
+<v SPEAKER_1>Sostanzialmente la normativa dice valuto al tuo fornitore e apriamo una delle nostre divagazioni.
+
+00:34:41.542 --> 00:34:55.422
+<v SPEAKER_1>Valuto al tuo fornitore e se il tuo fornitore non corrisponde più alle tue esigenze, cioè nel senso fa match con i tuoi criteri di selezione, perché nelle normative tipo 27001 fai una valutazione della sicurezza del fornitore.
+
+00:34:55.422 --> 00:35:07.182
+<v SPEAKER_1>Ah sì, l'altro è un famoso vendor, diciamo tra i top tre, che ha e purtroppo continuano ad avere importanti vendor di firework, ha importanti vulnerabilità di sicurezza.
+
+00:35:07.182 --> 00:35:21.982
+<v SPEAKER_1>Ok, quindi qualcuno e spero mi piacerebbe dire molti, ma dubito, quando acquista una componente tecnologica, dovrebbe fare una valutazione della sicurezza del vendor e del prodotto.
+
+00:35:21.982 --> 00:35:26.662
+<v SPEAKER_2>Lì si apre uno scenario, in cui magari allego un documento tecnico nell'approfondimento che devo fare.
+
+00:35:26.662 --> 00:35:28.862
+<v SPEAKER_1>Ci ricordiamo di mettercelo, me lo segno.
+
+00:35:28.862 --> 00:35:30.202
+<v SPEAKER_2>Perché ci sono...
+
+00:35:32.082 --> 00:35:40.062
+<v SPEAKER_2>Questa è una cosa molto tecnica, però quando scelgo la tecnologia, per carità, siamo tutti fanboy di qualcosa, io per primo, assolutamente.
+
+00:35:40.062 --> 00:35:41.782
+<v SPEAKER_2>Quindi non per niente raccomando una critica.
+
+00:35:41.782 --> 00:35:44.202
+<v SPEAKER_1>E che è quello che mi fa dormire la notte tipicamente.
+
+00:35:44.242 --> 00:35:53.122
+<v SPEAKER_2>Però dobbiamo considerare anche quella tecnologia che parametri di resilienza e qualità porta all'interno della nostra infrastruttura.
+
+00:35:53.122 --> 00:35:55.282
+<v SPEAKER_2>E ci sono dei parametri tecnici che lo definiscono.
+
+00:35:55.282 --> 00:36:02.782
+<v SPEAKER_2>Quindi c'è la percentuale di fault che quel device ha, la durata media, il tempo di ripristino del vento.
+
+00:36:02.782 --> 00:36:09.022
+<v SPEAKER_2>Ci sono tutti dei parametri che fanno parte del contratto che hai col vendor e poi anche della qualità che il vendor ha dimostrato negli anni.
+
+00:36:09.022 --> 00:36:20.702
+<v SPEAKER_2>Quindi se quel device è particolarmente soggetto in un periodo storico a molti bug che portano a vulnerabilità critiche, dovrei considerare anche quello.
+
+00:36:20.702 --> 00:36:40.262
+<v SPEAKER_1>E c'è un quarto esempio che di tecnico c'entra fin là, ma sono quelle aziende di un certo tipo indirizzo etico che a causa delle situazioni geopolitiche attuali si trova nella scomodità che dovrebbero rifiutare alcuni vendor perché provengono da quei luoghi.
+
+00:36:40.422 --> 00:37:01.422
+<v SPEAKER_1>Esatto, quindi sono delle caratteristiche, non tecniche nel senso di operativi, di persone operative, di ingegneri che lavorano, ma da un punto di vista di azienda, dovrebbero essere valutati tutte queste quattro aziende che abbiamo nominato.
+
+00:37:01.422 --> 00:37:07.542
+<v SPEAKER_1>La Dora dice, per i tuoi vendor critici, quelli su cui si poggia il tuo business.
+
+00:37:07.542 --> 00:37:24.782
+<v SPEAKER_1>Se sei tuo fornitore di firewall, posso immaginare che sia critico, tuo fornitore di sistemi di virtualizzazione, posso immaginare che sia critico, se ti occupi o se fai dell'etica la tua bandiera, posso immaginare che anche la valutazione etica dei tuoi fornitori sia importante da un punto di vista di immagine.
+
+00:37:24.782 --> 00:37:31.042
+<v SPEAKER_1>Quindi per i tuoi fornitori critici, devi valutare un piano d'uscita e fin qua non c'è niente di strano.
+
+00:37:31.042 --> 00:37:56.302
+<v SPEAKER_1>Quindi la valutazione sta a te, i parametri stanno a te, però nell'atto pratico io conosco aziende, legandomi al caso della famosa azienda di virtualizzazione, che avevano già in blacklist il proprietario che ha acquisito questa azienda e si sono trovati a dire oh bella, il nuovo proprietario è in blacklist, è un mattoncino fondamentale della mia infrastruttura e mo che faccio?
+
+00:37:56.302 --> 00:38:17.322
+<v SPEAKER_1>Stessa cosa del se io decido giustamente di valutare un prodotto tecnico per le sue vulnerabilità di sicurezza ed è una mia decisione come lo valuto, quindi non valuto magari la velocità delle patch che potrebbe essere altrettanto valida, ma valuto la quantità, per essere coerente con le mie regole dovrei dire che questo vendor non va più bene e quindi che faccio?
+
+00:38:17.322 --> 00:38:22.902
+<v SPEAKER_1>Stesso per i servizi cloud perché la Dora non dice cloud, dice il tuo fornitore.
+
+00:38:22.982 --> 00:38:34.282
+<v SPEAKER_2>Il fornitore è critico, può essere anche quello che ti fa i bulloni, se per te sono critici, anzi nasce probabilmente come concetto proprio nell'ambito stretto di business, poi ovviamente si estende l'ambito ICT.
+
+00:38:34.282 --> 00:38:48.242
+<v SPEAKER_1>Per dire, Ikea non conosco personalmente, ma conosco dei fornitori, degli aziende che sono fornicici Ikea, ha come parametro di valutazione la tempestività nella fornitura e soprattutto la valutazione in caso di disastro.
+
+00:38:48.242 --> 00:38:56.742
+<v SPEAKER_1>Cosa succede se in caso di disastro puoi mantenere il tuo livello di fornitura o viene ridotta di quanto per quanto tempo?
+
+00:38:56.942 --> 00:39:24.062
+<v SPEAKER_2>Il tema fornitori critici è un tema bello caldo, sul tema del DR si applica perfettamente perché tutto ciò che vado a infilare come tecnologie in quel processo e eventuali servizi esterni che vado a comprare, perché probabilmente non tutti hanno i propri locali data center, e buona parte delle aziende avranno almeno un sito esterno, se no addirittura in cloud, sono tutte le valutazioni che devo poter fare.
+
+00:39:24.062 --> 00:39:33.502
+<v SPEAKER_2>Poi fortunatamente non ci sono parametri di tempo, cioè non è che ti viene detto che devi avere un piano di uscita entro tot, non è che devi farlo...
+
+00:39:34.762 --> 00:39:35.462
+<v SPEAKER_2>forse sta puro a te.
+
+00:39:35.462 --> 00:39:51.382
+<v SPEAKER_1>No, non mi pare che ci siano i tempi, mi pare che siano sempre lasciata la valutazione, quindi se il tuo servizio è critico, richiede un tempo di risposta, un RTO di quattro ore non può avere un piano di uscita da quel fornitore di tre mesi.
+
+00:39:51.382 --> 00:39:52.462
+<v SPEAKER_2>Certo.
+
+00:39:52.462 --> 00:39:55.622
+<v SPEAKER_1>È complicatissimo, non sto dicendo che sia semplice.
+
+00:39:55.622 --> 00:40:18.382
+<v SPEAKER_2>Anche perché viviamo in un mondo, giusto per farci più nemici possibili, in cui tendenzialmente ovviamente ogni vendor cerca di fare lock-in sulla sua tecnologia e quindi si sposa poco con l'esigenza di avere un piano rapido di uscita, è molto difficile, però è ovvio che un cambio di tecnologia ad alcuni livelli poi non semplice, sono alcune tecnologie che in realtà fai molto in fretta.
+
+00:40:18.522 --> 00:40:25.962
+<v SPEAKER_1>Nel DR tutto sommato, a parte la personalizzazione, sappiamo tutti cosa vuol dire, lo smonti e lo rimonti.
+
+00:40:25.962 --> 00:40:30.982
+<v SPEAKER_2>Però tanto non lo personalizza nessuno, quindi da quel punto di vista siamo a posto.
+
+00:40:30.982 --> 00:40:40.042
+<v SPEAKER_1>Già cambiare un firewall è un po più problematico, credo che nessuno abbia pensato a un piano di uscita per la posta elettronica, che non è neanche così complesso tutto sommato.
+
+00:40:41.702 --> 00:40:59.102
+<v SPEAKER_2>Quando cominci gli utenti che non possono avere subito al T0 tutto l'archivo di posta e gli ricordi che non dovrebbero avere tonnellate, tera e tera di posta elettronica da anni con i documenti dentro archivati per sempre, allora li diventa già più gestibili.
+
+00:41:00.562 --> 00:41:26.462
+<v SPEAKER_1>Quindi i dati, va bene abbiamo chiuso la parentesi di cloud, la divagazione è molto lunga, torniamo ai dati, quindi portare i dati da una parte all'altra, come li porto, quindi li porto o meglio il mio modo in cui li porto e che di fatto influenza come li stocco nel mio sito primario e nel sito secondario, dipende chiaramente dall'RPO, cioè quanti i dati sono disposti a perdere, perché dipende da questo valore.
+
+00:41:26.462 --> 00:41:36.942
+<v SPEAKER_1>Proviamo a fare una leggerissima divagazione tecnica, perché la quantità, la frequenza di fotografie della mia infrastruttura è una feature che ci dà lo storage.
+
+00:41:37.622 --> 00:41:44.122
+<v SPEAKER_1>Quindi uno storage molto economico mi permetterà probabilmente di fare delle fotografie in termini di ore.
+
+00:41:44.122 --> 00:41:53.402
+<v SPEAKER_1>Storage e tecnologie più complesse e più costose mi permette di fare fotografie molto più frequenti fino a arrivare a una fotografia continuativa.
+
+00:41:53.542 --> 00:42:01.662
+<v SPEAKER_2>Sì, fino a arrivare anche se le condizioni tecniche te lo permettono ad avere sostanzialmente la replica.
+
+00:42:01.662 --> 00:42:02.762
+<v SPEAKER_1>La replica è sincrona.
+
+00:42:03.142 --> 00:42:20.102
+<v SPEAKER_1>Sincrona significa, per come funzionano i dati, che scrivo il dato nel mio sito principale dove sono, mando la scrittura al sito secondario, lo storage secondario dice ok, l'ho scritto, torna l'ok al sito principale, all'utente viene detto ok, ho scritto, l'utente l'applicativo.
+
+00:42:20.102 --> 00:42:25.082
+<v SPEAKER_2>Questo gioco funziona dentro e ormai anche 300.
+
+00:42:25.182 --> 00:42:28.542
+<v SPEAKER_2>Io ricordavo su 200 km che riuscivo a stare dentro.
+
+00:42:28.542 --> 00:42:41.862
+<v SPEAKER_1>Il problema non è tanto la distanza, il problema in realtà è che la latenza è fruenza sull'applicazione, quindi se l'applicazione è scritta bene, tutto sommato si aggiunge di 300 milisecondi la transazione.
+
+00:42:41.862 --> 00:42:48.922
+<v SPEAKER_2>Stavo già ragionando in ottica di virtualizzazione in cui nel famoso vendor che tutti usano, diciamo, tanto se quello è...
+
+00:42:49.102 --> 00:42:53.682
+<v SPEAKER_1>è VMware, il cui proprietà è Broadcom, e via abbiamo qualche altro nemico ufficiale.
+
+00:42:53.682 --> 00:42:58.402
+<v SPEAKER_2>Esatto, tanto sono due o tre, non è che ce ne sono mila.
+
+00:42:58.402 --> 00:43:10.522
+<v SPEAKER_2>In quel caso, se non ricordo male, perché è un po che non ci smanetto così in profondità, puoi accettare una latenza di 10-12 milisecondi sulla scrittura disco, forse anche di più in condizioni abbastanza.
+
+00:43:10.522 --> 00:43:14.822
+<v SPEAKER_2>Oltre quel tipo di latenza, cominci ad avere proprio problemi sulla guest, sulla macchina virtuale.
+
+00:43:15.282 --> 00:43:28.422
+<v SPEAKER_2>Quindi, in un classico DR di due ambienti di visualizzazione, finché hai 10-12 milisecondi di round trip, cioè da qua a là, sei sereno, puoi andare in scrittura sincrona.
+
+00:43:28.422 --> 00:43:31.262
+<v SPEAKER_2>Almeno ricordavo che si poteva andare abbastanza serenamente in scrittura.
+
+00:43:31.262 --> 00:43:34.782
+<v SPEAKER_2>Poi magari con le evoluzioni si è aumentato questo limite.
+
+00:43:34.782 --> 00:43:41.102
+<v SPEAKER_1>Si può fare un po di tuning, ma il tuning si fa perché se il mio storage non è più a blocco, ma è a file.
+
+00:43:41.102 --> 00:43:42.562
+<v SPEAKER_2>È vero, cambia anche quello.
+
+00:43:42.562 --> 00:43:54.982
+<v SPEAKER_1>In realtà oggi questa cosa succede molto meno, ma agli inizi di quando venivano usati uno storage a file per metterci le virtual machine, c'erano dei problemi tipici di NFS.
+
+00:43:54.982 --> 00:43:57.862
+<v SPEAKER_2>No, qua si riceverà qualche feedback.
+
+00:43:58.782 --> 00:44:12.762
+<v SPEAKER_2>Quanto è continuata la moda degli storage NFS per andare dritti sul rispetto alle scasi, al Fiber Channel, quindi a blocchi, dove si ragiona di blocchi.
+
+00:44:12.762 --> 00:44:26.102
+<v SPEAKER_1>E quindi in realtà io ricordo, ma sono tanti anni che non sono più verticali su quel mondo là, che era possibile fare dei tuning in modo che anche una perdita del disco per un tempo consistente venisse retta.
+
+00:44:26.102 --> 00:44:48.402
+<v SPEAKER_1>Il problema che io ho visto quando abbiamo cominciato ad approcciare in un'azienda la replica sincrona era che le applicazioni scritti male, quindi non è che l'applicazione fa una scrittura da una parte e fine, in cui la latenza passa da 3 milisecondi a 50 milisecondi e fine.
+
+00:44:48.402 --> 00:44:51.782
+<v SPEAKER_1>Tutto sommato in una transazione applicativa non è un gran problema.
+
+00:44:51.782 --> 00:44:55.802
+<v SPEAKER_2>A un momento in cui magari il db ti risponde un pelo dopo.
+
+00:44:55.802 --> 00:45:07.342
+<v SPEAKER_1>Ma se la mia applicazione, quindi per tornare il dato all'utente, fa 50-100 transazioni e le ho viste e ogni transazione aumenta appunto di un 10 milisecondi, allora cominci a essere un po problema.
+
+00:45:07.342 --> 00:45:10.882
+<v SPEAKER_1>Quindi è come sono scritte le applicazioni.
+
+00:45:10.882 --> 00:45:20.062
+<v SPEAKER_1>Oltre al costo che portare un dato sincrono da una parte all'altra non è banale, oltre al costo che se faccio un errore, un fault da una parte lo porto in modo sincrono dall'altra.
+
+00:45:20.062 --> 00:45:25.602
+<v SPEAKER_2>Poi una cosa che di cui si dimenticano tutti, anche se di solito i storage vendors su questa cosa sono attenti, è il data change.
+
+00:45:25.602 --> 00:45:36.682
+<v SPEAKER_2>Cioè se io cambio 100 giga di dati al secondo e li voglio replicare di là, devo avere la banda sufficiente per spostare 100, sennò non li sposto quei dati.
+
+00:45:36.682 --> 00:46:03.542
+<v SPEAKER_1>Allora, qui mi hai dato il gancio per parlare di storage cloud, perché in molti casi ho visto come parte del piano di DR, in alcuni casi, o anche backup freddo come ultima chance, in altri casi, a me piace molto avere anche l'ultima chance, cioè DR è bello, ma avere anche dato un mutabile da un'altra parte completamente separato non è male, di usare uno storage cloud tipo...
+
+00:46:03.542 --> 00:46:06.402
+<v SPEAKER_2>No, un Glacier, bellissimo, costa una pipa di tabacco.
+
+00:46:06.402 --> 00:46:12.002
+<v SPEAKER_1>Esatto, c'è anche un altro nome che in questo momento mi sfugge, che veniva per la maggiore perché era più economico.
+
+00:46:12.002 --> 00:46:22.422
+<v SPEAKER_1>E bello, bellissimo, ma il mio dubbio da persona puntigliosa e un po anche rompiscatole, quanto è la tua banda internet?
+
+00:46:22.422 --> 00:46:24.122
+<v SPEAKER_1>E quanti sono i tuoi dati nel cloud?
+
+00:46:24.122 --> 00:46:30.682
+<v SPEAKER_2>Tra l'altro, lì torna la tematica tempo di elprissimo, perché il dato non è immediatamente disponibile.
+
+00:46:30.682 --> 00:46:31.922
+<v SPEAKER_1>Non è immediatamente disponibile.
+
+00:46:32.302 --> 00:46:40.182
+<v SPEAKER_1>Se hai 50 tera e hai 300 megabit di banda, ci vuole un pochino per portarli a casa e tipicamente costa portarli.
+
+00:46:40.182 --> 00:46:43.382
+<v SPEAKER_1>Metteli su no, ma tirarli giusti.
+
+00:46:43.382 --> 00:46:49.242
+<v SPEAKER_1>E quindi facendo due conti e direi sì, bellissimo, tu hai backup su cloud, non li usi mai.
+
+00:46:49.242 --> 00:46:56.682
+<v SPEAKER_1>Pensa in un user, cioè è il tuo piano ddr, però guardati che quando ti servono ci vuole questo tempo e ci vogliono questi soldi.
+
+00:46:56.722 --> 00:46:57.542
+<v SPEAKER_1>Va bene?
+
+00:46:57.542 --> 00:47:02.762
+<v SPEAKER_1>Sì, perché il mio backup di ultima istanza in teoria non dovrai mai averne bisogno.
+
+00:47:02.762 --> 00:47:07.282
+<v SPEAKER_1>Ok, benissimo, valutazione c'è, c'è l'analisi, c'è la risposta, tutti lo sanno.
+
+00:47:07.302 --> 00:47:08.282
+<v SPEAKER_2>Perfetto.
+
+00:47:08.282 --> 00:47:26.882
+<v SPEAKER_2>Se lo si approccia come il nastro, il vecchio nastro, tu sai che è una cassetta da qualche paio, n cassette archivate da qualche parte e sai benissimo che per tirare su quella roba lì dovrai fisicamente andarli a prendere, caricarli nel tuo loader, e quindi è del tempo.
+
+00:47:26.882 --> 00:47:32.122
+<v SPEAKER_2>Se tu accetti questa condizione e fa parte, diciamo, di un piano più ampio, allora sei apposta.
+
+00:47:32.122 --> 00:47:35.902
+<v SPEAKER_1>Fatti, tra l'altro, passiamo un attimo alla parte di test.
+
+00:47:35.902 --> 00:47:55.342
+<v SPEAKER_1>Se io ho fatto il mio backup su cloud, lo vorrò provare una volta all'anno, vedersi se il dato è coerente, se so come ristorarlo, perché posso averlo buttato là e scoprire che mi torna in un formato, boh, giornamente diverso, o che è molto facile fare l'exporto di quel dato, molto più difficile fare l'import.
+
+00:47:55.342 --> 00:47:57.742
+<v SPEAKER_1>Quindi, almeno lo vorrò provare ogni tanto.
+
+00:47:57.742 --> 00:47:59.902
+<v SPEAKER_2>Al proposito, mi è venuto in mente, giusto per buttarci.
+
+00:47:59.902 --> 00:48:02.542
+<v SPEAKER_2>Dai, facciamo un'altra ragazione.
+
+00:48:02.542 --> 00:48:09.622
+<v SPEAKER_2>E riguarda l'ambito backup, ma ritorna sempre sul tema copia fredda, diciamo, soprattutto quando hai degli storaggi osterli come i nastri.
+
+00:48:09.622 --> 00:48:17.382
+<v SPEAKER_2>Ma i nastri, tra l'altro, sono tuttora molto utilizzati, perché comunque hanno un rapporto costo-tera.
+
+00:48:18.442 --> 00:48:18.942
+<v SPEAKER_1>Altissimo.
+
+00:48:18.962 --> 00:48:21.842
+<v SPEAKER_2>Altissimo, molto conveniente.
+
+00:48:23.082 --> 00:48:29.902
+<v SPEAKER_2>E spesso mi è capitato di trovare situazioni in cui non venivano beccappati gli indici.
+
+00:48:29.902 --> 00:48:30.562
+<v SPEAKER_2>E quindi...
+
+00:48:30.562 --> 00:48:31.482
+<v SPEAKER_1>Sì, giusto.
+
+00:48:31.482 --> 00:48:32.642
+<v SPEAKER_1>E anche questa è una scelta.
+
+00:48:32.642 --> 00:48:33.902
+<v SPEAKER_1>Anche io l'ho vista questa cosa qua.
+
+00:48:34.042 --> 00:48:36.362
+<v SPEAKER_2>Perché magari il vendor, mi ricordo...
+
+00:48:37.422 --> 00:48:57.362
+<v SPEAKER_2>Adesso mi ricordo più se era IBM o qualcosa di ancora mitico tivo, gli storage manager, cioè parliamo di un'aldeone in epoca che non esiste più, fortunatamente, probabilmente, in cui, diciamo di default, l'indice era salvato sul disco locale della macchina, quindi le cassette erano in il dato, però se non hai gli indici, puoi fare la reindexing, giorni di reindexing però.
+
+00:48:57.362 --> 00:48:59.802
+<v SPEAKER_1>Devi rifarti tutte le cassette.
+
+00:48:59.802 --> 00:49:00.082
+<v SPEAKER_2>Anche lì.
+
+00:49:00.902 --> 00:49:05.982
+<v SPEAKER_2>Il tuo ODR, la tua ultima spiaggia basata su nastri, hai gli indici dove li hai messi?
+
+00:49:05.982 --> 00:49:11.182
+<v SPEAKER_2>Hai il nastro con gli indici, o se ne se le vanno col paese assieme ai dati?
+
+00:49:11.182 --> 00:49:11.822
+<v SPEAKER_1>La prova.
+
+00:49:12.722 --> 00:49:19.222
+<v SPEAKER_1>L'importanza della prova è ok, ma tutto il mio pensiero di processo, automazione, cose che si incastrano, funziona o no?
+
+00:49:19.222 --> 00:49:20.062
+<v SPEAKER_1>È la prova del no.
+
+00:49:20.062 --> 00:49:23.242
+<v SPEAKER_1>Se non c'è, quando ti servirà?
+
+00:49:23.242 --> 00:49:28.102
+<v SPEAKER_1>E ci metto veramente, ci scommetto sopra, che se non l'hai provato non funziona.
+
+00:49:28.142 --> 00:49:28.882
+<v SPEAKER_1>Ma perché lo so?
+
+00:49:29.402 --> 00:49:35.542
+<v SPEAKER_1>Perché quando ho aiutato a farlo, per arrivare a un diario funzionante ci sono state decine di prove.
+
+00:49:35.542 --> 00:50:00.602
+<v SPEAKER_2>Sì, sì, sì, ma poi ci si cade poi, non so quanto sia pigrizia in alcuni casi o ingenuità, o semplicemente che non sia pensato bene alla struttura, molti approcciano la prova, facciamoci tutti un esame di coscienza, approcciano la prova, quindi i test di DR, con gli strumenti ordinari tutti i giorni, ma probabilmente in caso di disastro vero, non ho detto che tu abbia quello strumento.
+
+00:50:00.602 --> 00:50:06.322
+<v SPEAKER_2>Quindi ho visto il procedere di test in cui ci si collega al sito principale.
+
+00:50:06.322 --> 00:50:09.202
+<v SPEAKER_2>Non c'è più il sito principale, non puoi fare così la prova.
+
+00:50:09.202 --> 00:50:33.882
+<v SPEAKER_1>Devi collegarti al sito secondario e non ce l'ha un accesso, allora non funzionerà il tuo DR Infatti su questo come provarlo merita un capitolo a parte, però io volevo concludere con un ultimo punto che riguarda sempre i dati, che anche questo l'ho visto considerare veramente pochissime volte e oggi è ancora più complesso, che sono i gruppi di consistenza.
+
+00:50:35.082 --> 00:50:44.762
+<v SPEAKER_1>Quando io creo un DR, devo portare i miei dati da un'altra parte, io difficilmente avrò una copia, una fotografia di tutta la mia infrastruttura.
+
+00:50:44.762 --> 00:50:46.742
+<v SPEAKER_2>L'istantanea precisa di tutto.
+
+00:50:46.782 --> 00:50:51.162
+<v SPEAKER_1>All'istante X, io ho una fotografia di 3.000 VM.
+
+00:50:51.162 --> 00:50:51.762
+<v SPEAKER_1>Difficile.
+
+00:50:51.762 --> 00:50:52.402
+<v SPEAKER_2>Molto difficile.
+
+00:50:52.402 --> 00:51:01.202
+<v SPEAKER_1>3.000 VM, tutti i database, tutti i dischi locali di server fisici, più, e qua si apre il caos, la parte cloud.
+
+00:51:01.202 --> 00:51:03.982
+<v SPEAKER_1>Quindi è da considerare, da capire.
+
+00:51:03.982 --> 00:51:10.342
+<v SPEAKER_1>Non l'ho messo sui level, perché di solito non hanno questa visibilità, ma è sicuramente da discutere con team allargato.
+
+00:51:10.342 --> 00:51:47.242
+<v SPEAKER_1>Ok, io faccio delle fotografie ai miei sistemi, magari sono sullo stesso storage, magari no, magari db è incluso nel sistema operativo, dove ci sono magari dei file di indice, di archive, eccetera, eccetera, magari no, magari ho un'applicazione unica, magari ne ho 50 che si parlano l'una dall'altra, quindi quando io faccio una foto, facciamo un esempio di una trasazione finanziaria, la banalizziamo all'inverosimile dicendo, tolgo i soldi da una parte e li aggiungo dall'altra, quindi se la mia fotografia prende il conto corrente iniziale e finale, è coerente, quindi mancano x da una parte ma sono dall'altra parte.
+
+00:51:47.242 --> 00:51:55.782
+<v SPEAKER_1>Se la mia fotografia cade a metà della transazione e prima tolgo e poi aggiungo, ho tolto ma non li ho aggiunti e quei soldi sono persi.
+
+00:51:55.782 --> 00:51:59.222
+<v SPEAKER_1>Se banalmente prima aggiungo poi tolgo ho duplicato i soldi.
+
+00:51:59.222 --> 00:52:02.302
+<v SPEAKER_1>L'abbiamo banalizzata per capire cos'è una consistenza.
+
+00:52:02.302 --> 00:52:03.502
+<v SPEAKER_1>E questo è un tema enorme.
+
+00:52:03.502 --> 00:52:07.842
+<v SPEAKER_2>Sì, sì, sì, anche perché tocca poi come le applicazioni dialogano tra di loro.
+
+00:52:07.842 --> 00:52:08.322
+<v SPEAKER_2>Esatto.
+
+00:52:08.402 --> 00:52:09.882
+<v SPEAKER_2>Cioè potrebbe essere complicatina.
+
+00:52:09.882 --> 00:52:12.002
+<v SPEAKER_2>Cioè va pensata ovviamente.
+
+00:52:12.002 --> 00:52:24.062
+<v SPEAKER_1>Va pianificata perché se io ho un db locale e lo posso fotografare, ma poi ho le virtual machine, quindi ho il mio server fisico perché è grosso, dove ho delle foto locali del mio database o della mia BI.
+
+00:52:24.062 --> 00:52:29.082
+<v SPEAKER_1>Poi ho delle virtual machine che stanno da un'altra parte e quindi hanno una fotografia diversa.
+
+00:52:29.082 --> 00:52:37.382
+<v SPEAKER_1>E poi ho dei sistemi cloud, magari ho un file storage, ho un s3 eccetera eccetera da un'altra parte che ha uno stato ancora diverso temporalmente.
+
+00:52:37.782 --> 00:52:39.042
+<v SPEAKER_1>Come metto assieme queste cose?
+
+00:52:39.042 --> 00:52:50.202
+<v SPEAKER_2>Ah sì, se devo ragionare, infatti probabilmente la uso come mia nota conclusiva da discutere perché sto ragionando la voce alta ovviamente.
+
+00:52:50.202 --> 00:53:19.902
+<v SPEAKER_2>E sicuramente ha senso lavorare a livello di copia storage, anzi se oggi dove si approccia l'ONDR tra due siti di cui governo, diciamo, tutta l'infrastruttura, sicuramente valuterei una replica a livello storage il più corta possibile, col delta più corto possibile in base a quanti quattrini ho da spendere, praticamente, e ovviamente anche lì, piccola presi, non ha neanche senso spingere troppo quando al business non interesse, non ha senso, perché anche qui ho trovato degli isquilibri.
+
+00:53:19.902 --> 00:53:33.662
+<v SPEAKER_2>Storage super fichi, coppie quasi istantanee, ma poi potevo tranquillamente permettermi un RPO di otto ore, magari quei soldi li spendo più volentieri e tornare al tema di prima sulla resilienza più che sul diere.
+
+00:53:34.202 --> 00:53:37.682
+<v SPEAKER_1>Dovremo fare anche una puntata specifica nella resilienza.
+
+00:53:37.682 --> 00:53:39.682
+<v SPEAKER_2>Si, si lega abbastanza.
+
+00:53:39.682 --> 00:54:05.142
+<v SPEAKER_2>Quindi partirei sicuramente a coppia a livello storage, però sul tema gruppi di consistenza, cosa che è prevista in molti storage, consento di raggruppare i sistemi, però quando questa cosa è molto distribuita li devo tornare sul lato applicativo e cominciare a ragionare come backup, come replica quell'applicazione nell'altro sito, non soltanto il numero di WM che sto utilizzando per farlo funzionare.
+
+00:54:05.442 --> 00:54:17.982
+<v SPEAKER_1>E cerco di conciliare perché non sarà mai possibile avere un'unico, un'unica fotografia o più fotografie coerenti assieme, quindi sicuramente dovrò pensare a come conciliarle.
+
+00:54:17.982 --> 00:54:19.742
+<v SPEAKER_1>E non è detto che sia banale.
+
+00:54:19.742 --> 00:54:22.102
+<v SPEAKER_1>No.
+
+00:54:22.102 --> 00:54:25.302
+<v SPEAKER_1>Direi basta così, ne abbiamo tantissimi di punti ancora, eh?
+
+00:54:25.302 --> 00:54:27.102
+<v SPEAKER_2>Sì, siamo ancora...
+
+00:54:27.102 --> 00:54:30.442
+<v SPEAKER_2>abbiamo solo parlato giusto del fatto che si possono fare le repliche a livello storage.
+
+00:54:30.522 --> 00:54:32.302
+<v SPEAKER_2>Sì.
+
+00:54:32.302 --> 00:54:37.362
+<v SPEAKER_2>Poi sicuramente considereremo il tema network che ha senso che si lega molto poi al tema infastore.
+
+00:54:37.362 --> 00:54:43.522
+<v SPEAKER_1>A parte network, come era a me lo segno, io sicuramente io ho una menzione di come testarlo.
+
+00:54:43.522 --> 00:54:47.502
+<v SPEAKER_1>Come testarlo in maniera sicura e dormendo la notte.
+
+00:54:47.502 --> 00:54:49.142
+<v SPEAKER_2>Esatto, esatto.
+
+00:54:51.022 --> 00:54:52.322
+<v SPEAKER_2>E poi potremmo fare una direzione.
+
+00:54:52.322 --> 00:54:55.262
+<v SPEAKER_1>L'accesso dei dipendenti ne abbiamo parlato.
+
+00:54:56.522 --> 00:54:59.962
+<v SPEAKER_1>La sequenza appunto di startup l'abbiamo menzionata come priorità.
+
+00:55:00.242 --> 00:55:05.782
+<v SPEAKER_1>Quindi posso dividere in gruppi, non possono essere 100 gruppi, ma può dare un'idea di partenza.
+
+00:55:05.782 --> 00:55:08.122
+<v SPEAKER_2>Se la priorità, magari facciamo un'altra.
+
+00:55:08.122 --> 00:55:19.562
+<v SPEAKER_2>Mi segno un tema che sì, è sicuramente deve essere sicuramente un'indicazione del business per quanto riguarda, diciamo, ad alto livello i servizi, la priorità dei servizi.
+
+00:55:19.562 --> 00:55:27.842
+<v SPEAKER_2>Ma questo potrebbe implicare, diciamo, una scaletta che debba tener conto di alcune dipendenze.
+
+00:55:28.422 --> 00:55:30.662
+<v SPEAKER_1>Assolutamente, sì, le dipendenze.
+
+00:55:30.662 --> 00:55:32.482
+<v SPEAKER_1>Certo, me lo sono segnato.
+
+00:55:32.482 --> 00:55:37.302
+<v SPEAKER_2>Quindi, anche quello è un tema da toccare e proseguiamo alla prossima volta.
+
+00:55:37.302 --> 00:55:38.582
+<v SPEAKER_1>Sì.
+
+00:55:38.582 --> 00:55:42.182
+<v SPEAKER_1>Bene, grazie anche per questa volta e per la pazienza.
+
+00:55:42.182 --> 00:55:42.962
+<v SPEAKER_1>Alla prossima.
+
+00:55:42.962 --> 00:55:43.202
+<v SPEAKER_1>Ciao.

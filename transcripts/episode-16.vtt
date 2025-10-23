@@ -1,0 +1,385 @@
+WEBVTT
+
+00:00:08.598 --> 00:00:11.698
+<v SPEAKER_2>Bentornati a Info Sec. Unplugged in versione extended.
+
+00:00:11.698 --> 00:00:14.698
+<v SPEAKER_2>Io sono Andrea Dainese e con me c'è di nuovo Alice Mini.
+
+00:00:14.698 --> 00:00:15.918
+<v SPEAKER_2>Ciao Alice.
+
+00:00:15.918 --> 00:00:18.158
+<v SPEAKER_1>Ciao Andrea, grazie a tutti.
+
+00:00:18.158 --> 00:00:21.198
+<v SPEAKER_2>Oggi volevo parlarti di DOS.
+
+00:00:21.198 --> 00:00:26.338
+<v SPEAKER_2>Invertiamo i ruoli un momento, quindi apro io, ti racconto due episodi che io ho vissuto.
+
+00:00:26.338 --> 00:00:31.018
+<v SPEAKER_2>Uno l'ho vissuto direttamente, uno l'ho studiato perché l'ho trovato molto peculiare.
+
+00:00:31.258 --> 00:00:34.238
+<v SPEAKER_2>E poi facciamo le considerazioni del caso.
+
+00:00:34.238 --> 00:01:00.038
+<v SPEAKER_2>Lo facciamo sempre in versione molto divulgativa, quindi apro giusto con un'introduzione perché, per chi non lo sa, dovrebbe essere noto, ma giusto per chiarire, una DDoS, quindi un Distributo di Denario o Service, è una tipo di attacco che mira da una provenienza distribuita, quindi tipicamente indirizzi IP che stanno in giro per il mondo, mira a disattivare o rendere inutilizzabile un servizio.
+
+00:01:00.078 --> 00:01:01.698
+<v SPEAKER_2>Ce ne sono di due tipi.
+
+00:01:01.698 --> 00:01:19.098
+<v SPEAKER_2>Tipicamente uno è volumetrico, quindi tanta banda e quindi da intasare la connessione internet del bersaglio e l'altro è tante richieste applicative in modo da consumare le risorse applicative del servere e far sì che il servizio non funzioni più.
+
+00:01:19.098 --> 00:01:21.578
+<v SPEAKER_2>Queste sono le due tipologie.
+
+00:01:21.598 --> 00:01:40.218
+<v SPEAKER_2>I due casi che volevo raccontarti, di primo l'ho vissuto qualche anno fa e era un DDoS volumetrico e il bersaglio era un indirizzo IP di un router, quindi del router di frontiera tipicamente.
+
+00:01:40.218 --> 00:01:41.978
+<v SPEAKER_2>Perché l'ho trovato peculiale?
+
+00:01:41.978 --> 00:01:50.498
+<v SPEAKER_2>Perché di solito il bersaglio di DDoS non è un IP di servizio, chiamiamolo così, ma è un IP di un applicativo.
+
+00:01:51.498 --> 00:02:25.398
+<v SPEAKER_2>E quando questo succede spesso vengono messe in atto delle misure cognitive che prevedono dei fornitori di servizi cloud e sostanzialmente l'applicativo viene presentato da un servizio cloud, mi viene in mente HMI, piuttosto che Cloudflare, insomma ce ne sono diversi, e il servizio viene presentato da loro e loro fanno, si dice, il lavaggio del traffico, una sorta di lavatrice e restituisce il traffico applicativo pulito al server finale.
+
+00:02:25.398 --> 00:02:31.398
+<v SPEAKER_2>Quindi si aggiunge un punto di trasporto che pulisce il traffico e lo restituisce pulito.
+
+00:02:31.398 --> 00:02:33.198
+<v SPEAKER_2>Questo è il concetto.
+
+00:02:33.198 --> 00:02:35.898
+<v SPEAKER_2>E l'attivazione, tutto sommato, è abbastanza semplice.
+
+00:02:35.898 --> 00:02:39.418
+<v SPEAKER_2>Lo si fa in minuti o insomma in qualche uno.
+
+00:02:39.418 --> 00:02:48.798
+<v SPEAKER_2>La cosa però non funziona se il bersaglio è un IP di servizio che tiene su di fatto la connettività, perché a quel punto l'IP non può essere spostato fuori.
+
+00:02:49.838 --> 00:02:52.738
+<v SPEAKER_2>E quindi risulta estremamente complicato.
+
+00:02:52.738 --> 00:02:54.638
+<v SPEAKER_2>Questo è il primo caso.
+
+00:02:54.658 --> 00:02:56.418
+<v SPEAKER_1>La casistica particolare.
+
+00:02:56.418 --> 00:03:15.518
+<v SPEAKER_2>Sì, l'ho trovato particolare perché di solito si analizzano o si prevede come rischio appunto il DDoS applicativo, targetizzato sui sui applicativi, ma in questo caso la misura di contenimento non funziona.
+
+00:03:16.778 --> 00:03:30.398
+<v SPEAKER_2>Nel caso specifico, l'azienda ha chiamato il provider, ha attivato al volo a costi diciamo di listino il servizio antidi DDoS, il provider ha cominciato a pulire il traffico e ha risolto il problema.
+
+00:03:32.798 --> 00:03:46.858
+<v SPEAKER_2>Il secondo caso, non l'ho vissuto ma è famoso, si chiama è di Eurobet, è l'attacco del 2019 mi pare molto particolare, lo definirei attacco indiretto.
+
+00:03:46.858 --> 00:03:49.398
+<v SPEAKER_2>Sostanzialmente cosa è successo?
+
+00:03:50.638 --> 00:04:01.518
+<v SPEAKER_2>Hanno cominciato a fare degli attacchi di DDoS di piccola entità, però piuttosto fastidiosi a livello applicativo, se ricordo bene, il giro per l'Italia.
+
+00:04:03.138 --> 00:04:10.558
+<v SPEAKER_2>La sorgente, chiaramente nell'attacco di DDoS, la sorgente spesso è finta, è sfuffata, è falsificata.
+
+00:04:10.558 --> 00:04:18.558
+<v SPEAKER_2>La sorgente di tutti questi attacchi non era la sorgente reale, chiaramente, ma erano gli IP di Eurobet.
+
+00:04:18.558 --> 00:04:19.638
+<v SPEAKER_2>E che cosa succede?
+
+00:04:19.638 --> 00:04:25.138
+<v SPEAKER_2>Che l'unica costante di questo attacco di DDoS era proprio la sorgente.
+
+00:04:25.138 --> 00:04:47.918
+<v SPEAKER_2>Quindi il modo più veloce per risolvere questo tipo di attacco, è stato da parte di molti provider bannare, bloccare tutti i pacchetti IP che avessero come sorgente indirizzi di Eurobet, di fatto causandone una esclusione dalla rete.
+
+00:04:48.398 --> 00:04:56.198
+<v SPEAKER_2>Non è chiaro come sia andata a finire, nel senso che a un certo punto la cosa è stata risolta, però ecco un attacco molto molto interessante.
+
+00:04:59.298 --> 00:05:12.418
+<v SPEAKER_1>Sono entrambi degli attacchi molto interessanti e secondo me fanno molto riflettere sull'impatto che un attacco di questo tipo può avere su un'azienda.
+
+00:05:14.218 --> 00:05:45.018
+<v SPEAKER_1>Sono attacchi molto diversi tra di loro e direi collegati solamente dal fatto che fossero dei DDoS, perché mi verrebbe spontaneo chiederti secondo te quali possono essere gli obiettivi di ciascuno di questi attacchi, perché gli obiettivi a mio avviso sono completamente diversi tra l'uno e l'altro, ma mi piacerebbe capire qual è la tua opinione in merito.
+
+00:05:47.378 --> 00:06:02.098
+<v SPEAKER_2>Allora, la domanda è interessante perché effettivamente capire il perché di un attacco ci aiuta a capire il trade model, cioè la motivazione per cui sono stati scelti come versario queste due aziende.
+
+00:06:03.458 --> 00:06:12.738
+<v SPEAKER_2>Una era riscatto, riscatto andato male perché comunque poi appunto il cliente l'ha risolto pagando servizio al provider.
+
+00:06:13.758 --> 00:06:53.178
+<v SPEAKER_2>La seconda non è chiara, però mi è fatto venire in mente che quando ho letto quel tipo di attacco, chiaramente non so cosa ci sia stato dietro, pura ipotesi, pura speculazione, mi è venuto in mente che potesse essere una sorta di sabotaggio da parte di un competitor, però non un'azione di riscatto per come era stato costruito, perché nel riscatto tipicamente il tuo riscatto lo chiedi come bersaglio, invece questo essendo un attacco in diretta è stato particolare, però mi era venuto, mi era balenato il pensiero del sabotaggio.
+
+00:06:53.178 --> 00:07:03.338
+<v SPEAKER_2>Tra l'altro Eurobet è una società di servizi, chiamiamola servizi, quindi se la escludi da internet, gli togli il business immediatamente.
+
+00:07:03.338 --> 00:07:23.898
+<v SPEAKER_1>Sì, ma è assolutamente vero che settori come e-commerce, ma anche la finanza o qualunque servizio cloud, da questo punto di vista sono particolarmente vulnerabili perché la disponibilità dei servizi appunto per loro è essenziale per il funzionamento e soprattutto secondo me anche per la percezione di affidabilità del provider.
+
+00:07:23.898 --> 00:07:42.298
+<v SPEAKER_1>Quindi gli attacchi di DOS per la loro natura, potendo bloccare completamente sistemi critici e interrompere servizi o comunque renderli meno stabili, può avere degli effetti devastanti in particolare sulla fiducia dei clienti e quindi sulla reputazione aziendale.
+
+00:07:42.298 --> 00:07:48.418
+<v SPEAKER_1>Quindi la teoria del sabotaggio è molto interessante in questo caso.
+
+00:07:50.078 --> 00:07:56.118
+<v SPEAKER_1>Volevo chiederti anche per quanto riguarda la valutazione del rischio per i sistemi critici.
+
+00:07:58.198 --> 00:08:09.218
+<v SPEAKER_1>Secondo te, quali possono essere dei criteri principali per l'identificazione dei sistemi più fondamenti, più vulnerabili a un attacco di DOS?
+
+00:08:09.218 --> 00:08:20.878
+<v SPEAKER_1>E che tu sappia, che ti vengano in mente in questo momento, esistono dei framework o degli strumenti che possono essere particolarmente efficaci in questo processo di identificazione?
+
+00:08:22.118 --> 00:08:25.258
+<v SPEAKER_2>È una domanda che mi coglia impreparato, devo essere sincero.
+
+00:08:26.038 --> 00:08:45.918
+<v SPEAKER_2>Allora, io ho una preparazione come è noto che viene da molto spinta del mondo network, per cui essendo DOS un attacco che sfrutta la rete come mezzo per arrivare, tutti lo sfruttano, però in particolare un attacco che sfrutta la rete, ne sfrutta le peculiarità e anche le debolezze.
+
+00:08:45.918 --> 00:09:16.778
+<v SPEAKER_2>Quindi come framework non ne conosco, devo essere sincero, nel mio mindset c'è il senso che da un punto di vista topologico, parliamo sempre del mundo enterprise, tutto quello che collegia tutti i passi dal router internet che ti porta a casa al provadere, in poi fino ad arrivare al firewall e ai servizi esposti, sono potenzialmente bersaglio target di attacchi di DOS.
+
+00:09:19.138 --> 00:09:33.938
+<v SPEAKER_2>Le distinguiamo quindi nelle due particolarità che abbiamo visto prima, quindi volumetrico e applicativo, perché le distinguiamo in questo modo, perché impattano su risorse di tipo diverso.
+
+00:09:33.938 --> 00:09:40.198
+<v SPEAKER_2>Quindi una è computazionale, quello applicativo, poi non so se si dice applicativo, però è giusto per capirci.
+
+00:09:40.198 --> 00:09:47.798
+<v SPEAKER_2>Quello volumetrico invece tipicamente impatta il cavo, fibra che sia, che ti collega a Internet.
+
+00:09:59.258 --> 00:10:20.458
+<v SPEAKER_2>E via dicendo, considerando che le enterprise oggi, se hanno una 10 gigabit, hanno tantissimo, almeno quelle che conosco io, perché non hanno così tante esigenze di traffico, direi che uno è uno scenario realistico, di attacco realistico per qualunque azienda enterprise italiana e non su.
+
+00:10:21.778 --> 00:10:35.378
+<v SPEAKER_2>Realistico nel senso che, come hai visto anche tu, esistono portali online dove puoi creare il tuo attacco di dos on demand, e saturare una banda 10 gigabit non è un posto così tanto alto.
+
+00:10:35.958 --> 00:10:39.018
+<v SPEAKER_2>Quindi, in questo senso, attacco realistico.
+
+00:10:42.178 --> 00:10:57.618
+<v SPEAKER_2>Al di là di, effettivamente, enumerare tutti i pezzettini esposti a internet direttamente, come dispositivi o indirettamente come gli applicativi, c'è poi la considerazione che è sulla mitigazione.
+
+00:10:57.618 --> 00:11:07.318
+<v SPEAKER_2>Quindi, se io ho un tipo di attacco di questo tipo e non sono preparato, come faccio, come opero, da chi vado?
+
+00:11:08.978 --> 00:11:34.978
+<v SPEAKER_2>Siccome ho citato i due esempi di cui prima, soprattutto quello che ho vissuto direttamente, quindi dell'attacco all'IP del router di bordo, perché non si può mitigare con molte tecnologie che vengono commercializzate online, che sono tipicamente orientati alla mitigazione applicativa, che va benissimo, però non copre tutto.
+
+00:11:34.978 --> 00:11:48.918
+<v SPEAKER_2>Quindi la domanda che io faccio, poi non sono un esperto perché la mia soluzione è tipica, è chiamare il tuo provider, fargli pulire il traffico, perché dal punto di vista di enterprise è difficile che si comprino quel tipo di servizi.
+
+00:11:50.218 --> 00:12:15.078
+<v SPEAKER_2>Quindi il punto è, siccome ho degli attacchi che non posso coprire con servizi cloud based, alla fine il piano di emergenza, la response è attiva preventivamente, diciamo metti a contratto in modo preventivo, la possibilità di dover attivare usurizianti di loss in caso di attacco.
+
+00:12:15.078 --> 00:12:18.578
+<v SPEAKER_2>Questo è sostanzialmente anche piuttosto semplice.
+
+00:12:19.358 --> 00:12:55.718
+<v SPEAKER_1>Ma per quanto riguarda le strategie di mitigazione preventiva, secondo te non so, la segmentazione della rete, il monitoraggio proattivo del traffico, sono delle soluzioni che possono aiutare a migliorare la prevenzione, ci sono delle altre soluzioni che potrebbero essere implementate, oltre ovviamente al sempre fondamentale e poco diffuso piano di risposta agli incidenti, che sia ben definito e soprattutto testato, che è cosa che onestamente nella mia esperienza ho visto molto poco.
+
+00:12:55.718 --> 00:13:05.638
+<v SPEAKER_1>Magari c'era, ma la parte di test è sempre scarsamente apprezzata, o comunque come strada poco battuta.
+
+00:13:07.378 --> 00:13:14.518
+<v SPEAKER_1>Insomma, queste possono essere considerate strategie di mitigazione preventiva, o sono solamente dei palli attivi?
+
+00:13:16.598 --> 00:13:23.278
+<v SPEAKER_2>Allora, il concordo con te sul piano di response che se esiste è purtroppo abistrattato e poco considerato.
+
+00:13:24.598 --> 00:13:26.738
+<v SPEAKER_2>Per il quarto, la parte preventiva.
+
+00:13:26.738 --> 00:13:34.118
+<v SPEAKER_2>Allora, la segmentazione di rete di solito auspicabilmente già esiste, perché parliamo appunto del mondo internet.
+
+00:13:34.118 --> 00:13:44.238
+<v SPEAKER_2>Bene o male, chiunque ha già messo in piano una divisione della rete in zone di sicurezza diverse, e quindi auspicabilmente nella parte esterna.
+
+00:13:44.338 --> 00:13:49.858
+<v SPEAKER_2>C'è a parte il router di bordo, c'è il firewall, bene o male, quindi quello è un punto di controllo.
+
+00:13:51.198 --> 00:14:03.518
+<v SPEAKER_2>Il monitoraggio è sicuramente la base per rilevare prima possibile un attacco di DOS, perché cosa succede?
+
+00:14:04.958 --> 00:14:16.278
+<v SPEAKER_2>Se non c'è quel tipo di monitoraggio, si viene allertati tipicamente dal customer care dei clienti direttamente, che il servizio non funziona a clienti esterni o interni uguali.
+
+00:14:16.278 --> 00:14:22.698
+<v SPEAKER_2>E si comincia a pensare a problemi di rete, a problemi applicativi e secondo il tipo di trafico.
+
+00:14:22.698 --> 00:14:25.738
+<v SPEAKER_2>Ci si mette un po a capire che cosa sta succedendo.
+
+00:14:27.558 --> 00:14:50.578
+<v SPEAKER_2>Quindi la parte di monitoraggio è essenziale, sia da un punto di vista di rete per attacco volumetrico, però non è sufficiente, perché l'attacco applicativo può nascondere milioni di richieste in più in una banda tutto sommato non visibile direttamente immediatamente.
+
+00:14:50.578 --> 00:15:00.478
+<v SPEAKER_2>Quindi un leggero picco di banda, facciamo un 20% in più, un 11% in più, insomma tutto sommato potrebbe essere normale.
+
+00:15:00.478 --> 00:15:09.178
+<v SPEAKER_2>Ma dentro si nascondono milioni di pacchetti in più che fanno colassare l'applicativo.
+
+00:15:10.678 --> 00:15:12.958
+<v SPEAKER_2>Come ci accorgiamo di questa cosa qua?
+
+00:15:12.958 --> 00:15:29.578
+<v SPEAKER_2>Allora i firewall teoricamente hanno già quasi tutti delle regole che permettono di allertare il fatto che ci siano più richieste del normale, perché sostanzialmente questo fa di dos applicativo, fa più richieste del normale.
+
+00:15:36.098 --> 00:15:45.418
+<v SPEAKER_2>another point of control is the CPU of the systems, which typically grows enormously because it has to handle more requests.
+
+00:15:47.138 --> 00:16:09.858
+<v SPEAKER_2>Ci sono poi una specifica parte di DOS che si basa sull'uso di timer, mi tocca andare un attimo sul più tecnico, di timer di default che sono un po come dire, non è stato fatto tuning, no.
+
+00:16:09.858 --> 00:16:17.658
+<v SPEAKER_2>Ci si basava sull'internet di 20-30 anni fa in cui eravamo molto più buoni e molto meno pericolosi.
+
+00:16:17.658 --> 00:16:43.218
+<v SPEAKER_2>Il concetto è questo, quando una persona fa una richiesta internet dietro partono una serie di richieste in un linguaggio HTTP tipicamente che noi non vediamo e queste richieste si svolgono per dire, mi voglio collegare allhost.com, voglio questa pagina, voglio questa codifica, eccetera, eccetera.
+
+00:16:46.198 --> 00:17:01.298
+<v SPEAKER_2>È possibile, di solito, era possibile fino a qualche anno fa, credo ancora, in una configurazione di default, di mandare la prima richiesta e poi attendere un numero di secondi abbastanza alto prima di mandare la seconda parte della richiesta.
+
+00:17:01.298 --> 00:17:09.358
+<v SPEAKER_2>Nell'esempio che ci ho fatto qui prima è, mi connetto a v.google.com, pausa di 10 secondi.
+
+00:17:09.358 --> 00:17:12.498
+<v SPEAKER_2>Dammi questa pagina, pausa di 10 secondi.
+
+00:17:13.538 --> 00:17:16.278
+<v SPEAKER_2>Voglio questa codifica, pausa di 10 secondi.
+
+00:17:16.278 --> 00:17:27.818
+<v SPEAKER_2>È chiaro che se io posso spezzettare una richiesta che di solito va liscia in 2 milisecondi, in una richiesta da 40 secondi, vanno d'assai due cose.
+
+00:17:27.818 --> 00:17:33.218
+<v SPEAKER_2>Uno, con un costo bassissimo riesco a tenere occupato il server per molto tempo.
+
+00:17:33.218 --> 00:17:40.658
+<v SPEAKER_2>Due, da un punto di vista di rete non vedrò aumenti sensibili di traffico.
+
+00:17:40.658 --> 00:17:49.718
+<v SPEAKER_2>Tre, da un punto di vista di CPU non vedrò aumenti, perché di fatto la richiesta non è ancora stata fatta, la rimane in un limbo finché non viene conclusa.
+
+00:17:49.718 --> 00:17:53.758
+<v SPEAKER_2>E quindi la CPU semplicemente non ha niente da fare.
+
+00:17:53.758 --> 00:18:02.338
+<v SPEAKER_2>Il risultato però è che con un costo bassissimo riesco a saturare il numero di richieste che l'applicativo può fornirmi.
+
+00:18:02.338 --> 00:18:11.598
+<v SPEAKER_2>Spero di aver essermi spiegato, però il concetto è che l'attacco potrebbe non essere così visibile ad occhio nudo se non è stato fatto un tuning preventivo.
+
+00:18:12.698 --> 00:18:33.038
+<v SPEAKER_1>Certo, quindi diciamo che con l'evoluzione di questi attacchi non solo è possibile creare degli attacchi sempre più massici a livello volumetrico, ma è anche possibile creare degli attacchi un po più sofisticati che permettono di rendere più difficile la detection dell'attacco stesso.
+
+00:18:33.038 --> 00:18:34.298
+<v SPEAKER_1>È corretto?
+
+00:18:34.298 --> 00:18:35.478
+<v SPEAKER_1>Ho interpretato correttamente.
+
+00:18:35.498 --> 00:18:38.938
+<v SPEAKER_2>Assolutamente, è correttissimo.
+
+00:18:56.358 --> 00:18:59.978
+<v SPEAKER_2>Ad esempio, scopro che in un'azienda c'è una pagina che pesa 100 mega.
+
+00:19:00.598 --> 00:19:01.338
+<v SPEAKER_2>E facile.
+
+00:19:01.338 --> 00:19:13.818
+<v SPEAKER_2>Quando ho fatto 10 richieste immediate di quel file là, ho già consumato la banda in upload del mio target, già di 100 per 10.
+
+00:19:13.818 --> 00:19:22.758
+<v SPEAKER_2>Già arrivo a un giga, un gigabyte e quindi già ho un utilizzo importante della banda.
+
+00:19:22.758 --> 00:19:33.418
+<v SPEAKER_1>Certo, ma questo tema di cui stai parlando mi fa venire in mente un altro utilizzo che secondo me può essere interessante da considerare di questa tipologia di attacchi.
+
+00:19:33.698 --> 00:20:16.858
+<v SPEAKER_1>Perché con questo fatto che è possibile creare degli attacchi più sofisticati, secondo me possiamo anche vedere l'attacco di DOS come un attacco utilizzato come diversivo per magari nascondere delle minacce più complesse, perché è vero che è possibile far sì che la detection sia più difficile da individuare, ma si potrebbe anche volere invece creare del rumore per andare a nascondere, non so, una esfiltrazione di dati o magari fare del rumore e contemporaneamente veicolare delle campagne di phishing mirato che passerebbero in secondo piano rispetto al rumore dell'attacco del DOS.
+
+00:20:16.858 --> 00:20:22.058
+<v SPEAKER_1>Ti sembra uno scenario noto, uno scenario possibile?
+
+00:20:22.358 --> 00:20:22.878
+<v SPEAKER_1>Cosa pensi?
+
+00:20:22.958 --> 00:20:26.678
+<v SPEAKER_1>Perché un attaccante magari potrebbe trovarla una soluzione interessante?
+
+00:20:28.818 --> 00:20:46.298
+<v SPEAKER_2>Secondo me l'hai già descritto perfettamente te, mi trovo pienamente d'accordo, credo ci sia una tecnica anche di su o su, non è detta così chiaramente, fai rumore da una parte per attaccare dall'altra, il concetto è quello, però sì, assolutamente d'accordo.
+
+00:20:46.298 --> 00:21:03.398
+<v SPEAKER_2>Tra l'altro in quel caso si può fare un rumore che crei disturbo, ma non panico, in modo da catalizzare le risorse in quella che si pensa sia la battaglia, per poi passare dal retro, assolutamente d'accordo.
+
+00:21:03.398 --> 00:21:24.118
+<v SPEAKER_1>In questo contesto però tutti i sistemi che è possibile utilizzare di prevenzione non sarebbero utili, quindi io penso che è in questo in questo tipo di attacco in cui l'idosa è utilizzato come diversivo che entra in campo il mio tema preferito, ovvero la formazione.
+
+00:21:24.118 --> 00:21:49.158
+<v SPEAKER_1>In questi casi, secondo me, bisognerebbe creare un programma efficace che preveda dei test magari realistici sulle infrastrutture, quindi coinvolgendo il blue team che deve essere preparato ad individuare questo tipo di attacchi, ma anche un red team che effetti una vera e propria simulazione di attacco e non semplicemente un penetration test.
+
+00:21:49.158 --> 00:22:11.238
+<v SPEAKER_1>Però secondo me la formazione dovrebbe andare oltre, quindi non dovrebbe coinvolgere solamente i team tecnici, ma a questo punto anche quelli di comunicazione e gestione delle crisi, perché un attacco di questo tipo può portare a a uno scenario molto più complesso rispetto a quello del semplice attacco di DDoS.
+
+00:22:11.238 --> 00:22:26.178
+<v SPEAKER_1>Quindi la formazione deve in questo contesto, secondo me, l'obiettivo deve avere come insegnare a non focalizzarsi solamente sull'attacco visibile, ma monitorare anche le altre attività sospette durante un attacco dal punto di vista tecnico.
+
+00:22:26.678 --> 00:22:44.058
+<v SPEAKER_1>Però questa simulazione deve anche includere gli scenari imprevisti, prevedere un'analisi post mortem per migliorare i processi, quindi anche insegnare a comunicare tra le diverse parti che poi dovranno prendere in mano i diversi aspetti durante l'attacco.
+
+00:22:44.058 --> 00:23:01.838
+<v SPEAKER_1>Quindi secondo me è fondamentale che venga considerato il test di questi scenari che sinceramente ho visto fare molto poco anche in questo caso nelle aziende.
+
+00:23:01.838 --> 00:23:20.958
+<v SPEAKER_1>Magari ci sono alcune aziende che considerano lo scenario attacco di DOS, tra gli scenari che contemplano di attacco verso la propria azienda, però non ho ancora visto dei test da questo punto di vista che vengono effettuati creando delle vere e proprie simulazioni.
+
+00:23:20.958 --> 00:23:22.778
+<v SPEAKER_1>Non so se la tua esperienza sia diversa.
+
+00:23:24.538 --> 00:23:31.538
+<v SPEAKER_2>Allora, credo che DOS in questo momento sia un tema che non viene trattato.
+
+00:23:31.538 --> 00:23:45.218
+<v SPEAKER_2>Può avere paura nel senso che chiaramente fanno su questo tema qua si rischia di dare di servizio e nessuno vuole rischiare di dare di servizio in attività di red teaming.
+
+00:23:45.218 --> 00:24:01.158
+<v SPEAKER_2>Siamo ancora nella cultura che le attività di red teaming devono essere delicate per non disturbare il business, che ci sta, ok, assolutamente.
+
+00:24:01.158 --> 00:24:08.978
+<v SPEAKER_2>Però dobbiamo cominciare a fare il passo in più, ma probabilmente ne parleremo in una puntata dedicata.
+
+00:24:08.978 --> 00:24:24.618
+<v SPEAKER_2>Dicevo bisogna fare un passo in più perché chi attacca non ha proprio i guanti di velluto e quindi ci sta che in quel tipo di attacco noi simulato non vogliamo fare danni, ma questo non toglie che qualcuno potrà farli.
+
+00:24:24.618 --> 00:24:39.138
+<v SPEAKER_2>Quindi ci riaggiorneremo, ci racconteremo reciprocamente l'evoluzione, e soprattutto della tua evoluzione, in ambito creare consapevolezza in azienda.
+
+00:24:39.138 --> 00:24:42.278
+<v SPEAKER_2>Però direi che lo lasciamo per la prossima volta.
+
+00:24:42.278 --> 00:24:42.998
+<v SPEAKER_1>Assolutamente.
+
+00:24:44.638 --> 00:24:50.678
+<v SPEAKER_2>Bene, allora grazie per averci ascoltato in questa puntata On The Road, e vediamo come è venuta.
+
+00:24:50.678 --> 00:24:52.258
+<v SPEAKER_2>A presto.
+
+00:24:52.298 --> 00:24:52.578
+<v SPEAKER_1>Ciao.

@@ -1,0 +1,412 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.160
+<v SPEAKER_1>Partiamo con questa prima puntata di podcast che vede me e Rocco in una conversazione libera.
+
+00:00:06.160 --> 00:00:13.660
+<v SPEAKER_1>Chi desidera può unirsi, daremo in seguito le coordinate per chattare direttamente con noi.
+
+00:00:13.660 --> 00:00:14.460
+<v SPEAKER_1>Ciao Rocco.
+
+00:00:14.460 --> 00:00:16.460
+<v SPEAKER_2>Ciao.
+
+00:00:16.460 --> 00:00:24.380
+<v SPEAKER_1>Per questa prima puntata l'argomento scelto è la parte di orchestrazione delle soluzioni di sicurezza.
+
+00:00:24.380 --> 00:00:33.360
+<v SPEAKER_1>Quindi quello che avevamo in mente è di indagare tutte le soluzioni che ci sono all'interno delle aziende come si parlano tra loro.
+
+00:00:33.360 --> 00:00:43.520
+<v SPEAKER_1>Anzi, in realtà, spoiler, non si parlano tra loro e sono gestite come silos, direi, con tutti i pro e i contro.
+
+00:00:43.520 --> 00:00:50.160
+<v SPEAKER_2>Almeno quello che notavo io è proprio la tendenza a fronte di una esigenza valuta.
+
+00:00:50.160 --> 00:00:54.480
+<v SPEAKER_2>La prima cosa che si pensa è valuto la soluzione che mi aiuta per quell'esigenza specifica.
+
+00:00:54.900 --> 00:01:36.560
+<v SPEAKER_2>Si ragiona poco di far lavorare le soluzioni assieme e quindi l'effetto che spesso noto, quando poi le aziende hanno anche la maturità e la capacità comica di comprarle, certe soluzioni, a prescindere dalla spesa, è che poi l'IT manager o il security manager di turno si trovano con 3-4 soluzioni, addirittura alcune con delle future in sovrapposizione l'una con l'altra, cioè giustamente poi alcune soluzioni tendono a inglobare funzionalità per renderle più autonome possibile, ma queste soluzioni tendenzialmente o si parlano poco o proprio non si parlano, quindi i famosi silos di cui facevi cendo.
+
+00:01:36.560 --> 00:02:32.840
+<v SPEAKER_2>Io personalmente ho cominciato a ragionare su questo tema 4-5 anni fa, cioè quando ho cominciato a lavorare in contesti dove trovavo diverse soluzioni software, soprattutto per tentare di fare governance e gestione delle configurazioni, e ognuno aveva le sue peculiarità, quindi ognuno faceva bene il suo lavoro, però poi si creavano un po di difficoltà tra virgolette stupide, ad esempio ogni soluzione aveva il suo database degli asset, peculiare per quelli che gestiva, ma una fonte unica non c'era, ad esempio, una piccola solita banalità oppure l'integrazione a livello di utenza non veniva gestita coerentemente oppure l'assignalazione degli alert, ognuno aveva la possibilità di segnare degli allarmi o delle notifiche, ma nulla era centralizzato, quindi se volevi sapere cosa stavano notificando la singola soluzione, dovevi collegarti alla dashboard della singola soluzione.
+
+00:02:33.040 --> 00:02:59.080
+<v SPEAKER_2>Tutte piccole difficoltà che alla fine portavano a un problema di base, che le soluzioni tendenzialmente venivano poco curate e venivano lasciate un po a se stesse, e quindi non riuscivano a fare bene il loro lavoro e non restituivano di fatto il valore che dovevano restituire in quel caso specifico, perché se ho classica situazione, edr che mi dà un sacco di notifiche ma non le guardo, eh sono un punto a capo, cioè sempre lo stesso problema.
+
+00:02:59.080 --> 00:03:14.120
+<v SPEAKER_2>Oppure ancora, in realtà alcuni problemi ancora più fondanti, cioè se ho le edr ma non sono sicuro di averle installato su tutti gli asset che dovrebbero averlo, è un problema ancora più grosso perché ho una soluzione che non mi sta coprendo come dovrebbe copirmi, per dire, no?
+
+00:03:14.120 --> 00:03:28.800
+<v SPEAKER_2>E quindi c'era la tematica del se avessi un asset manager correttamente popolato, l'edr potrebbe attingere a quel database, se è coerente con la realtà, e coprire tutto l'asset.
+
+00:03:29.680 --> 00:03:37.480
+<v SPEAKER_2>Sono dettagli, sono cose ovvie, mi vengono a dire spesso, ma nel mondo vero poi vi capita che vengono trascurate.
+
+00:03:39.620 --> 00:03:43.380
+<v SPEAKER_1>Allora, hai citato vari punti, me ne sono segnati.
+
+00:03:43.380 --> 00:03:48.740
+<v SPEAKER_1>Allora, uno è l'acquisto della soluzione, su cui si apre un mondo e secondo me ne parleremo prossimamente.
+
+00:03:50.320 --> 00:03:54.640
+<v SPEAKER_1>Poi hai parlato di source of truth, non l'hai chiamata così ma la traduco io.
+
+00:03:54.640 --> 00:03:57.860
+<v SPEAKER_1>Anche questo è un altro mondo che discuteremo.
+
+00:03:57.860 --> 00:04:04.940
+<v SPEAKER_1>La centralizzazione degli allarmi, e su questo poi faccio un esempio che mi è capitato di discutere con un cliente, proprio recentemente.
+
+00:04:06.240 --> 00:04:33.560
+<v SPEAKER_1>L'integrazione è quella stretta tra strutture e dati, quindi ho fatto l'esempio tra la parte di vulnerability management, IDR e asset inventory, quindi quello che dovrebbe esserci, poi in realtà c'è anche quello che c'è davvero, che non necessariamente sono uguali, però è una integrazione tra database che non è così facile costruire, perché le soluzioni non sono nattive.
+
+00:04:35.340 --> 00:05:02.800
+<v SPEAKER_2>Poi non so se anche secondo la tua esperienza è così, però tendenzialmente quello che noto, su una certa fascia di azienda, su una certa dimensione di azienda, appunto aziende che hanno capacità e vedono utili l'integrazione di questo utilizzo di queste soluzioni, il problema è trasversale, cioè non vedo una categoria di aziende che in qualche modo riesce a evitare il problema.
+
+00:05:02.800 --> 00:05:08.560
+<v SPEAKER_2>Cioè è una cosa che per qualche ragione è sistemica, cioè almeno io la vedo molto sistemica come problematica.
+
+00:05:10.280 --> 00:05:12.220
+<v SPEAKER_1>Assolutamente d'accordo.
+
+00:05:12.220 --> 00:05:16.380
+<v SPEAKER_1>A me vengono in mente due esempi, perché poi mi piacciono gli esempi presi dalla realtà.
+
+00:05:16.380 --> 00:05:42.940
+<v SPEAKER_1>Allora il primo che ti faccio è un progetto con cui sto discutendo di un cliente, sostanzialmente sta trasferendo il suo datacenter presso terzi, non in cloud in senso stretto, cioè il senso, diciamo, quello che conosciamo AWS, Azure e compagnia, ma un cloud più tradizionale, più italiano, chiamiamola così, quindi una struttura di dati basata in particolare su VMware, Cisco e CI e NSEXT.
+
+00:05:44.000 --> 00:06:12.220
+<v SPEAKER_1>A di là delle architetture che ci interessano poco, il cliente voleva portare quello che ha, quindi il suo firewall, le sue cose, però la soluzione cloud che gli propone il fornitore, uno di questi, è di utilizzare un firewall nativo VMware, che è quello dato da NSEXT, credo sia legge, non ho potuto verificare, ma credo di sì, per filtrare il traffico est-ovest.
+
+00:06:12.220 --> 00:06:31.820
+<v SPEAKER_1>E il cliente, giustamente, rifletteva sul fatto che doveva in qualche modo buttare la sua tecnologia o usarla solo per quel poco di traffico nord-sud, ma soprattutto aveva un altro punto di controllo separato, su cui doveva maturare competenze, ma questo forse è anche il meno.
+
+00:06:31.820 --> 00:06:42.480
+<v SPEAKER_1>Però quello che dicevi tu, si trovava il firewall, che nel caso specifico è Palo Alto, che ha già per il traffico nord-sud, e il traffico est-ovest filtrato da questo edge.
+
+00:06:42.820 --> 00:06:51.920
+<v SPEAKER_1>E queste due soluzioni non si parlano, quindi ogni volta, ogni troubleshooting etc., chiedevi di andare a vedere l'uno e l'altro.
+
+00:06:51.920 --> 00:07:06.020
+<v SPEAKER_1>E soprattutto la collection, l'accentramento degli allarmi, diventava più complicato, perché esce un po dalla soluzione XDR di Palo Alto e si trova un componente esterno che non sa bene come gestire.
+
+00:07:06.560 --> 00:07:26.300
+<v SPEAKER_1>E quindi discutendo col cliente, quello che una volta veniva chiamato come un pro il dual bastion, che io onestamente parlando ho sempre odiato, sia come amministratore, sia adesso come architetto, diventa chiaramente un contro, quindi soluzione disomogenee, non integrate, se non ha un costo molto alto di sviluppo proprio.
+
+00:07:28.180 --> 00:07:46.100
+<v SPEAKER_1>E la seconda, la secondo esempio che ti porto, invece che parla più dell'integrazione delle strutture dati, è un esperimento che sto facendo da un cliente, diciamo più amico di altri, proprio di discovery automatica e di messa in ordine di quello che c'è.
+
+00:07:46.100 --> 00:08:09.860
+<v SPEAKER_1>Quindi siamo partiti da una discovery di rete che mi dà in qualche modo una cartina a torno al sole di effettivamente quello che c'è sulla rete in termini di P, eccetera, eccetera, per poi confrontarla con un IPAM, purtroppo attualmente è un foglio Excel, ma speriamo di toglierlo presto, e che a sua volta poi viene confrontato con un asset inventory.
+
+00:08:09.860 --> 00:08:30.240
+<v SPEAKER_1>Quindi la cosa interessante era che finalmente, dopo questa discovery automatica, abbiamo almeno stabilito quanti IP ci sono sulla rete per scoprire che circa un 30% erano censiti a livello di DNS, quindi un due terzi non si sapeva cos'erano e ancora meno erano effettivamente da parte asset inventory.
+
+00:08:30.240 --> 00:08:37.600
+<v SPEAKER_1>Quindi man mano che si procedeva verso le strutture dati ufficiale, mancavano sempre più cose.
+
+00:08:37.600 --> 00:08:42.120
+<v SPEAKER_1>E questo, come dicevi tu, si traduce in DR, c'è, non c'è, ma dov'è?
+
+00:08:42.120 --> 00:08:43.200
+<v SPEAKER_1>Dove deve esserci?
+
+00:08:43.200 --> 00:08:48.900
+<v SPEAKER_1>In VNRBT Assessment abbiamo fatto la scansione di quello che c'è e tante altre cose.
+
+00:08:49.560 --> 00:08:53.380
+<v SPEAKER_1>Cosa ne pensi e cosa hai visto tu dalla tua parte?
+
+00:08:54.620 --> 00:09:04.280
+<v SPEAKER_2>Diciamo, gli scenari sono diversissimi ovviamente di base, dipende da caso a caso, però tendenzialmente quello che c'è, c'è una difficoltà di base nel fare discovery.
+
+00:09:04.280 --> 00:09:27.220
+<v SPEAKER_2>Questa è una cosa che ho notato in varie situazioni, però non ho ben capito, diciamo, dove nasce il problema, nel senso che chi ha selezionato una soluzione almeno per fare asset inventory, di solito ha questa funzionalità all'interno della della soluzione.
+
+00:09:27.220 --> 00:09:36.660
+<v SPEAKER_2>Per qualche ragione di implementazione, spesso viene appunto implementata in maniera ridotta e quindi si perdono dei pezzi.
+
+00:09:36.660 --> 00:10:01.520
+<v SPEAKER_2>Un buon punto di osservazione è proprio la rete, magari approfittando di altri progetti collaterali in qualche modo, comunque vedere che cosa è fisicamente connesso la rete, che sia la rete cablata o la rete wireless, potrebbe essere un primo buon punto di partenza per capire, almeno per fare un calcolo stupidissimo matematico, di quanti MAC Address ho in rete e quanti invece oggetti io ho censito.
+
+00:10:01.520 --> 00:10:08.380
+<v SPEAKER_2>E lì scopro una prima verità, che se io ho censito 1000 oggetti ma ho 2000 MAC Address, una prima domanda dovrei farmela.
+
+00:10:08.480 --> 00:10:16.860
+<v SPEAKER_2>E paradossalmente le dimensioni sono queste, cioè scopri veramente il doppio o il triplo degli oggetti connessi alla tua rete che non avevi censito.
+
+00:10:18.860 --> 00:10:27.920
+<v SPEAKER_2>Noto anche in alcuni casi, diciamo, c'è un problema purtroppo metodologico a monte.
+
+00:10:29.300 --> 00:11:08.740
+<v SPEAKER_2>E qua si va un po nella tematica della governance che non è, spesso non è affascinante in alcuni casi, almeno noto che non tutti la trovano praticamente affascinante, però banalmente scegliere cosa censire, cioè definire quelle che nel mondo IT che ameremmo le classi di oggetti, dovrebbe essere uno dei primi passi, cioè una delle prime cose che dovrei fare è sedermi un attimo a un tavolo e decidere che cosa voglio gestire a livello di IT, che poi ovviamente sforcia anche a livello di sicurezza informatica, quindi definire gli asset che voglio controllare, che voglio in qualche modo governare.
+
+00:11:09.460 --> 00:11:12.160
+<v SPEAKER_2>E da lì cominciare a ragionare sul discoglio.
+
+00:11:12.160 --> 00:11:41.320
+<v SPEAKER_2>Se uso questo blocchetto, che non fa nessuno e non è una colpa, nel senso che per qualche ragione tutti partono al contrario, cioè partono prima da un pseudo-censimento e poi ragionano sugli asset e sui gruppi di asset, però se faccio questo ragionamento, quindi decide di gestire prima, voglio gestire gli endpoint, voglio gestire i server, voglio gestire gli switch, poi mi accorgo che ci sono delle casse di oggetti che sono, diciamo, almeno parzialmente competenze dell'IT, ma che per qualche ragione non ho mai censito.
+
+00:11:41.320 --> 00:12:00.360
+<v SPEAKER_2>I totem informativi, vari device in giro per le strutture, poi c'è un capitolo enorme che forse è meglio che non apriamo oggi sulla parte operation technology, diciamo, un altro mondo enorme dove il problema è semplicemente amplificato, cioè questo problema è semplicemente amplificato.
+
+00:12:00.360 --> 00:12:09.620
+<v SPEAKER_2>Però il primo problema che noto prima, diciamo, ostacolo che ho notato, è che non si ha bene l'idea di che cosa si vuole gestire.
+
+00:12:09.620 --> 00:12:13.080
+<v SPEAKER_2>Primo elemento che genera confusione.
+
+00:12:13.080 --> 00:12:13.940
+<v SPEAKER_2>Quindi cosa succede?
+
+00:12:13.940 --> 00:12:40.400
+<v SPEAKER_2>Che io penso di avere sotto controllo i miei endpoints, perché ce li ho dentro, ad esempio, l'assetti inventory del sistema di ticketing, e i miei server, perché c'ho negli inventory del mio cluster VMware, e quindi ho i miei 500, 1000 items che conosco bene, poi faccio una prima discovery completa e vengono fuori tre volte quelli che pensavo di dover gestire, perché mi sono dimenticato delle classi di oggetti, semplicemente.
+
+00:12:40.620 --> 00:12:45.860
+<v SPEAKER_2>Non ho pensato al fatto che ci sono altri classi di oggetti che dovrei poter gestire.
+
+00:12:45.860 --> 00:13:08.360
+<v SPEAKER_2>Probabilmente si nota in tutto questo sproloquio, si nota che la parte fondante di buona parte della governance è sapere su cosa sto facendo governance, quindi avere almeno un'idea di quali sono gli asset e i sistemi su cui voglio fare governance, se no partiamo da delle fondamenta poco solide, evidentemente.
+
+00:13:08.360 --> 00:13:22.060
+<v SPEAKER_2>Se faccio benissimo il mio lavoro in ambito security su una porzione della superficie, il resto me lo dimentico, sarò stato bravissimo su quella porzione, però di fatto non ho governato un altro pezzo di asset e quindi di fatto ho lavorato male.
+
+00:13:23.540 --> 00:13:28.980
+<v SPEAKER_1>Allora, direi che abbiamo prima fissato un punto che a pare ovvio è partire dalla governance.
+
+00:13:28.980 --> 00:13:47.300
+<v SPEAKER_1>Lasciamolo semplificare, è in qualche modo fermarsi un attimo dall'operatività e fare un passo indietro e guardare la situazione da un punto più alto e decidere, ripeto più o meno le tue parole, decidere da dove vogliamo partire, che cosa vogliamo iniziare a controllare.
+
+00:13:47.300 --> 00:13:59.560
+<v SPEAKER_1>Quindi definire una classe di oggetti e anche decidere che cosa vogliamo fare di questa classe di oggetti, come classificarla, a quale livello di importanza dadi e via dicendo.
+
+00:13:59.560 --> 00:14:07.480
+<v SPEAKER_1>Una volta che abbiamo fatto questo passo, che passiamo in termini, non è neanche il primo passo, è proprio l'iniziale, la premessa.
+
+00:14:08.380 --> 00:14:12.980
+<v SPEAKER_1>Il passo iniziale in realtà è ok, cominciamo ad avvicinarci alla verità.
+
+00:14:12.980 --> 00:14:19.920
+<v SPEAKER_1>E quindi concordiamo entrambi che la verità, per la parte diciamo dispositivi, ce l'abbiamo sulla rete.
+
+00:14:19.920 --> 00:14:24.040
+<v SPEAKER_1>Poi nello specifico a livello all'interno di un'azienda, a livello della rete.
+
+00:14:24.040 --> 00:14:33.900
+<v SPEAKER_1>Poi per un'azienda che ha tanti dispositivi, come dire, tanti lavoratori che lavorano in mobilità, la rete in realtà è molto meno, sta da qualche altra parte.
+
+00:14:35.480 --> 00:14:38.180
+<v SPEAKER_1>Esatto, probabilmente è l'elenco dipendenti che viene da HR.
+
+00:14:38.180 --> 00:14:55.000
+<v SPEAKER_1>Comunque il senso è, cerchiamo di avvicinarci dove c'è la verità assoluta, quindi proprio l'elenco dipendenti per cui viene staccato il cedolino mensile, ecco, se viene pagato probabilmente dipendente, e cominciare a fare un assessment, ad analizzare lì.
+
+00:14:55.040 --> 00:15:03.980
+<v SPEAKER_1>Partiamo da lì, quindi partiamo da l'IP, da quello che c'è in rete, dall'elenco di dipendenti e vediamo se quello che trovo è quello che mi aspetta.
+
+00:15:03.980 --> 00:15:05.700
+<v SPEAKER_1>Quindi c'è un primo confronto.
+
+00:15:05.700 --> 00:15:25.500
+<v SPEAKER_1>L'elenco dei dipendenti, quindi di conseguenze ai dispositivi che hanno, che dovrebbero essere tracciati da qualche parte, un asset inventory, andiamo a vedere se effettivamente c'è un EDR installato, che in realtà stiamo già coinvolgendo uno, l'elenco dei dipendenti che sta da risorse umane.
+
+00:15:27.480 --> 00:15:57.660
+<v SPEAKER_1>Qualcuno che gli ha dato uno più di dispositivi, sperando che siano tracciati da qualche parte, quindi un asset inventory, un foglio excel, mi auguro che da qualche parte ci sia scritto, o almeno le lettere di consegna dei dispositivi, e ci integriamo con il sistema EDR, perché chiaramente non faremo questa cosa a mano, ma qualcuno scriverà una serie di integrazioni che confronteranno questi dati e daranno un land alert se c'è un mismatch, e spoiler, all'inizio ce ne saranno tantissimi.
+
+00:15:57.660 --> 00:16:05.360
+<v SPEAKER_2>Tra l'altro, giustamente tu dicevi prima che c'è un effort di integrazione, è vero, c'è un effort di integrazione da considerare.
+
+00:16:05.360 --> 00:16:11.360
+<v SPEAKER_2>Sarebbe bello avere questa chimera della soluzione che è in grado di fare tutto.
+
+00:16:11.360 --> 00:16:22.640
+<v SPEAKER_2>Io non l'ho mai vista, ho visto soluzioni che fanno tanto, ma tutto no, e quindi è vero, c'è sempre un effort di integrazione, da considerare.
+
+00:16:22.640 --> 00:16:58.560
+<v SPEAKER_2>C'è da dire, e qua è più nella tematica della selezione delle soluzioni, quindi magari la trasferiamo dopo questa domanda, c'è da dire che molte soluzioni, soprattutto la fascia dei vendor, con più esperienza su certi temi, mettono in esposizione diversi connector, non per scontate l'API, cioè non per scontato che una soluzione parte con l'idea di potersi integrare con qualcos'altro, ma c'è alcune soluzioni che proprio si sono posti al problema dell'integrazione, e quindi erogano, escono già con dei connector.
+
+00:16:58.560 --> 00:17:13.860
+<v SPEAKER_2>Quindi nel momento in cui, ancora una volta a monte, quando vado a selezionare se ho una nuova esigenza, ha senso anche valutare questo elemento, visto che dovrei a un certo punto volerla integrare con altri oggetti.
+
+00:17:15.920 --> 00:17:18.480
+<v SPEAKER_1>Allora, tu ti hai perscontato le API, sono d'accordo.
+
+00:17:18.480 --> 00:17:20.740
+<v SPEAKER_2>Però non sono così scontati forse.
+
+00:17:20.740 --> 00:17:21.580
+<v SPEAKER_1>Esatto.
+
+00:17:21.580 --> 00:17:27.440
+<v SPEAKER_1>Diciamo che oggigiorno do per obsoleti i prodotti che non hanno un set di API complete.
+
+00:17:27.940 --> 00:17:45.340
+<v SPEAKER_1>E dove API complete indico che si può davvero fare tutto tramite API, e quindi già tutti i software legacy sviluppati a partire da trent'anni fa, vent'anni fa anche, probabilmente vanno scartati perché non lo sono o andrebbero riscritti.
+
+00:17:45.340 --> 00:17:51.280
+<v SPEAKER_1>Però di questo parleremo quando si selezionerà una soluzione, come scegliere una soluzione in genere.
+
+00:17:51.280 --> 00:18:49.040
+<v SPEAKER_1>E nel fatto che la soluzione Chimera che fa tutto, sono d'accordo con te, una Chimera di fatto non esiste, ma in qualche modo non può esistere secondo me, perché ogni vendor ha la sua visione di come le aziende dovrebbero lavorare, tende a essere un silos, è vero che fanno il connector giustamente, però le integrazioni tra vendor diversi, perché di questo stiamo parlando, bisogna scriverseli sostanzialmente, e i vendor tendono a essere monopolisti quasi, quindi vogliono darti il loro ecosistema che loro giustamente, nella loro visione, considerano completi o considerano a step in fase di completezza, e quindi alla fine non c'è verso, cioè per far parlare delle soluzioni diverse bisogna scrivere o farsi scrivere le integrazioni, non vedo altra strada.
+
+00:18:49.040 --> 00:19:14.480
+<v SPEAKER_2>Sì sì, ma di solito quello che vedo anche poi su campo è che se è motivata, se quella è forte motivato, perché diciamo diventa questione anche di di ritorno dell'investimento da quel punto di vista, allora si ha senso che l'azienda ammetta delle risorse su una specifica integrazione.
+
+00:19:14.480 --> 00:19:26.280
+<v SPEAKER_2>L'importante è sempre partire da un'esigenza specifica, cioè che non sia una cosa come dire che non vengono usate le future solo perché ci sono, ma che vengono usate le future perché ci servono.
+
+00:19:27.060 --> 00:19:32.800
+<v SPEAKER_2>Questo deve essere il traino di una funzionalità e quindi anche di un'integrazione.
+
+00:19:32.800 --> 00:19:51.660
+<v SPEAKER_2>Quindi integro il sistema di asset management che ho acquisito con il sistema di ticketing, non perché me lo dice il framework che sto seguendo in maniera settica, ma perché voglio ad esempio gestire i case associati all'asset.
+
+00:19:51.660 --> 00:20:01.340
+<v SPEAKER_2>Cioè voglio avere un vantaggio da quell'integrazione, perché se poi non lo faccio sono sprecando tempo e soldi da quel punto di vista.
+
+00:20:01.340 --> 00:20:19.480
+<v SPEAKER_2>Poi ovviamente il motivo per il quale ha senso farlo dovrebbe essere che voglio, in caso specifico ad esempio, sapere quanti case ho in gestione su un certo asset, su un certo servizio, dovrebbe aiutarmi a capire se quell'asset o quel servizio è un asset o un servizio che mi porta via molto tempo, che sta facendo bene il suo lavoro.
+
+00:20:19.480 --> 00:20:40.180
+<v SPEAKER_2>Cioè quindi diventa un tema proprio di gestione, di effettiva governance dell'asset, se ho i dati che mi aiutano a capirlo, sennò vado a naso, come fanno moltissime aziende, vanno un po a sentimento, perché non hanno un dato a supporto che li possa aiutare.
+
+00:20:40.180 --> 00:20:56.900
+<v SPEAKER_1>Stiamo prendo una porta dietro l'altra, ci metteremo mesi a chiuderle tutte, però volevo fare un passo indietro e riflettere su come siamo arrivati nella situazione odierna, che è anche un po figlio di come le aziende scelgono una tecnologia.
+
+00:20:57.480 --> 00:21:23.560
+<v SPEAKER_1>Sempre in base alle DR, perché forse è l'argomento più caldo che io noto in questo periodo, ma noto che le aziende, partendo da una mentalità che è tipicamente IT, quindi non security, tanto meno, chiamiamolo fancy security, quindi quella mentalità che chiamo un po distruttiva, che ti riesce a percepire il punto debole di una soluzione.
+
+00:21:23.560 --> 00:21:44.920
+<v SPEAKER_1>Diciamo, le persone che io conosco si sono dotate di tecnologia, in ambito security, perché avevano l'urgenza di fare qualcosa, quindi vedevano nei giornali, da tablici di qua, da tablici di là, da un'azienda ferma, dipendenti a casa, eccetera, eccetera, e sentivano proprio l'urgenza di fare qualcosa.
+
+00:21:44.920 --> 00:21:55.400
+<v SPEAKER_1>In questo fare qualcosa hanno scelto, con la migliore intenzione possibile, delle tecnologie, di dotarsi di alcune tecnologie che potessero ridurre il rischio.
+
+00:21:55.400 --> 00:22:03.540
+<v SPEAKER_1>Ma passami il termine, era una scelta dovuta più all'istinto, all'emozione, della paura nel caso specifico, più che una scelta ragionata.
+
+00:22:04.240 --> 00:22:23.120
+<v SPEAKER_1>E quindi di strato in strato hanno migliorato il firewall, hanno comprato le DR, hanno comprato un tipo di backup immutabile, o comunque una soluzione di backup diversa, si sono dotati di un piano di DR, e l'hanno sommato uno a uno.
+
+00:22:23.120 --> 00:22:30.740
+<v SPEAKER_1>In questo creare strati su strati, io noto due debolezze, le noto più o meno dappertutto.
+
+00:22:31.460 --> 00:22:37.840
+<v SPEAKER_1>La prima è che sono state aggiunte in questi livelli di sicurezza senza disegnarli.
+
+00:22:37.840 --> 00:22:44.760
+<v SPEAKER_1>Quindi sono state aggiunte da chi si occupa di IT, e non è chi si occupa di security, magari dopo ci spendiamo due parole.
+
+00:22:44.760 --> 00:23:02.100
+<v SPEAKER_1>E quindi è molto probabile, oserei dire certo, che nel design, nell'aggiunta di queste tecnologie, c'è un forte, un enorme errore logico di fondo che fa crollare tutto come un castello di carta, rendendo tutto il castello più o meno inutile.
+
+00:23:02.100 --> 00:23:10.780
+<v SPEAKER_1>E la seconda problematica che io vedo, sempre questo dappertutto, è che questo strato enorme di tecnologie non è presidiato.
+
+00:23:10.780 --> 00:23:21.380
+<v SPEAKER_1>Quindi si sono dotati delle DR migliore di questa terra, che come dice Gardner, sappiamo tutti qual è, ma nessuno lo guarda.
+
+00:23:21.380 --> 00:23:26.140
+<v SPEAKER_1>Quindi da una parte non si sa se le DR effettivamente copre tutti gli endpoint che dovrebbe coprire.
+
+00:23:27.060 --> 00:23:48.600
+<v SPEAKER_1>Dall'altra, se ci sono allarmi, continui o cose da sistemare, o madware o tentativi di attacco magari già interni, questi continuano finché non troveranno la chiave per bypassare le DR che comunque, anche se migliori, non hanno mai la certezza della completezza, perché nessuno li guarda di fatto.
+
+00:23:51.000 --> 00:24:04.120
+<v SPEAKER_2>Signiamoci anche il punto giorno di parlare di EDR in maniera specifica, perché ci sono degli enormi malintesi su quello che fa l'EDR e su quello che viene percepito come funzione dell'EDR.
+
+00:24:04.120 --> 00:24:20.420
+<v SPEAKER_1>Però abbiamo detto EDR, gestione delle vulnerabilità, mi ricordo che poi nelle segno, poi abbiamo parlato di scelta delle tecnologie, come si compre una tecnologia, e vabbè, però aggiungeremo la lista, e poi tutte quelle che ci verranno consigliate.
+
+00:24:20.420 --> 00:24:29.240
+<v SPEAKER_2>Però è vero, il fatto di urgenza ha generato delle reazioni a volte molto impulsive.
+
+00:24:29.240 --> 00:24:32.940
+<v SPEAKER_2>E...
+
+00:24:32.940 --> 00:24:37.560
+<v SPEAKER_2>Ancora una volta, se nell'ambito IT mi sento di...
+
+00:24:37.560 --> 00:24:45.280
+<v SPEAKER_2>utilizzavo la parola esigenza, vado su una soluzione, prima ancora, prima ancora di dire soluzione.
+
+00:24:45.280 --> 00:24:49.080
+<v SPEAKER_2>Mi servono delle funzionalità, perché ho un'esigenza.
+
+00:24:49.080 --> 00:24:55.140
+<v SPEAKER_2>E poi cerco quelle funzionalità, quelle che mi servono, nelle soluzioni e quindi seleziono in base sulla funzionalità.
+
+00:24:55.140 --> 00:25:00.440
+<v SPEAKER_2>Ho spoilerato un pezzo dell'argomento di come si potrebbe essere, quale potrebbe essere una via per selezionare la soluzione.
+
+00:25:00.440 --> 00:25:05.320
+<v SPEAKER_2>Quindi se nell'ambito IT parliamo di esigenza, perché devo fare delle cose, quindi mi servono delle funzionalità.
+
+00:25:05.320 --> 00:25:12.800
+<v SPEAKER_2>Nell'ambito security, personalmente penso che sia più corretto parlare di rischio.
+
+00:25:12.800 --> 00:25:19.220
+<v SPEAKER_2>Cioè faccio delle scelte perché devo rispondere, devo mitigare dei rischi.
+
+00:25:19.220 --> 00:25:49.540
+<v SPEAKER_2>Quindi prima devo sapere quali sono, per forza, sennò quello che avviene è che o seleziono dei rischi, che potremmo dire general purpose, cioè che vanno sempre bene, che è vero, ci sono dei rischi che sono molto trasversali e valgono per tantissimi contesti, però se faccio così, se non mi guardo veramente dentro, in un valuto che rischio io come entità, come organizzazione, rischio poi di dimenticarmi dei pezzi, ancora una volta.
+
+00:25:49.540 --> 00:25:52.040
+<v SPEAKER_2>Quindi seleziono delle cose sull'onda dell'urgenza.
+
+00:25:55.880 --> 00:26:09.480
+<v SPEAKER_2>Spessissimo, in qualche modo mi sfugge la parola da usare, sollecitati, o comunque sollecitati da quello che è uno storytelling molto mainstream.
+
+00:26:09.480 --> 00:26:13.300
+<v SPEAKER_2>Siamo tutti soggetti a uno mainstream, anche io in prima persona.
+
+00:26:13.300 --> 00:26:19.760
+<v SPEAKER_2>Tutti noi ci facciamo in qualche modo influenzare da quello che è lo storytelling a livello di media generale.
+
+00:26:19.760 --> 00:26:27.580
+<v SPEAKER_2>Quindi io ad esempio che spulcio molto LinkedIn, volente o nonolente, sono influenzato dalle conversazioni che leggo.
+
+00:26:27.580 --> 00:26:30.080
+<v SPEAKER_2>Il mio mondo si costruisce in base a quello che so.
+
+00:26:30.940 --> 00:26:36.180
+<v SPEAKER_2>Se uso quel canale, il mio mondo e i miei ragionamenti girano attorno a quello che aprendo da quel canale.
+
+00:26:36.180 --> 00:26:40.220
+<v SPEAKER_2>Questo è un altro discorso che magari ne parleremo con uno psicologo un giorno.
+
+00:26:40.220 --> 00:26:41.160
+<v SPEAKER_2>Una puntata a parte.
+
+00:26:41.420 --> 00:26:43.340
+<v SPEAKER_1>Sarà molto interessante.
+
+00:26:43.340 --> 00:26:54.660
+<v SPEAKER_2>Però preso atto del fatto che tutti siamo influenzabili, se non facciamo un ragionamento strutturato, faremo un ragionamento sulla base di come siamo stati influenzati, cioè su quello che sappiamo.
+
+00:26:54.660 --> 00:26:56.760
+<v SPEAKER_2>Dimentichiamo il termine influenzato, su quello che conosciamo.
+
+00:26:57.520 --> 00:27:16.000
+<v SPEAKER_2>Quindi se ci limitiamo, se non approfondiamo la conoscenza della nostra struttura, quindi i rischi che abbiamo noi come organizzazione, useremo quelli che conosciamo e che sono nella media delle conversazioni che affrontiamo, delle nozioni che abbiamo acquisito, che in parte saranno coerenti con la nostra organizzazione.
+
+00:27:16.000 --> 00:27:18.780
+<v SPEAKER_2>E però non è detto che siamo tutti là, molto semplicemente.
+
+00:27:18.820 --> 00:27:19.600
+<v SPEAKER_2>Quindi cosa succede?
+
+00:27:19.600 --> 00:27:24.400
+<v SPEAKER_2>Che tutti comprano le DR, perché serve a tutti effettivamente.
+
+00:27:24.400 --> 00:27:43.060
+<v SPEAKER_2>Quello che magari ci si dimentica, faccio un esempio caso reale, che le DR viene implementato su tutta la parte endpoint, perché gli è stato spiegato che gli utenti sono disattenti, devono essere meglio presi dagli eccetera, e sulle soluzioni server magari viene usata un'altra soluzione, perché era quella usata storicamente e non viene implementato.
+
+00:27:43.060 --> 00:28:04.940
+<v SPEAKER_2>Oppure si capisce che va messo tutto il mondo IT, le DR, ma ci si dimentica del mondo OT o di altri dispositivi, quindi cominciano a mancare i pezzi, i famosi pezzi cominciano a mancare, perché non ho chiaro il rischio, non so da cosa mi devo difendere esattamente, e quindi seleziono su dei presupposti, diciamo, sbagliati, nel senso non completi quantomeno.
+
+00:28:07.300 --> 00:28:21.400
+<v SPEAKER_1>Allora ti propongo un istante di pausa, così spezzo il podcast, e poi passiamo un attimo alla parte di rischio che secondo me vale la pena spiegare meglio.
