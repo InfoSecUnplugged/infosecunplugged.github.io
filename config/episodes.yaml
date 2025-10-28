@@ -447,9 +447,11 @@
     conversazione ricca di spunti pratici per chi lavora nell''ambito delle reti e
     della sicurezza informatica.'
   tags:
-  - Datacenter
-  - IT Architecture
-  - Networking
+  - Detection
+  - Governance
+  - OT Security
+  - Risk Management
+  - SOC
   title: Approfondimento sulle reti datacenter
   url: https://www.spreaker.com/episode/0x13-approfondimento-sulle-reti-datacenter--63459253
 - authors:
