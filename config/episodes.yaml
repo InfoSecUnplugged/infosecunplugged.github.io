@@ -418,17 +418,11 @@
     utile e concreta per chi deve orientarsi nella complessità della rete aziendale
     e mantenere un equilibrio tra operatività e protezione.
   tags:
-  - Business Continuity
-  - CISO
-  - Cloud
-  - Firewall
-  - Incident Response
-  - IT Governance
-  - Networking
+  - Detection
+  - Governance
+  - OT Security
   - Risk Management
   - SOC
-  - Threat Detection
-  - Vulnerability Management
   title: Riflessioni sulla rete (design, sicurezza, approccio)
   url: https://www.spreaker.com/episode/0x12-riflessioni-sulla-rete-design-sicurezza-approccio--63459252
 - authors:
