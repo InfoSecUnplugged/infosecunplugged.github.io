@@ -1,4 +1,4 @@
-Siamo felici di ritrovarvi in un nuovo episodio di *Info Sec. Unplugged*. Questa volta vi parliamo dai nostri nuovi uffici di Verona, ancora da inaugurare. Abbiamo deciso di affrontare un tema centrale per chi gestisce la sicurezza informatica aziendale: la rete, vista con gli occhi di un IT manager o di un CISO che entra in un’azienda già strutturata.
+Siamo felici di ritrovarvi in un nuovo episodio di Info Sec. Unplugged. Questa volta vi parliamo dai nostri nuovi uffici di Verona, ancora da inaugurare. Abbiamo deciso di affrontare un tema centrale per chi gestisce la sicurezza informatica aziendale: la rete, vista con gli occhi di un IT manager o di un CISO che entra in un’azienda già strutturata.
 
 Quando si eredita una rete esistente, la prima domanda che ci poniamo è: come è stata gestita finora? Quali sono i punti di accesso, le aree sensibili, i servizi esposti? In un’azienda multisede, poi, entrano in gioco connessioni tra filiali, VPN, MPLS e tutta una serie di infrastrutture che spesso non sono documentate. È raro trovare uno schema aggiornato e completo della rete, ma è da lì che bisogna partire.
 

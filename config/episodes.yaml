@@ -393,13 +393,11 @@
     sicurezza, la consulenza e la gestione dei progetti, evidenziando i rischi legati
     a informazioni incomplete o obsolete.
   tags:
-  - Business Continuity
-  - CISO
+  - Automazione
   - Compliance
-  - Incident Response
-  - IT Governance
-  - IT Management
+  - Governance
   - Risk Management
+  - Vulnerability Management
   title: Documentazione tecnica
   url: https://www.spreaker.com/episode/0x11-documentazione-tecnica--63302501
 - authors:
@@ -676,3 +674,32 @@
   - Tabletop Exercise
   title: DR e Cyber recovery (parte 3)
   url: https://www.spreaker.com/episode/0x1c-dr-e-cyber-recovery-parte-3--68180691
+- authors:
+  - Andrea Dainese
+  - Mattia Parise
+  - Rocco Sicilia
+  date: '20251103'
+  highlight_links:
+  - title: Highlight (video) TODO
+    url: https://youtu.be/-nOqqPeSPa8 TODO
+  id: 29
+  length: 61
+  published: true
+  summary: 'In questa puntata “extended” di Info Sec. Unplugged, Andrea Dainese e
+    Rocco Sicilia accolgono Mattia Parise, Solution Architect specializzato in cyber
+    resilience. Insieme affrontano un tema cruciale per la sicurezza aziendale: la
+    differenza – e i possibili punti di contatto – tra Disaster Recovery e Cyber Recovery.
+    Dalla progettazione delle infrastrutture ai processi di testing, dall’indipendenza
+    delle copie di backup fino alla necessità di un “clean recovery”, la conversazione
+    esplora le sfide tecniche e organizzative che le aziende devono affrontare per
+    garantire la vera continuità operativa dopo un attacco cyber. Un episodio ricco
+    di esempi concreti, riflessioni pratiche e consigli per evolvere dal semplice
+    backup alla vera cyber resilienza.'
+  tags:
+  - Disaster Recovery
+  - DORA
+  - Governance
+  - NIS
+  - Risk Management
+  title: '[EXT] Cyber Recovery e Disaster Recovery: due mondi (quasi) paralleli'
+  url: https://www.spreaker.com/episode/0x1d-ext-cyber-recovery-e-disaster-recovery-due-mondi-quasi-paralleli--68361685
