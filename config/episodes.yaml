@@ -348,11 +348,10 @@
     le sfide pratiche, e il valore di una corretta governance per dare direzione e
     solidità alle strategie di sicurezza.
   tags:
-  - CISO
+  - Compliance
   - GDPR
   - Governance
-  - ISO27001
-  - IT Governance
+  - NIS
   - Risk Management
   title: La compliance normativa come vantaggio
   url: https://www.spreaker.com/episode/0xf-la-compliance-normativa-come-vantaggio--63071211
@@ -372,9 +371,10 @@
     aspetti tecnici, ma anche le implicazioni pratiche e organizzative per chi subisce
     questi attacchi.
   tags:
-  - Botnet
-  - DDoS
-  - Incident Response
+  - Awareness
+  - Detection
+  - Risk Management
+  - Tabletop Exercise
   - Threat Intelligence
   title: '[EXT] Attacchi DDoS e strategie di sopravvivenza'
   url: https://www.spreaker.com/episode/0x10-ext-attacchi-ddos-e-strategie-di-sopravvivenza--63286769
