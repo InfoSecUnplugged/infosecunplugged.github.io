@@ -303,10 +303,10 @@
     cultura Cyber, pensato per rendere la sicurezza più vicina e comprensibile.
   tags:
   - Awareness
-  - Incident Response
-  - Malware
-  - Phishing
+  - EDR
+  - GDPR
   - Social Engineering
+  - Threat Intelligence
   title: '[EXT] Account di posta compromesso'
   url: https://www.spreaker.com/episode/0xd-ext-account-di-posta-compromesso--62152485
 - authors:
@@ -324,12 +324,11 @@
     e contenere gli incidenti. Il racconto, basato su esperienze reali, mette in luce
     sia le sfide che le opportunità per migliorare la postura di sicurezza.
   tags:
-  - Incident Response
-  - Malware
-  - NTS
-  - Phishing
-  - Threat Intelligence
-  - Vulnerability Assessment
+  - EDR
+  - Governance
+  - Risk Management
+  - SOC
+  - Vulnerability Management
   title: '[PUB] Accesso non consentito (ma possibile)'
   url: https://www.spreaker.com/episode/0xe-pub-accesso-non-consentito-ma-possibile--62386146
 - authors:
