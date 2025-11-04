@@ -117,14 +117,52 @@
         
         <span><a class="text-black" href="../tags/tag-awareness.html">Awareness</a></span>
         
-        <span><a class="text-black" href="../tags/tag-nac.html">NAC</a></span>
+        <span><a class="text-black" href="../tags/tag-governance.html">Governance</a></span>
+        
+        <span><a class="text-black" href="../tags/tag-ot-security.html">OT Security</a></span>
         
         <span><a class="text-black" href="../tags/tag-penetration-testing.html">Penetration Testing</a></span>
+        
+        <span><a class="text-black" href="../tags/tag-risk-management.html">Risk Management</a></span>
         
       </div>
       
     </div>
 
+    
+    <div class="site-section bg-light">
+      <div class="container" data-aos="fade-up">
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="font-weight-bold text-black">Trascrizione testuale rileaborata da IA</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Siamo tornati con una nuova puntata di Info Sec. Unplugged. Questa volta siamo in trasferta, a Bolzano, pronti per partecipare all’evento NTS di Monaco.</p>
+<p>Riprendiamo da dove ci eravamo lasciati l’ultima volta: avevamo parlato di misure di sicurezza, ma avevamo volutamente lasciato in sospeso il tema del NAC. Io volevo fare qualche esperimento prima di tornarci sopra — e li ho fatti. Ora possiamo raccontarli.</p>
+<p>Abbiamo voluto verificare quanto fosse possibile “bypassare” un sistema NAC, ovvero aggirare i controlli di autenticazione di rete. L’esperimento parte da un’idea semplice: creare un dispositivo completamente trasparente che possa riutilizzare il canale di autenticazione 802.1X di un client già connesso. Così il dispositivo diventa invisibile: passa attraverso la rete senza essere rilevato, a meno che non si disponga di strumenti comportamentali molto sofisticati.</p>
+<p>Le implicazioni sono importanti. Ci dicono molto sul reale livello di sicurezza offerto da certe soluzioni NAC, che spesso vengono considerate risolutive, quando in realtà riducono solo la probabilità di un attacco.</p>
+<p>Siamo partiti con un Raspberry Pi, due porte di rete, un power bank e molta pazienza. Il trucco consiste nel configurare le due interfacce in modalità “transparent”, per far passare i frame senza filtrarli. Abbiamo riutilizzato una patch al kernel di Linux che avevamo sviluppato tempo fa per UNETLAB — un vecchio progetto da cui poi è derivato EVE-NG. Quella patch serve proprio a far transitare frame di livello 2 che normalmente verrebbero bloccati, come quelli 802.1X.</p>
+<p>Con questa base abbiamo ricreato un piccolo bridge trasparente. L’autenticazione più comune che incontriamo è quella per porta: quando un client autentica la propria porta, tutto ciò che è “a valle” può comunicare liberamente. È uno schema ancora diffuso, anche se datato. L’altro metodo, l’autenticazione per MAC address, è più rigido e difficile da aggirare, ma anche in questo caso, con qualche accorgimento, è possibile.</p>
+<p>Nel nostro test abbiamo voluto spingerci oltre: simulare un attacco reale, mettendoci in mezzo al traffico tra un dispositivo e la rete, senza che nessuno se ne accorgesse. L’obiettivo era impersonare il dispositivo legittimo, ma senza scollegarlo fisicamente. Non sempre infatti è possibile — pensiamo a un server o a un dispositivo critico. Così abbiamo creato un software in grado di lavorare in kernel space, copiando e inoltrando i frame in tempo reale.</p>
+<p>Abbiamo battezzato il progetto “Predator P”, ma non lo abbiamo reso pubblico per motivi evidenti: non vogliamo diffondere strumenti che possano essere usati per scopi illegali. In pratica, il dispositivo si inserisce in rete, impara passivamente gli indirizzi IP e MAC, e poi replica il comportamento del client, riservandosi un piccolo intervallo di porte per comunicazioni proprie. È invisibile: lo switch non lo vede, perché non crea un nuovo canale di autenticazione.</p>
+<p>Il dispositivo diventa così una sorta di “captatore”, capace di intercettare traffico e impersonare un client già autenticato. È un test di laboratorio, certo, ma mostra chiaramente quanto certe soluzioni NAC siano più fragili di quanto si pensi.</p>
+<p>Questo ci porta al punto centrale: troppe volte vediamo implementare soluzioni NAC come se fossero una bacchetta magica. In realtà, si tratta di protocolli nati molti anni fa, con un’idea di sicurezza oggi superata. L’autenticazione per MAC address, ad esempio, si basa su informazioni facilmente falsificabili. Anche i certificati — che restano l’opzione più solida — possono essere rubati e riutilizzati.</p>
+<p>Inoltre, l’applicazione pratica di un NAC è complessa e costosa. Dispositivi in standby, stampanti, apparecchi industriali: sono tutti elementi che spesso non supportano le modalità di autenticazione più sicure. Il risultato è che si creano “zone grigie” nella rete, dove il controllo si allenta.</p>
+<p>La lezione, per noi, è che serve sempre una valutazione tecnica consapevole. Non basta fidarsi del datasheet di un vendor: bisogna capire fino in fondo cosa fa una tecnologia, e soprattutto cosa non può fare.</p>
+<p>Disegnare un’infrastruttura sicura significa accettare che alcune soluzioni vadano bene solo in certi contesti. Ad esempio, un approccio alternativo potrebbe essere quello di trattare la rete “campus” come una zona ad alto rischio, una sorta di DMZ interna, e proteggere l’accesso ai servizi con VPN o proxy. Oppure passare a modelli “wifi only”, in cui il canale è crittografato nativamente.</p>
+<p>Un altro strumento sottovalutato è la Private VLAN, che consente di isolare i dispositivi all’interno della stessa rete, impedendo comunicazioni dirette tra client. È un modo semplice per ridurre il rischio di movimenti laterali, e in contesti come hotel, aeroporti o ambienti industriali potrebbe evitare molti problemi.</p>
+<p>Naturalmente ogni soluzione va calibrata: nel VoIP, per esempio, la comunicazione diretta tra telefoni può richiedere eccezioni. Ma il principio resta lo stesso: isolare, segmentare, ridurre la superficie d’attacco.</p>
+<p>Alla fine tutto si riduce a una questione di consapevolezza. Le aziende spesso sovrastimano le tecnologie che usano e le sottovalutano al tempo stesso: pensano che risolvano ogni problema, ma poi non sfruttano nemmeno il 10% delle loro potenzialità.</p>
+<p>Serve un cambio di mentalità. La sicurezza non si compra in una scatola: si progetta, si configura e si mantiene. Significa conoscere le proprie reti, capire dove ci sono limiti tecnici o vincoli operativi, e trovare soluzioni realistiche.</p>
+<p>E sì, a volte significa anche convivere con apparati vecchi di quindici anni, “croccanti” come diciamo noi, ma rinforzati con un po’ di hardening e buone pratiche. L’importante è sapere cosa si sta proteggendo e con quali strumenti.</p>
+<p>Ci lasciamo con la promessa di riprendere il discorso nella prossima puntata, per approfondire i casi reali di attacco in reti con NAC — e come spesso, a causa di errori di configurazione o incomprensioni, i controlli saltano completamente.</p>
+<p>Alla prossima.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     
 
     
@@ -210,23 +248,6 @@
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-12.html">0xc - Ripartiamo dall'inizio</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/09/2024 <span class="sep">/</span> 64 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia introducono un nuovo percorso di riflessione e confronto dedicato al ruolo dell'IT manager, del CIO e del CISO. L'episodio apre una serie di conversazioni pensate per esplorare i passaggi chiave che un professionista IT affronta quando entra in una nuova azienda o in una nuova fase della propria carriera: dalla mappatura dell'infrastruttura tecnologica fino alle scelte strategiche di sicurezza e governance. Un dialogo pratico e autentico sul modo di pensare e agire nella gestione dell'IT moderno.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
                   <a href="episode-9.html">0x9 - Attacco di prossimità con rogue device e strategie di difesa (parte 1)</a>
                 </h3>
                 <div class="text-white mb-3">
@@ -286,6 +307,227 @@
                   </span>
                 </div>
                 <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema degli EDR, analizzando miti, confusione e realtà dietro le principali soluzioni di cybersecurity. Partendo dal quadrante Gartner, i due esplorano come scegliere una piattaforma di difesa efficace, evidenziando le differenze tra teoria e pratica nell'implementazione delle tecnologie di sicurezza.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-29.html">0x1d - [EXT] Cyber Recovery e Disaster Recovery: due mondi (quasi) paralleli</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Mattia Parise, Rocco Sicilia <span class="sep">/</span> 03/11/2025 <span class="sep">/</span> 61 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata “extended” di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia accolgono Mattia Parise, Solution Architect specializzato in cyber resilience. Insieme affrontano un tema cruciale per la sicurezza aziendale: la differenza – e i possibili punti di contatto – tra Disaster Recovery e Cyber Recovery. Dalla progettazione delle infrastrutture ai processi di testing, dall’indipendenza delle copie di backup fino alla necessità di un “clean recovery”, la conversazione esplora le sfide tecniche e organizzative che le aziende devono affrontare per garantire la vera continuità operativa dopo un attacco cyber. Un episodio ricco di esempi concreti, riflessioni pratiche e consigli per evolvere dal semplice backup alla vera cyber resilienza.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-28.html">0x1c - DR e Cyber recovery (parte 3)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 20/10/2025 <span class="sep">/</span> 33 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa terza e ultima parte dedicata al Disaster Recovery, Andrea Dainese e Rocco Sicilia chiudono il cerchio sul tema della cyber e disaster recovery, passando dalla teoria alla pratica. Si parla di testing, automazione, rollback, cloud e normative come DORA, ma anche della necessità di esercitarsi concretamente con tabletop exercise per comprendere come reagire a scenari di crisi. La puntata introduce inoltre il tema della Cyber Recovery, sempre più centrale in un contesto dove gli incidenti informatici sono più probabili dei disastri fisici.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-27.html">0x1b - DR e Cyber recovery (parte 2)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 06/10/2025 <span class="sep">/</span> 56 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">Questa puntata di Info Sec. Unplugged è dedicata al tema del disaster recovery e alla sua evoluzione nell'era degli attacchi Cyber. Andrea Dainese e Rocco Sicilia accompagnano l'ascoltatore nella progettazione di processi e tecnologie per il DR, evidenziando le differenze tra esigenze di business e scelte tecniche, le sfide offerte dalle nuove normative e l'importanza della resilienza. Una chiacchierata pragmatica e divulgativa, ricca di aneddoti e consigli pratici per chi si occupa di sicurezza informatica e gestione delle infrastrutture IT.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-26.html">0x1a - DR e Cyber recovery (parte 1)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/09/2025 <span class="sep">/</span> 42 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged si esplora il tema (spesso sottovalutato) del disaster recovery in risposta agli attacchi informatici. Si analizzano i limiti delle strategie tradizionali, l'importanza della separazione tra ambienti, le implicazioni dei backup immutabili e delle golden image, e come una corretta automazione e gestione dei privilegi possano fare la differenza tra la resilienza e la perdita totale dei dati. Il racconto si arricchisce di esperienze reali e casi pratici tipici delle aziende italiane, con un occhio alle nuove sfide aperte dal GDPR e dalla digitalizzazione delle infrastrutture.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-22.html">0x16 - Sicurezza ICS/OT (da un evento NTS)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 17/05/2025 <span class="sep">/</span> 33 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Infosec Unplugged, Andrea Dainese e Rocco Sicilia affrontano i temi della sicurezza industriale e delle tecnologie operative (OT). Partendo da un evento dedicato al settore, condividono esperienze e riflessioni sui principali problemi che le aziende si trovano ad affrontare quando approcciano la cybersecurity in contesti industriali, con particolare attenzione al ruolo di CIO e CISO nella gestione dei rischi.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-19.html">0x13 - Approfondimento sulle reti datacenter</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 13/01/2025 <span class="sep">/</span> 46 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andra Dainese e Rocco Sicilia affrontano il tema del data center network design con un approccio tecnico e concreto. Dopo aver discusso in precedenza delle reti a livello campus, l'attenzione si sposta ora sulle esigenze delle aziende enterprise: dalla ridondanza alla sicurezza, fino alle scelte progettuali legate alla dimensione delle infrastrutture. Una conversazione ricca di spunti pratici per chi lavora nell'ambito delle reti e della sicurezza informatica.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-18.html">0x12 - Riflessioni sulla rete (design, sicurezza, approccio)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 30/12/2024 <span class="sep">/</span> 39 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del networking visto con gli occhi dell'IT manager. Partendo dal caso tipico di chi eredita una rete già esistente in azienda, discutono di come valutare l'infrastruttura, identificare aree sensibili, gestire punti di accesso e servizi, e impostare strategie di sicurezza efficaci. Una chiacchierata utile e concreta per chi deve orientarsi nella complessità della rete aziendale e mantenere un equilibrio tra operatività e protezione.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-17.html">0x11 - Documentazione tecnica</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/12/2024 <span class="sep">/</span> 59 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema cruciale della documentazione in azienda, vista dal punto di vista di CIO, IT manager e CISO. La conversazione esplora l'importanza di avere procedure, manuali e documentazione di rete sempre aggiornati per supportare la sicurezza, la consulenza e la gestione dei progetti, evidenziando i rischi legati a informazioni incomplete o obsolete.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-15.html">0xf - La compliance normativa come vantaggio</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 02/12/2024 <span class="sep">/</span> 47 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema della compliance in ambito IT e sicurezza informatica. Si discute di come un CISO o un IT manager, entrando in azienda, debba gestire framework, certificazioni e processi già esistenti oppure costruirne di nuovi. La conversazione esplora il percorso di maturazione delle organizzazioni rispetto alla compliance, le sfide pratiche, e il valore di una corretta governance per dare direzione e solidità alle strategie di sicurezza.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-14.html">0xe - [PUB] Accesso non consentito (ma possibile)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/10/2024 <span class="sep">/</span> 33 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata si esplorano le attività di offensive security condotte sul campo, con esempi pratici di attacchi e difese aziendali. Viene discusso cosa significa testare la resilienza di un'organizzazione contro minacce Cyber, come individuare i punti d'ingresso più comuni e quali sono le strategie per gestire e contenere gli incidenti. Il racconto, basato su esperienze reali, mette in luce sia le sfide che le opportunità per migliorare la postura di sicurezza.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-12.html">0xc - Ripartiamo dall'inizio</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/09/2024 <span class="sep">/</span> 64 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia introducono un nuovo percorso di riflessione e confronto dedicato al ruolo dell'IT manager, del CIO e del CISO. L'episodio apre una serie di conversazioni pensate per esplorare i passaggi chiave che un professionista IT affronta quando entra in una nuova azienda o in una nuova fase della propria carriera: dalla mappatura dell'infrastruttura tecnologica fino alle scelte strategiche di sicurezza e governance. Un dialogo pratico e autentico sul modo di pensare e agire nella gestione dell'IT moderno.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-1.html">0x1 - Orchestrazione di sistemi di sicurezza (parte 1)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 30/11/2023 <span class="sep">/</span> 28 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa prima puntata di Info Sec. Unplugged, gli autori avviano una conversazione informale sul tema dell'orchestrazione delle soluzioni di sicurezza informatica. Si discute di come, nelle aziende, gli strumenti di sicurezza vengano spesso gestiti come sistemi isolati ('silos') e non comunichino tra loro, con tutte le inefficienze che ne derivano. Il dialogo affronta le sfide della collaborazione tra strumenti di cybersecurity, la maturità organizzativa necessaria per integrarli, e il ruolo dei security manager e dell'IT management nel promuovere una visione unitaria della sicurezza aziendale.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-2.html">0x2 - Orchestrazione di sistemi di sicurezza (parte 2)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 01/12/2023 <span class="sep">/</span> 23 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata si affronta il tema del rischio in modo approfondito e pragmatico. Gli ospiti riflettono su come il concetto di rischio, spesso percepito come qualcosa di astratto, debba invece essere calato in uno scenario concreto fatto di probabilità, impatti e modelli di gestione. Si parla di cybersecurity, infrastrutture IT, e dell'importanza di costruire e testare strategie di difesa solide, fino alla cosiddetta "prova del nove": verificare se ciò che si è progettato regge davvero alle minacce reali. Un episodio utile per chi si occupa di sicurezza informatica, risk management e continuità operativa.</p>
               </div>
             </div>
           </div>

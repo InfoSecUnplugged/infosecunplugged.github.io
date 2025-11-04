@@ -256,8 +256,10 @@
     problematiche legate alla sicurezza degli switch e delle reti aziendali.
   tags:
   - Awareness
-  - NAC
+  - Governance
+  - OT Security
   - Penetration Testing
+  - Risk Management
   title: '802.1x bypass: riflessioni sugli impatti e sgli approcci per ridurre il
     rischio'
   url: https://www.spreaker.com/episode/0xb-802-1x-bypass-riflessioni-sugli-impatti-e-sgli-approcci-per-ridurre-il-rischio--60187964
@@ -278,13 +280,11 @@
     Un dialogo pratico e autentico sul modo di pensare e agire nella gestione dell''IT
     moderno.'
   tags:
-  - Awareness
-  - Business Continuity
-  - CIO
-  - CISO
-  - Cloud Security
-  - Incident Response
-  - IT Governance
+  - Compliance
+  - Disaster Recovery
+  - Governance
+  - Risk Management
+  - SOC
   title: Ripartiamo dall'inizio
   url: https://www.spreaker.com/episode/0xc-ripartiamo-dall-inizio--61809624
 - authors:
