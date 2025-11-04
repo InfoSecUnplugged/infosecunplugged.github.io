@@ -115,18 +115,52 @@
       
       <div class="tags mb-4">
         
-        <span><a class="text-black" href="../tags/tag-awareness.html">Awareness</a></span>
+        <span><a class="text-black" href="../tags/tag-adversary-simulation.html">Adversary Simulation</a></span>
         
-        <span><a class="text-black" href="../tags/tag-incident-response.html">Incident Response</a></span>
+        <span><a class="text-black" href="../tags/tag-detection.html">Detection</a></span>
         
-        <span><a class="text-black" href="../tags/tag-network-infrastructure.html">Network Infrastructure</a></span>
+        <span><a class="text-black" href="../tags/tag-penetration-testing.html">Penetration Testing</a></span>
         
         <span><a class="text-black" href="../tags/tag-red-teaming.html">Red Teaming</a></span>
+        
+        <span><a class="text-black" href="../tags/tag-vulnerability-management.html">Vulnerability Management</a></span>
         
       </div>
       
     </div>
 
+    
+    <div class="site-section bg-light">
+      <div class="container" data-aos="fade-up">
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="font-weight-bold text-black">Trascrizione testuale rileaborata da IA</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Bentornati a tutti a Info Sec. Unplugged!</p>
+<p>Oggi vogliamo parlare di un tema che ci appassiona entrambi: cosa può fare un attaccante una volta che riesce a introdurre fisicamente un dispositivo in una rete target.</p>
+<p>Ci immaginiamo la classica situazione in cui, per qualche motivo, un dispositivo viene collegato a una porta Ethernet libera — una di quelle che, per sbaglio o per superficialità, è attiva e magari non protetta da 802.1X. Da lì, l’obiettivo dell’attaccante è chiaro: capire dove si trova, come configurarsi, e soprattutto come muoversi in rete nel modo più silenzioso possibile.</p>
+<p>Quando ci troviamo in questo contesto, i nostri primi passi sono quasi sempre gli stessi: osserviamo il traffico locale, tentiamo qualche ARP scan per individuare gli host nel dominio di broadcast e, appena possibile, cerchiamo di identificare il gateway. Anche senza un indirizzo IP, si possono ottenere informazioni preziose — basta un po’ di intuito, qualche tentativo e un po’ di analisi a livello 2.</p>
+<p>Uno dei metodi più semplici è partire dall’ARP: è veloce, di solito passa inosservato, e ci permette di mappare rapidamente i dispositivi attivi sulla rete locale. Tuttavia, se vogliamo spingerci oltre, dobbiamo trovare una via verso Internet o verso subnet più ampie, e lì iniziano le cose interessanti.</p>
+<p>Quando si lavora in questo modo, avere un piccolo dispositivo in bridge, trasparente — ad esempio un Raspberry Pi a due porte — può aiutare molto. Inserendolo tra un host e lo switch, possiamo analizzare il traffico che passa, identificare facilmente gateway, comunicazioni, protocolli e pattern di rete. Anche se non possiamo sapere la subnet mask, possiamo dedurla dai comportamenti ARP e dal numero di host attivi, intuendo se si tratta di una /24 o qualcosa di più ampio.</p>
+<p>Durante queste attività ci siamo imbattuti in comportamenti curiosi, come il proxy ARP, che in alcuni casi permette la comunicazione anche quando la subnet è configurata male. È una caratteristica di vecchi ambienti Cisco — oggi quasi sempre disabilitata — che, però, spiega perché certi host “funzionano a metà” pur con subnet sbagliate. È un comportamento utile da riconoscere, perché può far credere che tutto sia a posto, mentre sotto la superficie la rete è mal configurata.</p>
+<p>Un’altra riflessione che ci facciamo sempre è: che tipo di gateway abbiamo davanti? È un semplice switch layer 3 o un firewall con controllo a livello 4 e oltre?
+Lo si può capire da piccoli segnali: se proviamo a connetterci su porte insolite e riceviamo un pacchetto “reset”, probabilmente non c’è un firewall; se invece non riceviamo nulla, il traffico è filtrato. Capirlo presto fa la differenza, perché ci dice quanto possiamo essere rumorosi nelle nostre scansioni successive.</p>
+<p>A proposito di rumorosità: un ARP scan è inevitabilmente visibile, ma raramente genera alert reali — pochi sistemi di detection si preoccupano di una manciata di ARP in più. Tuttavia, se il firewall integra un IPS, in teoria potrebbe segnalarlo. Sta all’attaccante capire quanto “osare”.</p>
+<p>Una volta individuata la rete e il gateway, possiamo iniziare ad analizzare i protocolli di adiacenza — CDP e LLDP, ad esempio. Spesso questi protocolli ci regalano molte più informazioni di quanto si pensi: hostname dello switch, modello, IP di management, numero di porta, e in alcuni casi persino la VLAN associata. In alcune implementazioni LLDP, infatti, viene comunicato anche il VLAN ID, cosa che torna utilissima per l’autoconfigurazione di un dispositivo inserito in rete.</p>
+<p>Da qui nasce l’idea di costruire un sistema che si autoconfigura ascoltando la rete: un piccolo agente che, tramite Scapy o strumenti simili, raccoglie tutto ciò che sente — gateway, DHCP, LLDP, CDP — e, dopo qualche minuto, si autoconfigura in modo coerente, pronto a comunicare verso l’esterno senza farsi notare. È un concetto di automazione “adversarial”, potremmo dire.</p>
+<p>Ma la rete fisica riserva sempre delle insidie. Ad esempio, lo spanning tree protocol: se male configurato, può essere manipolato, causando denial of service o cambi di topologia imprevisti. Non è una tecnica utile per raccogliere informazioni, ma sapere che esiste e che può essere abusato è importante. Lo stesso vale per il VTP (VLAN Trunking Protocol): nella versione 2 era tristemente famoso per la sua assenza di controlli — bastava un frame con un revision number più alto per riscrivere il database VLAN dell’intera infrastruttura. Nella versione 3 il problema è risolto, ma nei contesti legacy capita ancora di trovarlo, e lì basta un errore per spegnere una rete intera.</p>
+<p>Altri due protocolli “sensibili” sono DTP (Dynamic Trunking Protocol) e Voice VLAN. Entrambi possono essere sfruttati per negoziare una porta come trunk anche se nasce come access: in pratica, un attaccante può convincere lo switch a inviargli traffico di più VLAN, ottenendo così visibilità o accesso a segmenti che dovrebbero essere isolati. Lo stesso meccanismo usato dai telefoni IP per collegarsi alla voice VLAN può essere ingannato simulando un dispositivo VoIP. È un piccolo dettaglio tecnico che, però, apre porte inattese.</p>
+<p>Abbiamo anche toccato la tecnica del VLAN hopping, quella che sfrutta frame doppiamente taggati per “saltare” tra VLAN. È una vecchia conoscenza del mondo offensive, ma oggi quasi tutti gli switch moderni hanno contromisure efficaci — e comunque crea un traffico asimmetrico facilmente intercettabile, quindi resta più un esercizio teorico che una reale minaccia.</p>
+<p>Infine, ci siamo ricordati di una vecchia tecnica: saturare la MAC Address Table degli switch, costringendoli a comportarsi come hub e inviando pacchetti ovunque. Funziona solo su hardware datato, e comunque causa rallentamenti pesanti e comportamenti anomali — poco utile se l’obiettivo è restare invisibili.</p>
+<p>Ricapitolando, tra ARP scan, analisi di protocolli di adiacenza, osservazione passiva del traffico, e qualche tentativo controllato di negoziazione o autoconfigurazione, si può raccogliere una quantità sorprendente di informazioni. Spesso bastano dieci minuti per sapere in che rete siamo, chi ci circonda e dove si trova l’uscita verso Internet.</p>
+<p>E se da un lato questa è conoscenza preziosa per chi difende, dall’altro è un promemoria: anche un semplice switch, se non ben configurato, può diventare il miglior alleato di un attaccante.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     
 
     
@@ -144,14 +178,14 @@
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-21.html">0x15 - CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 2)</a>
+                  <a href="episode-10.html">0xa - Attacco di prossimità con rogue device e strategie di difesa (parte 2)</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 10/02/2025 <span class="sep">/</span> 40 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/02/2024 <span class="sep">/</span> 22 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questa puntata si approfondiscono i vantaggi e gli svantaggi nell'affidarsi a figure esterne rispetto a risorse interne all'azienda. Si esplorano due scenari principali: da un lato, i consulenti o collaboratori esterni portano una visione più ampia e competenze diversificate; dall'altro, le figure interne garantiscono una conoscenza approfondita del settore e della realtà aziendale. Una riflessione utile per chi deve decidere come strutturare il proprio team e bilanciare innovazione e continuità.</p>
+                <p class="mb-4">In questa puntata si discute di sicurezza informatica e threat modeling, affrontando il tema del disegno delle reti con una mentalità difensiva. Gli ospiti riflettono sull'importanza di progettare le infrastrutture IT assumendo che alcune macchine possano già essere compromesse, così da limitare l'impatto di eventuali attacchi. La conversazione esplora approcci pratici, la differenza tra vendor e soluzioni di protezione, e come cambiare prospettiva possa migliorare la resilienza complessiva dei sistemi.</p>
               </div>
             </div>
           </div>
@@ -161,14 +195,82 @@
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-20.html">0x14 - CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 1)</a>
+                  <a href="episode-25.html">0x19 - Threat Intelligence (parte 3)</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 28/01/2025 <span class="sep">/</span> 37 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 08/09/2025 <span class="sep">/</span> 58 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del ruolo del CISO, con un focus particolare sulla figura del vCISO (CISO as a service). Partendo da dieci anni di riflessioni ed esperienze dirette, discutono differenze, vantaggi e svantaggi tra CISO interni ed esterni, i motivi per cui le aziende scelgono una soluzione piuttosto che l'altra, e come questa scelta influisca sulla cultura aziendale della sicurezza informatica. Viene portata anche l'esperienza sul campo di chi offre e utilizza servizi di vCISO, con uno sguardo realistico sulle competenze necessarie e sulle dinamiche delle aziende italiane, soprattutto nel contesto produttivo.</p>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare sul lavoro del threat analyst, che studia il comportamento degli attori malevoli per supportare attività di detection e prevention. Viene inoltre approfondita la stretta relazione tra il mondo della threat intelligence e quello della offensive security, mostrando come entrambi si concentrino sul modus operandi degli attacchi e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato da un post descrittivo e un video highlight, per rendere più accessibili i dettagli tecnici trattati.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-24.html">0x18 - Threat Intelligence (parte 2)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 25/08/2025 <span class="sep">/</span> 46 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia tornano dietro ai microfoni dopo la pausa estiva per approfondire i temi legati alla sicurezza informatica. Partendo dal confronto tra EDR e SIEM, i due discutono di come queste tecnologie si integrino e si completino a vicenda, sfatando l'idea che una possa sostituire l'altra. La conversazione si concentra su come le organizzazioni possano fare un passo evolutivo nell'uso di queste piattaforme, passando da strumenti puramente reattivi a soluzioni che abilitano una difesa proattiva e contributiva.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-22.html">0x16 - Sicurezza ICS/OT (da un evento NTS)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 17/05/2025 <span class="sep">/</span> 33 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Infosec Unplugged, Andrea Dainese e Rocco Sicilia affrontano i temi della sicurezza industriale e delle tecnologie operative (OT). Partendo da un evento dedicato al settore, condividono esperienze e riflessioni sui principali problemi che le aziende si trovano ad affrontare quando approcciano la cybersecurity in contesti industriali, con particolare attenzione al ruolo di CIO e CISO nella gestione dei rischi.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-19.html">0x13 - Approfondimento sulle reti datacenter</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 13/01/2025 <span class="sep">/</span> 46 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andra Dainese e Rocco Sicilia affrontano il tema del data center network design con un approccio tecnico e concreto. Dopo aver discusso in precedenza delle reti a livello campus, l'attenzione si sposta ora sulle esigenze delle aziende enterprise: dalla ridondanza alla sicurezza, fino alle scelte progettuali legate alla dimensione delle infrastrutture. Una conversazione ricca di spunti pratici per chi lavora nell'ambito delle reti e della sicurezza informatica.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-18.html">0x12 - Riflessioni sulla rete (design, sicurezza, approccio)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 30/12/2024 <span class="sep">/</span> 39 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del networking visto con gli occhi dell'IT manager. Partendo dal caso tipico di chi eredita una rete già esistente in azienda, discutono di come valutare l'infrastruttura, identificare aree sensibili, gestire punti di accesso e servizi, e impostare strategie di sicurezza efficaci. Una chiacchierata utile e concreta per chi deve orientarsi nella complessità della rete aziendale e mantenere un equilibrio tra operatività e protezione.</p>
               </div>
             </div>
           </div>
@@ -195,23 +297,6 @@
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-13.html">0xd - [EXT] Account di posta compromesso</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 29/09/2024 <span class="sep">/</span> 27 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese e Alice Mini raccontano esperienze dirette legate al mondo della sicurezza informatica. Gli incidenti narrati sono stati romanzati per proteggere identità e dettagli sensibili, ma restano fedeli alla realtà degli attacchi e delle difficoltà che professionisti e aziende affrontano quotidianamente. Un mix di storytelling e cultura Cyber, pensato per rendere la sicurezza più vicina e comprensibile.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
                   <a href="episode-11.html">0xb - 802.1x bypass: riflessioni sugli impatti e sgli approcci per ridurre il rischio</a>
                 </h3>
                 <div class="text-white mb-3">
@@ -220,40 +305,6 @@
                   </span>
                 </div>
                 <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia si collegano da Bolzano per un'edizione 'in trasferta'. I due riprendono il discorso lasciato nella puntata precedente, approfondendo le misure di sicurezza di rete, con particolare attenzione al NAC (Network Access Control). Vengono raccontati esperimenti pratici e condivide osservazioni su come gestire e superare alcune problematiche legate alla sicurezza degli switch e delle reti aziendali.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-7.html">0x7 - Sicurezza negli impianti OT</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 02/02/2024 <span class="sep">/</span> 30 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia introducono il tema dell'OT Security, analizzando le sfide e le peculiarità della sicurezza nei sistemi industriali (ICS) e nelle infrastrutture critiche. Si parla di contesti come impianti navali, aeroporti e acquedotti, approfondendo come la normativa NIS2 impatti la protezione dei sistemi operativi e dei dispositivi connessi. Un episodio introduttivo che getta le basi per una serie di conversazioni dedicate alla sicurezza operativa nel mondo industriale.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-4.html">0x4 - EDR: scegliere, gestire, utilizzare (parte 2)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/12/2023 <span class="sep">/</span> 30 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata si affrontano tre domande chiave sulla gestione della sicurezza informatica e delle tecnologie aziendali: cosa succede se non si presidiano correttamente le infrastrutture digitali, quali rischi si corrono nel definire policy troppo larghe o troppo restrittive, e come verificare se il proprio setup di sicurezza è adeguato al livello di minaccia attuale. Gli ospiti riflettono su pratiche di monitoraggio continuo, configurazioni di hunting e sull'importanza di mantenere un controllo costante per garantire resilienza e protezione.</p>
               </div>
             </div>
           </div>
@@ -280,14 +331,14 @@
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-10.html">0xa - Attacco di prossimità con rogue device e strategie di difesa (parte 2)</a>
+                  <a href="episode-21.html">0x15 - CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 2)</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/02/2024 <span class="sep">/</span> 22 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 10/02/2025 <span class="sep">/</span> 40 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questa puntata si discute di sicurezza informatica e threat modeling, affrontando il tema del disegno delle reti con una mentalità difensiva. Gli ospiti riflettono sull'importanza di progettare le infrastrutture IT assumendo che alcune macchine possano già essere compromesse, così da limitare l'impatto di eventuali attacchi. La conversazione esplora approcci pratici, la differenza tra vendor e soluzioni di protezione, e come cambiare prospettiva possa migliorare la resilienza complessiva dei sistemi.</p>
+                <p class="mb-4">In questa puntata si approfondiscono i vantaggi e gli svantaggi nell'affidarsi a figure esterne rispetto a risorse interne all'azienda. Si esplorano due scenari principali: da un lato, i consulenti o collaboratori esterni portano una visione più ampia e competenze diversificate; dall'altro, le figure interne garantiscono una conoscenza approfondita del settore e della realtà aziendale. Una riflessione utile per chi deve decidere come strutturare il proprio team e bilanciare innovazione e continuità.</p>
               </div>
             </div>
           </div>
@@ -297,14 +348,31 @@
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-6.html">0x6 - Da EDR a XDR: scegliere, gestire, utilizzare (parte 2)</a>
+                  <a href="episode-17.html">0x11 - Documentazione tecnica</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 05/01/2024 <span class="sep">/</span> 33 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/12/2024 <span class="sep">/</span> 59 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questa puntata si approfondisce il tema dell'XDR (Extended Detection and Response), analizzando come questa tecnologia rappresenti un'evoluzione dei sistemi di sicurezza tradizionali come il SIEM. Il dialogo esplora i limiti e le potenzialità dell'ingestion e della correlazione dei dati, il ruolo delle regole per la gestione degli incidenti, e la direzione verso cui il mercato della cybersecurity si sta muovendo. Viene evidenziata anche la prospettiva aziendale: l'XDR come strumento più integrato, accattivante e strategico per aumentare la visibilità e l'efficacia delle difese informatiche.</p>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema cruciale della documentazione in azienda, vista dal punto di vista di CIO, IT manager e CISO. La conversazione esplora l'importanza di avere procedure, manuali e documentazione di rete sempre aggiornati per supportare la sicurezza, la consulenza e la gestione dei progetti, evidenziando i rischi legati a informazioni incomplete o obsolete.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-14.html">0xe - [PUB] Accesso non consentito (ma possibile)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/10/2024 <span class="sep">/</span> 33 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata si esplorano le attività di offensive security condotte sul campo, con esempi pratici di attacchi e difese aziendali. Viene discusso cosa significa testare la resilienza di un'organizzazione contro minacce Cyber, come individuare i punti d'ingresso più comuni e quali sono le strategie per gestire e contenere gli incidenti. Il racconto, basato su esperienze reali, mette in luce sia le sfide che le opportunità per migliorare la postura di sicurezza.</p>
               </div>
             </div>
           </div>
@@ -322,6 +390,40 @@
                   </span>
                 </div>
                 <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia approfondiscono il tema della selezione di una soluzione EDR (Endpoint Detection and Response). Partendo dalle differenze tra gestione interna e servizi MDR, discutono i criteri di scelta più importanti, le caratteristiche tecniche da considerare, l'integrazione con sistemi XDR e l'evoluzione delle piattaforme di sicurezza. Una conversazione pratica e realistica per chi deve orientarsi nel mondo delle soluzioni di cybersecurity aziendale.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-4.html">0x4 - EDR: scegliere, gestire, utilizzare (parte 2)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/12/2023 <span class="sep">/</span> 30 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata si affrontano tre domande chiave sulla gestione della sicurezza informatica e delle tecnologie aziendali: cosa succede se non si presidiano correttamente le infrastrutture digitali, quali rischi si corrono nel definire policy troppo larghe o troppo restrittive, e come verificare se il proprio setup di sicurezza è adeguato al livello di minaccia attuale. Gli ospiti riflettono su pratiche di monitoraggio continuo, configurazioni di hunting e sull'importanza di mantenere un controllo costante per garantire resilienza e protezione.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-1.html">0x1 - Orchestrazione di sistemi di sicurezza (parte 1)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 30/11/2023 <span class="sep">/</span> 28 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa prima puntata di Info Sec. Unplugged, gli autori avviano una conversazione informale sul tema dell'orchestrazione delle soluzioni di sicurezza informatica. Si discute di come, nelle aziende, gli strumenti di sicurezza vengano spesso gestiti come sistemi isolati ('silos') e non comunichino tra loro, con tutte le inefficienze che ne derivano. Il dialogo affronta le sfide della collaborazione tra strumenti di cybersecurity, la maturità organizzativa necessaria per integrarli, e il ruolo dei security manager e dell'IT management nel promuovere una visione unitaria della sicurezza aziendale.</p>
               </div>
             </div>
           </div>

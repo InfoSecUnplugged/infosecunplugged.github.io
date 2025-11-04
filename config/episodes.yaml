@@ -214,10 +214,11 @@
     ricognizione e analisi della rete, utile sia a chi lavora in ambito difensivo
     che offensivo.
   tags:
-  - Awareness
-  - Incident Response
-  - Network Infrastructure
+  - Adversary Simulation
+  - Detection
+  - Penetration Testing
   - Red Teaming
+  - Vulnerability Management
   title: Attacco di prossimità con rogue device e strategie di difesa (parte 1)
   url: https://www.spreaker.com/episode/0x9-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-1--58766770
 - authors:
@@ -236,8 +237,11 @@
     e soluzioni di protezione, e come cambiare prospettiva possa migliorare la resilienza
     complessiva dei sistemi.
   tags:
-  - Defense In Depth
-  - Incident Response
+  - Adversary Simulation
+  - Detection
+  - EDR
+  - Governance
+  - Risk Management
   title: Attacco di prossimità con rogue device e strategie di difesa (parte 2)
   url: https://www.spreaker.com/episode/0xa-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-2--58766863
 - authors:
