@@ -1,0 +1,1078 @@
+WEBVTT
+
+00:00:08.584 --> 00:00:13.604
+<v SPEAKER_1>Bentornati in Info Sec. Unplugged, io sono Andrea Dainese e questa volta siamo nella versione extended.
+
+00:00:13.604 --> 00:00:16.264
+<v SPEAKER_1>Con me c'è sempre Rocco Sicilia, ciao Rocco.
+
+00:00:16.264 --> 00:00:17.604
+<v SPEAKER_2>Ciao.
+
+00:00:17.604 --> 00:00:20.904
+<v SPEAKER_1>E nella versione extended abbiamo un ospite, ciao Mattia.
+
+00:00:20.904 --> 00:00:24.844
+<v SPEAKER_1>Lascio direttamente a te presentarti che lo farai meglio di me sicuramente.
+
+00:00:26.304 --> 00:00:44.604
+<v SPEAKER_3>Va abbastanza veloce, mi chiamo Mattia Parise, ad oggi sono un solution architect in una azienda di cyber resilience, convolt, ho un background di security, negli ultimi anni mi sono focalizzato più sull'area data protection e cyber resilience, ovvero come rimanere in piedi e ripartire dopo un attacco.
+
+00:00:45.744 --> 00:00:46.024
+<v SPEAKER_2>Perfetto.
+
+00:00:46.024 --> 00:00:59.524
+<v SPEAKER_1>L'ultimo episodio, ci siamo lasciati che abbiamo concluso il scopo, la nostra narrazione sull'ambito di R, cyber, o meglio gestione dei disastri anche in ottica cyber.
+
+00:00:59.524 --> 00:01:06.324
+<v SPEAKER_1>E come promesso, Mattia ci fa accompagnio in questo episodio per approfondire l'atto tecnico.
+
+00:01:06.324 --> 00:01:08.864
+<v SPEAKER_1>Tu Rocco avevi delle domande.
+
+00:01:08.864 --> 00:02:11.944
+<v SPEAKER_2>Sì, avevo preparato un po una pseudo traccia riprendendo un po il discorso che abbiamo fatto assieme, ovvero noi abbiamo postulato, qua Mattio ti racconto un pochino la supersintesi in 30 secondi di quello che abbiamo chiacchierato assieme ad Andrea, che abbiamo ipotizzato di come si potrebbe utilizzare quello che è già in piedi di solito in ambito data protection, quindi la componente backup e la componente disaster recovery per utilizzare quella stessa infrastruttura con gli stessi processi, anche se l'evento che compromette la continuità operativa non è un disastro in senso fisico, quindi un incendio, un alluvione o un fault così grave da portare il team a valutare di partire col piano di DDR, ma è appunto un attacco cyber che va in qualche misura a compromettere i sistemi, ipotizzando la situazione più tipica che è quella appunto di una cifratura massiva di quanto è dei file sui sistemi di produzione.
+
+00:02:11.944 --> 00:02:34.864
+<v SPEAKER_2>E ci siamo resi conto, così chiacchierando, che ci sono degli elementi che probabilmente vanno aggiustati, ma per prima cosa ti chiederei se la nostra ipotesi di diciamo estendere le funzionalità, anzi l'utilizzo di un DR plan, ha senso strategicamente anche per gestire l'eventuale casistica di un attacco cyber.
+
+00:02:34.864 --> 00:02:36.804
+<v SPEAKER_3>Intanto grazie alla domanda.
+
+00:02:36.804 --> 00:02:42.984
+<v SPEAKER_3>È una domanda che emerge spesso, ci sono clienti che scelgono una strada e clienti che scelgono l'altra.
+
+00:02:43.224 --> 00:02:52.184
+<v SPEAKER_3>Io personalmente non ritengo siano due strade che collimano tantissimo, proprio perché lo scenario di DR è molto esteso.
+
+00:02:52.184 --> 00:02:59.644
+<v SPEAKER_3>Tendenzialmente c'è sempre, per gressa c'è sempre una go-no-go decision, ovvero vado o non vado in DR?
+
+00:02:59.644 --> 00:03:09.884
+<v SPEAKER_3>C'è quanto è esteso il mio danno, ad esempio un guasto elettrico, può durare 2-3 ore, lascio a casa i dipendenti e via, o può essere qualcosa di un po più più esteso che richieda la ripartenza dell'infrastruttura.
+
+00:03:11.044 --> 00:03:40.864
+<v SPEAKER_3>Si aprono gli scenari di business continuity, chi ha il doppio datacenter, quindi il singolo problema non emerge, quindi ha dei processi di DR molto più macchinosi, che significa qualcosa di scenari molto più catastrofici, che però significa ripartire grandi grandi aziende, ripartono a 7-800 chilometri di distanza, nei piani un po così complicati, mentre quelle un po più piccole comunque ripartono sul datacenter del partner, o qualcosa di un pochino più localizzato.
+
+00:03:40.864 --> 00:04:00.184
+<v SPEAKER_3>Per quanto mi riguarda sono dei processi troppo diversi ad oggi, per quella che è diventata la complessità per collimare, a meno che non sia una questione di budget, ovvero rendo il DR anche il mio ambiente che, com'evendo, iniziamo a chiamare cyber recovery, cioè nel caso in cui abbia un attacco esteso o meno esteso, utilizzo quell'ambiente per n scopi.
+
+00:04:02.804 --> 00:04:14.824
+<v SPEAKER_3>Diciamo che la situazione ideale porta a dei processi diversi, secondo me, e ad infrastrutture potenzialmente diverse, anche perché le tecnologie sono diverse.
+
+00:04:14.824 --> 00:04:25.404
+<v SPEAKER_3>Però nel caso più reale tendenzialmente i clienti, un po per fare dei savings, vanno a convergere sulla stessa e quindi i processi un pochino iniziano a sovrapporsi.
+
+00:04:25.404 --> 00:04:43.784
+<v SPEAKER_3>Tuttavia, lo scenario di cyber, ormai su un'azienda sufficientemente matura è raro che stia esteso al 100% di tutto il sito, tendenzialmente a un'area, una SAM, una VLAN, vi è dicendo, o se entra nei concetti un po più di networking.
+
+00:04:43.784 --> 00:04:52.664
+<v SPEAKER_3>Per cui, secondo me, dipende un po dalla situazione, ma tendenzialmente, in un caso ideale, secondo me sono due processi molto diversi.
+
+00:04:52.664 --> 00:05:03.784
+<v SPEAKER_2>Ok, allora probabilmente approfittiamo per toccarli entrambi, perché effettivamente l'ultima domanda va a rispondere, va a toccare proprio la tematica del caso ideale.
+
+00:05:03.784 --> 00:05:32.824
+<v SPEAKER_2>Effettivamente, discutendone con alcune aziende, ho notato che avendo già qualcosa che magari funziona anche bene sulla parte di disaster recovery, l'IT manager è un po trainato da questa opportunità per in qualche modo utilizzare quell'ambiente anche in una situazione di incidente cyber.
+
+00:05:32.824 --> 00:05:46.684
+<v SPEAKER_2>Quindi, anticipandoti l'ultima domanda che teniamo comunque alla fine, cioè come si potrebbe disegnare lo scenario ideale che se ho capito bene vuol dire un'altra infrastruttura, non la stessa, non far collassare tutto sulla stessa infrastruttura.
+
+00:05:46.684 --> 00:06:16.984
+<v SPEAKER_2>Partirei se sei d'accordo dal chiederti, quindi più per le aziende con un grado di maturazione, non tale da avere appunto anche un'infrastruttura dedicata al cyber recovery, secondo te ci sono delle cose che potrebbe fare un'azienda che ha già qualcosa ma non ha il budget per fare subito il salto sul cyber recovery, che si possono fare per estendere effettivamente il piano di DDR per toccare magari alcune delle casistiche di un attacco cyber.
+
+00:06:16.984 --> 00:06:19.824
+<v SPEAKER_2>Cioè che tipo di accorgimenti si possono usare.
+
+00:06:20.144 --> 00:06:54.704
+<v SPEAKER_2>Ti anticipo la motivazione della domanda è che discutendone appunto con Andrea, in molti contesti ci siamo resi conto che quando si tocca, quando si affronta uno scenario di attacco, come ad esempio l'ambito Ramsonware, a volte quello che è stato fatto a livello di struttura di backup e DDR non è immune al tipo di attacco, quindi evidentemente ci sono dei problemi di base in quello scenario che quantomeno bisogna toccare, se si vuole anche solo provare a utilizzare quella soluzione per partire in sicurezza su un altro sito.
+
+00:06:54.744 --> 00:06:57.604
+<v SPEAKER_3>Certo, allora, diciamo che chiamiamo...
+
+00:06:57.604 --> 00:07:00.204
+<v SPEAKER_3>Questo è un classico esercizio che in un attanto viene fatto.
+
+00:07:00.204 --> 00:07:04.724
+<v SPEAKER_3>Io partirei da quello che si chiama bill of materials, ovvero cosa ci serve.
+
+00:07:04.724 --> 00:07:19.584
+<v SPEAKER_3>La prima cosa che va fatta nel netto dei famosi business impact analysis, tutto quello che suggeriscono sia Gartner, nello dicendo per quanto riguarda il processo EDR, fate la lista della spesa e prima di tutto vedete di capire quali sono le dipendenze.
+
+00:07:19.584 --> 00:07:20.444
+<v SPEAKER_3>Faccio un esempio.
+
+00:07:21.044 --> 00:07:33.824
+<v SPEAKER_3>Un'azienda che ha anche iniziato a implementare quel cosina di un po più strutturato, avrà di sicuro un acti directory estesa, avrà integrato magari la sua piattaforma di virtualizzazione con l'acti directory in produzione.
+
+00:07:33.824 --> 00:07:41.184
+<v SPEAKER_3>Ora nel EDR, l'acti directory estesa al sito di EDR, il tutto dovrebbe, per lo meno dovrebbe, funzionare in maniera corretta.
+
+00:07:41.184 --> 00:07:48.144
+<v SPEAKER_3>Repliche DVM sono tecnologie piuttosto mature, ormai abbastanza, quasi legacy, per cui mi aspetto che in EDR riparta tutto.
+
+00:07:48.144 --> 00:08:02.004
+<v SPEAKER_3>Non è così col cyber, prima di tutto, i target di attacco sono ormai l'hypervisor e l'acti directory, quindi quello che va quando si disegna l'architettura di EDR o Cyber Recovery o entrambi.
+
+00:08:02.004 --> 00:08:16.684
+<v SPEAKER_3>Date per assunto che non abbiate nulla di tutto questo, quindi bisogna sempre immaginare di ripartire da zero, quindi secondo me l'infrastruttura di EDR, se si vuole costruire anche con questo scopo, deve essere il più indipendente possibile dai processi produttivi.
+
+00:08:17.884 --> 00:08:35.544
+<v SPEAKER_3>Poi, se a disposizione dell'acti, se si ha un'integrazione con acti directory, tutte le tecnologie di autenticazione va bene, cioè può andare bene, l'importante è che sia resiliente e sufficiente per poter funzionare in maniera assolutamente indipendente.
+
+00:08:35.544 --> 00:08:48.264
+<v SPEAKER_3>Faccio un esempio, primo suggerimento, in break glass account chiunque deve averli in possesso, ovviamente non metteteli sulla NAS di rete, che è disponibile solo via acti directory, che a sua volta è stata buttata giù.
+
+00:08:48.264 --> 00:08:49.124
+<v SPEAKER_2>Certo.
+
+00:08:49.124 --> 00:09:00.584
+<v SPEAKER_3>L'ora in cui la NAS si è replicata io ho visto situazioni dove per ripartire c'erano dei dati dentro la NAS che nessuno aveva l'utente mid locale, perché la persona era nata in pensione a direttura.
+
+00:09:01.924 --> 00:09:12.604
+<v SPEAKER_2>Quindi c'è proprio il tema del gestione credenziali, bisogna considerare che in uno scenario di questo tipo non riparti con la credenziale dell'utente o del sysadmin, ma con quelle locali probabilmente.
+
+00:09:13.284 --> 00:09:16.304
+<v SPEAKER_3>Devi partire, maggior parte delle cose le fai con utenze locali.
+
+00:09:16.304 --> 00:09:31.364
+<v SPEAKER_3>Soprattutto i processi di DR hanno una cosa in comune col cyber recall, ovvero il tiering delle risorse, ovvero il tier 0 è quello fondamentale per ripartire, quindi network, quindi firewall, quindi autenticazione, mi è dicendo.
+
+00:09:31.364 --> 00:09:35.864
+<v SPEAKER_3>Secondo me lo step 0, quindi layer 0, il tier 0 è network.
+
+00:09:35.864 --> 00:09:39.204
+<v SPEAKER_3>Spesso e volentieri il network è gestito da una VM che gestisce il firewall.
+
+00:09:39.724 --> 00:09:51.444
+<v SPEAKER_3>Dovete essere sicuri che in d-r questa cosa sia garantita, una VM o qualcosa, ma che comunque l'accesso al firewall non sia compromesso, perché servirà poi per far ripartire determinati processi.
+
+00:09:51.444 --> 00:10:03.084
+<v SPEAKER_3>La stessa piattaforma di backup dovrebbe essere secondo me ormai non più virtualizzata, o meno non in toto, proprio per renderti indipendente da questa esposizione.
+
+00:10:03.084 --> 00:10:07.784
+<v SPEAKER_3>E l'altro secondo me è pezzettino fondamentale, quello dell'autenticazione e della virtualizzazione.
+
+00:10:07.984 --> 00:10:10.684
+<v SPEAKER_3>Anche questi, secondo me, dovrebbero essere.
+
+00:10:10.684 --> 00:10:22.064
+<v SPEAKER_3>Se non indipendenti, bisogna essere sicuri che un attacco che parte dalla rete di produzione non si estenda anche al DR Questo era un tema che ho pubblicizzato di recente su LinkedIn, ovvero le famose MPLS e tutto.
+
+00:10:22.064 --> 00:10:24.284
+<v SPEAKER_3>Questi sono scenari da...
+
+00:10:24.284 --> 00:10:25.984
+<v SPEAKER_3>Come dire?
+
+00:10:25.984 --> 00:10:35.024
+<v SPEAKER_3>Per me lo meno per l'infrastruttura di DR che andrà ad ospitarle le cose va assolutamente rotto e quindi va, diciamo, gestito in maniera completamente diversa.
+
+00:10:35.024 --> 00:10:36.264
+<v SPEAKER_3>Devono essere reti diverse.
+
+00:10:37.084 --> 00:10:43.624
+<v SPEAKER_3>La layer 2 estesa comporta tanti vantaggi, ma ormai per quanto riguarda la sicurezza è più un rischio sull'infrastruttura grata.
+
+00:10:43.624 --> 00:10:45.584
+<v SPEAKER_2>Certo, certo.
+
+00:10:45.584 --> 00:11:56.644
+<v SPEAKER_2>Ma aggiungo, mi è venuto in mente una domanda aggiuntiva in realtà, perché recentemente non mi ricordo in quale occasione ho incontrato una persona a un evento e si parlava appunto di Data Recovery e lui mi diceva, è una persona che lavora in un ambiente molto strutturato, diamo di grandi dimensioni, ha veramente tantissimi sistemi, e loro mi dicevano che avevano delle difficoltà, parlavamo appunto di Cyber Recovery, ma era una di quelle situazioni in cui loro stavano cercando di estendere il piano DDR, era il concetto di Cyber Recovery, e una delle difficoltà principali che mi hanno riportato è che già facevano fatica a avere un certo livello di certezza che ci sia consistenza dei dati durante un eventuale disaster recovery che nel loro caso veniva eseguito a livello di testing a bolle, cioè usando gruppi di sistemi diversi, ed erano perfettamente consapevoli che in un caso reale in cui avrebbero dovuto far ripartire molti sistemi sull'infrastruttore DDR, sicuramente avrebbero avuto dei problemi di allineamento tra i sistemi.
+
+00:11:58.384 --> 00:12:19.284
+<v SPEAKER_2>C'è secondo te un modo, quando si hanno tanti sistemi, ci sono dei consigli che ti vengono in mente per avere proprio una consistenza del dato tra sistemi che purtroppo non sono tutti stand-alone, cioè si parlano tra di loro, quindi è necessario che ci siano delle istantane, diciamo che sono coerenti a livello di tempo tra più sistemi.
+
+00:12:20.624 --> 00:12:28.244
+<v SPEAKER_3>Allora, questa è una domanda che in realtà è il cuore di un po tutto il processo di disaster recovery di cyber.
+
+00:12:28.244 --> 00:12:40.184
+<v SPEAKER_3>Allora, premesso che ciò che è fondamentale è avere un point in time abbastanza lungo, con una copia immutabile, quindi chi si appoggia a snapshot e tutto secondo me farà fatica di partire.
+
+00:12:40.464 --> 00:12:50.924
+<v SPEAKER_3>Conosco diverse aziende grandi che si appoggiano a sistemi di storage snapshot e può funzionare, però ti esponi ad un rischio, perché non vuoi andare troppo indietro nel tempo.
+
+00:12:50.924 --> 00:12:51.684
+<v SPEAKER_2>Certo.
+
+00:12:51.684 --> 00:13:00.044
+<v SPEAKER_3>E la difficoltà nell'integrazione tra i sistemi, soprattutto nelle large enterprise, è la chiave di volta.
+
+00:13:00.044 --> 00:13:04.044
+<v SPEAKER_3>Ora, non c'è una soluzione.
+
+00:13:04.044 --> 00:13:11.504
+<v SPEAKER_3>Io ho lavorato anche per diverse banche, parlavamo a cena e tutto, mi hanno raccontato che l'hanno messo su sistemi per trovare le interazioni tra macchine, tra di loro.
+
+00:13:11.504 --> 00:13:18.024
+<v SPEAKER_3>Ci sono dei vendor che hanno degli strumenti che ti fanno vedere le interazioni tra macchine, comunicazione e tutto.
+
+00:13:18.024 --> 00:13:22.844
+<v SPEAKER_3>Quindi vai a scoprire macchine che erano appuntate l'uno all'altra, specialmente nel mondo ERP.
+
+00:13:22.844 --> 00:13:35.684
+<v SPEAKER_3>Questo è un sistema complessissimo e di bassa documentazione, soprattutto nell'ambito legacy, perché poi la produzione è un sistema che si fa ad export, ti fai il CSV che poi vengono importati dall'altra parte.
+
+00:13:35.684 --> 00:13:43.764
+<v SPEAKER_3>Anche, torniamo anche indietro nel tempo, ma si vedono ancora l'utilizzo dei protocolli FTP per i sistemi produttivi remoti che mandano alla sede centrale.
+
+00:13:43.764 --> 00:13:45.344
+<v SPEAKER_3>Queste cose le avete già viste anche voi.
+
+00:13:45.344 --> 00:13:45.744
+<v SPEAKER_3>Certo.
+
+00:13:45.744 --> 00:13:53.284
+<v SPEAKER_3>Questo tipo di interazione è difficile da avere allineate e basta un file che manca per creare un incidente nella dita software che va a gestire.
+
+00:13:54.324 --> 00:13:59.604
+<v SPEAKER_3>Non ho una soluzione a portata di mano per questa, quello che si può fare però a quel punto.
+
+00:13:59.604 --> 00:14:07.584
+<v SPEAKER_3>E lì rientriamo su quello che diceva il consulente dove parlavi, secondo me il testing è fondamentale.
+
+00:14:07.584 --> 00:14:20.724
+<v SPEAKER_3>I famosi testing in bolla o clean room, cioè fondamentalmente un'area dove tu vai a ripristinare questi tir, e poi i procedi devono essere resi più semplici e possibili per venire riprodotti o a campione o periodicamente.
+
+00:14:20.724 --> 00:14:30.424
+<v SPEAKER_3>Almeno una volta là, tant'è che comunque d'ora questo te lo richiede per le banche, per cui mi aspetto che comunque un pochino di maturità, almeno a livello bancario, c'è.
+
+00:14:30.424 --> 00:14:33.744
+<v SPEAKER_3>Ora entrare nel livello applicativo, lo vedo ancora a challenging.
+
+00:14:33.744 --> 00:14:46.264
+<v SPEAKER_3>Ho avuto modo personalmente di fare qualcosa di questo tipo con un cliente che lo fece per il tema di R, ma in realtà poi per come lo aveva stato disegnato, si poteva un pochino estendere anche al sistema di cyber recovery.
+
+00:14:46.264 --> 00:14:54.364
+<v SPEAKER_3>Secondo me la chiave è test, test, continui, test, continui, perché alla fine nel momento in cui sei pronto sai esattamente le dipendenze.
+
+00:14:54.364 --> 00:14:56.644
+<v SPEAKER_3>Se non l'hai mai trovato ti aspetterai sorprese.
+
+00:14:56.644 --> 00:15:06.724
+<v SPEAKER_3>Secondo me non c'è nessuna come dire soluzione, shelf da comprare, oppure comunque soluzione install and forget che ti darà questa cosa.
+
+00:15:06.724 --> 00:15:13.324
+<v SPEAKER_3>Bisogna metterci il naso e continuare a capire le dipendenze, provare a fare un recovery, capire quanto complicato è.
+
+00:15:13.324 --> 00:15:14.444
+<v SPEAKER_3>Faccio anche un altro esempio.
+
+00:15:14.444 --> 00:15:29.744
+<v SPEAKER_3>Tanti hanno installato open shift o comunque sistemi applicativi all'interno anche di container, questo è complicato da ripristinare, ma non hai idea di quante integrazioni con entry D siano legate a questi sistemi.
+
+00:15:29.884 --> 00:15:55.864
+<v SPEAKER_3>Il cliente si è accorto che fare il test in bolla era impossibile, o comunque molto difficile, perché dovevi parlare con entry D, e i protocolli come SAML e cose così non lavorano bene se l'end point cambia entrando proprio molto nel tecnico, quindi tu gli fai la richiesta, ma non è previsto che il tuo sistema in bolla ritorni indietro, perché sei isolato, meti che anche esci, ma non puoi tornare indietro, perché non c'è più la WPN con queste.
+
+00:15:55.864 --> 00:16:00.484
+<v SPEAKER_3>Quindi capire come ripartire in tutti questi contesti è molto complicato.
+
+00:16:00.484 --> 00:16:06.144
+<v SPEAKER_3>E solo testando ti rendi conto di cos'hai, secondo me.
+
+00:16:06.144 --> 00:16:22.584
+<v SPEAKER_2>Il testing è uno degli elementi che io vedo, su cui vedo ci si scontra, più che altro perché da quello che ho notato io, in alcuni casi, il test o per problematiche, difficoltà proprio di come è stato disegnata, di come è stata disegnata l'infrastruttura.
+
+00:16:22.584 --> 00:16:47.304
+<v SPEAKER_2>O magari ci sono dei limiti anche dal posti del business, vedo spesso dei test che non so neanche se chiamare veramente degli effettivi test o quantomeno il risultato non mi sembra sufficiente, il risultato di questo test per dire ok, in caso di esigenza possiamo, sicuramente sappiamo che possiamo andare in recovere dei sistemi, perché vedo dei fortissimi costretti ad esempio.
+
+00:16:48.484 --> 00:17:02.344
+<v SPEAKER_2>Beh, in parte c'è un tema che diciamo tocca a quello che già hai detto, c'è tantissimi ambienti di DR, li vedo disegnati con uno degli acti directory già attivo, che resta permanentemente attivo già sul sito ddr.
+
+00:17:02.344 --> 00:17:17.464
+<v SPEAKER_2>Quindi per me dal punto di vista sicurezza quella cosa già ha un problema, perché se è una compromissione sulla sua acti directory, automaticamente anche quella macchina è compromessa probabilmente, e quindi già lì cozza proprio sul tipo di scelta che è stata fatta.
+
+00:17:17.464 --> 00:17:40.824
+<v SPEAKER_2>Ma a parte questo elemento, spesso ho notato strutture che non fanno i test, diciamo nel senso stretto del termine, perché non possono ad esempio isolare le network, non hanno modo di accendere le macchine, o magari possono accendere i sistemi facendo degli IP change, ma non possono accendere gli applicativi, perché non possono questi applicativi cominciare a dialogare con i sistemi all'esterno, farebbero casino.
+
+00:17:41.344 --> 00:17:55.244
+<v SPEAKER_2>Ci sono delle strategie, o delle tecnologie anche, che possono aiutare chi ha questi forti constrain, o è un tema di puro design, c'è bisogna partire con i matoni giusti e non c'è altra via.
+
+00:17:55.244 --> 00:18:06.704
+<v SPEAKER_3>Allora, secondo me la tecnologia ti aiuta quando hai le idee chiare, quindi per lo meno hai fatto una baseline, secondo me è impensabile pensare che una tecnologia ti risolve il problema, che quanto sarebbe bello.
+
+00:18:08.464 --> 00:18:17.124
+<v SPEAKER_3>Lì il mondo backup ti può aiutare a fare dei test in bolla, perché puoi tornare indietro nel tempo, puoi ripristinare in altre aree completamente isolate, puoi capire le cose.
+
+00:18:19.004 --> 00:18:31.644
+<v SPEAKER_3>Però da quel punto di vista, io tecnologie che ti risolvono questo problema sono di difficile, meglio io non ho avuto modo di trovare clienti che dicono guarda le mappature me le trova questo, quindi io sono apposta.
+
+00:18:31.644 --> 00:18:34.824
+<v SPEAKER_3>Quindi viene richiesta un po di conoscenza degli ambienti.
+
+00:18:36.044 --> 00:18:50.504
+<v SPEAKER_3>Per quanto riguarda il tema del testing, secondo me quello che è fondamentale è capire esattamente tutte le interazioni a livello dell'infrastruttura tier 0, ecco perché devi ripartire con i servizi essenziali.
+
+00:18:50.504 --> 00:19:06.244
+<v SPEAKER_3>Questo è un tema che è in comune con il disaster recovery, perché alla fine della fiera, il vantaggio è che le mappature devi fare sia in un caso che in un altro, per cui devi decidere che macchine mettere in replica, ad esempio questo lo fai sia nel DR che anche nel cyber.
+
+00:19:06.244 --> 00:19:19.704
+<v SPEAKER_3>La copia deve essere immutabile, questo non te ne fai niente nel DR, perché non è in discussione l'immutabilità della copia, però in ogni caso l'assegnazione di determinati tag, delle risorse in modo da portarti di là, questo invece è lo stesso processo.
+
+00:19:20.784 --> 00:19:28.024
+<v SPEAKER_3>Per cui capire che una macchina non è finita in DR mentre serviva, questo è fondamentale, spesso volentieri ci sono scenari di questo tipo.
+
+00:19:28.024 --> 00:19:36.424
+<v SPEAKER_3>L'altra questione secondo me è che tendenzialmente bisogna distinguere le architetture legacy da quelle moderne.
+
+00:19:36.424 --> 00:20:04.944
+<v SPEAKER_3>Quelle moderne secondo me nascono già con un po di resilienza in testa, perché nella fase siamo un po più maturi su questa cosa, quindi prima di metterle in produzione tendenzialmente io vedo comunque diversi test di resilienza, soluzioni database, multireplica ce ne sono, anche piuttosto semplici da implementare penso anche al postgres, o a soluzioni quasi open source che comunque garantiscono l'affittabilità del dato, o comunque anche chi si appoggia al cloud ha delle soluzioni multireplica.
+
+00:20:06.144 --> 00:20:15.284
+<v SPEAKER_3>Il problema secondo me sono i sistemi legacy che sono monolitici, ma monolitici a livello individuale, ma poi uno senza l'altro non funziona.
+
+00:20:15.284 --> 00:20:24.144
+<v SPEAKER_3>Questo secondo me va testato, è difficile anche test, ma non ho soluzione da questo punto di vista perché è veramente complicato.
+
+00:20:24.144 --> 00:20:49.924
+<v SPEAKER_3>Soluzioni che mi hanno raccontato, mi sembra che se non ricordo male a Rassisco, che aveva un prodotto che ti mappava tutte queste comunicazioni network tra i server, tuttavia non è stato sufficiente al cliente perché non copriva determinati scenari, o comunque alcune comunicazioni erano falsi positivi, per cui come ti dicevo se sai cosa vuoi bene e sai già escludere e filtrare, altrimenti fa un po fatica.
+
+00:20:51.264 --> 00:21:06.964
+<v SPEAKER_3>Non so se magari un domani ci saranno delle invenzioni utilizzando l'AI e il machine learning che ti aiuteranno in maniera molto più precisa a determinare queste mappature, ma ad oggi, per quanto riguarda mia conoscenza, ne esperienza, ne conoscenza di queste ecco.
+
+00:21:06.964 --> 00:21:51.644
+<v SPEAKER_1>Io credo su questo che stiamo sempre cercando di spostare su una tecnologia un problema prettamente organizzativo, cioè nessuno ha idea by design, nel senso come entrano le applicazioni in azienda, nessuno ha idea di come comunicano con altri applicativi, quali sono le interazioni e proprio qualche giorno fa ero da un cliente e si è ripresentata la stessa scenetta che io ho vissuto in tanti anni in cui l'amministratore di rete e sicurezza, quindi chi gestiva anche il firewall, si trovava a dover rispondere a una sorta di richieste aggiuntive, apri questo, apri quello, apri quell'altro, invece di avere un'unica richiesta con tutte le necessità.
+
+00:21:51.644 --> 00:22:03.024
+<v SPEAKER_1>Perché ancora oggi, e sono passati ormai il lavoro da qui, in 25 anni siamo sempre allo stesso, è una sorta di try and error, cioè provo e se non va scopro che cos'altro manca.
+
+00:22:03.024 --> 00:22:11.124
+<v SPEAKER_1>E siamo ancora qua e nessuna tecnologia può mettere ordine in un caos causato da una mancanza di processo.
+
+00:22:12.364 --> 00:22:19.644
+<v SPEAKER_3>Su questo sono d'accordo, anzi il mantra deve essere che qualsiasi comunicazione debba essere giustificata e comunicata.
+
+00:22:19.644 --> 00:22:48.924
+<v SPEAKER_3>Ora vedo uno shift su tanti clienti, lavoro anche all'estero, devo dire che alcuni clienti enterprise non approvano il prosego di un progetto, finché ogni comunicazione, ti assicuro che ogni porta mi è stata chiesta nel dettaglio, anche, e apro un'altra parenthesis tra poco, mi è stata chiesta nel dettaglio, finché non era discritto e documentato anche ufficialmente, cosa su cui nessuno è perfetto, quindi succedono queste situazioni, non approvavano.
+
+00:22:48.924 --> 00:22:56.184
+<v SPEAKER_3>Ti dirò di più, una cosa che qualsiasi persona che lavora in IT deve imparare è l'apertura porte.
+
+00:22:56.184 --> 00:23:02.204
+<v SPEAKER_3>Quando una persona dice che io mando un pacchetto e torna indietro, non esiste che devo aprire bidirezionale.
+
+00:23:03.784 --> 00:23:17.984
+<v SPEAKER_3>Secondo me mancano le volte, e questo parlo di la maggior parte di chi lavora nei sistemi, il concetto di bidirezionale non esiste, esiste chi inizia la comunicazione e poi il processo di comunicazione avanti indietro, questo si sa.
+
+00:23:17.984 --> 00:23:26.544
+<v SPEAKER_3>Penso che anche voi lo sappiate, però quante volte è che chiedono l'apertura bidirezionale quando in realtà la comunicazione è solo outbound, solo inbound.
+
+00:23:26.584 --> 00:23:34.224
+<v SPEAKER_3>Ho visto anche un nut sul fire o la volta aperte semplicemente, perché chiunque ha sentimento, non sape.
+
+00:23:34.224 --> 00:23:37.744
+<v SPEAKER_1>Devo dire la verità che non mi è mai successo.
+
+00:23:37.744 --> 00:23:45.024
+<v SPEAKER_2>Bidirezionale, no, mai è capitato di vedere la porta 80 aperta verso l't-client, perché il client doveva parlare con la porta 80.
+
+00:23:45.024 --> 00:23:56.424
+<v SPEAKER_1>Sì, sì, questo magari sì, ma non mi è mai capitato di vedere una richiesta di una regola con implicito, deve essere bidirezionale, è una sorta di mirore.
+
+00:23:58.004 --> 00:24:09.704
+<v SPEAKER_3>E una, come dire, è un misconcepto, cioè pensando che una persona deve parlare, anche ricevere il pacchetto, tanti chiedono questa apertura, chi non conosce bene le basi del network.
+
+00:24:09.704 --> 00:24:20.144
+<v SPEAKER_3>Secondo me ci sono due o tre aspetti, io credo che le basi del TCP-IP aiutano molto in questa e della security, secondo me aiutano molto anche le nuove leve.
+
+00:24:22.124 --> 00:24:45.744
+<v SPEAKER_3>Provendo in figure tecniche legacy e anche applicativi, quindi io faccio spesso riferimento al legacy perché è lì che vedo la maggior parte degli entry point, o comunque software famosi che mancano di patch e sono esposti, quindi due sono le situazioni, spesso io voglio intere gli entry point causato da sistemi legacy che hanno aperture esagerate, oppure anche a un'interhumabilità.
+
+00:24:45.744 --> 00:24:55.864
+<v SPEAKER_3>Detto questo, per quanto riguarda anche i sistemi di data protection, ci sono tecnologie che permettono di filtrare il traffico.
+
+00:24:55.864 --> 00:25:22.044
+<v SPEAKER_3>L'idea di base è che perlomeno anche l'infrastruttura di backup, e questo è fondamentale per un cyber recovery, debba essere resiliente a sufficienza per ripartire, quindi indipendente da chi può essere attaccato, acti directory e hypervisor in principio, e poi una copia immutabile, cioè che neanche se stessa possa venire attaccata e resa indisponibile.
+
+00:25:22.044 --> 00:25:47.324
+<v SPEAKER_3>Chiaro che più il prodotto di cyber resilience è software based, quindi il cliente ha deciso una soluzione che utilizzasse prodotti già esistenti in azienda, storage nello specifico, più questa resilienza deve essere allargata anche a quei sistemi, per cui rendere immutabile anche quel tipo di target e rendere sicuro anche questo accesso in maniera tale che nessuno possa accedervi.
+
+00:25:48.704 --> 00:26:02.924
+<v SPEAKER_1>Quindi hai fatto un riferimento agli storage basati su snapshot o meglio sulle aziende che usano gli storage basati su snapshot come base per il proprio processo di ripartenza.
+
+00:26:02.924 --> 00:26:20.424
+<v SPEAKER_1>Hai fatto una riflessione secondo me interessante, ma volevo chiederti un chiarimento sul fatto che limita in qualche modo il numero o meglio la profondità con cui si può ripartire rispetto ad altri prodotti più specifici.
+
+00:26:20.424 --> 00:26:30.564
+<v SPEAKER_1>Secondo te o meglio nella tua esperienza quant'è la profondità temporale che tu hai visto adeguata sempre basandoti sulla tua esperienza?
+
+00:26:33.184 --> 00:26:36.084
+<v SPEAKER_3>Allora, faccio un attimo una precisazione.
+
+00:26:36.084 --> 00:26:44.024
+<v SPEAKER_3>Di solito sono tecnologie integrative, tendenzialmente con il DR molti clienti per semplificare se poggiano storare snapshot.
+
+00:26:44.024 --> 00:26:57.404
+<v SPEAKER_3>Nel momento in cui certi db, nello specifico ora qual è quello che va più in difficoltà, fanno fatica a ripartire, servono delle operazioni manuali, ma il famoso rpo è quello più aggressivo, tendenzialmente.
+
+00:26:58.044 --> 00:27:14.984
+<v SPEAKER_3>Ora, fatta questa premessa, la risposta è dipende, dipende dal change rate, nel senso che una storage snapshot chiaramente ne tiene il delta tra il momento in cui ho fatto la snapshot e tutti i blocchi che sono avvenuti fino alla prossima snapshot.
+
+00:27:14.984 --> 00:27:21.084
+<v SPEAKER_3>Multiplichi questo per il numero di point in time che vuoi tornare indietro basandoti su un rpo.
+
+00:27:21.084 --> 00:27:29.984
+<v SPEAKER_3>Può essere 5 minuti l'rpo, può essere 2 ore, comunque di media per esperienza oltre i 15 giorni non ho mai visto andare.
+
+00:27:29.984 --> 00:27:37.064
+<v SPEAKER_3>Più probabile verso i 7 perché comunque richiede un investimento sullo storage di produzione che è tutto forchè economico significativo.
+
+00:27:37.064 --> 00:27:40.364
+<v SPEAKER_3>Tutto dipende da quanto l'azienda è disposta a investire.
+
+00:27:40.364 --> 00:27:48.504
+<v SPEAKER_3>La tecnologia di backup va oltre perché sfrutta anche altre cose del duplico, comunque compressione, via dicendo.
+
+00:27:48.504 --> 00:27:51.984
+<v SPEAKER_3>E soprattutto lo storage tendenzialmente è meno pregiato rispetto a quello produttivo.
+
+00:27:52.864 --> 00:27:58.224
+<v SPEAKER_3>Di conseguenza riesci a fare più capacity, arrivare a 60-90 giorni anche.
+
+00:27:58.224 --> 00:28:04.924
+<v SPEAKER_3>Tutto dipende un po dal dato, dal tuo peso e dal budget, però in linea di massima si fa questo approccio.
+
+00:28:04.924 --> 00:28:18.464
+<v SPEAKER_3>Vedo anche nel tema cloud ad oggi, non esiste lo storage cloud, ma i BS su Amazon, oppure comunque tutta la parte del disk, che non ha un nome specifico su Azure, se non dicendo disk premium.
+
+00:28:18.504 --> 00:28:31.424
+<v SPEAKER_3>E dicendo, anche lì le tecnologie di backup si appoggiano prima alla snapshot e poi l'offload della snapshot come alternativa o comunque come soluzione integrativa dentro a un blob a meno costo.
+
+00:28:31.424 --> 00:28:35.984
+<v SPEAKER_3>In ogni caso rimane la snapshot sull'EWM in modo da poter ripartire veloci.
+
+00:28:35.984 --> 00:28:50.464
+<v SPEAKER_3>Si sta andando verso questo tipo di maturità e tendenzialmente sul cloud riesce ad arrivare a 30 giorni perché tutte le snaps sono incrementali e questo tipo di change rate è legato poche macchine.
+
+00:28:50.464 --> 00:29:03.104
+<v SPEAKER_3>Sull'on-prem ci sono dei sistemi produttivi di solito molto pesanti, exadata o database, comunque anche legacy che comunque mantengono molta roba, quelli di media tra i 7-15 giorni.
+
+00:29:03.104 --> 00:29:07.284
+<v SPEAKER_3>Questa è un po la risposta lunga che poteva essere un po più breve, ma un po per darvi un po di più contesto.
+
+00:29:07.744 --> 00:29:09.624
+<v SPEAKER_1>No, no, si è stato esauriente, grazie.
+
+00:29:09.624 --> 00:29:22.184
+<v SPEAKER_2>Ma ci vedi anche, perché anche ho un approfondimento su questo tema, ci vedi anche un problema proprio di consistenza o è solo legato a quanta profondità si può ottenere?
+
+00:29:22.184 --> 00:29:25.584
+<v SPEAKER_2>Perché ti dico da dove viene la domanda.
+
+00:29:25.744 --> 00:30:06.524
+<v SPEAKER_2>Io per primo sono scettico, penso non siano più adeguate quelle situazioni in cui mi trovo con tot terabyte, centinaia a volte terabyte, di macchine virtuali e la strategia di backup è effettivamente delle storage snapshot e poi delle copie di queste snapshot offload su un altro dispositivo storage e eventualmente poi si li pesca in maniera molto grezza, cioè prima erano 10 tera, facevo tutto il volume, adesso sono 100 tera faccio lo stesso tutto il volume, non c'è tanta variata la strategia, è rimasta la stessa ma è aumentato tantissimo il volume.
+
+00:30:06.624 --> 00:30:10.784
+<v SPEAKER_2>Ci sono dei problemi tecnici che si potrebbero verificare con questo approccio?
+
+00:30:11.944 --> 00:30:46.444
+<v SPEAKER_3>All'idea di Massima l'approccio secondo me è abbastanza corretto, nel senso che come funziona la snapshot appoggiata allo storage, in realtà fai la snapshot di, parlo nello specifico di VMware ma vale anche per gli altri, faccio la snapshot lato VMware quindi metto un punto di consistenza, se voglio uso anche prescript per mettermi il db in stato consistente, dopodiché faccio la snapshot storage, quindi ho creato il mio punto sullo storage, tolgo via la snapshot VMware subito, di media questo processo impiega 4-5 minuti non di più e viene parallelizzato.
+
+00:30:46.444 --> 00:30:54.524
+<v SPEAKER_3>Di solito fai la snapshot VMware di tutte le macchine all'interno di quel volume, quando è completata l'ultima fai la snapshot del volume e poi togli via.
+
+00:30:54.524 --> 00:30:56.524
+<v SPEAKER_3>Questo che cosa comporta?
+
+00:30:56.524 --> 00:31:03.304
+<v SPEAKER_3>Che molto meno peso nel backup e fai l'offload del backup direttamente dallo storage che poi viene fatto da macchine.
+
+00:31:03.304 --> 00:31:16.164
+<v SPEAKER_3>Questa strategia è abbastanza comune, ti dà il minimo livello di consistenza, a meno che non fai integrazioni addizionali come integrazione del tuo sistema per garantirti che il DB sia ricoverabile a tutti i punti.
+
+00:31:17.384 --> 00:31:25.104
+<v SPEAKER_3>Per quanto mi riguarda la maggior parte delle macchine può venire protetta in questo modo, il punto chiave è garantire la consistenza come avete detto.
+
+00:31:25.104 --> 00:31:34.704
+<v SPEAKER_3>Secondo me è più una questione di processo lì che di soluzione, perché comunque ad oggi tecnologie come VMware non hanno chissà quali innovazioni dal punto di vista dei backup.
+
+00:31:35.144 --> 00:31:37.984
+<v SPEAKER_2>E quella da 15 anni non è cambiata tantissimo.
+
+00:31:38.264 --> 00:31:39.104
+<v SPEAKER_3>No, è identica.
+
+00:31:39.104 --> 00:31:45.184
+<v SPEAKER_3>L'unica cosa che hanno aggiunto sono NSX, tutta la parte di Tanzu, però è lì che stanno andando.
+
+00:31:45.184 --> 00:31:48.224
+<v SPEAKER_3>Il cloud sta estendendo molto, il mondo passa.
+
+00:31:48.224 --> 00:31:55.184
+<v SPEAKER_3>Qualcosa, l'atto compute avviene, però la parte virtual machine secondo me è abbastanza statica nelle tecnologie.
+
+00:31:56.344 --> 00:32:24.704
+<v SPEAKER_3>In linea di massima, quello su cui stanno evolvendo le piattaforme cyberesilie è assicurarsi che il dato di backup sia sano, cioè che all'interno del backup non ci siano file cifrati, e quindi stanno migliorando le tecnologie di detection all'interno del backup, quindi scansionare volume, e che non ci siano malware, quindi qui mischio di Yara Rule e di sistemi anti-malware in maniera tale da scansionare la macchina.
+
+00:32:24.704 --> 00:32:29.944
+<v SPEAKER_3>L'obiettivo alla fine per quanto riguarda la cyber resilience è un clean recovery.
+
+00:32:29.944 --> 00:32:30.644
+<v SPEAKER_2>Ok.
+
+00:32:30.644 --> 00:32:44.024
+<v SPEAKER_3>Quindi ci sono dei processi scansiono da malware, dopodiché passo a un'area clean room dove verifico comunque con i sistemi del team forense se qualcosa può essere stato storto o meno.
+
+00:32:44.024 --> 00:32:51.864
+<v SPEAKER_3>Di solito questo processo va in seguito ad un'anomalia che è arrivata da parte di un EDR oppure del sistema stesso di backup, dipende da quale ci sono.
+
+00:32:51.864 --> 00:33:02.904
+<v SPEAKER_3>La fase dopo è quella di garantire che la macchina sia veramente pulita, per cui magari ci si installa un ulteriore tool EDR, si fa la scansione e si rimette in provvenzione.
+
+00:33:02.904 --> 00:33:12.684
+<v SPEAKER_3>E per quanto riguarda la consistenza del dato, tendenzialmente se il backup è andato a buon fine, in linea di massima il restore del dato andrà a buon fine.
+
+00:33:12.684 --> 00:33:13.984
+<v SPEAKER_3>Faccio due esempi.
+
+00:33:14.484 --> 00:33:32.224
+<v SPEAKER_3>Se ho un SQLDB di cui è stato criptato il db, al netto che spesso se è running i sistemi non sono così intelligenti, ma tendenzialmente il SQLDB finché il backup è andato quel dato era sano.
+
+00:33:32.224 --> 00:33:40.384
+<v SPEAKER_3>Stesso vale per Oracle, perché se io critto quelli che sono i file system il db oracle non va su e nemmeno il SQLDB, per cui il backup fallerà.
+
+00:33:40.384 --> 00:33:43.684
+<v SPEAKER_3>Vale lo stesso discorso se critto un datastore VMware o di Hyper-V.
+
+00:33:44.664 --> 00:33:50.364
+<v SPEAKER_3>La VM non esiste più, non riesco a fare nemmeno l'api per leggere il dato, perché quel backup è fadito.
+
+00:33:50.364 --> 00:33:54.444
+<v SPEAKER_3>Quindi tendenzialmente a livello infrastrutturale il backup ce l'ho.
+
+00:33:54.444 --> 00:34:07.304
+<v SPEAKER_3>Per cui secondo me la parte più importante del clean restore è garantire che la macchina non sia compromessa da un punto di vista di file fisico e dal punto di vista di encryption del dato.
+
+00:34:07.304 --> 00:34:17.784
+<v SPEAKER_3>Questo poi si estende anche a altre piattaforme, quindi se la piattaforma mi garantisce che non so, nel cloud un object storage va bene, o un prem, una NAS va bene, non è triptata.
+
+00:34:17.784 --> 00:34:28.084
+<v SPEAKER_3>Queste sono vantaggi, per cui so che quell'area è perlomeno pulita e richiede magari un check aggiuntivo, però un piccolo check l'ho già fatto.
+
+00:34:28.084 --> 00:34:36.784
+<v SPEAKER_3>Sulla consistenza in sé invece la consistenza applicativa, come dicevamo prima, la puoi testare solo nella realtà.
+
+00:34:37.864 --> 00:34:46.124
+<v SPEAKER_3>Quindi non ci sono ancora processi più efficaci per back-upare, per assicurarti che il db sia consistente, sono sempre quelli.
+
+00:34:46.124 --> 00:34:50.264
+<v SPEAKER_3>C'è sistemi Oracle, Postgres, anche MongoDB.
+
+00:34:50.264 --> 00:34:54.204
+<v SPEAKER_3>Sono sempre i soliti comandi che mettono il db in un modo consistente tu possa proteggerlo.
+
+00:34:54.204 --> 00:35:00.024
+<v SPEAKER_3>Si appoggiano a snapshot locali, tutti i sistemi anche più moderni, ma alla fine sono quelli.
+
+00:35:00.024 --> 00:35:03.504
+<v SPEAKER_3>Secondo me quello che ha il focus principale è garantire che siano puliti.
+
+00:35:04.524 --> 00:35:06.544
+<v SPEAKER_3>L'innovazione che vedo è principalmente su quel tema.
+
+00:35:07.764 --> 00:35:25.924
+<v SPEAKER_2>A questo punto, visto che c'erai già in parte anticipato, ti chiederai quali sono gli elementi per disegnare un sistema di cyber resilience, quindi che si stacca quindi a livello strutturale da quello che è stato messo in piedi per fare il disaster recovery, lo scenario diciamo tradizionale classico diciamo così.
+
+00:35:25.924 --> 00:35:36.524
+<v SPEAKER_2>Invece se sono in una situazione in cui voglio fare una recovery pulita post incidente che pezzi dovrei valutare di inserire nella mia infrastruttura e che processi anche.
+
+00:35:36.524 --> 00:36:07.564
+<v SPEAKER_3>Partiamo in ordine di priorità, sistema deve essere qualcosa di indipendente dalla produzione anche in produzione, per cui ad oggi best practice significa che anche il sistema di backup prima di tutto deve garantire di poter avere una copia immutabile e indipendente, farmi vm con un file system xfs immutabile non è una copia immutabile, per cui al netto di cosa puoi fare la piattaforma, assicuratevi che sia veramente indipendente da quello che la piattaforma attacca.
+
+00:36:07.564 --> 00:36:12.564
+<v SPEAKER_2>Hai fatto bene a dirlo, perché ho notato che ci sono queste interpretazioni.
+
+00:36:12.564 --> 00:36:23.744
+<v SPEAKER_3>Ho visto queste cose in un test practice, oppure farmi montare una NAS come ai scasi e dire che quel file system è mutabile, però la NAS è ancora ad min 1, 2, 3, 4.
+
+00:36:25.884 --> 00:36:37.704
+<v SPEAKER_3>Quindi, dipende tutto dalla soluzione che scegli, ma una soluzione Oliwan chiaramente by design è un po più sicura ed è preferibile per chi non ha tempo, energie o comunque skill per disegnarla.
+
+00:36:37.704 --> 00:36:43.104
+<v SPEAKER_3>Viceversa, se te la vuoi costruire, devi garantirti questi primi aspetti.
+
+00:36:43.164 --> 00:37:09.764
+<v SPEAKER_3>Seconda cosa, nel momento in cui ci si è assicurati che la piattaforma è sicura da un punto di vista di design, di design inteso infrastruttura clienta, cioè io mi assicuro che il suo contesto sia sicuro, secondo me ad oggi tra per ente c'è anche una normativa francese che chiede che sia l'infrastruttura di backup a far traffico verso chiunque venga protetto e non l'opposto.
+
+00:37:11.204 --> 00:37:30.704
+<v SPEAKER_3>Se mi viene in mente il nome della normativa, ma c'era una normativa francese che chiedeva esattamente questo, quindi se la piattaforma di backup è in grado di fare traffico monodirezionale, tu hai già quello che per Gartner è Isolated Recovery Environment, perché il traffico è monodirezionale.
+
+00:37:30.704 --> 00:37:35.404
+<v SPEAKER_3>Ci sono alcuni prodotti che lo fanno attivamente, altri che non lo fanno, però se ce l'avete è l'ideale.
+
+00:37:36.324 --> 00:37:48.064
+<v SPEAKER_1>Mi sembra in filo la best practice semplice da portare, efficace, e veramente con una frase hai già dato tantissimo come approccio.
+
+00:37:48.064 --> 00:37:54.764
+<v SPEAKER_1>Se ritrovi la normativa, magari ce la mandi che la leghiamo alle note del podcast, che sicuramente a qualcuno interesserà.
+
+00:37:56.584 --> 00:37:58.544
+<v SPEAKER_3>Guarda, mi venisci di mente.
+
+00:37:58.544 --> 00:38:00.144
+<v SPEAKER_1>Prossimamente, chiaramente.
+
+00:38:00.184 --> 00:38:01.404
+<v SPEAKER_3>Non è un problema, guarda.
+
+00:38:01.584 --> 00:38:03.044
+<v SPEAKER_1>Grazie.
+
+00:38:03.044 --> 00:38:16.224
+<v SPEAKER_3>Il terzo aspetto è qualsiasi modifica all'interno di frustratura di backup deve essere tracciata, ma questo già chiunque stia facendo o abbia una certificazione CSSP, te lo dice, la non repudiabilità delle azioni.
+
+00:38:16.224 --> 00:38:18.044
+<v SPEAKER_3>E l'altra cosa è la doppia approvazione.
+
+00:38:18.064 --> 00:38:24.624
+<v SPEAKER_3>I sistemi devono richiedere dopo doppia approvazione per qualsiasi operazione che possa comportare data loss.
+
+00:38:24.624 --> 00:38:28.984
+<v SPEAKER_3>Comportare data loss significa anche aggiungere un altro amministratore così io mi posso approvare alle varie cose.
+
+00:38:29.204 --> 00:38:45.184
+<v SPEAKER_3>Per cui identificare sempre che non ci siano bypass a queste procedure che ovviamente il software può coprire fino a un tot, il dato di backup deve essere immutabile, ma se io ho disabilito un backup durante la notte comunque non ce l'ho più.
+
+00:38:45.184 --> 00:38:48.224
+<v SPEAKER_3>Magari l'ho disabilito per una settimana.
+
+00:38:48.224 --> 00:38:54.224
+<v SPEAKER_3>Anche questo può essere un data loss, perché per sette giorni non ho backup e torno indietro e il dato ormai non è più fruibile, per cui comunque pago il riscatto.
+
+00:38:55.064 --> 00:39:00.124
+<v SPEAKER_2>Questa cosa della doppia provazione non l'ha mai vista applicata, onestamente.
+
+00:39:00.124 --> 00:39:04.504
+<v SPEAKER_2>So se tu, Andrea, hai incrociato qualcuno con un bilante.
+
+00:39:04.504 --> 00:39:09.104
+<v SPEAKER_1>No, io credo che le strutture in genere siano al passo 1.
+
+00:39:10.364 --> 00:39:20.304
+<v SPEAKER_3>La difficoltà che hanno i team di backup è che questo causa diverse e forti in più, però allo stesso tempo stai salvaguardando il dato, per cui deve essere visto in maniera positiva.
+
+00:39:20.304 --> 00:39:31.384
+<v SPEAKER_3>È chiaro che poi quando ci sono aziende che ogni settimana buttano via mille WM che succede, che fanno abilità di testa, le backup vengono buttate via e poi tu devi disattivarne in qualche modo.
+
+00:39:31.404 --> 00:39:37.964
+<v SPEAKER_3>La metto molto larga e chiede dopo approvazione di tutte queste cose legacy che sono rimaste lì da cancellare.
+
+00:39:37.964 --> 00:39:47.244
+<v SPEAKER_3>Ecco, può creare delle forze e si trovano soluzioni, però in linea di massima essere aware che ogni operazione data loss debba essere doppia approvata, questo secondo me è importante.
+
+00:39:48.504 --> 00:39:52.164
+<v SPEAKER_1>Tu hai appena, scusami, però finisci pure.
+
+00:39:55.204 --> 00:40:20.664
+<v SPEAKER_3>Guarda, dopo di che avvengono, secondo me, la piattaforma ideale poi può aiutare il team di security e questa è la fase 2, però secondo me se tu non hai il backup è inutile aiutarla security, cioè se io proteggo il 50% dei miei risorse perché non sono in grado di farlo e di fare le altre in maniera efficace o comunque come dovrebbe, chiaramente sì, posso aiutarsi che io rimango scoperto.
+
+00:40:20.664 --> 00:40:23.364
+<v SPEAKER_3>L'ultimo step secondo me è fondamentale.
+
+00:40:48.344 --> 00:40:52.884
+<v SPEAKER_3>I don't know if the backup is working or not.
+
+00:40:52.904 --> 00:40:58.144
+<v SPEAKER_3>Più grande è l'azienda, più questi processi sono automatici di far finire una macchina dentro al backup.
+
+00:40:59.904 --> 00:41:08.444
+<v SPEAKER_3>E spesso e volentieri, alcune volte vuoi per un tag mancante, vuoi per un processo che sia fermato nel mezzo, finisce che una macchina non è protetta.
+
+00:41:08.444 --> 00:41:13.864
+<v SPEAKER_3>Tendenzialmente non è colpa di nessuno, però l'onboarding ha dimenticato un tag, un errore umano vi è dicendo.
+
+00:41:14.304 --> 00:41:23.644
+<v SPEAKER_3>Successivamente è stato messo il tag macchina è una crown jewel, però in realtà non ha backup e non è tracciato da nessuna parte, perché il team di backup non ce l'ha a perimetro e dall'altra parte non c'è backup.
+
+00:41:23.644 --> 00:41:41.864
+<v SPEAKER_3>Il merge di CMDB che dice questa macchina è critica, il sull'ultimo backup è ieri e il sistema di backup che dice ok queste sono le liste delle cose protette, questo ti permette di avere grande visibilità e quindi che anche il team di compliance o security sia aware.
+
+00:41:41.864 --> 00:42:15.224
+<v SPEAKER_3>Questo è un'azienda più grande, ma in generale una dashboard con semplicemente la colonna ultima data di backup completato con successo, questo tipo di integrazione deve esserci anche se è fatta a manina con un csv inizialmente con uno scriptino, ma una piccola dashboard con ultima data di backup che faccia il merge con quello che al mio CMDB delle macchine che dovevano avere il backup, questo secondo me deve essere delle risorse più che macchine, questo secondo me deve essere sempre lampante, sia che usi un prodotto di backup o che ne usi 15, ma questo merge va sempre fatto.
+
+00:42:15.224 --> 00:42:16.424
+<v SPEAKER_3>Questo è l'ultimo pezzettino.
+
+00:42:16.424 --> 00:42:20.824
+<v SPEAKER_3>Se la soluzione lo offre, meglio, altrimenti costruitele.
+
+00:42:20.824 --> 00:42:26.664
+<v SPEAKER_2>Infatti forse anche l'informazione per chi è il CMDB è un'informazione che proprio ti puoi portare dentro.
+
+00:42:26.664 --> 00:42:42.564
+<v SPEAKER_2>Immagino io nel momento in cui giro il backup a livello di automazione, ormai dobbiamo diventare bravetti con l'automazione, aggiorno anche quelle informazioni sul CMDB, se non giro il backup quell'informazione non si aggiornano, quindi posso in qualche modo gestire un threshold su quel mancato aggiornamento.
+
+00:42:42.564 --> 00:42:59.184
+<v SPEAKER_2>Però effettivamente è una cosa che io personalmente vedo spesso di sgiunta, cioè il team di backup guarda che i backup vada a una buon fine, però giustamente come dici tu se la macchina non è nel piano, non vedo un fail, non la vedo mai, e quindi non mi accorgo.
+
+00:42:59.184 --> 00:43:00.924
+<v SPEAKER_3>Questo vale per il DR, vale per tutto.
+
+00:43:01.084 --> 00:43:04.564
+<v SPEAKER_2>Certo.
+
+00:43:04.564 --> 00:43:11.564
+<v SPEAKER_3>Quello che è la chiave di volta è il sistema deve essere un sistema che si adatta bene ad integrazioni.
+
+00:43:11.564 --> 00:43:23.164
+<v SPEAKER_3>Questa è una features come fondamentale, cioè deve essere pieno di API zippo per avere tutte le informazioni, devono essere fruibili, esportazioni, quel che l'è, bisogna fare in modo che i sistemi si parlino.
+
+00:43:23.164 --> 00:43:30.144
+<v SPEAKER_3>Fino a qualche anno fa il sistema di backup, lasciatemi dire che era un po per i campi suoi, perché era un po legacy, vista come roba legacy.
+
+00:43:30.224 --> 00:43:32.764
+<v SPEAKER_3>Negli ultimi anni ha preso una certa importanza.
+
+00:43:32.764 --> 00:43:38.504
+<v SPEAKER_3>Come tutti i sistemi importanti, deve essere soggetto a grandi automazioni e integrazioni.
+
+00:43:38.504 --> 00:43:51.364
+<v SPEAKER_3>I grandi clienti si stanno muovendo in questa direzione, sto facendo diverse attività di questo tipo, e diventa sempre più fondamentale che questi sistemi si parlino, perché alla fine è importante.
+
+00:43:51.364 --> 00:43:54.644
+<v SPEAKER_3>Tra parentesi, backup viene anche usato come exit strategy dal cloud.
+
+00:43:54.644 --> 00:43:57.744
+<v SPEAKER_3>A maggior ragione, questo diventa importante.
+
+00:43:59.524 --> 00:44:06.784
+<v SPEAKER_2>Questo è un tema che forse Andrea ha tirato fuori dall'ultima volta che abbiamo discusso, mi pare il tema dell'uscita dal cloud.
+
+00:44:06.784 --> 00:44:07.844
+<v SPEAKER_1>Sì, sì, esatto.
+
+00:44:07.844 --> 00:44:10.944
+<v SPEAKER_1>Sempre parte della normativa Dora, se ricordo bene.
+
+00:44:10.944 --> 00:44:11.884
+<v SPEAKER_1>Giusto, Mattia?
+
+00:44:11.884 --> 00:44:14.684
+<v SPEAKER_3>Sì, sì, sì, assolutamente sì.
+
+00:44:14.684 --> 00:44:23.984
+<v SPEAKER_3>Ma anche, lasciamo dire, anche una paura di alcuni clienti, quella di trovarsi scoperti, per cui entrare in tutte e due le dinamiche, non solo per il finance.
+
+00:44:24.484 --> 00:44:28.984
+<v SPEAKER_1>Per fortuna, qualcuno si sta ponendo queste domande.
+
+00:44:28.984 --> 00:44:30.824
+<v SPEAKER_1>E ho una domanda per te.
+
+00:44:30.824 --> 00:45:07.644
+<v SPEAKER_1>Io vedo in moltissimi clienti, come dire, utilizzare il cloud tipo glass, o sia, o cose del genere, come backup di last resort, quindi l'ultimo paracadute è di scorta per salvarsi, che può anche andare bene, nel senso, è lì, ha chiaramente delle problematiche, nel senso che portarselo giù può avere un certo costo, e mi hai fatto riflettere sulla parte di clean backup, cioè bisogna che quel backup sia buono, perché è buono nel senso pulito, se no, a poco serve metterlo là.
+
+00:45:07.644 --> 00:45:13.724
+<v SPEAKER_1>Però volevo chiederti, sempre nella tua esperienza, come lo vedi, quanto lo vedi, come lo vedi.
+
+00:45:13.724 --> 00:45:15.784
+<v SPEAKER_3>Allora, vi racconto la mia esperienza proprio.
+
+00:45:16.084 --> 00:45:25.904
+<v SPEAKER_3>Un cliente veneto tre anni fa venne compromesso, partendo dalle sedi remote, per una due coppie di backup, una on-prem e una su e-jo.
+
+00:45:25.904 --> 00:45:36.144
+<v SPEAKER_3>Quella on-prem era fumata completamente, classica copia legacy, non c'era dato molta importanza, ma quella su e-jo era messa in sicurezza con tutto quel tema di network che abbiamo parlato.
+
+00:45:36.144 --> 00:45:45.924
+<v SPEAKER_3>In questo caso abbiamo sfruttato le tecnologie del prodotto chiamata network topology, giusto parlare un nome è vero, che decido il flusso di rete sulla base di quello che voglio.
+
+00:45:45.924 --> 00:45:59.984
+<v SPEAKER_3>Fondamentalmente Azure era una bolla, sai che riceveva i dati, ma che aveva delle macchine in mezzo che fungevano da proxy, per cui anche la compromissione dall'on-prem fino ai proxy si fermava lì, perché i proxy autorizzavano solo traffico inbound.
+
+00:45:59.984 --> 00:46:14.544
+<v SPEAKER_3>Ebbene, nel momento in cui questo cliente era molto committato su Azure, perché aveva una banda significativa, abbiamo effettuato la copia reversa perché far il restore dal cloud all'on-prem non ti basta perdere due pacchetti e devi ripartire.
+
+00:46:14.784 --> 00:46:20.264
+<v SPEAKER_3>Il processo di restore non è mai disegnato per avere packet loss, tendenzialmente.
+
+00:46:20.264 --> 00:46:24.604
+<v SPEAKER_1>Il download viene come un file unico, neanche uno stream.
+
+00:46:24.764 --> 00:46:32.524
+<v SPEAKER_3>No, ecco, per scrivere dentro i blob, per scrivere dentro S3, non esiste che fai un file da 14 tera, capisci?
+
+00:46:32.524 --> 00:46:36.624
+<v SPEAKER_3>Quindi va strutturato il tutto a furia di piccoli blob.
+
+00:46:36.704 --> 00:46:42.664
+<v SPEAKER_3>8 mega, 32 mega, sono piccoli, sono grandi, però vediamo un po come si può vedere da vari punti di vista.
+
+00:46:42.664 --> 00:46:45.324
+<v SPEAKER_3>In ogni caso sono multiple chunk da tirare giù.
+
+00:46:45.324 --> 00:46:46.844
+<v SPEAKER_3>Questo vale per tutti i prodotti.
+
+00:46:46.844 --> 00:47:00.284
+<v SPEAKER_1>Ma nella restore mi garantisci, mi garantisci tu, nel senso prodotto, mi garantisce il fatto che se perdo un pacchetto mi riscarico il singolo blob, non ripro...
+
+00:47:00.284 --> 00:47:07.804
+<v SPEAKER_3>Certo, in linea di massima sì, però dopo tot fallimenti il processo di restore dice questa rete instabile e si ferma.
+
+00:47:09.104 --> 00:47:19.584
+<v SPEAKER_3>I retrai tendenzialmente nascono, non per aspettarmi che io c'ho una linea magari instabile verso il clado, quindi poi la satura inizia ad avere latenze enormi, sai benissimo che non è l'ideale.
+
+00:47:19.584 --> 00:47:35.224
+<v SPEAKER_3>Tendenzialmente i prodotti di backup nascono per aspettarsi che, a parte determinate configurazioni, cosa che i clienti poi non provano mai, non mi aspetto di dover ripristinare 120 tera direttamente dal cloud in una botta, che era quello che era successo.
+
+00:47:35.224 --> 00:47:45.724
+<v SPEAKER_3>Però quello che mi aspetto è che, invece, magari possa effettare una copia del dato su un sito remoto che avrà poi la sua macchina proxy lì che può leggere il dato da lì locale e fare il restore, che è questo quello che abbiamo fatto.
+
+00:47:45.724 --> 00:47:58.204
+<v SPEAKER_3>Abbiamo usato una copia in cloud, l'abbiamo ririversata a on-premise, anche perché comunque una volta c'era per cui ci sarebbe, cioè dovevamo riportare una copia dell'ultima retention di on-premise e abbiamo fatto il restore da lì.
+
+00:47:58.204 --> 00:48:09.844
+<v SPEAKER_3>Questo processo è impiegato più o meno una decina di quindicina di giorni di riportare il dato completamente on-premise, ma nel frattempo ad ogni completamento di copia si partiva con un restore, quindi le cose ruotavano.
+
+00:48:09.844 --> 00:48:15.124
+<v SPEAKER_3>Il funzionamento è ottimo, è di sicuro una soluzione valida.
+
+00:48:15.124 --> 00:48:22.624
+<v SPEAKER_3>Il cliente aveva una 700 megabit, che per sparare il dato in cloud e per nomare l'utilizzo applicativo era ok.
+
+00:48:22.624 --> 00:48:29.784
+<v SPEAKER_3>Quello su cui secondo me i clienti quando fanno strategia devono valutare sono i tempi.
+
+00:48:29.784 --> 00:48:31.464
+<v SPEAKER_3>I tempi per due motivi.
+
+00:48:31.464 --> 00:48:56.624
+<v SPEAKER_3>Il primo, chiunque usa Glassier deve ricordare che a meno di quello che si chiama Expedit e Retrieval, che è un flag che va attivato quando fai l'API per fare i download Glassier, i prodotti di backup di solito ce l'hanno, se non lo metti, il restore da Glassier parte, dipende da quale tier di Glassier, poi c'è il Deep Archive che costa ancora meno, il Deep Archive sono 14 ore, l'altro sono 5 ore.
+
+00:48:57.664 --> 00:49:02.384
+<v SPEAKER_3>Per iniziare, tu gli fai la richiesta e lui poi arriva il dato disponibile.
+
+00:49:02.384 --> 00:49:05.884
+<v SPEAKER_3>L'aprile per 5 ore prima di darti un bit.
+
+00:49:05.884 --> 00:49:10.924
+<v SPEAKER_3>Per cui questo vale per ogni file che tiri giù, per cui questo è un punto importante.
+
+00:49:10.924 --> 00:49:17.124
+<v SPEAKER_3>Se un cliente vuole farlo per risparmiare, ok, io consiglio di anche qui fare dei test periodici, almeno di download del dato.
+
+00:49:17.124 --> 00:49:22.544
+<v SPEAKER_3>Giusto per capire quali sono i processi per velocizzarlo, perché si può fare, basta sempre pagare.
+
+00:49:22.544 --> 00:49:30.464
+<v SPEAKER_3>Seconda cosa, glass era un costo di retrival di più o meno 40 euro a terra, questo era Azure Archive, ma sono abbastanza allineati.
+
+00:49:30.464 --> 00:49:37.404
+<v SPEAKER_3>Valutate bene se questo costo è sostenibile, perché poi c'è il costo di egress.
+
+00:49:37.404 --> 00:49:47.844
+<v SPEAKER_3>Quindi capire se non ci sia una soluzione più economica prima di tutto, se si è pronti per fare quel pagamento di egress, sia in linea oppure meno.
+
+00:49:49.204 --> 00:49:52.584
+<v SPEAKER_3>Questo è il secondo punto, il primo sono assolutamente i tempi.
+
+00:49:52.584 --> 00:50:02.284
+<v SPEAKER_3>Tanti clienti usano la copia in cloud, secondo me è assolutamente valida come copia immutabile e tutto.
+
+00:50:02.284 --> 00:50:14.164
+<v SPEAKER_3>Secondo me non è glass che si riesce a renderla immutabile, diciamo premesso che per muovere qualcosa ci metto 5 ore, per cui diventa immutabile anche perché stanca un attaccante, ma è l'object lock secondo me la chiave.
+
+00:50:15.284 --> 00:50:22.124
+<v SPEAKER_3>A meno che uno non vada ad acchierare AWS o Microsoft, l'object lock ti garantisce l'immutabilità del dato.
+
+00:50:24.604 --> 00:50:33.324
+<v SPEAKER_3>Il punto è, c'è solo un modo per poter bypassare l'object lock ed è cancellare l'account AWS.
+
+00:50:34.804 --> 00:50:37.604
+<v SPEAKER_3>E in teoria anche la subscription di Azure, credo che sia l'unico modo.
+
+00:50:37.604 --> 00:50:40.384
+<v SPEAKER_3>Su AWS è anche documentato su Azure è un rumore.
+
+00:50:42.564 --> 00:51:00.364
+<v SPEAKER_3>Quindi non sono certo su Azure di quale sia il processo, però in ogni caso quei processi li fanno partire tutta una serie di altri processi, di account che ti chiama, ti chiede perché vuoi buttare via l'account, vai dicendo, per cui questo tendenzialmente è un processo abbastanza sicuro.
+
+00:51:00.364 --> 00:51:13.284
+<v SPEAKER_3>La copy and cloud per me è una delle soluzioni che va un po a di smettere il vecchio utilizzo della tape library, perché richiedeva una manutenzione impressionante la tape library.
+
+00:51:13.284 --> 00:51:23.924
+<v SPEAKER_3>Drive che si rompono cassette da comprare, anche se ad oggi è uno dei sistemi più economici e se si hanno competenze più efficienti che ci siano.
+
+00:51:23.924 --> 00:51:28.064
+<v SPEAKER_3>È la copia immutabile più sicura sul mercato agitativamente.
+
+00:51:28.124 --> 00:51:39.564
+<v SPEAKER_2>Classico warm tape, esatto ben gestito perché ovviamente poi se li metti in cantina forse c'è un problema di di di di quanto fai vivere il nastro.
+
+00:51:39.564 --> 00:51:54.724
+<v SPEAKER_2>Però se sei gestito bene ancora una tecnologia che potre cioè come tecnologia se l'eda sia ancora valida la sua degna il suo degno il sostituto è potrebbe essere la logica.
+
+00:51:54.724 --> 00:52:18.784
+<v SPEAKER_3>In cloud o ad oggi molti clienti stanno iniziando a valutare s3 target s3 compatibili on-prem perché supportano la tecnologia object lock perché a costo a terra un po più basso di una tradizionale nas tanti clienti stanno muovendo su quella strada però per fare il merge di disaster recovery e cyber recovery spesso la copia in cloud preferibile.
+
+00:52:18.784 --> 00:52:23.324
+<v SPEAKER_3>C'è anche un ulteriore punto, non devi pagare il datacenter.
+
+00:52:23.324 --> 00:52:29.404
+<v SPEAKER_3>Io ho visto clienti che hanno il processo ddr strutturato, hanno vmware on-prem e in cloud cosa hanno usato?
+
+00:52:29.404 --> 00:52:33.264
+<v SPEAKER_3>La soluzione vmware del cloud provider, ma non sempre attiva.
+
+00:52:33.264 --> 00:52:35.464
+<v SPEAKER_3>Favono una copia del backup li.
+
+00:52:35.464 --> 00:52:44.524
+<v SPEAKER_3>On demand quando devono fare i test ddr tirano sui cluster vmware, fanno tutti i test, provano, verificano, hanno automatizzato alcune cose con terraform e poi lo buttano via.
+
+00:52:44.524 --> 00:52:46.224
+<v SPEAKER_3>Questa è una soluzione efficiente.
+
+00:52:49.704 --> 00:53:09.244
+<v SPEAKER_1>Io dallo spettacolo di oggi mi porto a casa che, anzi, apro con quello che hai detto all'inizio che hai definito come i processi ddr e di cyber recovery siano in realtà due processi molto diversi.
+
+00:53:09.244 --> 00:53:38.984
+<v SPEAKER_1>Da quello che hai raccontato mi sono fatto l'idea che è molto più semplice passare da un processo di cyber recovery e includere diciamo le funzionalità di ddr piuttosto che l'inverso e questo perché come hai detto all'inizio mi è piaciuto la base infrastrutturale quella che hai chiamato Thaer Zero richiede un design molto molto specifico in ottica cyber e invece in ottica ddr è data per assunto come lo è tutta l'infrastruttura.
+
+00:53:41.664 --> 00:54:04.424
+<v SPEAKER_1>In questo mi viene in mente che oggi disegnare un processo del genere richiede competenze e una seniority di un certo livello che è completamente l'approccio diverso quando io ho iniziato a lavorare svariati anni fa in cui il backup era l'attività che veniva data ai nuovi assunti perché nessuno ne voleva sapere niente, sostanzialmente.
+
+00:54:04.424 --> 00:54:08.144
+<v SPEAKER_3>Esattamente.
+
+00:54:08.144 --> 00:54:09.084
+<v SPEAKER_1>Una nuova dignità.
+
+00:54:09.084 --> 00:54:12.584
+<v SPEAKER_3>Mancavano delle skill secondo me, a parentesi.
+
+00:54:12.864 --> 00:54:22.344
+<v SPEAKER_3>Il fatto è che le persone con un po meno skill siano state assegnate al backup crea un gap in quello che invece oggi è la reale necessità dietro a questa cosa.
+
+00:54:22.344 --> 00:54:40.924
+<v SPEAKER_3>C'è persone con una visione a 360 gradi tra security, infrastruttura e anche network che escludo dalla security sono alcuni aspetti, in tema MAPLS, vi dicendo sono cose un po complicate, e secondo me è paradossalmente diventato quell'area che ha bisogno un po di tutto questo.
+
+00:54:40.924 --> 00:54:45.344
+<v SPEAKER_3>Tra parentesi, backup aro ha bisogno anche di conoscere un po di Ora, quello, un po di SQL, un po di questo.
+
+00:54:45.344 --> 00:54:56.844
+<v SPEAKER_3>Quindi nel momento in cui si riescono ad avere delle figure a 360 gradi, secondo me il design della soluzione sarà migliore rispetto a uno un po meno preparato.
+
+00:54:58.564 --> 00:55:20.844
+<v SPEAKER_1>Ma le aziende, è chiaro che anche qui la risposta è dipende, ma statisticamente le aziende sono pronte a questo salto di approccio, quindi trattare non più il backup come un correlato, come una prodotta scaffale, ma un qualcosa che va giustamente disegnato, pensato e realizzato in un certo modo, finché sia effettivamente salvavita dell'azienda.
+
+00:55:22.584 --> 00:55:34.884
+<v SPEAKER_3>La risposta è, io lavoro con un determinato livello di aziende, e diciamo che c'è un cambiamento in corso, e le aziende stanno iniziando a interessarsi a questi temi.
+
+00:55:34.884 --> 00:55:39.464
+<v SPEAKER_3>C'è stata una forte sensibilità negli ultimi anni su questo topic.
+
+00:55:39.464 --> 00:55:40.744
+<v SPEAKER_3>D'ora ha aiutato tantissimo.
+
+00:55:40.744 --> 00:55:50.184
+<v SPEAKER_3>NIST 2, l'altra normativa per questi temi, sta aiutando tantissimo e questo è tutto a livello e me.
+
+00:55:51.884 --> 00:55:53.584
+<v SPEAKER_3>Questa è la parte sensibilizzazione.
+
+00:55:53.584 --> 00:55:54.884
+<v SPEAKER_3>Cosa stanno facendo le aziende?
+
+00:55:54.884 --> 00:55:56.764
+<v SPEAKER_3>Le aziende stanno iniziando a vetterci il naso.
+
+00:55:56.764 --> 00:56:03.844
+<v SPEAKER_3>C'è chi è già dentro a progetti di vedere quanto è pronta la propria azienda su questi temi.
+
+00:56:03.844 --> 00:56:12.784
+<v SPEAKER_3>Chi invece si sta bagnando i piedi, provare a fare intanto il minimo indispensabile per essere compliant, perché ha altre priorità.
+
+00:56:12.784 --> 00:56:21.204
+<v SPEAKER_3>Io quello che vedo è le aziende un po più innovative che hanno approcciato il cloud, ci stanno già entrando dentro.
+
+00:56:21.204 --> 00:56:31.524
+<v SPEAKER_3>Vuoi per term exit strategy, vuoi perché sono sensibili a queste cose, vuoi perché sono meno legacy, hanno altre priorità, prene motivi sono già dentro.
+
+00:56:31.524 --> 00:57:02.584
+<v SPEAKER_3>Aziende che hanno scelto meno di innovare, ci limitano al giusto indispensabile e secondo me il personale che c'è ad oggi sul mondo data protection sta shiftando, quindi sta facendo del training, sta cercando di essere sul pezzo, sta iniziando a studiare security, su di studiare cloud, mi è dicendo, ma ci vorrà ancora qualche anno, perché certi temi non sono a conoscenza di queste figure.
+
+00:57:02.584 --> 00:57:09.044
+<v SPEAKER_3>Per cui secondo me è molto importante l'enablement di nuove figure, un po più giovani o del tier intermedio.
+
+00:57:09.044 --> 00:57:21.244
+<v SPEAKER_3>Le aziende stanno iniziando a far parlare i team di security col team di backup, però non c'è ancora quel tipo di collaborazione per cui una persona di security è dentro il backup o viceversa.
+
+00:57:21.244 --> 00:57:36.024
+<v SPEAKER_3>Questo non lo vedo ancora, se non in aziende molto molto molto molto grandi, che però secondo me sono più case isolate che il resto, perché se l'hanno fatto è perché hanno avuto degli incident significativi negli anni, si sono prese avanti.
+
+00:57:36.104 --> 00:57:56.224
+<v SPEAKER_3>Ecco, e siccome anche questo è il punto chiave, se sei stato attaccato questo processo lo stai vivendo in maniera più matura, e se non sei stato attaccato comunque ha avuto impatti trascurabili, probabilmente stai ancora facendo il minimo indispensabile, per essere compliant e non ricevere la famosa nuova notte.
+
+00:57:58.504 --> 00:58:01.524
+<v SPEAKER_3>Questa è un po la mia percezione, non so se avete qualcosa di diverso.
+
+00:58:04.084 --> 00:58:17.944
+<v SPEAKER_1>Io ho sposo la tua percezione e mi auguro che sia effettivamente un cambio di ritmo in quale viene trattato questo tema, che è un card in appunto della sopravvivenza dell'azienda.
+
+00:58:19.864 --> 00:58:37.444
+<v SPEAKER_2>Sì, anche io vedo il backup ancora gestito in una maniera estremamente tradizionale in molti casi, che funziona in chia, diciamo, giusto per fare recoveri di informazioni che per qualche ragione vengono vengono perse o bruciate involontariamente.
+
+00:58:38.464 --> 00:58:51.864
+<v SPEAKER_2>Vedo ancora molto lavoro da fare, ma addirittura già dalla parte infrastrutturale, c'è proprio della residenza e proprio la parte di infrastruttura, e poi per poi anche per usare e utilizzarlo anche in altri contesti.
+
+00:58:51.864 --> 00:59:03.504
+<v SPEAKER_2>Ma non è un caso che spesso le fasole di backup vengono vengono compromesse tanto quanto gli ambienti di produzione, non credo sia una coincidenza.
+
+00:59:03.504 --> 00:59:07.204
+<v SPEAKER_2>Evidentemente il design sono ancora troppo deboli in molti contesti.
+
+00:59:10.324 --> 00:59:27.044
+<v SPEAKER_3>L'esperienza sugli attacchi per quanto riguarda le infrastrutture di backup ne ho limitata nel senso che comunque sì vengono attaccati, ma tendenzialmente per mia esperienza le piattaforme sono rimaste su.
+
+00:59:27.044 --> 00:59:36.344
+<v SPEAKER_3>Il challenge che vedo è un po come le assicurazioni, quindi c'è chi comunque continua a non farle, e poi quando succede qualcosa è un disastro.
+
+00:59:36.344 --> 00:59:47.544
+<v SPEAKER_3>Per cui, per quanto mi riguarda, sono gli attacchi un po quello che fanno smuovere le masse.
+
+00:59:48.724 --> 00:59:57.984
+<v SPEAKER_3>E secondo me non dovrebbe nemmeno essere reso troppo complesso disegnare l'architettura, cioè la cosa più semplice è fare delle regole base.
+
+00:59:57.984 --> 01:00:09.484
+<v SPEAKER_3>Le regole base sono assicurati che poi prima di tutto devi capire cosa ti serve del tier 0 da ripristinare, e i famosi crown jewel, ovvero le applicativi fondamentali.
+
+01:00:09.484 --> 01:00:17.824
+<v SPEAKER_3>Per tirarli su l'infra di backup deve essere isolata la tua network, meglio se va lei verso a chi deve vecappare e non l'opposto.
+
+01:00:17.824 --> 01:00:40.804
+<v SPEAKER_3>Quindi sai che l'isolamento della tua network ti fa dormire dei sonni molto più tranquilli, assicurarti che tutti i processi siano autorizzati solo da chi è permesso, assicurarti che accedere a quell'infrastruttura sia limitato solo a chi ha ottenuto, e soprattutto rendila fisicamente e logicamente indipendente da tutto quello che protegge.
+
+01:00:40.864 --> 01:00:43.144
+<v SPEAKER_3>Fate queste tre cose, secondo me.
+
+01:00:45.744 --> 01:00:47.224
+<v SPEAKER_1>Fantastica.
+
+01:00:47.224 --> 01:00:52.624
+<v SPEAKER_1>Questo riassunto, direi perfettamente chiaro, troppo in pillole.
+
+01:00:52.624 --> 01:00:54.304
+<v SPEAKER_1>Noi ti ringraziamo.
+
+01:00:54.304 --> 01:01:00.924
+<v SPEAKER_1>Se qualche ascoltatore desidera raggiungerti, può farlo attraverso LinkedIn.
+
+01:01:00.924 --> 01:01:02.944
+<v SPEAKER_3>All'inca di in trovate.
+
+01:01:03.224 --> 01:01:03.864
+<v SPEAKER_1>Ok.
+
+01:01:03.864 --> 01:01:12.984
+<v SPEAKER_1>Magari se ti va, aggiungiamo il tuo profilo alla descrizione del podcast e basta così.
+
+01:01:12.984 --> 01:01:13.724
+<v SPEAKER_1>Grazie ancora.
+
+01:01:13.724 --> 01:01:14.124
+<v SPEAKER_1>Spero.
+
+01:01:15.704 --> 01:01:18.824
+<v SPEAKER_1>Grazie a tutti e grazie di averci ascoltato.
