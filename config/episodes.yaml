@@ -192,9 +192,11 @@
     i costi e i vantaggi che hanno guidato la transizione verso protocolli più flessibili
     e diffusi.
   tags:
-  - Fiber Channel
-  - iSCSI
-  - SCSI
+  - Detection
+  - Governance
+  - OT Security
+  - Risk Management
+  - Threat Intelligence
   title: Il lato nascosto dello storage tra costi e innovazione IT
   url: https://www.spreaker.com/episode/0x8-sicurezza-negli-impianti-ot-parte-2--58542969
 - authors:
@@ -685,6 +687,8 @@
   highlight_links:
   - title: Blog post di approfondimento
     url: https://roccosicilia.com/2025/11/02/info-sec-unplugged-1d-dr-e-cyber-recovery-puntata-speciale/
+  - title: Normativa ANSSI-BP-100
+    url: https://cyber.gouv.fr/sites/default/files/document/anssi-fondamentaux-sauvegarde_systemes_dinformation_v1-0.pdf
   id: 29
   length: 61
   published: true
