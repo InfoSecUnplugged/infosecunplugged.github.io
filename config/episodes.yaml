@@ -150,9 +150,10 @@
     l''XDR come strumento più integrato, accattivante e strategico per aumentare la
     visibilità e l''efficacia delle difese informatiche.'
   tags:
-  - Incident Response
+  - Automazione
+  - Detection
   - SIEM
-  - Threat Intelligence
+  - SOAR
   - XDR
   title: 'Da EDR a XDR: scegliere, gestire, utilizzare (parte 2)'
   url: https://www.spreaker.com/episode/0x6-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-2--58197897
