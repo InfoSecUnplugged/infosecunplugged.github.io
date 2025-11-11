@@ -120,11 +120,11 @@
     Una conversazione pratica e realistica per chi deve orientarsi nel mondo delle
     soluzioni di cybersecurity aziendale.
   tags:
-  - Incident Response
-  - SIEM
-  - SOAR
-  - SOC
-  - Vulnerability Management
+  - Adversary Simulation
+  - Detection
+  - EDR
+  - Risk Management
+  - Threat Intelligence
   title: 'Da EDR a XDR: scegliere, gestire, utilizzare (parte 1)'
   url: https://www.spreaker.com/episode/0x5-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-1--58197896
 - authors:
