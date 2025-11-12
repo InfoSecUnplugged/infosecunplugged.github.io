@@ -92,10 +92,11 @@
     su pratiche di monitoraggio continuo, configurazioni di hunting e sull''importanza
     di mantenere un controllo costante per garantire resilienza e protezione.'
   tags:
-  - Awareness
-  - Governance
-  - Incident Response
-  - Vulnerability Management
+  - Adversary Simulation
+  - EDR
+  - Red Teaming
+  - SOC
+  - Threat Intelligence
   title: 'EDR: scegliere, gestire, utilizzare (parte 2)'
   url: https://www.spreaker.com/episode/0x4-edr-scegliere-gestire-utilizzare-parte-2--58085883
 - authors:
