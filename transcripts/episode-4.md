@@ -1,10 +1,3 @@
-Perfetto 👍
-Ecco il risultato richiesto, basato sulla trascrizione che hai fornito.
-
----
-
-## Trascrizione rielaborata – “Info Sec. Unplugged”
-
 In questa puntata abbiamo deciso di concentrarci su un tema cruciale per la sicurezza informatica: la gestione e l’efficacia degli EDR (Endpoint Detection and Response). Ci siamo chiesti cosa succede quando la tecnologia non è presidiata, quando le policy non sono configurate correttamente, e come possiamo verificare se il nostro setup è davvero adeguato al livello di minaccia attuale.
 
 Abbiamo iniziato parlando del presidio delle tecnologie. Se non presidiamo l’EDR, una minaccia rilevata in detection può passare inosservata. Una serie di eventi anomali, che dovrebbero attivare l’attenzione, rischiano di non essere viste da nessuno. Anche le minacce bloccate, se non vengono monitorate e analizzate nel tempo, possono evolversi e riuscire a eludere i controlli. In questi casi capita di trovarsi con infezioni latenti che restano silenti fino a quando, per qualche ragione, non riescono a propagarsi e causare danni.
