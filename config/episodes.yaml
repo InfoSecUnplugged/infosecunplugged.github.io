@@ -43,8 +43,11 @@
     regge davvero alle minacce reali. Un episodio utile per chi si occupa di sicurezza
     informatica, risk management e continuità operativa.'
   tags:
-  - Disaster Recovery
+  - Detection
+  - EDR
+  - Governance
   - Risk Management
+  - Threat Intelligence
   title: Orchestrazione di sistemi di sicurezza (parte 2)
   url: https://www.spreaker.com/episode/0x2-orchestrazione-di-sistemi-di-sicurezza-parte-2--57864845
 - authors:
