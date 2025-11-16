@@ -711,3 +711,27 @@
   - Risk Management
   title: '[EXT] Cyber Recovery e Disaster Recovery: due mondi (quasi) paralleli'
   url: https://www.spreaker.com/episode/0x1d-ext-cyber-recovery-e-disaster-recovery-due-mondi-quasi-paralleli--68361685
+- authors:
+  - Andrea Dainese
+  - Rocco Sicilia
+  date: '20251117'
+  id: 30
+  length: 47
+  published: true
+  summary: 'In questa puntata di Info Sec. Unplugged esploriamo uno dei controlli
+    più complessi dell’Annex A della ISO/IEC 27001: la gestione delle configurazioni
+    (A.8.9). Lo facciamo partendo dal campo — da ciò che realmente accade durante
+    security test, red team e attività di assume breach — per capire quali siano le
+    conseguenze di configurazioni deboli, default lasciati attivi, hardening incompleto
+    o non verificato, e processi assenti o inefficaci. Con esempi concreti, aneddoti
+    e riflessioni sul ruolo dell’automazione, discutiamo cosa accade quando questo
+    controllo non viene gestito correttamente e quali sono gli approcci più efficaci
+    per avvicinarsi a una configurazione sicura, monitorata e sostenibile.'
+  tags:
+  - Automazione
+  - Compliance
+  - Governance
+  - Risk Management
+  - SOC
+  title: 'Gestione delle configurazioni: tra ISO 27001 e realtà operativa'
+  url: https://www.spreaker.com/episode/0x1e-gestione-delle-configurazioni-tra-iso-27001-e-realta-operativa--68578396
