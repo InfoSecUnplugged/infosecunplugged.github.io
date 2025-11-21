@@ -728,10 +728,35 @@
     controllo non viene gestito correttamente e quali sono gli approcci più efficaci
     per avvicinarsi a una configurazione sicura, monitorata e sostenibile.'
   tags:
-  - Automazione
   - Compliance
   - Governance
+  - ISO27001
+  - Red Teaming
   - Risk Management
-  - SOC
   title: 'Gestione delle configurazioni: tra ISO 27001 e realtà operativa'
   url: https://www.spreaker.com/episode/0x1e-gestione-delle-configurazioni-tra-iso-27001-e-realta-operativa--68578396
+- authors:
+  - Andrea Dainese
+  - Rocco Sicilia
+  date: '20251201'
+  id: 31
+  length: 38
+  published: false
+  summary: 'In questa puntata di Info Sec. Unplugged affrontiamo un tema spesso sottovalutato:
+    la gestione del codice sorgente nelle organizzazioni. Partendo dal controllo 8.4
+    della ISO 27001, esploriamo perché praticamente ogni azienda — anche quelle che
+    “non sviluppano software” — in realtà produce script, integrazioni, automazioni
+    e piccoli applicativi che diventano critici per il business. Raccontiamo esempi
+    reali, rischi concreti, errori ricorrenti e buone pratiche per gestire il codice
+    in modo sicuro e professionale, anche quando si tratta di semplici script operativi.
+    Una riflessione che tocca secure coding, supply chain, automazione e governance
+    tecnica.'
+  tags:
+  - Compliance
+  - Governance
+  - ISO27001
+  - Red Teaming
+  - Risk Management
+  title: 'Accesso al codice sorgente: perché ogni azienda sviluppa software (anche
+    senza saperlo)'
+  url: https://www.spreaker.com/episode/0x1f-accesso-al-codice-sorgente-perche-ogni-azienda-sviluppa-software-anche-senza-saperlo--68677594
