@@ -759,4 +759,58 @@
   - Risk Management
   title: 'Accesso al codice sorgente: perché ogni azienda sviluppa software (anche
     senza saperlo)'
-  url: https://www.spreaker.com/episode/0x1f-accesso-al-codice-sorgente-perche-ogni-azienda-sviluppa-software-anche-senza-saperlo--68677594
+  url: https://www.spreaker.com/episode/0x1f-accesso-al-codice-sorgente-perche-ogni-azienda-sviluppa-software-anche-senza-saperlo--68679961
+- authors:
+  - Andrea Dainese
+  - Nicolò Poniz
+  - Rocco Sicilia
+  date: '20251215'
+  highlight_links:
+  - title: Cybersecurity Framework
+    url: https://www.nist.gov/cyberframework
+  - title: Informative References for CSF 2.0
+    url: https://www.nist.gov/cyberframework/informative-references
+  id: 32
+  length: 42
+  published: false
+  summary: 'In questa puntata di Info Sec. Unplugged ripercorriamo, insieme a Nicolò
+    Poniz, un viaggio autentico dentro il ruolo del CISO: le complessità, i conflitti,
+    le sfide culturali e manageriali che spesso superano perfino quelle tecniche.
+    Partendo da un’esperienza diretta post-compromissione, esploriamo cosa significa
+    davvero ricoprire simultaneamente i ruoli di CIO e CISO, creare una cultura della
+    sicurezza, gestire persone, diluire conflitti e affrontare board che non sempre
+    vogliono vedere i problemi per ciò che sono. Una conversazione schietta, lucida
+    e ricca di spunti reali su come si costruisce — e si difende — una funzione di
+    cyber security in azienda.'
+  tags:
+  - Awareness
+  - Compliance
+  - Governance
+  - Risk Management
+  title: 'CISO, vCISO e il peso della responsabilità: tra tecnica, leadership e cultura
+    aziendale (parte 1)'
+  url: https://www.spreaker.com/episode/0x20-ciso-vciso-e-il-peso-della-responsabilita-tra-tecnica-leadership-e-cultura-aziendale-parte-1--68691879
+- authors:
+  - Andrea Dainese
+  - Nicolò Poniz
+  - Rocco Sicilia
+  date: '20251229'
+  id: 33
+  length: 38
+  published: false
+  summary: In questa seconda parte approfondiamo — con esempi concreti e molta esperienza
+    sul campo — il rapporto tra CISO interno e vCISO esterno. Che differenze operative
+    esistono davvero? Quando ha senso ricorrere a un virtual CISO e quali sono i limiti
+    strutturali di questa scelta? Parliamo di responsabilità, budget, governance,
+    competenze, modelli organizzativi e delle difficoltà di costruire team efficaci
+    in un mercato che spinge molti tecnici verso la consulenza. Un confronto schietto,
+    diretto e pieno di spunti pratici per capire come organizzare davvero una funzione
+    di sicurezza efficace.
+  tags:
+  - Awareness
+  - Compliance
+  - Governance
+  - Risk Management
+  title: 'CISO, vCISO e il peso della responsabilità: tra tecnica, leadership e cultura
+    aziendale (parte 2)'
+  url: https://www.spreaker.com/episode/ciso-vciso-e-il-peso-della-responsabilita-tra-tecnica-leadership-e-cultura-aziendale-parte-2--68691914
