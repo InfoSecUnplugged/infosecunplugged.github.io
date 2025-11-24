@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="../css/jquery-ui.css">
   <link rel="stylesheet" href="../css/owl.carousel.min.css">
   <link rel="stylesheet" href="../css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
   <link rel="stylesheet" href="../css/aos.css">
   <link rel="stylesheet" href="../css/style.css">
   <!-- Open Graph -->
@@ -146,25 +145,6 @@
   <script src="../js/jquery.countdown.min.js"></script>
   <script src="../js/jquery.magnific-popup.min.js"></script>
   <script src="../js/aos.js"></script>
-  <script src="../js/mediaelement-and-player.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
-
-      for (var i = 0; i < total; i++) {
-        new MediaElementPlayer(mediaElements[i], {
-          pluginPath: 'https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/',
-          shimScriptAccess: 'always',
-          success: function () {
-            var target = document.body.querySelectorAll('.player'), targetTotal = target.length;
-            for (var j = 0; j < targetTotal; j++) {
-              target[j].style.visibility = 'visible';
-            }
-          }
-        });
-      }
-    });
-  </script>
   <script src="../js/main.js"></script>
 
 </body>
