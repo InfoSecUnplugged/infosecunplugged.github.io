@@ -715,6 +715,11 @@
   - Andrea Dainese
   - Rocco Sicilia
   date: '20251117'
+  highlight_links:
+  - title: Blog post di approfondimento
+    url: https://roccosicilia.com/2025/11/21/info-sec-unplugged-1e-gestione-delle-configurazioni/?utm_source=podcast_website
+  - title: Highlight (video)
+    url: https://youtu.be/AChk9nYNwNM
   id: 30
   length: 47
   published: true
