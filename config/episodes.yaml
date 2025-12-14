@@ -777,7 +777,7 @@
     url: https://www.nist.gov/cyberframework/informative-references
   id: 32
   length: 42
-  published: false
+  published: true
   summary: 'In questa puntata di Info Sec. Unplugged ripercorriamo, insieme a Nicolò
     Poniz, un viaggio autentico dentro il ruolo del CISO: le complessità, i conflitti,
     le sfide culturali e manageriali che spesso superano perfino quelle tecniche.
