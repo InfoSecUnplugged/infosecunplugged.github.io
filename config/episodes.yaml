@@ -802,7 +802,7 @@
   date: '20251229'
   id: 33
   length: 38
-  published: false
+  published: true
   summary: In questa seconda parte approfondiamo — con esempi concreti e molta esperienza
     sul campo — il rapporto tra CISO interno e vCISO esterno. Che differenze operative
     esistono davvero? Quando ha senso ricorrere a un virtual CISO e quali sono i limiti
