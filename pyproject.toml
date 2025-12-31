@@ -11,4 +11,36 @@ pyyaml = "6.0.2"
 
 [tool.poetry.group.dev.dependencies]
 tomlkit = "^0.13.3"
+ruff = "^0.14.10"
+black = "^25.12.0"
+
+
+[tool.black]
+exclude = '''
+/(
+  __pycache__
+  | \.git
+  | \.venv
+  | build
+  | dist
+  | migrations
+  | venv
+)/
+'''
+skip-string-normalization = false
+target-version = ["py310", "py311", "py312", "py313"]
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    "__pycache__",
+    ".git",
+    ".venv",
+    "build",
+    "dist",
+    "env",
+    "migrations",
+    "venv",
+]
+target-version = ["py310", "py311", "py312", "py313"]
 

@@ -18,3 +18,10 @@ Build the website:
 ```bash
 poetry run ./build.py
 ```
+
+Run checks:
+
+```bash
+poetry run black --check .
+poetry run ruff check .
+```
