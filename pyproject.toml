@@ -8,3 +8,7 @@ jinja2 = "3.1.6"
 markdown = "3.9"
 python-slugify = "8.0.4"
 pyyaml = "6.0.2"
+
+[tool.poetry.group.dev.dependencies]
+tomlkit = "^0.13.3"
+
