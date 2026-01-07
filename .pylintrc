@@ -1,5 +1,5 @@
 [MASTER]
-ignore=__pycache__,.git,.venv,build,dist,env,migrations,tests,venv
+ignore=__pycache__,.git,.venv,build,dist,env,fonts,migrations,tests,venv,.vscode
 ignore-patterns=.*\.pyc
 
 # Add current directory to PYTHONPATH for proper import resolution.
