@@ -55,7 +55,7 @@
       data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
-          
+
           <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
             <h2 class="text-white font-weight-light mb-2 display-4">0x22 - Sicurezza delle reti tra progettazione, autenticazione e detection</h2>
             <div class="text-white mb-3">
@@ -65,27 +65,27 @@
             </div>
 
             <div>
-              
+
               <a href="https://podcasts.apple.com/podcast/id1719133815">
                 <img class="p-1" src="../images/platforms/apple.png" alt="List on Apple Podcasts" />
               </a>
-              
+
               <a href="https://music.amazon.com/podcasts/e37fec14-9f41-48d5-ac92-e7e8d71d3fec">
                 <img class="p-1" src="../images/platforms/amazon.png" alt="List on Audible" />
               </a>
-              
+
               <a href="https://pocketcasts.com/podcast/info-sec-unplugged/df034260-71c4-013c-2888-0a5978b26ff7">
                 <img class="p-1" src="../images/platforms/pocketcasts.png" alt="List on Pocket Casts" />
               </a>
-              
+
               <a href="https://www.iheart.com/podcast/131943309">
                 <img class="p-1" src="../images/platforms/iheartradio.png" alt="List on iHeartRadio" />
               </a>
-              
+
               <a href="https://open.spotify.com/show/0TtlgpvszbluGVDjpFmy81">
                 <img class="p-1" src="../images/platforms/spotify.png" alt="List on Spotify" />
               </a>
-              
+
             </div>
           </div>
         </div>
@@ -104,28 +104,50 @@
         <div class="col-md-12"><p>In questa puntata di Info Sec. Unplugged, Andrei Dainese e Rocco Sicilia esplorano in profondità i controlli ISO 27001 legati alla sicurezza delle reti. Partendo dalla progettazione dei domini di sicurezza e dalla segregazione delle reti, discutono di come i principi teorici si traducano in pratiche reali, dall’autenticazione dei dispositivi e degli utenti fino alla gestione dei firewall, dei sistemi di detection e del traffico interno “est-ovest”. La conversazione, basata su esperienze concrete, mette in luce punti critici, best practice e strategie per ridurre i blind spot e aumentare la tracciabilità delle attività in rete.</p></div>
       </div>
 
-      
 
-      
+
+
       <div class="tags mb-4">
-        
+
         <span><a class="text-black" href="../tags/tag-detection.html">Detection</a></span>
-        
+
         <span><a class="text-black" href="../tags/tag-edr.html">EDR</a></span>
-        
+
         <span><a class="text-black" href="../tags/tag-iso27001.html">ISO27001</a></span>
-        
+
         <span><a class="text-black" href="../tags/tag-risk-management.html">Risk Management</a></span>
-        
+
         <span><a class="text-black" href="../tags/tag-soc.html">SOC</a></span>
-        
+
       </div>
-      
+
     </div>
 
-    
 
-    
+    <div class="site-section bg-light">
+      <div class="container" data-aos="fade-up">
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="font-weight-bold text-black">Trascrizione discorsiva rileaborata da IA</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Bentornati a Info Sec. Unplugged. In questa puntata, vogliamo condividere con voi alcune riflessioni e approfondimenti sulla sicurezza delle reti, basandoci sulla nostra esperienza diretta in architetture aziendali e test di sicurezza. In particolare, ci concentriamo sui controlli ISO 27001: l’Allegato A, punti 8.20 e 8.22, che trattano rispettivamente la sicurezza e la segregazione delle reti.</p>
+<p>Quando progettiamo le reti, il nostro primo obiettivo è capire perché dividiamo un’infrastruttura in diversi domini di sicurezza. Non basta piazzare una DMZ o un segmento separato: bisogna valutare motivazioni concrete e reali, considerando dove possono sorgere i blind spot, ovvero le aree meno presidiate che un attaccante potrebbe sfruttare. Nel traffico interno, spesso si sottovaluta quello “est-ovest”, cioè la comunicazione tra host all’interno dello stesso dominio di rete. Senza controlli adeguati, un attaccante potrebbe muoversi liberamente tra due sedi connesse da MPLS, come se fosse una singola rete routata.</p>
+<p>L’accesso fisico alla rete rappresenta un altro punto critico. Porte di rete attive in aree dove transitano clienti o ospiti sono facili da sfruttare, e dispositivi rogue possono essere collegati con semplicità. Anche le reti Wi-Fi richiedono attenzione: sebbene sia consigliata l’autenticazione dei dispositivi (NAC), non tutte le aziende la implementano correttamente, e spesso si affidano a chiavi condivise, potenzialmente vulnerabili. Gestire correttamente queste credenziali è fondamentale per non dare un falso senso di sicurezza.</p>
+<p>Dal punto di vista della detection, la situazione è complessa. I sistemi EDR sugli endpoint non coprono tutti i dispositivi, e le stampanti, ad esempio, rimangono punti vulnerabili. Sul fronte network, IDS e IPS sono spesso collocati nei punti centrali di routing, ma il traffico all’interno dei domini di broadcast può sfuggire alla rilevazione. Solo configurazioni avanzate, con sensori distribuiti, consentono una raccolta completa del traffico, ma sono rare e onerose. Tecniche di correlazione con DHCP e monitoraggio dei MAC address permettono comunque di identificare dispositivi nuovi o non autorizzati.</p>
+<p>Un altro aspetto critico è l’autenticazione degli utenti e dei dispositivi. In molte aziende, un nuovo asset che si connette alla rete viene rilevato e generano alert, ma non sempre esiste un processo di autenticazione preventiva. L’approccio pratico che adottiamo è creare un asset inventory e mappare i dispositivi, confrontando ciò che è presente con ciò che dovrebbe esserci. Questo permette di identificare anomalie e potenziali intrusi, anche se non garantisce una sicurezza totale.</p>
+<p>La gestione delle identità è strettamente collegata alla segmentazione dei servizi. L’onboarding di un utente genera un’identità digitale, associata a gruppi e policy in Active Directory, che definiscono i livelli di accesso su firewall e sistemi. Questo meccanismo limita i movimenti di un attaccante, riducendo i privilegi disponibili e permettendo di tracciare attività anomale. La segmentazione per domini di sicurezza non è solo tecnica, ma coinvolge anche HR e management per capire i ruoli e i livelli di seniority degli utenti.</p>
+<p>Infine, il concetto di assume breach guida la nostra progettazione: dobbiamo presupporre che alcune porzioni di rete possano essere compromesse e, di conseguenza, costruire architetture resilienti e controllabili, dove la detection è efficace e i movimenti sospetti sono tracciabili. Tutti questi concetti confluiscono nel punto 8.20 dell’ISO 27001: proteggere le reti e i dispositivi da compromissioni, gestendoli e controllandoli con un approccio realistico e basato sull’esperienza.</p>
+<p>Chiudiamo questa prima parte sottolineando l’importanza di una progettazione consapevole, della gestione accurata delle identità e della segmentazione dei domini, lasciando a una futura puntata il dettaglio delle reti Wi-Fi e degli aspetti legati al social engineering.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
     <div class="site-section">
       <div class="container">
         <div class="row mb-5">
@@ -134,8 +156,8 @@
           </div>
         </div>
         <div class="row">
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -151,8 +173,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -168,8 +190,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -185,8 +207,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -202,8 +224,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -219,8 +241,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -236,8 +258,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -253,8 +275,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -270,8 +292,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -287,8 +309,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -304,8 +326,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -321,8 +343,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -338,8 +360,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -355,8 +377,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -372,8 +394,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -389,8 +411,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -406,8 +428,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -423,8 +445,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -440,8 +462,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -457,8 +479,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -474,8 +496,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -491,8 +513,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -508,8 +530,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -525,8 +547,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -542,8 +564,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -559,8 +581,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -576,8 +598,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -593,8 +615,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -610,8 +632,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -627,8 +649,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -644,8 +666,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -661,8 +683,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -678,11 +700,11 @@
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
-    
+
 
     <footer class="site-footer">
       <div class="container">
