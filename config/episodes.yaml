@@ -1,821 +1,624 @@
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20231130'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20231130"
   highlight_links:
-  - title: Confronto EDR
-    url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
+    - title: Confronto EDR
+      url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
   id: 1
   length: 28
   published: true
-  summary: In questa prima puntata di Info Sec. Unplugged, gli autori avviano una
-    conversazione informale sul tema dell'orchestrazione delle soluzioni di sicurezza
-    informatica. Si discute di come, nelle aziende, gli strumenti di sicurezza vengano
-    spesso gestiti come sistemi isolati ('silos') e non comunichino tra loro, con
-    tutte le inefficienze che ne derivano. Il dialogo affronta le sfide della collaborazione
-    tra strumenti di cybersecurity, la maturità organizzativa necessaria per integrarli,
-    e il ruolo dei security manager e dell'IT management nel promuovere una visione
-    unitaria della sicurezza aziendale.
+  summary: In questa prima puntata di Info Sec. Unplugged, gli autori avviano una conversazione informale sul tema dell'orchestrazione delle soluzioni di sicurezza informatica. Si discute di come, nelle aziende, gli strumenti di sicurezza vengano spesso gestiti come sistemi isolati ('silos') e non comunichino tra loro, con tutte le inefficienze che ne derivano. Il dialogo affronta le sfide della collaborazione tra strumenti di cybersecurity, la maturità organizzativa necessaria per integrarli, e il ruolo dei security manager e dell'IT management nel promuovere una visione unitaria della sicurezza aziendale.
   tags:
-  - EDR
-  - Governance
-  - Risk Management
-  - SOAR
-  - Vulnerability Management
+    - EDR
+    - Governance
+    - Risk Management
+    - SOAR
+    - Vulnerability Management
   title: Orchestrazione di sistemi di sicurezza (parte 1)
   url: https://www.spreaker.com/episode/0x1-orchestrazione-di-sistemi-di-sicurezza-parte-1--57864841
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20231201'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20231201"
   highlight_links:
-  - title: Confronto EDR
-    url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
+    - title: Confronto EDR
+      url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
   id: 2
   length: 23
   published: true
-  summary: 'In questa puntata si affronta il tema del rischio in modo approfondito
-    e pragmatico. Gli ospiti riflettono su come il concetto di rischio, spesso percepito
-    come qualcosa di astratto, debba invece essere calato in uno scenario concreto
-    fatto di probabilità, impatti e modelli di gestione. Si parla di cybersecurity,
-    infrastrutture IT, e dell''importanza di costruire e testare strategie di difesa
-    solide, fino alla cosiddetta "prova del nove": verificare se ciò che si è progettato
-    regge davvero alle minacce reali. Un episodio utile per chi si occupa di sicurezza
-    informatica, risk management e continuità operativa.'
+  summary: 'In questa puntata si affronta il tema del rischio in modo approfondito e pragmatico. Gli ospiti riflettono su come il concetto di rischio, spesso percepito come qualcosa di astratto, debba invece essere calato in uno scenario concreto fatto di probabilità, impatti e modelli di gestione. Si parla di cybersecurity, infrastrutture IT, e dell''importanza di costruire e testare strategie di difesa solide, fino alla cosiddetta "prova del nove": verificare se ciò che si è progettato regge davvero alle minacce reali. Un episodio utile per chi si occupa di sicurezza informatica, risk management e continuità operativa.'
   tags:
-  - Detection
-  - EDR
-  - Governance
-  - Risk Management
-  - Threat Intelligence
+    - Detection
+    - EDR
+    - Governance
+    - Risk Management
+    - Threat Intelligence
   title: Orchestrazione di sistemi di sicurezza (parte 2)
   url: https://www.spreaker.com/episode/0x2-orchestrazione-di-sistemi-di-sicurezza-parte-2--57864845
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20231221'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20231221"
   highlight_links:
-  - title: Confronto EDR
-    url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
+    - title: Confronto EDR
+      url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
   id: 3
   length: 26
   published: true
-  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
-    affrontano il tema degli EDR, analizzando miti, confusione e realtà dietro le
-    principali soluzioni di cybersecurity. Partendo dal quadrante Gartner, i due esplorano
-    come scegliere una piattaforma di difesa efficace, evidenziando le differenze
-    tra teoria e pratica nell'implementazione delle tecnologie di sicurezza.
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema degli EDR, analizzando miti, confusione e realtà dietro le principali soluzioni di cybersecurity. Partendo dal quadrante Gartner, i due esplorano come scegliere una piattaforma di difesa efficace, evidenziando le differenze tra teoria e pratica nell'implementazione delle tecnologie di sicurezza.
   tags:
-  - Detection
-  - EDR
-  - SOC
-  - Threat Intelligence
-  - XDR
-  title: 'EDR: scegliere, gestire, utilizzare (parte 1)'
+    - Detection
+    - EDR
+    - SOC
+    - Threat Intelligence
+    - XDR
+  title: "EDR: scegliere, gestire, utilizzare (parte 1)"
   url: https://www.spreaker.com/episode/0x3-edr-scegliere-gestire-utilizzare-parte-1--58085880
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20231222'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20231222"
   highlight_links:
-  - title: Confronto EDR
-    url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
+    - title: Confronto EDR
+      url: https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&vendor=paloaltonetworks&vendor=sentinelone&evaluation=turla&scenario=1
   id: 4
   length: 30
   published: true
-  summary: 'In questa puntata si affrontano tre domande chiave sulla gestione della
-    sicurezza informatica e delle tecnologie aziendali: cosa succede se non si presidiano
-    correttamente le infrastrutture digitali, quali rischi si corrono nel definire
-    policy troppo larghe o troppo restrittive, e come verificare se il proprio setup
-    di sicurezza è adeguato al livello di minaccia attuale. Gli ospiti riflettono
-    su pratiche di monitoraggio continuo, configurazioni di hunting e sull''importanza
-    di mantenere un controllo costante per garantire resilienza e protezione.'
+  summary: "In questa puntata si affrontano tre domande chiave sulla gestione della sicurezza informatica e delle tecnologie aziendali: cosa succede se non si presidiano correttamente le infrastrutture digitali, quali rischi si corrono nel definire policy troppo larghe o troppo restrittive, e come verificare se il proprio setup di sicurezza è adeguato al livello di minaccia attuale. Gli ospiti riflettono su pratiche di monitoraggio continuo, configurazioni di hunting e sull'importanza di mantenere un controllo costante per garantire resilienza e protezione."
   tags:
-  - Adversary Simulation
-  - EDR
-  - Red Teaming
-  - SOC
-  - Threat Intelligence
-  title: 'EDR: scegliere, gestire, utilizzare (parte 2)'
+    - Adversary Simulation
+    - EDR
+    - Red Teaming
+    - SOC
+    - Threat Intelligence
+  title: "EDR: scegliere, gestire, utilizzare (parte 2)"
   url: https://www.spreaker.com/episode/0x4-edr-scegliere-gestire-utilizzare-parte-2--58085883
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20240104'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240104"
   highlight_links:
-  - title: EDR Evasion Primer
-    url: https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf
-  - title: Cybersecurity Podcast
-    url: https://open.spotify.com/show/3GuETTlTQC1HVClDwo6GPk
-  - title: TIBER
-    url: https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html
+    - title: EDR Evasion Primer
+      url: https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf
+    - title: Cybersecurity Podcast
+      url: https://open.spotify.com/show/3GuETTlTQC1HVClDwo6GPk
+    - title: TIBER
+      url: https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html
   id: 5
   length: 46
   published: true
-  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
-    approfondiscono il tema della selezione di una soluzione EDR (Endpoint Detection
-    and Response). Partendo dalle differenze tra gestione interna e servizi MDR, discutono
-    i criteri di scelta più importanti, le caratteristiche tecniche da considerare,
-    l'integrazione con sistemi XDR e l'evoluzione delle piattaforme di sicurezza.
-    Una conversazione pratica e realistica per chi deve orientarsi nel mondo delle
-    soluzioni di cybersecurity aziendale.
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia approfondiscono il tema della selezione di una soluzione EDR (Endpoint Detection and Response). Partendo dalle differenze tra gestione interna e servizi MDR, discutono i criteri di scelta più importanti, le caratteristiche tecniche da considerare, l'integrazione con sistemi XDR e l'evoluzione delle piattaforme di sicurezza. Una conversazione pratica e realistica per chi deve orientarsi nel mondo delle soluzioni di cybersecurity aziendale.
   tags:
-  - Adversary Simulation
-  - Detection
-  - EDR
-  - Risk Management
-  - Threat Intelligence
-  title: 'Da EDR a XDR: scegliere, gestire, utilizzare (parte 1)'
+    - Adversary Simulation
+    - Detection
+    - EDR
+    - Risk Management
+    - Threat Intelligence
+  title: "Da EDR a XDR: scegliere, gestire, utilizzare (parte 1)"
   url: https://www.spreaker.com/episode/0x5-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-1--58197896
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20240105'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240105"
   highlight_links:
-  - title: EDR Evasion Primer
-    url: https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf
-  - title: Cybersecurity Podcast
-    url: https://open.spotify.com/show/3GuETTlTQC1HVClDwo6GPk
-  - title: TIBER
-    url: https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html
+    - title: EDR Evasion Primer
+      url: https://conference.hitb.org/hitbsecconf2022sin/materials/D1T1%20-%20EDR%20Evasion%20Primer%20for%20Red%20Teamers%20-%20Karsten%20Nohl%20&%20Jorge%20Gimenez.pdf
+    - title: Cybersecurity Podcast
+      url: https://open.spotify.com/show/3GuETTlTQC1HVClDwo6GPk
+    - title: TIBER
+      url: https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html
   id: 6
   length: 33
   published: true
-  summary: 'In questa puntata si approfondisce il tema dell''XDR (Extended Detection
-    and Response), analizzando come questa tecnologia rappresenti un''evoluzione dei
-    sistemi di sicurezza tradizionali come il SIEM. Il dialogo esplora i limiti e
-    le potenzialità dell''ingestion e della correlazione dei dati, il ruolo delle
-    regole per la gestione degli incidenti, e la direzione verso cui il mercato della
-    cybersecurity si sta muovendo. Viene evidenziata anche la prospettiva aziendale:
-    l''XDR come strumento più integrato, accattivante e strategico per aumentare la
-    visibilità e l''efficacia delle difese informatiche.'
+  summary: "In questa puntata si approfondisce il tema dell'XDR (Extended Detection and Response), analizzando come questa tecnologia rappresenti un'evoluzione dei sistemi di sicurezza tradizionali come il SIEM. Il dialogo esplora i limiti e le potenzialità dell'ingestion e della correlazione dei dati, il ruolo delle regole per la gestione degli incidenti, e la direzione verso cui il mercato della cybersecurity si sta muovendo. Viene evidenziata anche la prospettiva aziendale: l'XDR come strumento più integrato, accattivante e strategico per aumentare la visibilità e l'efficacia delle difese informatiche."
   tags:
-  - Automazione
-  - Detection
-  - SIEM
-  - SOAR
-  - XDR
-  title: 'Da EDR a XDR: scegliere, gestire, utilizzare (parte 2)'
+    - Automazione
+    - Detection
+    - SIEM
+    - SOAR
+    - XDR
+  title: "Da EDR a XDR: scegliere, gestire, utilizzare (parte 2)"
   url: https://www.spreaker.com/episode/0x6-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-2--58197897
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20240202'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240202"
   highlight_links: []
   id: 7
   length: 30
   published: true
-  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
-    introducono il tema dell'OT Security, analizzando le sfide e le peculiarità della
-    sicurezza nei sistemi industriali (ICS) e nelle infrastrutture critiche. Si parla
-    di contesti come impianti navali, aeroporti e acquedotti, approfondendo come la
-    normativa NIS2 impatti la protezione dei sistemi operativi e dei dispositivi connessi.
-    Un episodio introduttivo che getta le basi per una serie di conversazioni dedicate
-    alla sicurezza operativa nel mondo industriale.
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia introducono il tema dell'OT Security, analizzando le sfide e le peculiarità della sicurezza nei sistemi industriali (ICS) e nelle infrastrutture critiche. Si parla di contesti come impianti navali, aeroporti e acquedotti, approfondendo come la normativa NIS2 impatti la protezione dei sistemi operativi e dei dispositivi connessi. Un episodio introduttivo che getta le basi per una serie di conversazioni dedicate alla sicurezza operativa nel mondo industriale.
   tags:
-  - Compliance
-  - NIS
-  - OT Security
-  - Risk Management
-  - Vulnerability Management
+    - Compliance
+    - NIS
+    - OT Security
+    - Risk Management
+    - Vulnerability Management
   title: Sicurezza negli impianti OT
   url: https://www.spreaker.com/episode/0x7-sicurezza-negli-impianti-ot-parte-1--58542931
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20240203'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240203"
   highlight_links: []
   id: 8
   length: 42
   published: true
-  summary: In questa puntata si parla dell'evoluzione delle tecnologie di storage,
-    dal Fiber Channel all'iSCSI, con un approfondimento sulle scelte architetturali,
-    i costi e i vantaggi che hanno guidato la transizione verso protocolli più flessibili
-    e diffusi.
+  summary: In questa puntata si parla dell'evoluzione delle tecnologie di storage, dal Fiber Channel all'iSCSI, con un approfondimento sulle scelte architetturali, i costi e i vantaggi che hanno guidato la transizione verso protocolli più flessibili e diffusi.
   tags:
-  - Detection
-  - Governance
-  - OT Security
-  - Risk Management
-  - Threat Intelligence
+    - Detection
+    - Governance
+    - OT Security
+    - Risk Management
+    - Threat Intelligence
   title: Il lato nascosto dello storage tra costi e innovazione IT
   url: https://www.spreaker.com/episode/0x8-sicurezza-negli-impianti-ot-parte-2--58542969
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20240221'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240221"
   highlight_links: []
   id: 9
   length: 43
   published: true
-  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
-    esplorano le tecniche e le strategie utilizzate da un attaccante durante le prime
-    fasi di un'intrusione in rete. La conversazione si concentra sulla mappatura della
-    rete, sull'uso di switch e dispositivi di rete e su come un attaccante possa raccogliere
-    informazioni dopo aver collegato un dispositivo all'interno di un'infrastruttura
-    target. L'episodio offre una prospettiva tecnica ma accessibile sul processo di
-    ricognizione e analisi della rete, utile sia a chi lavora in ambito difensivo
-    che offensivo.
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano le tecniche e le strategie utilizzate da un attaccante durante le prime fasi di un'intrusione in rete. La conversazione si concentra sulla mappatura della rete, sull'uso di switch e dispositivi di rete e su come un attaccante possa raccogliere informazioni dopo aver collegato un dispositivo all'interno di un'infrastruttura target. L'episodio offre una prospettiva tecnica ma accessibile sul processo di ricognizione e analisi della rete, utile sia a chi lavora in ambito difensivo che offensivo.
   tags:
-  - Adversary Simulation
-  - Detection
-  - Penetration Testing
-  - Red Teaming
-  - Vulnerability Management
+    - Adversary Simulation
+    - Detection
+    - Penetration Testing
+    - Red Teaming
+    - Vulnerability Management
   title: Attacco di prossimità con rogue device e strategie di difesa (parte 1)
   url: https://www.spreaker.com/episode/0x9-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-1--58766770
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20240222'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240222"
   highlight_links: []
   id: 10
   length: 22
   published: true
-  summary: In questa puntata si discute di sicurezza informatica e threat modeling,
-    affrontando il tema del disegno delle reti con una mentalità difensiva. Gli ospiti
-    riflettono sull'importanza di progettare le infrastrutture IT assumendo che alcune
-    macchine possano già essere compromesse, così da limitare l'impatto di eventuali
-    attacchi. La conversazione esplora approcci pratici, la differenza tra vendor
-    e soluzioni di protezione, e come cambiare prospettiva possa migliorare la resilienza
-    complessiva dei sistemi.
+  summary: In questa puntata si discute di sicurezza informatica e threat modeling, affrontando il tema del disegno delle reti con una mentalità difensiva. Gli ospiti riflettono sull'importanza di progettare le infrastrutture IT assumendo che alcune macchine possano già essere compromesse, così da limitare l'impatto di eventuali attacchi. La conversazione esplora approcci pratici, la differenza tra vendor e soluzioni di protezione, e come cambiare prospettiva possa migliorare la resilienza complessiva dei sistemi.
   tags:
-  - Adversary Simulation
-  - Detection
-  - EDR
-  - Governance
-  - Risk Management
+    - Adversary Simulation
+    - Detection
+    - EDR
+    - Governance
+    - Risk Management
   title: Attacco di prossimità con rogue device e strategie di difesa (parte 2)
   url: https://www.spreaker.com/episode/0xa-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-2--58766863
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20240608'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240608"
   highlight_links: []
   id: 11
   length: 50
   published: true
-  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
-    si collegano da Bolzano per un'edizione 'in trasferta'. I due riprendono il discorso
-    lasciato nella puntata precedente, approfondendo le misure di sicurezza di rete,
-    con particolare attenzione al NAC (Network Access Control). Vengono raccontati
-    esperimenti pratici e condivide osservazioni su come gestire e superare alcune
-    problematiche legate alla sicurezza degli switch e delle reti aziendali.
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia si collegano da Bolzano per un'edizione 'in trasferta'. I due riprendono il discorso lasciato nella puntata precedente, approfondendo le misure di sicurezza di rete, con particolare attenzione al NAC (Network Access Control). Vengono raccontati esperimenti pratici e condivide osservazioni su come gestire e superare alcune problematiche legate alla sicurezza degli switch e delle reti aziendali.
   tags:
-  - Awareness
-  - Governance
-  - OT Security
-  - Penetration Testing
-  - Risk Management
-  title: '802.1x bypass: riflessioni sugli impatti e sgli approcci per ridurre il
-    rischio'
+    - Awareness
+    - Governance
+    - OT Security
+    - Penetration Testing
+    - Risk Management
+  title: "802.1x bypass: riflessioni sugli impatti e sgli approcci per ridurre il rischio"
   url: https://www.spreaker.com/episode/0xb-802-1x-bypass-riflessioni-sugli-impatti-e-sgli-approcci-per-ridurre-il-rischio--60187964
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20240916'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240916"
   highlight_links: []
   id: 12
   length: 64
   published: true
-  summary: 'In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
-    introducono un nuovo percorso di riflessione e confronto dedicato al ruolo dell''IT
-    manager, del CIO e del CISO. L''episodio apre una serie di conversazioni pensate
-    per esplorare i passaggi chiave che un professionista IT affronta quando entra
-    in una nuova azienda o in una nuova fase della propria carriera: dalla mappatura
-    dell''infrastruttura tecnologica fino alle scelte strategiche di sicurezza e governance.
-    Un dialogo pratico e autentico sul modo di pensare e agire nella gestione dell''IT
-    moderno.'
+  summary: "In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia introducono un nuovo percorso di riflessione e confronto dedicato al ruolo dell'IT manager, del CIO e del CISO. L'episodio apre una serie di conversazioni pensate per esplorare i passaggi chiave che un professionista IT affronta quando entra in una nuova azienda o in una nuova fase della propria carriera: dalla mappatura dell'infrastruttura tecnologica fino alle scelte strategiche di sicurezza e governance. Un dialogo pratico e autentico sul modo di pensare e agire nella gestione dell'IT moderno."
   tags:
-  - Compliance
-  - Disaster Recovery
-  - Governance
-  - Risk Management
-  - SOC
+    - Compliance
+    - Disaster Recovery
+    - Governance
+    - Risk Management
+    - SOC
   title: Ripartiamo dall'inizio
   url: https://www.spreaker.com/episode/0xc-ripartiamo-dall-inizio--61809624
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20240929'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20240929"
   highlight_links: []
   id: 13
   length: 27
   published: true
-  summary: In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese
-    e Alice Mini raccontano esperienze dirette legate al mondo della sicurezza informatica.
-    Gli incidenti narrati sono stati romanzati per proteggere identità e dettagli
-    sensibili, ma restano fedeli alla realtà degli attacchi e delle difficoltà che
-    professionisti e aziende affrontano quotidianamente. Un mix di storytelling e
-    cultura Cyber, pensato per rendere la sicurezza più vicina e comprensibile.
+  summary: In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese e Alice Mini raccontano esperienze dirette legate al mondo della sicurezza informatica. Gli incidenti narrati sono stati romanzati per proteggere identità e dettagli sensibili, ma restano fedeli alla realtà degli attacchi e delle difficoltà che professionisti e aziende affrontano quotidianamente. Un mix di storytelling e cultura Cyber, pensato per rendere la sicurezza più vicina e comprensibile.
   tags:
-  - Awareness
-  - EDR
-  - GDPR
-  - Social Engineering
-  - Threat Intelligence
-  title: '[EXT] Account di posta compromesso'
+    - Awareness
+    - EDR
+    - GDPR
+    - Social Engineering
+    - Threat Intelligence
+  title: "[EXT] Account di posta compromesso"
   url: https://www.spreaker.com/episode/0xd-ext-account-di-posta-compromesso--62152485
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20241016'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20241016"
   highlight_links: []
   id: 14
   length: 33
   published: true
-  summary: In questa puntata si esplorano le attività di offensive security condotte
-    sul campo, con esempi pratici di attacchi e difese aziendali. Viene discusso cosa
-    significa testare la resilienza di un'organizzazione contro minacce Cyber, come
-    individuare i punti d'ingresso più comuni e quali sono le strategie per gestire
-    e contenere gli incidenti. Il racconto, basato su esperienze reali, mette in luce
-    sia le sfide che le opportunità per migliorare la postura di sicurezza.
+  summary: In questa puntata si esplorano le attività di offensive security condotte sul campo, con esempi pratici di attacchi e difese aziendali. Viene discusso cosa significa testare la resilienza di un'organizzazione contro minacce Cyber, come individuare i punti d'ingresso più comuni e quali sono le strategie per gestire e contenere gli incidenti. Il racconto, basato su esperienze reali, mette in luce sia le sfide che le opportunità per migliorare la postura di sicurezza.
   tags:
-  - EDR
-  - Governance
-  - Risk Management
-  - SOC
-  - Vulnerability Management
-  title: '[PUB] Accesso non consentito (ma possibile)'
+    - EDR
+    - Governance
+    - Risk Management
+    - SOC
+    - Vulnerability Management
+  title: "[PUB] Accesso non consentito (ma possibile)"
   url: https://www.spreaker.com/episode/0xe-pub-accesso-non-consentito-ma-possibile--62386146
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20241202'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20241202"
   highlight_links: []
   id: 15
   length: 47
   published: true
-  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
-    affrontano il tema della compliance in ambito IT e sicurezza informatica. Si discute
-    di come un CISO o un IT manager, entrando in azienda, debba gestire framework,
-    certificazioni e processi già esistenti oppure costruirne di nuovi. La conversazione
-    esplora il percorso di maturazione delle organizzazioni rispetto alla compliance,
-    le sfide pratiche, e il valore di una corretta governance per dare direzione e
-    solidità alle strategie di sicurezza.
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema della compliance in ambito IT e sicurezza informatica. Si discute di come un CISO o un IT manager, entrando in azienda, debba gestire framework, certificazioni e processi già esistenti oppure costruirne di nuovi. La conversazione esplora il percorso di maturazione delle organizzazioni rispetto alla compliance, le sfide pratiche, e il valore di una corretta governance per dare direzione e solidità alle strategie di sicurezza.
   tags:
-  - Compliance
-  - GDPR
-  - Governance
-  - NIS
-  - Risk Management
+    - Compliance
+    - GDPR
+    - Governance
+    - NIS
+    - Risk Management
   title: La compliance normativa come vantaggio
   url: https://www.spreaker.com/episode/0xf-la-compliance-normativa-come-vantaggio--63071211
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20241212'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20241212"
   highlight_links: []
   id: 16
   length: 25
   published: true
-  summary: In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese
-    e Alice Mini affrontano il tema degli attacchi DDoS (Distributed Denial of Service).
-    Dopo una spiegazione introduttiva su come funzionano e sulle principali tipologie,
-    i due raccontano episodi reali ed esperienze dirette legate a questo tipo di minaccia.
-    La conversazione rimane accessibile e divulgativa, mettendo in luce non solo gli
-    aspetti tecnici, ma anche le implicazioni pratiche e organizzative per chi subisce
-    questi attacchi.
+  summary: In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese e Alice Mini affrontano il tema degli attacchi DDoS (Distributed Denial of Service). Dopo una spiegazione introduttiva su come funzionano e sulle principali tipologie, i due raccontano episodi reali ed esperienze dirette legate a questo tipo di minaccia. La conversazione rimane accessibile e divulgativa, mettendo in luce non solo gli aspetti tecnici, ma anche le implicazioni pratiche e organizzative per chi subisce questi attacchi.
   tags:
-  - Awareness
-  - Detection
-  - Risk Management
-  - Tabletop Exercise
-  - Threat Intelligence
-  title: '[EXT] Attacchi DDoS e strategie di sopravvivenza'
+    - Awareness
+    - Detection
+    - Risk Management
+    - Tabletop Exercise
+    - Threat Intelligence
+  title: "[EXT] Attacchi DDoS e strategie di sopravvivenza"
   url: https://www.spreaker.com/episode/0x10-ext-attacchi-ddos-e-strategie-di-sopravvivenza--63286769
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20241216'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20241216"
   highlight_links: []
   id: 17
   length: 59
   published: true
-  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
-    affrontano il tema cruciale della documentazione in azienda, vista dal punto di
-    vista di CIO, IT manager e CISO. La conversazione esplora l'importanza di avere
-    procedure, manuali e documentazione di rete sempre aggiornati per supportare la
-    sicurezza, la consulenza e la gestione dei progetti, evidenziando i rischi legati
-    a informazioni incomplete o obsolete.
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema cruciale della documentazione in azienda, vista dal punto di vista di CIO, IT manager e CISO. La conversazione esplora l'importanza di avere procedure, manuali e documentazione di rete sempre aggiornati per supportare la sicurezza, la consulenza e la gestione dei progetti, evidenziando i rischi legati a informazioni incomplete o obsolete.
   tags:
-  - Automazione
-  - Compliance
-  - Governance
-  - Risk Management
-  - Vulnerability Management
+    - Automazione
+    - Compliance
+    - Governance
+    - Risk Management
+    - Vulnerability Management
   title: Documentazione tecnica
   url: https://www.spreaker.com/episode/0x11-documentazione-tecnica--63302501
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20241230'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20241230"
   highlight_links: []
   id: 18
   length: 39
   published: true
-  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
-    affrontano il tema del networking visto con gli occhi dell'IT manager. Partendo
-    dal caso tipico di chi eredita una rete già esistente in azienda, discutono di
-    come valutare l'infrastruttura, identificare aree sensibili, gestire punti di
-    accesso e servizi, e impostare strategie di sicurezza efficaci. Una chiacchierata
-    utile e concreta per chi deve orientarsi nella complessità della rete aziendale
-    e mantenere un equilibrio tra operatività e protezione.
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del networking visto con gli occhi dell'IT manager. Partendo dal caso tipico di chi eredita una rete già esistente in azienda, discutono di come valutare l'infrastruttura, identificare aree sensibili, gestire punti di accesso e servizi, e impostare strategie di sicurezza efficaci. Una chiacchierata utile e concreta per chi deve orientarsi nella complessità della rete aziendale e mantenere un equilibrio tra operatività e protezione.
   tags:
-  - Detection
-  - Governance
-  - OT Security
-  - Risk Management
-  - SOC
+    - Detection
+    - Governance
+    - OT Security
+    - Risk Management
+    - SOC
   title: Riflessioni sulla rete (design, sicurezza, approccio)
   url: https://www.spreaker.com/episode/0x12-riflessioni-sulla-rete-design-sicurezza-approccio--63459252
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20250113'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250113"
   highlight_links: []
   id: 19
   length: 46
   published: true
-  summary: 'In questa puntata di Info Sec. Unplugged, Andra Dainese e Rocco Sicilia
-    affrontano il tema del data center network design con un approccio tecnico e concreto.
-    Dopo aver discusso in precedenza delle reti a livello campus, l''attenzione si
-    sposta ora sulle esigenze delle aziende enterprise: dalla ridondanza alla sicurezza,
-    fino alle scelte progettuali legate alla dimensione delle infrastrutture. Una
-    conversazione ricca di spunti pratici per chi lavora nell''ambito delle reti e
-    della sicurezza informatica.'
+  summary: "In questa puntata di Info Sec. Unplugged, Andra Dainese e Rocco Sicilia affrontano il tema del data center network design con un approccio tecnico e concreto. Dopo aver discusso in precedenza delle reti a livello campus, l'attenzione si sposta ora sulle esigenze delle aziende enterprise: dalla ridondanza alla sicurezza, fino alle scelte progettuali legate alla dimensione delle infrastrutture. Una conversazione ricca di spunti pratici per chi lavora nell'ambito delle reti e della sicurezza informatica."
   tags:
-  - Detection
-  - Governance
-  - OT Security
-  - Risk Management
-  - SOC
+    - Detection
+    - Governance
+    - OT Security
+    - Risk Management
+    - SOC
   title: Approfondimento sulle reti datacenter
   url: https://www.spreaker.com/episode/0x13-approfondimento-sulle-reti-datacenter--63459253
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20250128'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250128"
   highlight_links: []
   id: 20
   length: 37
   published: true
-  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
-    affrontano il tema del ruolo del CISO, con un focus particolare sulla figura del
-    vCISO (CISO as a service). Partendo da dieci anni di riflessioni ed esperienze
-    dirette, discutono differenze, vantaggi e svantaggi tra CISO interni ed esterni,
-    i motivi per cui le aziende scelgono una soluzione piuttosto che l'altra, e come
-    questa scelta influisca sulla cultura aziendale della sicurezza informatica. Viene
-    portata anche l'esperienza sul campo di chi offre e utilizza servizi di vCISO,
-    con uno sguardo realistico sulle competenze necessarie e sulle dinamiche delle
-    aziende italiane, soprattutto nel contesto produttivo.
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del ruolo del CISO, con un focus particolare sulla figura del vCISO (CISO as a service). Partendo da dieci anni di riflessioni ed esperienze dirette, discutono differenze, vantaggi e svantaggi tra CISO interni ed esterni, i motivi per cui le aziende scelgono una soluzione piuttosto che l'altra, e come questa scelta influisca sulla cultura aziendale della sicurezza informatica. Viene portata anche l'esperienza sul campo di chi offre e utilizza servizi di vCISO, con uno sguardo realistico sulle competenze necessarie e sulle dinamiche delle aziende italiane, soprattutto nel contesto produttivo.
   tags:
-  - Awareness
-  - Compliance
-  - Governance
-  - OT Security
-  - Risk Management
+    - Awareness
+    - Compliance
+    - Governance
+    - OT Security
+    - Risk Management
   title: CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 1)
   url: https://www.spreaker.com/episode/0x14-ciso-vciso-cisoaas-un-idea-nata-molti-anni-fa-parte-1--63934820
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20250210'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250210"
   highlight_links: []
   id: 21
   length: 40
   published: true
-  summary: 'In questa puntata si approfondiscono i vantaggi e gli svantaggi nell''affidarsi
-    a figure esterne rispetto a risorse interne all''azienda. Si esplorano due scenari
-    principali: da un lato, i consulenti o collaboratori esterni portano una visione
-    più ampia e competenze diversificate; dall''altro, le figure interne garantiscono
-    una conoscenza approfondita del settore e della realtà aziendale. Una riflessione
-    utile per chi deve decidere come strutturare il proprio team e bilanciare innovazione
-    e continuità.'
+  summary: "In questa puntata si approfondiscono i vantaggi e gli svantaggi nell'affidarsi a figure esterne rispetto a risorse interne all'azienda. Si esplorano due scenari principali: da un lato, i consulenti o collaboratori esterni portano una visione più ampia e competenze diversificate; dall'altro, le figure interne garantiscono una conoscenza approfondita del settore e della realtà aziendale. Una riflessione utile per chi deve decidere come strutturare il proprio team e bilanciare innovazione e continuità."
   tags:
-  - Awareness
-  - Compliance
-  - Governance
-  - Risk Management
-  - Vulnerability Management
+    - Awareness
+    - Compliance
+    - Governance
+    - Risk Management
+    - Vulnerability Management
   title: CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 2)
   url: https://www.spreaker.com/episode/0x15-ciso-vciso-cisoaas-un-idea-nata-molti-anni-fa-parte-2--63934822
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20250517'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250517"
   highlight_links: []
   id: 22
   length: 33
   published: true
-  summary: In questa puntata di Infosec Unplugged, Andrea Dainese e Rocco Sicilia
-    affrontano i temi della sicurezza industriale e delle tecnologie operative (OT).
-    Partendo da un evento dedicato al settore, condividono esperienze e riflessioni
-    sui principali problemi che le aziende si trovano ad affrontare quando approcciano
-    la cybersecurity in contesti industriali, con particolare attenzione al ruolo
-    di CIO e CISO nella gestione dei rischi.
+  summary: In questa puntata di Infosec Unplugged, Andrea Dainese e Rocco Sicilia affrontano i temi della sicurezza industriale e delle tecnologie operative (OT). Partendo da un evento dedicato al settore, condividono esperienze e riflessioni sui principali problemi che le aziende si trovano ad affrontare quando approcciano la cybersecurity in contesti industriali, con particolare attenzione al ruolo di CIO e CISO nella gestione dei rischi.
   tags:
-  - Detection
-  - Governance
-  - OT Security
-  - Risk Management
-  - Threat Intelligence
+    - Detection
+    - Governance
+    - OT Security
+    - Risk Management
+    - Threat Intelligence
   title: Sicurezza ICS/OT (da un evento NTS)
   url: https://www.spreaker.com/episode/0x16-sicurezza-ics-ot-da-un-evento-nts--66128035
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20250602'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250602"
   highlight_links:
-  - title: Evento NTS - Sicurezza ICS/OT
-    url: https://www.nts.eu/it/event/sicurezza-ics-ot/?utm_campaign=personalbranding
+    - title: Evento NTS - Sicurezza ICS/OT
+      url: https://www.nts.eu/it/event/sicurezza-ics-ot/?utm_campaign=personalbranding
   id: 23
   length: 52
   published: true
-  summary: In questa puntata di Infosec Unplugged, Andrea Dainese e Rocco Sicilia
-    introducono il vasto tema della Threat Intelligence, ponendo le basi per comprenderne
-    i principi e le applicazioni pratiche. Partendo dalla raccolta e analisi del dato,
-    discutono come sistemi come EDR e XDR si siano evoluti, quali siano le loro funzionalità
-    principali e in che modo contribuiscano a migliorare la sicurezza informatica
-    aziendale. Un episodio che getta le fondamenta per affrontare con maggiore consapevolezza
-    i meccanismi della difesa cyber.
+  summary: In questa puntata di Infosec Unplugged, Andrea Dainese e Rocco Sicilia introducono il vasto tema della Threat Intelligence, ponendo le basi per comprenderne i principi e le applicazioni pratiche. Partendo dalla raccolta e analisi del dato, discutono come sistemi come EDR e XDR si siano evoluti, quali siano le loro funzionalità principali e in che modo contribuiscano a migliorare la sicurezza informatica aziendale. Un episodio che getta le fondamenta per affrontare con maggiore consapevolezza i meccanismi della difesa cyber.
   tags:
-  - EDR
-  - SIEM
-  - SOC
-  - Threat Intelligence
-  - XDR
+    - EDR
+    - SIEM
+    - SOC
+    - Threat Intelligence
+    - XDR
   title: Threat Intelligence (parte 1)
   url: https://www.spreaker.com/episode/0x17-threat-intelligence-parte-1--66128443
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20250825'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250825"
   highlight_links: []
   id: 24
   length: 46
   published: true
-  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
-    tornano dietro ai microfoni dopo la pausa estiva per approfondire i temi legati
-    alla sicurezza informatica. Partendo dal confronto tra EDR e SIEM, i due discutono
-    di come queste tecnologie si integrino e si completino a vicenda, sfatando l'idea
-    che una possa sostituire l'altra. La conversazione si concentra su come le organizzazioni
-    possano fare un passo evolutivo nell'uso di queste piattaforme, passando da strumenti
-    puramente reattivi a soluzioni che abilitano una difesa proattiva e contributiva.
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia tornano dietro ai microfoni dopo la pausa estiva per approfondire i temi legati alla sicurezza informatica. Partendo dal confronto tra EDR e SIEM, i due discutono di come queste tecnologie si integrino e si completino a vicenda, sfatando l'idea che una possa sostituire l'altra. La conversazione si concentra su come le organizzazioni possano fare un passo evolutivo nell'uso di queste piattaforme, passando da strumenti puramente reattivi a soluzioni che abilitano una difesa proattiva e contributiva.
   tags:
-  - Detection
-  - EDR
-  - SIEM
-  - SOC
-  - Threat Intelligence
+    - Detection
+    - EDR
+    - SIEM
+    - SOC
+    - Threat Intelligence
   title: Threat Intelligence (parte 2)
   url: https://www.spreaker.com/episode/0x18-threat-intelligence-parte-2--67368804
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20250908'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250908"
   highlight_links:
-  - title: Blog post di approfondimento
-    url: https://roccosicilia.com/2025/09/08/info-sec-unplugged-18-threat-int-3a-parte/?utm_source=podcast_website
-  - title: Highlight e dettagli sugli indicatori discussi (video)
-    url: https://www.youtube.com/watch?v=3LJb2OtQf28?utm_source=podcast_website
+    - title: Blog post di approfondimento
+      url: https://roccosicilia.com/2025/09/08/info-sec-unplugged-18-threat-int-3a-parte/?utm_source=podcast_website
+    - title: Highlight e dettagli sugli indicatori discussi (video)
+      url: https://www.youtube.com/watch?v=3LJb2OtQf28?utm_source=podcast_website
   id: 25
   length: 58
   published: true
-  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia
-    esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare
-    sul lavoro del threat analyst, che studia il comportamento degli attori malevoli
-    per supportare attività di detection e prevention. Viene inoltre approfondita
-    la stretta relazione tra il mondo della threat intelligence e quello della offensive
-    security, mostrando come entrambi si concentrino sul modus operandi degli attacchi
-    e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un esempio
-    pratico di analisi di un piccolo incidente di sicurezza, accompagnato da un post
-    descrittivo e un video highlight, per rendere più accessibili i dettagli tecnici
-    trattati.
+  summary: In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare sul lavoro del threat analyst, che studia il comportamento degli attori malevoli per supportare attività di detection e prevention. Viene inoltre approfondita la stretta relazione tra il mondo della threat intelligence e quello della offensive security, mostrando come entrambi si concentrino sul modus operandi degli attacchi e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato da un post descrittivo e un video highlight, per rendere più accessibili i dettagli tecnici trattati.
   tags:
-  - Detection
-  - SOC
-  - Social Engineering
-  - Threat Intelligence
-  - Vulnerability Management
+    - Detection
+    - SOC
+    - Social Engineering
+    - Threat Intelligence
+    - Vulnerability Management
   title: Threat Intelligence (parte 3)
   url: https://www.spreaker.com/episode/0x19-threat-intelligence-parte-3--67664347
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20250922'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20250922"
   highlight_links:
-  - title: Highlight (video)
-    url: https://youtu.be/1gieddeZxWw
-  - title: Blog post di approfondimento
-    url: https://roccosicilia.com/2025/09/22/info-sec-unplugged-1a-dr-e-cyber-recovery-parte-1/?utm_source=podcast_website
+    - title: Highlight (video)
+      url: https://youtu.be/1gieddeZxWw
+    - title: Blog post di approfondimento
+      url: https://roccosicilia.com/2025/09/22/info-sec-unplugged-1a-dr-e-cyber-recovery-parte-1/?utm_source=podcast_website
   id: 26
   length: 42
   published: true
-  summary: In questa puntata di Info Sec. Unplugged si esplora il tema (spesso sottovalutato)
-    del disaster recovery in risposta agli attacchi informatici. Si analizzano i limiti
-    delle strategie tradizionali, l'importanza della separazione tra ambienti, le
-    implicazioni dei backup immutabili e delle golden image, e come una corretta automazione
-    e gestione dei privilegi possano fare la differenza tra la resilienza e la perdita
-    totale dei dati. Il racconto si arricchisce di esperienze reali e casi pratici
-    tipici delle aziende italiane, con un occhio alle nuove sfide aperte dal GDPR
-    e dalla digitalizzazione delle infrastrutture.
+  summary: In questa puntata di Info Sec. Unplugged si esplora il tema (spesso sottovalutato) del disaster recovery in risposta agli attacchi informatici. Si analizzano i limiti delle strategie tradizionali, l'importanza della separazione tra ambienti, le implicazioni dei backup immutabili e delle golden image, e come una corretta automazione e gestione dei privilegi possano fare la differenza tra la resilienza e la perdita totale dei dati. Il racconto si arricchisce di esperienze reali e casi pratici tipici delle aziende italiane, con un occhio alle nuove sfide aperte dal GDPR e dalla digitalizzazione delle infrastrutture.
   tags:
-  - Automazione
-  - Disaster Recovery
-  - Governance
-  - Risk Management
-  - Tabletop Exercise
+    - Automazione
+    - Disaster Recovery
+    - Governance
+    - Risk Management
+    - Tabletop Exercise
   title: DR e Cyber recovery (parte 1)
   url: https://www.spreaker.com/episode/0x1a-dr-e-cyber-recovery-parte-1--67835796
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20251006'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20251006"
   highlight_links:
-  - title: Highlight (video)
-    url: https://youtu.be/jI7aOzSQH4c
-  - title: Blog post di approfondimento
-    url: https://roccosicilia.com/2025/10/04/info-sec-unplugged-1b-dr-e-cyber-recovery-parte-2/?utm_source=podcast_website
+    - title: Highlight (video)
+      url: https://youtu.be/jI7aOzSQH4c
+    - title: Blog post di approfondimento
+      url: https://roccosicilia.com/2025/10/04/info-sec-unplugged-1b-dr-e-cyber-recovery-parte-2/?utm_source=podcast_website
   id: 27
   length: 56
   published: true
-  summary: Questa puntata di Info Sec. Unplugged è dedicata al tema del disaster recovery
-    e alla sua evoluzione nell'era degli attacchi Cyber. Andrea Dainese e Rocco Sicilia
-    accompagnano l'ascoltatore nella progettazione di processi e tecnologie per il
-    DR, evidenziando le differenze tra esigenze di business e scelte tecniche, le
-    sfide offerte dalle nuove normative e l'importanza della resilienza. Una chiacchierata
-    pragmatica e divulgativa, ricca di aneddoti e consigli pratici per chi si occupa
-    di sicurezza informatica e gestione delle infrastrutture IT.
+  summary: Questa puntata di Info Sec. Unplugged è dedicata al tema del disaster recovery e alla sua evoluzione nell'era degli attacchi Cyber. Andrea Dainese e Rocco Sicilia accompagnano l'ascoltatore nella progettazione di processi e tecnologie per il DR, evidenziando le differenze tra esigenze di business e scelte tecniche, le sfide offerte dalle nuove normative e l'importanza della resilienza. Una chiacchierata pragmatica e divulgativa, ricca di aneddoti e consigli pratici per chi si occupa di sicurezza informatica e gestione delle infrastrutture IT.
   tags:
-  - Automazione
-  - Compliance
-  - Disaster Recovery
-  - Governance
-  - Risk Management
+    - Automazione
+    - Compliance
+    - Disaster Recovery
+    - Governance
+    - Risk Management
   title: DR e Cyber recovery (parte 2)
   url: https://www.spreaker.com/episode/0x1b-dr-e-cyber-recovery-parte-2--67835961
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20251020'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20251020"
   highlight_links:
-  - title: Highlight (video)
-    url: https://youtu.be/-nOqqPeSPa8
+    - title: Highlight (video)
+      url: https://youtu.be/-nOqqPeSPa8
   id: 28
   length: 33
   published: true
-  summary: In questa terza e ultima parte dedicata al Disaster Recovery, Andrea Dainese
-    e Rocco Sicilia chiudono il cerchio sul tema della cyber e disaster recovery,
-    passando dalla teoria alla pratica. Si parla di testing, automazione, rollback,
-    cloud e normative come DORA, ma anche della necessità di esercitarsi concretamente
-    con tabletop exercise per comprendere come reagire a scenari di crisi. La puntata
-    introduce inoltre il tema della Cyber Recovery, sempre più centrale in un contesto
-    dove gli incidenti informatici sono più probabili dei disastri fisici.
+  summary: In questa terza e ultima parte dedicata al Disaster Recovery, Andrea Dainese e Rocco Sicilia chiudono il cerchio sul tema della cyber e disaster recovery, passando dalla teoria alla pratica. Si parla di testing, automazione, rollback, cloud e normative come DORA, ma anche della necessità di esercitarsi concretamente con tabletop exercise per comprendere come reagire a scenari di crisi. La puntata introduce inoltre il tema della Cyber Recovery, sempre più centrale in un contesto dove gli incidenti informatici sono più probabili dei disastri fisici.
   tags:
-  - Automazione
-  - Disaster Recovery
-  - DORA
-  - Governance
-  - Tabletop Exercise
+    - Automazione
+    - Disaster Recovery
+    - DORA
+    - Governance
+    - Tabletop Exercise
   title: DR e Cyber recovery (parte 3)
   url: https://www.spreaker.com/episode/0x1c-dr-e-cyber-recovery-parte-3--68180691
 - authors:
-  - Andrea Dainese
-  - Mattia Parise
-  - Rocco Sicilia
-  date: '20251103'
+    - Andrea Dainese
+    - Mattia Parise
+    - Rocco Sicilia
+  date: "20251103"
   highlight_links:
-  - title: Blog post di approfondimento
-    url: https://roccosicilia.com/2025/11/02/info-sec-unplugged-1d-dr-e-cyber-recovery-puntata-speciale/
-  - title: Normativa ANSSI-BP-100
-    url: https://cyber.gouv.fr/sites/default/files/document/anssi-fondamentaux-sauvegarde_systemes_dinformation_v1-0.pdf
+    - title: Blog post di approfondimento
+      url: https://roccosicilia.com/2025/11/02/info-sec-unplugged-1d-dr-e-cyber-recovery-puntata-speciale/
+    - title: Normativa ANSSI-BP-100
+      url: https://cyber.gouv.fr/sites/default/files/document/anssi-fondamentaux-sauvegarde_systemes_dinformation_v1-0.pdf
   id: 29
   length: 61
   published: true
-  summary: 'In questa puntata “extended” di Info Sec. Unplugged, Andrea Dainese e
-    Rocco Sicilia accolgono Mattia Parise, Solution Architect specializzato in cyber
-    resilience. Insieme affrontano un tema cruciale per la sicurezza aziendale: la
-    differenza – e i possibili punti di contatto – tra Disaster Recovery e Cyber Recovery.
-    Dalla progettazione delle infrastrutture ai processi di testing, dall’indipendenza
-    delle copie di backup fino alla necessità di un “clean recovery”, la conversazione
-    esplora le sfide tecniche e organizzative che le aziende devono affrontare per
-    garantire la vera continuità operativa dopo un attacco cyber. Un episodio ricco
-    di esempi concreti, riflessioni pratiche e consigli per evolvere dal semplice
-    backup alla vera cyber resilienza.'
+  summary: "In questa puntata “extended” di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia accolgono Mattia Parise, Solution Architect specializzato in cyber resilience. Insieme affrontano un tema cruciale per la sicurezza aziendale: la differenza – e i possibili punti di contatto – tra Disaster Recovery e Cyber Recovery. Dalla progettazione delle infrastrutture ai processi di testing, dall’indipendenza delle copie di backup fino alla necessità di un “clean recovery”, la conversazione esplora le sfide tecniche e organizzative che le aziende devono affrontare per garantire la vera continuità operativa dopo un attacco cyber. Un episodio ricco di esempi concreti, riflessioni pratiche e consigli per evolvere dal semplice backup alla vera cyber resilienza."
   tags:
-  - Disaster Recovery
-  - DORA
-  - Governance
-  - NIS
-  - Risk Management
-  title: '[EXT] Cyber Recovery e Disaster Recovery: due mondi (quasi) paralleli'
+    - Disaster Recovery
+    - DORA
+    - Governance
+    - NIS
+    - Risk Management
+  title: "[EXT] Cyber Recovery e Disaster Recovery: due mondi (quasi) paralleli"
   url: https://www.spreaker.com/episode/0x1d-ext-cyber-recovery-e-disaster-recovery-due-mondi-quasi-paralleli--68361685
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20251117'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20251117"
   highlight_links:
-  - title: Blog post di approfondimento
-    url: https://roccosicilia.com/2025/11/21/info-sec-unplugged-1e-gestione-delle-configurazioni/?utm_source=podcast_website
-  - title: Highlight (video)
-    url: https://youtu.be/AChk9nYNwNM
+    - title: Blog post di approfondimento
+      url: https://roccosicilia.com/2025/11/21/info-sec-unplugged-1e-gestione-delle-configurazioni/?utm_source=podcast_website
+    - title: Highlight (video)
+      url: https://youtu.be/AChk9nYNwNM
   id: 30
   length: 47
   published: true
-  summary: 'In questa puntata di Info Sec. Unplugged esploriamo uno dei controlli
-    più complessi dell’Annex A della ISO/IEC 27001: la gestione delle configurazioni
-    (A.8.9). Lo facciamo partendo dal campo — da ciò che realmente accade durante
-    security test, red team e attività di assume breach — per capire quali siano le
-    conseguenze di configurazioni deboli, default lasciati attivi, hardening incompleto
-    o non verificato, e processi assenti o inefficaci. Con esempi concreti, aneddoti
-    e riflessioni sul ruolo dell’automazione, discutiamo cosa accade quando questo
-    controllo non viene gestito correttamente e quali sono gli approcci più efficaci
-    per avvicinarsi a una configurazione sicura, monitorata e sostenibile.'
+  summary: "In questa puntata di Info Sec. Unplugged esploriamo uno dei controlli più complessi dell’Annex A della ISO/IEC 27001: la gestione delle configurazioni (A.8.9). Lo facciamo partendo dal campo — da ciò che realmente accade durante security test, red team e attività di assume breach — per capire quali siano le conseguenze di configurazioni deboli, default lasciati attivi, hardening incompleto o non verificato, e processi assenti o inefficaci. Con esempi concreti, aneddoti e riflessioni sul ruolo dell’automazione, discutiamo cosa accade quando questo controllo non viene gestito correttamente e quali sono gli approcci più efficaci per avvicinarsi a una configurazione sicura, monitorata e sostenibile."
   tags:
-  - Compliance
-  - Governance
-  - ISO27001
-  - Red Teaming
-  - Risk Management
-  title: 'Gestione delle configurazioni: tra ISO 27001 e realtà operativa'
+    - Compliance
+    - Governance
+    - ISO27001
+    - Red Teaming
+    - Risk Management
+  title: "Gestione delle configurazioni: tra ISO 27001 e realtà operativa"
   url: https://www.spreaker.com/episode/0x1e-gestione-delle-configurazioni-tra-iso-27001-e-realta-operativa--68578396
 - authors:
-  - Andrea Dainese
-  - Rocco Sicilia
-  date: '20251201'
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20251201"
   id: 31
   length: 38
   published: true
-  summary: 'In questa puntata di Info Sec. Unplugged affrontiamo un tema spesso sottovalutato:
-    la gestione del codice sorgente nelle organizzazioni. Partendo dal controllo 8.4
-    della ISO 27001, esploriamo perché praticamente ogni azienda — anche quelle che
-    “non sviluppano software” — in realtà produce script, integrazioni, automazioni
-    e piccoli applicativi che diventano critici per il business. Raccontiamo esempi
-    reali, rischi concreti, errori ricorrenti e buone pratiche per gestire il codice
-    in modo sicuro e professionale, anche quando si tratta di semplici script operativi.
-    Una riflessione che tocca secure coding, supply chain, automazione e governance
-    tecnica.'
+  summary: "In questa puntata di Info Sec. Unplugged affrontiamo un tema spesso sottovalutato: la gestione del codice sorgente nelle organizzazioni. Partendo dal controllo 8.4 della ISO 27001, esploriamo perché praticamente ogni azienda — anche quelle che “non sviluppano software” — in realtà produce script, integrazioni, automazioni e piccoli applicativi che diventano critici per il business. Raccontiamo esempi reali, rischi concreti, errori ricorrenti e buone pratiche per gestire il codice in modo sicuro e professionale, anche quando si tratta di semplici script operativi. Una riflessione che tocca secure coding, supply chain, automazione e governance tecnica."
   tags:
-  - Compliance
-  - Governance
-  - ISO27001
-  - Red Teaming
-  - Risk Management
-  title: 'Accesso al codice sorgente: perché ogni azienda sviluppa software (anche
-    senza saperlo)'
+    - Compliance
+    - Governance
+    - ISO27001
+    - Red Teaming
+    - Risk Management
+  title: "Accesso al codice sorgente: perché ogni azienda sviluppa software (anche senza saperlo)"
   url: https://www.spreaker.com/episode/0x1f-accesso-al-codice-sorgente-perche-ogni-azienda-sviluppa-software-anche-senza-saperlo--68679961
 - authors:
-  - Andrea Dainese
-  - Nicolò Poniz
-  - Rocco Sicilia
-  date: '20251215'
+    - Andrea Dainese
+    - Nicolò Poniz
+    - Rocco Sicilia
+  date: "20251215"
   highlight_links:
-  - title: Cybersecurity Framework
-    url: https://www.nist.gov/cyberframework
-  - title: Informative References for CSF 2.0
-    url: https://www.nist.gov/cyberframework/informative-references
+    - title: Cybersecurity Framework
+      url: https://www.nist.gov/cyberframework
+    - title: Informative References for CSF 2.0
+      url: https://www.nist.gov/cyberframework/informative-references
   id: 32
   length: 42
   published: true
-  summary: 'In questa puntata di Info Sec. Unplugged ripercorriamo, insieme a Nicolò
-    Poniz, un viaggio autentico dentro il ruolo del CISO: le complessità, i conflitti,
-    le sfide culturali e manageriali che spesso superano perfino quelle tecniche.
-    Partendo da un’esperienza diretta post-compromissione, esploriamo cosa significa
-    davvero ricoprire simultaneamente i ruoli di CIO e CISO, creare una cultura della
-    sicurezza, gestire persone, diluire conflitti e affrontare board che non sempre
-    vogliono vedere i problemi per ciò che sono. Una conversazione schietta, lucida
-    e ricca di spunti reali su come si costruisce — e si difende — una funzione di
-    cyber security in azienda.'
+  summary: "In questa puntata di Info Sec. Unplugged ripercorriamo, insieme a Nicolò Poniz, un viaggio autentico dentro il ruolo del CISO: le complessità, i conflitti, le sfide culturali e manageriali che spesso superano perfino quelle tecniche. Partendo da un’esperienza diretta post-compromissione, esploriamo cosa significa davvero ricoprire simultaneamente i ruoli di CIO e CISO, creare una cultura della sicurezza, gestire persone, diluire conflitti e affrontare board che non sempre vogliono vedere i problemi per ciò che sono. Una conversazione schietta, lucida e ricca di spunti reali su come si costruisce — e si difende — una funzione di cyber security in azienda."
   tags:
-  - Awareness
-  - Compliance
-  - Governance
-  - Risk Management
-  title: 'CISO, vCISO e il peso della responsabilità: tra tecnica, leadership e cultura
-    aziendale (parte 1)'
+    - Awareness
+    - Compliance
+    - Governance
+    - Risk Management
+  title: "CISO, vCISO e il peso della responsabilità: tra tecnica, leadership e cultura aziendale (parte 1)"
   url: https://www.spreaker.com/episode/0x20-ciso-vciso-e-il-peso-della-responsabilita-tra-tecnica-leadership-e-cultura-aziendale-parte-1--68691879
 - authors:
-  - Andrea Dainese
-  - Nicolò Poniz
-  - Rocco Sicilia
-  date: '20251229'
+    - Andrea Dainese
+    - Nicolò Poniz
+    - Rocco Sicilia
+  date: "20251229"
   id: 33
   length: 38
   published: true
-  summary: In questa seconda parte approfondiamo — con esempi concreti e molta esperienza
-    sul campo — il rapporto tra CISO interno e vCISO esterno. Che differenze operative
-    esistono davvero? Quando ha senso ricorrere a un virtual CISO e quali sono i limiti
-    strutturali di questa scelta? Parliamo di responsabilità, budget, governance,
-    competenze, modelli organizzativi e delle difficoltà di costruire team efficaci
-    in un mercato che spinge molti tecnici verso la consulenza. Un confronto schietto,
-    diretto e pieno di spunti pratici per capire come organizzare davvero una funzione
-    di sicurezza efficace.
+  summary: In questa seconda parte approfondiamo — con esempi concreti e molta esperienza sul campo — il rapporto tra CISO interno e vCISO esterno. Che differenze operative esistono davvero? Quando ha senso ricorrere a un virtual CISO e quali sono i limiti strutturali di questa scelta? Parliamo di responsabilità, budget, governance, competenze, modelli organizzativi e delle difficoltà di costruire team efficaci in un mercato che spinge molti tecnici verso la consulenza. Un confronto schietto, diretto e pieno di spunti pratici per capire come organizzare davvero una funzione di sicurezza efficace.
   tags:
-  - Awareness
-  - Compliance
-  - Governance
-  - Risk Management
-  title: 'CISO, vCISO e il peso della responsabilità: tra tecnica, leadership e cultura
-    aziendale (parte 2)'
+    - Awareness
+    - Compliance
+    - Governance
+    - Risk Management
+  title: "CISO, vCISO e il peso della responsabilità: tra tecnica, leadership e cultura aziendale (parte 2)"
   url: https://www.spreaker.com/episode/0x21-ciso-vciso-e-il-peso-della-responsabilita-tra-tecnica-leadership-e-cultura-aziendale-parte-2--68718562
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: "20260112"
+  id: 34
+  length: 62
+  published: true
+  summary: In questa puntata di Info Sec. Unplugged, Andrei Dainese e Rocco Sicilia esplorano in profondità i controlli ISO 27001 legati alla sicurezza delle reti. Partendo dalla progettazione dei domini di sicurezza e dalla segregazione delle reti, discutono di come i principi teorici si traducano in pratiche reali, dall’autenticazione dei dispositivi e degli utenti fino alla gestione dei firewall, dei sistemi di detection e del traffico interno “est-ovest”. La conversazione, basata su esperienze concrete, mette in luce punti critici, best practice e strategie per ridurre i blind spot e aumentare la tracciabilità delle attività in rete.
+  tags:
+    - Detection
+    - EDR
+    - ISO27001
+    - Risk Management
+    - SOC
+  title: Sicurezza delle reti tra progettazione, autenticazione e detection
+  url: https://www.spreaker.com/episode/0x22-sicurezza-delle-reti-tra-progettazione-autenticazione-e-detection--69387827
