@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Info Sec. Unplugged: 0x12 - Riflessioni sulla rete (design, sicurezza, approccio)</title>
+  <title>Info Sec. Unplugged: 0x23 - Wi-Fi, inganni e accessi privilegiati: quando la rete diventa il marciapiede dell'azienda</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900">
@@ -15,16 +15,16 @@
   <link rel="stylesheet" href="../css/aos.css">
   <link rel="stylesheet" href="../css/style.css">
   <!-- Open Graph -->
-  <meta property="og:title" content="Info Sec. Unplugged: 0x12 - Riflessioni sulla rete (design, sicurezza, approccio)">
-  <meta property="og:description" content="In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del networking visto con gli occhi dell'IT manager. Partendo dal caso tipico di chi eredita una rete già esistente in azienda, discutono di come valutare l'infrastruttura, identificare aree sensibili, gestire punti di accesso e servizi, e impostare strategie di sicurezza efficaci. Una chiacchierata utile e concreta per chi deve orientarsi nella complessità della rete aziendale e mantenere un equilibrio tra operatività e protezione.">
+  <meta property="og:title" content="Info Sec. Unplugged: 0x23 - Wi-Fi, inganni e accessi privilegiati: quando la rete diventa il marciapiede dell'azienda">
+  <meta property="og:description" content="In questo episodio di Info Sec. Unplugged approfondiamo due temi spesso sottovalutati ma centrali nella sicurezza delle infrastrutture moderne: gli attacchi wireless basati sul comportamento degli utenti e l’uso della VPN come strato forte per l’accesso amministrativo ai data center. Partendo da esempi reali e da esperienze sul campo, raccontiamo come captive portal, rogue access point ed evil twin possano trasformare il Wi-Fi in una porta d’ingresso invisibile, e perché progettare accessi out-of-band e separati per l’amministrazione rimane una scelta solida anche oggi. Una conversazione tecnica ma concreta, che mette insieme persone, protocolli e architetture.">
   <meta property="og:image" content="https://www.infosecunplugged.it/cover.png">
   <meta property="og:url" content="https://www.infosecunplugged.it/">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Info Sec. Unplugged: 0x12 - Riflessioni sulla rete (design, sicurezza, approccio)">
-  <meta name="twitter:description" content="In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del networking visto con gli occhi dell'IT manager. Partendo dal caso tipico di chi eredita una rete già esistente in azienda, discutono di come valutare l'infrastruttura, identificare aree sensibili, gestire punti di accesso e servizi, e impostare strategie di sicurezza efficaci. Una chiacchierata utile e concreta per chi deve orientarsi nella complessità della rete aziendale e mantenere un equilibrio tra operatività e protezione.">
+  <meta name="twitter:title" content="Info Sec. Unplugged: 0x23 - Wi-Fi, inganni e accessi privilegiati: quando la rete diventa il marciapiede dell'azienda">
+  <meta name="twitter:description" content="In questo episodio di Info Sec. Unplugged approfondiamo due temi spesso sottovalutati ma centrali nella sicurezza delle infrastrutture moderne: gli attacchi wireless basati sul comportamento degli utenti e l’uso della VPN come strato forte per l’accesso amministrativo ai data center. Partendo da esempi reali e da esperienze sul campo, raccontiamo come captive portal, rogue access point ed evil twin possano trasformare il Wi-Fi in una porta d’ingresso invisibile, e perché progettare accessi out-of-band e separati per l’amministrazione rimane una scelta solida anche oggi. Una conversazione tecnica ma concreta, che mette insieme persone, protocolli e architetture.">
   <meta name="twitter:image" content="https://www.infosecunplugged.it/cover.png">
 </head>
 
@@ -55,37 +55,37 @@
       data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
-
+          
           <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-            <h2 class="text-white font-weight-light mb-2 display-4">0x12 - Riflessioni sulla rete (design, sicurezza, approccio)</h2>
+            <h2 class="text-white font-weight-light mb-2 display-4">0x23 - Wi-Fi, inganni e accessi privilegiati: quando la rete diventa il marciapiede dell'azienda</h2>
             <div class="text-white mb-3">
               <span class="text-white-opacity-05">
-                <small>By Andrea Dainese, Rocco Sicilia | 30/12/2024 | 39 min.</small>
+                <small>By Andrea Dainese, Rocco Sicilia | 26/01/2026 | 53 min.</small>
               </span>
             </div>
 
             <div>
-
+              
               <a href="https://podcasts.apple.com/podcast/id1719133815">
                 <img class="p-1" src="../images/platforms/apple.png" alt="List on Apple Podcasts" />
               </a>
-
+              
               <a href="https://music.amazon.com/podcasts/e37fec14-9f41-48d5-ac92-e7e8d71d3fec">
                 <img class="p-1" src="../images/platforms/amazon.png" alt="List on Audible" />
               </a>
-
+              
               <a href="https://pocketcasts.com/podcast/info-sec-unplugged/df034260-71c4-013c-2888-0a5978b26ff7">
                 <img class="p-1" src="../images/platforms/pocketcasts.png" alt="List on Pocket Casts" />
               </a>
-
+              
               <a href="https://www.iheart.com/podcast/131943309">
                 <img class="p-1" src="../images/platforms/iheartradio.png" alt="List on iHeartRadio" />
               </a>
-
+              
               <a href="https://open.spotify.com/show/0TtlgpvszbluGVDjpFmy81">
                 <img class="p-1" src="../images/platforms/spotify.png" alt="List on Spotify" />
               </a>
-
+              
             </div>
           </div>
         </div>
@@ -94,36 +94,36 @@
 
     <div class="site-section bg-light m-0 p-0">
       <div class="container player col-12 m-0 p-0">
-        <iframe src="https://widget.spreaker.com/player?episode_id=63459252&theme=dark&chapters-image=true" width="100%" height="200px" title="0x12 - Riflessioni sulla rete (design, sicurezza, approccio)" frameborder="0"></iframe>
+        <iframe src="https://widget.spreaker.com/player?episode_id=69579900&theme=dark&chapters-image=true" width="100%" height="200px" title="0x23 - Wi-Fi, inganni e accessi privilegiati: quando la rete diventa il marciapiede dell'azienda" frameborder="0"></iframe>
       </div>
     </div>
 
     <div class="container site-section">
 
       <div class="row justify-content-center">
-        <div class="col-md-12"><p>In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del networking visto con gli occhi dell'IT manager. Partendo dal caso tipico di chi eredita una rete già esistente in azienda, discutono di come valutare l'infrastruttura, identificare aree sensibili, gestire punti di accesso e servizi, e impostare strategie di sicurezza efficaci. Una chiacchierata utile e concreta per chi deve orientarsi nella complessità della rete aziendale e mantenere un equilibrio tra operatività e protezione.</p></div>
+        <div class="col-md-12"><p>In questo episodio di Info Sec. Unplugged approfondiamo due temi spesso sottovalutati ma centrali nella sicurezza delle infrastrutture moderne: gli attacchi wireless basati sul comportamento degli utenti e l’uso della VPN come strato forte per l’accesso amministrativo ai data center. Partendo da esempi reali e da esperienze sul campo, raccontiamo come captive portal, rogue access point ed evil twin possano trasformare il Wi-Fi in una porta d’ingresso invisibile, e perché progettare accessi out-of-band e separati per l’amministrazione rimane una scelta solida anche oggi. Una conversazione tecnica ma concreta, che mette insieme persone, protocolli e architetture.</p></div>
       </div>
 
+      
 
-
-
+      
       <div class="tags mb-4">
-
+        
         <span><a class="text-black" href="../tags/tag-detection.html">Detection</a></span>
-
+        
         <span><a class="text-black" href="../tags/tag-governance.html">Governance</a></span>
-
+        
         <span><a class="text-black" href="../tags/tag-ot-security.html">OT Security</a></span>
-
+        
         <span><a class="text-black" href="../tags/tag-risk-management.html">Risk Management</a></span>
-
-        <span><a class="text-black" href="../tags/tag-soc.html">SOC</a></span>
-
+        
+        <span><a class="text-black" href="../tags/tag-social-engineering.html">Social Engineering</a></span>
+        
       </div>
-
+      
     </div>
 
-
+    
     <div class="site-section bg-light">
       <div class="container" data-aos="fade-up">
         <div class="row mb-5">
@@ -133,25 +133,28 @@
         </div>
         <div class="row">
           <div class="col">
-            <p>Siamo felici di ritrovarvi in un nuovo episodio di Info Sec. Unplugged. Questa volta vi parliamo dai nostri nuovi uffici di Verona, ancora da inaugurare. Abbiamo deciso di affrontare un tema centrale per chi gestisce la sicurezza informatica aziendale: la rete, vista con gli occhi di un IT manager o di un CISO che entra in un’azienda già strutturata.</p>
-<p>Quando si eredita una rete esistente, la prima domanda che ci poniamo è: come è stata gestita finora? Quali sono i punti di accesso, le aree sensibili, i servizi esposti? In un’azienda multisede, poi, entrano in gioco connessioni tra filiali, VPN, MPLS e tutta una serie di infrastrutture che spesso non sono documentate. È raro trovare uno schema aggiornato e completo della rete, ma è da lì che bisogna partire.</p>
-<p>Quasi sempre, il CISO che arriva si trova davanti a un ambiente diviso in zone: la rete esterna, la DMZ e una o più reti interne. Purtroppo queste suddivisioni sono spesso nate “a sentimento”. La DMZ, per esempio, è onnipresente, ma non sempre si sa davvero perché esista o quali sistemi dovrebbe contenere. In origine serviva a ospitare i servizi esposti verso internet, ma nel tempo se ne è perso il senso. Nelle reti più vecchie si ragionava ancora perimetrale, come vent’anni fa: dentro tutto è trusted, fuori tutto è pericoloso. Ma oggi questa visione non regge più. Le minacce arrivano anche dall’interno: un utente distratto, un malware, un dispositivo compromesso. Quella che chiamavamo “zona trusted” è diventata spesso il punto di ingresso degli attacchi.</p>
-<p>La segmentazione e la segregazione della rete sono concetti che oggi vanno chiariti: la segmentazione separa logicamente i domini di rete, ma se tra le reti non c’è un controllo reale — ad esempio solo un routing libero — non c’è vera sicurezza. Le ACL sui router, ad esempio, sembrano una soluzione semplice, ma sono difficili da gestire e inefficaci: non controllano i protocolli, non ispezionano il traffico e possono essere facilmente aggirate. Hanno senso solo in casi molto specifici, come isolare una rete guest, e comunque richiedono automazione per non diventare ingestibili.</p>
-<p>In un’architettura più moderna, invece, il controllo del traffico passa dai firewall. Questi dispositivi permettono di avere visibilità, bloccare connessioni indesiderate e capire cosa sta attraversando la rete. È qui che entra in gioco il design: c’è chi preferisce una struttura a doppio bastione (interno ed esterno), chi un singolo cluster centrale. La scelta dipende dal carico e dall’organizzazione, ma noi preferiamo soluzioni monovendor: gestire due firewall di brand diversi raddoppia la complessità, i log, le regole, la formazione delle persone. Solo in casi molto particolari — come ambienti OT o applicazioni industriali — può avere senso differenziare i vendor.</p>
-<p>Un’altra realtà che incontriamo spesso riguarda le reti multisede e MPLS. Sono ancora molto diffuse e, di solito, mal segmentate: tutti parlano con tutti. Idealmente si dovrebbe preferire una topologia hub-and-spoke, con un nodo centrale che filtra il traffico e applica le regole di sicurezza. Ma nelle grandi catene o nel retail, dove si parla di centinaia di punti vendita, bisogna sempre considerare la sostenibilità: mettere un firewall per ogni negozio è un investimento enorme. In questi casi entrano in gioco soluzioni SD-WAN o cloud-based, che permettono una gestione centralizzata e più economica.</p>
-<p>A questo punto, però, la vera sfida non è solo tecnologica: è metodologica. Il CISO deve prima di tutto capire cosa c’è, dove sono i dati e come vengono usati. La protezione parte da qui: mappare le risorse, i flussi, i servizi e soprattutto chi può o non può parlare con chi. In una logica Zero Trust, infatti, non ci fidiamo mai di default: ogni utente, dispositivo e applicazione deve essere autenticato, autorizzato e verificato in base al contesto. Ma per arrivarci serve visibilità.</p>
-<p>Molto spesso questa visibilità manca: non si sa chi parla con chi, quali servizi comunicano tra loro, quali flussi esistono davvero. È qui che firewall e sistemi di telemetria diventano strumenti preziosi. Anche con enforcement minimo, possono monitorare il traffico e permetterci di stringere progressivamente le maglie. Altri strumenti come NetFlow o IPFIX aiutano a visualizzare le conversazioni tra le reti, anche se forniscono solo un’immagine parziale. È importante non concentrarsi solo sui flussi più voluminosi: anche le comunicazioni minori, come DHCP o DNS, sono essenziali.</p>
-<p>Tornando alle DMZ, il concetto originale era semplice: accettare connessioni da internet ma non uscire verso l’esterno. Oggi invece molte applicazioni necessitano di contattare servizi online per aggiornamenti, validazioni di certificati o API. Queste aperture in uscita sono spesso diventate la porta d’ingresso dei malware e dei command &amp; control. Nelle DMZ moderne, poi, si trovano spesso reverse proxy che, se non configurati correttamente, finiscono per bypassare del tutto la protezione. Lo stesso vale per gli ambienti più piccoli, dove capita di vedere sistemi di videosorveglianza o building automation esposti direttamente su IP pubblici: veri e propri cortocircuiti di sicurezza.</p>
-<p>Non mancano neppure errori grossolani: server in DMZ che hanno anche una scheda di rete collegata direttamente alla rete interna, oppure host infrastrutturali — come hypervisor o storage — connessi alle stesse VLAN dei server applicativi. Sono configurazioni che annullano qualsiasi concetto di separazione e rendono inutile ogni firewall.</p>
-<p>In realtà, sistemare tutto questo richiede spesso un passo indietro: guardare la rete con occhio critico, capire dove siamo e dove vogliamo arrivare. Il CISO ha il compito più difficile: deve convincere l’organizzazione a fermarsi, rivedere, investire, spesso andando contro la logica del “funziona così da vent’anni”. Ma è proprio lì che si gioca la vera sicurezza. Serve un’analisi metodica, una mappatura completa, la definizione di priorità e una pianificazione per fasi. Non è un cambiamento immediato, ma è l’unico modo per costruire una rete moderna, segmentata, monitorata e realmente sicura.</p>
-<p>E così, concludiamo questo episodio di <em>Info Sec. Unplugged</em>. Nella prossima puntata entreremo nel dettaglio tecnico del design di rete e delle sue implicazioni di sicurezza.</p>
+            <p>In questa puntata riprendiamo due fili lasciati aperti in precedenza. Da un lato vogliamo parlare di attacchi wireless e social engineering, dall’altro dell’uso della VPN come meccanismo forte di accesso amministrativo alle risorse del data center. Partiamo dal primo tema, guardando la rete Wi-Fi dal punto di vista di chi cerca di capire se esiste un modo per accedere a un’infrastruttura bersaglio.</p>
+<p>Quando si parla di wireless, è naturale distinguere tra l’accesso a una porta fisica o a una porta esposta su Internet e quello che succede quando si tenta di sfruttare una rete Wi-Fi. Esiste una tecnica storica, in uso da più di vent’anni, che molti conoscono: mettersi in ascolto del traffico wireless con un’antenna adeguata e raccogliere alcuni pacchetti che le stazioni inviano mentre cercano un access point a cui collegarsi. Da lì, analizzando quei pacchetti, si tenta di ricavare informazioni utili per effettuare il cracking della credenziale. È la classica metodologia associata a WPA2.</p>
+<p>Questa tecnica richiede però presenza fisica nel raggio della rete, tipicamente poche decine di metri, e il suo successo dipende fortemente dalla complessità della password. In ambienti maturi, dove le password sono robuste, spesso non porta a risultati concreti. Per questo negli anni si sono sviluppate tecniche più “furbe”, che non puntano solo sulla crittografia ma sfruttano il comportamento delle persone, combinato con quello dei protocolli di autenticazione wireless.</p>
+<p>Qui entra in gioco il concetto di rogue device: un access point posizionato in modo fraudolento nei pressi della rete target. Una tecnica particolarmente efficace consiste nell’imitare il captive portal dell’azienda. La prima fase è di ricognizione: capire se l’organizzazione utilizza un captive portal, magari per gli ospiti o come meccanismo di fallback per utenti interni. È una situazione più comune di quanto si pensi, soprattutto in ambienti misti o con policy poco stringenti sugli endpoint.</p>
+<p>Dal punto di vista tecnico, replicare un captive portal è relativamente semplice. Basta pubblicare lo stesso SSID e riprodurre la pagina di autenticazione, che spesso è solo HTML statico facilmente recuperabile. A quel punto l’attaccante può accettare qualsiasi credenziale inserita, concedere comunque l’accesso a Internet e, nel frattempo, collezionare username e password. Se il captive portal integra autenticazioni di terze parti, come Google, il danno può estendersi anche a quegli account.</p>
+<p>Una volta che l’utente è collegato, tutto il traffico passa attraverso il rogue device. È possibile raccoglierlo, analizzarlo e persino modificarlo, ad esempio manipolando le risposte DNS e mettendosi in mezzo alle comunicazioni. Se il traffico è cifrato, l’utente potrebbe notare errori di certificato, ma questo richiede consapevolezza. E qui emerge un punto critico: se abituiamo gli utenti ad accettare certificati non validi o self-signed, stiamo di fatto eliminando una delle poche difese visibili che hanno.</p>
+<p>Una variante di questo scenario è l’attacco evil twin. Anche qui si crea una rete Wi-Fi che imita quella ufficiale, ma si usano tecniche per disturbare i client e spingerli a collegarsi all’access point malevolo. A quel punto l’utente pensa di essere sulla rete aziendale e prova ad accedere ai servizi interni. Tutto quel traffico diventa osservabile e sfruttabile. In alcuni casi si riesce persino a ottenere credenziali valide, soprattutto se l’autenticazione avviene solo tramite username e password.</p>
+<p>Quando invece è in uso anche l’autenticazione tramite certificato (machine authentication), il gioco diventa molto più difficile per l’attaccante. Non avere la chiave privata del dispositivo limita fortemente l’impatto dell’attacco. Rimane comunque una finestra temporale in cui il rogue access point può osservare e interagire con il device, finché l’utente non si accorge che qualcosa non funziona.</p>
+<p>Tutto questo è possibile solo se il threat actor si trova fisicamente vicino e attiva una propria rete. Ed è qui che entra in gioco la detection. I nostri access point possono vedere altre reti che vengono pubblicate nello stesso spazio radio, ma distinguere quelle legittime da quelle malevole non è banale. In passato abbiamo visto sistemi che segnalavano qualsiasi SSID sconosciuto come “rogue”, producendo decine di allarmi inutili in contesti urbani. Serve quindi una gestione più intelligente, basata su inventari, correlazioni e comportamenti.</p>
+<p>Il problema del wireless non si limita agli uffici. In ambito OT e IoT è ancora più evidente. Molti impianti industriali, sistemi fotovoltaici o macchine di produzione hanno access point integrati per la manutenzione, spesso con password di default o addirittura senza protezione. In alcuni casi queste reti di servizio sono instradate direttamente sulla rete aziendale, creando un punto di accesso critico e spesso dimenticato.</p>
+<p>Il secondo tema che affrontiamo riguarda invece l’accesso amministrativo ai data center. Un’architettura che abbiamo visto raramente ma che consideriamo molto solida prevede l’uso obbligatorio di una VPN per qualsiasi attività amministrativa. In questo modello, l’identità dell’amministratore viene validata a monte, tipicamente dal firewall, e diventa il perno di tutte le successive autorizzazioni.</p>
+<p>Siamo particolarmente fan dei design out-of-band: reti e accessi separati, fisicamente e logicamente, dedicati alla gestione dell’infrastruttura. L’idea è semplice ma potente: la porta con cui amministriamo i sistemi non deve essere la stessa che usiamo per erogare i servizi. In caso di disastro, quell’accesso deve funzionare anche quando tutto il resto è giù.</p>
+<p>Questo implica separare reti, credenziali e, spesso, anche i sistemi di autenticazione. Può significare avere switch dedicati, firewall separati e account locali che non dipendono da directory centrali. Sono accessi che non dovrebbero mai essere usati nella normalità, e proprio per questo diventano ottimi indicatori di anomalia: se qualcuno li utilizza senza una manutenzione pianificata, è un segnale forte per il SOC.</p>
+<p>Lo stesso vale per gli accessi preparati per l’incident response. Durante l’onboarding di un servizio di risposta agli incidenti, questi accessi devono essere definiti, testati e documentati. In caso contrario, durante una crisi si perde tempo prezioso a capire come entrare in un’infrastruttura già compromessa.</p>
+<p>Nessuna infrastruttura nasce perfetta. Queste conversazioni servono proprio a far emergere i pezzi mancanti, a prendere consapevolezza dei rischi e ad aggiungere, un passo alla volta, nuovi livelli di resilienza. Ogni episodio aggiunge qualche mattoncino in più, ed è così che si costruiscono architetture più solide nel tempo.</p>
           </div>
         </div>
       </div>
     </div>
+    
 
-
-
+    
     <div class="site-section">
       <div class="container">
         <div class="row mb-5">
@@ -160,25 +163,8 @@
           </div>
         </div>
         <div class="row">
-
-
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-35.html">0x23 - Wi-Fi, inganni e accessi privilegiati: quando la rete diventa il marciapiede dell'azienda</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 26/01/2026 <span class="sep">/</span> 53 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questo episodio di Info Sec. Unplugged approfondiamo due temi spesso sottovalutati ma centrali nella sicurezza delle infrastrutture moderne: gli attacchi wireless basati sul comportamento degli utenti e l’uso della VPN come strato forte per l’accesso amministrativo ai data center. Partendo da esempi reali e da esperienze sul campo, raccontiamo come captive portal, rogue access point ed evil twin possano trasformare il Wi-Fi in una porta d’ingresso invisibile, e perché progettare accessi out-of-band e separati per l’amministrazione rimane una scelta solida anche oggi. Una conversazione tecnica ma concreta, che mette insieme persone, protocolli e architetture.</p>
-              </div>
-            </div>
-          </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -194,8 +180,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -211,8 +197,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -228,8 +214,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -245,8 +231,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -262,8 +248,25 @@
               </div>
             </div>
           </div>
-
-
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-18.html">0x12 - Riflessioni sulla rete (design, sicurezza, approccio)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 30/12/2024 <span class="sep">/</span> 39 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del networking visto con gli occhi dell'IT manager. Partendo dal caso tipico di chi eredita una rete già esistente in azienda, discutono di come valutare l'infrastruttura, identificare aree sensibili, gestire punti di accesso e servizi, e impostare strategie di sicurezza efficaci. Una chiacchierata utile e concreta per chi deve orientarsi nella complessità della rete aziendale e mantenere un equilibrio tra operatività e protezione.</p>
+              </div>
+            </div>
+          </div>
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -279,8 +282,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -296,8 +299,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -313,8 +316,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -330,8 +333,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -347,8 +350,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -364,8 +367,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -381,8 +384,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -398,8 +401,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -415,8 +418,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -432,8 +435,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -449,8 +452,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -466,8 +469,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -483,8 +486,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -500,8 +503,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -517,8 +520,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -534,8 +537,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -551,8 +554,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -568,8 +571,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -585,8 +588,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -602,8 +605,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -619,8 +622,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -636,8 +639,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -653,8 +656,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -670,8 +673,8 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
@@ -687,45 +690,28 @@
               </div>
             </div>
           </div>
-
-
+          
+          
           <div class="col-md-6">
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-23.html">0x17 - Threat Intelligence (parte 1)</a>
+                  <a href="episode-13.html">0xd - [EXT] Account di posta compromesso</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 02/06/2025 <span class="sep">/</span> 52 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 29/09/2024 <span class="sep">/</span> 27 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questa puntata di Infosec Unplugged, Andrea Dainese e Rocco Sicilia introducono il vasto tema della Threat Intelligence, ponendo le basi per comprenderne i principi e le applicazioni pratiche. Partendo dalla raccolta e analisi del dato, discutono come sistemi come EDR e XDR si siano evoluti, quali siano le loro funzionalità principali e in che modo contribuiscano a migliorare la sicurezza informatica aziendale. Un episodio che getta le fondamenta per affrontare con maggiore consapevolezza i meccanismi della difesa cyber.</p>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese e Alice Mini raccontano esperienze dirette legate al mondo della sicurezza informatica. Gli incidenti narrati sono stati romanzati per proteggere identità e dettagli sensibili, ma restano fedeli alla realtà degli attacchi e delle difficoltà che professionisti e aziende affrontano quotidianamente. Un mix di storytelling e cultura Cyber, pensato per rendere la sicurezza più vicina e comprensibile.</p>
               </div>
             </div>
           </div>
-
-
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-4.html">0x4 - EDR: scegliere, gestire, utilizzare (parte 2)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/12/2023 <span class="sep">/</span> 30 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata si affrontano tre domande chiave sulla gestione della sicurezza informatica e delle tecnologie aziendali: cosa succede se non si presidiano correttamente le infrastrutture digitali, quali rischi si corrono nel definire policy troppo larghe o troppo restrittive, e come verificare se il proprio setup di sicurezza è adeguato al livello di minaccia attuale. Gli ospiti riflettono su pratiche di monitoraggio continuo, configurazioni di hunting e sull'importanza di mantenere un controllo costante per garantire resilienza e protezione.</p>
-              </div>
-            </div>
-          </div>
-
+          
         </div>
       </div>
     </div>
-
+    
 
     <footer class="site-footer">
       <div class="container">

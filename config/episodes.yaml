@@ -622,3 +622,19 @@
     - SOC
   title: Sicurezza delle reti tra progettazione, autenticazione e detection
   url: https://www.spreaker.com/episode/0x22-sicurezza-delle-reti-tra-progettazione-autenticazione-e-detection--69387827
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: '20260126'
+  id: 35
+  length: 53
+  published: true
+  summary: 'In questo episodio di Info Sec. Unplugged approfondiamo due temi spesso sottovalutati ma centrali nella sicurezza delle infrastrutture moderne: gli attacchi wireless basati sul comportamento degli utenti e l’uso della VPN come strato forte per l’accesso amministrativo ai data center. Partendo da esempi reali e da esperienze sul campo, raccontiamo come captive portal, rogue access point ed evil twin possano trasformare il Wi-Fi in una porta d’ingresso invisibile, e perché progettare accessi out-of-band e separati per l’amministrazione rimane una scelta solida anche oggi. Una conversazione tecnica ma concreta, che mette insieme persone, protocolli e architetture.'
+  tags:
+    - Detection
+    - Governance
+    - OT Security
+    - Risk Management
+    - Social Engineering
+  title: 'Wi-Fi, inganni e accessi privilegiati: quando la rete diventa il marciapiede dell''azienda'
+  url: https://www.spreaker.com/episode/0x23-wi-fi-inganni-e-accessi-privilegiati-quando-la-rete-diventa-il-marciapiede-dell-azienda--69579900
