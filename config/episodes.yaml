@@ -250,7 +250,7 @@
   summary: In questa puntata si esplorano le attività di offensive security condotte sul campo, con esempi pratici di attacchi e difese aziendali. Viene discusso cosa significa testare la resilienza di un'organizzazione contro minacce Cyber, come individuare i punti d'ingresso più comuni e quali sono le strategie per gestire e contenere gli incidenti. Il racconto, basato su esperienze reali, mette in luce sia le sfide che le opportunità per migliorare la postura di sicurezza.
   tags:
     - EDR
-    - Governance
+    - Eventi
     - Risk Management
     - SOC
     - Vulnerability Management
@@ -638,3 +638,19 @@
     - Social Engineering
   title: 'Wi-Fi, inganni e accessi privilegiati: quando la rete diventa il marciapiede dell''azienda'
   url: https://www.spreaker.com/episode/0x23-wi-fi-inganni-e-accessi-privilegiati-quando-la-rete-diventa-il-marciapiede-dell-azienda--69579900
+- authors:
+    - Andrea Dainese
+    - Rocco Sicilia
+  date: '20260216'
+  id: 36
+  length: 27
+  published: true
+  summary: 'In questa puntata di Info Sec. Unplugged andiamo “on the road” direttamente dal Cisco Live di Amsterdam. Parliamo del valore reale degli eventi tecnici: confronto, approfondimenti fuori agenda, relazioni e scambio di esperienze tra professionisti.Ma non ci fermiamo qui. Dal networking all’automazione, fino al tema inevitabile dell’Intelligenza Artificiale, riflettiamo su hype, limiti concreti, rischi di sicurezza e scenari futuri. Tra romanticismo tecnologico e problemi molto pragmatici, proviamo a capire dove stiamo davvero andando.'
+  tags:
+    - Automazione
+    - Awareness
+    - Eventi
+    - Governance
+    - Risk Management
+  title: Cisco Live dove tecnologia e persone si incontrano davvero
+  url: https://www.spreaker.com/episode/0x24-cisco-live-dove-tecnologia-e-persone-si-incontrano-davvero--70034307
