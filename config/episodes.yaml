@@ -914,3 +914,29 @@
   - Threat Intelligence
   title: Web Filtering tra prima linea di difesa e falsa sicurezza
   url: https://www.spreaker.com/episode/0x25-web-filtering-tra-prima-linea-di-difesa-e-falsa-sicurezza--70362764
+- authors:
+  - Andrea Dainese
+  - Rocco Sicilia
+  date: '20260316'
+  id: 38
+  length: 48
+  published: true
+  summary: 'In questo episodio di Info Sec. Unplugged partiamo da un caso reale di
+    frode bancaria per esplorare i limiti delle difese tradizionali nel mondo delle
+    comunicazioni digitali. Analizziamo come un attaccante possa inserirsi in una
+    conversazione email già avviata, sfruttando domini legittimi e dinamiche sociali
+    difficili da intercettare con i classici sistemi antispam. Da qui la discussione
+    si allarga: parliamo di procedure aziendali, responsabilità legali, formazione
+    degli utenti, uso improprio degli strumenti di comunicazione e nuovi canali di
+    attacco come WhatsApp. Riflettiamo anche su possibili evoluzioni tecnologiche
+    — come l’analisi semantica delle conversazioni — e su un tema sempre più evidente:
+    la sicurezza non può basarsi solo sulla tecnologia, ma richiede processi, awareness
+    e una continua capacità di mettersi in discussione.'
+  tags:
+  - Awareness
+  - Governance
+  - Risk Management
+  - Social Engineering
+  - Threat Intelligence
+  title: Il momento in cui la conversazione diventa un attacco
+  url: https://www.spreaker.com/episode/0x26-il-momento-in-cui-la-conversazione-diventa-un-attacco--70509020
