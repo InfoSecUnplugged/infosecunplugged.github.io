@@ -2,55 +2,57 @@ description: 'Confrontarsi su temi di Cybersecurity permette di vedere punti di 
   esterni, a volte impensabili. Questo podcast nasce proprio per questo: condividere
   punti di vista, risorse, idee, casi di successo ma anche problemi.'
 series:
-  iso27001annexa:
-  - tilte: 8.1 - Endpoint degli utenti
-  - episodes:
-    - 39
-    title: 8.2 - Diritti di accesso privilegiato
-  - title: 8.3 - Limitazione degli accessi alle informazioni
-  - episodes:
-    - 31
-    title: 8.4 - Accesso al codice sorgente
-  - title: 8.5 - Autenticazione sicura
-  - title: 8.6 - Gestione della capacità
-  - title: 8.7 - Protezione dal malware
-  - title: 8.8 - Gestione delle vulnerabilità tecniche
-  - episodes:
-    - 30
-    title: 8.9 - Gestione delle configurazioni
-  - title: 8.10 - Cancellazione delle informazioni
-  - title: 8.11 - Mascheramento dei dati
-  - title: 8.12 - Prevenzione di leakage delle informazioni
-  - title: 8.14 - Ridondanza delle strutture di elaborazione delle informazioni
-  - title: 8.15 - Raccolta di log
-  - title: 8.16 - Attività di monitoraggio
-  - title: 8.17 - Sincronizzazione degli orologi
-  - title: 8.18 - Utilizzo di programmi di utilità privilegiati
-  - title: 8.19 - Installazione del software sui sistemi in esercizio
-  - episodes:
-    - 34
-    - 35
-    title: 8.20 - Sicurezza delle reti
-  - title: 8.21 - Sicurezza dei servizi di rete
-  - episodes:
-    - 34
-    - 35
-    title: 8.22 - Segregazione delle reti
-  - episodes:
-    - 38
-    - 37
-    title: 8.23 - Web Filtering
-  - title: 8.24 - Uso della crittografia
-  - title: 8.25 - Ciclo di vita dello sviluppo sicuro
-  - title: 8.26 - Requisiti di sicurezza delle applicazioni
-  - title: 8.27 - Sicurezza dell’architettura dei sistemi e dei principi di ingegnerizzazione
-  - title: 8.28 - Sviluppo sicuro
-  - title: 8.29 - Test di sicurezza in fase di sviluppo e di accettazione
-  - title: 8.30 - Sviluppo affidato all’esterno
-  - title: 8.31 - Separazione degli ambienti di sviluppo, test e produzione
-  - title: 8.32 - Gestione dei cambiamenti
-  - title: 8.33 - Dati di test
-  - title: 8.34 - Protezione dei sistemi informativi durante i test di audit
+  iso27001-annex-a:
+    sections:
+    - title: 8.1 - Endpoint degli utenti
+    - episodes:
+      - 39
+      title: 8.2 - Diritti di accesso privilegiato
+    - title: 8.3 - Limitazione degli accessi alle informazioni
+    - episodes:
+      - 31
+      title: 8.4 - Accesso al codice sorgente
+    - title: 8.5 - Autenticazione sicura
+    - title: 8.6 - Gestione della capacità
+    - title: 8.7 - Protezione dal malware
+    - title: 8.8 - Gestione delle vulnerabilità tecniche
+    - episodes:
+      - 30
+      title: 8.9 - Gestione delle configurazioni
+    - title: 8.10 - Cancellazione delle informazioni
+    - title: 8.11 - Mascheramento dei dati
+    - title: 8.12 - Prevenzione di leakage delle informazioni
+    - title: 8.14 - Ridondanza delle strutture di elaborazione delle informazioni
+    - title: 8.15 - Raccolta di log
+    - title: 8.16 - Attività di monitoraggio
+    - title: 8.17 - Sincronizzazione degli orologi
+    - title: 8.18 - Utilizzo di programmi di utilità privilegiati
+    - title: 8.19 - Installazione del software sui sistemi in esercizio
+    - episodes:
+      - 34
+      - 35
+      title: 8.20 - Sicurezza delle reti
+    - title: 8.21 - Sicurezza dei servizi di rete
+    - episodes:
+      - 34
+      - 35
+      title: 8.22 - Segregazione delle reti
+    - episodes:
+      - 37
+      - 38
+      title: 8.23 - Web Filtering
+    - title: 8.24 - Uso della crittografia
+    - title: 8.25 - Ciclo di vita dello sviluppo sicuro
+    - title: 8.26 - Requisiti di sicurezza delle applicazioni
+    - title: 8.27 - Sicurezza dell’architettura dei sistemi e dei principi di ingegnerizzazione
+    - title: 8.28 - Sviluppo sicuro
+    - title: 8.29 - Test di sicurezza in fase di sviluppo e di accettazione
+    - title: 8.30 - Sviluppo affidato all’esterno
+    - title: 8.31 - Separazione degli ambienti di sviluppo, test e produzione
+    - title: 8.32 - Gestione dei cambiamenti
+    - title: 8.33 - Dati di test
+    - title: 8.34 - Protezione dei sistemi informativi durante i test di audit
+    title: ISO 27001 - Annex A
 tags:
 - Adversary Simulation
 - Automazione

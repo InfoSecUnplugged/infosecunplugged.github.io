@@ -8,7 +8,9 @@ from jinja2 import Environment
 from slugify import slugify
 
 main_template_file = "templates/index.j2.html"
+episode_index_template_file = "templates/episode-index.j2.html"
 episode_template_file = "templates/episode.j2.html"
+serie_template_file = "templates/serie.j2.html"
 tag_template_file = "templates/tag.j2.html"
 config_data_file = "config/config.yaml"
 episodes_data_file = "config/episodes.yaml"
@@ -18,11 +20,17 @@ if os.path.exists("episodes"):
     shutil.rmtree("episodes")
 if os.path.exists("tags"):
     shutil.rmtree("tags")
+if os.path.exists("series"):
+    shutil.rmtree("series")
 
 with open(main_template_file, "r", encoding="utf-8") as fh:
     main_template_html = fh.read()
+with open(episode_index_template_file, "r", encoding="utf-8") as fh:
+    episode_index_template_html = fh.read()
 with open(episode_template_file, "r", encoding="utf-8") as fh:
     episode_template_html = fh.read()
+with open(serie_template_file, "r", encoding="utf-8") as fh:
+    serie_template_html = fh.read()
 with open(tag_template_file, "r", encoding="utf-8") as fh:
     tag_template_html = fh.read()
 with open(config_data_file, "r", encoding="utf-8") as fh:
@@ -42,14 +50,6 @@ with open(platforms_data_tile, "r", encoding="utf-8") as fh:
 env = Environment()
 env.filters["slugify"] = slugify
 
-# Main page
-main_template = env.from_string(main_template_html)
-main_html = main_template.render(config=config, episodes=episodes, platforms=platforms)
-
-with open("index.html", "w", encoding="utf-8") as fh:
-    fh.write(main_html)
-
-
 # Read tags
 tags = {}
 for episode in episodes:
@@ -61,8 +61,22 @@ for episode in episodes:
         tags[tag].append(episode["id"])
 
 
-# Per episode page
+# Main page
+main_template = env.from_string(main_template_html)
+main_html = main_template.render(config=config, episodes=episodes, platforms=platforms)
+with open("index.html", "w", encoding="utf-8") as fh:
+    fh.write(main_html)
+
+
+# Episode index page
 os.makedirs("episodes", exist_ok=True)
+episode_index_template = env.from_string(episode_index_template_html)
+episode_index_html = episode_index_template.render(config=config, episodes=episodes)
+with open("episodes/index.html", "w", encoding="utf-8") as fh:
+    fh.write(episode_index_html)
+
+
+# Per episode page
 episode_template = env.from_string(episode_template_html)
 reversed_episodes = list(episodes)
 reversed_episodes.reverse()
@@ -106,6 +120,7 @@ for episode in reversed_episodes:
     with open(f"episodes/episode-{episode['id']}.html", "w", encoding="utf-8") as fh:
         fh.write(episode_html)
 
+
 # Tags
 os.makedirs("tags", exist_ok=True)
 tag_template = env.from_string(tag_template_html)
@@ -121,6 +136,33 @@ for tag, related_ids in tags.items():
     tag_html = tag_template.render(config=config, tag=tag, related=related)
     with open(f"tags/tag-{slug}.html", "w", encoding="utf-8") as fh:
         fh.write(tag_html)
+
+
+# Series page
+os.makedirs("series", exist_ok=True)
+serie_template = env.from_string(serie_template_html)
+for serie_id, serie in config["series"].items():
+    slug = slugify(serie_id)
+    sections = []
+    for section in serie["sections"]:
+        related_episodes = []
+        section_episodes = section.get("episodes", [])
+        section_episodes.sort()
+        for related_episode_id in section_episodes:
+            for episode in episodes:
+                if episode["id"] == related_episode_id:
+                    related_episodes.append(episode)
+        if related_episodes:
+            sections.append(
+                {
+                    "title": section["title"],
+                    "episodes": related_episodes,
+                }
+            )
+    serie_html = serie_template.render(config=config, serie=serie, sections=sections)
+    with open(f"series/{slug}.html", "w", encoding="utf-8") as fh:
+        fh.write(serie_html)
+
 
 # Update config files
 with open("config/config.yaml", "w", encoding="utf-8") as fh:
