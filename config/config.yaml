@@ -4,7 +4,9 @@ description: 'Confrontarsi su temi di Cybersecurity permette di vedere punti di 
 series:
   iso27001annexa:
   - tilte: 8.1 - Endpoint degli utenti
-  - title: 8.2 - Diritti di accesso privilegiato
+  - episodes:
+    - 39
+    title: 8.2 - Diritti di accesso privilegiato
   - title: 8.3 - Limitazione degli accessi alle informazioni
   - episodes:
     - 31
