@@ -528,7 +528,7 @@
   date: '20250602'
   highlight_links:
   - title: Evento NTS - Sicurezza ICS/OT
-    url: https://www.nts.eu/it/event/sicurezza-ics-ot/?utm_campaign=personalbranding
+    url: https://www.nts.eu/it/event/sicurezza-ics-ot/?utm_source=infosecunplugged_website
   id: 23
   length: 52
   published: true
@@ -576,9 +576,9 @@
   date: '20250908'
   highlight_links:
   - title: Blog post di approfondimento
-    url: https://roccosicilia.com/2025/09/08/info-sec-unplugged-18-threat-int-3a-parte/?utm_source=podcast_website
+    url: https://roccosicilia.com/2025/09/08/info-sec-unplugged-18-threat-int-3a-parte/?utm_source=infosecunplugged_website
   - title: Highlight e dettagli sugli indicatori discussi (video)
-    url: https://www.youtube.com/watch?v=3LJb2OtQf28?utm_source=podcast_website
+    url: https://www.youtube.com/watch?v=3LJb2OtQf28?utm_source=infosecunplugged_website
   id: 25
   length: 58
   published: true
@@ -608,7 +608,7 @@
   - title: Highlight (video)
     url: https://youtu.be/1gieddeZxWw
   - title: Blog post di approfondimento
-    url: https://roccosicilia.com/2025/09/22/info-sec-unplugged-1a-dr-e-cyber-recovery-parte-1/?utm_source=podcast_website
+    url: https://roccosicilia.com/2025/09/22/info-sec-unplugged-1a-dr-e-cyber-recovery-parte-1/?utm_source=infosecunplugged_website
   id: 26
   length: 42
   published: true
@@ -636,7 +636,7 @@
   - title: Highlight (video)
     url: https://youtu.be/jI7aOzSQH4c
   - title: Blog post di approfondimento
-    url: https://roccosicilia.com/2025/10/04/info-sec-unplugged-1b-dr-e-cyber-recovery-parte-2/?utm_source=podcast_website
+    url: https://roccosicilia.com/2025/10/04/info-sec-unplugged-1b-dr-e-cyber-recovery-parte-2/?utm_source=infosecunplugged_website
   id: 27
   length: 56
   published: true
@@ -717,7 +717,7 @@
   date: '20251117'
   highlight_links:
   - title: Blog post di approfondimento
-    url: https://roccosicilia.com/2025/11/21/info-sec-unplugged-1e-gestione-delle-configurazioni/?utm_source=podcast_website
+    url: https://roccosicilia.com/2025/11/21/info-sec-unplugged-1e-gestione-delle-configurazioni/?utm_source=infosecunplugged_website
   - title: Highlight (video)
     url: https://youtu.be/AChk9nYNwNM
   id: 30

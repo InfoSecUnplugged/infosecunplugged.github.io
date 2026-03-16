@@ -61,9 +61,29 @@ for episode in episodes:
         tags[tag].append(episode["id"])
 
 
+# Build menu
+def build_menu_html(title=None, link=None, items=None):
+    output_html = ''
+    if link:
+        output_html = f'<li><a href="{link}">{title}</a></li>'
+    if items:
+        output_html = f'<li class="has-children"><a href="#">{title}</a><ul class="dropdown arrow-top">'
+        for item in items:
+            output_html += f'<li><a href="{item["link"]}">{item["title"]}</a></li>'
+        output_html += '</ul></li>'
+    return output_html
+
+
+menu_html = '<div class="col-9" data-aos="fade-down"><nav class="site-navigation position-relative text-right text-md-right" role="navigation"><div class="d-inline-block ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div><ul class="site-menu js-clone-nav d-none">'
+for menu in config["menu"]:
+    menu_html += build_menu_html(**menu)
+menu_html += '</ul></nav></div>'
+
 # Main page
 main_template = env.from_string(main_template_html)
-main_html = main_template.render(config=config, episodes=episodes, platforms=platforms)
+main_html = main_template.render(
+    config=config, menu=menu_html, episodes=episodes, platforms=platforms
+)
 with open("index.html", "w", encoding="utf-8") as fh:
     fh.write(main_html)
 
@@ -71,7 +91,9 @@ with open("index.html", "w", encoding="utf-8") as fh:
 # Episode index page
 os.makedirs("episodes", exist_ok=True)
 episode_index_template = env.from_string(episode_index_template_html)
-episode_index_html = episode_index_template.render(config=config, episodes=episodes)
+episode_index_html = episode_index_template.render(
+    config=config, menu=menu_html, episodes=episodes
+)
 with open("episodes/index.html", "w", encoding="utf-8") as fh:
     fh.write(episode_index_html)
 
@@ -111,6 +133,7 @@ for episode in reversed_episodes:
 
     episode_html = episode_template.render(
         config=config,
+        menu=menu_html,
         episode=episode,
         platforms=platforms,
         related=related,
@@ -133,7 +156,9 @@ for tag, related_ids in tags.items():
         if related_episode["id"] in related_ids:
             related.append(related_episode)
 
-    tag_html = tag_template.render(config=config, tag=tag, related=related)
+    tag_html = tag_template.render(
+        config=config, menu=menu_html, tag=tag, related=related
+    )
     with open(f"tags/tag-{slug}.html", "w", encoding="utf-8") as fh:
         fh.write(tag_html)
 
@@ -159,7 +184,9 @@ for serie_id, serie in config["series"].items():
                     "episodes": related_episodes,
                 }
             )
-    serie_html = serie_template.render(config=config, serie=serie, sections=sections)
+    serie_html = serie_template.render(
+        config=config, menu=menu_html, serie=serie, sections=sections
+    )
     with open(f"series/{slug}.html", "w", encoding="utf-8") as fh:
         fh.write(serie_html)
 

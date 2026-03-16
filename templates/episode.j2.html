@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/aos.css">
   <link rel="stylesheet" href="../css/style.css">
   <!-- Open Graph -->
-  <meta property="og:title" content="{{ config.title }}: 0x{{ " %0x" | format( episode.id | int) }} - {{ episode.title
+  <meta property="og:title" content="{{ config.title }}: 0x{{ '%0x' | format( episode.id | int) }} - {{ episode.title
     }}">
   <meta property="og:description" content="{{ episode.summary }}">
   <meta property="og:image" content="https://www.infosecunplugged.it/cover.png">
@@ -24,7 +24,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ config.title }}: 0x{{ " %0x" | format( episode.id | int) }} - {{ episode.title
+  <meta name="twitter:title" content="{{ config.title }}: 0x{{ '%0x' | format( episode.id | int) }} - {{ episode.title
     }}">
   <meta name="twitter:description" content="{{ episode.summary }}">
   <meta name="twitter:image" content="https://www.infosecunplugged.it/cover.png">
@@ -49,6 +49,7 @@
           <div class="col-3" data-aos="fade-down">
             <h1><a href="../index.html" class="text-white h2">{{ config.title }}</a></h1>
           </div>
+          {{ menu|safe }}
         </div>
       </div>
     </header>
@@ -59,8 +60,8 @@
         <div class="row align-items-center justify-content-center text-center">
           {% set d = episode.date %}
           <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-            <h2 class="text-white font-weight-light mb-2 display-4">0x{{ "%0x" | format( episode.id | int) }} - {{
-              episode.title }}</h2>
+            <h2 class="text-white font-weight-light mb-2 display-4">
+              0x{{ "%0x" | format( episode.id | int) }} - {{ episode.title }}</h2>
             <div class="text-white mb-3">
               <span class="text-white-opacity-05">
                 <small>By {% for author in episode.authors %}{{ author }}{% if not loop.last %}, {% endif %}{% endfor %}

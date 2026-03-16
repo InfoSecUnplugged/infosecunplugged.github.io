@@ -1,6 +1,23 @@
 description: 'Confrontarsi su temi di Cybersecurity permette di vedere punti di vista
   esterni, a volte impensabili. Questo podcast nasce proprio per questo: condividere
   punti di vista, risorse, idee, casi di successo ma anche problemi.'
+menu:
+- link: /index.html
+  title: Home
+- link: /episodes/index.html
+  title: Episodi
+- link: /series/iso27001-annex-a.html
+  title: Serie ISO27001
+- items:
+  - link: https://www.linkedin.com/in/adainese/
+    title: Andrea Dainese
+  - link: https://www.linkedin.com/in/roccosicilia/
+    title: Rocco Sicilia
+  title: Autori
+- items:
+  - link: https://www.nts.eu/it/?utm_source=infosecunplugged_website
+    title: NTS
+  title: Supporters
 series:
   iso27001-annex-a:
     sections:
