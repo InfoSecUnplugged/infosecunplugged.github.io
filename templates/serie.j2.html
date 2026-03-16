@@ -63,16 +63,17 @@
       </div>
     </div>
 
-
     {% for section in sections %}
     <div class="site-section bg-light">
       <div class="container">
 
+        {% if section.title %}
         <div class="row mb-5" data-aos="fade-up">
           <div class="col-md-12 text-center">
             <h2 class="font-weight-bold text-black">{{ section.title }}</h2>
           </div>
         </div>
+        {% endif %}
 
         {% for episode in section.episodes %}
         {% if episode.published %}

@@ -6,8 +6,6 @@ menu:
   title: Home
 - link: /episodes/index.html
   title: Episodi
-- link: /series/iso27001-annex-a.html
-  title: Serie ISO27001
 - items:
   - link: https://www.linkedin.com/in/adainese/
     title: Andrea Dainese
@@ -19,6 +17,36 @@ menu:
     title: NTS
   title: Supporters
 series:
+  architecture:
+    sections:
+    - episodes:
+      - 7
+      - 8
+      - 18
+      - 19
+      - 26
+      - 27
+      - 28
+      - 29
+      - 34
+      - 35
+    title: Architettura IT
+  ciso:
+    sections:
+    - episodes:
+      - 20
+      - 21
+      - 32
+      - 33
+    title: CISO/vCISO
+  edr:
+    sections:
+    - episodes:
+      - 3
+      - 4
+      - 5
+      - 6
+    title: EDR/XDR
   iso27001-annex-a:
     sections:
     - title: 8.1 - Endpoint degli utenti

@@ -71,6 +71,15 @@ def build_menu_html(title=None, link=None, items=None):
         for item in items:
             output_html += f'<li><a href="{item["link"]}">{item["title"]}</a></li>'
         output_html += '</ul></li>'
+    if title == "Episodi":
+        # After episodes add series
+        title = "Serie"
+        output_html += f'<li class="has-children"><a href="#">{title}</a><ul class="dropdown arrow-top">'
+        for serie_id, serie in config["series"].items():
+            output_html += (
+                f'<li><a href="/series/{serie_id}.html">{serie["title"]}</a></li>'
+            )
+        output_html += '</ul></li>'
     return output_html
 
 
@@ -169,7 +178,7 @@ serie_template = env.from_string(serie_template_html)
 for serie_id, serie in config["series"].items():
     slug = slugify(serie_id)
     sections = []
-    for section in serie["sections"]:
+    for section in serie.get("sections", []):
         related_episodes = []
         section_episodes = section.get("episodes", [])
         section_episodes.sort()
@@ -180,7 +189,7 @@ for serie_id, serie in config["series"].items():
         if related_episodes:
             sections.append(
                 {
-                    "title": section["title"],
+                    "title": section.get("title"),
                     "episodes": related_episodes,
                 }
             )
