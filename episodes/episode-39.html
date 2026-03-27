@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Info Sec. Unplugged: 0x25 - Web Filtering tra prima linea di difesa e falsa sicurezza</title>
+  <title>Info Sec. Unplugged: 0x27 - I privilegi che non sapevi di avere</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900">
@@ -15,16 +15,16 @@
   <link rel="stylesheet" href="../css/aos.css">
   <link rel="stylesheet" href="../css/style.css">
   <!-- Open Graph -->
-  <meta property="og:title" content="Info Sec. Unplugged: 0x25 - Web Filtering tra prima linea di difesa e falsa sicurezza">
-  <meta property="og:description" content="In questo episodio di Info Sec. Unplugged torniamo sul filone della ISO/IEC 27001, concentrandoci sul controllo 8.23 dell’Annex A: Web Filtering. Partendo dall’esperienza sul campo — tra attività offensive, analisi di incidenti reali e review di configurazioni firewall — ci chiediamo quanto questa tecnologia sia davvero efficace come prima linea di difesa e dove, invece, mostri limiti strutturali. Parliamo di reputazione dei domini, “baby domain”, attacchi mirati, IPS disattivati per motivi di performance, server che navigano senza controllo, EDR, threat intelligence ed enterprise browser. Il risultato è una riflessione concreta su cosa significhi davvero proteggere il perimetro oggi — e su quanto sia pericoloso affidarsi a un solo strumento.">
+  <meta property="og:title" content="Info Sec. Unplugged: 0x27 - I privilegi che non sapevi di avere">
+  <meta property="og:description" content="In questo episodio ci addentriamo nel controllo 8.2 della ISO 27001, dedicato alla gestione dei diritti di accesso privilegiato. Con Andrea Dainese e Rocco Sicilia esploriamo uno degli ambiti più sottovalutati e allo stesso tempo più pericolosi della sicurezza aziendale: come vengono assegnati, accumulati e dimenticati i privilegi all'interno di Active Directory — e non solo. Partendo dall'esperienza sul campo di un penetration tester, la conversazione rivela quanto sia facile per un attaccante sfruttare misconfiguration apparentemente innocue per scalare i propri privilegi, muoversi lateralmente nella rete e compromettere sistemi critici. Si parla di utenti, ma anche di gruppi, servizi, script schedulati, logon script e task locali: tutto ciò che, con i giusti (o sbagliati) permessi, può diventare un vettore di attacco. Si toccano poi i temi della detection, del ruolo del SOC, della gestione dei falsi positivi e dell'importanza di avere sia una visione statica dell'infrastruttura sia un monitoraggio dinamico dei cambiamenti in tempo reale. Un episodio denso, tecnico ma accessibile, che lascia un messaggio chiaro: nessuno è esente da questo problema, e non esiste una ricetta unica per risolverlo.">
   <meta property="og:image" content="https://www.infosecunplugged.it/cover.png">
   <meta property="og:url" content="https://www.infosecunplugged.it/">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Info Sec. Unplugged: 0x25 - Web Filtering tra prima linea di difesa e falsa sicurezza">
-  <meta name="twitter:description" content="In questo episodio di Info Sec. Unplugged torniamo sul filone della ISO/IEC 27001, concentrandoci sul controllo 8.23 dell’Annex A: Web Filtering. Partendo dall’esperienza sul campo — tra attività offensive, analisi di incidenti reali e review di configurazioni firewall — ci chiediamo quanto questa tecnologia sia davvero efficace come prima linea di difesa e dove, invece, mostri limiti strutturali. Parliamo di reputazione dei domini, “baby domain”, attacchi mirati, IPS disattivati per motivi di performance, server che navigano senza controllo, EDR, threat intelligence ed enterprise browser. Il risultato è una riflessione concreta su cosa significhi davvero proteggere il perimetro oggi — e su quanto sia pericoloso affidarsi a un solo strumento.">
+  <meta name="twitter:title" content="Info Sec. Unplugged: 0x27 - I privilegi che non sapevi di avere">
+  <meta name="twitter:description" content="In questo episodio ci addentriamo nel controllo 8.2 della ISO 27001, dedicato alla gestione dei diritti di accesso privilegiato. Con Andrea Dainese e Rocco Sicilia esploriamo uno degli ambiti più sottovalutati e allo stesso tempo più pericolosi della sicurezza aziendale: come vengono assegnati, accumulati e dimenticati i privilegi all'interno di Active Directory — e non solo. Partendo dall'esperienza sul campo di un penetration tester, la conversazione rivela quanto sia facile per un attaccante sfruttare misconfiguration apparentemente innocue per scalare i propri privilegi, muoversi lateralmente nella rete e compromettere sistemi critici. Si parla di utenti, ma anche di gruppi, servizi, script schedulati, logon script e task locali: tutto ciò che, con i giusti (o sbagliati) permessi, può diventare un vettore di attacco. Si toccano poi i temi della detection, del ruolo del SOC, della gestione dei falsi positivi e dell'importanza di avere sia una visione statica dell'infrastruttura sia un monitoraggio dinamico dei cambiamenti in tempo reale. Un episodio denso, tecnico ma accessibile, che lascia un messaggio chiaro: nessuno è esente da questo problema, e non esiste una ricetta unica per risolverlo.">
   <meta name="twitter:image" content="https://www.infosecunplugged.it/cover.png">
 </head>
 
@@ -59,11 +59,11 @@
           
           <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
             <h2 class="text-white font-weight-light mb-2 display-4">
-              0x25 - Web Filtering tra prima linea di difesa e falsa sicurezza</h2>
+              0x27 - I privilegi che non sapevi di avere</h2>
             <div class="text-white mb-3">
               <span class="text-white-opacity-05">
                 <small>By Andrea Dainese, Rocco Sicilia
-                  | 02/03/2026 | 56 min.</small>
+                  | 30/03/2026 | 45 min.</small>
               </span>
             </div>
 
@@ -98,8 +98,8 @@
     <div class="site-section bg-light m-0 p-0">
       <div class="container player col-12 m-0 p-0">
         <iframe
-          src="https://widget.spreaker.com/player?episode_id=70362764&theme=dark&chapters-image=true"
-          width="100%" height="200px" title="0x25 - Web Filtering tra prima linea di difesa e falsa sicurezza"
+          src="https://widget.spreaker.com/player?episode_id=70509020&theme=dark&chapters-image=true"
+          width="100%" height="200px" title="0x27 - I privilegi che non sapevi di avere"
           frameborder="0"></iframe>
       </div>
     </div>
@@ -108,7 +108,7 @@
 
       <div class="row justify-content-center">
         <div class="col-md-12">
-          <p>In questo episodio di Info Sec. Unplugged torniamo sul filone della ISO/IEC 27001, concentrandoci sul controllo 8.23 dell’Annex A: Web Filtering. Partendo dall’esperienza sul campo — tra attività offensive, analisi di incidenti reali e review di configurazioni firewall — ci chiediamo quanto questa tecnologia sia davvero efficace come prima linea di difesa e dove, invece, mostri limiti strutturali. Parliamo di reputazione dei domini, “baby domain”, attacchi mirati, IPS disattivati per motivi di performance, server che navigano senza controllo, EDR, threat intelligence ed enterprise browser. Il risultato è una riflessione concreta su cosa significhi davvero proteggere il perimetro oggi — e su quanto sia pericoloso affidarsi a un solo strumento.</p>
+          <p>In questo episodio ci addentriamo nel controllo 8.2 della ISO 27001, dedicato alla gestione dei diritti di accesso privilegiato. Con Andrea Dainese e Rocco Sicilia esploriamo uno degli ambiti più sottovalutati e allo stesso tempo più pericolosi della sicurezza aziendale: come vengono assegnati, accumulati e dimenticati i privilegi all'interno di Active Directory — e non solo. Partendo dall'esperienza sul campo di un penetration tester, la conversazione rivela quanto sia facile per un attaccante sfruttare misconfiguration apparentemente innocue per scalare i propri privilegi, muoversi lateralmente nella rete e compromettere sistemi critici. Si parla di utenti, ma anche di gruppi, servizi, script schedulati, logon script e task locali: tutto ciò che, con i giusti (o sbagliati) permessi, può diventare un vettore di attacco. Si toccano poi i temi della detection, del ruolo del SOC, della gestione dei falsi positivi e dell'importanza di avere sia una visione statica dell'infrastruttura sia un monitoraggio dinamico dei cambiamenti in tempo reale. Un episodio denso, tecnico ma accessibile, che lascia un messaggio chiaro: nessuno è esente da questo problema, e non esiste una ricetta unica per risolverlo.</p>
         </div>
       </div>
 
@@ -117,15 +117,15 @@
       
       <div class="tags mb-4">
         
-        <span><a class="text-black" href="../tags/tag-awareness.html">Awareness</a></span>
-        
         <span><a class="text-black" href="../tags/tag-detection.html">Detection</a></span>
         
         <span><a class="text-black" href="../tags/tag-iso27001.html">ISO27001</a></span>
         
-        <span><a class="text-black" href="../tags/tag-risk-management.html">Risk Management</a></span>
+        <span><a class="text-black" href="../tags/tag-penetration-testing.html">Penetration Testing</a></span>
         
-        <span><a class="text-black" href="../tags/tag-threat-intelligence.html">Threat Intelligence</a></span>
+        <span><a class="text-black" href="../tags/tag-soc.html">SOC</a></span>
+        
+        <span><a class="text-black" href="../tags/tag-vulnerability-management.html">Vulnerability Management</a></span>
         
       </div>
       
@@ -141,26 +141,19 @@
         </div>
         <div class="row">
           <div class="col">
-            <p>In questa puntata di Info Sec. Unplugged abbiamo deciso di approfondire un controllo apparentemente semplice dell’Annex A della ISO/IEC 27001: il punto 8.23, Web Filtering.
-Sulla carta è descritto in mezza pagina, ma nella pratica tocca uno dei temi più delicati della sicurezza perimetrale. Ci siamo chiesti se questa tecnologia sia davvero la prima grande barriera difensiva delle organizzazioni oppure se, in certi casi, venga sopravvalutata.</p>
-<p>Siamo partiti dall’esperienza sul campo, soprattutto da attività offensive. Quasi tutte le aziende dotate di Next Generation Firewall attivano politiche di web filtering, confidando che intercettino traffico malevolo, download sospetti e comunicazioni pericolose verso l’esterno. Spesso però si ripone in questa funzionalità una fiducia eccessiva.</p>
-<p>Il meccanismo alla base è relativamente statico: categorizzazione dei domini, reputazione degli IP, analisi del contenuto — quando possibile. Se il traffico è cifrato e non si attiva ispezione SSL, il firewall non può guardare dentro. Inoltre, la categorizzazione non è istantanea. Quando un threat actor registra un nuovo dominio, questo rimane per giorni o settimane in uno stato “uncategorized”. In quel periodo, molti firewall lo lasciano transitare liberamente perché non appartiene a nessuna categoria bloccata.</p>
-<p>Abbiamo riflettuto sul tema dei cosiddetti “baby domain”, domini appena registrati. Spesso servono circa trenta giorni prima che escano dalla categoria generica. Nel frattempo, possono essere usati per phishing o landing page malevole. Anche la reputazione IP soffre di un problema temporale: un IP appena attivato parte con reputazione neutra. Finché non viene segnalato o classificato come malevolo, passa senza ostacoli.</p>
-<p>Abbiamo poi osservato come la categorizzazione sia spesso alimentata anche da contributi manuali. È relativamente semplice richiedere la ricategorizzazione di un dominio. Questo apre interrogativi sulla robustezza del processo: quanto controllo c’è dietro? Quanto è facile manipolare la percezione di legittimità di un dominio nel tempo?</p>
-<p>Un’altra debolezza riguarda i domini “dual use”: servizi legittimi come repository o piattaforme cloud, utilizzati anche per scopi malevoli. Bloccarli completamente è quasi impossibile in molte organizzazioni. Inoltre, esistono scenari in cui un sito legittimo viene compromesso e diventa vettore di attacco. In questi casi, il motore di reputazione non può fare nulla: il dominio rimane categorizzato come lecito.</p>
-<p>Abbiamo quindi riconosciuto che il web filtering è uno strumento utile, ma a grana grossa. Serve per “sgranare il grosso”, eliminare categorie evidenti (malware, phishing, command &amp; control), ma non può essere l’unica misura di difesa.</p>
-<p>Ci siamo soffermati su un punto pratico: la policy di default. Troppo spesso troviamo configurazioni dove i domini non categorizzati sono consentiti. Eppure, le best practice suggeriscono di bloccarli. È paradossale che una logica “secure by default” non sia effettivamente preconfigurata.</p>
-<p>Abbiamo poi analizzato le tecniche di attacco più sofisticate: registrazione di domini simili a quello aziendale, utilizzo di caratteri omografi provenienti da alfabeti diversi ma visivamente indistinguibili, riutilizzo di domini “parked” dopo un periodo di inattività. In scenari mirati, la probabilità che un database globale di reputazione intercetti tempestivamente il dominio è bassissima.</p>
-<p>Questo ci ha portato a parlare di threat intelligence proattiva: monitorare la registrazione di domini simili al proprio, anche considerando varianti su alfabeti differenti. È un’attività complessa, ma sempre più necessaria.</p>
-<p>Abbiamo poi spostato l’attenzione sui server. Spesso si proteggono gli utenti, ma si dimentica che anche i server possono navigare liberamente. In molti casi abbiamo trovato policy estremamente permissive lato server. Eppure, limitare la capacità di uscita verso internet può interrompere fasi cruciali dell’attack chain, come il download del payload o la comunicazione verso il command &amp; control.</p>
-<p>Ci siamo ricordati della vulnerabilità Log4j e di come una Remote Code Execution possa trasformarsi rapidamente in un collegamento verso l’esterno. Se il server non può navigare liberamente, si limita almeno una parte del danno.</p>
-<p>Abbiamo poi discusso del ruolo dell’IPS integrato nei firewall. In teoria può analizzare il contesto del traffico in modo più approfondito rispetto alla semplice categorizzazione. In pratica, però, servono regole adeguate e tuning continuo. Troppo rumore porta a ignorare gli alert. Inoltre, l’IPS consuma molte risorse: quando il traffico cresce, spesso viene disattivato per ragioni di performance. E così si perde un altro strato difensivo.</p>
-<p>Un tema fondamentale è la retention dei log. Per individuare anomalie o analizzare incidenti, servono anche i log del traffico “lecito”. Se non logghiamo tutto — o se conserviamo solo pochi giorni — perdiamo la possibilità di ricostruire la catena degli eventi. Ma qui si scontrano esigenze operative, limiti tecnici e vincoli normativi.</p>
-<p>Abbiamo poi affrontato il problema della mobilità: molti utenti lavorano fuori dal perimetro. Il firewall non vede il loro traffico. Qui entra in gioco l’EDR, che ha visibilità locale sull’endpoint. Tuttavia, l’EDR non copre tutto (stampanti, dispositivi IoT, totem, ecc.) e non sostituisce la visione di rete. Serve sempre una doppia prospettiva: endpoint e network.</p>
-<p>Da qui l’idea dell’enterprise browser: un ambiente controllato, separato dal contesto personale, soprattutto in scenari BYOD o provisioning decentralizzato. Non è una soluzione definitiva, ma può offrire un livello di controllo maggiore rispetto alla semplice VPN installata su un dispositivo personale.</p>
-<p>Infine, abbiamo toccato il tema della commistione tra dispositivi privati e aziendali. Sempre più incidenti nascono da device personali su cui sono installati strumenti aziendali. Senza visibilità e controllo, queste diventano zone d’ombra difficili da gestire.</p>
-<p>Abbiamo chiuso con una riflessione che rimandiamo alla prossima puntata: quanto senso ha continuare a puntare tutto sull’awareness degli utenti, se le tecniche di attacco sfruttano caratteri indistinguibili e meccanismi difficili da riconoscere anche per un occhio esperto?
-La formazione resta fondamentale, ma non può essere l’unico argine.</p>
+            <p>Oggi ci addentriamo nel controllo 8.2 della ISO 27001, quello dedicato ai diritti di accesso privilegiato. È un tema che nel tempo si è molto standardizzato nel mondo dei test di sicurezza — quasi un classico — perché praticamente tutte le aziende hanno una struttura Active Directory, e Active Directory è il luogo in cui i privilegi vengono definiti e assegnati. Non è l'unica struttura con questa funzione, e oggi le cose si complicano ulteriormente: bisogna far coesistere quello che si fa su Active Directory con quello che avviene nei vari cloud tenant aziendali. Ma per non perderci, partiamo dall'esempio più semplice.</p>
+<p>Quando entriamo in un'azienda e parliamo di questo controllo, la risposta tipica è: "Certo, abbiamo l'utente normale e l'utente privilegiato." Bellissimo. Ma c'è tutto un altro mondo che quasi mai viene considerato: i servizi in esecuzione, i processi di sistema, gli script schedulati, i programmi che girano in background. Tutti questi elementi — non solo le persone — possono vedersi assegnato un privilegio. Basti pensare ai sistemi di backup, agli strumenti di monitoraggio, agli EDR: spesso vengono eseguiti con privilegi altissimi e inseriti in una sorta di whitelist, considerati sicuri per definizione dai sistemi anti-malware. Stessa cosa per gli script di manutenzione schedulati: gli si danno privilegi elevati perché tecnicamente ne hanno bisogno, ma poi quella configurazione rimane lì, dimenticata.</p>
+<p>Ecco il primo problema: in poco tempo, anche una struttura relativamente semplice diventa un reticolo ingovernabile di entità — utenti, gruppi, sistemi, script — con livelli di accesso diversi, gruppi che si sovrappongono, sotto-gruppi che ereditano permessi. La confusione si crea con facilità, e dove c'è confusione, un attaccante o un pen tester ci sguazza.</p>
+<p>Nei test che conduciamo, si parte quasi sempre da una credenziale non privilegiata — quella di un utente generico, appena entrato in azienda, con il minimo indispensabile. Da quella posizione, la prima cosa che si fa è capire com'è strutturata la rete, e qui arriva qualcosa che sorprende sempre un po': qualsiasi utente autenticato può leggere la struttura di Active Directory senza bisogno di privilegi amministrativi. Non serve essere admin per sapere chi fa parte di quali gruppi. Lo stesso vale per le directory email — Exchange Online, ad esempio — dove un utente normale può spazzolarsi l'intera lista di utenti e gruppi aziendali. Il risultato è che, anche senza aver ancora fatto nulla di illecito, un attaccante che ha compromesso una sola workstation dispone già di un'enorme quantità di informazioni: la struttura dell'organizzazione, i nomi degli utenti, i gruppi di appartenenza, spesso anche gli indirizzi email. L'organigramma si costruisce praticamente da solo.</p>
+<p>Con queste informazioni in mano, si inizia a cercare catene di privilegi sfruttabili. Un esempio volutamente semplificato: immaginiamo un utente che non può installare software sul proprio sistema, ma ha i diritti di modificare i permessi di un altro utente. Paradossalmente, potrebbe abilitare quell'altro utente a installare applicazioni — un privilegio che lui stesso non possiede. Sono spesso misconfiguration dimenticate, piccoli errori che si trovano nelle strutture Active Directory e che un attaccante esperto sa riconoscere e sfruttare. Una delle prime cose che si fa in fase di attacco, se possibile, è creare un utente locale con privilegi elevati — è quasi automatico.</p>
+<p>Il problema, però, non si limita ad Active Directory. Un caso concreto che ci è capitato di vedere: un utente non è amministratore locale della macchina — fin qui tutto bene — ma ha i permessi per modificare un servizio che gira localmente con privilegi di local admin. In pratica, può cambiarne il comportamento, e quando il servizio viene eseguito, lo fa con i privilegi elevati. L'utente non ha i permessi formalmente, ma dispone di una porta di ingresso laterale per ottenere di fatto gli stessi risultati. La stessa logica si applica ai logon script — quegli script eseguiti a ogni login — ai task schedulati, agli script di manutenzione. Se un utente può modificare un task che poi viene eseguito con privilegi elevati, si apre uno scenario problematico che non emerge da una semplice analisi di Active Directory, perché è una questione di configurazione locale dei sistemi.</p>
+<p>Si aggiunge poi il mondo dei file condivisi: file e configurazioni scrivibili da qualunque utente della rete. Un file scrivibile da chiunque non è mai una buona idea, soprattutto se viene poi utilizzato da un servizio privilegiato. Un attaccante che riesce a modificare quel file può influenzare il comportamento di un servizio che gira con privilegi ben più alti dei suoi. Mettendo tutto insieme — Active Directory, utenti locali, servizi, batch, script, permessi su file locali e su share di rete — la matrice di complessità cresce rapidamente, e diventa molto difficile avere un quadro completo con un numero limitato di strumenti automatici.</p>
+<p>A questo punto la domanda legittima è: chi è dalla parte difensiva, e ha ereditato anni di stratificazioni e migrazioni, come fa a cominciare a mettere ordine? Non esiste una risposta unica. Il punto di partenza più solido è il principio del privilegio minimo: assicurarsi che ogni entità — utente, servizio, script — abbia esattamente i privilegi necessari per svolgere il proprio ruolo, non di più. Non si parte da template copiati da colleghi senza verificarne il contenuto, non si accumulano permessi per comodità operativa. Fortunatamente, le tecniche di attacco sono ben mappate — framework come MITRE ATT&amp;CK ci dicono quali sono i percorsi più sfruttati — e questo può diventare un elemento di threat intelligence: si comincia a sanare i problemi più critici e più exploitati, non quelli più facili da risolvere.</p>
+<p>Esistono strumenti automatici che analizzano la struttura Active Directory, identificano utenti, gruppi e permessi che, concatenati tra loro, permettono di elevare i privilegi. Sono un buon punto di partenza per un'overview rapida delle criticità macroscopiche. Ma non bastano: Active Directory è solo una parte del problema, e ogni sistema può avere la propria struttura parallela di permessi locali.</p>
+<p>Una buona pratica è separare le credenziali: l'utente non dovrebbe avere privilegi elevati embedded nel proprio account quotidiano. Se ha bisogno di eseguire operazioni amministrative, deve compiere un'azione consapevole per elevarsi — e quell'azione deve essere loggata. Questo vale anche per rispettare la normativa sugli amministratori di sistema, che impone la tracciabilità delle operazioni privilegiate. Un SOC può lavorare molto meglio quando sa distinguere tra le azioni di un utente privilegiato che ha titolo di fare ciò che sta facendo e quelle di un utente normale che cerca di fare cose al di sopra delle proprie autorizzazioni.</p>
+<p>Tenere sotto controllo i privilegi richiede due tipi di visione complementari. La prima è la visione statica: com'è fatta la struttura oggi, dove ci sono configurazioni errate o rischiose? Questo tipo di assessment si può fare con calma, coinvolgendo specialisti interni o esterni, e produce un piano di remediation. Non è qualcosa che si può fare in modo continuativo ogni settimana, ma è fondamentale farlo periodicamente. La seconda è la visione dinamica: cosa sta cambiando nella rete in questo momento? Qualcuno sta modificando privilegi? Sta nascendo un nuovo domain admin? Sono state resettate decine di password in un minuto? Qui entrano in gioco i log di audit di Active Directory, le regole di detection del SOC, e soluzioni specifiche che monitorano in real time i cambiamenti sulla struttura AD.</p>
+<p>Il SOC deve essere attrezzato con le regole di detection giuste. I vendor forniscono un set di regole di base — sensate per la maggior parte dei contesti — ma ogni realtà è diversa. Una regola come "avvisami se nasce un domain admin" ha senso ovunque; una come "avvisami se nasce un local admin" è già più contestuale e va personalizzata. Il lavoro di tuning è un investimento necessario. Un aspetto da non trascurare è la gestione dei falsi positivi: se il SOC viene inondato di alert inutili generati da operazioni legittime non comunicate, si abbassa la soglia di attenzione e aumenta il rischio di non intercettare un vero attacco. La soluzione è lavorare in modo ordinato — quando un amministratore sa che eseguirà un'operazione che potrebbe generare un alert, lo comunica al SOC in anticipo. Non è burocrazia: è gestione intelligente del segnale.</p>
+<p>Quello dei diritti di accesso privilegiato è uno dei temi più complessi da governare in una struttura di medie o grandi dimensioni. Gli strumenti automatici per l'analisi di Active Directory sono un buon punto di partenza, ma non sono sufficienti da soli. L'assessment fatto da chi gestisce l'infrastruttura tende ad essere limitato: manca quella mentalità — non un giudizio, solo un approccio diverso — che permette di vedere cosa può essere sfruttato per fare danni. Servono competenze diverse, orchestrate insieme, e serve esperienza: molti dei pattern più pericolosi non emergono da regole automatiche, ma dall'intuizione maturata nel tempo, quella che ti dice dove guardare quando la strada maestra non porta da nessuna parte. Se ci si sente smarriti su questo tema, si è in buona compagnia. Quasi nessuno ha risolto completamente il problema. L'importante è cominciare, con metodo.</p>
           </div>
         </div>
       </div>
@@ -182,177 +175,15 @@ La formazione resta fondamentale, ma non può essere l’unico argine.</p>
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-38.html">0x26 - Il momento in cui la conversazione diventa un attacco</a>
+                  <a href="episode-37.html">0x25 - Web Filtering tra prima linea di difesa e falsa sicurezza</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/03/2026 <span
-                        class="sep">/</span> 48 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 02/03/2026 <span
+                        class="sep">/</span> 56 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questo episodio di Info Sec. Unplugged partiamo da un caso reale di frode bancaria per esplorare i limiti delle difese tradizionali nel mondo delle comunicazioni digitali. Analizziamo come un attaccante possa inserirsi in una conversazione email già avviata, sfruttando domini legittimi e dinamiche sociali difficili da intercettare con i classici sistemi antispam. Da qui la discussione si allarga: parliamo di procedure aziendali, responsabilità legali, formazione degli utenti, uso improprio degli strumenti di comunicazione e nuovi canali di attacco come WhatsApp. Riflettiamo anche su possibili evoluzioni tecnologiche — come l’analisi semantica delle conversazioni — e su un tema sempre più evidente: la sicurezza non può basarsi solo sulla tecnologia, ma richiede processi, awareness e una continua capacità di mettersi in discussione.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-36.html">0x24 - Cisco Live dove tecnologia e persone si incontrano davvero</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/02/2026 <span
-                        class="sep">/</span> 27 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged andiamo “on the road” direttamente dal Cisco Live di Amsterdam. Parliamo del valore reale degli eventi tecnici: confronto, approfondimenti fuori agenda, relazioni e scambio di esperienze tra professionisti.Ma non ci fermiamo qui. Dal networking all’automazione, fino al tema inevitabile dell’Intelligenza Artificiale, riflettiamo su hype, limiti concreti, rischi di sicurezza e scenari futuri. Tra romanticismo tecnologico e problemi molto pragmatici, proviamo a capire dove stiamo davvero andando.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-33.html">0x21 - CISO, vCISO e il peso della responsabilità: tra tecnica, leadership e cultura aziendale (parte 2)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Nicolò Poniz, Rocco Sicilia <span class="sep">/</span> 29/12/2025 <span
-                        class="sep">/</span> 38 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa seconda parte approfondiamo — con esempi concreti e molta esperienza sul campo — il rapporto tra CISO interno e vCISO esterno. Che differenze operative esistono davvero? Quando ha senso ricorrere a un virtual CISO e quali sono i limiti strutturali di questa scelta? Parliamo di responsabilità, budget, governance, competenze, modelli organizzativi e delle difficoltà di costruire team efficaci in un mercato che spinge molti tecnici verso la consulenza. Un confronto schietto, diretto e pieno di spunti pratici per capire come organizzare davvero una funzione di sicurezza efficace.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-32.html">0x20 - CISO, vCISO e il peso della responsabilità: tra tecnica, leadership e cultura aziendale (parte 1)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Nicolò Poniz, Rocco Sicilia <span class="sep">/</span> 15/12/2025 <span
-                        class="sep">/</span> 42 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged ripercorriamo, insieme a Nicolò Poniz, un viaggio autentico dentro il ruolo del CISO: le complessità, i conflitti, le sfide culturali e manageriali che spesso superano perfino quelle tecniche. Partendo da un’esperienza diretta post-compromissione, esploriamo cosa significa davvero ricoprire simultaneamente i ruoli di CIO e CISO, creare una cultura della sicurezza, gestire persone, diluire conflitti e affrontare board che non sempre vogliono vedere i problemi per ciò che sono. Una conversazione schietta, lucida e ricca di spunti reali su come si costruisce — e si difende — una funzione di cyber security in azienda.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-21.html">0x15 - CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 2)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 10/02/2025 <span
-                        class="sep">/</span> 40 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata si approfondiscono i vantaggi e gli svantaggi nell'affidarsi a figure esterne rispetto a risorse interne all'azienda. Si esplorano due scenari principali: da un lato, i consulenti o collaboratori esterni portano una visione più ampia e competenze diversificate; dall'altro, le figure interne garantiscono una conoscenza approfondita del settore e della realtà aziendale. Una riflessione utile per chi deve decidere come strutturare il proprio team e bilanciare innovazione e continuità.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-20.html">0x14 - CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 1)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 28/01/2025 <span
-                        class="sep">/</span> 37 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del ruolo del CISO, con un focus particolare sulla figura del vCISO (CISO as a service). Partendo da dieci anni di riflessioni ed esperienze dirette, discutono differenze, vantaggi e svantaggi tra CISO interni ed esterni, i motivi per cui le aziende scelgono una soluzione piuttosto che l'altra, e come questa scelta influisca sulla cultura aziendale della sicurezza informatica. Viene portata anche l'esperienza sul campo di chi offre e utilizza servizi di vCISO, con uno sguardo realistico sulle competenze necessarie e sulle dinamiche delle aziende italiane, soprattutto nel contesto produttivo.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-16.html">0x10 - [EXT] Attacchi DDoS e strategie di sopravvivenza</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 12/12/2024 <span
-                        class="sep">/</span> 25 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese e Alice Mini affrontano il tema degli attacchi DDoS (Distributed Denial of Service). Dopo una spiegazione introduttiva su come funzionano e sulle principali tipologie, i due raccontano episodi reali ed esperienze dirette legate a questo tipo di minaccia. La conversazione rimane accessibile e divulgativa, mettendo in luce non solo gli aspetti tecnici, ma anche le implicazioni pratiche e organizzative per chi subisce questi attacchi.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-13.html">0xd - [EXT] Account di posta compromesso</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 29/09/2024 <span
-                        class="sep">/</span> 27 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese e Alice Mini raccontano esperienze dirette legate al mondo della sicurezza informatica. Gli incidenti narrati sono stati romanzati per proteggere identità e dettagli sensibili, ma restano fedeli alla realtà degli attacchi e delle difficoltà che professionisti e aziende affrontano quotidianamente. Un mix di storytelling e cultura Cyber, pensato per rendere la sicurezza più vicina e comprensibile.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-11.html">0xb - 802.1x bypass: riflessioni sugli impatti e sgli approcci per ridurre il rischio</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 08/06/2024 <span
-                        class="sep">/</span> 50 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia si collegano da Bolzano per un'edizione 'in trasferta'. I due riprendono il discorso lasciato nella puntata precedente, approfondendo le misure di sicurezza di rete, con particolare attenzione al NAC (Network Access Control). Vengono raccontati esperimenti pratici e condivide osservazioni su come gestire e superare alcune problematiche legate alla sicurezza degli switch e delle reti aziendali.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-39.html">0x27 - I privilegi che non sapevi di avere</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 30/03/2026 <span
-                        class="sep">/</span> 45 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questo episodio ci addentriamo nel controllo 8.2 della ISO 27001, dedicato alla gestione dei diritti di accesso privilegiato. Con Andrea Dainese e Rocco Sicilia esploriamo uno degli ambiti più sottovalutati e allo stesso tempo più pericolosi della sicurezza aziendale: come vengono assegnati, accumulati e dimenticati i privilegi all'interno di Active Directory — e non solo. Partendo dall'esperienza sul campo di un penetration tester, la conversazione rivela quanto sia facile per un attaccante sfruttare misconfiguration apparentemente innocue per scalare i propri privilegi, muoversi lateralmente nella rete e compromettere sistemi critici. Si parla di utenti, ma anche di gruppi, servizi, script schedulati, logon script e task locali: tutto ciò che, con i giusti (o sbagliati) permessi, può diventare un vettore di attacco. Si toccano poi i temi della detection, del ruolo del SOC, della gestione dei falsi positivi e dell'importanza di avere sia una visione statica dell'infrastruttura sia un monitoraggio dinamico dei cambiamenti in tempo reale. Un episodio denso, tecnico ma accessibile, che lascia un messaggio chiaro: nessuno è esente da questo problema, e non esiste una ricetta unica per risolverlo.</p>
+                <p class="mb-4">In questo episodio di Info Sec. Unplugged torniamo sul filone della ISO/IEC 27001, concentrandoci sul controllo 8.23 dell’Annex A: Web Filtering. Partendo dall’esperienza sul campo — tra attività offensive, analisi di incidenti reali e review di configurazioni firewall — ci chiediamo quanto questa tecnologia sia davvero efficace come prima linea di difesa e dove, invece, mostri limiti strutturali. Parliamo di reputazione dei domini, “baby domain”, attacchi mirati, IPS disattivati per motivi di performance, server che navigano senza controllo, EDR, threat intelligence ed enterprise browser. Il risultato è una riflessione concreta su cosa significhi davvero proteggere il perimetro oggi — e su quanto sia pericoloso affidarsi a un solo strumento.</p>
               </div>
             </div>
           </div>
@@ -479,6 +310,24 @@ La formazione resta fondamentale, ma non può essere l’unico argine.</p>
                   </span>
                 </div>
                 <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema del networking visto con gli occhi dell'IT manager. Partendo dal caso tipico di chi eredita una rete già esistente in azienda, discutono di come valutare l'infrastruttura, identificare aree sensibili, gestire punti di accesso e servizi, e impostare strategie di sicurezza efficaci. Una chiacchierata utile e concreta per chi deve orientarsi nella complessità della rete aziendale e mantenere un equilibrio tra operatività e protezione.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-16.html">0x10 - [EXT] Attacchi DDoS e strategie di sopravvivenza</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 12/12/2024 <span
+                        class="sep">/</span> 25 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged in versione estesa, Andrea Dainese e Alice Mini affrontano il tema degli attacchi DDoS (Distributed Denial of Service). Dopo una spiegazione introduttiva su come funzionano e sulle principali tipologie, i due raccontano episodi reali ed esperienze dirette legate a questo tipo di minaccia. La conversazione rimane accessibile e divulgativa, mettendo in luce non solo gli aspetti tecnici, ma anche le implicazioni pratiche e organizzative per chi subisce questi attacchi.</p>
               </div>
             </div>
           </div>
@@ -650,15 +499,15 @@ La formazione resta fondamentale, ma non può essere l’unico argine.</p>
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-29.html">0x1d - [EXT] Cyber Recovery e Disaster Recovery: due mondi (quasi) paralleli</a>
+                  <a href="episode-11.html">0xb - 802.1x bypass: riflessioni sugli impatti e sgli approcci per ridurre il rischio</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Mattia Parise, Rocco Sicilia <span class="sep">/</span> 03/11/2025 <span
-                        class="sep">/</span> 61 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 08/06/2024 <span
+                        class="sep">/</span> 50 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questa puntata “extended” di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia accolgono Mattia Parise, Solution Architect specializzato in cyber resilience. Insieme affrontano un tema cruciale per la sicurezza aziendale: la differenza – e i possibili punti di contatto – tra Disaster Recovery e Cyber Recovery. Dalla progettazione delle infrastrutture ai processi di testing, dall’indipendenza delle copie di backup fino alla necessità di un “clean recovery”, la conversazione esplora le sfide tecniche e organizzative che le aziende devono affrontare per garantire la vera continuità operativa dopo un attacco cyber. Un episodio ricco di esempi concreti, riflessioni pratiche e consigli per evolvere dal semplice backup alla vera cyber resilienza.</p>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia si collegano da Bolzano per un'edizione 'in trasferta'. I due riprendono il discorso lasciato nella puntata precedente, approfondendo le misure di sicurezza di rete, con particolare attenzione al NAC (Network Access Control). Vengono raccontati esperimenti pratici e condivide osservazioni su come gestire e superare alcune problematiche legate alla sicurezza degli switch e delle reti aziendali.</p>
               </div>
             </div>
           </div>
@@ -668,69 +517,15 @@ La formazione resta fondamentale, ma non può essere l’unico argine.</p>
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-27.html">0x1b - DR e Cyber recovery (parte 2)</a>
+                  <a href="episode-23.html">0x17 - Threat Intelligence (parte 1)</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 06/10/2025 <span
-                        class="sep">/</span> 56 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 02/06/2025 <span
+                        class="sep">/</span> 52 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">Questa puntata di Info Sec. Unplugged è dedicata al tema del disaster recovery e alla sua evoluzione nell'era degli attacchi Cyber. Andrea Dainese e Rocco Sicilia accompagnano l'ascoltatore nella progettazione di processi e tecnologie per il DR, evidenziando le differenze tra esigenze di business e scelte tecniche, le sfide offerte dalle nuove normative e l'importanza della resilienza. Una chiacchierata pragmatica e divulgativa, ricca di aneddoti e consigli pratici per chi si occupa di sicurezza informatica e gestione delle infrastrutture IT.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-26.html">0x1a - DR e Cyber recovery (parte 1)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/09/2025 <span
-                        class="sep">/</span> 42 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged si esplora il tema (spesso sottovalutato) del disaster recovery in risposta agli attacchi informatici. Si analizzano i limiti delle strategie tradizionali, l'importanza della separazione tra ambienti, le implicazioni dei backup immutabili e delle golden image, e come una corretta automazione e gestione dei privilegi possano fare la differenza tra la resilienza e la perdita totale dei dati. Il racconto si arricchisce di esperienze reali e casi pratici tipici delle aziende italiane, con un occhio alle nuove sfide aperte dal GDPR e dalla digitalizzazione delle infrastrutture.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-17.html">0x11 - Documentazione tecnica</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/12/2024 <span
-                        class="sep">/</span> 59 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema cruciale della documentazione in azienda, vista dal punto di vista di CIO, IT manager e CISO. La conversazione esplora l'importanza di avere procedure, manuali e documentazione di rete sempre aggiornati per supportare la sicurezza, la consulenza e la gestione dei progetti, evidenziando i rischi legati a informazioni incomplete o obsolete.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-15.html">0xf - La compliance normativa come vantaggio</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 02/12/2024 <span
-                        class="sep">/</span> 47 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema della compliance in ambito IT e sicurezza informatica. Si discute di come un CISO o un IT manager, entrando in azienda, debba gestire framework, certificazioni e processi già esistenti oppure costruirne di nuovi. La conversazione esplora il percorso di maturazione delle organizzazioni rispetto alla compliance, le sfide pratiche, e il valore di una corretta governance per dare direzione e solidità alle strategie di sicurezza.</p>
+                <p class="mb-4">In questa puntata di Infosec Unplugged, Andrea Dainese e Rocco Sicilia introducono il vasto tema della Threat Intelligence, ponendo le basi per comprenderne i principi e le applicazioni pratiche. Partendo dalla raccolta e analisi del dato, discutono come sistemi come EDR e XDR si siano evoluti, quali siano le loro funzionalità principali e in che modo contribuiscano a migliorare la sicurezza informatica aziendale. Un episodio che getta le fondamenta per affrontare con maggiore consapevolezza i meccanismi della difesa cyber.</p>
               </div>
             </div>
           </div>
@@ -776,6 +571,60 @@ La formazione resta fondamentale, ma non può essere l’unico argine.</p>
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
+                  <a href="episode-4.html">0x4 - EDR: scegliere, gestire, utilizzare (parte 2)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/12/2023 <span
+                        class="sep">/</span> 30 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata si affrontano tre domande chiave sulla gestione della sicurezza informatica e delle tecnologie aziendali: cosa succede se non si presidiano correttamente le infrastrutture digitali, quali rischi si corrono nel definire policy troppo larghe o troppo restrittive, e come verificare se il proprio setup di sicurezza è adeguato al livello di minaccia attuale. Gli ospiti riflettono su pratiche di monitoraggio continuo, configurazioni di hunting e sull'importanza di mantenere un controllo costante per garantire resilienza e protezione.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-21.html">0x15 - CISO, vCISO, CISOaaS, un'idea nata molti anni fa (parte 2)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 10/02/2025 <span
+                        class="sep">/</span> 40 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata si approfondiscono i vantaggi e gli svantaggi nell'affidarsi a figure esterne rispetto a risorse interne all'azienda. Si esplorano due scenari principali: da un lato, i consulenti o collaboratori esterni portano una visione più ampia e competenze diversificate; dall'altro, le figure interne garantiscono una conoscenza approfondita del settore e della realtà aziendale. Una riflessione utile per chi deve decidere come strutturare il proprio team e bilanciare innovazione e continuità.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-17.html">0x11 - Documentazione tecnica</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/12/2024 <span
+                        class="sep">/</span> 59 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia affrontano il tema cruciale della documentazione in azienda, vista dal punto di vista di CIO, IT manager e CISO. La conversazione esplora l'importanza di avere procedure, manuali e documentazione di rete sempre aggiornati per supportare la sicurezza, la consulenza e la gestione dei progetti, evidenziando i rischi legati a informazioni incomplete o obsolete.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
                   <a href="episode-7.html">0x7 - Sicurezza negli impianti OT</a>
                 </h3>
                 <div class="text-white mb-3">
@@ -803,42 +652,6 @@ La formazione resta fondamentale, ma non può essere l’unico argine.</p>
                   </span>
                 </div>
                 <p class="mb-4">In questa prima puntata di Info Sec. Unplugged, gli autori avviano una conversazione informale sul tema dell'orchestrazione delle soluzioni di sicurezza informatica. Si discute di come, nelle aziende, gli strumenti di sicurezza vengano spesso gestiti come sistemi isolati ('silos') e non comunichino tra loro, con tutte le inefficienze che ne derivano. Il dialogo affronta le sfide della collaborazione tra strumenti di cybersecurity, la maturità organizzativa necessaria per integrarli, e il ruolo dei security manager e dell'IT management nel promuovere una visione unitaria della sicurezza aziendale.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-23.html">0x17 - Threat Intelligence (parte 1)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 02/06/2025 <span
-                        class="sep">/</span> 52 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Infosec Unplugged, Andrea Dainese e Rocco Sicilia introducono il vasto tema della Threat Intelligence, ponendo le basi per comprenderne i principi e le applicazioni pratiche. Partendo dalla raccolta e analisi del dato, discutono come sistemi come EDR e XDR si siano evoluti, quali siano le loro funzionalità principali e in che modo contribuiscano a migliorare la sicurezza informatica aziendale. Un episodio che getta le fondamenta per affrontare con maggiore consapevolezza i meccanismi della difesa cyber.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-4.html">0x4 - EDR: scegliere, gestire, utilizzare (parte 2)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/12/2023 <span
-                        class="sep">/</span> 30 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata si affrontano tre domande chiave sulla gestione della sicurezza informatica e delle tecnologie aziendali: cosa succede se non si presidiano correttamente le infrastrutture digitali, quali rischi si corrono nel definire policy troppo larghe o troppo restrittive, e come verificare se il proprio setup di sicurezza è adeguato al livello di minaccia attuale. Gli ospiti riflettono su pratiche di monitoraggio continuo, configurazioni di hunting e sull'importanza di mantenere un controllo costante per garantire resilienza e protezione.</p>
               </div>
             </div>
           </div>

@@ -943,10 +943,10 @@
 - authors:
   - Andrea Dainese
   - Rocco Sicilia
-  date: '20260316'
+  date: '20260330'
   id: 39
   length: 45
-  published: false
+  published: true
   summary: 'In questo episodio ci addentriamo nel controllo 8.2 della ISO 27001, dedicato
     alla gestione dei diritti di accesso privilegiato. Con Andrea Dainese e Rocco
     Sicilia esploriamo uno degli ambiti più sottovalutati e allo stesso tempo più
