@@ -970,3 +970,27 @@
   - Vulnerability Management
   title: I privilegi che non sapevi di avere
   url: https://www.spreaker.com/episode/0x27-i-privilegi-che-non-sapevi-di-avere--70644285
+- authors:
+  - Andrea Dainese
+  - Rocco Sicilia
+  date: '20260427'
+  id: 40
+  length: 39
+  published: true
+  summary: Andrea Dainese e Rocco Sicilia tornano con una puntata densa e concreta,
+    che prende spunto dalla vulnerabilità zero-click di Telegram — scoperta e quasi
+    subito ridimensionata — per aprire una riflessione più ampia su come il settore
+    gestisce (spesso male) la comunicazione delle vulnerabilità. Si parla di eco mediatica,
+    responsible disclosure, score CVE gonfiati, abuso dell'AI nel bug bounty e del
+    ruolo sempre più centrale degli smartphone come vettore di rischio aziendale.
+    Tra aneddoti di pen test, esperienze dirette con i vendor e qualche amara ironia
+    sul mestiere dell'IT manager nel 2026, i due ospiti disegnano un quadro lucido
+    delle contraddizioni della cybersecurity contemporanea.
+  tags:
+  - Awareness
+  - EDR
+  - OT Security
+  - Penetration Testing
+  - Vulnerability Management
+  title: Il problema non è lo sticker, è la complessità fuori controllo
+  url: https://www.spreaker.com/episode/0x28-il-problema-non-e-lo-sticker-e-la-complessita-fuori-controllo--71551761
