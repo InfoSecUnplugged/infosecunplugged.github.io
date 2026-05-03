@@ -994,3 +994,27 @@
   - Vulnerability Management
   title: Il problema non è lo sticker, è la complessità fuori controllo
   url: https://www.spreaker.com/episode/0x28-il-problema-non-e-lo-sticker-e-la-complessita-fuori-controllo--71551761
+- authors:
+  - Andrea Dainese
+  - Rocco Sicilia
+  date: '20260504'
+  id: 41
+  length: 40
+  published: true
+  summary: 'In questa puntata Andrea e Rocco affrontano una delle domande più frequenti
+    che ricevono da chi si avvicina al mondo della sicurezza informatica: da dove
+    si comincia? Partendo dalla propria esperienza sul campo, i due discutono di percorsi
+    formativi, mentalità, fondamenta tecniche imprescindibili e dell''importanza di
+    trovare un mentore. Si confrontano su tre grandi ambiti del settore — offensivo,
+    difensivo ed enterprise — e riflettono su cosa significhi davvero costruire competenze
+    solide in un campo in continua evoluzione. Spazio anche al ruolo dell''intelligenza
+    artificiale, al valore della curiosità e alla necessità di sapere quando è il
+    momento di lasciare andare una specializzazione per abbracciarne un''altra.'
+  tags:
+  - Awareness
+  - Detection
+  - EDR
+  - Governance
+  - Penetration Testing
+  title: Dalla passione alla professione nel mondo Info Sec.
+  url: https://www.spreaker.com/episode/0x29-dalla-passione-alla-professione-nel-mondo-info-sec--71776794
