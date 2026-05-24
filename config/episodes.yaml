@@ -1088,12 +1088,40 @@
   - Rocco Sicilia
   date: '20260525'
   highlight_links:
-  - title: Bug Bounty è MORTO? L'AI ha già sostituito i Pentester (Rev3rse)
-    url: https://www.youtube.com/watch?v=jA5OhpkQRBU
-  - title: Un tiro di dati (DataKnightmare)
-    url: https://www.spreaker.com/episode/dk-10x29-un-tiro-di-dati--71771195
-  - title: Come Pensa la Macchina (Signal Pirate)
-    url: https://pinperepette.github.io/signal.pirate/articoli/come-pensa-la-macchina.html
+  - title: 30/04/2026 - Amazon Web Services (attentato)
+    url: https://health.aws.amazon.com/health/status
+  - title: 05/12/2025 - Cloudflare (errore di configurazione)
+    url: https://blog.cloudflare.com/it-it/5-december-2025-outage/
+  - title: 06/11/2025 - Microsoft Azure (alimentazione)
+    url: https://azure.status.microsoft/it-it/status/history/
+  - title: 18/11/2025 - Cloudflare (errore di configurazione)
+    url: https://blog.cloudflare.com/it-it/18-november-2025-outage/
+  - title: 19/10/2023 - Amazon Web Services (errore di configurazione)
+    url: https://aws.amazon.com/message/101925/
+  - title: 30/10/2024 - OVH (errore di configurazione)
+    url: https://network.status-ovhcloud.com/incidents/qgb1ynp8x0c4
+  - title: 25/04/2023 - Google (allagamento/incendio)
+    url: https://status.cloud.google.com/incidents/dS9ps52MUnxQfyDGPfkY
+  - title: 16/06/2023 - Microsoft Azure (errore di configurazione)
+    url: https://azure.status.microsoft/it-it/status/history/
+  - title: 12/06/2023 - Amazon Web Services (bug)
+    url: https://aws.amazon.com/message/061323/
+  - title: 09/06/2023 - Microsoft Azure (DDoS)
+    url: https://azure.status.microsoft/it-it/status/history/
+  - title: 25/01/2023 - Microsoft Azure (errore di configurazione)
+    url: https://azure.status.microsoft/it-it/status/history/
+  - title: 09/12/2022 - Rackspace (ransomware)
+    url: https://www.rackspace.com/de-ch/newsroom/update-recent-cybersecurity-incident
+  - title: 25/08/2022- Google (errore di configurazione)
+    url: https://status.cloud.google.com/incidents/c8KN35RKVPWq9uCkVDsr
+  - title: 18/07/2022 - Google (errore di configurazione)
+    url: https://status.cloud.google.com/incidents/5fYoeLUgYW8TaNeGwkm5
+  - title: 22/05/2021 - Akamai (bug)
+    url: https://www.akamai.com/blog/news/akamai-summarizes-service-disruption-resolved
+  - title: 08/06/2021 - Fastly (bug)
+    url: https://www.fastly.com/blog/summary-of-june-8-outage
+  - title: 10/03/2021 - OVH (incendio)
+    url: https://corporate.ovhcloud.com/it/newsroom/news/informations-site-strasbourg/
   id: 44
   length: 22
   published: true
