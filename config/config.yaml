@@ -53,9 +53,9 @@ series:
     - episodes:
       - 39
       title: 8.2 - Diritti di accesso privilegiato
-    - title: 8.3 - Limitazione degli accessi alle informazioni
     - episodes:
       - 45
+      title: 8.3 - Limitazione degli accessi alle informazioni
     - episodes:
       - 31
       title: 8.4 - Accesso al codice sorgente
