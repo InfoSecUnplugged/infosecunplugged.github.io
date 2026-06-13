@@ -61,7 +61,12 @@ series:
       title: 8.4 - Accesso al codice sorgente
     - title: 8.5 - Autenticazione sicura
     - title: 8.6 - Gestione della capacità
-    - title: 8.7 - Protezione dal malware
+    - episodes:
+      - 3
+      - 4
+      - 5
+      - 6
+      title: 8.7 - Protezione dal malware
     - title: 8.8 - Gestione delle vulnerabilità tecniche
     - episodes:
       - 30
@@ -94,7 +99,9 @@ series:
     - title: 8.27 - Sicurezza dell’architettura dei sistemi e dei principi di ingegnerizzazione
     - title: 8.28 - Sviluppo sicuro
     - title: 8.29 - Test di sicurezza in fase di sviluppo e di accettazione
-    - title: 8.30 - Sviluppo affidato all’esterno
+    - episodes:
+      - 46
+      title: 8.30 - Sviluppo affidato all’esterno
     - title: 8.31 - Separazione degli ambienti di sviluppo, test e produzione
     - title: 8.32 - Gestione dei cambiamenti
     - title: 8.33 - Dati di test
