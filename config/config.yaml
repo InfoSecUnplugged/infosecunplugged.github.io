@@ -109,26 +109,31 @@ series:
     title: ISO 27001 - Annex A
 tags:
 - Adversary Simulation
+- AI
+- Asset Management
 - Automazione
 - Awareness
+- Business Continuity
 - Compliance
 - Detection
-- Disaster Recovery
 - DORA
 - EDR
 - Eventi
 - GDPR
 - Governance
 - ISO27001
+- Network Security
 - NIS
 - OT Security
 - Penetration Testing
 - Red Teaming
 - Risk Management
+- Secure Coding
 - SIEM
 - SOAR
 - SOC
 - Social Engineering
+- Supply Chain
 - Tabletop Exercise
 - Threat Intelligence
 - Vulnerability Management

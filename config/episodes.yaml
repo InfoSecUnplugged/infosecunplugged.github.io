@@ -17,7 +17,7 @@
     e il ruolo dei security manager e dell'IT management nel promuovere una visione
     unitaria della sicurezza aziendale.
   tags:
-  - EDR
+  - Asset Management
   - Governance
   - Risk Management
   - SOAR
@@ -43,11 +43,11 @@
     regge davvero alle minacce reali. Un episodio utile per chi si occupa di sicurezza
     informatica, risk management e continuità operativa.'
   tags:
+  - Asset Management
   - Detection
-  - EDR
   - Governance
   - Risk Management
-  - Threat Intelligence
+  - SOAR
   title: Orchestrazione di sistemi di sicurezza (parte 2)
   url: https://www.spreaker.com/episode/0x2-orchestrazione-di-sistemi-di-sicurezza-parte-2--57864845
 - authors:
@@ -92,10 +92,10 @@
     di mantenere un controllo costante per garantire resilienza e protezione.'
   tags:
   - Adversary Simulation
+  - Detection
   - EDR
   - Red Teaming
   - SOC
-  - Threat Intelligence
   title: 'EDR: scegliere, gestire, utilizzare (parte 2)'
   url: https://www.spreaker.com/episode/0x4-edr-scegliere-gestire-utilizzare-parte-2--58085883
 - authors:
@@ -123,8 +123,8 @@
   - Adversary Simulation
   - Detection
   - EDR
-  - Risk Management
   - Threat Intelligence
+  - XDR
   title: 'Da EDR a XDR: scegliere, gestire, utilizzare (parte 1)'
   url: https://www.spreaker.com/episode/0x5-da-edr-a-xdr-scegliere-gestire-utilizzare-parte-1--58197896
 - authors:
@@ -150,8 +150,8 @@
     l''XDR come strumento più integrato, accattivante e strategico per aumentare la
     visibilità e l''efficacia delle difese informatiche.'
   tags:
-  - Automazione
   - Detection
+  - EDR
   - SIEM
   - SOAR
   - XDR
@@ -193,11 +193,10 @@
     i costi e i vantaggi che hanno guidato la transizione verso protocolli più flessibili
     e diffusi.
   tags:
-  - Detection
+  - Asset Management
   - Governance
-  - OT Security
+  - Network Security
   - Risk Management
-  - Threat Intelligence
   title: Il lato nascosto dello storage tra costi e innovazione IT
   url: https://www.spreaker.com/episode/0x8-sicurezza-negli-impianti-ot-parte-2--58542969
 - authors:
@@ -244,7 +243,7 @@
   - Detection
   - EDR
   - Governance
-  - Risk Management
+  - Network Security
   title: Attacco di prossimità con rogue device e strategie di difesa (parte 2)
   url: https://www.spreaker.com/episode/0xa-attacco-di-prossimita-con-rogue-device-e-strategie-di-difesa-parte-2--58766863
 - authors:
@@ -264,9 +263,9 @@
   tags:
   - Awareness
   - Governance
+  - Network Security
   - OT Security
   - Penetration Testing
-  - Risk Management
   title: '802.1x bypass: riflessioni sugli impatti e sgli approcci per ridurre il
     rischio'
   url: https://www.spreaker.com/episode/0xb-802-1x-bypass-riflessioni-sugli-impatti-e-sgli-approcci-per-ridurre-il-rischio--60187964
@@ -287,11 +286,10 @@
     Un dialogo pratico e autentico sul modo di pensare e agire nella gestione dell''IT
     moderno.'
   tags:
+  - Asset Management
   - Compliance
-  - Disaster Recovery
   - Governance
   - Risk Management
-  - SOC
   title: Ripartiamo dall'inizio
   url: https://www.spreaker.com/episode/0xc-ripartiamo-dall-inizio--61809624
 - authors:
@@ -332,8 +330,8 @@
     sia le sfide che le opportunità per migliorare la postura di sicurezza.
   tags:
   - EDR
-  - Eventi
-  - Risk Management
+  - Penetration Testing
+  - Red Teaming
   - SOC
   - Vulnerability Management
   title: '[PUB] Accesso non consentito (ma possibile)'
@@ -378,9 +376,9 @@
     questi attacchi.
   tags:
   - Awareness
+  - Business Continuity
   - Detection
   - Risk Management
-  - Tabletop Exercise
   - Threat Intelligence
   title: '[EXT] Attacchi DDoS e strategie di sopravvivenza'
   url: https://www.spreaker.com/episode/0x10-ext-attacchi-ddos-e-strategie-di-sopravvivenza--63286769
@@ -399,11 +397,11 @@
     sicurezza, la consulenza e la gestione dei progetti, evidenziando i rischi legati
     a informazioni incomplete o obsolete.
   tags:
-  - Automazione
+  - Asset Management
   - Compliance
   - Governance
+  - Network Security
   - Risk Management
-  - Vulnerability Management
   title: Documentazione tecnica
   url: https://www.spreaker.com/episode/0x11-documentazione-tecnica--63302501
 - authors:
@@ -422,10 +420,10 @@
     utile e concreta per chi deve orientarsi nella complessità della rete aziendale
     e mantenere un equilibrio tra operatività e protezione.
   tags:
+  - Asset Management
   - Detection
   - Governance
-  - OT Security
-  - Risk Management
+  - Network Security
   - SOC
   title: Riflessioni sulla rete (design, sicurezza, approccio)
   url: https://www.spreaker.com/episode/0x12-riflessioni-sulla-rete-design-sicurezza-approccio--63459252
@@ -445,9 +443,9 @@
     conversazione ricca di spunti pratici per chi lavora nell''ambito delle reti e
     della sicurezza informatica.'
   tags:
-  - Detection
+  - Asset Management
   - Governance
-  - OT Security
+  - Network Security
   - Risk Management
   - SOC
   title: Approfondimento sulle reti datacenter
@@ -594,10 +592,10 @@
     trattati.
   tags:
   - Detection
+  - Red Teaming
   - SOC
   - Social Engineering
   - Threat Intelligence
-  - Vulnerability Management
   title: Threat Intelligence (parte 3)
   url: https://www.spreaker.com/episode/0x19-threat-intelligence-parte-3--67664347
 - authors:
@@ -621,8 +619,7 @@
     tipici delle aziende italiane, con un occhio alle nuove sfide aperte dal GDPR
     e dalla digitalizzazione delle infrastrutture.
   tags:
-  - Automazione
-  - Disaster Recovery
+  - Business Continuity
   - Governance
   - Risk Management
   - Tabletop Exercise
@@ -648,9 +645,8 @@
     pragmatica e divulgativa, ricca di aneddoti e consigli pratici per chi si occupa
     di sicurezza informatica e gestione delle infrastrutture IT.
   tags:
-  - Automazione
+  - Business Continuity
   - Compliance
-  - Disaster Recovery
   - Governance
   - Risk Management
   title: DR e Cyber recovery (parte 2)
@@ -673,8 +669,7 @@
     introduce inoltre il tema della Cyber Recovery, sempre più centrale in un contesto
     dove gli incidenti informatici sono più probabili dei disastri fisici.
   tags:
-  - Automazione
-  - Disaster Recovery
+  - Business Continuity
   - DORA
   - Governance
   - Tabletop Exercise
@@ -704,9 +699,8 @@
     di esempi concreti, riflessioni pratiche e consigli per evolvere dal semplice
     backup alla vera cyber resilienza.'
   tags:
-  - Disaster Recovery
+  - Business Continuity
   - DORA
-  - Governance
   - NIS
   - Risk Management
   title: '[EXT] Cyber Recovery e Disaster Recovery: due mondi (quasi) paralleli'
@@ -737,7 +731,7 @@
   - Governance
   - ISO27001
   - Red Teaming
-  - Risk Management
+  - Vulnerability Management
   title: 'Gestione delle configurazioni: tra ISO 27001 e realtà operativa'
   url: https://www.spreaker.com/episode/0x1e-gestione-delle-configurazioni-tra-iso-27001-e-realta-operativa--68578396
 - authors:
@@ -760,8 +754,8 @@
   - Compliance
   - Governance
   - ISO27001
-  - Red Teaming
-  - Risk Management
+  - Secure Coding
+  - Supply Chain
   title: 'Accesso al codice sorgente: perché ogni azienda sviluppa software (anche
     senza saperlo)'
   url: https://www.spreaker.com/episode/0x1f-accesso-al-codice-sorgente-perche-ogni-azienda-sviluppa-software-anche-senza-saperlo--68679961
@@ -838,7 +832,7 @@
   - Detection
   - EDR
   - ISO27001
-  - Risk Management
+  - Network Security
   - SOC
   title: Sicurezza delle reti tra progettazione, autenticazione e detection
   url: https://www.spreaker.com/episode/0x22-sicurezza-delle-reti-tra-progettazione-autenticazione-e-detection--69387827
@@ -861,7 +855,7 @@
   tags:
   - Detection
   - Governance
-  - OT Security
+  - Network Security
   - Risk Management
   - Social Engineering
   title: 'Wi-Fi, inganni e accessi privilegiati: quando la rete diventa il marciapiede
@@ -882,7 +876,7 @@
     sicurezza e scenari futuri. Tra romanticismo tecnologico e problemi molto pragmatici,
     proviamo a capire dove stiamo davvero andando.'
   tags:
-  - Automazione
+  - AI
   - Awareness
   - Eventi
   - Governance
@@ -968,7 +962,6 @@
   - Penetration Testing
   - SOC
   - Vulnerability Management
-  title: I privilegi che non sapevi di avere
   url: https://www.spreaker.com/episode/0x27-i-privilegi-che-non-sapevi-di-avere--70644285
 - authors:
   - Andrea Dainese
@@ -989,7 +982,6 @@
   tags:
   - Awareness
   - EDR
-  - OT Security
   - Penetration Testing
   - Vulnerability Management
   title: Il problema non è lo sticker, è la complessità fuori controllo
@@ -1044,7 +1036,7 @@
     e normativo. Un episodio denso, critico e concreto, pensato per chi vuole capire
     davvero dove finisce l''hype e dove comincia l''utilità reale.'
   tags:
-  - Automazione
+  - AI
   - Awareness
   - Detection
   - Red Teaming
@@ -1076,11 +1068,11 @@
     come risposta ai problemi di governance. Un episodio tecnico e concreto, che non
     cerca risposte definitive ma invita a sperimentare con metodo e consapevolezza.'
   tags:
+  - AI
   - Detection
   - EDR
+  - GDPR
   - SIEM
-  - SOC
-  - Vulnerability Management
   title: Detection, falsi positivi e modelli linguistici
   url: https://www.spreaker.com/episode/0x2b-detection-falsi-positivi-e-modelli-linguistici--72018575
 - authors:
@@ -1137,8 +1129,7 @@
     chi si occupa di IT, ma anche per chi in azienda prende le decisioni di budget.'
   tags:
   - Awareness
-  - Compliance
-  - Disaster Recovery
+  - Business Continuity
   - Governance
   - Risk Management
   title: Quando il cloud prende fuoco e nessuno era pronto
@@ -1163,7 +1154,7 @@
   tags:
   - Awareness
   - Compliance
-  - Disaster Recovery
+  - Detection
   - Governance
   - Risk Management
   title: Quando tutti vedono tutto l'attaccante ringrazia
@@ -1189,7 +1180,31 @@
   - Awareness
   - ISO27001
   - OT Security
-  - Social Engineering
-  - Vulnerability Management
+  - Secure Coding
+  - Supply Chain
   title: Il rischio che si ignora nella supply chain
   url: https://www.spreaker.com/episode/0x2e-il-rischio-che-si-ignora-nella-supply-chain--72509651
+- authors:
+  - Andrea Dainese
+  - Rocco Sicilia
+  date: '20260622'
+  id: 47
+  length: 34
+  published: true
+  summary: 'In questa puntata riprendiamo il tema dell''utilizzo dei modelli linguistici
+    nel mondo della sicurezza informatica, concentrandoci stavolta sul red teaming.
+    Partendo da un''analisi critica fase per fase — ricognizione, analisi dei dati,
+    phishing, scrittura di codice e payload, analisi delle vulnerabilità — proviamo
+    a capire dove gli LLM danno un contributo reale e dove invece è meglio risparmiare
+    i token. Tra output incompleti nella raccolta dati, regex bypassate in pochi secondi,
+    payload custom costruiti al volo e CVE che non piovono dal cielo, emerge un quadro
+    onesto e poco incline all''hype: lo strumento esiste, accelera alcune cose in
+    modo significativo, ma richiede giudizio su quando usarlo e quando no.'
+  tags:
+  - Adversary Simulation
+  - Automazione
+  - Red Teaming
+  - Threat Intelligence
+  - Vulnerability Management
+  title: Red teaming nell'era degli LLM
+  url: https://www.spreaker.com/episode/0x2f-red-teaming-nell-era-degli-llm--72618961
