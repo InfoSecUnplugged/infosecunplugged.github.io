@@ -118,6 +118,8 @@ def build_menu_html(title=None, link=None, items=None):
             )
         output_html += '</ul></li>'
     return output_html
+
+menu_html = '<div class="col-9" data-aos="fade-down"><nav class="site-navigation position-relative text-right text-md-right" role="navigation"><div class="d-inline-block ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div><ul class="site-menu js-clone-nav d-none">'
 for menu in config["menu"]:
     menu_html += build_menu_html(**menu)
 menu_html += '</ul></nav></div>'
