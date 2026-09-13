@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Info Sec. Unplugged: 0x19 - Threat Intelligence (parte 3)</title>
+  <title>Info Sec. Unplugged: 0x31 - Garbage in garbage out, anche gli agenti hanno bisogno di ordine</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900">
@@ -15,16 +15,16 @@
   <link rel="stylesheet" href="../css/aos.css">
   <link rel="stylesheet" href="../css/style.css">
   <!-- Open Graph -->
-  <meta property="og:title" content="Info Sec. Unplugged: 0x19 - Threat Intelligence (parte 3)">
-  <meta property="og:description" content="In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare sul lavoro del threat analyst, che studia il comportamento degli attori malevoli per supportare attività di detection e prevention. Viene inoltre approfondita la stretta relazione tra il mondo della threat intelligence e quello della offensive security, mostrando come entrambi si concentrino sul modus operandi degli attacchi e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato da un post descrittivo e un video highlight, per rendere più accessibili i dettagli tecnici trattati.">
+  <meta property="og:title" content="Info Sec. Unplugged: 0x31 - Garbage in garbage out, anche gli agenti hanno bisogno di ordine">
+  <meta property="og:description" content="In questa puntata torniamo sul tema degli LLM applicati alla cybersecurity, questa volta con un focus specifico sulla detection. Partendo da esperimenti personali — uno sull'uso di agenti per analizzare anomalie in infrastrutture complesse, l'altro nato da un approfondimento sui paper più recenti — smontiamo l'idea che gli LLM possano fare da oracolo a cui dare in pasto enormi moli di log grezzi sperando che trovino da soli le minacce. Raccontiamo perché questo approccio è economicamente insostenibile e perché funziona molto meglio la combinazione tra detection rules deterministiche e contesto mirato fornito da un analista, lasciando all'LLM il compito di interpretare in modo probabilistico ciò che il piano deterministico non riesce a risolvere. Parliamo di falsi positivi, di regole disattivate troppo alla leggera, di un possibile diario di bordo testuale per aiutare gli agenti a discriminare eventi reali, e di casi in cui il probabilistico funziona davvero bene — come il riconoscimento di header HTTP anomali o la valutazione del tono di un'email in ottica anti-phishing. Non manca una riflessione più ampia sui limiti pratici della tecnologia: l'incoerenza di stile tra un output e l'altro, gli agenti che evadono il prompt bruciando token su strade sbagliate, e il tema ancora acerbo dell'addestramento on-prem e dei modelli specializzati per contesto. Un episodio che prova a distinguere, con metodo e senza hype, dove gli LLM danno davvero valore alla detection e dove invece conviene ancora affidarsi al buon vecchio approccio deterministico.">
   <meta property="og:image" content="https://www.infosecunplugged.it/cover.png">
   <meta property="og:url" content="https://www.infosecunplugged.it/">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Info Sec. Unplugged: 0x19 - Threat Intelligence (parte 3)">
-  <meta name="twitter:description" content="In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare sul lavoro del threat analyst, che studia il comportamento degli attori malevoli per supportare attività di detection e prevention. Viene inoltre approfondita la stretta relazione tra il mondo della threat intelligence e quello della offensive security, mostrando come entrambi si concentrino sul modus operandi degli attacchi e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato da un post descrittivo e un video highlight, per rendere più accessibili i dettagli tecnici trattati.">
+  <meta name="twitter:title" content="Info Sec. Unplugged: 0x31 - Garbage in garbage out, anche gli agenti hanno bisogno di ordine">
+  <meta name="twitter:description" content="In questa puntata torniamo sul tema degli LLM applicati alla cybersecurity, questa volta con un focus specifico sulla detection. Partendo da esperimenti personali — uno sull'uso di agenti per analizzare anomalie in infrastrutture complesse, l'altro nato da un approfondimento sui paper più recenti — smontiamo l'idea che gli LLM possano fare da oracolo a cui dare in pasto enormi moli di log grezzi sperando che trovino da soli le minacce. Raccontiamo perché questo approccio è economicamente insostenibile e perché funziona molto meglio la combinazione tra detection rules deterministiche e contesto mirato fornito da un analista, lasciando all'LLM il compito di interpretare in modo probabilistico ciò che il piano deterministico non riesce a risolvere. Parliamo di falsi positivi, di regole disattivate troppo alla leggera, di un possibile diario di bordo testuale per aiutare gli agenti a discriminare eventi reali, e di casi in cui il probabilistico funziona davvero bene — come il riconoscimento di header HTTP anomali o la valutazione del tono di un'email in ottica anti-phishing. Non manca una riflessione più ampia sui limiti pratici della tecnologia: l'incoerenza di stile tra un output e l'altro, gli agenti che evadono il prompt bruciando token su strade sbagliate, e il tema ancora acerbo dell'addestramento on-prem e dei modelli specializzati per contesto. Un episodio che prova a distinguere, con metodo e senza hype, dove gli LLM danno davvero valore alla detection e dove invece conviene ancora affidarsi al buon vecchio approccio deterministico.">
   <meta name="twitter:image" content="https://www.infosecunplugged.it/cover.png">
 </head>
 
@@ -59,11 +59,11 @@
           
           <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
             <h2 class="text-white font-weight-light mb-2 display-4">
-              0x19 - Threat Intelligence (parte 3)</h2>
+              0x31 - Garbage in garbage out, anche gli agenti hanno bisogno di ordine</h2>
             <div class="text-white mb-3">
               <span class="text-white-opacity-05">
                 <small>By Andrea Dainese, Rocco Sicilia
-                  | 08/09/2025 | 58 min.</small>
+                  | 14/09/2026 | 36 min.</small>
               </span>
             </div>
 
@@ -98,8 +98,8 @@
     <div class="site-section bg-light m-0 p-0">
       <div class="container player col-12 m-0 p-0">
         <iframe
-          src="https://widget.spreaker.com/player?episode_id=67664347&theme=dark&chapters-image=true"
-          width="100%" height="200px" title="0x19 - Threat Intelligence (parte 3)"
+          src="https://widget.spreaker.com/player?episode_id=75101437&theme=dark&chapters-image=true"
+          width="100%" height="200px" title="0x31 - Garbage in garbage out, anche gli agenti hanno bisogno di ordine"
           frameborder="0"></iframe>
       </div>
     </div>
@@ -108,32 +108,22 @@
 
       <div class="row justify-content-center">
         <div class="col-md-12">
-          <p>In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare sul lavoro del threat analyst, che studia il comportamento degli attori malevoli per supportare attività di detection e prevention. Viene inoltre approfondita la stretta relazione tra il mondo della threat intelligence e quello della offensive security, mostrando come entrambi si concentrino sul modus operandi degli attacchi e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato da un post descrittivo e un video highlight, per rendere più accessibili i dettagli tecnici trattati.</p>
+          <p>In questa puntata torniamo sul tema degli LLM applicati alla cybersecurity, questa volta con un focus specifico sulla detection. Partendo da esperimenti personali — uno sull'uso di agenti per analizzare anomalie in infrastrutture complesse, l'altro nato da un approfondimento sui paper più recenti — smontiamo l'idea che gli LLM possano fare da oracolo a cui dare in pasto enormi moli di log grezzi sperando che trovino da soli le minacce. Raccontiamo perché questo approccio è economicamente insostenibile e perché funziona molto meglio la combinazione tra detection rules deterministiche e contesto mirato fornito da un analista, lasciando all'LLM il compito di interpretare in modo probabilistico ciò che il piano deterministico non riesce a risolvere. Parliamo di falsi positivi, di regole disattivate troppo alla leggera, di un possibile diario di bordo testuale per aiutare gli agenti a discriminare eventi reali, e di casi in cui il probabilistico funziona davvero bene — come il riconoscimento di header HTTP anomali o la valutazione del tono di un'email in ottica anti-phishing. Non manca una riflessione più ampia sui limiti pratici della tecnologia: l'incoerenza di stile tra un output e l'altro, gli agenti che evadono il prompt bruciando token su strade sbagliate, e il tema ancora acerbo dell'addestramento on-prem e dei modelli specializzati per contesto. Un episodio che prova a distinguere, con metodo e senza hype, dove gli LLM danno davvero valore alla detection e dove invece conviene ancora affidarsi al buon vecchio approccio deterministico.</p>
         </div>
       </div>
 
-      
-      <div class="highlight-links">
-        <ul>
-          
-          <a href="https://roccosicilia.com/2025/09/08/info-sec-unplugged-18-threat-int-3a-parte/?utm_source=infosecunplugged_website" target="_blank" rel="noopener noreferrer">Blog post di approfondimento</a> | 
-          
-          <a href="https://www.youtube.com/watch?v=3LJb2OtQf28?utm_source=infosecunplugged_website" target="_blank" rel="noopener noreferrer">Highlight e dettagli sugli indicatori discussi (video)</a>
-          
-        </ul>
-      </div>
       
 
       
       <div class="tags mb-4">
         
+        <span><a class="text-black" href="../tags/tag-ai.html">AI</a></span>
+        
+        <span><a class="text-black" href="../tags/tag-automazione.html">Automazione</a></span>
+        
         <span><a class="text-black" href="../tags/tag-detection.html">Detection</a></span>
         
-        <span><a class="text-black" href="../tags/tag-red-teaming.html">Red Teaming</a></span>
-        
         <span><a class="text-black" href="../tags/tag-soc.html">SOC</a></span>
-        
-        <span><a class="text-black" href="../tags/tag-social-engineering.html">Social Engineering</a></span>
         
         <span><a class="text-black" href="../tags/tag-threat-intelligence.html">Threat Intelligence</a></span>
         
@@ -151,49 +141,19 @@
         </div>
         <div class="row">
           <div class="col">
-            <p>Bentornati a Info Sec. Unplugged!</p>
-<p>Da questa puntata, il podcast sarà disponibile solo su Spreaker e sulle piattaforme audio dedicate. Sul canale YouTube di Rocco troverete invece un highlight video con un riassunto e qualche anticipazione. In più, come sempre, ci sarà un post descrittivo allegato, con esempi pratici e riferimenti tecnici per chi vuole approfondire visivamente i casi di cui parliamo.</p>
-<p>Nell’episodio precedente avevamo promesso di fare ordine nell’analisi di un incidente di sicurezza, raccontando la storia di un attacco in modo formale e strutturato. Oggi vogliamo proprio farlo: entrare nella mentalità dell’attaccante e imparare a leggere il suo comportamento.</p>
-<p>Parlando al caffè questa mattina, riflettevamo su come il mondo della Threat Intelligence sia, per certi versi, molto più vicino a quello dell’Offensive Security che a quello puramente difensivo.</p>
-<p>Chi lavora nell’offensiva studia gli attacchi dei threat actor per emularli — creare simulazioni, strumenti o artefatti utili a testare la resilienza dei sistemi.</p>
-<p>Chi fa Threat Intelligence, invece, osserva lo stesso scenario ma da un’altra prospettiva: analizza attacchi già avvenuti, raccoglie dati sulle infrastrutture, sugli strumenti e sui comportamenti degli attori malevoli per anticiparne le prossime mosse.</p>
-<p>In entrambi i casi, l’obiettivo è capire la mente dell’attaccante: noi lo emuliamo, noi lo anticipiamo. È lo stesso soggetto — l’attacco — visto da due lati diversi.</p>
-<p>Un esempio emblematico riguarda l’uso di Python su macchine Windows per restare “under the radar” rispetto a PowerShell. L’idea, nata nei paper di ricerca tra il 2018 e il 2020, era stata inizialmente esplorata per studiare le lacune dei sistemi di detection, e poi sfruttata dai threat actor stessi.</p>
-<p>La ricerca, come spesso accade, apre porte che possono essere usate sia per difendersi sia per attaccare. È un mercato dual use, e lo vediamo anche nel mondo degli exploit e delle CVE: la corsa alla scoperta di vulnerabilità genera valore, ma anche rischi, perché le stesse informazioni possono alimentare tanto l’intelligence militare quanto il cybercrime.</p>
-<p>Ma torniamo al nostro caso pratico.</p>
-<p>Abbiamo deciso di analizzare una campagna di phishing, partire dall’e-mail e seguire la catena dell’attacco fino alla fine, per capire come strutturare l’informazione in modo da trarne valore operativo.</p>
-<p>L’evento iniziale è un’e-mail che sembra provenire da Decathlon, con una classica “offerta imperdibile”. L’utente, cliccando sul link, viene portato a un sito e-commerce dove, pagando 5 euro di spedizione, dovrebbe ricevere un prodotto di valore superiore. Naturalmente è una truffa.</p>
-<p>Da qui inizia il lavoro dell’analista di Threat Intelligence.</p>
-<p>L’utente segnala l’e-mail (quando va bene), oppure ci clicca sopra (quando va male).
-Nel primo caso, il team SOC la riceve come segnalazione e la passa all’analisi; nel secondo, l’incidente viene scoperto solo dopo, in reazione.</p>
-<p>L’analista parte dall’e-mail, analizzandone due sezioni fondamentali: header e body.</p>
-<p>L’header contiene i dettagli tecnici del percorso della mail — mittente, IP sorgente, server attraversati, reputazione dei domini.</p>
-<p>Il body invece mostra il contenuto effettivo: testo, link, eventuali allegati o elementi HTML nascosti.</p>
-<p>Spesso gli attaccanti sono molto accorti: utilizzano domini leciti, infrastrutture compromesse o addirittura bucket cloud pubblici per ospitare i propri artefatti.</p>
-<p>Nel nostro caso, la mail era passata indenne attraverso i filtri antispam: lo score era troppo basso per bloccarla.</p>
-<p>Analizzando il sorgente dell’e-mail abbiamo trovato un piccolo trucco: nel codice HTML era inserito un thread fittizio, in più lingue, non visibile al destinatario ma letto dai filtri antispam. Alcuni sistemi, infatti, assegnano punteggi più alti a messaggi che sembrano parte di una conversazione.</p>
-<p>Il threat actor, sfruttando questa logica, “inganna” il sistema simulando un thread. Un esempio perfetto di come ogni automatismo possa essere avvelenato.</p>
-<p>Nel body c’era il link alla finta offerta, che puntava a un bucket di Google Cloud Storage: apparentemente innocuo, perché l’URL è di un dominio affidabile.</p>
-<p>Dentro quel bucket, però, c’era un piccolo file HTML con un semplice script di redirect verso un altro dominio, e così via, per tre passaggi consecutivi.</p>
-<p>È improbabile che un sistema di sicurezza analizzi tutta la catena di redirect: di solito si ferma al primo o al secondo. L’utente, alla fine, approda su un falso e-commerce, dove il pagamento serve solo a carpire i dati della carta di credito.</p>
-<p>Questo tipo di campagna, apparentemente banale, mostra bene la necessità di raccontare la “storia” dell’attacco, non solo di reagire all’incidente.</p>
-<p>Tutti gli elementi raccolti — indirizzi IP, domini, hash, titoli, pattern — vengono salvati e correlati, ad esempio su una piattaforma come MISP (Malware Information Sharing Platform).</p>
-<p>Ogni informazione è un attributo, e alcuni di questi diventano IOC (Indicator of Compromise).</p>
-<p>Con MISP possiamo rappresentare graficamente il flusso dell’attacco, correlare eventi, condividere gli IOC con il SOC o con altre organizzazioni, e anche verificare retroattivamente se la nostra infrastruttura è già stata toccata dallo stesso tipo di campagna.</p>
-<p>Condividere è fondamentale. Le piattaforme come MISP nascono proprio per questo: creare un ecosistema in cui ogni organizzazione arricchisce la conoscenza collettiva.</p>
-<p>Chi ha già un SOC, un SIEM, strumenti di EDR o XDR, può integrare questi feed nel proprio ambiente di detection e prevention, filtrandoli e pesandoli con attenzione.</p>
-<p>Non si tratta di riversare milioni di indicatori a caso — anche perché un firewall non può gestirli tutti — ma di selezionare quelli pertinenti, attivi e verificati.</p>
-<p>Un aspetto spesso trascurato è la “data di scadenza” degli IOC.</p>
-<p>Un bucket Google usato per una campagna oggi, domani sarà chiuso, quindi quell’indicatore perde validità.
-MISP prevede anche sistemi di validazione tra community (sighting), che permettono di segnalare se un IOC è ancora valido, falso positivo o ormai obsoleto.</p>
-<p>Integrare la Threat Intelligence non è questione di installare un software: è costruire un ecosistema coerente, dove dati, processi e persone collaborano.</p>
-<p>Gli strumenti automatici possono aiutare — ad esempio estrarre in automatico gli IOC dalle e-mail o alimentare i firewall — ma serve sempre una supervisione umana che interpreti il contesto.</p>
-<p>Abbiamo raccontato questo caso per mostrare come, anche partendo da un’e-mail apparentemente semplice, si possa ricostruire un’intera catena di attacco e trasformarla in conoscenza utile, condivisibile e azionabile.</p>
-<p>È questo il cuore della Threat Intelligence: passare dalla reazione alla comprensione, dall’evento isolato alla storia completa.</p>
-<p>E così chiudiamo un piccolo ciclo di tre puntate dedicate all’analisi strutturata degli incidenti di sicurezza.</p>
-<p>Abbiamo toccato concetti tecnici, strategici e metodologici — dal phishing alle infrastrutture cloud, dal ruolo del SOC a quello dell’intelligence, fino ai modelli di condivisione tra organizzazioni.
-Un viaggio dentro il modo in cui impariamo, ogni giorno, a capire e raccontare la sicurezza informatica.</p>
-<p>Alla prossima puntata di Info Sec. Unplugged!</p>
+            <p>Siamo tornati dalle vacanze, anche se in realtà è passato più tempo di quanto vorremmo ammettere: come promesso, però, ci rivediamo ancora entro l'estate, giusto in tempo per mantenere la parola data. Prima di iniziare a registrare ci siamo raccontati, fuori onda, alcuni esperimenti che uno di noi sta portando avanti sull'uso degli LLM in ambito defense, e questo si è intrecciato con una riflessione nata in un contesto completamente diverso: il network assessment, dove si stava cercando il modo di usare uno o più agenti per analizzare anomalie in un'infrastruttura complessa a partire da dati appena raccolti.</p>
+<p>Il punto d'incontro tra le due esperienze è qualcosa di cui avevamo già parlato in puntate precedenti, e su cui ormai in molti concordano: dal caos non nasce magicamente l'ordine. Non esiste l'agente che mette ordine nel caos da solo; vale sempre il vecchio garbage in, garbage out, quindi bisogna adattare il dato e l'infrastruttura perché siano comprensibili. Nel caso specifico di un'infrastruttura grande, con file testuali (YAML, ad esempio) che possono arrivare a decine di mega, questi file diventano difficili da far ingerire in modo efficace a un agente: caricare centinaia di mega di configurazioni e poi pretendere che si trovino le risposte giuste dentro quella massa di dati è complicato, e non è detto che dal caos venga fuori ordine. La riflessione che ne è nata è che gli agenti debbano sempre più essere istruiti nell'uso degli strumenti: ci stiamo allontanando dall'idea che basti un'intelligenza artificiale generica per fare tutto, e ci stiamo spostando verso un approccio in cui l'agente va istruito a compiti specifici — nel caso concreto, a fare query nel formato corretto, sapendo anche descrivere cosa restituisce una determinata query in modo da poter parallelizzare il lavoro. I risultati di questi esperimenti personali sono incoraggianti, pur restando esperimenti da "banco di prova" sul proprio PC, non certo da laboratorio.</p>
+<p>Gli esperimenti dell'altro conduttore nascono invece da una serie di letture recenti: prima di esprimersi pubblicamente sul tema LLM in ambito cybersecurity, si è voluto dedicare del tempo a capire cosa si sta facendo davvero a livello sperimentale, quali paper sono usciti, come sono stati affrontati certi temi e che tipo di risultati si stanno ottenendo. I paper che circolano in questi mesi sono abbastanza dettagliati da permettere di riprodurre esperimenti anche con laboratori piccoli, toccando con mano la materia — un aspetto che ci interessa molto, perché preferiamo parlare di cose concrete, realizzabili oggi, piuttosto che di promesse sul domani.</p>
+<p>Una delle cose più interessanti è che alcuni miti — o forse più che miti, speranze — si sono autosmontati da soli. Il primo pensiero che tutti abbiamo avuto, complice anche il modo in cui certi vendor l'hanno annunciato nel mondo CDM e XDR, è che il primo livello di detection l'avrebbe fatto direttamente l'intelligenza artificiale. L'idea evocava qualcosa di perfetto: dare in pasto tutto il dataset da analizzare, quello che oggi mette davvero in difficoltà i team di difesa, perché le regole di detection su dataset enormi generano tantissimi casi di potenziale anomalia che andrebbero approfonditi, ma mancano elementi per dire con certezza se sono un problema reale o un falso positivo. Fino ad oggi è sempre servito l'umano per quella verifica, e la speranza era che l'LLM eliminasse proprio quel bisogno di esperienza dell'analista, riducendo drasticamente l'incertezza.</p>
+<p>In realtà, per come funzionano gli LLM, il problema si ripropone identico: se diamo in pasto enormi moli di log, per giunta privi di contesto — e servirebbe moltissimo contesto per giustificarli — chiedendo di trovare anomalie, il modello troverà sicuramente delle anomalie, perché è esattamente ciò che sa fare. Ma questo non risolve il problema di isolare quelle significative e non elimina l'incertezza: anzi, per come funziona il calcolo statistico, l'output conterrà spesso alti gradi di incertezza. Un paper letto di recente conteneva una frase che ci ha ricordato una riflessione già fatta tra di noi in passato: alcune cose è meglio farle in modo deterministico. Dove esiste uno strumento deterministico che funziona, non ha senso usare l'LLM; dove invece il problema è di natura statistica, allora l'LLM ha senso. I paper più recenti, incluso uno segnalato di recente sul nostro canale Telegram, vanno proprio in questa direzione: la detection supportata da LLM dà segnali positivi quando si combinano i risultati deterministici ottenuti con le classiche detection rules (magari fatte bene) con il contesto che l'analista fornisce, arricchendo le informazioni sul tipo di minaccia ipotizzata sulla base dell'output delle regole. Ad esempio, se una regola segnala un potenziale brute force, il contesto da dare all'LLM è proprio il sospetto di un tentativo di accesso al sistema; a quel punto il modello, con un prompt ben formattato, è in grado di aiutare non più su base deterministica ma probabilistica, tenendo conto degli elementi di incertezza portati alla sua attenzione. In sintesi: non ha molto senso usare l'LLM come un oracolo a cui dare tantissimi dati grezzi sperando che, essendo velocissimo, restituisca risultati affidabili. Funziona molto meglio se gli forniamo elementi già filtrati con meccanismi deterministici, indicandogli quali strumenti usare e come, ottenendo così risultati su base statistica ma con un'incertezza molto più bassa rispetto al "calderone" di dati grezzi.</p>
+<p>Questo ci ha fatto venire in mente una riflessione più ampia sulla proposizione di marketing iniziale, per cui gli LLM avrebbero dovuto sostituire il primo livello del SOC — lo stesso schema narrativo dell'"IA che ci ruba il lavoro" che si sente ripetere a livello di management, programmazione, praticamente ovunque. È un approccio di marketing perfetto perché si ripaga da solo: sposti il budget dal costo del personale al costo del prodotto. Ma ci siamo accorti che non è proprio così. Un parallelo utile arriva dal mondo della programmazione, dove gli esperimenti danno risultati anche molto buoni, ma con un problema ricorrente, notato anche da molti altri nei forum: l'LLM è in grado di produrre moltissimo lavoro, correggere bug, risolvere problemi, ma lo fa con uno stile tutto suo, spesso estremamente complesso anche per problemi semplici. Trasponendo questo nel mondo della difesa: aggiornare le regole di detection è un'attività normale e necessaria, ed è comodo chiedere a un LLM "questi sono i miei campi, devo trovare questa cosa", ottenendo una regola pronta che funziona per lo scopo dato — tutt'altra cosa è pensare che un agente possa farlo in automatico su larga scala, perché quella regola potrebbe non essere sufficientemente generalizzata per contesti leggermente diversi. La conseguenza è che gli agenti possono fare molto lavoro in ambienti strutturati, descritti e istruiti bene all'uso degli strumenti: se un'azienda genera, mettiamo, dieci Tera di log al mese, non è pensabile dare in pasto tutto sperando che qualcosa salti fuori — nella migliore delle ipotesi si trova qualcosa a costi abnormi, più probabilmente non si cava nulla.</p>
+<p>Parlando di contesto, è emerso il tema classico dei SOC: eventi generati da strumenti (un EDR, per esempio, configurato più o meno bene) che producono falsi positivi. La prassi comune oggi, dovendo gestire gli eventi a mano, è disabilitare il "rumore" — cosa che può andare bene, ma se fatta senza cura rischia di far perdere eventi reali e malevoli, cosa che è già successa: si decide "questa cosa la conosco, non ci posso fare nulla, la ignoro" e sei mesi dopo scopri che il problema partiva proprio da lì. Da qui una riflessione aperta, non ancora testata ma che sembra promettente: avere agenti in grado di valutare quegli eventi leggendo un "diario di bordo" in formato testuale, discorsivo, umano — dove sta scritto ad esempio che una certa macchina, per funzionare, deve potersi collegare a un'altra — spostando così il problema dal tuning delle regole (spesso fatto male, anche se non necessariamente sbagliato nell'idea) all'aggiornamento di un diario di bordo, consultabile per discriminare eventi reali da falsi positivi.</p>
+<p>Su questo si inserisce l'esperienza raccolta dalle letture recenti: ci sono tanti modi di approcciare il problema, e una cosa vera è che l'LLM, nel task di anomaly detection in senso stretto, funziona bene. Il problema è proprio quello descritto sopra: un paper esordiva dicendo che se pensiamo di dare all'LLM i log grezzi del CDM andiamo incontro a un "suicidio economico" — parole testuali — perché è impensabile dal punto di vista dei costi, e probabilmente il risultato non sarebbe nemmeno apprezzabile: esistono così tante casistiche gestibili a livello deterministico che spostarsi completamente su un piano probabilistico costa moltissimo e non aiuta. Dandogli invece contesto su elementi precisi, funziona bene, e i test lo confermano. Il tema resta sempre quello dei grandi numeri: il problema vero non sono i pochi casi in cui SIEM o EDR segnalano una minaccia in modo strutturato — lì il problema è già risolto — ma la massa di casi sospetti in cui non ci sono elementi sufficienti per dire con certezza se sia una minaccia reale. È lì che i team di difesa faticano, ed è lì che si rischia di silenziare, come rumore di fondo, anomalie che invece non andrebbero ignorate. Se si riesce a isolare queste casistiche — e sono tante — e si riesce, a livello di agente, a dare all'LLM sufficiente contesto per un'ulteriore interpretazione, arricchendola con altri dati di riferimento (non gli stessi dati che hanno generato l'anomalia, ma informazioni aggiuntive, come tutti gli eventi in un certo time frame relativi a un determinato host, per fare correlazione), si ottiene un aiuto reale. Farlo fare a un umano richiederebbe la definizione di una quantità enorme di use case, uno per ogni possibile tipologia di host e informazione, un lavoro time consuming che diventerebbe presto un delirio da mantenere, con il rischio concreto di generare ulteriore rumore invece di ridurlo. L'approccio, quindi, è arrivare il più possibile in profondità con strumenti deterministici, e dove non conviene più investire tempo per ottenere risultati deterministici, accettare un risultato probabilistico dell'LLM — meglio quello di niente. Ovviamente serve pulire bene i dati in ingresso, perché altrimenti si rischia di confondere il modello: la quantità di input conta moltissimo. Se per rispondere a una domanda specifica diamo in pasto un intero libro, il modello farà fatica a rispondere in modo mirato, perché calcolerà la risposta probabilistica considerando tutto il contenuto, la maggior parte del quale non ha nulla a che vedere con la domanda. È lo stesso, identico problema se chiediamo di isolare un dettaglio su un caso specifico dando in pasto milioni di log di centinaia di host: non possiamo pretendere una risposta isolata e precisa. Forse il "peccato originale" è stato attribuire agli LLM una comprensione semantica: in alcuni contesti, secondo alcuni analisti, i modelli di frontiera potrebbero starci arrivando, ma non ci sono strumenti per confermarlo con certezza, e i modelli che usiamo abitualmente non hanno comprensione semantica. Non possiamo quindi aspettarci che comprendano davvero il contesto di ciò che gli passiamo in input — esattamente come un essere umano a cui diamo un libro intero chiedendogli di rispondere a una domanda nascosta in mezzo: non possiamo pretendere una risposta con vera comprensione semantica se l'input è enorme. Sarebbe stato bello poter usare gli LLM così, esattamente come ce li si immaginava quando è nato il tema — dare tutti i dati dentro e lasciare che ci pensi lui — ma non si può fare.</p>
+<p>Questa è sempre stata la leggenda di un sistema che sostituisce l'umano: dargli tutto e sperare che tiri fuori qualcosa. Ma non funziona nemmeno con le persone: non puoi dare tutto a qualcuno e sperare che, da solo, tiri fuori un output ordinato e funzionale — anche una persona ha risorse e tempo finiti. Per le macchine il rischio è analogo: un costo enorme per un risultato non perfettamente funzionale. C'è poi un altro aspetto della tecnologia, almeno per come la sperimentiamo noi: non è particolarmente coerente con se stessa. Non tanto nella risposta in sé, quanto nell'approccio, che spesso varia moltissimo da un caso all'altro. In un esperimento fatto insieme — di cui peraltro non avevamo più parlato pubblicamente — sull'analisi di minacce avanzate veicolate via email, l'LLM è stato in grado di catalogare correttamente casi complessi ma tra loro abbastanza simili: l'analisi si è comportata bene sul piano del contenuto, comprensibile in ogni caso, ma lo stile dell'output cambiava sensibilmente da un'analisi all'altra, senza mai stabilizzarsi. Lo stesso fenomeno si nota nella programmazione, da una sessione all'altra, o in un altro lavoro in corso — l'analisi di un testo molto lungo, diviso in sezioni tematiche gestite come conversazioni separate — dove, ponendo le stesse domande di elaborazione allo stesso LLM in chat diverse, le risposte risultano completamente diverse per stile e approccio, quasi si stesse parlando con persone differenti. È un aspetto di cui bisogna tenere conto.</p>
+<p>Tornando ai casi d'uso: ci sono tanti scenari in cui l'approccio probabilistico è molto utile, proprio quelli in cui l'approccio classico — pensiamo alle regex — fa molta fatica o diventa, con un'espressione colorita, "un bagno di sangue". Un esempio arriva dal mondo web: quando si cerca un canale di comunicazione anomalo o qualcosa di strano in un protocollo che possiamo osservare — l'esempio tipico è l'header HTTP, ma vale anche per altri protocolli — nel mondo "standard" si usano da tempo trucchetti come l'analisi dello user agent (sapendo bene che è falsificabile) o il calcolo, tramite vari parametri, di una sorta di fingerprint del client per capire se il comportamento osservato è quello tipico di un client normale. Sono però elementi che un attaccante può falsificare, a volte in modo molto furbo, tanto da aggirare i controlli classici basati sul contenuto di un header HTTP. Su questo fronte, quando si cercano elementi anomali a livello di singole parole in un header, l'LLM mostra capacità interessanti: pur non avendo comprensione semantica, è molto bravo a distinguere una frase di senso compiuto da una che non lo è, proprio per come funziona — lavora sulla probabilità che una sequenza di parole abbia senso — e riconosce con efficacia gli elementi semanticamente incoerenti. Fare lo stesso con una regex, ammesso sia possibile, è un incubo. Su questi elementi di incoerenza in una sequenza di informazioni, come un testo, l'LLM funziona molto bene. Un altro esperimento fatto insieme riguarda la valutazione del tono di un'email — utile ad esempio per individuare tentativi di phishing analizzando il tono del messaggio: è difficile immaginare come farlo senza un motore addestrato sulla struttura semantica di una frase, capace di assegnarle un peso emotivo. Qui si toccano anche temi delicati di privacy, un argomento un po' complicato da approfondire a sé. Sono comunque tutti elementi non individuabili sul piano deterministico, ma su quello probabilistico sì, e lo strumento lo consente — a patto di aver qualificato bene i dati in ingresso, dando solo le porzioni davvero interessanti (non tutte le email dell'azienda), sia per la qualità del risultato sia per la sostenibilità economica, perché i token volano e va sempre fatto un ragionamento su cosa gli si sta effettivamente dando in pasto.</p>
+<p>In chiusura, la sensazione condivisa è che siamo ancora agli albori di questa tecnologia — non tanto nell'adozione, quanto nella sperimentazione. Ce l'hanno venduta come sostituzione delle persone che lavorano, ci siamo accorti che non è così, e abbiamo imparato a usarla in modo diverso, più parcellizzato: da qui l'idea di dividere il lavoro su più agenti, non solo per compiti diversi, ma perché in processi lunghi tendono a perdersi, quindi conviene usarne diversi e coordinarli, magari con modelli diversi per costi diversi. Siamo un po' a un livello da "effetto wow", con tanti aspetti utili sia per le persone nel proprio lavoro sia a livello organizzativo per facilitare processi — ma tante cose ancora non le sappiamo. Dalle notizie e dalle esperienze raccontate emerge che gli agenti tendono a "evadere" il prompt, a interpretarlo male — non nel senso di consapevolezza, ma nel senso che risolvono il problema in modi completamente inaspettati, a volte così tanto da uscire da qualunque regola si pensava ci fosse, danneggiando l'utente e consumando parecchi token: conosciamo persone che si sono "bruciate" molti token perché l'agente ha preso una strada completamente diversa, avviando ricerche e analisi fuori strada e molto dispendiose in termini di risorse. Anche questi comportamenti vanno valutati. C'è poi tutto il tema dell'addestrare motori on-prem sulla propria base dati — cosa che al momento non si fa, perché addestrare modelli non propri, che vivono sul cloud, è complicato anche dal punto di vista della proprietà intellettuale. Il costo di schede e RAM al momento non aiuta, ma è un settore ancora prima degli albori: ci stiamo fidando di quello che viene venduto, che è già tanto in apparenza, senza vedere ancora cosa si potrebbe fare specializzando i modelli sulle proprie basi dati. Da qui la curiosità, buttata lì en passant: cosa succede se si addestra un LLM direttamente sui log — quelli veri, milioni o centinaia di milioni di righe che passano ogni giorno? Non è chiaro se qualcuno l'abbia già provato.</p>
+<p>Dalle letture emerge che il trend va proprio in questa direzione: specializzare anche il training, "tipizzando" i modelli. L'idea, se colta bene, è che ci si è accorti che addestrare un modello in un certo modo dà buoni risultati in certi contesti e in modo diverso in altri, quindi conviene addestrare in modo A per un caso e in modo B per un altro, perché funzionano meglio ciascuno nel proprio ambito. È un trend abbastanza consolidato, legato anche alla coerenza necessaria tra il contesto che si vuole passare e il modo in cui, grazie all'addestramento, il modello calcola la probabilità che un token vinca su un altro: la risposta è fortemente legata ai token in input, quindi se si vuole una risposta coerente con l'input, il calcolo su cui il modello è stato addestrato deve essere coerente a livello probabilistico con le informazioni fornite. Un esempio un po' tirato per i capelli: un modello addestrato solo su ricette di cucina, interrogato su un contesto che con le ricette non c'entra nulla, darà risposte molto più casuali rispetto a un modello addestrato anche sui parametri legati a quell'input. Considerando quanto costa addestrare un modello, diventa efficace ed efficiente costruire modelli tipizzati, e la direzione sembra proprio questa, con modelli sempre più specializzati su certi ambiti rispetto ad altri più generalisti. Farlo internamente pone il problema della disponibilità di calcolo per il training, che peraltro non è un'attività statica: una volta addestrato, il modello va comunque fatto evolvere nel tempo, arricchito di nuovi elementi, perché le interpretazioni che vanno bene oggi potrebbero non andare bene domani se le condizioni cambiano — quelle informazioni devono arrivare da qualche parte, il modello deve continuare a imparare qualcosa di nuovo.</p>
+<p>Chiudiamo la puntata con un invito: se chi ci ascolta ha sperimentato — o meglio ancora ha già in produzione — tecnologie in ambito cyber che coinvolgono gli LLM in modo massivo, come ci siamo raccontati oggi, e ha voglia di presentarle, anche in forma anonima (sapendo che con la voce reale l'anonimato è comunque difficile da mantenere), è benvenuto a farlo, anche senza riferimenti espliciti. Nessuno morde, anche se sappiamo che qualcuno si sente intimorito — capiamo il motivo, sarà tempestato di domande, ma fa parte del gioco, sempre in modo amichevole. Chi ci conosce sa dove trovarci nei nostri canali. E con questo ci diamo appuntamento alla prossima puntata, grazie per averci ascoltato.</p>
           </div>
         </div>
       </div>
@@ -215,15 +175,69 @@ Un viaggio dentro il modo in cui impariamo, ogni giorno, a capire e raccontare l
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-49.html">0x31 - Garbage in garbage out, anche gli agenti hanno bisogno di ordine</a>
+                  <a href="episode-43.html">0x2b - Detection, falsi positivi e modelli linguistici</a>
                 </h3>
                 <div class="text-white mb-3">
                   <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 14/09/2026 <span
-                        class="sep">/</span> 36 min.</small>
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 18/05/2026 <span
+                        class="sep">/</span> 35 min.</small>
                   </span>
                 </div>
-                <p class="mb-4">In questa puntata torniamo sul tema degli LLM applicati alla cybersecurity, questa volta con un focus specifico sulla detection. Partendo da esperimenti personali — uno sull'uso di agenti per analizzare anomalie in infrastrutture complesse, l'altro nato da un approfondimento sui paper più recenti — smontiamo l'idea che gli LLM possano fare da oracolo a cui dare in pasto enormi moli di log grezzi sperando che trovino da soli le minacce. Raccontiamo perché questo approccio è economicamente insostenibile e perché funziona molto meglio la combinazione tra detection rules deterministiche e contesto mirato fornito da un analista, lasciando all'LLM il compito di interpretare in modo probabilistico ciò che il piano deterministico non riesce a risolvere. Parliamo di falsi positivi, di regole disattivate troppo alla leggera, di un possibile diario di bordo testuale per aiutare gli agenti a discriminare eventi reali, e di casi in cui il probabilistico funziona davvero bene — come il riconoscimento di header HTTP anomali o la valutazione del tono di un'email in ottica anti-phishing. Non manca una riflessione più ampia sui limiti pratici della tecnologia: l'incoerenza di stile tra un output e l'altro, gli agenti che evadono il prompt bruciando token su strade sbagliate, e il tema ancora acerbo dell'addestramento on-prem e dei modelli specializzati per contesto. Un episodio che prova a distinguere, con metodo e senza hype, dove gli LLM danno davvero valore alla detection e dove invece conviene ancora affidarsi al buon vecchio approccio deterministico.</p>
+                <p class="mb-4">In questa seconda puntata on the road di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia riprendono il filo lasciato aperto e si addentrano nel tema della detection: quanto funziona davvero, dove si inceppa, e in che misura i modelli linguistici possono dare una mano concreta. La conversazione parte dalle fondamenta — regole, SIEM, EDR, falsi positivi — per arrivare a casi pratici come l'analisi di 6000 regole di firewall o l'interpretazione dei flussi di rete. Non mancano le riflessioni più critiche: i rischi legati all'invio di dati sensibili verso sistemi cloud, le implicazioni GDPR, e la prospettiva di modelli on-prem verticali come risposta ai problemi di governance. Un episodio tecnico e concreto, che non cerca risposte definitive ma invita a sperimentare con metodo e consapevolezza.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-42.html">0x2a - L'AI come acceleratore nella sicurezza informatica</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 11/05/2026 <span
+                        class="sep">/</span> 51 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata on the road di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia si confrontano sull'impatto reale dei modelli di linguaggio nel mondo della sicurezza informatica. Partendo da un video del canale YouTube di Rev3rse Security, i due esplorano tre grandi ambiti applicativi: la scrittura e revisione del codice, la detection di attività malevole e le attività offensive. La conversazione non si ferma ai casi d'uso tecnici, ma affronta anche le questioni più spinose: i costi crescenti e la sostenibilità economica di questi sistemi, i rischi legati all'uso di agenti con privilegi eccessivi, la natura statistica degli LLM e le sue implicazioni pratiche, fino alle ripercussioni in ambito assicurativo e normativo. Un episodio denso, critico e concreto, pensato per chi vuole capire davvero dove finisce l'hype e dove comincia l'utilità reale.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-36.html">0x24 - Cisco Live dove tecnologia e persone si incontrano davvero</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/02/2026 <span
+                        class="sep">/</span> 27 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged andiamo “on the road” direttamente dal Cisco Live di Amsterdam. Parliamo del valore reale degli eventi tecnici: confronto, approfondimenti fuori agenda, relazioni e scambio di esperienze tra professionisti.Ma non ci fermiamo qui. Dal networking all’automazione, fino al tema inevitabile dell’Intelligenza Artificiale, riflettiamo su hype, limiti concreti, rischi di sicurezza e scenari futuri. Tra romanticismo tecnologico e problemi molto pragmatici, proviamo a capire dove stiamo davvero andando.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-47.html">0x2f - Red teaming nell'era degli LLM</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/06/2026 <span
+                        class="sep">/</span> 34 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata riprendiamo il tema dell'utilizzo dei modelli linguistici nel mondo della sicurezza informatica, concentrandoci stavolta sul red teaming. Partendo da un'analisi critica fase per fase — ricognizione, analisi dei dati, phishing, scrittura di codice e payload, analisi delle vulnerabilità — proviamo a capire dove gli LLM danno un contributo reale e dove invece è meglio risparmiare i token. Tra output incompleti nella raccolta dati, regex bypassate in pochi secondi, payload custom costruiti al volo e CVE che non piovono dal cielo, emerge un quadro onesto e poco incline all'hype: lo strumento esiste, accelera alcune cose in modo significativo, ma richiede giudizio su quando usarlo e quando no.</p>
               </div>
             </div>
           </div>
@@ -260,42 +274,6 @@ Un viaggio dentro il modo in cui impariamo, ogni giorno, a capire e raccontare l
                   </span>
                 </div>
                 <p class="mb-4">In questo episodio di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia riprendono il loro percorso attraverso i controlli della ISO 27001 e si concentrano sul punto 8.3, dedicato alla limitazione degli accessi alle informazioni. Quello che in apparenza potrebbe sembrare un tema secondario si rivela invece uno dei nodi più critici e trascurati nella sicurezza aziendale: chi può accedere a cosa, perché, e con quali conseguenze in caso di compromissione. Tra esempi tratti dal campo, storie dell'orrore reali e riflessioni tecniche su log, threshold e DLP, i due host costruiscono un ragionamento chiaro e concreto su come il principio del privilegio minimo — se applicato davvero — cambia radicalmente la capacità di rilevare e contenere un attacco.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-43.html">0x2b - Detection, falsi positivi e modelli linguistici</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 18/05/2026 <span
-                        class="sep">/</span> 35 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa seconda puntata on the road di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia riprendono il filo lasciato aperto e si addentrano nel tema della detection: quanto funziona davvero, dove si inceppa, e in che misura i modelli linguistici possono dare una mano concreta. La conversazione parte dalle fondamenta — regole, SIEM, EDR, falsi positivi — per arrivare a casi pratici come l'analisi di 6000 regole di firewall o l'interpretazione dei flussi di rete. Non mancano le riflessioni più critiche: i rischi legati all'invio di dati sensibili verso sistemi cloud, le implicazioni GDPR, e la prospettiva di modelli on-prem verticali come risposta ai problemi di governance. Un episodio tecnico e concreto, che non cerca risposte definitive ma invita a sperimentare con metodo e consapevolezza.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-42.html">0x2a - L'AI come acceleratore nella sicurezza informatica</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 11/05/2026 <span
-                        class="sep">/</span> 51 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata on the road di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia si confrontano sull'impatto reale dei modelli di linguaggio nel mondo della sicurezza informatica. Partendo da un video del canale YouTube di Rev3rse Security, i due esplorano tre grandi ambiti applicativi: la scrittura e revisione del codice, la detection di attività malevole e le attività offensive. La conversazione non si ferma ai casi d'uso tecnici, ma affronta anche le questioni più spinose: i costi crescenti e la sostenibilità economica di questi sistemi, i rischi legati all'uso di agenti con privilegi eccessivi, la natura statistica degli LLM e le sue implicazioni pratiche, fino alle ripercussioni in ambito assicurativo e normativo. Un episodio denso, critico e concreto, pensato per chi vuole capire davvero dove finisce l'hype e dove comincia l'utilità reale.</p>
               </div>
             </div>
           </div>
@@ -386,6 +364,24 @@ Un viaggio dentro il modo in cui impariamo, ogni giorno, a capire e raccontare l
                   </span>
                 </div>
                 <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano in profondità i controlli ISO 27001 legati alla sicurezza delle reti. Partendo dalla progettazione dei domini di sicurezza e dalla segregazione delle reti, discutono di come i principi teorici si traducano in pratiche reali, dall’autenticazione dei dispositivi e degli utenti fino alla gestione dei firewall, dei sistemi di detection e del traffico interno “est-ovest”. La conversazione, basata su esperienze concrete, mette in luce punti critici, best practice e strategie per ridurre i blind spot e aumentare la tracciabilità delle attività in rete.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-25.html">0x19 - Threat Intelligence (parte 3)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 08/09/2025 <span
+                        class="sep">/</span> 58 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andrea Dainese e Rocco Sicilia esplorano il tema dell'analisi degli incidenti di sicurezza con un focus particolare sul lavoro del threat analyst, che studia il comportamento degli attori malevoli per supportare attività di detection e prevention. Viene inoltre approfondita la stretta relazione tra il mondo della threat intelligence e quello della offensive security, mostrando come entrambi si concentrino sul modus operandi degli attacchi e sugli artefatti utilizzati dai threat actor. La puntata introduce anche un esempio pratico di analisi di un piccolo incidente di sicurezza, accompagnato da un post descrittivo e un video highlight, per rendere più accessibili i dettagli tecnici trattati.</p>
               </div>
             </div>
           </div>
@@ -593,60 +589,6 @@ Un viaggio dentro il modo in cui impariamo, ogni giorno, a capire e raccontare l
             <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
               <div class="text w-100">
                 <h3 class="font-weight-light">
-                  <a href="episode-47.html">0x2f - Red teaming nell'era degli LLM</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 22/06/2026 <span
-                        class="sep">/</span> 34 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata riprendiamo il tema dell'utilizzo dei modelli linguistici nel mondo della sicurezza informatica, concentrandoci stavolta sul red teaming. Partendo da un'analisi critica fase per fase — ricognizione, analisi dei dati, phishing, scrittura di codice e payload, analisi delle vulnerabilità — proviamo a capire dove gli LLM danno un contributo reale e dove invece è meglio risparmiare i token. Tra output incompleti nella raccolta dati, regex bypassate in pochi secondi, payload custom costruiti al volo e CVE che non piovono dal cielo, emerge un quadro onesto e poco incline all'hype: lo strumento esiste, accelera alcune cose in modo significativo, ma richiede giudizio su quando usarlo e quando no.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-30.html">0x1e - Gestione delle configurazioni: tra ISO 27001 e realtà operativa</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 17/11/2025 <span
-                        class="sep">/</span> 47 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata di Info Sec. Unplugged esploriamo uno dei controlli più complessi dell’Annex A della ISO/IEC 27001: la gestione delle configurazioni (A.8.9). Lo facciamo partendo dal campo — da ciò che realmente accade durante security test, red team e attività di assume breach — per capire quali siano le conseguenze di configurazioni deboli, default lasciati attivi, hardening incompleto o non verificato, e processi assenti o inefficaci. Con esempi concreti, aneddoti e riflessioni sul ruolo dell’automazione, discutiamo cosa accade quando questo controllo non viene gestito correttamente e quali sono gli approcci più efficaci per avvicinarsi a una configurazione sicura, monitorata e sostenibile.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
-                  <a href="episode-14.html">0xe - [PUB] Accesso non consentito (ma possibile)</a>
-                </h3>
-                <div class="text-white mb-3">
-                  <span class="text-black-opacity-05">
-                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/10/2024 <span
-                        class="sep">/</span> 33 min.</small>
-                  </span>
-                </div>
-                <p class="mb-4">In questa puntata si esplorano le attività di offensive security condotte sul campo, con esempi pratici di attacchi e difese aziendali. Viene discusso cosa significa testare la resilienza di un'organizzazione contro minacce Cyber, come individuare i punti d'ingresso più comuni e quali sono le strategie per gestire e contenere gli incidenti. Il racconto, basato su esperienze reali, mette in luce sia le sfide che le opportunità per migliorare la postura di sicurezza.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-6">
-            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
-              <div class="text w-100">
-                <h3 class="font-weight-light">
                   <a href="episode-23.html">0x17 - Threat Intelligence (parte 1)</a>
                 </h3>
                 <div class="text-white mb-3">
@@ -674,6 +616,24 @@ Un viaggio dentro il modo in cui impariamo, ogni giorno, a capire e raccontare l
                   </span>
                 </div>
                 <p class="mb-4">In questa puntata di Info Sec. Unplugged, Andra Dainese e Rocco Sicilia affrontano il tema del data center network design con un approccio tecnico e concreto. Dopo aver discusso in precedenza delle reti a livello campus, l'attenzione si sposta ora sulle esigenze delle aziende enterprise: dalla ridondanza alla sicurezza, fino alle scelte progettuali legate alla dimensione delle infrastrutture. Una conversazione ricca di spunti pratici per chi lavora nell'ambito delle reti e della sicurezza informatica.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6">
+            <div class="d-block podcast-entry bg-white mb-5" data-aos="fade-up">
+              <div class="text w-100">
+                <h3 class="font-weight-light">
+                  <a href="episode-14.html">0xe - [PUB] Accesso non consentito (ma possibile)</a>
+                </h3>
+                <div class="text-white mb-3">
+                  <span class="text-black-opacity-05">
+                    <small>By Andrea Dainese, Rocco Sicilia <span class="sep">/</span> 16/10/2024 <span
+                        class="sep">/</span> 33 min.</small>
+                  </span>
+                </div>
+                <p class="mb-4">In questa puntata si esplorano le attività di offensive security condotte sul campo, con esempi pratici di attacchi e difese aziendali. Viene discusso cosa significa testare la resilienza di un'organizzazione contro minacce Cyber, come individuare i punti d'ingresso più comuni e quali sono le strategie per gestire e contenere gli incidenti. Il racconto, basato su esperienze reali, mette in luce sia le sfide che le opportunità per migliorare la postura di sicurezza.</p>
               </div>
             </div>
           </div>
